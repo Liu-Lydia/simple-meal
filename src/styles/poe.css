@@ -1,3 +1,22 @@
+.poe-cart-progress .col-3 {
+  padding: 0;
+  color: #5a7e0c;
+  margin: 0 5px;
+}
+
+.poe-cart-progress-line {
+  background-color: #b0be94;
+  border-radius: 2.5px;
+  height: 5px;
+}
+
+.poe-cart-progress-active {
+  height: 10px;
+  background-color: #5a7e0c;
+  border-radius: 5px;
+  margin: 0 5px;
+}
+
 .poe-bookmark-label {
   opacity: 50%;
   background-color: #5a7e0c;
