@@ -1,0 +1,147 @@
+@media (min-width: 1700px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  .container-xxl {
+    max-width: 1640px;
+  }
+}
+
+.lll-header-height {
+  height: 100px;
+}
+
+/* LOGO */
+.lll-logo-square {
+  width: 180px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.lll-distance-logo {
+  margin-right: 30px;
+}
+
+/* header字顏色 */
+.lll-header-list {
+  padding: 15px;
+  color: #a2a3a5;
+}
+
+.lll-header-list:hover {
+  color: #434341;
+  text-decoration: none;
+}
+
+.lll-header-list:active {
+  color: #627e2a;
+  text-decoration: none;
+}
+
+/* 菜單介紹下拉選項 */
+.dropdown-menu {
+  border: 0 !important;
+}
+
+.lll-header-list-item {
+  display: inline-block;
+  font-family: GenSenRounded TW;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 32px;
+  text-decoration: none !important;
+  letter-spacing: 0.24px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* 最左邊的覆蓋 */
+#blank-square-left-1 {
+  position: relative;
+  left: 210px;
+  z-index: 100;
+  background: #ffffff;
+  width: 120px;
+  transition: 0.5s;
+}
+
+/* 購物車div */
+#blank-square-left-2 {
+  position: relative;
+  left: 145px;
+  z-index: 80;
+  background: #ffffff;
+  width: 120px;
+  transition: 0.5s;
+}
+
+/* 我的成就div */
+#blank-square-left-3 {
+  position: relative;
+  left: 69px;
+  z-index: 40;
+  background: #ffffff;
+  width: 120px;
+  transition: 0.5s;
+}
+
+/* 會員中心div */
+#blank-square-left-4 {
+  position: relative;
+  left: 0px;
+  z-index: 10;
+  background:  #ffffff;
+  width: 100px;
+}
+
+.lll-header-icon-distance {
+  padding-right: 15px;
+}
+
+.lll-icon-distance {
+  padding-right: 15px;
+}
+
+.lll-qa-distance {
+  padding-left: 25px;
+}
+
+/* header-icon顏色 */
+.lll-header-icon-style {
+  font-size: 16px;
+  line-height: 32px;
+  color: #a2a3a5;
+}
+
+.lll-header-icon-style:hover {
+  font-size: 16px;
+  line-height: 32px;
+  color: #434341;
+  text-decoration: none;
+}
+
+.lll-header-icon-style:active {
+  font-size: 16px;
+  line-height: 32px;
+  color: #627e2a;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 1200px) {
+  ul > .aaa {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  li > .blank-square-left-1 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .lll-trans-block {
+  }
+}
