@@ -118,7 +118,7 @@
         </div>
 
         <div class="row justify-content-center poe-bookmark">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-md-8 col-xl-6">
                 <div class="d-flex justify-content-between txt-btn">
                     <a class="col poe-bookmark-label poe-bookmark-label-active">購買餐券</a>
                     <a class="col poe-bookmark-label">餐點配送</a>
@@ -130,25 +130,49 @@
                         <thead>
                             <tr>
                                 <th scope="col"></th>
-                                <th width="70%" scope=" col">組合明細</th>
-                                <th class="text-right" scope="col">優惠價</th>
+                                <th scope="col">組合明細</th>
+                                <th class="d-none d-sm-block text-right text-nowrap" scope="col">優惠價</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <th scope="row"><input type="radio" name="poePlan"></th>
-                                <td>吃飽飽沒煩惱組合<span class="txt-cap">(包含20張餐卷, 加贈5張免費餐券)</span></td>
-                                <td class="poe-red text-right">3500</td>
+                                <td>
+                                    <span>吃飽飽沒煩惱組合</span>
+                                    <br class="d-block d-sm-none">
+                                    <span class="txt-cap poe-red">(包含20張餐卷, 加贈5張免費餐券)</span>
+                                    <br class="d-block d-sm-none">
+                                    <div class="d-block d-sm-none d-flex txt-cap">
+                                        <div class="poe-bookmark-content-m">優惠價</div><span class="poe-red">3500</span>
+                                    </div>
+                                </td>
+                                <td class="d-none d-sm-block poe-red text-right">3500</td>
                             </tr>
                             <tr>
                                 <th scope="row"><input type="radio" name="poePlan"></th>
-                                <td>食在很滿足組合<span class="txt-cap">(包含10張餐卷, 加贈2張免費餐券)</span></td>
-                                <td class="poe-red text-right">1700</td>
+                                <td>
+                                    <span>食在很滿足組合</span>
+                                    <br class="d-block d-sm-none">
+                                    <span class="txt-cap poe-red">(包含10張餐卷, 加贈2張免費餐券)</span>
+                                    <br class="d-block d-sm-none">
+                                    <div class="d-block d-sm-none d-flex txt-cap">
+                                        <div class="poe-bookmark-content-m">優惠價</div><span class="poe-red">1700</span>
+                                    </div>
+                                </td>
+                                <td class="d-none d-sm-block poe-red text-right">1700</td>
                             </tr>
                             <tr>
                                 <th scope="row"><input type="radio" name="poePlan"></th>
-                                <td>經濟實惠組<span class="txt-cap">(包含5張餐卷, 加贈1張免費餐券)</span></td>
-                                <td class="poe-red text-right">850</td>
+                                <td>
+                                    <span>經濟實惠組</span>
+                                    <br class="d-block d-sm-none">
+                                    <span class="txt-cap poe-red">(包含5張餐卷, 加贈1張免費餐券)</span>
+                                    <br class="d-block d-sm-none">
+                                    <div class="d-block d-sm-none d-flex txt-cap">
+                                        <div class="poe-bookmark-content-m">優惠價</div><span class="poe-red">850</span>
+                                    </div>
+                                </td>
+                                <td class="d-none d-sm-block poe-red text-right">850</td>
                             </tr>
                         </tbody>
                     </table>
