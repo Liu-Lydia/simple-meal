@@ -8,56 +8,56 @@
     max-width: 1640px;
   }
 }
-.txt-h1 {
-  font-family: GenSenRounded TW;
-  font-size: 93px;
-  font-weight: bold;
-  line-height: 93px;
-  letter-spacing: 1.01px;
-  text-decoration: none !important;
+h1 {
+  font-family: GenSenRounded TW!important;
+  font-size: 93px!important;
+  font-weight: bold!important;
+  line-height: 93px!important;
+  letter-spacing: 1.01px!important;
+  text-decoration: none!important;
 }
-.txt-h2 {
-  font-family: GenSenRounded TW;
-  font-size: 58px;
-  font-weight: 500;
-  line-height: 58px;
-  letter-spacing: -0.02px;
-  text-decoration: none !important;
+h2 {
+  font-family: GenSenRounded TW!important;
+  font-size: 58px!important;
+  font-weight: 500!important;
+  line-height: 58px!important;
+  letter-spacing: -0.02px!important;
+  text-decoration: none!important;
 }
-.txt-h3 {
-  font-family: GenSenRounded TW;
-  font-size: 50px;
-  font-weight: bold;
-  line-height: 50px;
-  letter-spacing: -0.01px;
-  text-decoration: none !important;
-}
-
-.txt-h4 {
-  font-family: GenSenRounded TW;
-  font-size: 36px;
-  font-weight: bold;
-  line-height: 50px;
-  letter-spacing: 0.48px;
-  text-decoration: none !important;
+h3 {
+  font-family: GenSenRounded TW!important;
+  font-size: 50px!important;
+  font-weight: bold!important;
+  line-height: 50px!important;
+  letter-spacing: -0.01px!important;
+  text-decoration: none!important;
 }
 
-.txt-h5 {
-  font-size: 24px;
-  font-family: GenSenRounded TW;
-  font-weight: 500;
-  line-height: 36px;
-  letter-spacing: 0.32px;
-  text-decoration: none !important;
+h4 {
+  font-family: GenSenRounded TW!important;
+  font-size: 36px!important;
+  font-weight: bold!important;
+  line-height: 50px!important;
+  letter-spacing: 0.48px!important;
+  text-decoration: none!important;
 }
 
-.txt-h6 {
-  font-size: 21px;
-  font-family: GenSenRounded TW;
-  font-weight: 400;
-  line-height: 24px;
-  letter-spacing: 0.29px;
-  text-decoration: none !important;
+h5 {
+  font-size: 24px!important;
+  font-family: GenSenRounded TW!important;
+  font-weight: 500!important;
+  line-height: 36px!important;
+  letter-spacing: 0.32px!important;
+  text-decoration: none!important;
+}
+
+h6 {
+  font-size: 21px!important;
+  font-family: GenSenRounded TW!important;
+  font-weight: 400!important;
+  line-height: 24px!important;
+  letter-spacing: 0.29px!important;
+  text-decoration: none!important;
 }
 
 .txt-sub1,
@@ -74,8 +74,9 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 28px;
-  text-decoration: none !important;
+  text-decoration: none!important;
   letter-spacing: 0.22px;
+  
 }
 
 .txt-body {
@@ -84,7 +85,7 @@
   font-weight: 400;
   line-height: 32px;
   letter-spacing: 0.24px;
-  text-decoration: none !important;
+  text-decoration: none!important;
 }
 
 .txt-cap {
@@ -93,7 +94,7 @@
   font-weight: 400;
   line-height: 24px;
   letter-spacing: 0.2px;
-  text-decoration: none !important;
+  text-decoration: none!important;
 }
 
 .select-btn-green {
@@ -120,6 +121,7 @@
   box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.5);
   transition: 0.2s;
 }
+
 
 .select-btn-white {
   background-color: white;
@@ -236,7 +238,7 @@
   color: #5b722d;
   border: 1px #5b722d solid;
   display: inline-block;
-
+  
   transition: 0.2s;
 }
 .btn-white {
@@ -300,7 +302,7 @@
   border: 1px #b9433b solid;
   display: inline-block;
 }
-.btn-red:hover {
+.btn-red:hover{
   background-color: #b9433b;
   width: 150px;
   height: 50px;
@@ -387,60 +389,62 @@
   transition: 0.2s;
 }
 
-.input-style {
+.input-style{
   border: 1px #a2a3a5 solid;
   border-radius: 10px;
   padding-left: 15px;
   height: 40px;
 }
 .input-style:focus {
-  outline: none;
+  outline:  none  ;
   border: 1px #627e2a solid;
-  border-radius: 10px;
+  border-radius: 10px  ;
   padding-left: 15px;
   box-shadow: 0 0 5px #627e2a;
   height: 40px;
 }
 .input-style:hover {
-  outline: none;
+  outline:  none  ;
   border: 1px #627e2a solid;
-  border-radius: 10px;
+  border-radius: 10px  ;
   padding-left: 15px;
   height: 40px;
+
 }
-.input-pic-style {
+.input-pic-style{
   border: 1px #a2a3a5 solid;
   border-radius: 25px;
   padding-left: 15px;
 }
-.input-pic-style:focus {
-  outline: none;
+.input-pic-style:focus{
+  outline:  none ;
   border: 1px #627e2a solid;
   border-radius: 25px;
   padding-left: 15px;
   box-shadow: 0 0 5px #627e2a;
 }
-.input-pic-style:hover {
-  outline: none;
+.input-pic-style:hover{
+  outline:  none ;
   border: 1px #627e2a solid;
   border-radius: 25px;
   padding-left: 15px;
 }
 
-.msg-style {
+.msg-style{
   background-color: white;
   border-radius: 25px;
   border: 3px #627e2a solid;
 }
-.msg-style-demo {
+.msg-style-demo{
   background-color: white;
   width: 417px;
   height: 370px;
   border-radius: 25px;
   border: 3px #627e2a solid;
-  padding: 75px;
+  padding:75px;
   /* 範例用class，別用 */
 }
+
 
 .kv_tag {
   width: 248px;
@@ -448,6 +452,7 @@
   background-color: #a2a3a5;
   border-radius: 50px 0 0 50px;
   text-align: center;
+  
 }
 
 .kv_tag_circle {
@@ -459,27 +464,27 @@
   color: #a2a3a5;
 }
 
-.btn-meun-big-gray {
+.btn-meun-big-gray{
   width: 248px;
   height: 85px;
   background-color: #a2a3a5;
   border-radius: 50px 0 0 50px;
   text-align: center;
   line-height: 85px;
-  color: white;
+  color:white;
 }
-.btn-meun-big-gray:hover {
+.btn-meun-big-gray:hover{
   width: 248px;
   height: 85px;
   background-color: #a2a3a5;
   border-radius: 50px 0 0 50px;
   text-align: center;
   line-height: 85px;
-  color: white;
+  color:white;
   box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.5);
   transition: 0.2s;
 }
-.btn-meun-big-gray2 {
+.btn-meun-big-gray2{
   width: 60px;
   height: 60px;
   background-color: white;
@@ -492,27 +497,27 @@
   margin-right: 30px;
 }
 
-.btn-meun-big-red {
+.btn-meun-big-red{
   width: 248px;
   height: 85px;
   background-color: #b9433b;
   border-radius: 50px 0 0 50px;
   text-align: center;
   line-height: 85px;
-  color: white;
+  color:white;
 }
-.btn-meun-big-red:hover {
+.btn-meun-big-red:hover{
   width: 248px;
   height: 85px;
   background-color: #b9433b;
   border-radius: 50px 0 0 50px;
   text-align: center;
   line-height: 85px;
-  color: white;
+  color:white;
   box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.5);
   transition: 0.2s;
 }
-.btn-meun-big-red2 {
+.btn-meun-big-red2{
   width: 60px;
   height: 60px;
   background-color: white;
