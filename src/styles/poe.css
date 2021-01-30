@@ -24,7 +24,7 @@
   line-height: 30px;
   border-radius: 15px 15px 0 0;
   border: none;
-  margin: 0 2px;
+  margin: 0 1px;
   text-align: center;
   color: #fff;
   display: inline-block;
@@ -85,7 +85,7 @@
 .poe-bookmark-content-result {
   margin-bottom: 30px;
 }
-.poe-bookmark-content-m{
+.poe-bookmark-content-m {
   width: 50px;
   margin-right: 15px;
   text-align: right;
