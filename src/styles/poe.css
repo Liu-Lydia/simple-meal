@@ -2,10 +2,21 @@
   opacity: 50%;
   background-color: #5a7e0c;
   height: 30px;
+  line-height: 30px;
   border-radius: 15px 15px 0 0;
+  border: none;
   margin: 0 2px;
   text-align: center;
   color: #fff;
+  display: inline-block;
+}
+.poe-bookmark-label:hover {
+  color: #a2a3a5;
+}
+
+.poe-bookmark-label:focus {
+  border: none;
+  outline: none;
 }
 
 .poe-bookmark-label-active {
