@@ -1,0 +1,42 @@
+.poe-bookmark-label {
+  opacity: 50%;
+  background-color: #5a7e0c;
+  height: 30px;
+  border-radius: 15px 15px 0 0;
+  margin: 0 2px;
+  text-align: center;
+  color: #fff;
+}
+
+.poe-bookmark-label-active {
+  opacity: 100%;
+}
+
+.poe-bookmark-content {
+  border: 3px solid #5a7e0c;
+  padding: 65px;
+  font-family: GenSenRounded TW;
+  text-decoration: none;
+}
+
+.poe-bookmark-content > h5 {
+  margin-bottom: 20px;
+}
+
+.poe-bookmark-content thead {
+  /* border-top: 0px solid #5a7e0c; */
+  border-bottom: 2px solid #5a7e0c;
+}
+.poe-bookmark-content td {
+  color: #5a7e0c;
+}
+.poe-bookmark-content .txt-cap {
+  color: #b9433b;
+}
+.poe-red {
+  color: #b9433b !important;
+}
+.poe-bookmark-content hr{
+  color: #5a7e0c;
+  height: 2px;
+}
