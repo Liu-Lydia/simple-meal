@@ -24,19 +24,34 @@
 }
 
 .poe-bookmark-content thead {
-  /* border-top: 0px solid #5a7e0c; */
   border-bottom: 2px solid #5a7e0c;
 }
+
 .poe-bookmark-content td {
   color: #5a7e0c;
 }
+
 .poe-bookmark-content .txt-cap {
   color: #b9433b;
 }
+
 .poe-red {
   color: #b9433b !important;
 }
-.poe-bookmark-content hr{
+
+.poe-bookmark-content-choice,
+.poe-bookmark-content-result {
+  padding: 20px 0 20px 0;
+}
+
+.poe-bookmark-content-choice .fas {
   color: #5a7e0c;
-  height: 2px;
+}
+
+.poe-bookmark-content-choice {
+  border-top: 2px solid #5a7e0c;
+  border-bottom: 2px solid #5a7e0c;
+}
+.poe-bookmark-content-result {
+  margin-bottom: 30px;
 }
