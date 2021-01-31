@@ -55,6 +55,54 @@
   margin-bottom: 15px;
 }
 
+.poe-pr30 {
+  padding-right: 30px;
+}
+
+.poe-pl30 {
+  padding-left: 30px;
+}
+
+.poe-pt30 {
+  padding-top: 30px;
+}
+
+.poe-pb30 {
+  padding-bottom: 30px;
+}
+
+.poe-pr20 {
+  padding-right: 20px;
+}
+
+.poe-pl20 {
+  padding-left: 20px;
+}
+
+.poe-pt20 {
+  padding-top: 20px;
+}
+
+.poe-pb20 {
+  padding-bottom: 20px;
+}
+
+.poe-pr15 {
+  padding-right: 15px;
+}
+
+.poe-pl15 {
+  padding-left: 15px;
+}
+
+.poe-pt15 {
+  padding-top: 15px;
+}
+
+.poe-pb15 {
+  padding-bottom: 15px;
+}
+
 .poe-input-text,
 .poe-input-text:focus,
 .poe-input-text:hover {
@@ -135,8 +183,16 @@
   color: #b9433b;
 } */
 
+.poe-green {
+  color: #5a7e0c !important;
+}
+
 .poe-red {
   color: #b9433b !important;
+}
+
+.poe-gray {
+  color: #a2a3a5 !important;
 }
 
 .poe-bookmark-content-choice,
@@ -224,4 +280,17 @@
   right: 0%;
   top: 150px;
   overflow: hidden;
+}
+
+.poe-cart-product-img {
+  width: 84px;
+  height: 84px;
+  overflow: hidden;
+}
+
+.poe-red-line{
+  width: 100%;
+  height: 2px;
+  background-color: #b9433b;
+  margin: 20px 0;
 }
