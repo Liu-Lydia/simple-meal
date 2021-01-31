@@ -211,42 +211,97 @@
   padding-bottom: 30px;
 }
 
-.lll-detile-text {
+.lll-detile-text-grey {
   color: #a2a3a5;
 }
 
 /* 展開, 隱藏切換按鈕 */
-.lll-btn-hidden{
-    width: 120px;
-    height: 30px;
+.lll-btn-hidden {
+  width: 120px;
+  height: 30px;
+  background-color: #627e2a;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  border-radius: 15px 15px 0 0;
+  border: 1px #627e2a solid;
+  display: inline-block;
+}
+
+.lll-btn-hidden:hover {
+  width: 120px;
+  height: 30px;
+  background-color: #5b722d;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  border-radius: 15px 15px 0 0;
+  border: 1px #5b722d solid;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+.lll-hidden-line {
+  background-color: #627e2a;
+  height: 5px;
+  width: 100%;
+}
+
+.lll-btn-hidden-position {
+  text-align: right;
+}
+
+/* 預約驚喜廚房選單 */
+.lll-selected-position {
+  padding-top: 20px;
+  padding-bottom: 60px;
+}
+
+.lll-detile-text-black {
+  color: #434341;
+}
+
+.lll-calendar {
+  width: 298px;
+  height: 305px;
+  background: #fff;
+}
+
+.lll-calendar-body {
+  padding-top: 30px;
+}
+
+.lll-body-list {
+  width: 100%;
+}
+
+.lll-body-list li {
+  width: 14.28%;
+  height: 45px;
+  line-height: 45px;
+  list-style-type: none;
+  display: block;
+  box-sizing: border-box;
+  float: left;
+  text-align: center;
+}
+
+/* 日期選項顏色 */
+.lll-grey {
+  color: #a2a3a5; /* 尚未開放, 過去的時間*/
+}
+.lll-green {
+  color: #627e2a; /*尚有名額, 此月開放的日期*/
+}
+
+.lll-green-active{
+    width: 25px;
+    height: 25px;
+    border-radius: 12.5px;
     background-color: #627e2a;
-    text-align: center;
-    line-height: 30px;
-    color: white;
-    border-radius: 15px 15px 0 0;
-    border: 1px #627e2a solid;
-    display: inline-block;
+    color: #ffffff;
 }
 
-.lll-btn-hidden:hover{
-    width: 120px;
-    height: 30px;
-    background-color: #5b722d;
-    text-align: center;
-    line-height: 30px;
-    color: white;
-    border-radius: 15px 15px 0 0;
-    border: 1px #5b722d solid;
-    display: inline-block;
-    transition: 0.2s;
+.lll-red {
+    color: #B9433B; /*已額滿*/
 }
-
-.lll-hidden-item{
-    background-color:  #627e2a;
-    height: 5px;
-    width: 100%;
-  }
-
-  .lll-btn-hidden-position{
-      text-align: right;
-  }
