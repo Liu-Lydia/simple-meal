@@ -1,3 +1,12 @@
+.poe-h6 {
+  font-size: 21px;
+  font-family: GenSenRounded TW;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.29px;
+  text-decoration: none;
+}
+
 .poe-mr30 {
   margin-right: 30px;
 }
@@ -82,9 +91,12 @@
   text-align: center;
   color: #fff;
   display: inline-block;
+  cursor: pointer;
 }
+
 .poe-bookmark-label:hover {
   color: #a2a3a5;
+  text-decoration: none;
 }
 
 .poe-bookmark-label:focus {
