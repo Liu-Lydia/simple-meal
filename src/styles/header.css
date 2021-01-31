@@ -92,7 +92,7 @@
   position: relative;
   left: 0px;
   z-index: 10;
-  background:  #ffffff;
+  background: #ffffff;
   width: 100px;
 }
 
@@ -129,19 +129,9 @@
   text-decoration: none;
 }
 
-@media screen and (max-width: 1200px) {
-  ul > .aaa {
-    display: block;
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  li > .blank-square-left-1 {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .lll-trans-block {
+/* 變成漢堡的時候, icon消失 */
+@media (max-width: 992px) {
+  .lll-disappear {
+    display: none !important;
   }
 }
