@@ -16,7 +16,6 @@
     <!-- 驚喜廚房第一版 -->
     <div class="container-fluid">
       <div class="row">
-
         <!-- header試放 -->
         <div class="container">
           <div class="row align-items-center header-height">
@@ -133,13 +132,13 @@
           <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 lll-text-position">
               <div class="col-xl-6 lll-text-rwd">
-                <h2 class="lll-firstpage-title m-0">驚喜廚房預約</h2>
+                <h2 class="m-0 lll-firstpage-title">驚喜廚房預約</h2>
                 <p class="txt-sub1 lll-detile-style">
                   <span class="lll-line">——</span
                   >　極簡煮易提供完善的場地與優良食材
                 </p>
                 <p
-                  class="txt-sub1 lll-detile-style m-0 lll-detile-right lll-button-distance"
+                  class="m-0 txt-sub1 lll-detile-style lll-detile-right lll-button-distance"
                 >
                   等你來為自己準備一頓美好的餐點
                 </p>
@@ -167,24 +166,103 @@
     <div class="container lll-appoint">
       <div class="row justify-content-center">
         <div class="col-8">
+          <!-- 驚喜廚房title, 3項內容 -->
+          <h3 class="lll-title-style">驚喜廚房</h3>
+          <div class="d-flex p-0">
+            <p class="txt-sub1 lll-detile-text-grey">6日前可免費取消</p>
+            &nbsp&nbsp&nbsp&nbsp
+            <p class="txt-sub1 lll-detile-text-grey">立即發送電子憑證</p>
+            &nbsp&nbsp&nbsp&nbsp
+            <p class="txt-sub1 lll-detile-text-grey">備註即有專人核對確認</p>
+          </div>
+          <!-- 驚喜廚房title, 3項內容 -->
 
-            <!-- 驚喜廚房title, 3項內容 -->
-            <h3 class="lll-title-style">驚喜廚房</h3>
-            <div class="d-flex p-0">
-              <p class="txt-sub1 lll-detile-text">6日前可免費取消</p>
-              &nbsp&nbsp&nbsp&nbsp
-              <p class="txt-sub1 lll-detile-text">立即發送電子憑證</p>
-              &nbsp&nbsp&nbsp&nbsp
-              <p class="txt-sub1 lll-detile-text">備註即有專人核對確認</p>
+          <!-- 預約展開和隱藏元件 -->
+          <div class="col p-0 lll-btn-hidden-position">
+            <a
+              class="lll-btn-hidden txt-sub1 justify-content-end"
+              data-toggle="collapse"
+              href="#collapseExample"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              展開預約
+            </a>
+          </div>
+          <div class="col lll-hidden-line"></div>
+          <!-- 預約展開和隱藏元件 -->
+
+          <!-- 展開內容 -->
+          <div class="collapse" id="collapseExample">
+            <!-- 選擇日期、選項 / 全部重選 -->
+            <div class="col p-0 d-flex">
+              <div
+                class="mr-auto txt-sub1 lll-selected-position lll-detile-text-black"
+              >
+                選擇日期、選項
+              </div>
+              <div
+                class="ml-auto txt-sub1 lll-selected-position lll-detile-text-grey"
+              >
+                <i class="fas fa-redo-alt"></i>&nbsp&nbsp&nbsp&nbsp全部重選
+              </div>
             </div>
-            <!-- 驚喜廚房title, 3項內容 -->
-            <div class="col lll-btn-hidden-position p-0">
-            <a class="lll-btn-hidden  txt-sub1 justify-content-end">展開預約</a>
-        </div>
-<div class="col lll-hidden-item">
+            <!-- 選擇日期、選項 / 全部重選 -->
 
+            <!-- 選擇日期日曆 -->
+            <div class="col p-0 d-dlex">
+              <div class="mr-auto">
+                <p class="txt-sub1 lll-detile-text-black">請選擇預約日期</p>
 
-</div>
+                <div class="lll-calendar">
+                  <div
+                    class="lll-calendar-title d-flex align-items-center justify-content-between"
+                  >
+                    <a href="" id="lll-prev"
+                      ><i class="fas fa-angle-left lll-detile-text-black"></i
+                    ></a>
+                    <p
+                      class="m-0 txt-sub1 lll-detile-text-black"
+                      id="lll-calendar-year"
+                    >
+                      Year
+                    </p>
+                    <p
+                      class="m-0 txt-sub1 lll-detile-text-black"
+                      id="lll-calendar-title"
+                    >
+                      Month
+                    </p>
+                    <a href="" id="lll-next"
+                      ><i class="fas fa-angle-right lll-detile-text-black"></i
+                    ></a>
+                  </div>
+
+                  <div class="lll-calendar-body">
+                    <div class="lll-detile-text-black lll-body-list">
+                      <ul
+                        class="list-unstyled d-flex justify-content-between txt-sub1 lll-detile-text-black"
+                      >
+                        <li>一</li>
+                        <li>二</li>
+                        <li>三</li>
+                        <li>四</li>
+                        <li>五</li>
+                        <li>六</li>
+                        <li>日</li>
+                      </ul>
+                    </div>
+                    <div class="lll-green lll-body-list">
+                      <ul id="lll-days" class="col p-0 m-0 txt-sub1"></ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 選擇日期日曆 -->
+          </div>
+          <!-- 展開內容 -->
         </div>
       </div>
     </div>
@@ -230,6 +308,102 @@
         $('#blank-square-left-1').css('left', '210px')
         $('#blank-square-left-3').css('left', '69px')
       })
+
+      //日曆生成
+      const days = document.querySelector('#lll-days')
+      const prev = document.querySelector('#lll-prev')
+      const next = document.querySelector('#lll-next')
+      const cmonth = document.querySelector('#lll-calendar-title')
+      const cyear = document.querySelector('#lll-calendar-year')
+
+      const calTitle = [
+        '1月',
+        '二月',
+        '三月',
+        '四月',
+        '五月',
+        '六月',
+        '七月',
+        '八月',
+        '九月',
+        '十月',
+        '十一月',
+        '十二月',
+      ]
+
+      const now = new Date()
+      const year = now.getFullYear()
+      const month = now.getMonth()
+      const day = now.getDate()
+
+      const firstDay = new Date(year, month, 1).getDay()
+      console.log('本月第一天是星期幾', firstDay)
+
+      const totalDays = new Date(year, month + 1, 0).getDate()
+      console.log('本月有幾天', totalDays)
+
+      const dayDateArray = []
+
+      for (let j = 0; j < firstDay; j++) {
+        dayDateArray.push('')
+      }
+
+      for (let i = 1; i < totalDays + 1; i++) {
+        dayDateArray.push(i)
+      }
+
+      console.log('行事曆資料陣列', dayDateArray)
+
+      function refreshDate() {
+        let str = ''
+        let myclass
+        const totalDays = new Date(year, month + 1, 0).getDate()
+        const firstDay = new Date(year, month, 1).getDay()
+        for (let i = 1; i < firstDay; i++) {
+          str += '<li></li>' //日期節點
+        }
+
+        for (let i = 1; i <= totalDays; i++) {
+          if (
+            (i < day && year == now.getFullYear() && month == now.getMonth()) ||
+            year < now.getFullYear() ||
+            (year == now.getFullYear() && month < now.getMonth())
+          ) {
+            myclass = " class='lll-grey'" //過去的日期
+          } else if (
+            i == day &&
+            year == now.getFullYear() &&
+            month == now.getMonth()
+          ) {
+            myclass = " class='lll-green'" //今天的日期
+          }
+          str += '<li' + myclass + '>' + i + '</li>' //日期節點
+        }
+        days.innerHTML = str //日期顯示
+        cmonth.innerHTML = calTitle[month] //月份顯示
+        cyear.innerHTML = year //年份顯示
+      }
+      refreshDate()
+
+      //日曆切換月份************************
+      prev.onclick = function (e) {
+        e.preventDefault()
+        month--
+        if (month < 0) {
+          year--
+          month = 11
+        }
+        refreshDate()
+      }
+      next.onclick = function (e) {
+        e.preventDefault()
+        month++
+        if (month > 11) {
+          year++
+          month = 0
+        }
+        refreshDate()
+      }
     </script>
   </body>
 </html>
