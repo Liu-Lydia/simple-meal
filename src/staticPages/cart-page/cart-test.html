@@ -5,12 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../styles/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../styles/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="../styles/public.css">
-    <link rel="stylesheet" href="../styles/header.css" />
-    <link rel="stylesheet" href="../styles/poe.css">
+    <link rel="stylesheet" href="../../styles/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../styles/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../styles/public.css">
+    <link rel="stylesheet" href="../../styles/header.css" />
+    <link rel="stylesheet" href="../../styles/poe.css">
 
+    <style>
+        .poe-circle {
+            border-radius: 50%;
+            border: 5px solid green;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,7 +25,7 @@
             <div class="col">
                 <nav class="navbar navbar-expand-lg navbar-light p-0">
                     <a class="navbar-brand p-0 lll-distance-logo" href="#">
-                        <img src="../../public/img/lydia/SimpleMeal_LOGO.png" class="lll-logo-square" />
+                        <img src="../../../public/img/lydia/SimpleMeal_LOGO.png" class="lll-logo-square" />
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -98,107 +104,65 @@
 
     <div class="container my-5">
 
-        <!-- 購物進度指示條 -->
-        <div class="row justify-content-center mb-5 txt-btn poe-cart-progress">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="d-flex justify-content-between text-center">
-                    <div class="col-3">選擇方案 </div>
-                    <div class="col-3">付款方式</div>
-                    <div class="col-3">確認訂單</div>
-                </div>
-                <div class="d-flex justify-content-between align-items-center poe-cart-progress-line">
-                    <div class="col-3 poe-cart-progress-active"></div>
-                    <div class="col-3"></div>
-                    <div class="col-3"></div>
-                </div>
-            </div>
+        <!-- 雙圓背景03 -->
+        <div id="poe-cart-bg03">
         </div>
 
-        <!-- 購物車選單頁籤 -->
-        <div class="row justify-content-center poe-bookmark">
-            <div class="col-12 col-md-8 col-xl-6">
-
-                <div class="d-flex justify-content-between txt-btn">
-                    <a class="col poe-bookmark-label poe-bookmark-label-active">購買餐券</a>
-                    <a class="col poe-bookmark-label">餐點配送</a>
-                    <a class="col poe-bookmark-label">預約廚房</a>
-                </div>
-
-                <form class="poe-bookmark-content txt-btn">
-                    <h5>選購方案</h5>
-                    <table class="table table-borderless table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col">組合明細</th>
-                                <th class="d-none d-sm-block text-right text-nowrap" scope="col">優惠價</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row"><input type="radio" name="poePlan"></th>
-                                <td>
-                                    <span>吃飽飽沒煩惱組合</span>
-                                    <br class="d-block d-sm-none">
-                                    <span class="txt-cap poe-red">(包含20張餐卷, 加贈5張免費餐券)</span>
-                                    <br class="d-block d-sm-none">
-                                    <div class="d-block d-sm-none d-flex txt-cap">
-                                        <span class="poe-bookmark-content-m">優惠價</span><span class="poe-red">3500</span>
-                                    </div>
-                                </td>
-                                <td class="d-none d-sm-block poe-red text-right">3500</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><input type="radio" name="poePlan"></th>
-                                <td>
-                                    <span>食在很滿足組合</span>
-                                    <br class="d-block d-sm-none">
-                                    <span class="txt-cap poe-red">(包含10張餐卷, 加贈2張免費餐券)</span>
-                                    <br class="d-block d-sm-none">
-                                    <div class="d-block d-sm-none d-flex txt-cap">
-                                        <span class="poe-bookmark-content-m">優惠價</span><span class="poe-red">1700</span>
-                                    </div>
-                                </td>
-                                <td class="d-none d-sm-block poe-red text-right">1700</td>
-                            </tr>
-                            <tr>
-                                <th scope="row"><input type="radio" name="poePlan"></th>
-                                <td>
-                                    <span>經濟實惠組</span>
-                                    <br class="d-block d-sm-none">
-                                    <span class="txt-cap poe-red">(包含5張餐卷, 加贈1張免費餐券)</span>
-                                    <br class="d-block d-sm-none">
-                                    <div class="d-block d-sm-none d-flex txt-cap">
-                                        <span class="poe-bookmark-content-m">優惠價</span><span class="poe-red">850</span>
-                                    </div>
-                                </td>
-                                <td class="d-none d-sm-block poe-red text-right">850</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <div class="poe-bookmark-content-choice text-right">
-                        <span class="">組合數量</span>
-                        <a href="" class="mx-3"><i class="fas fa-minus-circle"></i></a>
-                        <span>2</span>
-                        <a href="" class="mx-3"><i class="fas fa-plus-circle"></i></a>
-                    </div>
-                    <div class="poe-bookmark-content-result text-right">
-                        <span>共 </span>
-                        <span class="poe-red">2</span>
-                        <span> 組, 包含 </span>
-                        <span class="poe-red">50</span>
-                        <span> 張餐券, <br class="d-block d-sm-none">金額小計NT$ </span>
-                        <span class="poe-red">7,000</span>
-                        <span> 元</span>
-                    </div>
-                    <div class="text-right poe-bookmark-btn-group">
-                        <a href="" class="btn-green">下一步　<i class="fas fa-chevron-right"></i></a>
-                    </div>
-                </form>
-
-            </div>
+        <!-- 紅圓背景02 -->
+        <div id="poe-cart-bg02">
         </div>
-    </div>
+
+        <!-- 吉祥物背景01 -->
+        <div id="poe-cart-bg01">
+        </div>
+
+        <div class="row justify-content-center txt-btn">
+            <div class="col-6 col-sm-4 col-md-3 poe-md30">
+                <div class="w-100 poe-circle poe-mb20">
+                    <img class="w-100" src="/public/img/cart/Mask Group 153.png" alt="">
+                </div>
+                <div class="text-center">我再想想</div>
+            </div><div class="col-6 col-sm-4 col-md-3 poe-md30">
+                <div class="w-100 poe-circle poe-mb20">
+                    <img class="w-100" src="/public/img/cart/Mask Group 153.png" alt="">
+                </div>
+                <div class="text-center">我再想想</div>
+            </div><div class="col-6 col-sm-4 col-md-3 poe-md30">
+                <div class="w-100 poe-circle poe-mb20">
+                    <img class="w-100" src="/public/img/cart/Mask Group 153.png" alt="">
+                </div>
+                <div class="text-center">我再想想</div>
+            </div><div class="col-6 col-sm-4 col-md-3 poe-md30">
+                <div class="w-100 poe-circle poe-mb20">
+                    <img class="w-100" src="/public/img/cart/Mask Group 153.png" alt="">
+                </div>
+                <div class="text-center">我再想想</div>
+            </div><div class="col-6 col-sm-4 col-md-3 poe-md30">
+                <div class="w-100 poe-circle poe-mb20">
+                    <img class="w-100" src="/public/img/cart/Mask Group 153.png" alt="">
+                </div>
+                <div class="text-center">我再想想</div>
+            </div><div class="col-6 col-sm-4 col-md-3 poe-md30">
+                <div class="w-100 poe-circle poe-mb20">
+                    <img class="w-100" src="/public/img/cart/Mask Group 153.png" alt="">
+                </div>
+                <div class="text-center">我再想想</div>
+            </div><div class="col-6 col-sm-4 col-md-3 poe-md30">
+                <div class="w-100 poe-circle poe-mb20">
+                    <img class="w-100" src="/public/img/cart/Mask Group 153.png" alt="">
+                </div>
+                <div class="text-center">我再想想</div>
+            </div><div class="col-6 col-sm-4 col-md-3 poe-md30">
+                <div class="w-100 poe-circle poe-mb20">
+                    <img class="w-100" src="/public/img/cart/Mask Group 153.png" alt="">
+                </div>
+                <div class="text-center">我再想想</div>
+            </div>
+            
+        </div>
+
+
+
     </div>
 
 

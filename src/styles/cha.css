@@ -1,0 +1,117 @@
+  .cha-main{
+    height: 500px;
+    /* background-color: rgb(219, 245, 125); */
+    overflow: hidden;
+  }
+  .cha-main-pic {
+    padding: 0;
+    top: -210px;
+  }
+  .cha-main-pic2{
+    width: 100%;
+    height: 100%;
+    /* background-color: rgb(201, 93, 67); */
+    object-fit: contain;
+    /* bottom: 300px; */
+    /* overflow: hidden; */
+  }
+  .cha-main-txt{
+    padding: 0;
+  }
+  .cha-main-txt1 {
+    height: 100px;
+    /* background-color: rgb(120, 161, 44); */
+    line-height: 100px;
+    color: #a2a3a5;
+  }
+  
+  .cha-main-txt2 {
+    height: 400px;
+    /* background-color: rgb(48, 118, 184); */
+    padding-left: 186px;
+    padding-top: 100px;
+  }
+  
+  
+  .cha-green{
+    color:#627e2a;
+  }
+  .cha-white{
+    color:#FFFFFF;
+  }
+  .cha-gray{
+    color:#A2A3A5;
+  }
+  .cha-red{
+    color:#B9433B;
+  }
+  .cha-yellow{
+    color:#F3E575;
+  }
+  .cha-black{
+    color:#434341;
+  }
+
+  .cha-star-big{
+    letter-spacing:12px;
+    font-size: 24px;
+  }
+  .cha-star-small{
+    letter-spacing:12px;
+    font-size: 12px;
+  }
+  .cha-mr4{
+    margin-right: 40px;
+  }
+  .cha-mr5{
+    margin-right: 50px;
+  }
+  .cha-mb3{
+    margin-bottom: 30px;
+  }
+  .cha-mb2{
+    margin-bottom: 20px;
+  }
+  .cha-mb1{
+    margin-bottom: 10px;
+  }
+  .cha-mb0{
+    margin-bottom: 0px;
+  }
+  .cha-cards {
+    height: 270px;
+    /* background-color: rgb(194, 202, 77); */
+  }
+  .cha-footer {
+    height: 100px;
+    /* background-color: rgb(95, 59, 180); */
+  }
+  .cha-card{
+    height: 270px;
+    width: 230px;
+    padding-top: 60px;
+    margin: 0 30px 0 30px;
+    /* background-color: red; */
+}
+.cha-card-yellow{
+    height: 210px;
+    width: 230px;
+    background-color:rgba(243,229,117,0.5);
+    border-radius: 25px;
+}
+.cha-card-img1{
+  /* background-color: royalblue; */
+  /* position: relative; */
+  text-align: center;
+  top: -65px;
+    position: relative;
+}
+.cha-card-img2{
+    height: 145px;
+    width: 100%;
+    object-fit: contain;   
+}
+
+.cha-rights{
+    line-height: 100px;
+}

@@ -1,0 +1,286 @@
+.fff-no-mr-and-pad{
+    margin:0px;
+    padding:0px;
+}
+
+@media (min-width: 0px) {
+  .fff-txt-info {
+    font-size: 14px;
+    font-family: GenSenRounded TW;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.29px;
+    text-decoration: none;
+  }
+  .fff-txt-points {
+    font-size: 16px;
+    font-family: GenSenRounded TW;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.29px;
+    text-decoration: none;
+    color: #b9433b;
+  }
+  .txt-btn {
+    font-family: GenSenRounded TW;
+    font-size: 14px;
+    text-decoration: none !important;
+    letter-spacing: 0.24px;
+  }
+  .fff-info-pic {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: darkgrey;
+    margin-right: 10px;
+  }
+  .btn-white {
+    background-color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 50px;
+    color: #627e2a;
+    border: 1px #627e2a solid;
+    display: inline-block;
+    margin: 5px;
+  }
+  .fff-my-info-box {
+    height: 120px;
+    border-radius: 25px;
+    border: 1px black solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+  }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .fff-txt-info {
+    font-size: 14px;
+    font-family: GenSenRounded TW;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.29px;
+    text-decoration: none;
+  }
+  .fff-txt-points {
+    font-size: 16px;
+    font-family: GenSenRounded TW;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.29px;
+    text-decoration: none;
+    color: #b9433b;
+  }
+  .txt-btn {
+    font-family: GenSenRounded TW;
+    font-size: 14px;
+    text-decoration: none !important;
+    letter-spacing: 0.24px;
+  }
+  .fff-info-pic {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: darkgrey;
+    margin-right: 10px;
+  }
+  .btn-white {
+    background-color: white;
+    width: 100px;
+    height: 50px;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 50px;
+    color: #627e2a;
+    border: 1px #627e2a solid;
+    display: inline-block;
+    margin: 5px;
+  }
+  .fff-my-info-box {
+    height: 120px;
+    border-radius: 25px;
+    border: 1px black solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .fff-txt-info {
+    font-size: 16px;
+    font-family: GenSenRounded TW;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.29px;
+    text-decoration: none;
+  }
+  .fff-txt-points {
+    font-size: 21px;
+    font-family: GenSenRounded TW;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.29px;
+    text-decoration: none;
+    color: #b9433b;
+  }
+  .fff-info-pic {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: darkgrey;
+    margin-right: 15px;
+  }
+  .btn-white {
+    background-color: white;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 50px;
+    color: #627e2a;
+    border: 1px #627e2a solid;
+    display: inline-block;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .fff-txt-info {
+    font-size: 21px;
+    font-family: GenSenRounded TW;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.29px;
+    text-decoration: none;
+  }
+  .fff-txt-points {
+    font-size: 24px;
+    font-family: GenSenRounded TW;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.29px;
+    text-decoration: none;
+    color: #b9433b;
+  }
+  .fff-info-pic {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: darkgrey;
+    margin-right: 30px;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .fff-txt-info {
+    font-size: 21px;
+    font-family: GenSenRounded TW;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.29px;
+    text-decoration: none;
+  }
+  .fff-txt-points {
+    font-size: 24px;
+    font-family: GenSenRounded TW;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.29px;
+    text-decoration: none;
+    color: #b9433b;
+  }
+  .fff-info-pic {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: darkgrey;
+    margin-right: 30px;
+  }
+}
+
+.fff-select-area{
+    height: 80px;
+    margin-bottom: 60px;
+}
+
+.fff-txt-ms-select {
+  font-size: 16px;
+  color: #a2a3a5;
+}
+
+.fff-txt-ms-select-active {
+  color: #434341;
+}
+
+.fff-ms-select-line {
+  background-color: #a2a3a5;
+  border-radius: 2.5px;
+  height: 5px;
+ 
+}
+
+.fff-ms-select-active {
+  height: 10px;
+  background-color: #707070;
+  border-radius: 5px;
+}
+
+.fff-txt-ms-unselect{
+    color: #a2a3a5;
+}
+
+.fff-stone-item-box {
+    margin-bottom: 90px;
+
+}
+
+.fff-stone-item-icon {
+  height: 165px;
+  width: 165px;
+  border-radius: 50%;
+  background-color: gray;
+  margin-bottom: 25px;
+ 
+}
+
+.fff-stone-item-forword {
+  color: #627e2a;
+  font-size: 35px;
+
+}
+
+.fff-dialoag{
+    background-color: white;
+    width: 600px;
+    border-radius: 25px;
+    text-align: left;
+    line-height: 30px;
+    border: 5px #627e2a solid;
+} 
+
+#fff-record-table{
+    width: 100%;
+    text-align: center;
+}
+
+#fff-record-table a{
+color: #627e2a;
+}
+.fff-reward-unuse{
+    color: #BA463E;
+}
+
+.fff-reward-used{
+    color: #434341;
+}

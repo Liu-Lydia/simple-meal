@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="../styles/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../styles/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="../styles/public.css">
-    <link rel="stylesheet" href="../styles/header.css" />
-    <link rel="stylesheet" href="../styles/poe.css">
+    <link rel="stylesheet" href="../../styles/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../styles/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../styles/public.css">
+    <link rel="stylesheet" href="../../styles/header.css" />
+    <link rel="stylesheet" href="../../styles/poe.css">
 
 </head>
 
@@ -19,7 +19,7 @@
             <div class="col">
                 <nav class="navbar navbar-expand-lg navbar-light p-0">
                     <a class="navbar-brand p-0 lll-distance-logo" href="#">
-                        <img src="../../public/img/lydia/SimpleMeal_LOGO.png" class="lll-logo-square" />
+                        <img src="../../../public/img/lydia/SimpleMeal_LOGO.png" class="lll-logo-square" />
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -98,8 +98,24 @@
 
     <div class="container my-5">
 
+
+        <!-- 雙圓背景03 -->
+        <div id="poe-cart-bg03">
+        </div>
+
+        <!-- 紅圓背景02 -->
+        <div id="poe-cart-bg02">
+        </div>
+
+        <!-- 吉祥物背景01 -->
+        <div id="poe-cart-bg01">
+        </div>
+
+
+
+
         <!-- 購物進度指示條 -->
-        <div class="row justify-content-center mb-5 txt-btn poe-cart-progress">
+        <div class="row justify-content-center poe-mb30 txt-btn poe-cart-progress">
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="d-flex justify-content-between text-center">
                     <div class="col-3">選擇方案 </div>
@@ -159,13 +175,15 @@
                         <a href="" class="mx-3"><i class="fas fa-plus-circle"></i></a>
                     </div> -->
                     <div class="poe-bookmark-content-result text-right">
-                        <span>共 </span>
-                        <span class="poe-red">2</span>
-                        <span> 組, 包含 </span>
-                        <span class="poe-red">50</span>
-                        <span> 張餐券, <br class="d-block d-sm-none">金額小計NT$ </span>
-                        <span class="poe-red">7,000</span>
-                        <span> 元</span>
+                        <div>
+                            <span>共 </span>
+                            <span class="poe-red">2</span>
+                            <span> 組, 包含 </span>
+                            <span class="poe-red">50</span>
+                            <span> 張餐券, <br class="d-block d-sm-none">金額小計NT$ </span>
+                            <span class="poe-red">7,000</span>
+                            <span> 元</span>
+                        </div>
                     </div>
                     <!-- <div class="text-right poe-bookmark-btn-group">
                         <a href="" class="btn-green">下一步　<i class="fas fa-chevron-right"></i></a>
@@ -243,9 +261,19 @@
 
         </div>
 
+        <!-- 上下一步 -->
+        <div class="row justify-content-center text-center text-sm-right poe-bookmark-btn-group">
+            <div class="col-12 col-md-8 col-xl-6">
+                <a href="./cart-meal-coupon.html" class="btn-gray txt-btn mx-2 poe-mb20"><i
+                        class="fas fa-chevron-left"></i>　上一步</a>
+                <a href="./cart-meal-coupon-check.html" class="btn-green txt-btn mx-2 poe-mb20">下一步　<i
+                        class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
 
-    </div>
-    </div>
+
+
+
     </div>
 
 
