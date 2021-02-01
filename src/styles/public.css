@@ -108,14 +108,14 @@ h6 {
   display: inline-block;
 }
 .select-btn-green:hover {
-  background-color: white;
+  background-color: #5b722d;
   width: 120px;
   height: 40px;
   border-radius: 10px;
   text-align: center;
   line-height: 40px;
-  color:  #627e2a;
-  border: 1px #627e2a solid;
+  color: white;
+  border: 1px#5b722d solid;
   display: inline-block;
   transition: 0.2s;
 }
@@ -132,7 +132,7 @@ h6 {
   display: inline-block;
 }
 .select-btn-white:hover {
-  background-color:#627e2a;
+  background-color: #627e2a;
   width: 120px;
   height: 40px;
   border-radius: 10px;
@@ -255,8 +255,8 @@ h6 {
   border-radius: 25px;
   text-align: center;
   line-height: 50px;
-  color: #A2A3A5;
-  border: 1px #A2A3A5 solid;
+  color: #a2a3a5;
+  border: 1px #a2a3a5 solid;
   display: inline-block;
   transition: 0.2s;
 }
