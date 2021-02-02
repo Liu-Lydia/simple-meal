@@ -3,20 +3,31 @@ import React from 'react'
 function Test() {
   return (
     <>
+      <div className="row">
+        <h1 className="poe-red">測試用的</h1>
+      </div>
       <div className="row justify-content-center">
         <div className="col-6">
+          <h3>直接在react寫style</h3>
           <div
-            className="w-100"
+            className="w-100 my-5"
             style={{
-              // backgroundImage: '',
               background:
                 'url(/img/cart/bg/lemonUFO-Go.PNG) center center no-repeat',
               backgroundSize: 'contain',
               height: '200px',
             }}
           ></div>
-          <div className="poe-test"></div>
-          <img className="w-100" src="/img/cart/bg/lemonUFO-Go.PNG" alt="" />
+
+          <h3>掛CSS Class(CSS對應public資料夾路徑?)</h3>
+          <div className="poe-test my-5"></div>
+          <h3>圖片(絕對路徑)</h3>
+
+          <img
+            className="w-100 my-5"
+            src="/img/cart/bg/lemonUFO-Go.PNG"
+            alt=""
+          />
         </div>
       </div>
 

@@ -299,8 +299,9 @@
 }
 
 .poe-test {
-  /* background: url('/public/img/cart/bg/lemonUFO-Go.PNG') center center no-repeat; */
-  width: 100%;
+  background: url('/styles/only.png') center center no-repeat;
+  /* background: url('/styles/only.png') center center no-repeat; */
+  width: 200px;
   height: 200px;
   background-size: contain;
 }
