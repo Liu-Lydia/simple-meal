@@ -7,7 +7,7 @@
 
 .lll-first-picture {
   height: 550px;
-  background: url('./../../public/img/lydia/surprisekitcheninit.png');
+  background: url('http://localhost:3015/img/lydia/surprisekitcheninit.png');
   background-size: cover;
 }
 
@@ -60,14 +60,9 @@
 
 @media (max-width: 576px) {
   .lll-text-position {
-    margin-top: 280px;
-  }
-}
-
-@media (max-width: 576px) {
-  .lll-text-position {
     margin-top: 100px;
     text-align: right;
+    max-width: 100%;
   }
 }
 
@@ -124,8 +119,6 @@
   padding-bottom: 50px;
 }
 
-
-
 @media (max-width: 576px) {
   .lll-button-distance {
     padding-bottom: 300px;
@@ -135,6 +128,8 @@
 @media (max-width: 576px) {
   .lll-mobile-btn {
     text-align: center;
+    padding-top: 300px;
+    max-width: 100%;
   }
 }
 
@@ -213,8 +208,24 @@
   padding-bottom: 30px;
 }
 
-.lll-detile-text-grey {
-  color: #a2a3a5;
+@media (max-width: 992px) {
+  .lll-title-style {
+   font-size: 21px;
+   padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 992px) {
+  .lll-trans-block{
+   display: inline-block !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .lll-trans-block > p {
+   font-size: 12px;
+   margin-bottom:0;
+  }
 }
 
 /* 展開, 隱藏切換按鈕 */
@@ -254,12 +265,28 @@
 }
 
 /* 預約驚喜廚房選單 */
+@media (max-width: 992px) {
+  .lll-appoint-w100 {
+    max-width: 100%;
+  }
+}
+
+.lll-allheight{
+  height: 680px;
+}
+
+@media (max-width: 1700px) {
+  .lll-allheight {
+    height: 1270px;
+  }
+}
+
 .lll-selected-position {
   padding-top: 20px;
   padding-bottom: 60px;
 }
 
-.lll-detile-text-black {
+.lll-black {
   color: #434341;
 }
 
@@ -268,9 +295,10 @@
   height: 305px;
   background: #fff;
   margin-bottom: 60px;
+  padding-top: 20px;
 }
 
-.lll-calendar-body {
+.lll-pt30 {
   padding-top: 30px;
 }
 
@@ -280,8 +308,8 @@
 
 .lll-body-list li {
   width: 14.28%;
-  height: 45px;
-  line-height: 45px;
+  height: 50px;
+  line-height: 50px;
   list-style-type: none;
   display: block;
   box-sizing: border-box;
@@ -318,7 +346,7 @@
 }
 
 .lll-li-grey {
-  background: url(../../public/img/lydia/SVG/grey.svg) no-repeat;
+  background: url('http://localhost:3015/img/lydia/SVG/grey.svg') no-repeat;
   background-size: 16px;
   line-height: 16px;
   padding-left: 28px;
@@ -326,7 +354,7 @@
 }
 
 .lll-li-green {
-  background: url(../../public/img/lydia/SVG/green.svg) no-repeat;
+  background: url('http://localhost:3015/img/lydia/SVG/green.svg') no-repeat;
   background-size: 16px;
   line-height: 16px;
   padding-left: 28px;
@@ -334,7 +362,7 @@
 }
 
 .lll-li-red {
-  background: url(../../public/img/lydia/SVG/red.svg) no-repeat;
+  background: url('http://localhost:3015/img/lydia/SVG/red.svg') no-repeat;
   background-size: 16px;
   line-height: 16px;
   padding-left: 28px;
@@ -350,6 +378,16 @@
 }
 
 /* 請選擇場次 */
+.lll-tims-position{
+  margin-top: 100px;
+}
+
+@media (max-width: 588px) {
+  .lll-tims-position {
+    margin-top: 220px;
+  }
+}
+
 .lll-select-btn-white {
   background-color: white;
   width: 80px;
@@ -434,25 +472,88 @@
   padding-right: 30px;
 }
 
-.lll-ml-position{
+.lll-ml-position {
   width: 397px;
   position: relative;
-  top: -495px;
+  top: -537px;
 }
 
-.lll-pb30{
+@media (max-width: 1700px) {
+  .lll-ml-position {
+    display: inline-block;
+    position: relative;
+    left: 0;
+    top: 60px;
+  }
+}
+
+.lll-pb30 {
   padding-bottom: 30px;
 }
 
-.lll-pb20{
+.lll-pb20 {
   padding-bottom: 20px;
 }
 
-.lll-msg{
+.lll-msg {
   background-color: white;
-  width: 398px;
+  width:100%;
   height: 90px;
   border-radius: 10px;
   border: 3px #627e2a solid;
+}
+
+.lll-msg-mb30{
+  margin-bottom: 30px;
+}
+
+/* 讓字跟24px垂直置中 */
+.lll-center{
+ padding-top: 4px;
+}
+
+.lll-price-line{
+  padding-top: 20px;
+  border-top: 3px solid #A2A3A5;
+}
+
+.lll-btn-mt10{
+  margin-top: 10px;
+}
+
+/* 驚喜廚房規則說明 */
+.lll-explain{
+  background-color: #F3E575;
+  height: 170px;
+  margin-top: 50px;
+  border-radius: 25px;
+}
+
+@media (max-width: 1700px) {
+  .lll-explain {
+    display: inline-block;
+    position: relative;
+    left: 0;
+    height: 250px;
+  }
+}
+
+@media (max-width: 992px) {
+  .lll-explain {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 588px) {
+  .lll-explain {
+    margin-top: 170px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .lll-explain > .txt-sub1{
+    font-size: 12px;
+  }
 }
 
