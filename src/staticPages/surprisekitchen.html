@@ -17,7 +17,7 @@
     <div class="container-fluid">
       <div class="row">
         <!-- header試放 -->
-        <div class="container">
+        <div class="container col-sm-center">
           <div class="row align-items-center header-height">
             <div class="col">
               <nav class="navbar navbar-expand-lg navbar-light p-0">
@@ -130,7 +130,7 @@
         <!-- 第一版文字 -->
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 lll-text-position">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm lll-text-position">
               <div class="col-xl-6 lll-text-rwd">
                 <h2 class="m-0 lll-firstpage-title">驚喜廚房預約</h2>
                 <p class="txt-sub1 lll-detile-style">
@@ -163,17 +163,17 @@
     <!-- 驚喜廚房第一版 -->
 
     <!-- 預約驚喜廚房 -->
-    <div class="container lll-appoint">
+    <div class="container lll-appoint col-sm-center">
       <div class="row justify-content-center">
-        <div class="col-8">
+        <div class="col-8 lll-appoint-w100">
           <!-- 驚喜廚房title, 3項內容 -->
           <h3 class="lll-title-style">驚喜廚房</h3>
-          <div class="d-flex p-0">
-            <p class="txt-sub1 lll-detile-text-grey">6日前可免費取消</p>
+          <div class="d-flex p-0 lll-trans-block">
+            <p class="txt-sub1 lll-grey">6日前可免費取消</p>
             &nbsp&nbsp&nbsp&nbsp
-            <p class="txt-sub1 lll-detile-text-grey">立即發送電子憑證</p>
+            <p class="txt-sub1 lll-grey">立即發送電子憑證</p>
             &nbsp&nbsp&nbsp&nbsp
-            <p class="txt-sub1 lll-detile-text-grey">備註即有專人核對確認</p>
+            <p class="txt-sub1 lll-grey">備註即有專人核對確認</p>
           </div>
           <!-- 驚喜廚房title, 3項內容 -->
 
@@ -194,17 +194,13 @@
           <!-- 預約展開和隱藏元件 -->
 
           <!-- 展開內容 -->
-          <div class="collapse" id="collapseExample">
+          <div class="collapse lll-allheight" id="collapseExample">
             <!-- 選擇日期、選項 / 全部重選 -->
             <div class="col p-0 d-flex">
-              <div
-                class="mr-auto txt-sub1 lll-selected-position lll-detile-text-black"
-              >
+              <div class="mr-auto txt-sub1 lll-selected-position lll-black">
                 選擇日期、選項
               </div>
-              <div
-                class="ml-auto txt-sub1 lll-selected-position lll-detile-text-grey"
-              >
+              <div class="ml-auto txt-sub1 lll-selected-position lll-grey">
                 <i class="fas fa-redo-alt"></i>&nbsp&nbsp&nbsp&nbsp全部重選
               </div>
             </div>
@@ -213,36 +209,30 @@
             <!-- 選擇日期日曆 / 人數、餐點等等 -->
             <div class="col p-0 d-dlex">
               <div class="mr-auto">
-                <p class="txt-sub1 lll-detile-text-black">請選擇預約日期</p>
+                <p class="txt-sub1 lll-black">請選擇預約日期</p>
 
                 <div class="lll-calendar">
                   <div
                     class="lll-calendar-title d-flex align-items-center justify-content-between"
                   >
                     <a href="" id="lll-prev"
-                      ><i class="fas fa-angle-left lll-detile-text-black"></i
+                      ><i class="fas fa-angle-left lll-black"></i
                     ></a>
-                    <p
-                      class="m-0 txt-sub1 lll-detile-text-black"
-                      id="lll-calendar-year"
-                    >
+                    <p class="m-0 txt-sub1 lll-black" id="lll-calendar-year">
                       Year
                     </p>
-                    <p
-                      class="m-0 txt-sub1 lll-detile-text-black"
-                      id="lll-calendar-title"
-                    >
+                    <p class="m-0 txt-sub1 lll-black" id="lll-calendar-title">
                       Month
                     </p>
                     <a href="" id="lll-next"
-                      ><i class="fas fa-angle-right lll-detile-text-black"></i
+                      ><i class="fas fa-angle-right lll-black"></i
                     ></a>
                   </div>
 
-                  <div class="lll-calendar-body">
-                    <div class="lll-detile-text-black lll-body-list">
+                  <div class="lll-pt30">
+                    <div class="lll-black lll-body-list">
                       <ul
-                        class="list-unstyled d-flex justify-content-between txt-sub1 lll-detile-text-black"
+                        class="list-unstyled d-flex justify-content-between txt-sub1 lll-black"
                       >
                         <li>一</li>
                         <li>二</li>
@@ -260,9 +250,7 @@
 
                   <!-- 標示名額顏色 -->
                   <div class="lll-option-position">
-                    <ul
-                      class="m-0 list-unstyled txt-sub1 lll-detile-text-black"
-                    >
+                    <ul class="m-0 list-unstyled txt-sub1 lll-black">
                       <li class="lll-li-grey">尚未開放</li>
                       <li class="lll-li-green">尚有名額</li>
                       <li class="lll-li-red">已額滿</li>
@@ -272,8 +260,8 @@
                 </div>
 
                 <!-- 請選擇場次 -->
-                <div>
-                  <p class="txt-sub1 lll-detile-text-black">請選擇場次</p>
+                <div class="lll-tims-position">
+                  <p class="txt-sub1 lll-black">請選擇場次</p>
                   <div class="d-flex">
                     <div class="lll-pr30">
                       <a href="" class="lll-select-btn-white txt-btn">10:00</a>
@@ -290,16 +278,12 @@
                 </div>
                 <!-- 請選擇場次 -->
               </div>
-
+              <!-- 右半部選擇項目 -->
               <div class="ml-auto lll-ml-position">
-                <p class="m-0 txt-sub1 lll-detile-text-black lll-pb30">
-                  請選擇人數
-                </p>
+                <p class="m-0 txt-sub1 lll-black lll-pb30">請選擇人數</p>
                 <!-- 選擇成人數量 -->
                 <div class="d-flex">
-                  <p class="m-0 txt-sub1 lll-detile-text-black lll-pb20">
-                    成人
-                  </p>
+                  <p class="m-0 txt-sub1 lll-black lll-pb20">成人</p>
 
                   <div class="ml-auto">
                     <span class="txt-sub1 lll-grey">500/每人</span
@@ -314,9 +298,7 @@
                 </div>
                 <!-- 選擇兒童數量 -->
                 <div class="d-flex">
-                  <p class="m-0 mr-3 txt-sub1 lll-detile-text-black lll-pb30">
-                    兒童
-                  </p>
+                  <p class="m-0 mr-3 txt-sub1 lll-black lll-pb30">兒童</p>
                   <span class="txt-sub1 lll-grey">(4-11歲)</span>
 
                   <div class="ml-auto">
@@ -332,9 +314,7 @@
                 </div>
                 <!-- 選擇餐點數量 -->
                 <div class="d-flex">
-                  <p class="m-0 txt-sub1 lll-detile-text-black lll-pb30">
-                    請選擇餐點數量
-                  </p>
+                  <p class="m-0 txt-sub1 lll-black lll-pb30">請選擇餐點數量</p>
 
                   <div class="ml-auto">
                     <a href="" class="mx-3 lll-grey"
@@ -347,10 +327,10 @@
                   </div>
                 </div>
                 <!-- 選填備註欄 -->
-                <div class="form-group">
+                <div class="form-group lll-msg-mb30">
                   <label
                     for="FormControlTextarea"
-                    class="m-0 txt-sub1 lll-detile-text-black lll-pb30"
+                    class="m-0 txt-sub1 lll-black lll-pb30"
                     >備註(葷、素、不吃牛等特殊要求)</label
                   >
                   <textarea
@@ -359,11 +339,42 @@
                     rows="3"
                   ></textarea>
                 </div>
+                <!-- 選填備註欄 -->
+
+                <!-- 顯示價格 -->
+                <div class="d-flex justify-content-end lll-price-line">
+                  <p class="m-0 txt-sub2 lll-grey lll-center">依人數計價
+                    <span class="px-3 txt-sub2 lll-black">預約金額</span>
+                    <h5 class="m-0 lll-red">TWD 500</h5>
+                  </p>
+                </div>
+                <!-- 顯示價格 -->
+
+                <div class="d-flex justify-content-between lll-btn-mt10">
+                  <a href="" class="btn-green txt-btn">加入購物車</a>
+                  <a href="" class="btn-green txt-btn">立即預約</a>
+                </div>
               </div>
+
+              <!-- 右半部選擇項目 -->
             </div>
             <!-- 選擇日期日曆 / 人數、餐點等等 -->
           </div>
           <!-- 展開內容 -->
+
+          <div class="col lll-explain">
+            <p class="col-10 mx-auto mb-0 txt-sub1 lll-grey lll-pt30 lll-pb30">無論是家庭還是情侶亦或是朋友都適合來我們的驚喜廚房，我們提供俱全的廚房器具，和品質優良的食材，只需要線上預約，來到現場若需要指導也有專人服務，快來為自己準備一頓驚奇的餐點吧</p>
+           
+              <ul class="col-10 mx-auto d-flex m-0 justify-content-between list-unstyled txt-sub1 lll-grey">
+                <li class="lll-li-green aa">盲選料理</li>
+                <li class="lll-li-green">QRcode入場</li>
+                <li class="lll-li-green">線上預約</li>
+                <li class="lll-li-green">會員積點</li>
+              </ul>
+           
+
+          </div>
+
         </div>
       </div>
     </div>
