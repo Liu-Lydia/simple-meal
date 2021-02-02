@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+// 使用套件
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+
+// 頁面元件
+import Test from './pages/Test'
+
+// 組合用元件
+import MainContent from './components/MainContent'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <>
+        <MainContent>
+          <Switch>
+            <Route path="/Test">
+              <Test />
+            </Route>
+          </Switch>
+        </MainContent>
+      </>
+    </Router>
+  )
 }
 
-export default App;
+export default App
