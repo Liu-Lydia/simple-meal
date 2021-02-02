@@ -115,3 +115,47 @@
 .cha-rights{
     line-height: 100px;
 }
+.cha-meun{
+  width: 200px;
+  height: 400px;
+  border-radius: 0 25px 25px 0;
+  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.5);
+  border: #A2A3A5 1px solid;
+  padding: 40px 25px 0 25px;
+  position: absolute;
+  bottom: 300px;
+}
+.cha-meun-li{
+  list-style-type:none;
+}
+.cha-meun-txt1{
+  line-height: 40px;
+ 
+}
+.cha-meun-txt1:hover{
+  color:#627e2a;
+  text-decoration: none;
+}
+.cha-search-put{
+  width: 150px;
+  height: 40px;
+  padding-left: 38px;
+  color:#a2a3a5;
+}
+.cha-search-put:hover{
+  width: 150px;
+  height: 40px;
+  padding-left: 38px;
+  color:#a2a3a5;
+}
+.cha-search-put:focus{
+  width: 150px;
+  height: 40px;
+  padding-left: 38px;
+  color:#a2a3a5;
+}
+.cha-search-icon{
+  position: relative;
+  left:15px;
+  bottom:33px
+}
