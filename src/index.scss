@@ -1,0 +1,39 @@
+/* 全站共同使用的樣式 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: GenSenRounded TW;
+}
+
+// 預設變數覆蓋需要在導入Bootstrap之前
+$primary: rgb(148, 36, 240);
+$secondary: rgba(10, 10, 10, 0.842);
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+@import '/src/styles/public.css';
+// @import '/src/styles/header.css';
+// @import '/src/styles/cha.css';
+// @import '/src/styles/fff.css';
+// @import '/src/styles/lydia.css';
+@import '/src/styles/poe.css';
+// @import '/src/styles/index.css';
+
+// @import './styles/public.css';
+// @import './styles/header.css';
+// @import './styles/cha.css';
+// @import './styles/fff.css';
+// @import './styles/lydia.css';
+// @import './styles/poe.css';
+// @import './styles/index.css';
+
+// 其它要導入覆蓋掉原本的預設bootstrap樣式要放在這下面
+
+// main > .container {
+//   padding: 60px 15px 0;
+// }
+
+// .footer {
+//   background-color: #ecc0c0;
+// }

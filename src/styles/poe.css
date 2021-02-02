@@ -229,7 +229,8 @@
 }
 
 #poe-cart-bg01 {
-  background: url('/public/img/cart/bg/lemonUFO-Go.PNG') center center no-repeat;
+  /* background: url('/img/cart/bg/lemonUFO-Go.PNG') center center no-repeat; */
+  /* background: url('/public/img/cart/bg/lemonUFO-Go.PNG') center center no-repeat; */
   background-size: contain;
   transform: scalex(-1);
   height: 200px;
@@ -261,7 +262,9 @@
 }
 
 #poe-cart-bg02 {
-  background: url('/public/img/cart/bg/red-circle.png') center center no-repeat;
+  /* background: url('/public/img/cart/bg/red-circle.png') center center no-repeat; */
+  /* background: url('../../public/img/cart/bg/red-circle.png') center center
+    no-repeat; */
   background-size: contain;
   height: 300px;
   width: 300px;
@@ -271,8 +274,8 @@
 }
 
 #poe-cart-bg03 {
-  background: url('/public/img/cart/bg/double-circle.png') center center
-    no-repeat;
+  /* background: url('/public/img/cart/bg/double-circle.png') center center
+    no-repeat; */
   background-size: contain;
   height: 420px;
   width: 250px;
@@ -288,9 +291,17 @@
   overflow: hidden;
 }
 
-.poe-red-line{
+.poe-red-line {
   width: 100%;
   height: 2px;
   background-color: #b9433b;
   margin: 20px 0;
+}
+
+.poe-test {
+  background: url('/styles/only.png') center center no-repeat;
+  /* background: url('/styles/only.png') center center no-repeat; */
+  width: 200px;
+  height: 200px;
+  background-size: contain;
 }
