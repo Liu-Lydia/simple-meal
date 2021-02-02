@@ -12,6 +12,7 @@ $secondary: rgba(10, 10, 10, 0.842);
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
 
+@import '/src/styles/fontawesome/css/all.css';
 @import '/src/styles/public.css';
 // @import '/src/styles/header.css';
 // @import '/src/styles/cha.css';
