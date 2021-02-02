@@ -120,9 +120,11 @@
   text-align: right;
 }
 
-.lll-button-distance {
+.lll-pb50 {
   padding-bottom: 50px;
 }
+
+
 
 @media (max-width: 576px) {
   .lll-button-distance {
@@ -265,6 +267,7 @@
   width: 298px;
   height: 305px;
   background: #fff;
+  margin-bottom: 60px;
 }
 
 .lll-calendar-body {
@@ -294,14 +297,153 @@
   color: #627e2a; /*尚有名額, 此月開放的日期*/
 }
 
-.lll-green-active{
-    width: 25px;
-    height: 25px;
-    border-radius: 12.5px;
-    background-color: #627e2a;
-    color: #ffffff;
+.lll-green-active {
+  width: 25px;
+  height: 25px;
+  border-radius: 12.5px;
+  background-color: #627e2a;
+  color: #ffffff;
 }
 
 .lll-red {
-    color: #B9433B; /*已額滿*/
+  color: #b9433b; /*已額滿*/
+}
+
+/* 標示名額顏色 */
+.lll-option-position {
+  display: inline-block;
+  position: relative;
+  left: 358px;
+  top: -105px;
+}
+
+.lll-li-grey {
+  background: url(../../public/img/lydia/SVG/grey.svg) no-repeat;
+  background-size: 16px;
+  line-height: 16px;
+  padding-left: 28px;
+  margin-bottom: 20px;
+}
+
+.lll-li-green {
+  background: url(../../public/img/lydia/SVG/green.svg) no-repeat;
+  background-size: 16px;
+  line-height: 16px;
+  padding-left: 28px;
+  margin-bottom: 20px;
+}
+
+.lll-li-red {
+  background: url(../../public/img/lydia/SVG/red.svg) no-repeat;
+  background-size: 16px;
+  line-height: 16px;
+  padding-left: 28px;
+}
+
+@media (max-width: 588px) {
+  .lll-option-position {
+    display: inline-block;
+    position: relative;
+    left: 0;
+    top: 30px;
+  }
+}
+
+/* 請選擇場次 */
+.lll-select-btn-white {
+  background-color: white;
+  width: 80px;
+  height: 35px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 35px;
+  color: #627e2a;
+  border: 1px #627e2a solid;
+  display: inline-block;
+}
+
+.lll-select-btn-white:hover {
+  background-color: #627e2a;
+  width: 80px;
+  height: 35px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 35px;
+  color: #ffffff;
+  border: 1px #627e2a solid;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+.lll-select-btn-white:active {
+  background-color: #627e2a;
+  width: 80px;
+  height: 35px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 35px;
+  color: #ffffff;
+  border: 1px #627e2a solid;
+  display: inline-block;
+}
+
+/* 已額滿的選項 */
+.lll-select-btn-tryover {
+  background-color: #ffffff;
+  width: 80px;
+  height: 35px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 35px;
+  color: #b9433b;
+  border: 1px #b9433b solid;
+  display: inline-block;
+}
+
+.lll-select-btn-tryover:hover {
+  background-color: #ffffff;
+  width: 80px;
+  height: 35px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 35px;
+  color: #b9433b;
+  border: 1px #b9433b solid;
+  display: inline-block;
+}
+
+.lll-txt-btndel {
+  font-family: GenSenRounded TW;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 35px;
+  letter-spacing: 0.24px;
+  text-decoration: line-through;
+}
+
+.lll-txt-btndel:hover {
+  font-family: GenSenRounded TW;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 35px;
+  letter-spacing: 0.24px;
+  text-decoration: line-through;
+}
+
+.lll-pr30 {
+  padding-right: 30px;
+}
+
+.lll-ml-position{
+  width: 397px;
+  position: relative;
+  top: -495px;
+}
+
+.lll-pb30{
+  padding-bottom: 30px;
+}
+
+.lll-pb20{
+  padding-bottom: 20px;
 }

@@ -49,16 +49,93 @@
 .col-black {
   color: #434341;
 }
+
 body {
   font-family: myfont !important;
 }
 .txt-cap {
   margin-bottom: 0;
 }
+
+/* p1 */
+.p1-bg{
+  height: 500px;
+  background-color: #F3E575;
+  border-radius: 75px;
+  margin-bottom: 200px;
+  padding: 0px;
+}
+.p1-left-div{
+  width: 318px;
+  height: 281px;
+  margin-top: 100px;
+  
+}
+.p1-text-size{
+  width: 193px;
+  height: 130px;
+}
+.p1-line{
+  position: absolute;
+  top: 245px;
+  width: 47px;
+  height: 1.6px;
+  background-color: #a2a3a5;
+}
+.p1-right-but{
+  margin-top: 300px;
+}
+.p1-change-line{
+  width: 90px;
+  height: 10px;
+  background-color: #A2A3A5;
+  opacity:0.3;
+  border-radius: 45px;
+}
+.p1-change{
+  position: absolute;
+  /* left: -100; */
+  width: 30px;
+  height: 10px;
+  border-radius: 45px;
+  background-color: #A2A3A5;
+}
+.p1-but-change1{
+  background-color:transparent;
+  border: transparent;
+  margin-right: 100px;
+}
+.p1-but-change2{
+  background-color:transparent;
+  border: transparent;
+  margin-left: 100px;
+
+}
+.p1-img-div{
+max-width: 620px;
+max-height: 614.44px;
+padding: 0px;
+position: absolute;
+left: 500px;
+top: 50px;
+
+}
+.p1-scroll-btn{
+  background-color: #F3E575;
+  border-radius: 75px;
+  width: 60px;
+  height: 20px;
+  color: white;
+  border: transparent;
+  margin-bottom: 200px;
+}
 /* p2 */
 .p2-img-div {
   max-width: 977px;
   max-height: 647px;
+}
+.p2-mb{
+  margin-bottom: 50px;
 }
 /* p3 */
 .p3-img-div {
@@ -94,24 +171,32 @@ body {
 .p3-line-button {
   width: 80px;
   height: 10px;
-  background-color:#434341;
+  background-color: #434341;
   border-radius: 45px;
-  
+  border-color: transparent;
 }
-.p3LineButtonDiv{
+.p3LineButtonDiv {
   position: relative;
-  top: -55px;
+  top: -66px;
   margin-left: auto;
   margin-right: auto;
-  
 }
 
 /* p5 */
+.p5-mb{
+  margin-bottom: 200px;
+}
 .p5-bg {
   background-color: #f3e575;
   border-radius: 75px;
   height: 400px;
   margin-bottom: 200px;
+}
+.p5-change{
+
+  position: absolute;
+  left:-90px;
+  top: 580px;
 }
 
 .p5-bg-t {
@@ -168,6 +253,16 @@ body {
   top: 220px;
   padding: 0;
   left: -710px;
+}
+.p5-but-change1{
+  background-color:transparent;
+  border: transparent;
+  margin-right: 50px;
+}
+.p5-but-change2{
+  background-color:transparent;
+  border: transparent;
+  margin-left: 50px;
 }
 .p7-font-div {
   max-width: 144px;
