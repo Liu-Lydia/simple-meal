@@ -1,6 +1,6 @@
   .cha-main{
     height: 500px;
-    /* background-color: rgb(219, 245, 125); */
+    background-color: rgb(219, 245, 125);
     overflow: hidden;
   }
   .cha-main-pic {
@@ -10,7 +10,7 @@
   .cha-main-pic2{
     width: 100%;
     height: 100%;
-    /* background-color: rgb(201, 93, 67); */
+    background-color: rgb(201, 93, 67);
     object-fit: contain;
     /* bottom: 300px; */
     /* overflow: hidden; */
@@ -20,7 +20,7 @@
   }
   .cha-main-txt1 {
     height: 100px;
-    /* background-color: rgb(120, 161, 44); */
+    background-color: rgb(120, 161, 44);
     line-height: 100px;
     color: #a2a3a5;
   }
@@ -28,10 +28,12 @@
   .cha-main-txt2 {
     height: 400px;
     /* background-color: rgb(48, 118, 184); */
-    padding-left: 186px;
-    padding-top: 100px;
   }
-  
+  .cha-main-txt2 {
+    position: relative;
+    left: 18%;
+    top:20%;
+  }
   
   .cha-green{
     color:#627e2a;
@@ -59,6 +61,15 @@
   .cha-star-small{
     letter-spacing:12px;
     font-size: 12px;
+  }
+  .cha-mr1{
+    margin-right: 10px;
+  }
+  .cha-mr2{
+    margin-right: 20px;
+  }
+  .cha-mr3{
+    margin-right: 30px;
   }
   .cha-mr4{
     margin-right: 40px;
@@ -122,8 +133,9 @@
   box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.5);
   border: #A2A3A5 1px solid;
   padding: 40px 25px 0 25px;
-  position: absolute;
-  bottom: 300px;
+  position: fixed;
+  top:335px;
+  background-color: #FFFFFF;
 }
 .cha-meun-li{
   list-style-type:none;
@@ -158,4 +170,66 @@
   position: relative;
   left:15px;
   bottom:33px
+}
+.cha-cart{
+  width: 350px;
+  height: 500px;
+  border-radius: 25px 0 0 25px;
+  box-shadow: -6px 0 5px rgba(0, 0, 0, 0.5);
+  border: #A2A3A5 1px solid;
+  padding: 40px 0 0 20px;
+  position: fixed;
+  top:335px;
+  background-color: #FFFFFF;
+}
+.cha-cart-all{
+  width: 300px;
+  height: 370px;
+  /* background-color: burlywood; */
+  padding: 0;
+}
+.cha-cart-head{
+  /* background-color: aquamarine; */
+  height: 70px;
+  
+}
+.cha-cart-user{
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  background-color: #a2a3a5;
+  /* margin-left: 50px; */
+
+}
+.cha-cart-user-txt{
+  margin-top: 7px;
+}
+.cha-cart-user-meal{
+  height: 200px;
+  /* background-color: rgb(54, 189, 36); */
+  overflow-y: auto;
+}
+.cha-cart-main-title{
+  margin-bottom: 15px;
+}
+/* .cha-cart-main-title1{
+margin-left: 46px;
+} */
+.cha-cart-main-title2{
+  margin-left: 30px;
+}
+.cha-cart-main-title3{
+  margin-right: 20px;
+}
+.cha-cart-footer{
+  /* background-color: rgb(180, 34, 161); */
+  width: 300px;
+}
+.cha-cart-meal-only{
+  text-align: center;
+  line-height: 0;
+  margin-top: 20px;
+}
+.cha-icon{
+  font-size: 25px;
 }
