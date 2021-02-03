@@ -3,6 +3,7 @@
   padding: 0px;
 }
 
+
 @media (min-width: 0px) {
   .fff-txt-info {
     font-size: 14px;
@@ -283,9 +284,8 @@
   color: #a2a3a5;
 }
 
-.fff-stone-item-box {
-  margin-bottom: 90px;
-}
+
+
 
 .fff-stone-item-icon {
   margin-bottom: 25px;
@@ -320,3 +320,39 @@
 .fff-reward-used {
   color: #434341;
 }
+
+.fff-stone-item-box {
+  margin-bottom: 90px;
+  max-width:200px;
+}
+
+.fff-svg-painting{
+  width:200px;
+  height: 200px;
+  background-image: url("../../public/img/fff/reward-Env.png");
+
+  background-repeat: no-repeat;
+  background-size: 160px 160px;
+  background-position:20px 20px;
+}
+
+.fff-milestone-background-svg{
+  cx:100;
+  cy:100;
+  r:80;
+  stroke:#D0D1D2;
+  stroke-width: 5;
+  fill:none;
+}
+
+.fff-milestone-progress-svg{
+  cx:100;
+  cy:100;
+  r:80;
+  stroke:#f3e575;
+  stroke-width: 10;
+  fill:none;
+  stroke-dasharray: 150,400;
+  transform-origin: center;
+}
+
