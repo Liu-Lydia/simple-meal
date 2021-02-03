@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 // 頁面元件
 import Test from './pages/Test'
 import TestDatabase from './pages/TestDatabase'
+import Cart from './pages/Cart'
 
 // 組合用元件
 import MainContent from './components/MainContent'
@@ -15,6 +16,9 @@ function App() {
       <>
         <MainContent>
           <Switch>
+            <Route path="/Cart">
+              <Cart />
+            </Route>
             <Route path="/TestDatabase">
               <TestDatabase />
             </Route>
