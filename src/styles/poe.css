@@ -270,18 +270,18 @@
   background-size: contain;
   height: 300px;
   width: 300px;
-  position: absolute;
+  position: fixed;
   left: -5%;
-  bottom: -30%;
+  bottom: -10%;
 }
 
 #poe-cart-bg03 {
-  background: url('http://localhost:3015/img/cart/bg/double-circle.png')
-    center center no-repeat;
+  background: url('http://localhost:3015/img/cart/bg/double-circle.png') center
+    center no-repeat;
   background-size: contain;
   height: 420px;
   width: 250px;
-  position: absolute;
+  position: fixed;
   right: 0%;
   top: 150px;
   overflow: hidden;
@@ -307,4 +307,12 @@
   width: 200px;
   height: 200px;
   background-size: contain;
+}
+
+.poe-w100px {
+  width: 100px;
+}
+
+.poe-bbgreen {
+  border-bottom: 2px solid #5a7e0c;
 }

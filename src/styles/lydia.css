@@ -210,21 +210,24 @@
 
 @media (max-width: 992px) {
   .lll-title-style {
-   font-size: 21px;
-   padding-bottom: 10px;
+    font-size: 36px;
+    padding-bottom: 10px;
   }
 }
 
 @media (max-width: 992px) {
-  .lll-trans-block{
-   display: inline-block !important;
+  .lll-trans-block {
+    display: inline-block !important;
   }
 }
 
 @media (max-width: 992px) {
   .lll-trans-block > p {
-   font-size: 12px;
-   margin-bottom:0;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    margin-bottom: 0;
   }
 }
 
@@ -271,7 +274,7 @@
   }
 }
 
-.lll-allheight{
+.lll-allheight {
   height: 680px;
 }
 
@@ -378,7 +381,7 @@
 }
 
 /* 請選擇場次 */
-.lll-tims-position{
+.lll-tims-position {
   margin-top: 100px;
 }
 
@@ -478,6 +481,12 @@
   top: -537px;
 }
 
+@media (max-width: 588px) {
+  .lll-ml-position {
+    width: 344px;
+  }
+}
+
 @media (max-width: 1700px) {
   .lll-ml-position {
     display: inline-block;
@@ -497,33 +506,33 @@
 
 .lll-msg {
   background-color: white;
-  width:100%;
+  width: 100%;
   height: 90px;
   border-radius: 10px;
   border: 3px #627e2a solid;
 }
 
-.lll-msg-mb30{
+.lll-msg-mb30 {
   margin-bottom: 30px;
 }
 
 /* 讓字跟24px垂直置中 */
-.lll-center{
- padding-top: 4px;
+.lll-center {
+  padding-top: 4px;
 }
 
-.lll-price-line{
+.lll-price-line {
   padding-top: 20px;
-  border-top: 3px solid #A2A3A5;
+  border-top: 3px solid #a2a3a5;
 }
 
-.lll-btn-mt10{
+.lll-btn-mt10 {
   margin-top: 10px;
 }
 
 /* 驚喜廚房規則說明 */
-.lll-explain{
-  background-color: #F3E575;
+.lll-explain {
+  background-color: #f3e575;
   height: 170px;
   margin-top: 50px;
   border-radius: 25px;
@@ -552,8 +561,71 @@
 }
 
 @media (max-width: 992px) {
-  .lll-explain > .txt-sub1{
+  .lll-explain > .txt-sub1 {
     font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.2px;
   }
 }
 
+/* 預約規則說明 */
+.lll-title-line {
+  padding-top: 50px;
+  border-top: 5px solid #a2a3a5;
+}
+
+.lll-mt110 {
+  margin-top: 110px;
+}
+
+.lll-pb45 {
+  padding-bottom: 45px;
+}
+
+@media (max-width: 992px) {
+  .lll-12px {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+  }
+}
+
+/* 顧客評論 */
+.lll-section {
+  width: 100%;
+  height: 425px;
+  background-color: #ffffff;
+  padding: 30px 0 30px 0;
+  overflow: auto;
+}
+
+.lll-lineheigh {
+  line-height: 28px;
+}
+
+@media (max-width: 992px) {
+  .lll-title-line > p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 1700px) {
+  .lll-change-max100 {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .lll-change-max100 > p {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+  }
+}
