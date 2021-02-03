@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react'
 import Test from './pages/Test'
 import TestDatabase from './pages/TestDatabase'
 import Cart from './pages/Cart'
+import Calendar from './pages/Calendar'
 
 // 組合用元件
 import MainContent from './components/MainContent'
