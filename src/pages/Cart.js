@@ -38,7 +38,6 @@ function Cart() {
               className={`col poe-bookmark-label ${
                 cartMode === 'SimpleMealCoupon' && 'poe-bookmark-label-active'
               }`}
-              // "col poe-bookmark-label poe-bookmark-label-active"
             >
               購買餐券
             </button>

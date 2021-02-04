@@ -16,8 +16,8 @@ function CartReserveKitchen() {
         <div className="d-flex poe-mb30">
           <div className="text-right poe-w100px poe-mr30">成人</div>
           <div className="poe-green">
-            5 人 / NT$ 2,500{' '}
-            <span className="d-none d-sm-block txt-cap poe-ml30 poe-red">
+            5 人 / NT$ 2,500
+            <span className="d-none d-sm-inline txt-cap poe-ml30 poe-red">
               成人500/人
             </span>
           </div>
@@ -25,8 +25,8 @@ function CartReserveKitchen() {
         <div className="d-flex poe-mb30">
           <div className="text-right poe-w100px poe-mr30">兒童</div>
           <div className="poe-green">
-            3 人 / NT$ 300{' '}
-            <span className="d-none d-sm-block txt-cap poe-ml30 poe-red">
+            3 人 / NT$ 300
+            <span className="d-none d-sm-inline txt-cap poe-ml30 poe-red">
               兒童100/人(4-11歲)
             </span>
           </div>
@@ -45,7 +45,7 @@ function CartReserveKitchen() {
         <span className="poe-red">8</span>
         <span>
           {' '}
-          人, <br className="d-block d-sm-none" />
+          人, <br className="d-inline d-sm-none" />
           金額小計NT${' '}
         </span>
         <span className="poe-red">2,800</span>
