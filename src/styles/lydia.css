@@ -320,6 +320,17 @@
   text-align: center;
 }
 
+.lll-body-list-item {
+  width: 14.28%;
+  height: 50px;
+  line-height: 50px;
+  list-style-type: none;
+  display: block;
+  box-sizing: border-box;
+  float: left;
+  text-align: center;
+}
+
 /* 日期選項顏色 */
 .lll-grey {
   color: #a2a3a5; /* 尚未開放, 過去的時間*/
@@ -629,4 +640,3 @@
     letter-spacing: 0.2px;
   }
 }
-
