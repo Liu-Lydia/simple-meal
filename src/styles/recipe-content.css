@@ -1,0 +1,34 @@
+.img-size {
+  width: 100%;
+  height: 100%;
+}
+/* 顏色 */
+.col-green {
+  color: #627e2a;
+}
+.col-gray {
+  color: #a2a3a5;
+}
+.col-red {
+  color: #b9433b;
+}
+.col-black {
+  color: #434341;
+}
+
+body {
+  font-family: myfont !important;
+}
+
+
+.xxx-bdiv{
+    /* border-radius: 25px; */
+    border: 3px solid #627E2A;
+    height: 3000px;
+    padding: 0px;
+}
+.xxx-img-div{
+    background : url("../../public/img/sharerecipe/photo-1546069901-d5bfd2cbfb1f.jpeg") center;
+    border-radius: 25px 25px 0 0;
+height: 419px;
+}
