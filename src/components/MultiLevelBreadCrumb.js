@@ -48,14 +48,21 @@ function MultiLevelBreadCrumb(props) {
 
   return (
     <>
-      <nav aria-label="breadcrumb">
-        <ol className="breadcrumb">
-          <li className="breadcrumb-item">
-            <Link to="/">首頁</Link>
-          </li>
-          {formatText(findPathnameIndex(location.pathname))}
-        </ol>
-      </nav>
+      <div className="row justify-content-center">
+        <div className="col-10">
+          <nav aria-label="breadcrumb">
+            <ol
+              className="breadcrumb"
+              style={{ backgroundColor: 'transparent' }}
+            >
+              <li className="breadcrumb-item">
+                <Link to="/">首頁</Link>
+              </li>
+              {formatText(findPathnameIndex(location.pathname))}
+            </ol>
+          </nav>
+        </div>
+      </div>
     </>
   )
 }

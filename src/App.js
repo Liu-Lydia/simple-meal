@@ -11,6 +11,7 @@ import Long2 from './pages/Long2'
 // import Calendar from './pages/Calendar'
 
 // 組合用元件
+import Header from './components/Header'
 import MainContent from './components/MainContent'
 import ScrollToTop from './components/ScrollToTop'
 import MultiLevelBreadCrumb from './components/MultiLevelBreadCrumb'
@@ -20,6 +21,7 @@ function App() {
   return (
     <Router>
       <>
+        <Header />
         <Link to="/Long1">1111111111</Link>
         <Link to="/Long2">2222222222</Link>
         {/* 主內容 */}
