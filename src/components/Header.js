@@ -8,6 +8,7 @@ import {
   Button,
 } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
+import HeaderIcon from './HeaderIcon'
 
 function Header() {
   return (
@@ -25,20 +26,20 @@ function Header() {
       </div> */}
       <div className="container-fluid container-lg txt-btn">
         <div className="row">
-          <div
+          {/* <div
             className="col"
             style={{ background: 'red', height: '10px' }}
           ></div>
           <div
             className="col"
             style={{ background: 'blue', height: '10px' }}
-          ></div>
+          ></div> */}
         </div>
         <div className="row justify-content-center">
           <div className="col col-lg-10">
-            <Navbar bg="light" expand="lg">
+            <Navbar expand="lg" collapseOnSelect="true">
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
-              <Navbar.Brand className="mx-auto" to="/">
+              <Navbar.Brand as={NavLink} className="mx-auto" to="/">
                 <img
                   src="/img/lydia/SimpleMeal_LOGO.png"
                   class="lll-logo-square"
@@ -81,24 +82,32 @@ function Header() {
                       LongPage2
                     </Nav.Link>
                   </NavDropdown> */}
-                  <Nav.Link as={NavLink} to="/none" className="mx-3">
-                    <i class="fas fa-shopping-cart"></i>
-                  </Nav.Link>
-                  <Nav.Link as={NavLink} to="/none" className="mx-3">
-                    <i class="fas fa-medal"></i>
-                  </Nav.Link>
-                  <Nav.Link as={NavLink} to="/none" className="mx-3">
-                    <i class="fas fa-user"></i>
-                  </Nav.Link>
-                  <Nav.Link as={NavLink} to="/none" className="mx-3">
-                    <i class="far fa-question-circle"></i>
-                  </Nav.Link>
+                  <HeaderIcon
+                    text={'購物車'}
+                    url={'/cart'}
+                    fa={'fas fa-shopping-cart'}
+                  ></HeaderIcon>
+                  <HeaderIcon
+                    text={'我的成就'}
+                    url={'/none'}
+                    fa={'fas fa-medal'}
+                  ></HeaderIcon>
+                  <HeaderIcon
+                    text={'會員中心'}
+                    url={'/none'}
+                    fa={'fas fa-user'}
+                  ></HeaderIcon>
+                  <HeaderIcon
+                    text={'問題回答'}
+                    url={'/none'}
+                    fa={'far fa-question-circle'}
+                  ></HeaderIcon>
                 </Nav>
               </Navbar.Collapse>
-              <div
+              {/* <button
                 className="d-block d-xl-none"
                 style={{ height: '56px', width: '40px' }}
-              ></div>
+              ></button> */}
             </Navbar>
           </div>
         </div>
