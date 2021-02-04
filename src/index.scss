@@ -6,8 +6,8 @@ body {
 }
 
 // 預設變數覆蓋需要在導入Bootstrap之前
-$primary: rgb(148, 36, 240);
-$secondary: rgba(10, 10, 10, 0.842);
+$primary: #434341;
+$secondary: #a2a3a5;
 
 // Import Bootstrap and its default variables
 // @import '~bootstrap/scss/bootstrap.scss';
@@ -17,10 +17,10 @@ $secondary: rgba(10, 10, 10, 0.842);
 
 @import '/src/styles/fontawesome/css/all.css';
 @import '/src/styles/public.css';
-// @import '/src/styles/header.css';
+@import '/src/styles/header.css';
 // @import '/src/styles/cha.css';
 // @import '/src/styles/fff.css';
-// @import '/src/styles/lydia.css';
+@import '/src/styles/lydia.css';
 @import '/src/styles/poe.css';
 // @import '/src/styles/index.css';
 
