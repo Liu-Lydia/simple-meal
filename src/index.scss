@@ -10,7 +10,10 @@ $primary: rgb(148, 36, 240);
 $secondary: rgba(10, 10, 10, 0.842);
 
 // Import Bootstrap and its default variables
-@import '~bootstrap/scss/bootstrap.scss';
+// @import '~bootstrap/scss/bootstrap.scss';
+
+// 因為新增響應式斷點, 引用bootstrap的來源有修改
+@import './src/styles/bootstrap/scss/bootstrap.scss';
 
 @import '/src/styles/fontawesome/css/all.css';
 @import '/src/styles/public.css';
@@ -38,3 +41,19 @@ $secondary: rgba(10, 10, 10, 0.842);
 // .footer {
 //   background-color: #ecc0c0;
 // }
+// $container-max-widths: (
+//   sm: 540px,
+//   md: 720px,
+//   lg: 960px,
+//   xl: 1140px,
+//   xxl: 1640px,
+// ) !default;
+
+// $grid-breakpoints: (
+//   xs: 0,
+//   sm: 576px,
+//   md: 768px,
+//   lg: 992px,
+//   xl: 1200px,
+//   xxl: 1700px,
+// ) !default;
