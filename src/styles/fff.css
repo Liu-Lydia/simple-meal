@@ -57,6 +57,9 @@
     align-items: center;
     margin-top: 125px !important;
   }
+  .fff-reward-pic{
+    max-width:160px;
+  }
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -180,6 +183,9 @@
     background-color: darkgrey;
     margin-right: 30px;
   }
+  .fff-reward-pic{
+    width:160px;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -207,6 +213,9 @@
     border-radius: 50%;
     background-color: darkgrey;
     margin-right: 30px;
+  }
+  .fff-reward-pic{
+    width:200px;
   }
 }
 
@@ -355,4 +364,7 @@
   stroke-dasharray: 150,400;
   transform-origin: center;
 }
+
+
+
 
