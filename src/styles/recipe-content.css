@@ -19,13 +19,6 @@
 body {
   font-family: myfont !important;
 }
-
-.xxx-bdiv {
-  /* border-radius: 25px; */
-  /* border: 3px solid #627e2a; */
-  /* height: 3000px; */
-  padding: 0px;
-}
 .xxx-rc-p1 {
   width: 639px;
   margin-bottom: 50px;
@@ -58,6 +51,9 @@ body {
 }
 .xxx-rc-line {
   border-bottom: 1px solid #a2a3a5;
+  
+}
+.xxx-rc-pstep{
   padding: 0px;
 }
 .xxx-rc-bt {
@@ -76,14 +72,16 @@ body {
   margin-right: 20px;
 }
 .xxx-rc-comment {
-  max-width: 900px;
   margin: 5px;
 }
 .xxx-ul {
   list-style-type: none;
-  padding: 0px;
+  
 }
 .xxx-rc-icon {
   font-size: 30px;
-  margin-right: 130px;
+}
+.xxx-rc-textarea{
+  margin-left:150px;
+  margin-bottom: 100px;
 }
