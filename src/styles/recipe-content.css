@@ -20,15 +20,59 @@ body {
   font-family: myfont !important;
 }
 
-
-.xxx-bdiv{
-    /* border-radius: 25px; */
-    border: 3px solid #627E2A;
-    height: 3000px;
-    padding: 0px;
+.xxx-bdiv {
+  /* border-radius: 25px; */
+  /* border: 3px solid #627e2a; */
+  height: 3000px;
+  padding: 0px;
 }
-.xxx-img-div{
-    background : url("../../public/img/sharerecipe/photo-1546069901-d5bfd2cbfb1f.jpeg") center;
-    border-radius: 25px 25px 0 0;
-height: 419px;
+.xxx-rc-p1 {
+  width: 639px;
+  margin-bottom: 50px;
+}
+.xxx-rc-p2 {
+  margin-bottom: 50px;
+}
+.xxx-rc-circle {
+  width: 45px;
+  height: 45px;
+  background-color: #b9433b;
+  color: #ffffff;
+  border-radius: 45px;
+  font-size: 30px;
+}
+
+.xxx-img-div {
+  background: url('../../public/img/sharerecipe/photo-1546069901-d5bfd2cbfb1f.jpeg') 
+    center;
+  border-radius: 25px 25px 0 0;
+  height: 419px;
+}
+.xxx-rc-step{
+  margin-bottom: 30px;
+}
+.xxx-rc-line{
+  border-bottom: 1px solid #a2a3a5;
+  padding: 0px;
+}
+.xxx-rc-bt{
+  background-color: #fff;
+  border-color: transparent;
+  margin-right: 10px;
+}
+.xxx-rc-dmugshot{
+  height: 73px;
+  width: 73px;
+  border-radius: 45px;
+  
+}
+.xxx-rc-name{
+  margin-right: 20px;
+}
+.xxx-rc-comment{
+  max-width: 900px;
+}
+.xxx-ul{
+  list-style-type:none;
+  padding: 0px;
 }

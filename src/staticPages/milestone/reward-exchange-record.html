@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的成就</title>
+    <title>獎勵兌換紀錄</title>
     <link rel="stylesheet" href="../styles/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="../styles/public.css">
@@ -124,7 +124,7 @@
                     <div id='howToGetPoints' class="btn-white txt-btn">集點方式</div>
                 </div>
                 <div class="">
-                    <a href="./reward-exchange.html" class="btn-white txt-btn">兌換獎勵</a>
+                    <a href="./milestone-list.html" class="btn-white txt-btn">我的成就</a>
                 </div>
             </div>
 
@@ -133,162 +133,102 @@
 
         </div>
     </div>
-    <!-- 中間留空 -->
-    <div class="div" style="height:530px ;"></div>
-    <!-- 成就清單分類區-->
+    <div class="div" style="height:75px ;"></div>
+
+    <div class="container"></div>
+    <!-- 獎勵分類 -->
     <div class="container">
-
-        <div class="row justify-content-center text-center">
-            <!-- 成就分類文字-->
-            <div class="col-12 col-md-11 col-xl-10 d-flex justify-content-center fff-txt-ms-select">
-                <div class="col-12 col-lg-8 col-xl-7 d-flex justify-content-between">
-                    <div class="col col-sm-2 mx-1 mx-sm-auto px-0" style="color: brown;">&nbsp;限時活動&nbsp;</div>
-                    <div class="col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-select-active">&nbsp;全部成就&nbsp;</div>
-                    <div class="col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-unselect">已達成成就</div>
-                    <div class="col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-unselect">未達成成就</div>
-                </div>
+        <div class="row justify-content-center fff-select-area">
+            <div class="col-12 d-flex justify-content-center text-center fff-txt-ms-select">
+                <a class="col-xl-2 col-lg-3 fff-txt-rw-unselect">合作廠商優惠</a>
+                <a class="col-xl-2 col-lg-3 fff-txt-rw-unselect" href="./reward-exchange.html">&nbsp;購物金回饋&nbsp;</a>
+                <a class="col-xl-2 col-lg-3 fff-txt-rw-select-active" href="./reward-exchange-record.html">兌換紀錄</a>
             </div>
-            <!-- 那條Bar -->
-            <div class="col-12 col-md-11 col-xl-10 d-flex justify-content-center fff-ms-select-line">
-                <div class="col-12  col-lg-8 col-xl-7 d-flex justify-content-between align-items-center">
-                    <div class="col col-sm-2 mx-1 mx-sm-auto "></div>
-                    <div class="col col-sm-2 mx-1 mx-sm-auto fff-ms-select-active"></div>
-                    <div class="col col-sm-2 mx-1 mx-sm-auto "></div>
-                    <div class="col col-sm-2 mx-1 mx-sm-auto "></div>
-                </div>
-            </div>
-            <!-- 過濾器 -->
-            <div class="col-10 d-flex flex-row-reverse align-items-center">
-                <span>不過濾已結束活動</span><input type="checkbox">
-            </div>
-            <div class="col-1"></div>
 
         </div>
+        <div class="row justify-content-center fff-txt-ms-select fff-select-area">
+            <div class="col-12 d-flex justify-content-center text-center align-items-center fff-rw-select-line">
+                <div class="col-xl-2 col-lg-3 d-flex justify-content-center">
+                    <div class="col-9 "></div>
+                </div>
+                <div class="col-xl-2 col-lg-3 d-flex justify-content-center">
+                    <div class="col-9 "></div>
+                </div>
+                <div class="col-xl-2 col-lg-3 d-flex justify-content-center">
+                    <div class="col-9 fff-rw-select-active"></div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+        </div>
+        <!-- 整個成就清單區 -->
+        <div class="row fff-no-mr-and-pad">
+            <!--保留空格 -->
+            <div class="col-2 fff-no-mr-and-pad"></div>
 
 
+            <div class="col-8 fff-no-mr-and-pad" style="height: 210px;">
+                <div class="row d-flex align-items-center justify-content-around fff-no-mr-and-pad">
+                    <table id="fff-record-table">
+                        <tr>
+                            <th>項次</th>
+                            <th>兌換項目</th>
+                            <th>兌換日期</th>
+                            <th>到期日期</th>
+                            <th>使用狀況</th>
+                            <th>優惠條碼</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>50元折價卷</td>
+                            <td>2020/01/15</td>
+                            <td>2020/02/15</td>
+                            <td class="fff-reward-used">已使用</td>
+                            <td><a href="#">檢視</a></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>星巴克買一送一</td>
+                            <td>2020/01/15</td>
+                            <td>2020/02/15</td>
+                            <td class="fff-reward-unuse">可使用</td>
+                            <td><a href="#">檢視</a></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>星巴克買一送一</td>
+                            <td>2020/01/15</td>
+                            <td>2020/02/15</td>
+                            <td class="fff-reward-unuse">可使用</td>
+                            <td><a href="#">檢視</a></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>50元折價卷</td>
+                            <td>2020/01/15</td>
+                            <td>2020/02/15</td>
+                            <td class="fff-reward-used">已使用</td>
+                            <td><a href="#">檢視</a></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>50元折價卷</td>
+                            <td>2020/01/15</td>
+                            <td>2020/02/15</td>
+                            <td class="fff-reward-used">已使用</td>
+                            <td><a href="#">檢視</a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!--保留空格 -->
+            <div class="col-2 fff-no-mr-and-pad"></div>
+        </div>
     </div>
-
-
-    <div class="container">
-    </div>
-    <!-- 整個成就清單區 -->
-    <div class="row fff-no-mr-and-pad">
-        <!--保留空格 -->
-        <div class="col-1 fff-no-mr-and-pad"></div>
-        <!-- 左翻按鍵 -->
-        <div class="col-1 d-flex align-items-center fff-no-mr-and-pad">
-            <i class="fas fa-chevron-circle-left fff-stone-item-forword"></i>
-        </div>
-        <!-- 成就display8個 -->
-        <div class="col-8 fff-no-mr-and-pad " style="height: 510px;">
-            <div class="row fff-no-mr-and-pad d-flex align-items-center justify-content-around">
-                <div class="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
-                    <div class="fff-stone-item-box justify-content-center">
-                        <svg class="fff-svg-painting">
-                            <circle class="fff-milestone-background-svg d-flex justify-content-center" style="display: block;"/>
-                            <circle class="fff-milestone-progress-svg d-flex justify-content-center" transform="rotate(-90)" style="display: block;">
-                                <animate class="fff-milestone-progress-ani" attributeName="stroke-dasharray" values="0,400;150,400" dur="1s" repeatCount="1" />
-                            </circle>
-                           
-                        </svg>
-                        <span class="d-flex justify-content-center">環保尖兵</span>
-                    </div>
-                </div>
-                <div class="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
-                    <div class="fff-stone-item-box justify-content-center">
-                        <svg class="fff-svg-painting">
-                            <circle class="fff-milestone-background-svg d-flex justify-content-center" style="display: block;"/>
-                            <circle class="fff-milestone-progress-svg d-flex justify-content-center" transform="rotate(-90)" style="display: block;">
-                                <animate class="fff-milestone-progress-ani" attributeName="stroke-dasharray" values="0,400;150,400" dur="1s" repeatCount="1" />
-                            </circle>
-                           
-                        </svg>
-                        <span class="d-flex justify-content-center">環保尖兵</span>
-                    </div>
-                </div>
-                <div class="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
-                    <div class="fff-stone-item-box justify-content-center">
-                        <svg class="fff-svg-painting">
-                            <circle class="fff-milestone-background-svg d-flex justify-content-center" style="display: block;"/>
-                            <circle class="fff-milestone-progress-svg d-flex justify-content-center" transform="rotate(-90)" style="display: block;">
-                                <animate class="fff-milestone-progress-ani" attributeName="stroke-dasharray" values="0,400;150,400" dur="1s" repeatCount="1" />
-                            </circle>
-                           
-                        </svg>
-                        <span class="d-flex justify-content-center">環保尖兵</span>
-                    </div>
-                </div>
-                <div class="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
-                    <div class="fff-stone-item-box justify-content-center">
-                        <svg class="fff-svg-painting">
-                            <circle class="fff-milestone-background-svg d-flex justify-content-center" style="display: block;"/>
-                            <circle class="fff-milestone-progress-svg d-flex justify-content-center" transform="rotate(-90)" style="display: block;">
-                                <animate class="fff-milestone-progress-ani" attributeName="stroke-dasharray" values="0,400;150,400" dur="1s" repeatCount="1" />
-                            </circle>
-                           
-                        </svg>
-                        <span class="d-flex justify-content-center">環保尖兵</span>
-                    </div>
-                </div>
-                <div class="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
-                    <div class="fff-stone-item-box justify-content-center">
-                        <svg class="fff-svg-painting">
-                            <circle class="fff-milestone-background-svg d-flex justify-content-center" style="display: block;"/>
-                            <circle class="fff-milestone-progress-svg d-flex justify-content-center" transform="rotate(-90)" style="display: block;">
-                                <animate class="fff-milestone-progress-ani" attributeName="stroke-dasharray" values="0,400;150,400" dur="1s" repeatCount="1" />
-                            </circle>
-                           
-                        </svg>
-                        <span class="d-flex justify-content-center">環保尖兵</span>
-                    </div>
-                </div>
-                <div class="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
-                    <div class="fff-stone-item-box justify-content-center">
-                        <svg class="fff-svg-painting">
-                            <circle class="fff-milestone-background-svg d-flex justify-content-center" style="display: block;"/>
-                            <circle class="fff-milestone-progress-svg d-flex justify-content-center" transform="rotate(-90)" style="display: block;">
-                                <animate class="fff-milestone-progress-ani" attributeName="stroke-dasharray" values="0,400;150,400" dur="1s" repeatCount="1" />
-                            </circle>
-                           
-                        </svg>
-                        <span class="d-flex justify-content-center">環保尖兵</span>
-                    </div>
-                </div>
-                <div class="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
-                    <div class="fff-stone-item-box justify-content-center">
-                        <svg class="fff-svg-painting">
-                            <circle class="fff-milestone-background-svg d-flex justify-content-center" style="display: block;"/>
-                            <circle class="fff-milestone-progress-svg d-flex justify-content-center" transform="rotate(-90)" style="display: block;">
-                                <animate class="fff-milestone-progress-ani" attributeName="stroke-dasharray" values="0,400;150,400" dur="1s" repeatCount="1" />
-                            </circle>
-                           
-                        </svg>
-                        <span class="d-flex justify-content-center">環保尖兵</span>
-                    </div>
-                </div>
-                <div class="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
-                    <div class="fff-stone-item-box justify-content-center">
-                        <svg class="fff-svg-painting">
-                            <circle class="fff-milestone-background-svg d-flex justify-content-center" style="display: block;"/>
-                            <circle class="fff-milestone-progress-svg d-flex justify-content-center" transform="rotate(-90)" style="display: block;">
-                                <animate class="fff-milestone-progress-ani" attributeName="stroke-dasharray" values="0,400;150,400" dur="1s" repeatCount="1" />
-                            </circle>
-                           
-                        </svg>
-                        <span class="d-flex justify-content-center">環保尖兵</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- 右翻按鍵 -->
-        <div class="col-1 d-flex align-items-center flex-row-reverse fff-no-mr-and-pad">
-            <i class="fas fa-chevron-circle-right fff-stone-item-forword"></i>
-        </div>
-        <!--保留空格 -->
-        <div class="col-1 fff-no-mr-and-pad"></div>
-    </div>
-
-
+    <!-- 跳出視窗 -->
     <div class="modal justify-content-center" tabindex="-1" role="dialog" id="testmsg">
         <div class="modal-dialog" role="document">
             <div class="modal-content fff-dialoag">
@@ -310,6 +250,8 @@
             </div>
         </div>
     </div>
+
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
