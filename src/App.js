@@ -22,8 +22,6 @@ function App() {
     <Router>
       <>
         <Header />
-        <Link to="/Long1">1111111111</Link>
-        <Link to="/Long2">2222222222</Link>
         {/* 主內容 */}
         <MainContent>
           <MultiLevelBreadCrumb />
