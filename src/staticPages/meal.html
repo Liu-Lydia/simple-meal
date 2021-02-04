@@ -65,7 +65,7 @@
       </div>
     </div> -->
     <div class="container justify-content-center d-flex">
-      <div class="col-10 row align-items-center header-height">
+      <div class="col-10 d-flex align-items-center header-height">
         <div class="col">
           <nav class="navbar navbar-expand-lg navbar-light p-0">
             <a class="navbar-brand p-0 lll-distance-logo" href="#">
@@ -182,42 +182,67 @@
         </div>
       </div>
     </div>
+    <div class="container justify-content-center d-flex ">
+    <div class="cha-search-put-top">
+      <input
+        type="text"
+        placeholder="搜尋餐點"
+        class="input-pic-style cha-search-put txt-sub2"
+      />
+      <i class="fas fa-search cha-search-icon2 cha-gray"></i>
+    </div>
+  </div>
     <div class="container justify-content-center d-flex">
       <div class="col-10">
-        <div class="d-flex cha-main ">
-          <div class="cha-main-pic col-5">
+        <div class="row cha-main">
+          <div class="cha-main-pic col-12 col-lg-5">
             <img
               class="cha-main-pic2"
               src="../../public/img/meal/hero02.png"
               alt=""
             />
+            <a href="" class="cha-pic-txt-recipt txt-cap cha-white">點擊查看食譜</a>
           </div>
-          <div class="cha-main-txt col-7">
+          <div class="cha-main-txt col-12 col-lg-7">
             <div class="cha-main-txt1 txt-sub1">首頁 > 菜單介紹 > 義式料理</div>
-            <div class="cha-main-txt2">
-              <div class="cha-main-txt3">
-              <h3 class="cha-mb3 cha-black">羅勒鮮蔬通心麵</h3>
-              <h5 class="cha-gray cha-mb2">有羅勒香和奶香的一頓餐點</h5>
-              <div class="cha-star cha-green cha-mb2">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i
-                ><i class="fas fa-star"></i><i class="fas fa-star"></i
-                ><i class="far fa-star"></i>
+            <div class="cha-main-txt2 d-flex justify-content-center">
+              <div class="cha-main-txt3  ">
+                <h3 class="cha-mb3 cha-black cha-main-txt-main">
+                  羅勒鮮蔬通心麵
+                </h3>
+                <h5 class="cha-gray cha-mb2 cha-main-txt-sub">
+                  有羅勒香和奶香的一頓餐點
+                </h5>
+                <div class="cha-star cha-green cha-mb2">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                  ><i class="far fa-star"></i>
+                </div>
+                <div class="cha-mb2 cha-main-icon-sub d-flex">
+                  <div class="cha-mr3 cha-main-icon-sub1">
+                    <i class="far fa-clock cha-star-big cha-green"></i
+                    ><i class="cha-gray">40分鐘</i>
+                  </div>
+                  <div class="cha-mr3 cha-main-icon-sub2">
+                    <i class="fas fa-tag cha-star-big cha-green"></i
+                    ><i class="cha-gray">義式料理</i>
+                  </div>
+                  <div class=" cha-main-icon-sub3">
+                    <i class="fas fa-heart cha-star-big cha-green"></i
+                    ><i class="cha-gray">加入收藏</i>
+                  </div>
+                </div>
+                <div>
+                  <a href="" class="cht-btn-cart btn-green cha-mr5">加入訂單</a>
+                  <a href="" class="cht-btn-recipe btn-white">查看食譜</a>
+                </div>
               </div>
-              <div class="cha-mb2 txt-sub1">
-                <i class="far fa-clock cha-star-big cha-green"></i
-                ><i class="cha-gray cha-mr4">40分鐘</i>
-                <i class="fas fa-tag cha-star-big cha-green"></i
-                ><i class="cha-gray">義式料理</i>
-              </div>
-              <div>
-                <a href="" class="btn-green cha-mr5">加入訂單</a>
-                <a href="" class="btn-white">查看食譜</a>
-              </div>
-            </div>
             </div>
           </div>
         </div>
-        <div class="cha-cards d-flex justify-content-center">
+        <div class="cha-cards d-flex justify-content-center ">
+          <i class="fas fa-chevron-circle-left cha-left-icon cha-green"></i>
+          <div class="d-flex cha-cards-over justify-content-center">
           <div class="cha-card">
             <div class="cha-card-yellow">
               <div class="cha-card-img1">
@@ -293,6 +318,8 @@
               </div>
             </div>
           </div>
+        </div>
+          <i class="fas fa-chevron-circle-right cha-rigth-icon cha-green"></i>
         </div>
         <div class="cha-footer">
           <p class="cha-rights txt-sub1 cha-gray">
@@ -329,6 +356,89 @@
           class="input-pic-style cha-search-put txt-sub2"
         />
         <i class="fas fa-search cha-search-icon cha-gray"></i>
+      </div>
+    </div>
+    <div class="cha-cart">
+      <div class="cha-cart-all">
+        <div class="cha-cart-head d-flex justify-content-between">
+          <a href="" class="cha-gray cha-icon"
+            ><i class="fas fa-minus-circle cha-icon"></i
+          ></a>
+          <a href="" class="cha-cart-user"></a>
+          <span class="cha-cart-user-txt txt-sub1">Lydia Liu</span>
+          <a href="" class="cha-yellow cha-icon">
+            <i class="fas fa-pen"></i>
+          </a>
+        </div>
+        <div class="cha-cart-main">
+          <div
+            class="d-flex txt-sub2 cha-green justify-content-between cha-cart-main-title px-4"
+          >
+            <span class="cha-cart-main-title1">餐點名稱</span>
+            <span class="cha-cart-main-title2">餐數</span>
+          </div>
+          <div class="cha-cart-user-meal txt-sub2 cha-green pl-4">
+            <div class="justify-content-between d-flex">
+              <span class="cha-cart-main-name">羅勒鮮蔬通心麵</span>
+              <span class="cha-cart-main-count">x1</span>
+            </div>
+            <div class="justify-content-between d-flex">
+              <span class="cha-cart-main-name">羅勒鮮蔬通心</span>
+              <span class="cha-cart-main-count">x23</span>
+            </div>
+            <div class="justify-content-between d-flex">
+              <span class="cha-cart-main-name">羅勒鮮蔬通</span>
+              <span class="cha-cart-main-count">x4</span>
+            </div>
+            <div class="justify-content-between d-flex">
+              <span class="cha-cart-main-name">羅勒鮮蔬</span>
+              <span class="cha-cart-main-count">x4</span>
+            </div>
+            <div class="justify-content-between d-flex">
+              <span class="cha-cart-main-name">羅勒鮮</span>
+              <span class="cha-cart-main-count">x4</span>
+            </div>
+            <div class="justify-content-between d-flex">
+              <span class="cha-cart-main-name">羅勒鮮蔬通心麵</span>
+              <span class="cha-cart-main-count">x4</span>
+            </div>
+            <div class="justify-content-between d-flex">
+              <span class="cha-cart-main-name">羅勒鮮蔬通心麵</span>
+              <span class="cha-cart-main-count">x4</span>
+            </div>
+            <div class="justify-content-between d-flex">
+              <span class="cha-cart-main-name">羅勒鮮蔬通心麵</span>
+              <span class="cha-cart-main-count">x4</span>
+            </div>
+            <div class="justify-content-between d-flex">
+              <span class="cha-cart-main-name">羅勒鮮蔬通心麵</span>
+              <span class="cha-cart-main-count">x4</span>
+            </div>
+            <div class="justify-content-between d-flex">
+              <span class="cha-cart-main-name">羅勒鮮蔬通心麵</span>
+              <span class="cha-cart-main-count">x4</span>
+            </div>
+            <div class="justify-content-between d-flex">
+              <span class="cha-cart-main-name">羅勒鮮蔬通心麵</span>
+              <span class="cha-cart-main-count">x4</span>
+            </div>
+            <div class="justify-content-between d-flex">
+              <span class="cha-cart-main-name">羅勒鮮蔬通心麵</span>
+              <span class="cha-cart-main-count">x4</span>
+            </div>
+            <div class="justify-content-between d-flex">
+              <span class="cha-cart-main-name">羅勒鮮蔬通心麵</span>
+              <span class="cha-cart-main-count">x4</span>
+            </div>
+          </div>
+        </div>
+        <div class="cha-cart-meal-only txt-sub2 cha-green">
+          <span class="cha-mr1">剩餘可選餐數</span><span>3</span><br />
+          <h5 class="cha-gray">------------------</h5>
+        </div>
+      </div>
+      <div class="cha-cart-footer justify-content-center d-flex">
+        <a href="" class="btn-green txt-btn">選項視窗</a>
       </div>
     </div>
     <script
