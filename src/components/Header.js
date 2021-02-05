@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Dropdown,
   Navbar,
@@ -12,6 +12,29 @@ import { NavLink } from 'react-router-dom'
 import HeaderIcon from './HeaderIcon'
 
 function Header() {
+  // 定義CSS物件
+  const cssObjNone = {
+    transform: 'translateX(-100px)',
+    opacity: '0',
+    transition: '0s',
+  }
+  const cssObjShow = {
+    transform: 'translateX(0px)',
+    opacity: '1',
+    transition: '3s',
+  }
+
+  const [cssObj, setCssObj] = useState(cssObjNone)
+
+  useEffect(() => {
+    // console.log(1)
+    setCssObj(cssObjShow)
+  }, [])
+  useEffect(() => {
+    // console.log(2)
+    return () => setCssObj(cssObjNone)
+  }, [])
+
   return (
     <>
       {/* <div className="container poe-bgR" style={{ height: '60px' }}>
@@ -54,6 +77,7 @@ function Header() {
                     src="/img/lydia/SimpleMeal_LOGO.png"
                     class="lll-logo-square"
                     alt=""
+                    style={cssObj}
                   />
                 </Navbar.Brand>
                 <Navbar.Collapse id="basic-navbar-nav">

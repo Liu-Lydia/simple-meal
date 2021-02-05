@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 function CartBg() {
   const cssObjNone = [
     {
-      transition: '1s',
+      transition: '0s',
       opacity: '1',
       transform: 'translate(-100px, -200px) rotate(30deg) scaleX(-1)',
     },
-    { transition: '2s', opacity: '0' },
-    { transition: '3s', opacity: '0' },
+    { transition: '0s', opacity: '0' },
+    { transition: '0s', opacity: '0' },
   ]
   const cssObjShow = [
     {
@@ -22,8 +22,12 @@ function CartBg() {
 
   const [cssObj, setCssObj] = useState(cssObjNone)
 
-  useEffect(() => setCssObj(cssObjShow), [])
   useEffect(() => {
+    // console.log(1)
+    setCssObj(cssObjShow)
+  }, [])
+  useEffect(() => {
+    // console.log(2)
     return () => setCssObj(cssObjNone)
   }, [])
 
