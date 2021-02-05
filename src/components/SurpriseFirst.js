@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function SurpriseFirst() {
+  function ScrollToOrder() {
+    window.scrollTo({
+      top: 300,
+      left: 0,
+      behavior: 'smooth',
+    })
+  }
+
   return (
     <>
-      <div className="container-fluid">
-        <div className="row">
+     
           {/* 第一版圖片 */}
           <div className="container-fluid">
             <div className="row">
@@ -27,7 +35,7 @@ function SurpriseFirst() {
                     等你來為自己準備一頓美好的餐點
                   </p>
                   <div className="lll-mobile-btn">
-                    <Link href="#" className="btn-red txt-btn">
+                    <Link to="#" className="btn-red txt-btn">
                       前往預約
                     </Link>
                   </div>
@@ -35,16 +43,15 @@ function SurpriseFirst() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
+     
 
       {/* scroll */}
       <div classNameName="container lll-scroll">
         <div classNameName="row">
           <div classNameName="col">
-            <a href="#" classNameName="btn-yello txt-cap">
+            <Link to="#" classNameName="btn-yello txt-cap">
               scroll
-            </a>
+            </Link>
           </div>
         </div>
       </div>
