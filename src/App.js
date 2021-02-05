@@ -9,6 +9,7 @@ import Cart from './pages/Cart'
 import Long1 from './pages/Long1'
 import Long2 from './pages/Long2'
 import Calendar from './pages/Calendar'
+import Milestone from './pages/Milestone'
 
 // 組合用元件
 import Header from './components/Header'
