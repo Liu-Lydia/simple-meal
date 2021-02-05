@@ -22,9 +22,15 @@ function CartBg() {
 
   const [cssObj, setCssObj] = useState(cssObjNone)
 
+  const handleSetCssObj = async () => {
+    setCssObj(cssObjNone)
+    setTimeout(() => {
+      setCssObj(cssObjShow)
+    }, 10)
+  }
+
   useEffect(() => {
-    // console.log(1)
-    setCssObj(cssObjShow)
+    handleSetCssObj()
   }, [])
   useEffect(() => {
     // console.log(2)
