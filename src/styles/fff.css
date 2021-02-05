@@ -3,7 +3,6 @@
   padding: 0px;
 }
 
-
 @media (min-width: 0px) {
   .fff-txt-info {
     font-size: 14px;
@@ -295,7 +294,6 @@
 
 
 
-
 .fff-stone-item-icon {
   margin-bottom: 25px;
 }
@@ -407,7 +405,6 @@ color: #a2a3a5;
 
 .fff-dialog p{
   margin-bottom: 0;
-  /* padding-bottom: 75px; */
 }
 
 
