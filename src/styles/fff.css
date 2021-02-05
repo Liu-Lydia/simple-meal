@@ -338,7 +338,7 @@
 .fff-svg-painting{
   width:200px;
   height: 200px;
-  background-image: url("../../../public/img/fff/reward-Env.png");
+  background-image: url('http://localhost:3015/img/fff/reward-Env.png');
 
   background-repeat: no-repeat;
   background-size: 160px 160px;
@@ -368,7 +368,7 @@
 .fff-svg-painting-detail{
   width:310px;
   height: 310px;
-  background-image: url("../../../public/img/fff/reward-Env.png");
+  background-image: url("http://localhost:3015/img/fff/reward-Env.png");
 
   background-repeat: no-repeat;
   background-size: 300px 300px;
@@ -408,3 +408,17 @@ color: #a2a3a5;
 }
 
 
+.circle-spin{
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
