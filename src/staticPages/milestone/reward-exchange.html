@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>獎勵兌換</title>
-    <link rel="stylesheet" href="../styles/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../styles/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="../styles/public.css">
-    <link rel="stylesheet" href="../styles/header.css" />
-    <link rel="stylesheet" href="../styles/poe.css">
-    <link rel="stylesheet" href="../styles/fff.css">
+    <link rel="stylesheet" href="../../styles/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../styles/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../styles/public.css">
+    <link rel="stylesheet" href="../../styles/header.css" />
+    <link rel="stylesheet" href="../../styles/poe.css">
+    <link rel="stylesheet" href="../../styles/fff.css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
             <div class="col">
                 <nav class="navbar navbar-expand-lg navbar-light p-0">
                     <a class="navbar-brand p-0 lll-distance-logo" href="#">
-                        <img src="../../public/img/lydia/SimpleMeal_LOGO.png" class="lll-logo-square" />
+                        <img src="../../../public/img/lydia/SimpleMeal_LOGO.png" class="lll-logo-square" />
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -107,7 +107,7 @@
             <div class="col-xl-9 col-lg-10 fff-my-info-box">
 
                 <div class="d-flex align-items-center">
-                    <img src="../../public/img/fff/fff-info-pic.png" class="fff-info-pic"></img>
+                    <img src="../../../public/img/fff/fff-info-pic.png" class="fff-info-pic"></img>
                     <span class="fff-txt-info">Lydia Liu</span>
                 </div>
 
@@ -182,27 +182,27 @@
                 <!-- 獎勵項目 -->
                 <div class="row fff-no-mr-and-pad d-flex align-items-center justify-content-space-between ">
                     <div class="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
-                        <div class="">
-                            <img  class="fff-reward-pic"src=../../public/img/fff/reward-Env.png alt="">
-                             <span class="d-flex justify-content-center">星巴克買一送一</span>
+                        <div class="exchange">
+                            <img class="fff-reward-pic" src=../../../public/img/fff/reward-Env.png alt="">
+                            <span class="d-flex justify-content-center">星巴克買一送一</span>
                         </div>
                     </div>
                     <div class="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
-                        <div class="">
-                            <img  class="fff-reward-pic"src=../../public/img/fff/reward-Env.png alt="">
-                             <span class="d-flex justify-content-center">星巴克買一送一</span>
+                        <div class="exchange">
+                            <img class="fff-reward-pic" src=../../../public/img/fff/reward-Env.png alt="">
+                            <span class="d-flex justify-content-center">星巴克買一送一</span>
                         </div>
                     </div>
                     <div class="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
-                        <div class="">
-                            <img  class="fff-reward-pic"src=../../public/img/fff/reward-Env.png alt="">
-                             <span class="d-flex justify-content-center">星巴克買一送一</span>
+                        <div class="exchange">
+                            <img class="fff-reward-pic" src=../../../public/img/fff/reward-Env.png alt="">
+                            <span class="d-flex justify-content-center">星巴克買一送一</span>
                         </div>
                     </div>
                     <div class="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
-                        <div class="">
-                            <img  class="fff-reward-pic"src=../../public/img/fff/reward-Env.png alt="">
-                             <span class="d-flex justify-content-center">星巴克買一送一</span>
+                        <div class="exchange">
+                            <img class="fff-reward-pic" src=../../../public/img/fff/reward-Env.png alt="">
+                            <span class="d-flex justify-content-center">星巴克買一送一</span>
                         </div>
                     </div>
                 </div>
@@ -218,72 +218,160 @@
         </div>
     </div>
 
-    <div class="modal justify-content-center" tabindex="-1" role="dialog" id="testmsg">
+    <div class="modal justify-content-center" tabindex="-1" role="dialog" id="testmsg" data-backdrop="false">
         <div class="modal-dialog" role="document">
-            <div class="modal-content fff-dialoag">
+            <div class="modal-content fff-dialog">
                 <div class="modal-body">
                     <div style="height: 200px;"></div>
                     <div class="row d-flex justify-content-center  flex-row">
 
-                        <span class="col-10 offset-1">
+                        <span class="col-12" style="padding:0 75px 90px 75px;">
                             我們用輕鬆活潑的方式記錄您在極簡煮易當中的冒險故事！並提供許多成就目標讓您可以用有趣的方式獲得額外的優惠！<br />
                             每一個達成的成就會提供相對應得獎勵點數，您可以使用點數換取站內或是相關企業的優惠卷！<br />
                             站內優惠會歸入您的會員資料方便您於購餐時選用，而兌換相關企業優惠會寄送QR Code至您的信箱，您也可以列印出來！<br />
                             詳細的優惠兌換紀錄可於會員中心查詢喔！</span>
-                        <div class="col-1"></div>
-                        <button type="button" class="col-4 offset-4 btn-white txt-btn"
-                            data-dismiss="modal">知道了！</button>
+                        <div class="d-flex justify-content-center">
+                            <button type="button" class="btn-white txt-btn" data-dismiss="modal">知道了！</button>
 
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        <div class="modal justify-content-center" tabindex="-1" role="dialog" id="exchange-dialog"
+            data-backdrop="false">
+            <div class="modal-dialog" role="document">
+                <div class="row modal-content fff-dialog">
+                    <div class="col-10 offset-1 d-flex justify-content-end  modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i class="fas fa-times" style="color: #627e2a"></i>
+                        </button>
+                    </div>
+                    <div class=" txt-sub1 col-8 offset-2 modal-body  d-flex justify-content-center flex-column">
+                        <div class="d-flex justify-content-between">
+                            <h6>你點選了</h6>
+                            <h6>購物金100元</h6>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p style="color: #627e2a;align-self: center;">選擇數量</p>
+                            <select name="" id="" style="height:16px;align-self: center;">
+                                <option value="0"></option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p style="color: #627e2a">花費點數</p>
+                            <h6 style="color: #b9433b;">50點</h6>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <p style="color: #627e2a">剩餘點數</p>
+                            <h6 style="color: #627e2a">1250點</h6>
+                        </div>
+                        <div>兌換說明：<br />
+                            以五十點成就點數兌換站內購物金100元，可於購買餐卷的結帳畫面使用。
+                            優惠卷兌換後使用期限為3個月
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <p style="color: #b9433b;">
+                                已兌換便無法退還點數喔！
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn-green txt-btn exchange-confirm"
+                            data-dismiss="modal">確定兌換</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal justify-content-center" tabindex="-1" role="dialog" id="exchange-confirm-dialog"
+            data-backdrop="false">
+            <div class="modal-dialog" role="document">
+                <div class="row modal-content fff-dialog">
+                    <div class="col-10 offset-1 d-flex justify-content-end  modal-body">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <i class="fas fa-times" style="color: #627e2a"></i>
+                        </button>
+                    </div>
+                    <div class=" txt-sub1 col-8 offset-2 modal-body  d-flex justify-content-center flex-column">
+                        <div class="d-flex justify-content-center">
+                            <h6 style="color: #627e2a">
+                                兌換成功
+                            </h6>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <p style="color: #b9433b">
+                                優惠碼已新增至會員中心囉！
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="button" class="btn-green txt-btn exchange-confirm"
+                            data-dismiss="modal">回前頁</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-        crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"></script>
 
-    <script>
-        // hover購物車icon效果
-        $("#blank-square-left-2").mouseover(function () {
-            $("#blank-square-left-1").css("left", "120px");
-        });
-        $("#blank-square-left-2").mouseleave(function () {
-            $("#blank-square-left-1").css("left", "210px");
-        });
+        <script>
+            // hover購物車icon效果
+            $("#blank-square-left-2").mouseover(function () {
+                $("#blank-square-left-1").css("left", "120px");
+            });
+            $("#blank-square-left-2").mouseleave(function () {
+                $("#blank-square-left-1").css("left", "210px");
+            });
 
-        // hover我的成就icon效果
-        $("#blank-square-left-3").mouseover(function () {
-            $("#blank-square-left-2").css("left", "69px");
-            $("#blank-square-left-1").css("left", "120px");
-        });
-        $("#blank-square-left-3").mouseleave(function () {
-            $("#blank-square-left-2").css("left", "145px");
-            $("#blank-square-left-1").css("left", "210px");
-        });
+            // hover我的成就icon效果
+            $("#blank-square-left-3").mouseover(function () {
+                $("#blank-square-left-2").css("left", "69px");
+                $("#blank-square-left-1").css("left", "120px");
+            });
+            $("#blank-square-left-3").mouseleave(function () {
+                $("#blank-square-left-2").css("left", "145px");
+                $("#blank-square-left-1").css("left", "210px");
+            });
 
-        //hover會員中心icon效果
-        $("#blank-square-left-4").mouseover(function () {
-            $("#blank-square-left-2").css("left", "69px");
-            $("#blank-square-left-1").css("left", "120px");
-            $("#blank-square-left-3").css("left", "0px");
-        });
-        $("#blank-square-left-4").mouseleave(function () {
-            $("#blank-square-left-2").css("left", "145px");
-            $("#blank-square-left-1").css("left", "210px");
-            $("#blank-square-left-3").css("left", "69px");
-        });
+            //hover會員中心icon效果
+            $("#blank-square-left-4").mouseover(function () {
+                $("#blank-square-left-2").css("left", "69px");
+                $("#blank-square-left-1").css("left", "120px");
+                $("#blank-square-left-3").css("left", "0px");
+            });
+            $("#blank-square-left-4").mouseleave(function () {
+                $("#blank-square-left-2").css("left", "145px");
+                $("#blank-square-left-1").css("left", "210px");
+                $("#blank-square-left-3").css("left", "69px");
+            });
 
-        $('#howToGetPoints').on('click', function () {
-            $('#testmsg').modal('show');
-        });
-    </script>
+            // 集點
+            $('#howToGetPoints').on('click', function () {
+                $('#testmsg').modal('show');
+            });
+            // 兌換
+            $('.exchange').on('click', function () {
+                $('#exchange-dialog').modal('show');
+            });
+            
+            // 確定兌換
+            $('.exchange-confirm').on('click', function () {
+                $('#exchange-confirm-dialog').modal('show');
+            });
+        </script>
 </body>
 
 </html>

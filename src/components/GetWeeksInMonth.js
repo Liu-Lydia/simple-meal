@@ -1,5 +1,5 @@
-import React from 'react'
-import moment from 'moment'
+// import React from 'react'
+// import moment from 'moment'
 
 const sevenDays = 7; //建立通用變數, 存放一週
 
@@ -32,9 +32,11 @@ function processWeekDays(mmt, isFirstWeek=false){
     return {weekDays, isFinished};
 }
 
+// 接收Calendar的moment***
+
 //取得當月每週資訊
-function GetWeeksInMonth(props){
-    const mmt = new moment();
+function GetWeeksInMonth(mmt){
+    // const mmt = new moment();
     const weekDayList = []; //存放每週的日期
 
     //處理第一週

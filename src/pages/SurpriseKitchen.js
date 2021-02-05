@@ -6,10 +6,11 @@ import calendar from '../reducers/calendar'
 import CalendarHeader from '../components/CalendarHeader'
 import CalendarWeekDay from '../components/CalendarWeekDay'
 import CalendarDate from '../components/CalendarDate'
+import SurpriseFirst from '../components/SurpriseFirst'
 
 export const AppStore = createContext()
 
-function Calendar() {
+function SurpriseKitchen() {
   const mmt = new moment()
   const timeReducer = useReducer(calendar, mmt.format('YYYY-MM-DD'))
   // let result = GetWeeksInMonth();
@@ -17,22 +18,9 @@ function Calendar() {
 
   return (
     <>
-      <AppStore.Provider value={{ timeReducer: timeReducer }}>
-        <div>
-          <h1>{'Calendar Demo'}</h1>
-
-          <div className="lll-calendar">
-            {/* <h1>{moment().format('YYYY-MM-DD')}</h1> */}
-            <CalendarHeader />
-            <div className="lll-pt30">
-              <CalendarWeekDay />
-              <CalendarDate />
-            </div>
-          </div>
-        </div>
-      </AppStore.Provider>
+      <SurpriseFirst />
     </>
   )
 }
 
-export default Calendar
+export default SurpriseKitchen

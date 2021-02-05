@@ -3,7 +3,6 @@
   padding: 0px;
 }
 
-
 @media (min-width: 0px) {
   .fff-txt-info {
     font-size: 14px;
@@ -295,7 +294,6 @@
 
 
 
-
 .fff-stone-item-icon {
   margin-bottom: 25px;
 }
@@ -305,13 +303,15 @@
   font-size: 35px;
 }
 
-.fff-dialoag {
+.fff-dialog {
   background-color: white;
-  width: 600px;
+  /* width: 600px; */
   border-radius: 25px;
   text-align: left;
   line-height: 30px;
   border: 5px #627e2a solid;
+  padding-bottom: 75px;
+  padding-top: 19px;
 }
 
 #fff-record-table {
@@ -319,7 +319,7 @@
   text-align: center;
 }
 
-#fff-record-table a {
+#fff-record-table div {
   color: #627e2a;
 }
 .fff-reward-unuse {
@@ -338,7 +338,7 @@
 .fff-svg-painting{
   width:200px;
   height: 200px;
-  background-image: url("../../public/img/fff/reward-Env.png");
+  background-image: url("../../../public/img/fff/reward-Env.png");
 
   background-repeat: no-repeat;
   background-size: 160px 160px;
@@ -361,10 +361,50 @@
   stroke:#f3e575;
   stroke-width: 10;
   fill:none;
-  stroke-dasharray: 150,400;
+  stroke-dasharray: 150,4000;
   transform-origin: center;
 }
 
+.fff-svg-painting-detail{
+  width:310px;
+  height: 310px;
+  background-image: url("../../../public/img/fff/reward-Env.png");
 
+  background-repeat: no-repeat;
+  background-size: 300px 300px;
+  background-position:5px 5px;
+}
+
+.fff-milestone-background-svg-detail{
+  cx:155;
+  cy:155;
+  r:150;
+  stroke:#D0D1D2;
+  stroke-width: 5;
+  fill:none;
+}
+
+.fff-milestone-progress-svg-detail{
+  cx:155;
+  cy:155;
+  r:150;
+  stroke:#f3e575;
+  stroke-width: 10;
+  fill:none;
+  stroke-dasharray: 281,4000;
+  transform-origin: center;
+}
+
+.fff-txt-stone-detail h5 {
+color: #a2a3a5;
+}
+
+.modal{
+  background: rgba(255,255,255,0.5)
+}
+
+.fff-dialog p{
+  margin-bottom: 0;
+}
 
 
