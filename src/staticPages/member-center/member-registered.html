@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>註冊會員</title>
+    <link rel="stylesheet" href="./styles/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./styles/fontawesome/css/all.css">
+    <link rel="stylesheet" href="./styles/header.css">
+    <link rel="stylesheet" href="./styles/public.css" />
+    <link rel="stylesheet" href="./styles/member-index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row align-items-center header-height">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-light p-0">
+                    <a class="navbar-brand p-0 lll-distance-logo" href="#">
+                        <img src="./styles/SimpleMeal_LOGO.png" class="lll-logo-square" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto align-items-center aaa">
+                            <li class="nav-item active">
+                                <a class="txt-sub1 lll-header-list" href="#">最新活動</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="txt-sub1 lll-header-list" href="#">關於我們</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="dropdown-toggle txt-sub1 lll-header-list" href="#" id="navbarDropdown"
+                                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    菜單介紹
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="txt-sub1 lll-header-list lll-header-list-item" href="#">菜單介紹</a>
+                                    <a class="txt-sub1 lll-header-list lll-header-list-item" href="#">共享食譜</a>
+                                </div>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="txt-sub1 lll-header-list" href="#">驚喜廚房</a>
+                            </li>
+                        </ul>
+
+                        <ul class="list-unstyled d-flex m-0 aaa">
+                            <li id="blank-square-left-1"></li>
+                            <li id="blank-square-left-2">
+                                <a class="lll-header-icon-style" href="#"><span
+                                        class="txt-sub1 lll-header-icon-distance">購物車</span>
+                                    <i class="fas fa-shopping-cart lll-icon-distance"></i></a>
+                            </li>
+                            <li id="blank-square-left-3">
+                                <a class="lll-header-icon-style" href="#"><span
+                                        class="txt-sub1 lll-header-icon-distance">我的成就</span><i
+                                        class="fas fa-medal lll-icon-distance"></i></a>
+                            </li>
+                            <li id="blank-square-left-4">
+                                <a class="lll-header-icon-style" href="#"><span
+                                        class="txt-sub1 lll-header-icon-distance">會員中心</span><i
+                                        class="fas fa-user"></i></a>
+                            </li>
+                            <li>
+                                <a class="lll-header-icon-style lll-qa-distance" href="#"><i
+                                        class="far fa-question-circle"></i></a>
+                            </li>
+                        </ul>
+
+                        <ul class="list-unstyled d-flex m-0 d-block d-lg-none">
+                            <li>
+                                <a class="lll-header-icon-style" href="#">
+                                    <i class="fas fa-shopping-cart lll-icon-distance"></i></a>
+                            </li>
+                            <li>
+                                <a class="lll-header-icon-style" href="#"><i
+                                        class="fas fa-medal lll-icon-distance"></i></a>
+                            </li>
+                            <li>
+                                <a class="lll-header-icon-style" href="#"><i class="fas fa-user"></i></a>
+                            </li>
+                            <li>
+                                <a class="lll-header-icon-style lll-qa-distance" href="#"><i
+                                        class="far fa-question-circle"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="container ">
+        <div class="row d-flex justify-content-center">
+            <div class="col-7 aa justify-content-center ">
+                <div class="d-flex justify-content-end mr-4 mt-3" style="color:#627e2a"><i class="fas fa-times"></i></div>
+               
+                <div class="text1 mt-3 " ><h5>註冊</h5>
+                    
+                </div>
+
+            
+            <div class="row d-flex justify-content-center">
+                <form class="col-10 ">
+                    <div class="form-group mt-5 tex2">
+                      <label for="Email ">電子郵件</label>
+                      <input type="text" class="form-control" id="Email " >
+                      <small id="Email " class="form-text text-muted">請以半形輸入，e-mail不能重複註冊。</small>
+                    </div>
+                    <div class="form-group tex2">
+                      <label for="Password">密碼</label>
+                      <input type="Password" class="form-control" id="Password" >
+                    </div>
+                    <div class="form-group tex2">
+                        <label for="Password2">確認密碼</label>
+                        <input type="Password" class="form-control" id="Password2" >
+                        <small id="Password2" class="form-text text-muted">密碼長度需為 6 個以上的英數字元，大小寫有區別。</small>
+                      </div>
+                      <div class="form-group tex2">
+                        <label for="Name">姓名</label>
+                        <input type="text" class="form-control" id="Name" >
+                      </div>
+                      <div class="form-group tex2">
+                        <label for="Phone">手機</label>
+                        <input type="text" class="form-control" id="Phone" >
+                      </div>
+                      <div class="form-group tex2">
+                        <label for="Addr">配送地址</label>
+                        <input type="text" class="form-control" id="Addr">
+                        <small id="AddrSmall" class="form-text text-muted">本地址將作為您日後購物預設寄送地址</small>
+                      </div>
+                      <div class="form-check tex2">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck2">
+                        訂閱郵件與簡訊
+                        </label>
+                      </div>
+                      <div class="form-check mt-2 tex2">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                        <label class="form-check-label" for="defaultCheck2">
+                         我同意網站服務條款與隱私策略
+                        </label>
+                        </div>
+                      <div class="d-flex justify-content-between mb-5 mt-4">
+                          <a href="" class="btn-green txt-btn ">重新設定</a>
+                        <a href="" class="btn-green txt-btn">註冊</a></div>
+                        
+                  </form>
+            </div>
+        
+             
+            
+            
+            
+            
+             </div>
+             </div>
+             </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

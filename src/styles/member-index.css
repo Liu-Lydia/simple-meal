@@ -1,0 +1,118 @@
+@media (min-width: 1700px) {
+  .container,
+  .container-sm,
+  .container-md,
+  .container-lg,
+  .container-xl,
+  .container-xxl {
+    max-width: 1640px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.aa {
+  border: 3px solid #627e2a;
+  border-radius: 25px;
+}
+.bb {
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
+.box {
+  width: 125px;
+  height: 125px;
+  padding: 0;
+}
+.box1 {
+  width: 65px;
+  height: 65px;
+  padding: 0;
+}
+.box3 {
+  width: 260px;
+  height: 865px;
+}
+.box4 {
+  width: 1090px;
+  height: 565px;
+}
+.box5 {
+  border-radius: 50px;
+  width: 60px;
+  height: 20px;
+  text-align: center;
+  border: 2px;
+}
+
+.item {
+  color: #434341;
+  padding-bottom: 30px;
+}
+.item1 {
+  color: #434341;
+  padding-bottom: 12px;
+}
+
+.item2 {
+  color: #a3a4a5;
+  padding-bottom: 12px;
+}
+
+.text1 {
+  color: xd;
+  text-align: center;
+}
+.tex2 {
+  color: #434341;
+}
+.text :active {
+  color: #627e2a;
+}
+.item3 {
+  width: 260px;
+  height: 260px;
+  background-color: #434341;
+  border-radius: 25px;
+}
+.btn-green2 {
+  background-color: #627e2a;
+  width: 100px;
+  height: 50px;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 50px;
+  color: white;
+  border: 1px #627e2a solid;
+  display: inline-block;
+}
+
+.poe-bookmark-label {
+  background-color: #5a7e0c;
+  border-radius: 15px 15px 0 0;
+  margin: 0 1px;
+  display: inline-block;
+}
+.poe-bookmark-label1 {
+  width: 150px;
+  height: 25px;
+  background-color: #5a7e0c;
+
+  border-radius: 15px 15px 0 0;
+}
+.poe-bookmark-label2 {
+  width: 150px;
+  height: 30px;
+  border-radius: 15px 15px 0 0;
+}
+
+.line {
+  background-color: #5a7e0c;
+  width: 100%;
+  height: 3px;
+  position: relative;
+  top: -5px;
+}
