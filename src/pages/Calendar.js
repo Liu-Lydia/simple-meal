@@ -18,18 +18,18 @@ function Calendar() {
   return (
     <>
       <AppStore.Provider value={{ timeReducer: timeReducer }}>
-        <div>
-          <h1>{'Calendar Demo'}</h1>
+        {/* <div> */}
+        {/* <h1>{'Calendar Demo'}</h1> */}
 
-          <div className="lll-calendar">
-            {/* <h1>{moment().format('YYYY-MM-DD')}</h1> */}
-            <CalendarHeader />
-            <div className="lll-pt30">
-              <CalendarWeekDay />
-              <CalendarDate />
-            </div>
+        <div className="lll-calendar">
+          {/* <h1>{moment().format('YYYY-MM-DD')}</h1> */}
+          <CalendarHeader />
+          <div className="lll-pt30">
+            <CalendarWeekDay />
+            <CalendarDate />
           </div>
         </div>
+        {/* </div> */}
       </AppStore.Provider>
     </>
   )

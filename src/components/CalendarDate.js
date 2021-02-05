@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { AppStore } from '../pages/Calendar'
 import moment from 'moment'
-import GetWeeksInMonth from '../components/GetWeeksInMonth'
+import GetWeeksInMonth from './GetWeeksInMonth'
 
 //連結到GeWeekInMonth(mmt), 使用到moment
 

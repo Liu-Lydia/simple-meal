@@ -8,7 +8,6 @@ import TestDatabase from './pages/TestDatabase'
 import Cart from './pages/Cart'
 import Long1 from './pages/Long1'
 import Long2 from './pages/Long2'
-import Calendar from './pages/Calendar'
 import SurpriseKitchen from './pages/SurpriseKitchen'
 import Milestone from './pages/Milestone'
 
@@ -44,9 +43,6 @@ function App() {
               </Route>
               <Route path="/Test">
                 <Test />
-              </Route>
-              <Route path="/Calendar">
-                <Calendar />
               </Route>
               <Route path="/Milestone">
                 <Milestone />

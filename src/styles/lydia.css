@@ -192,7 +192,7 @@
   display: inline-block;
 }
 
-.lll-btn-hidden:hover {
+/* .lll-btn-hidden:hover {
   width: 120px;
   height: 30px;
   background-color: #5b722d;
@@ -203,7 +203,7 @@
   border: 1px #5b722d solid;
   display: inline-block;
   transition: 0.2s;
-}
+} */
 
 .lll-hidden-line {
   background-color: #627e2a;
@@ -242,10 +242,9 @@
 }
 
 .lll-calendar {
-  width: 298px;
-  height: 305px;
+  width: 320px;
+  height: 400px;
   background: #fff;
-  margin-bottom: 60px;
   padding-top: 20px;
 }
 
@@ -303,8 +302,17 @@
 .lll-option-position {
   display: inline-block;
   position: relative;
-  left: 358px;
-  top: -105px;
+  left: 370px;
+  top: -110px;
+}
+
+@media (max-width: 588px) {
+  .lll-option-position {
+    display: inline-block;
+    position: relative;
+    left: 0;
+    top: 30px;
+  }
 }
 
 .lll-li-grey {
@@ -330,23 +338,15 @@
   padding-left: 28px;
 }
 
-@media (max-width: 588px) {
-  .lll-option-position {
-    display: inline-block;
-    position: relative;
-    left: 0;
-    top: 30px;
-  }
-}
-
 /* 請選擇場次 */
-.lll-tims-position {
-  margin-top: 100px;
+.lll-times-position {
+  margin-top: px;    
 }
+/* 這個很怪???? */
 
 @media (max-width: 588px) {
-  .lll-tims-position {
-    margin-top: 220px;
+  .lll-times-position {
+    margin-top: 100px;
   }
 }
 
