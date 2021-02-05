@@ -16,9 +16,9 @@ function HeaderIcon(props) {
   }
   //   出現
   const blockCss = {
-    width: '30px',
+    width: '0px',
     color: '#000 ',
-    marginRight: '16px',
+    marginRight: '24px',
     display: 'inline',
     transition: '1s',
   }
@@ -30,7 +30,7 @@ function HeaderIcon(props) {
     <Nav.Link
       as={NavLink}
       to={url}
-      className="mx-2 px-2"
+      className="mx-3 px-2"
       onMouseOver={() => {
         setCssAndText([blockCss, text])
       }}
