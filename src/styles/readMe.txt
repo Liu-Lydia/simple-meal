@@ -13,3 +13,12 @@ yikyikfyikliguliuligui
 
 
 irouishfjshiofji
+QQQQ
+YA
+OK
+OKKKKKK
+
+今天天氣晴
+我想要吃蛋餅
+
+
