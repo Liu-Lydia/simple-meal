@@ -307,11 +307,13 @@
 
 .fff-dialog {
   background-color: white;
-  width: 600px;
+  /* width: 600px; */
   border-radius: 25px;
   text-align: left;
   line-height: 30px;
   border: 5px #627e2a solid;
+  padding-bottom: 75px;
+  padding-top: 19px;
 }
 
 #fff-record-table {
@@ -401,6 +403,11 @@ color: #a2a3a5;
 
 .modal{
   background: rgba(255,255,255,0.5)
+}
+
+.fff-dialog p{
+  margin-bottom: 0;
+  /* padding-bottom: 75px; */
 }
 
 
