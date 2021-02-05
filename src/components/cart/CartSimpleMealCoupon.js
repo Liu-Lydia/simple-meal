@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 
-function CartSimpleMealCoupon() {
+function CartSimpleMealCoupon(props) {
+  // {流程轉換設定}
+  const { setFlowchart } = props
+
   // 方案選擇
   const [choice, setChoice] = useState('')
   const [choiceObj, setChoiceObj] = useState({
@@ -174,7 +177,11 @@ function CartSimpleMealCoupon() {
         </div>
       </div>
       <div className="text-right poe-bookmark-btn-group">
-        <Link className="btn-green txt-btn">
+        <Link
+          to="/cart/simplemealcoupon"
+          onClick={() => setFlowchart(2)}
+          className="btn-green txt-btn"
+        >
           下一步　<i className="fas fa-chevron-right"></i>
         </Link>
       </div>

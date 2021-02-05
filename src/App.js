@@ -35,7 +35,7 @@ function App() {
               <Route path="/Long2">
                 <Long2 />
               </Route>
-              <Route path="/Cart">
+              <Route path="/cart">
                 <Cart />
               </Route>
               <Route path="/TestDatabase">
@@ -47,11 +47,9 @@ function App() {
               <Route path="/Milestone">
                 <Milestone />
               </Route>
-
             </Switch>
           </ScrollToTop>
         </MainContent>
-
         <MainContentNoContainer>
           <Switch>
             <Route path="/surprisekitchen">
