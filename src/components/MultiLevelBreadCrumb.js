@@ -48,8 +48,8 @@ function MultiLevelBreadCrumb(props) {
 
   return (
     <>
-      <div className="row justify-content-center">
-        <div className="col-10">
+      <div className="row justify-content-center txt-btn">
+        <div className="col-10 d-none d-sm-block">
           <nav aria-label="breadcrumb">
             <ol
               className="breadcrumb"
