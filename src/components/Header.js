@@ -43,7 +43,7 @@ function Header() {
           <div className="row justify-content-center">
             <div className="col col-lg-10">
               <Navbar
-                bg="light"
+                // bg="light"
                 // variant="dark"
                 expand="lg"
                 collapseOnSelect="true"

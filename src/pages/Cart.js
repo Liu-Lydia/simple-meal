@@ -13,12 +13,26 @@ function Cart() {
   const [cartMode, setCartMode] = useState('SimpleMealCoupon')
   // 流程轉換
   const [flowchart, setFlowchart] = useState(1)
+  // 餐券方案選擇
+  // const [choice, setChoice] = useState('')
+  // const [choiceObj, setChoiceObj] = useState({
+  //   couponNum: 0,
+  //   price: 0,
+  // })
 
   // 切換購買餐券/配送餐點/預約廚房
   const handleCartmode = () => {
     switch (cartMode) {
       case 'SimpleMealCoupon':
-        return <CartSimpleMealCoupon setFlowchart={setFlowchart} />
+        return (
+          <CartSimpleMealCoupon
+            setFlowchart={setFlowchart}
+            // choice={choice}
+            // setChoice={setChoice}
+            // choiceObj={choiceObj}
+            // setChoiceObj={setChoiceObj}
+          />
+        )
       case 'MealDelivery':
         return <CartMealDelivery setFlowchart={setFlowchart} />
       case 'ReserveKitchen':

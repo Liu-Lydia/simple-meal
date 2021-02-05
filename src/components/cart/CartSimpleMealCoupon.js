@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from 'react'
+import {
+  Dropdown,
+  Navbar,
+  Nav,
+  NavDropdown,
+  Form,
+  FormControl,
+  Button,
+} from 'react-bootstrap'
 import { withRouter, Link } from 'react-router-dom'
 
 function CartSimpleMealCoupon(props) {
   // {流程轉換設定}
   const { setFlowchart } = props
 
-  // 方案選擇
+  // 餐券方案選擇
   const [choice, setChoice] = useState('')
   const [choiceObj, setChoiceObj] = useState({
     couponNum: 0,
@@ -24,8 +33,8 @@ function CartSimpleMealCoupon(props) {
   // 改變方案
   const handleSetChoice = (event) => {
     setChoice(event.target.value)
-    setQuantity(quantity || 1)
-    handleSetChoiceObj(event.target.value, quantity || 1)
+    setQuantity(1)
+    handleSetChoiceObj(event.target.value, 1)
   }
 
   // 改變組合文字
@@ -149,17 +158,17 @@ function CartSimpleMealCoupon(props) {
       </table>
       <div className="poe-bookmark-content-choice text-right">
         <span className="">組合數量</span>
-        <Link onClick={() => handleSetQuantity(false)} className="mx-3">
+        <a onClick={() => handleSetQuantity(false)} className="mx-3">
           <i
             className={`fas fa-minus-circle ${quantity <= 1 && 'poe-gray'}`}
           ></i>
-        </Link>
+        </a>
         <span>{quantity}</span>
-        <Link onClick={() => handleSetQuantity(true)} className="mx-3">
+        <a onClick={() => handleSetQuantity(true)} className="mx-3">
           <i
             className={`fas fa-plus-circle ${quantity === 10 && 'poe-gray'}`}
           ></i>
-        </Link>
+        </a>
       </div>
       <div className="poe-bookmark-content-result text-right">
         <div>
