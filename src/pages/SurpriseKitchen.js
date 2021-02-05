@@ -7,6 +7,7 @@ import CalendarHeader from '../components/CalendarHeader'
 import CalendarWeekDay from '../components/CalendarWeekDay'
 import CalendarDate from '../components/CalendarDate'
 import SurpriseFirst from '../components/SurpriseFirst'
+import SurpriseContent from '../components/SurpriseContent'
 
 export const AppStore = createContext()
 
@@ -19,6 +20,7 @@ function SurpriseKitchen() {
   return (
     <>
       <SurpriseFirst />
+      <SurpriseContent />
     </>
   )
 }

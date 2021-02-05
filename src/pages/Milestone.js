@@ -1,4 +1,6 @@
 import React from 'react'
+import '../styles/public.css';
+import '../styles/fff.css';
 
 function Milestone() {
   return (
@@ -9,7 +11,7 @@ function Milestone() {
         <div className="col-xl-9 col-lg-10 fff-my-info-box">
           <div className="d-flex align-items-center">
             <img
-              src="../../../public/img/fff/fff-info-pic.png"
+              src='http://localhost:3015/img/fff/fff-info-pic.png'
               className="fff-info-pic"
             ></img>
             <span className="fff-txt-info">Lydia Liu</span>
@@ -39,6 +41,11 @@ function Milestone() {
         {/* 佔空位的 */}
         <div className="col"></div>
       </div>
+
+
+
+
+
 
       <div className="row">
         <h1 className="poe-red">測試用的</h1>
@@ -70,5 +77,8 @@ function Milestone() {
     </>
   )
 }
+
+
+
 
 export default Milestone
