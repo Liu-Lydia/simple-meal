@@ -79,7 +79,11 @@ function Header() {
                       Separated link
                     </NavDropdown.Item> */}
                     </NavDropdown>
-                    <Nav.Link className="text-nowrap" as={NavLink} to="/none5">
+                    <Nav.Link
+                      className="text-nowrap"
+                      as={NavLink}
+                      to="/surprisekitchen"
+                    >
                       驚喜廚房
                     </Nav.Link>
                   </Nav>

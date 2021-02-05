@@ -35,25 +35,24 @@ function App() {
               <Route path="/Long2">
                 <Long2 />
               </Route>
-              <Route path="/Cart">
+              <Route path="/cart">
                 <Cart />
               </Route>
               <Route path="/TestDatabase">
                 <TestDatabase />
               </Route>
               <Route path="/Test">
-                <Test />  
+                <Test />
               </Route>
               <Route path="/Calendar">
                 <Calendar />
               </Route>
-              
             </Switch>
           </ScrollToTop>
         </MainContent>
         <Route path="/surprisekitchen">
-                <SurpriseKitchen />
-              </Route>
+          <SurpriseKitchen />
+        </Route>
         <Footer />
       </>
     </Router>
