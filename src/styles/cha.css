@@ -265,7 +265,7 @@ margin-left: 46px;
 }
 .cha-rec-search-bar{
   height: 100px;
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
 }
 .cha-rec-main-txt1,.cha-rec-search-put-top {
   /* height: 100px; */
@@ -276,7 +276,7 @@ margin-left: 46px;
 
 .cha-rec-txt-up{
   height: 220px;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
   margin-left: 90px;
   margin-top: 50px;
 
@@ -290,10 +290,10 @@ margin-left: 46px;
 .cha-rec-main-pic2{
   width: 100%;
   height: 100%;
-  background-color: lightpink;
+  /* background-color: lightpink; */
 }
 .cha-rec-main{
-  background-color: lightsalmon;
+  /* background-color: rgb(97, 59, 44); */
   height: 750px;
 }
 .cha-rec-main-pic1{
@@ -330,7 +330,7 @@ margin-left: 46px;
 .cha-rec-sel-box{
   border-top: #a2a3a5 solid 4px;
   height: 210px;
-  overflow-y:scroll;
+  overflow-y:auto;
 }
   
 @media (max-width: 1199px) {
