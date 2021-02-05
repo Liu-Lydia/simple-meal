@@ -49,6 +49,9 @@
 .col-black {
   color: #434341;
 }
+.col-white {
+  color: #FFFFFF;
+}
 
 .xxx-txt-cap {
   margin-bottom: 0;
@@ -117,6 +120,26 @@ left: 500px;
 top: 50px;
 
 }
+.circle-spin{
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  position: absolute;
+  left: 490px;
+  top: 30px;
+  
+
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .p1-scroll-btn{
   background-color: #F3E575;
   border-radius: 75px;
