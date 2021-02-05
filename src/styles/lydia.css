@@ -5,33 +5,27 @@
   width: 478px;
 }
 
-.lll-first-picture {
-  height: 550px;
-  background: url('http://localhost:3015/img/lydia/surprisekitcheninit.png');
-  background-size: cover;
-}
-
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .lll-first-picture-width {
     top: 225px;
     width: 239px;
   }
 }
 
-@media (max-width: 992px) {
-  .lll-first-picture {
-    height: 275px;
-  }
-}
-
 @media (max-width: 576px) {
   .lll-first-picture-width {
-    top: 200px;
+    top: 300px;
     width: 239px;
   }
 }
 
-@media (max-width: 576px) {
+.lll-first-picture {
+  height: 550px;
+  background: url('http://localhost:3015/img/lydia/surprisekitcheninit.png');
+  background-size: cover;
+}
+
+@media (max-width: 991px) {
   .lll-first-picture {
     height: 275px;
   }
@@ -39,35 +33,21 @@
 
 /* 第一版文字 */
 .lll-text-position {
-  position: absolute;
-  top: 0;
-  margin-top: 280px;
+  margin-top: 180px;
   text-align: right;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .lll-text-position {
-    margin-top: 280px;
+    margin-top: 80px;
     text-align: right;
-  }
-}
-
-@media (max-width: 617px) {
-  .lll-text-position {
-    max-width: 60%;
   }
 }
 
 @media (max-width: 576px) {
   .lll-text-position {
-    margin-top: 100px;
+    margin-top: 10px;
     text-align: right;
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 514px) {
-  .lll-text-position {
     max-width: 100%;
   }
 }
@@ -77,15 +57,9 @@
   padding-bottom: 30px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .lll-firstpage-title {
-    font-size: 36px;
-    padding-bottom: 0px;
-  }
-}
-
-@media (max-width: 576px) {
-  .lll-firstpage-title {
+    font-size: 36px !important;
     padding-bottom: 0px;
   }
 }
@@ -94,15 +68,9 @@
   color: #a2a3a5;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .lll-detile-style {
     font-size: 12px;
-    margin: 0;
-  }
-}
-
-@media (max-width: 576px) {
-  .lll-detile-style {
     margin: 0;
   }
 }
@@ -111,7 +79,7 @@
   font-size: 20px;
 }
 
-.lll-detile-right {
+.lll-textalign-right {
   text-align: right;
 }
 
@@ -134,40 +102,21 @@
 }
 
 /* 第一版文字RWD */
-@media (max-width: 1600px) {
+@media (max-width: 1700px) {
   .lll-text-rwd {
-    max-width: 60%;
+    max-width: 70% !important;
   }
 }
 
-@media (max-width: 1350px) {
+@media (max-width: 1200px) {
   .lll-text-rwd {
-    max-width: 80%;
-  }
-}
-
-@media (max-width: 1150px) {
-  .lll-text-rwd {
-    max-width: 90%;
-  }
-}
-
-@media (max-width: 1005px) {
-  .lll-text-rwd {
-    max-width: 90%;
-  }
-}
-
-@media (max-width: 950px) {
-  .lll-text-rwd {
-    max-width: 100%;
+    max-width: 100% !important;
   }
 }
 
 /* scroll位置, 顏色 */
 .lll-scroll {
-  position: relative;
-  top: 763px;
+  margin-top: 200px;
   text-align: center;
 }
 
@@ -198,8 +147,7 @@
 
 /* 預約驚喜廚房 */
 .lll-appoint {
-  position: relative;
-  top: 964px;
+  margin-top: 300px;
 }
 
 .lll-title-style {
@@ -208,20 +156,20 @@
   padding-bottom: 30px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .lll-title-style {
-    font-size: 36px;
+    font-size: 36px !important;
     padding-bottom: 10px;
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .lll-trans-block {
     display: inline-block !important;
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .lll-trans-block > p {
     font-size: 12px;
     font-weight: 400;
@@ -263,12 +211,12 @@
   width: 100%;
 }
 
-.lll-btn-hidden-position {
+.lll-textalign-right {
   text-align: right;
 }
 
 /* 預約驚喜廚房選單 */
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .lll-appoint-w100 {
     max-width: 100%;
   }
@@ -558,7 +506,7 @@
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .lll-explain {
     max-width: 100%;
   }
@@ -571,7 +519,7 @@
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .lll-explain > .txt-sub1 {
     font-size: 12px;
     font-weight: 400;
@@ -594,7 +542,7 @@
   padding-bottom: 45px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .lll-12px {
     font-size: 12px;
     font-weight: 400;
@@ -616,7 +564,7 @@
   line-height: 28px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .lll-title-line > p {
     font-size: 12px;
     font-weight: 400;
@@ -632,7 +580,7 @@
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 991px) {
   .lll-change-max100 > p {
     font-size: 12px;
     font-weight: 400;

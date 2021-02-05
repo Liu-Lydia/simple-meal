@@ -12,6 +12,7 @@ function SurpriseFirst() {
 
   return (
     <>
+      {/* 驚喜廚房第一版 */}
       {/* 第一版圖片 */}
       <div className="container-fluid">
         <div className="row">
@@ -42,18 +43,17 @@ function SurpriseFirst() {
           </div>
         </div>
       </div>
-
+      {/* 驚喜廚房第一版 */}
       {/* scroll */}
-      <div classNameName="container lll-scroll">
-        <div classNameName="row">
-          <div classNameName="col">
-            <Link to="#" classNameName="btn-yello txt-cap">
+      <div className="container lll-scroll">
+        <div className="row">
+          <div className="col">
+            <Link to="#" className="btn-yello txt-cap">
               scroll
             </Link>
           </div>
         </div>
       </div>
-      {/* 驚喜廚房第一版 */}
     </>
   )
 }

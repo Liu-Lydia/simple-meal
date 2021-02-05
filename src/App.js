@@ -15,6 +15,7 @@ import Milestone from './pages/Milestone'
 // 組合用元件
 import Header from './components/Header'
 import MainContent from './components/MainContent'
+import MainContentNoContainer from './components/MainContentNoContainer'
 import ScrollToTop from './components/ScrollToTop'
 import MultiLevelBreadCrumb from './components/MultiLevelBreadCrumb'
 import Footer from './components/Footer'
@@ -50,9 +51,14 @@ function App() {
             </Switch>
           </ScrollToTop>
         </MainContent>
-        <Route path="/surprisekitchen">
-          <SurpriseKitchen />
-        </Route>
+
+        <MainContentNoContainer>
+          <Switch>
+            <Route path="/surprisekitchen">
+              <SurpriseKitchen />
+            </Route>
+          </Switch>
+        </MainContentNoContainer>
         <Footer />
       </>
     </Router>
