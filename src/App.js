@@ -42,18 +42,17 @@ function App() {
                 <TestDatabase />
               </Route>
               <Route path="/Test">
-                <Test />  
+                <Test />
               </Route>
               <Route path="/Calendar">
                 <Calendar />
               </Route>
-              
             </Switch>
           </ScrollToTop>
         </MainContent>
         <Route path="/surprisekitchen">
-                <SurpriseKitchen />
-              </Route>
+          <SurpriseKitchen />
+        </Route>
         <Footer />
       </>
     </Router>

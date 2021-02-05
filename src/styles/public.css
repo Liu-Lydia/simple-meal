@@ -10,52 +10,52 @@
 }
 h1 {
   font-family: GenSenRounded TW;
-  font-size: 93px;
-  font-weight: bold;
-  line-height: 93px;
+  font-size: 93px !important;
+  font-weight: bold !important;
+  line-height: 93px !important;
   letter-spacing: 1.01px;
   text-decoration: none;
 }
 h2 {
   font-family: GenSenRounded TW;
-  font-size: 58px;
-  font-weight: 500;
-  line-height: 58px;
+  font-size: 58px !important; 
+  font-weight: 500 !important;
+  line-height: 58px !important;
   letter-spacing: -0.02px;
   text-decoration: none;
 }
 h3 {
   font-family: GenSenRounded TW;
-  font-size: 50px;
-  font-weight: bold;
-  line-height: 50px;
+  font-size: 50px !important;
+  font-weight: bold !important;
+  line-height: 50px !important;
   letter-spacing: -0.01px;
   text-decoration: none;
 }
 
 h4 {
   font-family: GenSenRounded TW;
-  font-size: 36px;
-  font-weight: bold;
-  line-height: 50px;
+  font-size: 36px !important;
+  font-weight: bold !important;
+  line-height: 50px !important;
   letter-spacing: 0.48px;
   text-decoration: none;
 }
 
 h5 {
-  font-size: 24px;
   font-family: GenSenRounded TW;
-  font-weight: 500;
-  line-height: 36px;
+  font-size: 24px !important;
+  font-weight: 500 !important;
+  line-height: 36px !important;
   letter-spacing: 0.32px;
   text-decoration: none;
 }
 
 h6 {
-  font-size: 21px;
   font-family: GenSenRounded TW;
-  font-weight: 400;
-  line-height: 24px;
+  font-size: 21px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
   letter-spacing: 0.29px;
   text-decoration: none;
 }
