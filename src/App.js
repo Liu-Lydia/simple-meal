@@ -46,6 +46,10 @@ function App() {
               <Route path="/Calendar">
                 <Calendar />
               </Route>
+              <Route path="/Milestone">
+                <Milestone />
+              </Route>
+
             </Switch>
           </ScrollToTop>
         </MainContent>
