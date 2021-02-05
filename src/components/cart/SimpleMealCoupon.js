@@ -3,8 +3,8 @@ import SimpleMealCouponPayment from './SimpleMealCouponPayment'
 import SimpleMealCouponCheck from './SimpleMealCouponCheck'
 
 function SimpleMealCoupon(props) {
-  // {流程, 流程轉換設定}
-  const { flowchart, setFlowchart } = props
+  // {流程, 流程轉換設定, 方案id, 方案物件, 預設方案內容}
+  const { flowchart, setFlowchart, choice, choiceObj, choiceArray } = props
 
   // 卸載時轉成流程1
   useEffect(() => {
@@ -20,6 +20,9 @@ function SimpleMealCoupon(props) {
         <SimpleMealCouponPayment
           flowchart={flowchart}
           setFlowchart={setFlowchart}
+          choice={choice}
+          choiceObj={choiceObj}
+          choiceArray={choiceArray}
         />
       )}
       {/* 流程2時 */}
@@ -27,6 +30,9 @@ function SimpleMealCoupon(props) {
         <SimpleMealCouponCheck
           flowchart={flowchart}
           setFlowchart={setFlowchart}
+          choice={choice}
+          choiceObj={choiceObj}
+          choiceArray={choiceArray}
         />
       )}
     </>

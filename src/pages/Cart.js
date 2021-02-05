@@ -13,12 +13,47 @@ function Cart() {
   const [cartMode, setCartMode] = useState('SimpleMealCoupon')
   // 流程轉換
   const [flowchart, setFlowchart] = useState(1)
+
+  // ----餐券使用(開始)----
   // 餐券方案選擇
-  // const [choice, setChoice] = useState('')
-  // const [choiceObj, setChoiceObj] = useState({
-  //   couponNum: 0,
-  //   price: 0,
-  // })
+  const [choice, setChoice] = useState('')
+  const [choiceObj, setChoiceObj] = useState({
+    combination: '',
+    discription: '',
+    quantity: 0,
+    couponNum: 0,
+    price: 0,
+  })
+  // 方案內容
+  const choiceArray = [
+    {
+      combination: '',
+      discription: '',
+      couponNum: 0,
+      price: 0,
+    },
+    {
+      combination: '吃飽飽沒煩惱組合',
+      discription: '(包含20張餐卷, 加贈5張免費餐券)',
+      couponNum: 25,
+      price: 3500,
+    },
+    {
+      combination: '食在很滿足組合',
+      discription: '(包含10張餐卷, 加贈2張免費餐券)',
+      couponNum: 12,
+      price: 1700,
+    },
+    {
+      combination: '經濟實惠組',
+      discription: '(包含5張餐卷, 加贈1張免費餐券)',
+      couponNum: 6,
+      price: 850,
+    },
+  ]
+  // 組合數量
+  const [quantity, setQuantity] = useState(0)
+  // ----餐券使用(結束)----
 
   // 切換購買餐券/配送餐點/預約廚房
   const handleCartmode = () => {
@@ -27,10 +62,13 @@ function Cart() {
         return (
           <CartSimpleMealCoupon
             setFlowchart={setFlowchart}
-            // choice={choice}
-            // setChoice={setChoice}
-            // choiceObj={choiceObj}
-            // setChoiceObj={setChoiceObj}
+            choice={choice}
+            setChoice={setChoice}
+            choiceObj={choiceObj}
+            setChoiceObj={setChoiceObj}
+            choiceArray={choiceArray}
+            quantity={quantity}
+            setQuantity={setQuantity}
           />
         )
       case 'MealDelivery':
@@ -41,6 +79,7 @@ function Cart() {
     }
   }
 
+  // 當購物車改變時切換流程到階段1
   useEffect(() => {
     // console.log(cartMode)
     setFlowchart(1)
@@ -95,7 +134,13 @@ function Cart() {
           </div>
         </Route>
         <Route path="/cart/simplemealcoupon">
-          <SimpleMealCoupon flowchart={flowchart} setFlowchart={setFlowchart} />
+          <SimpleMealCoupon
+            flowchart={flowchart}
+            setFlowchart={setFlowchart}
+            choice={choice}
+            choiceObj={choiceObj}
+            choiceArray={choiceArray}
+          />
         </Route>
       </Switch>
     </>

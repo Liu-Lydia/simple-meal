@@ -11,24 +11,57 @@ import {
 import { withRouter, Link } from 'react-router-dom'
 
 function CartSimpleMealCoupon(props) {
-  // {流程轉換設定}
-  const { setFlowchart } = props
+  // {流程轉換設定, 方案id, 設定方案id, 方案物件, 設定方案物件, 預設方案內容, 組合數量, 設定組合數量}
+  const {
+    setFlowchart,
+    choice,
+    setChoice,
+    choiceObj,
+    setChoiceObj,
+    choiceArray,
+    quantity,
+    setQuantity,
+  } = props
 
   // 餐券方案選擇
-  const [choice, setChoice] = useState('')
-  const [choiceObj, setChoiceObj] = useState({
-    couponNum: 0,
-    price: 0,
-  })
-  // 方案內容
-  const choiceArray = [
-    { couponNum: 0, price: 0 },
-    { couponNum: 25, price: 3500 },
-    { couponNum: 12, price: 1700 },
-    { couponNum: 6, price: 850 },
-  ]
-  // 組合數量
-  const [quantity, setQuantity] = useState(0)
+  // const [choice, setChoice] = useState('')
+  // const [choiceObj, setChoiceObj] = useState({
+  //   combination: '',
+  //   discription: '',
+  //   quantity: 0,
+  //   couponNum: 0,
+  //   price: 0,
+  // })
+
+  // // 方案內容
+  // const choiceArray = [
+  //   {
+  //     combination: '',
+  //     discription: '',
+  //     couponNum: 0,
+  //     price: 0,
+  //   },
+  //   {
+  //     combination: '吃飽飽沒煩惱組合',
+  //     discription: '(包含20張餐卷, 加贈5張免費餐券)',
+  //     couponNum: 25,
+  //     price: 3500,
+  //   },
+  //   {
+  //     combination: '食在很滿足組合',
+  //     discription: '(包含10張餐卷, 加贈2張免費餐券)',
+  //     couponNum: 12,
+  //     price: 1700,
+  //   },
+  //   {
+  //     combination: '經濟實惠組',
+  //     discription: '(包含5張餐卷, 加贈1張免費餐券)',
+  //     couponNum: 6,
+  //     price: 850,
+  //   },
+  // ]
+  // // 組合數量
+  // const [quantity, setQuantity] = useState(0)
 
   // 改變方案
   const handleSetChoice = (event) => {
@@ -41,7 +74,11 @@ function CartSimpleMealCoupon(props) {
   function handleSetChoiceObj(choice, quantity) {
     const newCouponNum = choiceArray[+choice].couponNum * quantity
     const newPrice = choiceArray[+choice].price * quantity
+    const newQuantity = quantity
     setChoiceObj({
+      combination: choiceArray[+choice].combination,
+      discription: choiceArray[+choice].discription,
+      quantity: newQuantity,
       couponNum: newCouponNum,
       price: newPrice,
     })
@@ -61,6 +98,11 @@ function CartSimpleMealCoupon(props) {
       }
     }
   }
+
+  // useEffect(() => {
+  //   handleSetChoiceObj(choice, quantity)
+  //   quantity === 0 && setChoice('')
+  // }, [quantity])
 
   return (
     <>
@@ -91,18 +133,20 @@ function CartSimpleMealCoupon(props) {
               />
             </th>
             <td>
-              <span>吃飽飽沒煩惱組合</span>
+              <span>{choiceArray[1].combination}</span>
               <br className="d-block d-sm-none" />
               <span className="txt-cap poe-red">
-                (包含20張餐卷, 加贈5張免費餐券)
+                {choiceArray[1].discription}
               </span>
               <br className="d-block d-sm-none" />
               <div className="d-block d-sm-none d-flex txt-cap">
                 <span className="poe-bookmark-content-m">優惠價</span>
-                <span className="poe-red">3500</span>
+                <span className="poe-red">{choiceArray[1].price}</span>
               </div>
             </td>
-            <td className="d-none d-sm-block poe-red text-right">3500</td>
+            <td className="d-none d-sm-block poe-red text-right">
+              {choiceArray[1].price}
+            </td>
           </tr>
           <tr>
             <th scope="row">
@@ -116,18 +160,20 @@ function CartSimpleMealCoupon(props) {
               />
             </th>
             <td>
-              <span>食在很滿足組合</span>
+              <span>{choiceArray[2].combination}</span>
               <br className="d-block d-sm-none" />
               <span className="txt-cap poe-red">
-                (包含10張餐卷, 加贈2張免費餐券)
+                {choiceArray[2].discription}
               </span>
               <br className="d-block d-sm-none" />
               <div className="d-block d-sm-none d-flex txt-cap">
                 <span className="poe-bookmark-content-m">優惠價</span>
-                <span className="poe-red">1700</span>
+                <span className="poe-red">{choiceArray[2].price}</span>
               </div>
             </td>
-            <td className="d-none d-sm-block poe-red text-right">1700</td>
+            <td className="d-none d-sm-block poe-red text-right">
+              {choiceArray[2].price}
+            </td>
           </tr>
           <tr>
             <th scope="row">
@@ -141,18 +187,20 @@ function CartSimpleMealCoupon(props) {
               />
             </th>
             <td>
-              <span>經濟實惠組</span>
+              <span>{choiceArray[3].combination}</span>
               <br className="d-block d-sm-none" />
               <span className="txt-cap poe-red">
-                (包含5張餐卷, 加贈1張免費餐券)
+                {choiceArray[3].discription}
               </span>
               <br className="d-block d-sm-none" />
               <div className="d-block d-sm-none d-flex txt-cap">
                 <span className="poe-bookmark-content-m">優惠價</span>
-                <span className="poe-red">850</span>
+                <span className="poe-red">{choiceArray[3].price}</span>
               </div>
             </td>
-            <td className="d-none d-sm-block poe-red text-right">850</td>
+            <td className="d-none d-sm-block poe-red text-right">
+              {choiceArray[3].price}
+            </td>
           </tr>
         </tbody>
       </table>
@@ -173,7 +221,7 @@ function CartSimpleMealCoupon(props) {
       <div className="poe-bookmark-content-result text-right">
         <div>
           <span>共 </span>
-          <span className="poe-red">{quantity}</span>
+          <span className="poe-red">{choiceObj.quantity}</span>
           <span> 組, 包含 </span>
           <span className="poe-red">{choiceObj.couponNum}</span>
           <span>

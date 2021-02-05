@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Route, withRouter, Link, Switch } from 'react-router-dom'
 
 function SimpleMealCouponPayment(props) {
-  // {流程, 流程轉換設定}
-  const { flowchart, setFlowchart } = props
+  // {流程, 流程轉換設定, 方案id, 方案物件, 預設方案內容}
+  const { flowchart, setFlowchart, choice, choiceObj, choiceArray } = props
 
   // 掛載轉換階段2
   useEffect(() => setFlowchart(2), [])
@@ -37,22 +37,24 @@ function SimpleMealCouponPayment(props) {
               <tbody>
                 <tr>
                   <td>
-                    <span>吃飽飽沒煩惱組合</span>
+                    <span>{choiceArray[choice].combination}</span>
                     <br class="d-block d-sm-none" />
                     <span class="txt-cap poe-red">
-                      (包含20張餐卷, 加贈5張免費餐券)
+                      {choiceArray[choice].discription}
                     </span>
                     <br class="d-block d-sm-none" />
                     <div class="d-block d-sm-none d-flex txt-cap">
                       <span class="poe-bookmark-content-m">優惠價</span>
-                      <span class="poe-red">3500</span>
+                      <span class="poe-red">{choiceArray[choice].price}</span>
                     </div>
                     <div class="d-block d-sm-none d-flex txt-cap">
                       <span class="poe-bookmark-content-m">數量</span>
-                      <span class="poe-red">2</span>
+                      <span class="poe-red">{choiceObj.quantity}</span>
                     </div>
                   </td>
-                  <td class="d-none d-sm-block poe-red text-right">3500</td>
+                  <td class="d-none d-sm-block poe-red text-right">
+                    {choiceArray[choice].price}
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -60,15 +62,15 @@ function SimpleMealCouponPayment(props) {
             <div class="poe-bookmark-content-result text-right">
               <div>
                 <span>共 </span>
-                <span class="poe-red">2</span>
+                <span class="poe-red">{choiceObj.quantity}</span>
                 <span> 組, 包含 </span>
-                <span class="poe-red">50</span>
+                <span class="poe-red">{choiceObj.couponNum}</span>
                 <span>
                   {' '}
                   張餐券, <br class="d-block d-sm-none" />
                   金額小計NT${' '}
                 </span>
-                <span class="poe-red">7,000</span>
+                <span class="poe-red">{choiceObj.price}</span>
                 <span> 元</span>
               </div>
             </div>
