@@ -10,6 +10,9 @@ yikyikfyikliguliuligui
 到此一遊
 為啥一直出錯啊
 ＦＸＸＫ
+
+
+irouishfjshiofji
 QQQQ
 YA
 OK
@@ -17,9 +20,6 @@ OKKKKKK
 
 今天天氣晴
 我想要吃蛋餅
-
-今天天氣好
-ＯＫＯＫ
 
 
 
