@@ -70,7 +70,7 @@
 
 @media (max-width: 991px) {
   .lll-detile-style {
-    font-size: 12px;
+    font-size: 12px !important;
     margin: 0;
   }
 }
@@ -165,9 +165,10 @@
 
 @media (max-width: 991px) {
   .lll-trans-block {
-    display: inline-block !important;
+    display: block !important;
   }
 }
+/* 這個蓋不過 */
 
 @media (max-width: 991px) {
   .lll-trans-block > p {
@@ -218,7 +219,7 @@
 /* 預約驚喜廚房選單 */
 @media (max-width: 991px) {
   .lll-appoint-w100 {
-    max-width: 100%;
+    max-width: 100% !important;
   }
 }
 
@@ -245,7 +246,7 @@
   width: 320px;
   height: 400px;
   background: #fff;
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 .lll-pt30 {
@@ -306,11 +307,9 @@
   top: -110px;
 }
 
-@media (max-width: 588px) {
+@media (max-width: 768px) {
   .lll-option-position {
-    display: inline-block;
-    position: relative;
-    left: 0;
+    left: 0px;
     top: 30px;
   }
 }
@@ -340,11 +339,11 @@
 
 /* 請選擇場次 */
 .lll-times-position {
-  margin-top: px;    
+  margin-top: px;
 }
 /* 這個很怪???? */
 
-@media (max-width: 588px) {
+@media (max-width: 768px) {
   .lll-times-position {
     margin-top: 100px;
   }
@@ -436,13 +435,12 @@
 
 .lll-ml-position {
   width: 397px;
-  position: relative;
-  top: -537px;
 }
 
-@media (max-width: 588px) {
+@media (max-width: 768px) {
   .lll-ml-position {
-    width: 344px;
+    width: 345px !important;
+    margin-top: 818px !important;
   }
 }
 
@@ -450,8 +448,8 @@
   .lll-ml-position {
     display: inline-block;
     position: relative;
-    left: 0;
-    top: 60px;
+    margin-top: 730px;
+    left: -320px;
   }
 }
 
@@ -471,22 +469,22 @@
   border: 3px #627e2a solid;
 }
 
-.lll-msg-mb30 {
+.lll-mb30 {
   margin-bottom: 30px;
 }
 
 /* 讓字跟24px垂直置中 */
 .lll-center {
-  padding-top: 4px;
+  padding-top: 10px;
 }
 
 .lll-price-line {
-  padding-top: 20px;
+  padding-top: 50px;
   border-top: 3px solid #a2a3a5;
 }
 
-.lll-btn-mt10 {
-  margin-top: 10px;
+.lll-mt40 {
+  margin-top: 40px;
 }
 
 /* 驚喜廚房規則說明 */
@@ -499,22 +497,12 @@
 
 @media (max-width: 1700px) {
   .lll-explain {
-    display: inline-block;
-    position: relative;
-    left: 0;
     height: 250px;
   }
 }
 
 @media (max-width: 991px) {
   .lll-explain {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 588px) {
-  .lll-explain {
-    margin-top: 170px;
     max-width: 100%;
   }
 }
