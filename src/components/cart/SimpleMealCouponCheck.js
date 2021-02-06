@@ -2,11 +2,26 @@ import React, { useEffect, useState } from 'react'
 import { Route, withRouter, Link, Switch } from 'react-router-dom'
 
 function SimpleMealCouponCheck(props) {
-  // {流程, 流程轉換設定, 方案id, 方案物件, 預設方案內容}
-  const { flowchart, setFlowchart, choice, choiceObj, choiceArray } = props
+  // {流程, 流程轉換設定, 方案id, 方案物件, 預設方案內容, 付款選項物件}
+  const {
+    flowchart,
+    setFlowchart,
+    choice,
+    choiceObj,
+    choiceArray,
+    paymentObj,
+  } = props
 
   // 掛載轉換階段3
   useEffect(() => setFlowchart(3), [])
+
+  const handlePostcheck = () => {
+    const fd = new FormData(document.querySelector('#cart_simplemealcoupon'))
+    fetch('http://localhost:4000/simplemealcoupon/addcheck', {
+      method: 'post',
+      body: fd,
+    }).then(setFlowchart(1))
+  }
 
   return (
     <>
@@ -118,10 +133,8 @@ function SimpleMealCouponCheck(props) {
               <tbody>
                 <tr>
                   <td>
-                    信用卡線上刷卡一次付清
-                    <span class="txt-cap poe-red">
-                      (可接受VISA, Master, JCB, 聯合信用卡)
-                    </span>
+                    {paymentObj.proj}
+                    <span class="txt-cap poe-red">{paymentObj.discript}</span>
                   </td>
                 </tr>
               </tbody>
@@ -135,13 +148,15 @@ function SimpleMealCouponCheck(props) {
         <div class="col-12 col-md-8 col-xl-6">
           <Link
             onClick={() => setFlowchart(2)}
-            class="btn-gray txt-btn mx-2 poe-mb20"
+            class="btn-green txt-btn mx-2 poe-mb20"
           >
             <i class="fas fa-chevron-left"></i>　上一步
           </Link>
           <Link
             to="/"
-            onClick={() => setFlowchart(1)}
+            onClick={() => {
+              handlePostcheck()
+            }}
             class="btn-green txt-btn mx-2 poe-mb20"
           >
             送出訂單　<i class="fas fa-check"></i>

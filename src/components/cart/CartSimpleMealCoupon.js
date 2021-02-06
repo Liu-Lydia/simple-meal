@@ -234,13 +234,19 @@ function CartSimpleMealCoupon(props) {
         </div>
       </div>
       <div className="text-right poe-bookmark-btn-group">
-        <Link
-          to="/cart/simplemealcoupon"
-          onClick={() => setFlowchart(2)}
-          className="btn-green txt-btn"
-        >
-          下一步　<i className="fas fa-chevron-right"></i>
-        </Link>
+        {choice ? (
+          <Link
+            to="/cart/simplemealcoupon"
+            onClick={() => setFlowchart(2)}
+            className="btn-green txt-btn"
+          >
+            下一步　<i className="fas fa-chevron-right"></i>
+          </Link>
+        ) : (
+          <span className="btn-gray txt-btn">
+            下一步　<i className="fas fa-chevron-right"></i>
+          </span>
+        )}
       </div>
     </>
   )

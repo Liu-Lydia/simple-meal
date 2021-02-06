@@ -2,8 +2,30 @@ import React, { useEffect, useState } from 'react'
 import { Route, withRouter, Link, Switch } from 'react-router-dom'
 
 function SimpleMealCouponPayment(props) {
-  // {流程, 流程轉換設定, 方案id, 方案物件, 預設方案內容}
-  const { flowchart, setFlowchart, choice, choiceObj, choiceArray } = props
+  // {流程, 流程轉換設定, 方案id, 方案物件, 預設方案內容, 預設付款內容, 付款物件, 付款value, 設定付款value}
+  const {
+    flowchart,
+    setFlowchart,
+    choice,
+    choiceObj,
+    choiceArray,
+    paymentArray,
+    paymentObj,
+    setPaymentObj,
+    paymentValue,
+    setPaymentValue,
+  } = props
+
+  // 改變付款方案
+  const handleSetPaymentValue = (event) => {
+    setPaymentValue(event.target.value)
+    handleSetPaymentObj(event.target.value)
+  }
+
+  // 設定決定的付款選項物件
+  const handleSetPaymentObj = (i) => {
+    setPaymentObj(paymentArray[i])
+  }
 
   // 掛載轉換階段2
   useEffect(() => setFlowchart(2), [])
@@ -125,37 +147,23 @@ function SimpleMealCouponPayment(props) {
           <div class="poe-bookmark-content txt-btn">
             <table class="table table-borderless table-hover">
               <tbody>
-                <tr>
-                  <th>
-                    <input type="radio" name="payment" />
-                  </th>
-                  <td>
-                    信用卡線上刷卡一次付清
-                    <span class="txt-cap poe-red">
-                      (可接受VISA, Master, JCB, 聯合信用卡)
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <th>
-                    <input type="radio" name="payment" />
-                  </th>
-                  <td>
-                    銀聯卡
-                    <span class="txt-cap poe-red">
-                      (支付成功頁面僅為銀聯卡回覆訊息，交易是否完成請需以本商店通知為準)
-                    </span>
-                  </td>
-                </tr>
-                <tr>
-                  <th>
-                    <input type="radio" name="payment" />
-                  </th>
-                  <td>
-                    LINE PAY
-                    <span class="txt-cap poe-red">(可用LINE POINTS折抵)</span>
-                  </td>
-                </tr>
+                {paymentArray.map((v, i) => (
+                  <tr key={i}>
+                    <th>
+                      <input
+                        type="radio"
+                        name="payment"
+                        value={i}
+                        checked={paymentValue === `${i}`}
+                        onChange={(e) => handleSetPaymentValue(e)}
+                      />
+                    </th>
+                    <td>
+                      {v.proj}
+                      <span class="txt-cap poe-red">{v.discript}</span>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
@@ -168,16 +176,22 @@ function SimpleMealCouponPayment(props) {
           <Link
             to="/cart"
             onClick={() => setFlowchart(1)}
-            class="btn-gray txt-btn mx-2 poe-mb20"
+            class="btn-green txt-btn mx-2 poe-mb20"
           >
             <i class="fas fa-chevron-left"></i>　上一步
           </Link>
-          <Link
-            onClick={() => setFlowchart(3)}
-            class="btn-green txt-btn mx-2 poe-mb20"
-          >
-            下一步　<i class="fas fa-chevron-right"></i>
-          </Link>
+          {paymentValue !== null ? (
+            <Link
+              onClick={() => setFlowchart(3)}
+              class="btn-green txt-btn mx-2 poe-mb20"
+            >
+              下一步　<i class="fas fa-chevron-right"></i>
+            </Link>
+          ) : (
+            <span disabled class="btn-gray txt-btn mx-2 poe-mb20">
+              下一步　<i class="fas fa-chevron-right"></i>
+            </span>
+          )}
         </div>
       </div>
     </>
