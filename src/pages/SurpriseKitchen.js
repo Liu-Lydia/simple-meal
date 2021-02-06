@@ -6,8 +6,9 @@ import calendar from '../reducers/calendar'
 import CalendarHeader from '../components/CalendarHeader'
 import CalendarWeekDay from '../components/CalendarWeekDay'
 import CalendarDate from '../components/CalendarDate'
-import SurpriseFirst from '../components/SurpriseFirst'
-import SurpriseContent from '../components/SurpriseContent'
+import SurpriseFirst from '../components/surprisekitchen/SurpriseFirst'
+import SurpriseContent from '../components/surprisekitchen/SurpriseContent'
+import SurpriseRule from '../components/surprisekitchen/SurpriseRule'
 
 export const AppStore = createContext()
 
@@ -20,7 +21,14 @@ function SurpriseKitchen() {
   return (
     <>
       <SurpriseFirst />
-      <SurpriseContent />
+      <div className="container lll-appoint col-sm-center">
+        <div className="row justify-content-center">
+          <div className="col-8 lll-appoint-w100">
+            <SurpriseContent />
+            <SurpriseRule />
+          </div>
+        </div>
+      </div>
     </>
   )
 }
