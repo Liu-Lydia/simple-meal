@@ -10,6 +10,7 @@ import Cart from './pages/Cart'
 import SurpriseKitchen from './pages/SurpriseKitchen'
 import Milestone from './pages/Milestone'
 import Meal from './pages/Meal'
+import Recipe from './pages/Recipe'
 
 // 組合用元件
 import Header from './components/Header'
@@ -54,6 +55,9 @@ function App() {
             </Route>
             <Route path="/meal">
               <Meal />
+            </Route>
+            <Route path="/recipe">
+              <Recipe />
             </Route>
           </Switch>
         </MainContentNoContainer>

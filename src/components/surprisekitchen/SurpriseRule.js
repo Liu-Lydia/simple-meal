@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 // import DropdownItem from '../components/DropdownItem'
-import { Collapse } from 'react-collapse'
-import Calendar from '../../pages/Calendar'
+// import { Collapse } from 'react-collapse'
+// import Calendar from '../../pages/Calendar'
+import GoogleMap from '../GoogleMap'
 
 function SurpriseRule() {
   return (
@@ -62,6 +63,7 @@ function SurpriseRule() {
               aria-hidden="false"
               tabindex="0"
             ></iframe> */}
+            <GoogleMap />
           </div>
           <div className="col-4 p-0 my-auto aa">
             <p className="m-0 text-center txt-sub1 lll-red lll-12px">
