@@ -186,23 +186,27 @@
           </div>
         <div class=" col-md-12 col-lg-12 col-sm-12 col-xl-8  col-12 ">  
          <div class="col-md-10 col-lg-10 col-sm-10 col-xl-10 col-10 mx-auto">
-          <h4 class="mb-4 mt-5 ml-2 d-none d-sm-none d-md-none d-lg- d-xl-block ">配送餐點</h4>
-          <div class="d-block d-sm-block d-md-block d-lg-block d-xl-none offset-md-4   "><h4 class=" offset-md-0 offset-lg-1 offset-sm-3 offset-3 col-12  ">配送餐點</h4></div>
+          <h4 class="mb-4 mt-5 ml-2 d-none d-sm-none d-md-none d-lg- d-xl-block ">驚喜廚房</h4>
+          <div class="d-block d-sm-block d-md-block d-lg-block d-xl-none offset-md-4   "><h4 class=" offset-md-0 offset-lg-1 offset-sm-3 offset-3 col-12  ">驚喜廚房</h4></div>
          <div class="d-flex offset-3 mb-2"> 
           <img src="../../../public/img/member-center/fish4.jpeg" class="rounded-circle box1 mt-3 d-block d-sm-block d-md-none d-lg-none d-xl-none mb-2 mr-2" >
           <div class="mt-4 d-block d-sm-block d-md-none d-lg-none d-xl-none  d-inline">admin</div>
           </div>
           <div class="btn border dropdown-toggle txt-cap1 mr-2 mb-4  col-12 d-block d-sm-block d-md-none d-lg-none d-xl-none ">回上頁</div>
             <div class="">
-              <div class="col-12 col-sm-12 col-md-12 d-flex   ">
+              <div class=" d-flex   ">
               <ul class="nav line1  " id="myTab" role="tablist">
-                <li class="nav-item btn-green2  col-6  col-sm-6 col-md-6 col-xl-2 mr-xl-1  ">
-                  <a class=" text-light active " id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">已配送</a>
+                <li class="nav-item btn-green2  col-4  col-sm-4 col-md-4 col-xl-2 mr-xl-1  ">
+                  <a class=" text-light active " id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">全部</a>
                 </li>
-                <li class="nav-item btn-green2 col-6 col-sm-6 col-md-6 col-xl-2 ">
-                  <a class="text-light " id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">未配送</a>
+                <li class="nav-item btn-green2 col-4 col-sm-4 col-md-4 col-xl-2  mr-xl-1">
+                  <a class="text-light " id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">已進行</a>
                 </li>
-              </ul>
+              
+              <li class="nav-item btn-green2 col-4 col-sm-4 col-md-4 col-xl-2">
+                <a class="text-light " id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">未進行</a>
+              </li>
+            </ul>
              
             </div>
             
@@ -210,15 +214,15 @@
 
               <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
 
-               <div class=" mt-md-4  mt-2 d-md-flex txt-sub2 col-10 col-sm-12 mx-auto  ">  
+               <div class=" mt-md-4  mt-2 d-md-flex txt-sub2 col-12 col-sm-12 mx-auto  ">  
                 <div class=" mt-2 mr-2 txt-cap d-none d-sm-none d-md-block d-lg-block d-xl-block">輸入查詢區間</div>
-                <div class=" txt-sub2 mt-3 d-block d-sm-block d-md-none d-lg-none d-xl-none col-12  offset-2 offset-sm-4">輸入查詢區間</div>
+                <div class=" txt-sub2 mt-3 d-block d-sm-block d-md-none d-lg-none d-xl-none col-10  offset-3  offset-sm-4">輸入查詢區間</div>
                <div class="btn  border dropdown-toggle txt-cap1 mr-2  d-none d-sm-none d-md-block d-lg-block d-xl-block">起始日期</div>
                <small class="txt-cap mt-2 d-none d-sm-none d-md-block d-lg-block d-xl-block">～</small>
                <div class="btn border dropdown-toggle txt-cap1 ml-2 d-none d-sm-none d-md-block d-lg-block d-xl-block">結束日期</div>
 
-               <div class="btn border dropdown-toggle txt-cap1 mr-2 mb-2 col-10 col-sm-10 d-block d-sm-block d-md-none d-lg-none d-xl-none offset-1">起始日期</div>
-               <div class="btn border dropdown-toggle txt-cap1 mr-2 col-10 col-sm-10 d-block d-sm-block d-md-none d-lg-none d-xl-none  offset-1 ">結束日期</div>
+               <div class="btn border dropdown-toggle txt-cap1 mr-2 mb-2 col-12 col-sm-12 col-md-10 d-block d-sm-block d-md-none d-lg-none d-xl-none ">起始日期</div>
+               <div class="btn border dropdown-toggle txt-cap1 mr-2 col-12 col-sm-12  col-sm-12 col-md-10 d-block d-sm-block d-md-none d-lg-none d-xl-none   ">結束日期</div>
                <a href="" class="btn-green1  mt-2  d-block d-sm-block d-md-none d-lg-none d-xl-none col-10  mx-auto">搜尋</a>
               
                <a href="" class="btn-green1 txt-cap  ml-2 d-none d-sm-none d-md-block d-lg-block d-xl-block ">搜尋</a>
@@ -231,10 +235,10 @@
                   <tr class="text-center  ">
                     <th >項次</th>
                     <th  class=" d-none d-md-block d-sm-none d-lg-block d-xl-block ">訂單編號</th>
-                    <th >訂單日期</th>
-                    <th  class="d-none d-md-none d-sm-none d-lg-block d-xl-block  ">配送明細</th>
-                    <th >使用餐卷</th>
-                    <th  class=" d-none d-md-none d-sm-none d-lg-block d-xl-block   ">配送日期</th>
+                    <th >預約日期</th>
+                    <th  class="d-none d-md-none d-sm-none d-lg-block d-xl-block  ">預約時段</th>
+                    <th >付款方式</th>
+                    <th  class=" d-none d-md-none d-sm-none d-lg-block d-xl-block   ">總金額</th>
                   </tr>
                 </thead>
 
@@ -243,62 +247,104 @@
                     <td>1</td>
                     <td class=" d-none d-md-block d-sm-none d-lg-block d-xl-block">210106022925001</td>
                     <td>2020/01/15</td>
-                    <td class=" d-none d-md-none d-sm-none d-lg-block d-xl-block">紅醬義大利麵 ...</td>
-                    <td >5</td>
-                    <td class=" d-none d-md-none d-sm-none d-lg-block d-xl-block">2020/01/15</td>
+                    <td class=" d-none d-md-none d-sm-none d-lg-block d-xl-block">11:30</td>
+                    <td >信用卡</td>
+                    <td class=" d-none d-md-none d-sm-none d-lg-block d-xl-block">3600</td>
                   </tr>
                 </tbody>
 
                 </table>
                 </div>
 
-              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                  
-                <div class=" mt-md-4  mt-2 d-md-flex txt-sub2 col-10 col-sm-12 mx-auto  ">  
-                  <div class=" mt-2 mr-2 txt-cap d-none d-sm-none d-md-block d-lg-block d-xl-block">輸入查詢區間</div>
-                  <div class=" txt-sub2 mt-3 d-block d-sm-block d-md-none d-lg-none d-xl-none col-12  offset-2 offset-sm-4">輸入查詢區間</div>
-                 <div class="btn  border dropdown-toggle txt-cap1 mr-2  d-none d-sm-none d-md-block d-lg-block d-xl-block">起始日期</div>
-                 <small class="txt-cap mt-2 d-none d-sm-none d-md-block d-lg-block d-xl-block">～</small>
-                 <div class="btn border dropdown-toggle txt-cap1 ml-2 d-none d-sm-none d-md-block d-lg-block d-xl-block">結束日期</div>
-  
-                 <div class="btn border dropdown-toggle txt-cap1 mr-2 mb-2 col-10 col-sm-10 d-block d-sm-block d-md-none d-lg-none d-xl-none offset-1">起始日期</div>
-                 <div class="btn border dropdown-toggle txt-cap1 mr-2 col-10 col-sm-10 d-block d-sm-block d-md-none d-lg-none d-xl-none  offset-1 ">結束日期</div>
-                 <a href="" class="btn-green1  mt-2  d-block d-sm-block d-md-none d-lg-none d-xl-none col-10  mx-auto">搜尋</a>
-                
-                 <a href="" class="btn-green1 txt-cap  ml-2 d-none d-sm-none d-md-block d-lg-block d-xl-block ">搜尋</a>
-                </div>
-                <div class=" txt-cap mt-2 ml-3 d-block d-sm-block d-md-block d-lg-none d-xl-none ">請點選項目以取得更詳細的訂單資訊</div>
-                <div class=" mt-2 ml-3  txt-cap d-none d-sm-none d-md-none d-lg-block d-xl-block">請點選項目以取得更詳細的訂單資訊</div>
-  
-                <table class="txt-body  text-nowrap table col-10 mx-auto mx-xl-0 ">
-                  <thead class=" " >
-                    <tr class="text-center  ">
-                      <th >項次</th>
-                      <th  class=" d-none d-md-block d-sm-none d-lg-block d-xl-block ">訂單編號</th>
-                      <th >訂單日期</th>
-                      <th  class="d-none d-md-none d-sm-none d-lg-block d-xl-block  ">配送明細</th>
-                      <th >使用餐卷</th>
-                      <th  class=" d-none d-md-none d-sm-none d-lg-block d-xl-block   ">配送日期</th>
-                    </tr>
-                  </thead>
-  
-                  <tbody>
-                    <tr class="text-center ">
-                      <td>1</td>
-                      <td class=" d-none d-md-block d-sm-none d-lg-block d-xl-block">210106022925001</td>
-                      <td>2020/01/15</td>
-                      <td class=" d-none d-md-none d-sm-none d-lg-block d-xl-block">紅醬義大利麵 ...</td>
-                      <td >5</td>
-                      <td class=" d-none d-md-none d-sm-none d-lg-block d-xl-block">2020/01/15</td>
-                    </tr>
-                  </tbody>
-  
-                  </table>
-                  
-                  
+              
+                <div class="tab-pane fade " id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
-                
-                </div>
+                  <div class=" mt-md-4  mt-2 d-md-flex txt-sub2 col-12 col-sm-12 mx-auto  ">  
+                   <div class=" mt-2 mr-2 txt-cap d-none d-sm-none d-md-block d-lg-block d-xl-block">輸入查詢區間</div>
+                   <div class=" txt-sub2 mt-3 d-block d-sm-block d-md-none d-lg-none d-xl-none col-10  offset-3  offset-sm-4">輸入查詢區間</div>
+                  <div class="btn  border dropdown-toggle txt-cap1 mr-2  d-none d-sm-none d-md-block d-lg-block d-xl-block">起始日期</div>
+                  <small class="txt-cap mt-2 d-none d-sm-none d-md-block d-lg-block d-xl-block">～</small>
+                  <div class="btn border dropdown-toggle txt-cap1 ml-2 d-none d-sm-none d-md-block d-lg-block d-xl-block">結束日期</div>
+   
+                  <div class="btn border dropdown-toggle txt-cap1 mr-2 mb-2 col-12 col-sm-12 col-md-10 d-block d-sm-block d-md-none d-lg-none d-xl-none ">起始日期</div>
+                  <div class="btn border dropdown-toggle txt-cap1 mr-2 col-12 col-sm-12  col-sm-12 col-md-10 d-block d-sm-block d-md-none d-lg-none d-xl-none   ">結束日期</div>
+                  <a href="" class="btn-green1  mt-2  d-block d-sm-block d-md-none d-lg-none d-xl-none col-10  mx-auto">搜尋</a>
+                 
+                  <a href="" class="btn-green1 txt-cap  ml-2 d-none d-sm-none d-md-block d-lg-block d-xl-block ">搜尋</a>
+                 </div>
+                 <div class=" txt-cap mt-2 ml-3 d-block d-sm-block d-md-block d-lg-none d-xl-none ">請點選項目以取得更詳細的訂單資訊</div>
+                 <div class=" mt-2 ml-3  txt-cap d-none d-sm-none d-md-none d-lg-block d-xl-block">請點選項目以取得更詳細的訂單資訊</div>
+   
+                 <table class="txt-body  text-nowrap table col-10 mx-auto mx-xl-0 ">
+                   <thead class=" " >
+                     <tr class="text-center  ">
+                       <th >項次</th>
+                       <th  class=" d-none d-md-block d-sm-none d-lg-block d-xl-block ">訂單編號</th>
+                       <th >預約日期</th>
+                       <th  class="d-none d-md-none d-sm-none d-lg-block d-xl-block  ">預約時段</th>
+                       <th >付款方式</th>
+                       <th  class=" d-none d-md-none d-sm-none d-lg-block d-xl-block   ">總金額</th>
+                     </tr>
+                   </thead>
+   
+                   <tbody>
+                     <tr class="text-center ">
+                       <td>1</td>
+                       <td class=" d-none d-md-block d-sm-none d-lg-block d-xl-block">210106022925001</td>
+                       <td>2020/01/16</td>
+                       <td class=" d-none d-md-none d-sm-none d-lg-block d-xl-block">11:30</td>
+                       <td >現金</td>
+                       <td class=" d-none d-md-none d-sm-none d-lg-block d-xl-block">3600</td>
+                     </tr>
+                   </tbody>
+   
+                   </table>
+                   </div>
+              
+                   <div class="tab-pane fade " id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
+                    <div class=" mt-md-4  mt-2 d-md-flex txt-sub2 col-12 col-sm-12 mx-auto  ">  
+                     <div class=" mt-2 mr-2 txt-cap d-none d-sm-none d-md-block d-lg-block d-xl-block">輸入查詢區間</div>
+                     <div class=" txt-sub2 mt-3 d-block d-sm-block d-md-none d-lg-none d-xl-none col-10  offset-3  offset-sm-4">輸入查詢區間</div>
+                    <div class="btn  border dropdown-toggle txt-cap1 mr-2  d-none d-sm-none d-md-block d-lg-block d-xl-block">起始日期</div>
+                    <small class="txt-cap mt-2 d-none d-sm-none d-md-block d-lg-block d-xl-block">～</small>
+                    <div class="btn border dropdown-toggle txt-cap1 ml-2 d-none d-sm-none d-md-block d-lg-block d-xl-block">結束日期</div>
+     
+                    <div class="btn border dropdown-toggle txt-cap1 mr-2 mb-2 col-12 col-sm-12 col-md-10 d-block d-sm-block d-md-none d-lg-none d-xl-none ">起始日期</div>
+                    <div class="btn border dropdown-toggle txt-cap1 mr-2 col-12 col-sm-12  col-sm-12 col-md-10 d-block d-sm-block d-md-none d-lg-none d-xl-none   ">結束日期</div>
+                    <a href="" class="btn-green1  mt-2  d-block d-sm-block d-md-none d-lg-none d-xl-none col-10  mx-auto">搜尋</a>
+                   
+                    <a href="" class="btn-green1 txt-cap  ml-2 d-none d-sm-none d-md-block d-lg-block d-xl-block ">搜尋</a>
+                   </div>
+                   <div class=" txt-cap mt-2 ml-3 d-block d-sm-block d-md-block d-lg-none d-xl-none ">請點選項目以取得更詳細的訂單資訊</div>
+                   <div class=" mt-2 ml-3  txt-cap d-none d-sm-none d-md-none d-lg-block d-xl-block">請點選項目以取得更詳細的訂單資訊</div>
+     
+                   <table class="txt-body  text-nowrap table col-10 mx-auto mx-xl-0 ">
+                     <thead class=" " >
+                       <tr class="text-center  ">
+                         <th >項次</th>
+                         <th  class=" d-none d-md-block d-sm-none d-lg-block d-xl-block ">訂單編號</th>
+                         <th >預約日期</th>
+                         <th  class="d-none d-md-none d-sm-none d-lg-block d-xl-block  ">預約時段</th>
+                         <th >付款方式</th>
+                         <th  class=" d-none d-md-none d-sm-none d-lg-block d-xl-block   ">總金額
+                         </th>
+                       </tr>
+                     </thead>
+     
+                     <tbody>
+                       <tr class="text-center ">
+                         <td>1</td>
+                         <td class=" d-none d-md-block d-sm-none d-lg-block d-xl-block">210106022925001</td>
+                         <td>2020/01/16</td>
+                         <td class=" d-none d-md-none d-sm-none d-lg-block d-xl-block">11:00</td>
+                         <td >信用卡</td>
+                         <td class=" d-none d-md-none d-sm-none d-lg-block d-xl-block">3600</td>
+                       </tr>
+                     </tbody>
+     
+                     </table>
+                     </div>
                  
                 </div>
                 
