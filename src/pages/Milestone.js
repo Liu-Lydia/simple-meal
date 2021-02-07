@@ -11,7 +11,6 @@ function Milestone() {
       <MilestoneInfoBar />
       {/* 留空白 */}
       <div style={{ height: '530px' }}></div>
-
       <MilestoneListOption />
       <MilestoneList />
     </>

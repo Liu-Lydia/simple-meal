@@ -61,7 +61,7 @@ function MilestoneInfoBar() {
           </div>
         </div>
         <div className="d-flex justify-content-center align-items-center">
-          <div id="howToGetPoints" className="fff-btn-mobo-style  ">
+          <div id="howToGetPoints" className="fff-btn-mobo-style">
             集點方式
           </div>
         </div>
