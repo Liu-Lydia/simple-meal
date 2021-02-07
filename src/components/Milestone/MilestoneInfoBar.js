@@ -4,8 +4,7 @@ function MilestoneInfoBar() {
   return (
     <>
       {/* web virsion */}
-      {/* <div className="row fff-ms-info-bar-web"> */}
-      <div className="row d-none d-sm-block">
+      <div className="row fff-ms-info-bar-web">
         {/* 佔空位的 */}
         <div className="col-1"></div>
         <div className="col-xl-l0 col-lg-10 fff-my-info-box">
@@ -27,12 +26,12 @@ function MilestoneInfoBar() {
             </div>
           </div>
           <div className="">
-            <div id="howToGetPoints" className="btn-white txt-btn">
+            <div id="howToGetPoints" className="fff-btn-white fff-txt-btn">
               集點方式
             </div>
           </div>
           <div className="">
-            <a href="./reward-exchange.html" className="btn-white txt-btn">
+            <a href="./reward-exchange.html" className="fff-btn-white fff-txt-btn">
               兌換獎勵
             </a>
           </div>
@@ -42,7 +41,7 @@ function MilestoneInfoBar() {
         <div className="col-1"></div>
       </div>
 
-      {/* mobo virsion
+      {/* mobo virsion */}
       <div class="fff-ms-info-bar-mobo d-flex flex-column">
         <div className="d-flex justify-content-center">
           <img
@@ -73,7 +72,7 @@ function MilestoneInfoBar() {
           </a>
         </div> 
       </div>
- */}
+
     </>
   )
 }
