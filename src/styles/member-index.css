@@ -141,6 +141,21 @@
   border: 1px #627e2a solid;
   display: inline-block;
 }
-.table th {
+.table thead th {
   border: none;
+}
+.table tbody td {
+  border: none;
+}
+
+.btn-green2 {
+  background-color: #627e2a;
+  width: 160px;
+  height: 30px;
+  border-radius: 15px 15px 0px 0px;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  border: 1px #627e2a solid;
+  display: inline-block;
 }
