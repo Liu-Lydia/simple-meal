@@ -10,6 +10,7 @@ import Long1 from './pages/Long1'
 import Long2 from './pages/Long2'
 import SurpriseKitchen from './pages/SurpriseKitchen'
 import Milestone from './pages/Milestone'
+import Meal from './pages/Meal'
 
 // 組合用元件
 import Header from './components/Header'
@@ -54,6 +55,9 @@ function App() {
           <Switch>
             <Route path="/surprisekitchen">
               <SurpriseKitchen />
+            </Route>
+            <Route path="/meal">
+              <Meal />
             </Route>
           </Switch>
         </MainContentNoContainer>

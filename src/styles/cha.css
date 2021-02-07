@@ -12,7 +12,7 @@
   margin-bottom: 10px;
   /* background-color: rgb(59, 30, 124); */
   padding-left: 20px;
-  display: none;
+  display: none!important;
 }
 .cha-main {
   height: 500px;
@@ -175,19 +175,19 @@
 .cha-search-put {
   width: 150px;
   height: 40px;
-  padding-left: 38px;
+  padding-left: 38px!important;
   color: #a2a3a5;
 }
 .cha-search-put:hover {
   width: 150px;
   height: 40px;
-  padding-left: 38px;
+  padding-left: 38px!important;
   color: #a2a3a5;
 }
 .cha-search-put:focus {
   width: 150px;
   height: 40px;
-  padding-left: 38px;
+  padding-left: 38px!important;
   color: #a2a3a5;
 }
 .cha-search-icon {
@@ -257,7 +257,7 @@ margin-left: 46px;
 }
 .cha-cart-meal-only {
   text-align: center;
-  line-height: 0;
+  line-height: 0!important;
   margin-top: 20px;
 }
 .cha-icon {
@@ -459,7 +459,7 @@ margin-left: 46px;
     display: block;
   }
   .cha-search-put-top {
-    display: flex;
+    display: flex!important;
   }
   .cha-rec-main-txt1{
     display:none;
