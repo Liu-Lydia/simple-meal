@@ -1,12 +1,12 @@
+// 成就顯示
 import React from 'react'
-import '../../styles/public.css';
-import '../../styles/fff.css';
+
 
 function MilestoneList() {
   return (
     <>
      
-     <div className="row fff-no-mr-and-pad">
+     <div className="row fff-no-mr-and-pad flex-shrink-0">
         {/* <!--保留空格 --> */}
         <div className="col-1 fff-no-mr-and-pad"></div>
         {/* <!-- 左翻按鍵 --> */}
