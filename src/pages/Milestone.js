@@ -1,6 +1,8 @@
 import React from 'react'
 import '../styles/public.css';
 import '../styles/fff.css';
+import MilestoneList from '../components/Milestone/MilestoneList'
+import MilestoneListOption from '../components/Milestone/MilestoneListOption';
 
 function Milestone() {
   return (
@@ -27,7 +29,7 @@ function Milestone() {
             </div>
           </div>
           <div className="">
-            <div id="howToGetPoints" class="btn-white txt-btn" v>
+            <div id="howToGetPoints" class="btn-white txt-btn">
               集點方式
             </div>
           </div>
@@ -41,39 +43,13 @@ function Milestone() {
         {/* 佔空位的 */}
         <div className="col"></div>
       </div>
+      {/* 留空白 */}
+      <div style={{height:"530px"}}></div>
+      
+      <MilestoneListOption />
+      <MilestoneList />
+  
 
-
-
-
-
-
-      <div className="row">
-        <h1 className="poe-red">測試用的</h1>
-      </div>
-      <div className="row justify-content-center">
-        <div className="col-6">
-          <h3>直接在react寫style</h3>
-          <div
-            className="w-100 my-5"
-            style={{
-              background:
-                'url(/img/cart/bg/lemonUFO-Go.PNG) center center no-repeat',
-              backgroundSize: 'contain',
-              height: '200px',
-            }}
-          ></div>
-
-          <h3>掛CSS Class(CSS對應public資料夾路徑?)</h3>
-          <div className="poe-test my-5"></div>
-          <h3>圖片(絕對路徑)</h3>
-
-          <img
-            className="w-100 my-5"
-            src="/img/cart/bg/lemonUFO-Go.PNG"
-            alt=""
-          />
-        </div>
-      </div>
     </>
   )
 }
