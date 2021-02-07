@@ -8,7 +8,7 @@
 
 .fff-btn-mobo-style {
   border: 1px #627e2a solid;
-  color:#627e2a ;
+  color: #627e2a;
   border-radius: 10px;
   height: 40px;
   width: 242px;
@@ -16,9 +16,10 @@
   font-size: 16px;
   font-family: GenSenRounded TW;
   font-weight: 400;
-  line-height: 24px;
   letter-spacing: 0.29px;
   text-decoration: none;
+  line-height: 40px;
+  margin-bottom: 30px;
 }
 .fff-btn-mobo-style:focus {
   outline: none;
@@ -31,9 +32,10 @@
   font-size: 16px;
   font-family: GenSenRounded TW;
   font-weight: 400;
-  line-height: 24px;
   letter-spacing: 0.29px;
   text-decoration: none;
+  line-height: 40px;
+  margin-bottom: 30px;
 }
 .fff-btn-mobo-style:hover {
   outline: none;
@@ -45,79 +47,122 @@
   font-size: 16px;
   font-family: GenSenRounded TW;
   font-weight: 400;
-  line-height: 24px;
   letter-spacing: 0.29px;
   text-decoration: none;
+  line-height: 40px;
+  margin-bottom: 30px;
 }
 
 /* 手機版 */
-@media (min-width: 0px) {
-  .fff-ms-info-bar-web {
-    display: none;
-  }
-  .fff-ms-info-bar-mobo {
-    display: block;
-  }
+.fff-ms-web {
+  display: none !important;
+}
+.fff-ms-mobo {
+  display: flex !important;
+}
 
-  .fff-txt-info {
-    font-size: 14px;
-    font-family: GenSenRounded TW;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.29px;
-    text-decoration: none;
-  }
-  .fff-txt-points {
-    font-size: 16px;
-    font-family: GenSenRounded TW;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.29px;
-    text-decoration: none;
-    color: #b9433b;
-  }
+.fff-mobo-txt-info {
+  font-size: 14px;
+  font-family: GenSenRounded TW;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.29px;
+  text-decoration: none;
+  align-self: center;
+}
+.fff-mobo-txt-points {
+  font-size: 24px;
+  font-family: GenSenRounded TW;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.29px;
+  text-decoration: none;
+  color: #b9433b;
+}
 
-  .fff-info-pic {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    background-color: darkgrey;
-    margin-right: 10px;
-  }
-  .fff-btn-white {
-    background-color: white;
-    width: 100px;
-    height: 50px;
-    border-radius: 25px;
-    text-align: center;
-    line-height: 50px;
-    color: #627e2a;
-    border: 1px #627e2a solid;
-    display: inline-block;
-    margin: 5px;
-  }
-  .fff-my-info-box {
-    height: 120px;
-    border-radius: 25px;
-    border: 1px black solid;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 125px !important;
-  }
-  .fff-reward-pic {
-    max-width: 160px;
-  }
+.fff-mobo-info-pic {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: darkgrey;
+  margin-right: 10px;
+}
+.fff-mobo-btn-white {
+  background-color: white;
+  width: 100px;
+  height: 50px;
+  border-radius: 25px;
+  text-align: center;
+  line-height: 50px;
+  color: #627e2a;
+  border: 1px #627e2a solid;
+  display: inline-block;
+  margin: 5px;
+}
+.fff-mobo-my-info-box {
+  height: 120px;
+  border-radius: 25px;
+  border: 1px black solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 125px !important;
+}
+.fff-mobo-reward-pic {
+  max-width: 160px;
+}
+
+.fff-end-event-filter{
+
+}
+
+
+.fff-svg-painting {
+  width: 100px;
+  height: 100px;
+  background-image: url('http://localhost:3015/img/fff/reward-Env.png');
+
+  background-repeat: no-repeat;
+  background-size: 80px 80px;
+  background-position: 10px 10px;
+}
+
+.fff-milestone-background-svg {
+  cx: 50;
+  cy: 50;
+  r: 40;
+  stroke: #d0d1d2;
+  stroke-width: 5;
+  fill: none;
+}
+
+.fff-milestone-progress-svg {
+  cx: 50;
+  cy: 50;
+  r: 40;
+  stroke: #f3e575;
+  stroke-width: 5;
+  fill: none;
+  stroke-dasharray: 75, 4000;
+  transform-origin: center;
+}
+
+.fff-info-pic {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: darkgrey;
+  margin-right: 10px;
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-  .fff-ms-info-bar-web {
-    display: block;
+  .fff-ms-web {
+    display: flex !important;
   }
-  .fff-ms-info-bar-mobo {
-    display: none;
+  .fff-ms-mobo {
+    display: none !important;
   }
 
   .fff-txt-info {
@@ -143,13 +188,7 @@
     text-decoration: none !important;
     letter-spacing: 0.24px;
   }
-  .fff-info-pic {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    background-color: darkgrey;
-    margin-right: 10px;
-  }
+  
   .fff-btn-white {
     background-color: white;
     width: 100px;
@@ -242,6 +281,36 @@
   .fff-reward-pic {
     width: 160px;
   }
+
+  .fff-svg-painting {
+    width: 200px;
+    height: 200px;
+    background-image: url('http://localhost:3015/img/fff/reward-Env.png');
+  
+    background-repeat: no-repeat;
+    background-size: 160px 160px;
+    background-position: 20px 20px;
+  }
+  
+  .fff-milestone-background-svg {
+    cx: 100;
+    cy: 100;
+    r: 80;
+    stroke: #d0d1d2;
+    stroke-width: 5;
+    fill: none;
+  }
+  
+  .fff-milestone-progress-svg {
+    cx: 100;
+    cy: 100;
+    r: 80;
+    stroke: #f3e575;
+    stroke-width: 10;
+    fill: none;
+    stroke-dasharray: 150, 4000;
+    transform-origin: center;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -273,6 +342,8 @@
   .fff-reward-pic {
     width: 200px;
   }
+
+  
 }
 
 .fff-txt-ms-select {
@@ -387,35 +458,7 @@
   max-width: 200px;
 }
 
-.fff-svg-painting {
-  width: 200px;
-  height: 200px;
-  background-image: url('http://localhost:3015/img/fff/reward-Env.png');
 
-  background-repeat: no-repeat;
-  background-size: 160px 160px;
-  background-position: 20px 20px;
-}
-
-.fff-milestone-background-svg {
-  cx: 100;
-  cy: 100;
-  r: 80;
-  stroke: #d0d1d2;
-  stroke-width: 5;
-  fill: none;
-}
-
-.fff-milestone-progress-svg {
-  cx: 100;
-  cy: 100;
-  r: 80;
-  stroke: #f3e575;
-  stroke-width: 10;
-  fill: none;
-  stroke-dasharray: 150, 4000;
-  transform-origin: center;
-}
 
 .fff-svg-painting-detail {
   width: 310px;

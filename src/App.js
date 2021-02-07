@@ -8,6 +8,7 @@ import TestDatabase from './pages/TestDatabase'
 import Cart from './pages/Cart'
 import SurpriseKitchen from './pages/SurpriseKitchen'
 import Milestone from './pages/Milestone'
+import RewardExchange from "./pages/RewardExchange"
 import Meal from './pages/Meal'
 
 // 組合用元件
@@ -39,6 +40,9 @@ function App() {
               </Route>
               <Route path="/Milestone">
                 <Milestone />
+              </Route>
+              <Route path="/RewardExchange">
+                <RewardExchange />
               </Route>
             </Switch>
           </ScrollToTop>
