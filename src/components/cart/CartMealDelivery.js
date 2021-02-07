@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 
-function CartMealDelivery() {
+function CartMealDelivery(props) {
+  const { setFlowchart } = props
+
+  // 裝載時轉成流程1
+  useEffect(() => {
+    setFlowchart(1)
+  }, [])
+
   return (
     <>
       {/* 本次配送 */}
@@ -85,7 +92,8 @@ function CartMealDelivery() {
             購買餐券
           </Link>
           <Link
-            href="./cart-meal-coupon-payment.html"
+            to="/cart/mealdelivery"
+            onClick={() => setFlowchart(2)}
             class="btn-green txt-btn mx-3 poe-mb20"
           >
             下一步　<i class="fas fa-chevron-right"></i>

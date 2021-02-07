@@ -1,9 +1,64 @@
+/* 邊界跟padding歸零 */
 .fff-no-mr-and-pad {
   margin: 0px;
   padding: 0px;
 }
 
+/* 手機按鈕 */
+
+.fff-btn-mobo-style {
+  border: 1px #627e2a solid;
+  color:#627e2a ;
+  border-radius: 10px;
+  height: 40px;
+  width: 242px;
+  text-align: center;
+  font-size: 16px;
+  font-family: GenSenRounded TW;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.29px;
+  text-decoration: none;
+}
+.fff-btn-mobo-style:focus {
+  outline: none;
+  border: 1px #627e2a solid;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #627e2a;
+  height: 40px;
+  width: 242px;
+  text-align: center;
+  font-size: 16px;
+  font-family: GenSenRounded TW;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.29px;
+  text-decoration: none;
+}
+.fff-btn-mobo-style:hover {
+  outline: none;
+  border: 1px #627e2a solid;
+  border-radius: 10px;
+  height: 40px;
+  width: 242px;
+  text-align: center;
+  font-size: 16px;
+  font-family: GenSenRounded TW;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.29px;
+  text-decoration: none;
+}
+
+/* 手機版 */
 @media (min-width: 0px) {
+  .fff-ms-info-bar-web {
+    display: none;
+  }
+  .fff-ms-info-bar-mobo {
+    display: block;
+  }
+
   .fff-txt-info {
     font-size: 14px;
     font-family: GenSenRounded TW;
@@ -21,12 +76,7 @@
     text-decoration: none;
     color: #b9433b;
   }
-  .txt-btn {
-    font-family: GenSenRounded TW;
-    font-size: 14px;
-    text-decoration: none !important;
-    letter-spacing: 0.24px;
-  }
+
   .fff-info-pic {
     height: 30px;
     width: 30px;
@@ -34,7 +84,7 @@
     background-color: darkgrey;
     margin-right: 10px;
   }
-  .btn-white {
+  .fff-btn-white {
     background-color: white;
     width: 100px;
     height: 50px;
@@ -56,13 +106,20 @@
     align-items: center;
     margin-top: 125px !important;
   }
-  .fff-reward-pic{
-    max-width:160px;
+  .fff-reward-pic {
+    max-width: 160px;
   }
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
+  .fff-ms-info-bar-web {
+    display: block;
+  }
+  .fff-ms-info-bar-mobo {
+    display: none;
+  }
+
   .fff-txt-info {
     font-size: 14px;
     font-family: GenSenRounded TW;
@@ -80,7 +137,7 @@
     text-decoration: none;
     color: #b9433b;
   }
-  .txt-btn {
+  .fff-txt-btn {
     font-family: GenSenRounded TW;
     font-size: 14px;
     text-decoration: none !important;
@@ -93,7 +150,7 @@
     background-color: darkgrey;
     margin-right: 10px;
   }
-  .btn-white {
+  .fff-btn-white {
     background-color: white;
     width: 100px;
     height: 50px;
@@ -143,7 +200,7 @@
     background-color: darkgrey;
     margin-right: 15px;
   }
-  .btn-white {
+  .fff-btn-white {
     background-color: white;
     width: 150px;
     height: 50px;
@@ -182,8 +239,8 @@
     background-color: darkgrey;
     margin-right: 30px;
   }
-  .fff-reward-pic{
-    width:160px;
+  .fff-reward-pic {
+    width: 160px;
   }
 }
 
@@ -213,11 +270,10 @@
     background-color: darkgrey;
     margin-right: 30px;
   }
-  .fff-reward-pic{
-    width:200px;
+  .fff-reward-pic {
+    width: 200px;
   }
 }
-
 
 .fff-txt-ms-select {
   font-family: GenSenRounded TW;
@@ -231,7 +287,6 @@
   text-decoration: none !important;
   font-size: 16px;
   color: #627e2a;
-
 }
 
 .fff-txt-rw-unselect {
@@ -276,7 +331,6 @@
   background-color: #627e2a;
   border-radius: 5px;
   opacity: 100%;
-  
 }
 
 .fff-ms-select-active {
@@ -291,8 +345,6 @@
   text-decoration: none !important;
   color: #a2a3a5;
 }
-
-
 
 .fff-stone-item-icon {
   margin-bottom: 25px;
@@ -332,83 +384,82 @@
 
 .fff-stone-item-box {
   margin-bottom: 90px;
-  max-width:200px;
+  max-width: 200px;
 }
 
-.fff-svg-painting{
-  width:200px;
+.fff-svg-painting {
+  width: 200px;
   height: 200px;
   background-image: url('http://localhost:3015/img/fff/reward-Env.png');
 
   background-repeat: no-repeat;
   background-size: 160px 160px;
-  background-position:20px 20px;
+  background-position: 20px 20px;
 }
 
-.fff-milestone-background-svg{
-  cx:100;
-  cy:100;
-  r:80;
-  stroke:#D0D1D2;
+.fff-milestone-background-svg {
+  cx: 100;
+  cy: 100;
+  r: 80;
+  stroke: #d0d1d2;
   stroke-width: 5;
-  fill:none;
+  fill: none;
 }
 
-.fff-milestone-progress-svg{
-  cx:100;
-  cy:100;
-  r:80;
-  stroke:#f3e575;
+.fff-milestone-progress-svg {
+  cx: 100;
+  cy: 100;
+  r: 80;
+  stroke: #f3e575;
   stroke-width: 10;
-  fill:none;
-  stroke-dasharray: 150,4000;
+  fill: none;
+  stroke-dasharray: 150, 4000;
   transform-origin: center;
 }
 
-.fff-svg-painting-detail{
-  width:310px;
+.fff-svg-painting-detail {
+  width: 310px;
   height: 310px;
-  background-image: url("http://localhost:3015/img/fff/reward-Env.png");
+  background-image: url('http://localhost:3015/img/fff/reward-Env.png');
 
   background-repeat: no-repeat;
   background-size: 300px 300px;
-  background-position:5px 5px;
+  background-position: 5px 5px;
 }
 
-.fff-milestone-background-svg-detail{
-  cx:155;
-  cy:155;
-  r:150;
-  stroke:#D0D1D2;
+.fff-milestone-background-svg-detail {
+  cx: 155;
+  cy: 155;
+  r: 150;
+  stroke: #d0d1d2;
   stroke-width: 5;
-  fill:none;
+  fill: none;
 }
 
-.fff-milestone-progress-svg-detail{
-  cx:155;
-  cy:155;
-  r:150;
-  stroke:#f3e575;
+.fff-milestone-progress-svg-detail {
+  cx: 155;
+  cy: 155;
+  r: 150;
+  stroke: #f3e575;
   stroke-width: 10;
-  fill:none;
-  stroke-dasharray: 281,4000;
+  fill: none;
+  stroke-dasharray: 281, 4000;
   transform-origin: center;
 }
 
 .fff-txt-stone-detail h5 {
-color: #a2a3a5;
+  color: #a2a3a5;
 }
 
-.modal{
-  background: rgba(255,255,255,0.5)
+.modal {
+  background: rgba(255, 255, 255, 0.5);
 }
 
-.fff-dialog p{
+.fff-dialog p {
   margin-bottom: 0;
 }
 
-
-.circle-spin{
+.circle-spin {
   animation-name: spin;
   animation-duration: 2000ms;
   animation-iteration-count: infinite;

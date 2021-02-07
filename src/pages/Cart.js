@@ -7,6 +7,7 @@ import CartSimpleMealCoupon from '../components/cart/CartSimpleMealCoupon'
 import CartMealDelivery from '../components/cart/CartMealDelivery'
 import CartReserveKitchen from '../components/cart/CartReserveKitchen'
 import SimpleMealCoupon from '../components/cart/SimpleMealCoupon'
+import MealDelivery from '../components/cart/MealDelivery'
 
 function Cart() {
   // 切換購物車
@@ -141,6 +142,9 @@ function Cart() {
             choiceObj={choiceObj}
             choiceArray={choiceArray}
           />
+        </Route>
+        <Route path="/cart/mealdelivery">
+          <MealDelivery flowchart={flowchart} setFlowchart={setFlowchart} />
         </Route>
       </Switch>
     </>
