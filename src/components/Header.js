@@ -96,7 +96,7 @@ function Header() {
                       關於我們
                     </Nav.Link>
                     <NavDropdown title="菜單介紹" id="basic-nav-dropdown">
-                      <NavDropdown.Item as={NavLink} to="/none3">
+                      <NavDropdown.Item as={NavLink} to="/meal">
                         菜單介紹
                       </NavDropdown.Item>
                       <NavDropdown.Item as={NavLink} to="/none4">

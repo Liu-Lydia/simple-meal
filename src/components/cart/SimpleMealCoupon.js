@@ -68,6 +68,7 @@ function SimpleMealCoupon(props) {
           choiceArray={choiceArray}
           paymentObj={paymentObj}
           coupon={coupon}
+          
         />
       )}
       <form id="cart_simplemealcoupon">

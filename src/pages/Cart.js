@@ -8,6 +8,7 @@ import CartMealDelivery from '../components/cart/CartMealDelivery'
 import CartReserveKitchen from '../components/cart/CartReserveKitchen'
 import SimpleMealCoupon from '../components/cart/SimpleMealCoupon'
 import MealDelivery from '../components/cart/MealDelivery'
+import ReserveKitchen from '../components/cart/ReserveKitchen'
 
 function Cart() {
   // 切換購物車
@@ -73,7 +74,12 @@ function Cart() {
           />
         )
       case 'MealDelivery':
-        return <CartMealDelivery setFlowchart={setFlowchart} />
+        return (
+          <CartMealDelivery
+            setFlowchart={setFlowchart}
+            setCartMode={setCartMode}
+          />
+        )
       case 'ReserveKitchen':
         return <CartReserveKitchen setFlowchart={setFlowchart} />
       default:
@@ -96,6 +102,7 @@ function Cart() {
       />
       <Switch>
         <Route exact path="/cart">
+          {/* 購物車切換 */}
           {/* {handleCartmode()} */}
           <div className="row justify-content-center poe-bookmark">
             <div className="col-12 col-md-8 col-xl-6">
@@ -145,6 +152,9 @@ function Cart() {
         </Route>
         <Route path="/cart/mealdelivery">
           <MealDelivery flowchart={flowchart} setFlowchart={setFlowchart} />
+        </Route>
+        <Route path="/cart/reservekitchen">
+          <ReserveKitchen flowchart={flowchart} setFlowchart={setFlowchart} />
         </Route>
       </Switch>
     </>

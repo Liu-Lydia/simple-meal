@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 
 // 頁面元件
+import ThisIsForFun from './pages/ThisIsForFun'
 import Test from './pages/Test'
 import TestDatabase from './pages/TestDatabase'
 import Cart from './pages/Cart'
@@ -10,6 +11,7 @@ import SurpriseKitchen from './pages/SurpriseKitchen'
 import Milestone from './pages/Milestone'
 import RewardExchange from "./pages/RewardExchange"
 import Meal from './pages/Meal'
+import Recipe from './pages/Recipe'
 
 // 組合用元件
 import Header from './components/Header'
@@ -43,6 +45,9 @@ function App() {
               </Route>
               <Route path="/RewardExchange">
                 <RewardExchange />
+                </Route>
+              <Route path="/">
+                <ThisIsForFun />
               </Route>
             </Switch>
           </ScrollToTop>
@@ -54,6 +59,9 @@ function App() {
             </Route>
             <Route path="/meal">
               <Meal />
+            </Route>
+            <Route path="/recipe">
+              <Recipe />
             </Route>
           </Switch>
         </MainContentNoContainer>

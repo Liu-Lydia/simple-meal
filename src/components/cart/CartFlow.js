@@ -15,25 +15,25 @@ function CartFlow(props) {
       case 'SimpleMealCoupon':
         return (
           <>
-            <div class="col-3">選擇方案 </div>
-            <div class="col-3">付款方式</div>
-            <div class="col-3">確認訂單</div>
+            <div className="col-3">選擇方案 </div>
+            <div className="col-3">付款方式</div>
+            <div className="col-3">確認訂單</div>
           </>
         )
       case 'MealDelivery':
         return (
           <>
-            <div class="col-3">選擇方案 </div>
-            <div class="col-3">配送資訊</div>
-            <div class="col-3">確認訂單</div>
+            <div className="col-3">選擇方案 </div>
+            <div className="col-3">配送資訊</div>
+            <div className="col-3">確認訂單</div>
           </>
         )
       case 'ReserveKitchen':
         return (
           <>
-            <div class="col-3">預約明細 </div>
-            <div class="col-3">付款方式</div>
-            <div class="col-3">確認訂單</div>
+            <div className="col-3">預約明細 </div>
+            <div className="col-3">付款方式</div>
+            <div className="col-3">確認訂單</div>
           </>
         )
       default:
@@ -63,18 +63,19 @@ function CartFlow(props) {
   return (
     <>
       {/* 購物進度指示條 */}
-      <div class="row justify-content-center poe-mb30 txt-btn poe-cart-progress">
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="d-flex justify-content-between text-center">
+      <div className="row justify-content-center poe-mb30 txt-btn poe-cart-progress">
+        <div className="col-12 col-md-6 col-lg-4">
+          <div className="d-flex justify-content-between text-center">
             {handleCartmodeFlowcart()}
           </div>
-          <div class="d-flex justify-content-between align-items-center poe-cart-progress-line">
-            <div class={classArray[0]} style={{ transition: '1.5s' }}></div>
-            <div class={classArray[1]} style={{ transition: '1.5s' }}></div>
-            <div class={classArray[2]} style={{ transition: '1.5s' }}></div>
+          <div className="d-flex justify-content-between align-items-center poe-cart-progress-line">
+            <div className={classArray[0]} style={{ transition: '1.5s' }}></div>
+            <div className={classArray[1]} style={{ transition: '1.5s' }}></div>
+            <div className={classArray[2]} style={{ transition: '1.5s' }}></div>
           </div>
         </div>
       </div>
+      <div className="row poe-mb30"></div>
     </>
   )
 }
