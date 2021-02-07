@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Route, withRouter, Link, Switch } from 'react-router-dom'
 
 function SimpleMealCouponPayment(props) {
-  // {流程, 流程轉換設定, 方案id, 方案物件, 預設方案內容, 預設付款內容, 付款物件, 付款value, 設定付款value}
+  // {流程, 流程轉換設定, 方案id, 方案物件, 預設方案內容, 預設付款內容, 付款物件, 付款value, 設定付款value, 優惠券物件, 設定優惠券}
   const {
     flowchart,
     setFlowchart,
@@ -14,6 +14,8 @@ function SimpleMealCouponPayment(props) {
     setPaymentObj,
     paymentValue,
     setPaymentValue,
+    coupon,
+    setCoupon,
   } = props
 
   // 改變付款方案
@@ -25,6 +27,15 @@ function SimpleMealCouponPayment(props) {
   // 設定決定的付款選項物件
   const handleSetPaymentObj = (i) => {
     setPaymentObj(paymentArray[i])
+  }
+
+  const handleCoupon = (e) => {
+    const couponText = e.target.value
+    if (couponText.length === 5) {
+      setCoupon({ string: couponText, cost: 100 })
+    } else {
+      setCoupon({ string: couponText, cost: 0 })
+    }
   }
 
   // 掛載轉換階段2
@@ -115,19 +126,23 @@ function SimpleMealCouponPayment(props) {
             <div class="row d-flex justify-content-between align-items-center poe-bookmark-content-coupon">
               <div class="col-12 col-sm-3 poe-mb15">優惠碼</div>
               <div class="col-12 col-sm-5 poe-mb15">
-                <input type="text" class="w-100 input-style poe-input-text" />
+                <input
+                  type="text"
+                  class="w-100 input-style poe-input-text"
+                  value={coupon.string}
+                  onChange={(event) => handleCoupon(event)}
+                />
               </div>
               <div class="col-12 col-sm-4 poe-mb15">
-                <a href="" class="w-100 select-btn-white txt-btn">
-                  我的優惠
-                </a>
+                <a class="w-100 select-btn-white txt-btn">我的優惠</a>
               </div>
-
-              <div class="col-12 text-right">
-                <span>折扣 </span>
-                <span class="poe-red">- 100</span>
-                <span> 元</span>
-              </div>
+              {coupon.cost !== 0 && (
+                <div class="col-12 text-right">
+                  <span>折扣 </span>
+                  <span class="poe-red">- {coupon.cost}</span>
+                  <span> 元</span>
+                </div>
+              )}
             </div>
           </div>
         </div>

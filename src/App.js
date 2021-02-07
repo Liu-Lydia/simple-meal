@@ -6,10 +6,9 @@ import React, { useEffect, useState } from 'react'
 import Test from './pages/Test'
 import TestDatabase from './pages/TestDatabase'
 import Cart from './pages/Cart'
-import Long1 from './pages/Long1'
-import Long2 from './pages/Long2'
 import SurpriseKitchen from './pages/SurpriseKitchen'
 import Milestone from './pages/Milestone'
+import Meal from './pages/Meal'
 
 // 組合用元件
 import Header from './components/Header'
@@ -29,12 +28,6 @@ function App() {
           <MultiLevelBreadCrumb />
           <ScrollToTop>
             <Switch>
-              <Route path="/Long1">
-                <Long1 />
-              </Route>
-              <Route path="/Long2">
-                <Long2 />
-              </Route>
               <Route path="/cart">
                 <Cart />
               </Route>
@@ -54,6 +47,9 @@ function App() {
           <Switch>
             <Route path="/surprisekitchen">
               <SurpriseKitchen />
+            </Route>
+            <Route path="/meal">
+              <Meal />
             </Route>
           </Switch>
         </MainContentNoContainer>

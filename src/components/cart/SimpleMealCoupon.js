@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { Redirect } from 'react-router-dom'
+
 import SimpleMealCouponPayment from './SimpleMealCouponPayment'
 import SimpleMealCouponCheck from './SimpleMealCouponCheck'
 
@@ -25,6 +27,9 @@ function SimpleMealCoupon(props) {
   // 設定付款選項
   const [paymentValue, setPaymentValue] = useState(null)
 
+  // 優惠券使用
+  const [coupon, setCoupon] = useState({ stiring: '', cost: 0 })
+
   // 卸載時轉成流程1
   useEffect(() => {
     return () => {
@@ -34,7 +39,9 @@ function SimpleMealCoupon(props) {
 
   return (
     <>
-      {/* 流程1時 */}
+      {flowchart === 1 && <Redirect to="/cart" />}
+
+      {/* 流程2時 */}
       {flowchart === 2 && (
         <SimpleMealCouponPayment
           flowchart={flowchart}
@@ -47,9 +54,11 @@ function SimpleMealCoupon(props) {
           setPaymentObj={setPaymentObj}
           paymentValue={paymentValue}
           setPaymentValue={setPaymentValue}
+          coupon={coupon}
+          setCoupon={setCoupon}
         />
       )}
-      {/* 流程2時 */}
+      {/* 流程3時 */}
       {flowchart === 3 && (
         <SimpleMealCouponCheck
           flowchart={flowchart}
@@ -58,6 +67,7 @@ function SimpleMealCoupon(props) {
           choiceObj={choiceObj}
           choiceArray={choiceArray}
           paymentObj={paymentObj}
+          coupon={coupon}
         />
       )}
       <form id="cart_simplemealcoupon">
@@ -89,7 +99,7 @@ function SimpleMealCoupon(props) {
         <input
           type="text"
           name="total_price"
-          value={choiceObj.price}
+          value={choiceObj.price - coupon.cost}
           hidden
         ></input>
       </form>

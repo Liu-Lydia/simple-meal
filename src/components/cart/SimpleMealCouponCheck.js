@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { Route, withRouter, Link, Switch } from 'react-router-dom'
+import { Route, withRouter, Link, Switch, Redirect } from 'react-router-dom'
 
 function SimpleMealCouponCheck(props) {
-  // {流程, 流程轉換設定, 方案id, 方案物件, 預設方案內容, 付款選項物件}
+  // {流程, 流程轉換設定, 方案id, 方案物件, 預設方案內容, 付款選項物件, 優惠碼物件}
   const {
     flowchart,
     setFlowchart,
@@ -10,21 +10,31 @@ function SimpleMealCouponCheck(props) {
     choiceObj,
     choiceArray,
     paymentObj,
+    coupon,
   } = props
 
   // 掛載轉換階段3
   useEffect(() => setFlowchart(3), [])
 
-  const handlePostcheck = () => {
+  const handlePostcheck = async () => {
     const fd = new FormData(document.querySelector('#cart_simplemealcoupon'))
-    fetch('http://localhost:4000/simplemealcoupon/addcheck', {
+    await fetch('http://localhost:4000/simplemealcoupon/addcheck', {
       method: 'post',
       body: fd,
-    }).then(setFlowchart(1))
+    })
+      .then((r) => r.json())
+      .then((obj) => {
+        alert(`您的訂單已完成, 訂單編號 ${obj.order_sid}`)
+      })
+    // .then(setCheckBool(true))
   }
+
+  // const [checkBool, setCheckBool] = useState(false)
 
   return (
     <>
+      {/* {checkBool && <Redirect to="/" />} */}
+
       {/* 購物車頁籤(餐券-選購方案) */}
       <div class="row justify-content-center poe-bookmark">
         <div class="col-12 col-md-8 col-xl-6">
@@ -88,17 +98,20 @@ function SimpleMealCouponCheck(props) {
                 <span class="poe-red">{choiceObj.price}</span>
                 <span> 元</span>
               </div>
-              <div class="poe-mb30">
-                <span>折扣 </span>
-                <span class="poe-red">-0</span>
-                <span>
-                  {' '}
-                  元, <br class="d-block d-sm-none" />
-                  金額小計NT${' '}
-                </span>
-                <span class="poe-red">{choiceObj.price}</span>
-                <span> 元</span>
-              </div>
+              {coupon.cost !== 0 && (
+                <div class="poe-mb30">
+                  <span>折扣 </span>
+                  <span class="poe-red">-{coupon.cost}</span>
+                  <span>
+                    {' '}
+                    元, <br class="d-block d-sm-none" />
+                    金額小計NT${' '}
+                  </span>
+                  <span class="poe-red">{choiceObj.price - coupon.cost}</span>
+                  <span> 元</span>
+                </div>
+              )}
+
               <div>
                 <span>共 </span>
                 <span class="poe-red">{choiceObj.quantity}</span>
