@@ -75,6 +75,7 @@ function CartFlow(props) {
           </div>
         </div>
       </div>
+      <div class="row poe-mb30"></div>
     </>
   )
 }

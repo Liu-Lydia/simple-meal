@@ -25,15 +25,17 @@ function SimpleMealCouponCheck(props) {
       .then((r) => r.json())
       .then((obj) => {
         alert(`您的訂單已完成, 訂單編號 ${obj.order_sid}`)
+        setCheckBool(true)
       })
-    // .then(setCheckBool(true))
   }
 
-  // const [checkBool, setCheckBool] = useState(false)
+  // 是否結帳完成
+  const [checkBool, setCheckBool] = useState(false)
 
   return (
     <>
-      {/* {checkBool && <Redirect to="/" />} */}
+      {/* 完成結帳跳轉 */}
+      {checkBool && <Redirect to="/" />}
 
       {/* 購物車頁籤(餐券-選購方案) */}
       <div class="row justify-content-center poe-bookmark">
@@ -166,7 +168,6 @@ function SimpleMealCouponCheck(props) {
             <i class="fas fa-chevron-left"></i>　上一步
           </Link>
           <Link
-            to="/"
             onClick={() => {
               handlePostcheck()
             }}

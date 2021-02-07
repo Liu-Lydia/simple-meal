@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 
 function CartMealDelivery(props) {
-  const { setFlowchart } = props
+  const { setFlowchart, setCartMode } = props
 
   // 裝載時轉成流程1
   useEffect(() => {
@@ -86,7 +86,7 @@ function CartMealDelivery(props) {
         </div>
         <div class="text-center text-sm-right poe-bookmark-btn-group">
           <Link
-            href="./cart-meal-coupon.html"
+            onClick={() => setCartMode('SimpleMealCoupon')}
             class="btn-green txt-btn mx-3 poe-mb20"
           >
             購買餐券

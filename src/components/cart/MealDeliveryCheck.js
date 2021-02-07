@@ -4,8 +4,14 @@ import { Route, withRouter, Link, Switch, Redirect } from 'react-router-dom'
 function MealDeliveryCheck(props) {
   const { flowchart, setFlowchart } = props
 
+  // 是否結帳完成
+  const [checkBool, setCheckBool] = useState(false)
+
   return (
     <>
+      {/* 完成結帳跳轉 */}
+      {checkBool && <Redirect to="/" />}
+
       {/* 配送餐點 */}
       <div class="row justify-content-center poe-bookmark">
         <div class="col-12 col-md-8 col-xl-6">
@@ -143,10 +149,10 @@ function MealDeliveryCheck(props) {
             <i class="fas fa-chevron-left"></i>　上一步
           </Link>
           <Link
-            to="/"
-            // onClick={() => {
-            //   handlePostcheck()
-            // }}
+            onClick={() => {
+              setCheckBool(true)
+              // handlePostcheck()
+            }}
             class="btn-green txt-btn mx-2 poe-mb20"
           >
             確認配送　<i class="fas fa-check"></i>

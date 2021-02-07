@@ -5,7 +5,7 @@ function CartBg() {
     {
       transition: '0s',
       opacity: '1',
-      transform: 'translate(-100px, -200px) rotate(30deg) scaleX(-1)',
+      transform: 'translate(-400px, -400px) rotate(30deg) scaleX(-1)',
     },
     { transition: '0s', opacity: '0' },
     { transition: '0s', opacity: '0' },
@@ -14,7 +14,7 @@ function CartBg() {
     {
       transition: '3s',
       opacity: '1',
-      transform: 'translate(60px, 100px) rotate(-10deg) scaleX(-1)',
+      transform: 'translate(10%, 100px) rotate(-10deg) scaleX(-1)',
     },
     { transition: '2s', opacity: '1' },
     { transition: '3s', opacity: '1' },

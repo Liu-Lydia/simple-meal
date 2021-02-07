@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 
 // 頁面元件
+import ThisIsForFun from './pages/ThisIsForFun'
 import Test from './pages/Test'
 import TestDatabase from './pages/TestDatabase'
 import Cart from './pages/Cart'
@@ -39,6 +40,9 @@ function App() {
               </Route>
               <Route path="/Milestone">
                 <Milestone />
+              </Route>
+              <Route path="/">
+                <ThisIsForFun />
               </Route>
             </Switch>
           </ScrollToTop>
