@@ -28,45 +28,11 @@ function SurpriseContent() {
     price: 0,
   })
 
-  //成人選項內容
-  const AdultArray = [
-    {
-      aquantity: 0,
-      price: 0,
-    },
-    { aquantity: 1, price: 500 },
-  ]
-
-  //兒童選項內容
-  const ChildArray = [
-    {
-      cquantity: 0,
-      price: 0,
-    },
-    { cquantity: 1, price: 100 },
-  ]
-
-  //組合數量金額
-  const [allPrice, setAllPrice] = useState(0)
-
   //清空選項***
   // const handleSetAppoint = () => {
   //   setAllPrice(0)
 
   // }
-
-  //金額顯示
-  function handleSetPrice(aquantity, cquantity, price) {
-    const newPrice = AdultArray[+aquantity].aquantity * price
-    setAppoint({
-      appointDate: '',
-      appointTime: '',
-      aquantity: 0,
-      cquantity: 0,
-      quantity: 0,
-      price: newPrice,
-    })
-  }
 
   //成人數量選擇
   const [aquantity, setAquantity] = useState(0)
@@ -74,9 +40,13 @@ function SurpriseContent() {
     if (bool) {
       if (aquantity < 7) {
         setAquantity(aquantity + 1) //範圍1~7
+        handleSetPrice(aquantity + 1)
       }
     } else {
-      if (aquantity !== 0) setAquantity(aquantity - 1) //>0
+      if (aquantity !== 0) {
+        setAquantity(aquantity - 1) //>0
+        handleSetPrice(aquantity - 1)
+      }
     }
   }
 
@@ -86,10 +56,30 @@ function SurpriseContent() {
     if (bool) {
       if (cquantity < 7) {
         setCquantity(cquantity + 1) //範圍1~7
+        handleSetPrice(cquantity + 1)
       }
     } else {
-      if (cquantity !== 0) setCquantity(cquantity - 1) //>0
+      if (cquantity !== 0) {
+        setCquantity(cquantity - 1)
+        handleSetPrice(cquantity - 1)
+      } //>0
     }
+  }
+
+  //金額顯示
+  function handleSetPrice(aquantity, cquantity) {
+    const AdultPrice = [+aquantity] * 500
+    const ChildPrice = [+cquantity] * 100
+    // const allPrice = AdultPrice + ChildPrice
+
+    setAppoint({
+      appointDate: '',
+      appointTime: '',
+      aquantity: 0,
+      cquantity: 0,
+      quantity: 0,
+      price: AdultPrice,
+    })
   }
 
   //餐點數量選擇
@@ -195,23 +185,23 @@ function SurpriseContent() {
 
               <div className="ml-auto">
                 <span className="txt-sub1 lll-grey">500/每人</span>
-                <Link
+                <a
                   className={`mx-3 ${aquantity === 0 && 'lll-grey'}`}
                   onClick={() => {
                     handleAquantity(false)
                   }}
                 >
                   <i className="fas fa-minus-circle"></i>
-                </Link>
+                </a>
                 <span className="txt-sub1 lll-black">{aquantity}</span>
-                <Link
+                <a
                   className={`ml-3 ${aquantity === 7 && 'lll-grey'}`}
                   onClick={() => {
                     handleAquantity(true)
                   }}
                 >
                   <i className="fas fa-plus-circle"></i>
-                </Link>
+                </a>
               </div>
             </div>
             {/* 選擇兒童數量 ↓↓↓ */}
@@ -221,23 +211,23 @@ function SurpriseContent() {
 
               <div className="ml-auto">
                 <span className="txt-sub1 lll-grey">100/每人</span>
-                <Link
+                <a
                   className={`mx-3 ${cquantity === 0 && 'lll-grey'}`}
                   onClick={() => {
                     handleCquantity(false)
                   }}
                 >
                   <i className="fas fa-minus-circle"></i>
-                </Link>
+                </a>
                 <span className="txt-sub1 lll-black">{cquantity}</span>
-                <Link
+                <a
                   className={`ml-3 ${cquantity === 7 && 'lll-grey'}`}
                   onClick={() => {
                     handleCquantity(true)
                   }}
                 >
                   <i className="fas fa-plus-circle"></i>
-                </Link>
+                </a>
               </div>
             </div>
             {/* 選擇餐點數量 ↓↓↓ */}
@@ -245,23 +235,23 @@ function SurpriseContent() {
               <p className="m-0 txt-sub1 lll-black lll-pb30">請選擇餐點數量</p>
 
               <div className="ml-auto">
-                <Link
+                <a
                   className={`mx-3 ${quantity === 0 && 'lll-grey'}`}
                   onClick={() => {
                     handleQuantity(false)
                   }}
                 >
                   <i className="fas fa-minus-circle"></i>
-                </Link>
+                </a>
                 <span className="txt-sub1 lll-black">{quantity}</span>
-                <Link
+                <a
                   className={`ml-3 ${quantity === 9 && 'lll-grey'}`}
                   onClick={() => {
                     handleQuantity(true)
                   }}
                 >
                   <i className="fas fa-plus-circle"></i>
-                </Link>
+                </a>
               </div>
             </div>
             {/* 選填備註欄 ↓↓↓ */}
