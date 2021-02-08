@@ -19,15 +19,25 @@ function ThisIsForFun() {
   return (
     <>
       <div
+        className="d-flex align-items-center txt-btn"
         style={{
-          background:
-            'url(http://localhost:3015/img/fun/129.gif) center center no-repeat',
-          height: '100px',
-          width: '100px',
+          // height: '100px',
+          // width: '100px',
           transition: `5s`,
           transform: `translate(${transX}px,${transY}px) scalex(${x})`,
         }}
-      ></div>
+      >
+        <div className="px-0">新年快樂!!</div>
+        <div
+          style={{
+            background:
+              'url(http://localhost:3015/img/fun/129.gif) center center no-repeat',
+            height: '100px',
+            width: '100px',
+            transition: `5s`,
+          }}
+        ></div>
+      </div>
     </>
   )
 }
