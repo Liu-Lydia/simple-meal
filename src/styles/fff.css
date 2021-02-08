@@ -119,18 +119,19 @@
 
 
 .fff-svg-painting {
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   background-image: url('http://localhost:3015/img/fff/reward-Env.png');
 
   background-repeat: no-repeat;
   background-size: 80px 80px;
-  background-position: 10px 10px;
+  background-position: 5px 5px;
+  margin:5px 0;
 }
 
 .fff-milestone-background-svg {
-  cx: 50;
-  cy: 50;
+  cx: 45;
+  cy: 45;
   r: 40;
   stroke: #d0d1d2;
   stroke-width: 5;
@@ -138,8 +139,8 @@
 }
 
 .fff-milestone-progress-svg {
-  cx: 50;
-  cy: 50;
+  cx: 45;
+  cy: 45;
   r: 40;
   stroke: #f3e575;
   stroke-width: 5;
@@ -155,6 +156,7 @@
   background-color: darkgrey;
   margin-right: 10px;
 }
+
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
@@ -211,6 +213,42 @@
     align-items: center;
     margin: 0;
   }
+
+  .fff-stone-item-box {
+    margin-bottom: 70px;
+    max-width: 150px;
+  }
+
+  .fff-svg-painting {
+    width: 150px;
+    height: 150px;
+    background-image: url('http://localhost:3015/img/fff/reward-Env.png');
+  
+    background-repeat: no-repeat;
+    background-size: 140px 140px;
+    background-position: 5px 5px;
+    margin: 0;
+  }
+  
+  .fff-milestone-background-svg {
+    cx: 75;
+    cy: 75;
+    r: 70;
+    stroke: #d0d1d2;
+    stroke-width: 5;
+    fill: none;
+  }
+  
+  .fff-milestone-progress-svg {
+    cx: 75;
+    cy: 75;
+    r: 70;
+    stroke: #f3e575;
+    stroke-width: 10;
+    fill: none;
+    stroke-dasharray: 150, 4000;
+    transform-origin: center;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -250,6 +288,41 @@
     border: 1px #627e2a solid;
     display: inline-block;
   }
+
+  .fff-stone-item-box {
+    margin-bottom: 70px;
+    max-width: 150px;
+  }
+
+  .fff-svg-painting {
+    width: 150px;
+    height: 150px;
+    background-image: url('http://localhost:3015/img/fff/reward-Env.png');
+  
+    background-repeat: no-repeat;
+    background-size: 140px 140px;
+    background-position: 5px 5px;
+  }
+  
+  .fff-milestone-background-svg {
+    cx: 75;
+    cy: 75;
+    r: 70;
+    stroke: #d0d1d2;
+    stroke-width: 5;
+    fill: none;
+  }
+  
+  .fff-milestone-progress-svg {
+    cx: 75;
+    cy: 75;
+    r: 70;
+    stroke: #f3e575;
+    stroke-width: 10;
+    fill: none;
+    stroke-dasharray: 150, 4000;
+    transform-origin: center;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -282,29 +355,34 @@
     width: 160px;
   }
 
+  .fff-stone-item-box {
+    margin-bottom: 70px;
+    max-width: 150px;
+  }
+
   .fff-svg-painting {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     background-image: url('http://localhost:3015/img/fff/reward-Env.png');
   
     background-repeat: no-repeat;
-    background-size: 160px 160px;
-    background-position: 20px 20px;
+    background-size: 140px 140px;
+    background-position: 5px 5px;
   }
   
   .fff-milestone-background-svg {
-    cx: 100;
-    cy: 100;
-    r: 80;
+    cx: 75;
+    cy: 75;
+    r: 70;
     stroke: #d0d1d2;
     stroke-width: 5;
     fill: none;
   }
   
   .fff-milestone-progress-svg {
-    cx: 100;
-    cy: 100;
-    r: 80;
+    cx: 75;
+    cy: 75;
+    r: 70;
     stroke: #f3e575;
     stroke-width: 10;
     fill: none;
@@ -343,8 +421,48 @@
     width: 200px;
   }
 
+  .fff-stone-item-box {
+    margin-bottom: 90px;
+    max-width: 200px;
+  }
+
+  .fff-svg-painting {
+    width: 200px;
+    height: 200px;
+    background-image: url('http://localhost:3015/img/fff/reward-Env.png');
+  
+    background-repeat: no-repeat;
+    background-size: 160px 160px;
+    background-position: 20px 20px;
+  }
+  
+  .fff-milestone-background-svg {
+    cx: 100;
+    cy: 100;
+    r: 80;
+    stroke: #d0d1d2;
+    stroke-width: 5;
+    fill: none;
+  }
+  
+  .fff-milestone-progress-svg {
+    cx: 100;
+    cy: 100;
+    r: 80;
+    stroke: #f3e575;
+    stroke-width: 10;
+    fill: none;
+    stroke-dasharray: 150, 4000;
+    transform-origin: center;
+  }
   
 }
+
+
+
+
+
+
 
 .fff-txt-ms-select {
   font-family: GenSenRounded TW;
@@ -452,13 +570,6 @@
 .fff-reward-used {
   color: #434341;
 }
-
-.fff-stone-item-box {
-  margin-bottom: 90px;
-  max-width: 200px;
-}
-
-
 
 .fff-svg-painting-detail {
   width: 310px;

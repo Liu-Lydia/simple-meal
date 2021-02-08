@@ -6,7 +6,7 @@ function MilestoneListOption() {
   return (
     <>
     {/* web virsion */}
-     <div className="row justify-content-center text-center fff-ms-web">
+     <div className="row justify-content-center text-center fff-ms-web" style={{marginBottom:"60px"}}>
             {/* 成就分類文字*/}
             <div className="col-12 col-md-11 col-xl-10 d-flex justify-content-center fff-txt-ms-select">
                 <div className="col-12 col-lg-8 col-xl-7 d-flex justify-content-between">
@@ -33,7 +33,7 @@ function MilestoneListOption() {
         </div>
     
     {/* mobo virsion */}
-     <div className="row justify-content-center text-center fff-ms-mobo">
+     <div className="row justify-content-center text-center fff-ms-mobo" style={{marginBottom:"15px"}}>
             {/* 成就分類文字*/}
             <div className="col-10 d-flex justify-content-center fff-txt-ms-select">
                 <div className="col-12  d-flex justify-content-between">

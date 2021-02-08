@@ -12,62 +12,10 @@ function MilestoneList() {
           <i className="fas fa-chevron-circle-left fff-stone-item-forword"></i>
         </div>
         {/* <!-- 成就display8個 --> */}
-        <div className="col-10 col-sm-8 fff-no-mr-and-pad " style={{ height: '510px' }}>
+        <div className="col-10 col-sm-8 fff-no-mr-and-pad ">
           <div className="row fff-no-mr-and-pad d-flex align-items-center justify-content-around">
             {/* 單個成就 */}
-            <div className="col-4 col-lg-3 d-flex justify-content-center">
-              <div className="fff-stone-item-box justify-content-center">
-                <svg className="fff-svg-painting">
-                  <circle
-                    className="fff-milestone-background-svg d-flex justify-content-center"
-                    style={{ display: 'block' }}
-                  />
-                  <circle
-                    className="fff-milestone-progress-svg d-flex justify-content-center"
-                    transform="rotate(-90)"
-                    style={{ display: 'block' }}
-                  >
-                    <animate
-                      className="fff-milestone-progress-ani"
-                      attributeName="stroke-dasharray"
-                      values="0,4000;150,4000"
-                      dur="1s"
-                      repeatCount="1"
-                    />
-                  </circle>
-                </svg>
-                <span className=" fff-ms-web d-flex justify-content-center">
-                  環保尖兵
-                </span>
-              </div>
-            </div>
-            <div className="col-4 col-lg-3 d-flex justify-content-center">
-              <div className="fff-stone-item-box justify-content-center">
-                <svg className="fff-svg-painting">
-                  <circle
-                    className="fff-milestone-background-svg d-flex justify-content-center"
-                    style={{ display: 'block' }}
-                  />
-                  <circle
-                    className="fff-milestone-progress-svg d-flex justify-content-center"
-                    transform="rotate(-90)"
-                    style={{ display: 'block' }}
-                  >
-                    <animate
-                      className="fff-milestone-progress-ani"
-                      attributeName="stroke-dasharray"
-                      values="0,4000;150,4000"
-                      dur="1s"
-                      repeatCount="1"
-                    />
-                  </circle>
-                </svg>
-                <span className=" fff-ms-web d-flex justify-content-center">
-                  環保尖兵
-                </span>
-              </div>
-            </div>
-            <div className="col-4 col-lg-3 d-flex justify-content-center">
+            <div className="col-4 col-sm-6 col-lg-3 d-flex justify-content-center">
               <div className="fff-stone-item-box justify-content-center">
                 <svg className="fff-svg-painting">
                   <circle
@@ -94,7 +42,88 @@ function MilestoneList() {
               </div>
             </div>
           
-            <div className="col-4 col-lg-3 d-flex justify-content-center">
+            <div className="col-4 col-sm-6 col-lg-3 d-flex justify-content-center">
+              <div className="fff-stone-item-box justify-content-center">
+                <svg className="fff-svg-painting">
+                  <circle
+                    className="fff-milestone-background-svg d-flex justify-content-center"
+                    style={{ display: 'block' }}
+                  />
+                  <circle
+                    className="fff-milestone-progress-svg d-flex justify-content-center"
+                    transform="rotate(-90)"
+                    style={{ display: 'block' }}
+                  >
+                    <animate
+                      className="fff-milestone-progress-ani"
+                      attributeName="stroke-dasharray"
+                      values="0,4000;150,4000"
+                      dur="1s"
+                      repeatCount="1"
+                    />
+                  </circle>
+                </svg>
+                <span className=" fff-ms-web d-flex justify-content-center">
+                  環保尖兵
+                </span>
+              </div>
+            </div>
+          
+            <div className="col-4 col-sm-6 col-lg-3 d-flex justify-content-center">
+              <div className="fff-stone-item-box justify-content-center">
+                <svg className="fff-svg-painting">
+                  <circle
+                    className="fff-milestone-background-svg d-flex justify-content-center"
+                    style={{ display: 'block' }}
+                  />
+                  <circle
+                    className="fff-milestone-progress-svg d-flex justify-content-center"
+                    transform="rotate(-90)"
+                    style={{ display: 'block' }}
+                  >
+                    <animate
+                      className="fff-milestone-progress-ani"
+                      attributeName="stroke-dasharray"
+                      values="0,4000;150,4000"
+                      dur="1s"
+                      repeatCount="1"
+                    />
+                  </circle>
+                </svg>
+                <span className=" fff-ms-web d-flex justify-content-center">
+                  環保尖兵
+                </span>
+              </div>
+            </div>
+          
+            <div className="col-4 col-sm-6 col-lg-3 d-flex justify-content-center">
+              <div className="fff-stone-item-box justify-content-center">
+                <svg className="fff-svg-painting">
+                  <circle
+                    className="fff-milestone-background-svg d-flex justify-content-center"
+                    style={{ display: 'block' }}
+                  />
+                  <circle
+                    className="fff-milestone-progress-svg d-flex justify-content-center"
+                    transform="rotate(-90)"
+                    style={{ display: 'block' }}
+                  >
+                    <animate
+                      className="fff-milestone-progress-ani"
+                      attributeName="stroke-dasharray"
+                      values="0,4000;150,4000"
+                      dur="1s"
+                      repeatCount="1"
+                    />
+                  </circle>
+                </svg>
+                <span className=" fff-ms-web d-flex justify-content-center">
+                  環保尖兵
+                </span>
+              </div>
+            </div>
+          
+            <div className="col-4 col-sm-6 col-lg-3 d-flex justify-content-center">
               <div className="fff-stone-item-box justify-content-center">
                 <svg className="fff-svg-painting">
                   <circle
