@@ -5,12 +5,13 @@ import RecipeSelectTittle from '../components/recipe/RecipeSelectTittle'
 import RecipeCards from '../components/recipe/RecipeCards'
 import MealCart from '../components/meal/MealCart'
 function Recipe(props) {
-  const { breadCrumbBool, setBreadCrumbBool } = props
+  const [mealSid, setMealSid] = useState('1')
 
+  //切換麵包屑顯示
+  const { breadCrumbBool, setBreadCrumbBool } = props
   useEffect(() => {
     setBreadCrumbBool(false)
   }, [])
-
   useEffect(() => {
     return () => {
       setBreadCrumbBool(true)
@@ -21,7 +22,7 @@ function Recipe(props) {
       <div className="container d-flex justify-content-center">
         <div className="col-10">
           <RecipeSearchBar breadCrumbBool={breadCrumbBool} />
-          <RecipeMain />
+          <RecipeMain mealSid={mealSid} />
           <RecipeSelectTittle />
           <RecipeCards />
           <MealCart />

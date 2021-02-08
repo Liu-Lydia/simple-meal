@@ -24,11 +24,13 @@ function Meal(props) {
   return (
     <>
       {/* <div className="container d-flex"> */}
-      <div className="row justify-content-center">
-        <div className="col-10 ">
-          <SearchBarHidden />
-          <MealMain breadCrumbBool={breadCrumbBool} />
-          <MealCards />
+      <div class="container justify-content-center d-flex">
+        <div className="row justify-content-center">
+          <div className="col-10 ">
+            <SearchBarHidden />
+            <MealMain breadCrumbBool={breadCrumbBool} />
+            <MealCards />
+          </div>
         </div>
       </div>
       {/* </div> */}
