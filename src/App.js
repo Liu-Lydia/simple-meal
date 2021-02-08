@@ -63,19 +63,15 @@ function App() {
                   setBreadCrumbBool={setBreadCrumbBool}
                 />
               </Route>
+              <Route path="/surprisekitchen">
+                <SurpriseKitchen />
+              </Route>
+              <Route path="/">
+                <ThisIsForFun />
+              </Route>
             </Switch>
           </ScrollToTop>
         </MainContent>
-        <MainContentNoContainer>
-          <Switch>
-            <Route path="/surprisekitchen">
-              <SurpriseKitchen />
-            </Route>
-          </Switch>
-          <Route path="/">
-            <ThisIsForFun />
-          </Route>
-        </MainContentNoContainer>
         <Footer />
       </>
     </Router>
