@@ -75,7 +75,7 @@ function App() {
             </Switch>
           </ScrollToTop>
         </MainContent>
-      
+
         <Footer />
       </>
     </Router>

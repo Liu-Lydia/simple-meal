@@ -18,6 +18,56 @@ function SurpriseContent() {
   )
   //Collapse ↑↑↑
 
+  //預約內容選擇
+  const [appoint, setAppoint] = useState({
+    appointDate: '',
+    appointTime: '',
+    aquantity: 0,
+    cquantity: 0,
+    quantity: 0,
+    price: 0,
+  })
+
+  //成人選項內容
+  const AdultArray = [
+    {
+      aquantity: 0,
+      price: 0,
+    },
+    { aquantity: 1, price: 500 },
+  ]
+
+  //兒童選項內容
+  const ChildArray = [
+    {
+      cquantity: 0,
+      price: 0,
+    },
+    { cquantity: 1, price: 100 },
+  ]
+
+  //組合數量金額
+  const [allPrice, setAllPrice] = useState(0)
+
+  //清空選項***
+  // const handleSetAppoint = () => {
+  //   setAllPrice(0)
+
+  // }
+
+  //金額顯示
+  function handleSetPrice(aquantity, cquantity, price) {
+    const newPrice = AdultArray[+aquantity].aquantity * price
+    setAppoint({
+      appointDate: '',
+      appointTime: '',
+      aquantity: 0,
+      cquantity: 0,
+      quantity: 0,
+      price: newPrice,
+    })
+  }
+
   //成人數量選擇
   const [aquantity, setAquantity] = useState(0)
   const handleAquantity = (bool) => {
@@ -236,7 +286,10 @@ function SurpriseContent() {
               <span className="px-3 txt-sub2 lll-black lll-center">
                 預約金額
               </span>
-              <h4 className="lll-red lll-pb30">TWD 500</h4>
+              <h4 className="lll-red lll-pb30">
+                <span>TWD</span>
+                {appoint.price}
+              </h4>
             </div>
             {/* 顯示價格 ↑↑↑ */}
 
