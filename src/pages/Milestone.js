@@ -11,8 +11,6 @@ function Milestone() {
   return (
     <>
       <MilestoneInfoBar btnText="兌換獎勵" href="./RewardExchange" setAbout={setAbout} about={about} />
-      {/* 留空白 */}
-      <div style={{ height: '530px' }} />
       <MilestoneListOption/>
       <MilestoneList />
     </>
