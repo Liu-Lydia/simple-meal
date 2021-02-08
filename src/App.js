@@ -31,7 +31,9 @@ function App() {
         <Header />
         {/* 主內容 */}
         <MainContent>
-          {breadCrumbBool && <MultiLevelBreadCrumb />}
+          {breadCrumbBool && (
+            <MultiLevelBreadCrumb breadCrumbBool={breadCrumbBool} />
+          )}
           <ScrollToTop>
             <Switch>
               <Route path="/cart">

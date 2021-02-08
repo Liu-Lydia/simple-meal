@@ -51,6 +51,32 @@ function CartReserveKitchen() {
         <span className="poe-red">2,800</span>
         <span> 元</span>
       </div>
+      <div className="row d-flex txt-cap poe-red">
+        <div className="col-12 col-md-6 poe-mb15">
+          <i className="fas fa-circle"></i>　預約費用以人頭計算
+        </div>
+        <div className="col-12 col-md-6 poe-mb15">
+          <i className="fas fa-circle"></i>　成人500/人、兒童100/人(4-11歲)
+        </div>
+        <div className="col-12 col-md-6 poe-mb15">
+          <i className="fas fa-circle"></i>　每個時段使用時間為3小時
+        </div>
+        <div className="col-12 col-md-6 poe-mb15">
+          <i className="fas fa-circle"></i>
+          　備註用餐特殊需求會以信件方式給予聯繫
+        </div>
+        {/* <span></span>
+        <span>
+          <i className="fas fa-circle"></i>　成人500/人、兒童100/人(4-11歲)
+        </span>
+        <span>
+          <i className="fas fa-circle"></i>　每個時段使用時間為3小時
+        </span>
+        <span>
+          <i className="fas fa-circle"></i>
+          　備註用餐特殊需求會以信件方式給予聯繫
+        </span> */}
+      </div>
     </>
   )
 }

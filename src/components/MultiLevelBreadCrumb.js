@@ -5,7 +5,7 @@ import { withRouter, Link } from 'react-router-dom'
 import { pathnameList, pathnameTextList } from '../config/path'
 
 function MultiLevelBreadCrumb(props) {
-  const { location } = props
+  const { location, breadCrumbBool } = props
 
   //console.log(props)
 
@@ -48,21 +48,35 @@ function MultiLevelBreadCrumb(props) {
 
   return (
     <>
-      <div className="row justify-content-center txt-btn">
-        <div className="col-10 d-none d-sm-block">
-          <nav aria-label="breadcrumb">
-            <ol
-              className="breadcrumb"
-              style={{ backgroundColor: 'transparent' }}
-            >
-              <li className="breadcrumb-item">
-                <Link to="/">首頁</Link>
-              </li>
-              {formatText(findPathnameIndex(location.pathname))}
-            </ol>
-          </nav>
+      {/* 一般的麵包屑 */}
+      {breadCrumbBool && (
+        <div className="row justify-content-center txt-btn">
+          <div className="col-10 d-none d-sm-block">
+            <nav aria-label="breadcrumb">
+              <ol
+                className="breadcrumb"
+                style={{ backgroundColor: 'transparent' }}
+              >
+                <li className="breadcrumb-item">
+                  <Link to="/">首頁</Link>
+                </li>
+                {formatText(findPathnameIndex(location.pathname))}
+              </ol>
+            </nav>
+          </div>
         </div>
-      </div>
+      )}
+      {/* 在菜單的 */}
+      {!breadCrumbBool && (
+        <nav aria-label="breadcrumb">
+          <ol className="breadcrumb" style={{ backgroundColor: 'transparent' }}>
+            <li className="breadcrumb-item">
+              <Link to="/">首頁</Link>
+            </li>
+            {formatText(findPathnameIndex(location.pathname))}
+          </ol>
+        </nav>
+      )}
     </>
   )
 }
