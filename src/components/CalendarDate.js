@@ -1,9 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState, Component } from 'react'
 import { AppStore } from '../pages/Calendar'
 import moment from 'moment'
 import GetWeeksInMonth from './GetWeeksInMonth'
 
 //連結到GeWeekInMonth(mmt), 使用到moment
+
+//測試點選
 
 function CalendarDate() {
   const { timeReducer } = useContext(AppStore)
@@ -19,7 +21,13 @@ function CalendarDate() {
         {weekContentList.map((week, wIndex) => {
           let aWeek = []
           aWeek = week.map((day, dIndex) => (
-            <li className="lll-body-list-item" key={`${day}-${dIndex}`}>
+            <li
+              className="lll-body-list-item"
+              key={`${day}-${dIndex}`}
+              onClick={() => {
+                console.log('11')
+              }}
+            >
               {day === 0 ? '' : day}
             </li>
           ))

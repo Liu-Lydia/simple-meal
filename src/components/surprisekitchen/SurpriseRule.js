@@ -49,24 +49,25 @@ function SurpriseRule() {
       {/* 預約規則說明 ↑↑↑ */}
 
       {/* 地理位置 ↓↓↓ */}
-      <div className="col p-0">
-        <h3 className="lll-title-style lll-mt110 lll-pb45">地理位置</h3>
-        <div className="d-flex lll-title-line">
-          <div className="col-8 p-0">
+      <div class="col p-0 ">
+        <h3 class="lll-title-style lll-mt110 lll-pb45">地理位置</h3>
+        <div class="lll-title-line lll-mobile-block">
+          <div class="col-8 p-0 lll-max100">
             {/* <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.2718198865737!2d121.5398673153787!3d25.024847844811454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa29379b8db9%3A0x6c7f37e71cce4568!2z6LOH562W5pyD!5e0!3m2!1szh-TW!2stw!4v1611819063119!5m2!1szh-TW!2stw"
-              width="100%"
-              height="400"
-              frameborder="0"
-              style="border: 0"
-              allowfullscreen=""
-              aria-hidden="false"
-              tabindex="0"
-            ></iframe> */}
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.2718198865737!2d121.5398673153787!3d25.024847844811454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa29379b8db9%3A0x6c7f37e71cce4568!2z6LOH562W5pyD!5e0!3m2!1szh-TW!2stw!4v1611819063119!5m2!1szh-TW!2stw"
+                  width="100%"
+                  height="400px"
+                  frameborder="0"
+                  style="border: 0"
+                  allowfullscreen=""
+                  aria-hidden="false"
+                  tabindex="0"
+                  class="bb"
+                ></iframe> */}
             <GoogleMap />
           </div>
-          <div className="col-4 p-0 my-auto aa">
-            <p className="m-0 text-center txt-sub1 lll-red lll-12px">
+          <div class="col-4 p-0 lll-max100-center">
+            <p class="m-0 text-center txt-sub1 lll-red lll-12px">
               Tel. 02-6631 6666 <br />
               台北市大安區復興南路一段390號2樓 <br />
               Open. 10:00 ~ 21:00 <br />
@@ -105,7 +106,7 @@ function SurpriseRule() {
         <h3 className="lll-title-style lll-mt110 lll-pb45">顧客評論</h3>
         <div className="lll-title-line">
           <div className="lll-section" id="scroll">
-            <div className="col-6 lll-change-max100">
+            <div className="col-6 p-0 lll-change-max100">
               <div className="d-flex">
                 <span className="txt-sub1 lll-black lll-lineheigh">Lydia</span>
                 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -123,6 +124,22 @@ function SurpriseRule() {
               </div>
               <br />
               <p className="m-0 txt-sub1 lll-black">
+                試放評語試放評語試放評語試放評語
+                試放評語試放評語試放評語試放評語試
+                放評語試放評語試放評語試放評語試放
+                評語試放評語試放評語試放評語試放評 語試放評語試放評語試放評語
+                試放評語試放評語試放評語試放評語
+                試放評語試放評語試放評語試放評語試
+                放評語試放評語試放評語試放評語試放
+                評語試放評語試放評語試放評語試放評 語試放評語試放評語試放評語
+                試放評語試放評語試放評語試放評語
+                試放評語試放評語試放評語試放評語試
+                放評語試放評語試放評語試放評語試放
+                評語試放評語試放評語試放評語試放評 語試放評語試放評語試放評語
+                試放評語試放評語試放評語試放評語
+                試放評語試放評語試放評語試放評語試
+                放評語試放評語試放評語試放評語試放
+                評語試放評語試放評語試放評語試放評 語試放評語試放評語試放評語
                 試放評語試放評語試放評語試放評語
                 試放評語試放評語試放評語試放評語試
                 放評語試放評語試放評語試放評語試放
