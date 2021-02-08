@@ -50,19 +50,21 @@ function MultiLevelBreadCrumb(props) {
     <>
       {/* 一般的麵包屑 */}
       {breadCrumbBool && (
-        <div className="row justify-content-center txt-btn">
-          <div className="col-10 d-none d-sm-block">
-            <nav aria-label="breadcrumb">
-              <ol
-                className="breadcrumb"
-                style={{ backgroundColor: 'transparent' }}
-              >
-                <li className="breadcrumb-item">
-                  <Link to="/">首頁</Link>
-                </li>
-                {formatText(findPathnameIndex(location.pathname))}
-              </ol>
-            </nav>
+        <div className="container">
+          <div className="row justify-content-center txt-btn">
+            <div className="col-10 d-none d-sm-block">
+              <nav aria-label="breadcrumb">
+                <ol
+                  className="breadcrumb"
+                  style={{ backgroundColor: 'transparent' }}
+                >
+                  <li className="breadcrumb-item">
+                    <Link to="/">首頁</Link>
+                  </li>
+                  {formatText(findPathnameIndex(location.pathname))}
+                </ol>
+              </nav>
+            </div>
           </div>
         </div>
       )}

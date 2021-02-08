@@ -139,7 +139,7 @@ function Header() {
                     ></HeaderIcon>
                     <HeaderIcon
                       text={'會員中心'}
-                      url={'/none7'}
+                      url={'/MemberCenter'}
                       fa={'fas fa-user'}
                     ></HeaderIcon>
                     <HeaderIcon
