@@ -9,7 +9,7 @@ import TestDatabase from './pages/TestDatabase'
 import Cart from './pages/Cart'
 import SurpriseKitchen from './pages/SurpriseKitchen'
 import Milestone from './pages/Milestone'
-import RewardExchange from "./pages/RewardExchange"
+import RewardExchange from './pages/RewardExchange'
 import Meal from './pages/Meal'
 import Recipe from './pages/Recipe'
 
@@ -22,13 +22,16 @@ import MultiLevelBreadCrumb from './components/MultiLevelBreadCrumb'
 import Footer from './components/Footer'
 
 function App() {
+  // 麵包屑判斷 (true在左上 false由各頁面自訂, 需要改動者再引入)
+  const [breadCrumbBool, setBreadCrumbBool] = useState(true)
+
   return (
     <Router>
       <>
         <Header />
         {/* 主內容 */}
         <MainContent>
-          <MultiLevelBreadCrumb />
+          {breadCrumbBool && <MultiLevelBreadCrumb />}
           <ScrollToTop>
             <Switch>
               <Route path="/cart">
@@ -45,7 +48,19 @@ function App() {
               </Route>
               <Route path="/RewardExchange">
                 <RewardExchange />
-                </Route>
+              </Route>
+              <Route path="/meal">
+                <Meal
+                  breadCrumbBool={breadCrumbBool}
+                  setBreadCrumbBool={setBreadCrumbBool}
+                />
+              </Route>
+              <Route path="/recipe">
+                <Recipe
+                  breadCrumbBool={breadCrumbBool}
+                  setBreadCrumbBool={setBreadCrumbBool}
+                />
+              </Route>
               <Route path="/">
                 <ThisIsForFun />
               </Route>
@@ -56,12 +71,6 @@ function App() {
           <Switch>
             <Route path="/surprisekitchen">
               <SurpriseKitchen />
-            </Route>
-            <Route path="/meal">
-              <Meal />
-            </Route>
-            <Route path="/recipe">
-              <Recipe />
             </Route>
           </Switch>
         </MainContentNoContainer>

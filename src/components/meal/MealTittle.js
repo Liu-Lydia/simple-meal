@@ -1,9 +1,12 @@
-function MealTittle() {
+import MultiLevelBreadCrumb from '../MultiLevelBreadCrumb'
+
+function MealTittle(props) {
+  const { breadCrumbBool } = props
   return (
     <>
       <div className="cha-main-txt col-12 col-lg-7">
         <div className="cha-main-txt1 txt-sub1">
-          <p>首頁 123 菜單介紹 123 義式料理</p>
+          {!breadCrumbBool && <MultiLevelBreadCrumb />}
         </div>
         <div className="cha-main-txt2 d-flex justify-content-center">
           <div className="cha-main-txt3  ">

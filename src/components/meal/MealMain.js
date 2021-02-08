@@ -1,10 +1,11 @@
 import MealPic from './MealPic'
 import MealTittle from './MealTittle'
-function MealMain() {
+function MealMain(props) {
+  const { breadCrumbBool } = props
   return (
     <div class="row cha-main">
       <MealPic />
-      <MealTittle />
+      <MealTittle breadCrumbBool={breadCrumbBool} />
     </div>
   )
 }
