@@ -12,6 +12,7 @@ import Milestone from './pages/Milestone'
 import RewardExchange from './pages/RewardExchange'
 import Meal from './pages/Meal'
 import Recipe from './pages/Recipe'
+import MemberCenter from './pages/MemberCenter'
 
 // 組合用元件
 import Header from './components/Header'
@@ -61,6 +62,9 @@ function App() {
                   breadCrumbBool={breadCrumbBool}
                   setBreadCrumbBool={setBreadCrumbBool}
                 />
+              </Route>
+              <Route path="/MemberCenter">
+                <MemberCenter />
               </Route>
               <Route path="/surprisekitchen">
                 <SurpriseKitchen />
