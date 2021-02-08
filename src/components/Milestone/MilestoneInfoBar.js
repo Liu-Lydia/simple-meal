@@ -54,7 +54,7 @@ function MilestoneInfoBar(props) {
       </div>
 
     {/* 留空白 */}
-    <div className="row fff-ms-web" style={{ height: '530px' }} />
+    <div className="row fff-ms-web" style={{ height: '64px' }} />
 
       {/* mobo virsion */}
       <div className="fff-ms-mobo d-flex flex-column">

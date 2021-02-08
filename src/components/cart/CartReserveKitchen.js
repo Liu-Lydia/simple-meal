@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { withRouter, Link } from 'react-router-dom'
 
-function CartReserveKitchen() {
+function CartReserveKitchen(props) {
+  const { flowchart, setFlowchart } = props
   return (
     <>
       <h5>預約明細</h5>
@@ -51,7 +53,7 @@ function CartReserveKitchen() {
         <span className="poe-red">2,800</span>
         <span> 元</span>
       </div>
-      <div className="row d-flex txt-cap poe-red">
+      <div className="row d-flex txt-cap poe-red poe-mb30">
         <div className="col-12 col-md-6 poe-mb15">
           <i className="fas fa-circle"></i>　預約費用以人頭計算
         </div>
@@ -65,17 +67,29 @@ function CartReserveKitchen() {
           <i className="fas fa-circle"></i>
           　備註用餐特殊需求會以信件方式給予聯繫
         </div>
-        {/* <span></span>
-        <span>
-          <i className="fas fa-circle"></i>　成人500/人、兒童100/人(4-11歲)
-        </span>
-        <span>
-          <i className="fas fa-circle"></i>　每個時段使用時間為3小時
-        </span>
-        <span>
-          <i className="fas fa-circle"></i>
-          　備註用餐特殊需求會以信件方式給予聯繫
-        </span> */}
+      </div>
+      <div className="w-100 text-center">
+        <Link
+          // to="/cart"
+          // onClick={() => setFlowchart(1)}
+          className="btn-gray txt-btn mx-4 poe-mb20"
+        >
+          <i className="fas fa-chevron-left"></i>　返回預約
+        </Link>
+
+        {1 !== null ? (
+          <Link
+            to="/cart/reservekitchen"
+            onClick={() => setFlowchart(2)}
+            className="btn-green txt-btn mx-4 poe-mb20"
+          >
+            下一步　<i className="fas fa-chevron-right"></i>
+          </Link>
+        ) : (
+          <span disabled className="btn-gray txt-btn mx-4 poe-mb20">
+            下一步　<i className="fas fa-chevron-right"></i>
+          </span>
+        )}
       </div>
     </>
   )

@@ -1,9 +1,12 @@
-function RecipeSearchBar() {
+import MultiLevelBreadCrumb from '../MultiLevelBreadCrumb'
+
+function RecipeSearchBar(porps) {
+  const { breadCrumbBool } = porps
   return (
     <>
       <div className="cha-rec-search-bar row justify-content-between ">
-        <div className="cha-rec-main-txt1 txt-sub1">
-          <p>首頁 123 菜單介紹 123 食譜</p>
+        <div className=" col cha-rec-main-txt1 txt-sub1">
+          {!breadCrumbBool && <MultiLevelBreadCrumb />}
         </div>
         <div className="cha-rec-search-put-top row justify-content-center">
           <input

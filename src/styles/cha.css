@@ -281,7 +281,8 @@ margin-left: 46px;
   /* height: 100px; */
   /* background-color: rgb(120, 161, 44); */
   color: #a2a3a5;
-  margin-top: 30px;
+  margin: 30px;
+  bottom: 8px;
 }
 
 .cha-rec-txt-up{

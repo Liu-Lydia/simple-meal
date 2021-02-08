@@ -12,11 +12,11 @@ import Milestone from './pages/Milestone'
 import RewardExchange from './pages/RewardExchange'
 import Meal from './pages/Meal'
 import Recipe from './pages/Recipe'
+import MemberCenter from './pages/MemberCenter'
 
 // 組合用元件
 import Header from './components/Header'
 import MainContent from './components/MainContent'
-import MainContentNoContainer from './components/MainContentNoContainer'
 import ScrollToTop from './components/ScrollToTop'
 import MultiLevelBreadCrumb from './components/MultiLevelBreadCrumb'
 import Footer from './components/Footer'
@@ -63,19 +63,19 @@ function App() {
                   setBreadCrumbBool={setBreadCrumbBool}
                 />
               </Route>
+              <Route path="/MemberCenter">
+                <MemberCenter />
+              </Route>
+              <Route path="/surprisekitchen">
+                <SurpriseKitchen />
+              </Route>
+              <Route path="/">
+                <ThisIsForFun />
+              </Route>
             </Switch>
           </ScrollToTop>
         </MainContent>
-        <MainContentNoContainer>
-          <Switch>
-            <Route path="/surprisekitchen">
-              <SurpriseKitchen />
-            </Route>
-            <Route path="/">
-              <ThisIsForFun />
-            </Route>
-          </Switch>
-        </MainContentNoContainer>
+      
         <Footer />
       </>
     </Router>

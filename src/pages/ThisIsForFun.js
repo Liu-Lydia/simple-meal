@@ -29,6 +29,7 @@ function ThisIsForFun() {
         }}
       >
         <span className="poe-mr30 txt-btn poe-red">新年快樂!!{'　'}</span>
+        <p>師傅救我啊!!!</p>
       </div>
     </>
   )
