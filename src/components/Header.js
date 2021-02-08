@@ -134,7 +134,7 @@ function Header() {
                     ></HeaderIcon>
                     <HeaderIcon
                       text={'我的成就'}
-                      url={'/milestone'}
+                      url={'/Milestone'}
                       fa={'fas fa-medal'}
                     ></HeaderIcon>
                     <HeaderIcon
