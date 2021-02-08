@@ -27,7 +27,8 @@ function ThisIsForFun() {
           transform: `translate(${transX}px,${transY}px) scalex(${x})`,
         }}
       >
-        <div className="px-0">新年快樂!!</div>
+        <div className="px-0">新年快樂!!
+        <p>師傅!救我啊!!!</p></div>
         <div
           style={{
             background:
