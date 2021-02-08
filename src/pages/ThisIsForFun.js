@@ -19,25 +19,16 @@ function ThisIsForFun() {
   return (
     <>
       <div
-        className="d-flex align-items-center txt-btn"
         style={{
-          // height: '100px',
-          // width: '100px',
+          background:
+            'url(http://localhost:3015/img/fun/129.gif) center center no-repeat',
+          height: '100px',
+          width: '200px',
           transition: `5s`,
           transform: `translate(${transX}px,${transY}px) scalex(${x})`,
         }}
       >
-        <div className="px-0">新年快樂!!
-        <p>師傅!救我啊!!!</p></div>
-        <div
-          style={{
-            background:
-              'url(http://localhost:3015/img/fun/129.gif) center center no-repeat',
-            height: '100px',
-            width: '100px',
-            transition: `5s`,
-          }}
-        ></div>
+        <span className="poe-mr30 txt-btn poe-red">新年快樂!!{'　'}</span>
       </div>
     </>
   )
