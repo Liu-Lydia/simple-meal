@@ -10,11 +10,11 @@ function ExchangeGoodsList() {
             {/* <!--保留空格 --> */}
             <div className="col fff-no-mr-and-pad"></div>
             {/* <!-- 左翻按鍵 --> */}
-            <div className="col-1 col-xl-1 d-flex align-items-center fff-no-mr-and-pad">
+            <div className="fff-ms-web col-1 col-xl-1 d-flex align-items-center fff-no-mr-and-pad">
                 <i className="fas fa-chevron-circle-left fff-stone-item-forword"></i>
             </div>
             {/* <!-- 獎勵display4個 --> */}
-            <div className="col-8 col-xl-10 fff-no-mr-and-pad" style={{height: "210px"}}>
+            <div className="col-10 col-sm-8 col-xl-10 fff-no-mr-and-pad" style={{height: "210px"}}>
                 {/* <!-- 獎勵項目 --> */}
                 <div className="row fff-no-mr-and-pad d-flex align-items-center justify-content-space-between ">
                     <div className="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
@@ -46,7 +46,7 @@ function ExchangeGoodsList() {
 
             </div>
             {/* <!-- 右翻按鍵 --> */}
-            <div className="col-1 col-xl-1 d-flex align-items-center flex-row-reverse fff-no-mr-and-pad">
+            <div className=" fff-ms-web col-1 col-xl-1 d-flex align-items-center flex-row-reverse fff-no-mr-and-pad">
                 <i className="fas fa-chevron-circle-right fff-stone-item-forword"></i>
             </div>
             {/* <!--保留空格 --> */}

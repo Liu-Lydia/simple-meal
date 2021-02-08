@@ -35,14 +35,14 @@ function ExchangeOption(props) {
     <>
       <div className="row justify-content-center text-center">
         {/* 分類文字*/}
-        <div className="col-8 d-flex justify-content-center text-center fff-txt-ms-select">
-          <a id="tab0" className="col-xl-2 col-lg-3 fff-txt-rw-unselect" onClick={() => { 
-              props.setOptionTab(0)}}>合作廠商優惠</a>
+        <div className="col-10 col-sm-8 d-flex justify-content-center text-center fff-txt-ms-select">
+          <a id="tab0" className="col-xl-2 col-lg-3 d-flex justify-content-center fff-txt-rw-unselect" onClick={() => { 
+              props.setOptionTab(0)}}>合作<p className="fff-ms-web">廠商</p>優惠</a>
           <a  id="tab1"
-            className="col-xl-2 col-lg-3 fff-txt-rw-select-active" onClick={() => { 
+            className="col-xl-2 col-lg-3 d-flex justify-content-center fff-txt-rw-select-active" onClick={() => { 
                 props.setOptionTab(1)}}
           >
-            &nbsp;購物金回饋&nbsp;
+            &nbsp;購物金<p className="fff-ms-web">回饋</p>&nbsp;
           </a>
           <a  id="tab2"
             className="col-xl-2 col-lg-3 fff-txt-rw-unselect" onClick={() => { 
@@ -52,7 +52,7 @@ function ExchangeOption(props) {
         </div>
 
         {/* 那條Bar */}
-        <div className="col-8 d-flex justify-content-center text-center align-items-center fff-rw-select-line">
+        <div className="col-10 col-sm-8 d-flex justify-content-center text-center align-items-center fff-rw-select-line">
           <div className="col-xl-2 col-lg-3 d-flex justify-content-center">
             <div id="bar0" className="col-9 "></div>
           </div>

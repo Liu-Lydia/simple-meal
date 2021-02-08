@@ -157,6 +157,10 @@
   margin-right: 10px;
 }
 
+.fff-reward-pic {
+  width: 100px;
+}
+
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {

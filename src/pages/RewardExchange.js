@@ -5,6 +5,7 @@ import MilestoneInfoBar from '../components/Milestone/MilestoneInfoBar';
 import ExchangeOption from '../components/Milestone/ExchangeOption';
 import ExangeGoodsList from '../components/Milestone/ExchangeGoodsList';
 import ExchangeRecord from '../components/Milestone/ExchangeRecord';
+import MsMoboPointInfo from '../components/Milestone/MsMoboPointInfo';
 
 function RewardExchange() {
   //切換分頁
@@ -15,6 +16,7 @@ function RewardExchange() {
     return (
       <>
         <MilestoneInfoBar btnText="我的成就" href="./Milestone" setAbout={setAbout} about={about} />
+        <MsMoboPointInfo />
         <ExchangeOption setOptionTab={setOptionTab} optionTab={optionTab}/>
         {optionTab == 1 && <ExangeGoodsList />}
           

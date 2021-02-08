@@ -72,9 +72,9 @@ function App() {
               <SurpriseKitchen />
             </Route>
           </Switch>
-          <Route path="/">
+          {/* <Route path="/">
             <ThisIsForFun />
-          </Route>
+          </Route> */}
         </MainContentNoContainer>
         <Footer />
       </>
