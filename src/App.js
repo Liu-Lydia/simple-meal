@@ -17,7 +17,6 @@ import MemberCenter from './pages/MemberCenter'
 // 組合用元件
 import Header from './components/Header'
 import MainContent from './components/MainContent'
-import MainContentNoContainer from './components/MainContentNoContainer'
 import ScrollToTop from './components/ScrollToTop'
 import MultiLevelBreadCrumb from './components/MultiLevelBreadCrumb'
 import Footer from './components/Footer'
@@ -67,19 +66,15 @@ function App() {
               <Route path="/MemberCenter">
                 <MemberCenter />
               </Route>
+              <Route path="/surprisekitchen">
+                <SurpriseKitchen />
+              </Route>
+              <Route path="/">
+                <ThisIsForFun />
+              </Route>
             </Switch>
           </ScrollToTop>
         </MainContent>
-        <MainContentNoContainer>
-          <Switch>
-            <Route path="/surprisekitchen">
-              <SurpriseKitchen />
-            </Route>
-          </Switch>
-          <Route path="/">
-            <ThisIsForFun />
-          </Route>
-        </MainContentNoContainer>
         <Footer />
       </>
     </Router>
