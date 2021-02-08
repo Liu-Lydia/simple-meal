@@ -75,16 +75,7 @@ function App() {
             </Switch>
           </ScrollToTop>
         </MainContent>
-        <MainContentNoContainer>
-          <Switch>
-            <Route path="/surprisekitchen">
-              <SurpriseKitchen />
-            </Route>
-          </Switch>
-          {/* <Route path="/">
-            <ThisIsForFun />
-          </Route> */}
-        </MainContentNoContainer>
+      
         <Footer />
       </>
     </Router>
