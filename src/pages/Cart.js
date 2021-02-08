@@ -93,7 +93,7 @@ function Cart() {
   }, [cartMode])
 
   return (
-    <>
+    <div className="container">
       <CartBg />
       <CartFlow
         cartMode={cartMode}
@@ -157,7 +157,7 @@ function Cart() {
           <ReserveKitchen flowchart={flowchart} setFlowchart={setFlowchart} />
         </Route>
       </Switch>
-    </>
+    </div>
   )
 }
 

@@ -72,7 +72,9 @@ function SimpleMealCouponCheck(props) {
                     <br className="d-block d-sm-none" />
                     <div className="d-block d-sm-none d-flex txt-cap">
                       <span className="poe-bookmark-content-m">優惠價</span>
-                      <span className="poe-red">{choiceArray[choice].price}</span>
+                      <span className="poe-red">
+                        {choiceArray[choice].price}
+                      </span>
                     </div>
                     <div className="d-block d-sm-none d-flex txt-cap">
                       <span className="poe-bookmark-content-m">數量</span>
@@ -109,7 +111,9 @@ function SimpleMealCouponCheck(props) {
                     元, <br className="d-block d-sm-none" />
                     金額小計NT${' '}
                   </span>
-                  <span className="poe-red">{choiceObj.price - coupon.cost}</span>
+                  <span className="poe-red">
+                    {choiceObj.price - coupon.cost}
+                  </span>
                   <span> 元</span>
                 </div>
               )}
@@ -124,7 +128,9 @@ function SimpleMealCouponCheck(props) {
                   張餐券, <br className="d-block d-sm-none" />
                   金額小計NT${' '}
                 </span>
-                <span className="poe-red poe-h6">{choiceObj.price}</span>
+                <span className="poe-red poe-h6">
+                  {choiceObj.price - coupon.cost}
+                </span>
                 <span> 元</span>
               </div>
             </div>
@@ -149,7 +155,9 @@ function SimpleMealCouponCheck(props) {
                 <tr>
                   <td>
                     {paymentObj.proj}
-                    <span className="txt-cap poe-red">{paymentObj.discript}</span>
+                    <span className="txt-cap poe-red">
+                      {paymentObj.discript}
+                    </span>
                   </td>
                 </tr>
               </tbody>
