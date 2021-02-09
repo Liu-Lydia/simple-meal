@@ -77,6 +77,8 @@ function Header() {
                 // variant="dark"
                 expand="lg"
                 collapseOnSelect="true"
+                className="py-0"
+                style={{ height: '100px' }}
               >
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Brand as={NavLink} className="mx-auto" to="/">
