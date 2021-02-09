@@ -2,7 +2,7 @@ function MealMeun() {
   return (
     <>
       <div className="cha-meun">
-        <ul className="txt-sub2 cha-meun-li">
+        <ul className="txt-sub2 cha-meun-li text-center">
           <li className=" ">
             <a href="" className="cha-meun-txt1 cha-gray">
               所有餐點

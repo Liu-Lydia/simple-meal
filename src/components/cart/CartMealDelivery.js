@@ -24,7 +24,10 @@ function CartMealDelivery(props) {
               <th className="text-center" scope="col">
                 餐點明細
               </th>
-              <th className="d-none d-sm-block text-center text-nowrap" scope="col">
+              <th
+                className="d-none d-sm-block text-center text-nowrap"
+                scope="col"
+              >
                 數量
               </th>
             </tr>
@@ -115,7 +118,10 @@ function CartMealDelivery(props) {
               <th className="text-center" scope="col">
                 餐點明細
               </th>
-              <th className="d-none d-sm-block text-center text-nowrap" scope="col">
+              <th
+                className="d-none d-sm-block text-center text-nowrap"
+                scope="col"
+              >
                 數量
               </th>
             </tr>

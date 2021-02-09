@@ -1,4 +1,25 @@
-function RecipeTittle() {
+import React, { useEffect, useState } from 'react'
+import TestOne from './TestOne'
+import TestTwo from './TestTwo'
+import RecipeIngredient from './RecipeIngredient'
+import { Link } from 'react-router-dom'
+
+function RecipeTittle(props) {
+  //選擇標籤頁
+  const [tittle, setTittle] = useState('testb')
+  //選擇營養成分,使用器具,食材清單
+  const { mealSid } = props
+
+  const selected = () => {
+    switch (tittle) {
+      case 'testa':
+        return <TestOne mealSid={mealSid} />
+      case 'testb':
+        return <TestTwo mealSid={mealSid} />
+      case 'testc':
+        return <RecipeIngredient mealSid={mealSid} />
+    }
+  }
   return (
     <>
       <div className="cha-rec-main-txt col-12 col-lg-7">
@@ -39,63 +60,26 @@ function RecipeTittle() {
         </div>
         <div className="cha-rec-txt-down px-0 col-12 col-lg-7">
           <div className="d-flex justify-content-between txt-btn">
-            <a
-              href="/src/staticPages/cart-page/cart-meal-coupon.html"
+            <Link
               className="col-3 cha-rec-sel1 cha-rec-sel1-active"
+              onClick={() => setTittle('testa')}
             >
               營養成分
-            </a>
-            <a href="" className="col-3 cha-rec-sel1">
+            </Link>
+            <Link
+              className="col-3 cha-rec-sel1"
+              onClick={() => setTittle('testb')}
+            >
               使用器具
-            </a>
-            <a href="" className="col-3 cha-rec-sel1">
+            </Link>
+            <Link
+              onClick={() => setTittle('testc')}
+              className="col-3 cha-rec-sel1"
+            >
               食材清單
-            </a>
+            </Link>
           </div>
-          <div className="cha-rec-sel-box  txt-body cha-gray">
-            <div className="col cha-sel-box-1 justify-content-between d-flex">
-              <span>瓦甘達</span>
-              <span className="cha-sel-box-txt1">forever</span>
-              <span className="cha-sel-box-txt2">瓦甘達</span>
-              <span>forever</span>
-            </div>
-            <div className="col cha-sel-box-1 justify-content-between d-flex">
-              <span>瓦甘達</span>
-              <span className="cha-sel-box-txt1">forever</span>
-              <span className="cha-sel-box-txt2">瓦甘達</span>
-              <span>forever</span>
-            </div>
-            <div className="col cha-sel-box-1 justify-content-between d-flex">
-              <span>瓦甘達</span>
-              <span className="cha-sel-box-txt1">forever</span>
-              <span className="cha-sel-box-txt2">瓦甘達</span>
-              <span>forever</span>
-            </div>
-            <div className="col cha-sel-box-1 justify-content-between d-flex">
-              <span>瓦甘達</span>
-              <span className="cha-sel-box-txt1">forever</span>
-              <span className="cha-sel-box-txt2">瓦甘達</span>
-              <span>forever</span>
-            </div>
-            <div className="col cha-sel-box-1 justify-content-between d-flex">
-              <span>瓦甘達</span>
-              <span className="cha-sel-box-txt1">forever</span>
-              <span className="cha-sel-box-txt2">瓦甘達</span>
-              <span>forever</span>
-            </div>
-            <div className="col cha-sel-box-1 justify-content-between d-flex">
-              <span>瓦甘達</span>
-              <span className="cha-sel-box-txt1">forever</span>
-              <span className="cha-sel-box-txt2">瓦甘達</span>
-              <span>forever</span>
-            </div>
-            <div className="col cha-sel-box-1 justify-content-between d-flex">
-              <span>瓦甘達</span>
-              <span className="cha-sel-box-txt1">forever</span>
-              <span className="cha-sel-box-txt2">瓦甘達</span>
-              <span>forever</span>
-            </div>
-          </div>
+          <div className="cha-rec-sel-box  txt-body cha-gray">{selected()}</div>
           <div className="cha-rec-btns d-flex justify-content-between">
             <a href="" className="btn-white txt-btn">
               加入訂單

@@ -150,6 +150,10 @@
 .cha-rights {
   line-height: 100px;
 }
+.cha-rest{
+height: 20px!important;
+width: 40px;
+}
 .cha-meun {
   width: 200px;
   height: 400px;

@@ -11,15 +11,16 @@ function Milestone() {
   const [about, setAbout] = useState(0)
   return (
     <>
-      <MilestoneInfoBar
-        btnText="兌換獎勵"
-        href="./RewardExchange"
-        setAbout={setAbout}
-        about={about}
-      />
-      XF
-      <MilestoneListOption />
-      <MilestoneList />
+      <div className="container">
+        <MilestoneInfoBar
+          btnText="兌換獎勵"
+          href="./RewardExchange"
+          setAbout={setAbout}
+          about={about}
+        />
+        <MilestoneListOption />
+        <MilestoneList />
+      </div>
     </>
   )
 }
