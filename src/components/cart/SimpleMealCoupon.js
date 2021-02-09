@@ -68,7 +68,6 @@ function SimpleMealCoupon(props) {
           choiceArray={choiceArray}
           paymentObj={paymentObj}
           coupon={coupon}
-          
         />
       )}
       <form id="cart_simplemealcoupon">
@@ -101,6 +100,12 @@ function SimpleMealCoupon(props) {
           type="text"
           name="total_price"
           value={choiceObj.price - coupon.cost}
+          hidden
+        ></input>
+        <input
+          type="text"
+          name="payment_method"
+          value={paymentObj.proj}
           hidden
         ></input>
       </form>

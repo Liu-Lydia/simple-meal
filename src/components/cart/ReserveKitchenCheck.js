@@ -2,21 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { Route, withRouter, Link, Switch, Redirect } from 'react-router-dom'
 
 function ReserveKitchenCheck(props) {
-  const {
-    flowchart,
-    setFlowchart,
-    paymentArray,
-    paymentObj,
-    setPaymentObj,
-    paymentValue,
-    setPaymentValue,
-    coupon,
-    setCoupon,
-  } = props
+  const { flowchart, setFlowchart, paymentObj, coupon, reservationInfo } = props
 
   // 是否結帳完成
   const [checkBool, setCheckBool] = useState(false)
 
+  // 拿資料庫的預約資料出來放
   const [orderObj, setOrderObj] = useState({
     reservation_date: '',
     reservation_time: '',
@@ -42,6 +33,19 @@ function ReserveKitchenCheck(props) {
   useState(() => {
     handleGetData()
   }, [])
+
+  const handlePostcheck = async () => {
+    const fd = new FormData(document.querySelector('#surprisekitchen_order'))
+    await fetch('http://localhost:4000/reservekitchen/ordercheck', {
+      method: 'post',
+      body: fd,
+    })
+      .then((r) => r.json())
+      .then((obj) => {
+        alert(`您的訂單已完成, 訂單編號 ${obj.order_sid}`)
+        setCheckBool(true)
+      })
+  }
 
   return (
     <>
@@ -196,15 +200,21 @@ function ReserveKitchenCheck(props) {
           <div className="poe-bookmark-content txt-btn">
             <div className="row poe-mb30">
               <div className="col-4 col-sm-3 text-right">收件人</div>
-              <div className="col-8 col-sm-9 poe-green">真麻煩</div>
+              <div className="col-8 col-sm-9 poe-green">
+                {reservationInfo.reservation_name}
+              </div>
             </div>
             <div className="row poe-mb30">
               <div className="col-4 col-sm-3 text-right">連絡電話</div>
-              <div className="col-8 col-sm-9 poe-green">0987563256</div>
+              <div className="col-8 col-sm-9 poe-green">
+                {reservationInfo.reservation_tel}
+              </div>
             </div>
             <div className="row poe-mb30">
               <div className="col-4 col-sm-3 text-right">Email</div>
-              <div className="col-8 col-sm-9 poe-green">abc@gmail.com</div>
+              <div className="col-8 col-sm-9 poe-green">
+                {reservationInfo.reservation_email}
+              </div>
             </div>
           </div>
         </div>
@@ -249,8 +259,7 @@ function ReserveKitchenCheck(props) {
           </Link>
           <Link
             onClick={() => {
-              setCheckBool(true)
-              // handlePostcheck()
+              handlePostcheck()
             }}
             className="btn-green txt-btn mx-2 poe-mb20"
           >

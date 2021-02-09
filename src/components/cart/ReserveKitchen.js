@@ -30,6 +30,12 @@ function ReserveKitchen(props) {
   // 優惠券使用
   const [coupon, setCoupon] = useState({ stiring: '', cost: 0 })
 
+  const [reservationInfo, setReservationInfo] = useState({
+    reservation_name: '',
+    reservation_tel: '',
+    reservation_email: '',
+  })
+
   // 卸載時轉成流程1
   useEffect(() => {
     return () => {
@@ -52,6 +58,8 @@ function ReserveKitchen(props) {
           setPaymentValue={setPaymentValue}
           coupon={coupon}
           setCoupon={setCoupon}
+          reservationInfo={reservationInfo}
+          setReservationInfo={setReservationInfo}
         />
       )}
       {/* 流程3時 */}
@@ -59,15 +67,37 @@ function ReserveKitchen(props) {
         <ReserveKitchenCheck
           flowchart={flowchart}
           setFlowchart={setFlowchart}
-          paymentArray={paymentArray}
           paymentObj={paymentObj}
-          setPaymentObj={setPaymentObj}
-          paymentValue={paymentValue}
-          setPaymentValue={setPaymentValue}
           coupon={coupon}
-          setCoupon={setCoupon}
+          reservationInfo={reservationInfo}
         />
       )}
+      <form id="surprisekitchen_order">
+        <input
+          type="text"
+          name="reservation_name"
+          value={reservationInfo.reservation_name}
+          hidden
+        />
+        <input
+          type="text"
+          name="reservation_tel"
+          value={reservationInfo.reservation_tel}
+          hidden
+        />
+        <input
+          type="text"
+          name="reservation_email"
+          value={reservationInfo.reservation_email}
+          hidden
+        />
+        <input
+          type="text"
+          name="payment_method"
+          value={paymentObj.proj}
+          hidden
+        />
+      </form>
     </>
   )
 }

@@ -12,6 +12,8 @@ function ReserveKitchenPayment(props) {
     setPaymentValue,
     coupon,
     setCoupon,
+    reservationInfo,
+    setReservationInfo,
   } = props
 
   // 改變付款方案
@@ -59,7 +61,17 @@ function ReserveKitchenPayment(props) {
                 預約人
               </div>
               <div className="col-12 col-md-10 poe-mb15">
-                <input type="text" className="w-100 input-style" />
+                <input
+                  type="text"
+                  className="w-100 input-style"
+                  value={reservationInfo.reservation_name}
+                  onChange={(event) => {
+                    setReservationInfo({
+                      ...reservationInfo,
+                      reservation_name: event.target.value,
+                    })
+                  }}
+                />
               </div>
               <div className="col-md-2"></div>
               <div className="col-12 col-md-10 txt-cap">
@@ -71,7 +83,17 @@ function ReserveKitchenPayment(props) {
                 連絡電話
               </div>
               <div className="col-12 col-md-10 poe-mb15">
-                <input type="text" className="w-100 input-style" />
+                <input
+                  type="text"
+                  className="w-100 input-style"
+                  value={reservationInfo.reservation_tel}
+                  onChange={(event) => {
+                    setReservationInfo({
+                      ...reservationInfo,
+                      reservation_tel: event.target.value,
+                    })
+                  }}
+                />
               </div>
               <div className="col-md-2"></div>
               <div className="col-12 col-md-10 txt-cap">
@@ -83,7 +105,17 @@ function ReserveKitchenPayment(props) {
                 Email
               </div>
               <div className="col-12 col-md-10 poe-mb15">
-                <input type="mail" className="w-100 input-style" />
+                <input
+                  type="mail"
+                  className="w-100 input-style"
+                  value={reservationInfo.reservation_email}
+                  onChange={(event) => {
+                    setReservationInfo({
+                      ...reservationInfo,
+                      reservation_email: event.target.value,
+                    })
+                  }}
+                />
               </div>
               <div className="col-md-2"></div>
               <div className="col-12 col-md-10 txt-cap">
