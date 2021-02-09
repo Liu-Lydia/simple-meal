@@ -23,7 +23,7 @@ function ThisIsForFun() {
   }, [transX])
 
   return (
-    <div style={{ overflow: 'hidden', height: '100vh' }}>
+    <div style={{ overflow: 'hidden', height: '50vh' }}>
       <div
         style={{
           background: `url(${url}) center center no-repeat`,

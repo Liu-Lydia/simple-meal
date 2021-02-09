@@ -7,43 +7,64 @@ function HeaderIcon(props) {
   const { text, url, fa } = props
 
   //   消失
-  const noneCss = {
-    width: '0px',
-    color: '#fff ',
-    marginRight: '0px',
-    display: 'inline',
-    transition: '1s',
+  const none = {
+    icon: {
+      margin: '0 0',
+      padding: '0 24px',
+      transition: '1s',
+      color: '#A2A3A5',
+    },
+    span: {
+      marginRight: '0px',
+      // display: 'inline',
+      transition: '1s',
+      color: '#fff ',
+    },
+    txt: '',
   }
   //   出現
-  const blockCss = {
-    width: '0px',
-    color: '#000 ',
-    marginRight: '24px',
-    display: 'inline',
-    transition: '1s',
+  const block = {
+    icon: {
+      margin: '0 0',
+      padding: '0 24px 0 0',
+      transition: '1.2s',
+      color: '#627E2A',
+    },
+    span: {
+      marginRight: '24px',
+      // display: 'inline',
+      transition: '1.2s',
+      color: '#627E2A',
+    },
+    txt: text,
   }
 
-  // cssAndText = [css變化物件 , 顯示字串] (初始設定消失)
-  const [cssAndText, setCssAndText] = useState([noneCss, ''])
+  // cssAndText = {連結css物件 , 顯示字串css物件, 顯示字串} (初始設定消失)
+  const [cssAndText, setCssAndText] = useState(none)
 
   return (
-    <Nav.Link
-      as={NavLink}
-      to={url}
-      className="mx-3 px-2"
-      onMouseOver={() => {
-        setCssAndText([blockCss, text])
-      }}
-      onMouseOut={() => {
-        setCssAndText([noneCss, ''])
-      }}
-    >
-      <span className="text-center overflow-hidden">
-        <span style={cssAndText[0]}>{cssAndText[1]}</span>
-      </span>
-
-      <i className={fa}></i>
-    </Nav.Link>
+    <>
+      <Nav.Link
+        as={NavLink}
+        to={url}
+        onMouseEnter={() => {
+          console.log('enter')
+          setCssAndText(block)
+        }}
+        onMouseLeave={() => {
+          console.log('leave')
+          setCssAndText(none)
+        }}
+        style={cssAndText.icon}
+      >
+        <span style={cssAndText.span}>
+          <span>{cssAndText.txt}</span>
+        </span>
+        <span>
+          <i className={fa}></i>
+        </span>
+      </Nav.Link>
+    </>
   )
 }
 export default HeaderIcon

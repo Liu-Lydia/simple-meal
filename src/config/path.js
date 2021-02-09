@@ -3,35 +3,37 @@ export const debug = true
 export const devUrl = 'http://localhost:3015'
 export const prodUrl = 'http://www.simplemeal.com'
 
-// 0204待更新
+// 0210待更新
 export const pathnameList = [
-  // '/about',
-  // '/login',
-  // '/product',
-  // '/product/baby',
-  // '/product/baby/birth',
-  // '/product/men',
-  // '/product/women',
-  // '/productcategory',
-  // '/productcategory/pc',
-  // '/productcategory/mobile',
-  // '/productcategory/notebook',
-  // '/student',
-  // '/register',
+  // 購物車
+  '/cart',
+  '/cart/simplemealcoupon',
+  '/cart/mealdelivery',
+  '/cart/reservekitchen',
+  // 驚喜廚房
+  '/surprisekitchen',
+  // 成就系統
+  '/Milestone',
+  '/RewardExchange',
+  // 會員中心
+  '/MemberCenter',
+  // 商品
+  '/meal',
 ]
 
 export const pathnameTextList = [
-  // '/關於我們',
-  // '/會員登入',
-  // '/產品',
-  // '/產品/嬰兒',
-  // '/產品/嬰兒/初生兒',
-  // '/產品/男性',
-  // '/產品/女性',
-  // '/產品分類',
-  // '/產品分類/電腦PC',
-  // '/產品分類/手機',
-  // '/產品分類/筆記型電腦',
-  // '/學生資料',
-  // '/會員註冊',
+  // 購物車
+  '/購物車',
+  '/購物車/購買餐券',
+  '/購物車/配送餐點',
+  '/購物車/預約廚房',
+  // 驚喜廚房
+  '/驚喜廚房',
+  // 成就系統
+  '/我的成就',
+  '/兌換獎勵',
+  // 會員中心
+  '/會員中心',
+  // 商品
+  '/菜單介紹',
 ]
