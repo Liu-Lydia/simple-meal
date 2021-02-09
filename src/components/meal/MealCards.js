@@ -1,12 +1,11 @@
-import MealCard from './MealCard'
+// import MealCard from './MealCard'
+import MealMultiCarousel from './MealMultiCarousel'
 
 function MealCards() {
   return (
     <>
       <div className="cha-cards d-flex justify-content-center ">
-        <i className="fas fa-chevron-circle-left cha-left-icon cha-green"></i>
-        <MealCard />
-        <i className="fas fa-chevron-circle-right cha-rigth-icon cha-green"></i>
+        <MealMultiCarousel />
       </div>
     </>
   )

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import RecipeMain from '../components/recipe/RecipeMain'
 import RecipeSearchBar from '../components/recipe/RecipeSearchBar'
 import RecipeSelectTittle from '../components/recipe/RecipeSelectTittle'
-import RecipeCards from '../components/recipe/RecipeCards'
 import MealCart from '../components/meal/MealCart'
+import CardTest from '../components/recipe/CardTest'
 function Recipe(props) {
   const [mealSid, setMealSid] = useState('1')
 
@@ -24,7 +24,7 @@ function Recipe(props) {
           <RecipeSearchBar breadCrumbBool={breadCrumbBool} />
           <RecipeMain mealSid={mealSid} />
           <RecipeSelectTittle />
-          <RecipeCards />
+          <CardTest />
           <MealCart />
         </div>
       </div>
