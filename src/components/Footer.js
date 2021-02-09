@@ -13,7 +13,10 @@ import { Link } from 'react-router-dom'
 function Footer(props) {
   return (
     <>
-      <footer className="footer mt-auto py-3 txt-btn poe-gray">
+      <footer
+        className="footer mt-auto py-3 txt-btn poe-gray"
+        style={{ zIndex: '-1' }}
+      >
         <div className="container">
           <div className="row justify-content-center px-3">
             <div className="col-12 col-md offset-md-1 text-center text-md-left">
