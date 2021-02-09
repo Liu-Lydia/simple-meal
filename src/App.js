@@ -66,6 +66,7 @@ function App() {
               <Route path="/MemberCenter">
                 <MemberCenter />
               </Route>
+
               <Route path="/surprisekitchen">
                 <SurpriseKitchen />
               </Route>
