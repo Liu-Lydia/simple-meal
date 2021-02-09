@@ -106,6 +106,7 @@ function CartSimpleMealCoupon(props) {
 
   return (
     <>
+      {/* 選購方案表 */}
       <h5>選購方案</h5>
       <table className="table table-borderless table-hover">
         <thead>
@@ -204,20 +205,22 @@ function CartSimpleMealCoupon(props) {
           </tr>
         </tbody>
       </table>
+      {/* 組合數量按鈕 */}
       <div className="poe-bookmark-content-choice text-right">
         <span className="">組合數量</span>
-        <a onClick={() => handleSetQuantity(false)} className="mx-3">
+        <a onClick={() => handleSetQuantity(false)} className="px-3">
           <i
             className={`fas fa-minus-circle ${quantity <= 1 && 'poe-gray'}`}
           ></i>
         </a>
         <span>{quantity}</span>
-        <a onClick={() => handleSetQuantity(true)} className="mx-3">
+        <a onClick={() => handleSetQuantity(true)} className="px-3">
           <i
             className={`fas fa-plus-circle ${quantity === 10 && 'poe-gray'}`}
           ></i>
         </a>
       </div>
+      {/* 小計 */}
       <div className="poe-bookmark-content-result text-right">
         <div>
           <span>共 </span>
@@ -233,6 +236,7 @@ function CartSimpleMealCoupon(props) {
           <span> 元</span>
         </div>
       </div>
+      {/* 下一步 */}
       <div className="text-right poe-bookmark-btn-group">
         {choice ? (
           <Link

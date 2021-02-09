@@ -50,11 +50,11 @@ function CartMealDelivery(props) {
               </td>
               <td className="text-center align-middle">
                 <div>
-                  <Link href="" className="mx-3 poe-green">
+                  <Link href="" className="px-3 poe-green">
                     <i className="fas fa-minus-circle"></i>
                   </Link>
                   <span>2</span>
-                  <Link href="" className="mx-3 poe-green">
+                  <Link href="" className="px-3 poe-green">
                     <i className="fas fa-plus-circle"></i>
                   </Link>
                 </div>
@@ -144,11 +144,11 @@ function CartMealDelivery(props) {
               </td>
               <td className="text-center align-middle">
                 <div>
-                  <a href="" className="mx-3 poe-green">
+                  <a href="" className="px-3 poe-green">
                     <i className="fas fa-minus-circle"></i>
                   </a>
                   <span>2</span>
-                  <a href="" className="mx-3 poe-green">
+                  <a href="" className="px-3 poe-green">
                     <i className="fas fa-plus-circle"></i>
                   </a>
                 </div>
