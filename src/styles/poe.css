@@ -111,26 +111,26 @@
 
 .poe-cart-progress .col-3 {
   padding: 0;
-  color: #627E2A;
+  color: #627e2a;
   margin: 0 5px;
 }
 
 .poe-cart-progress-line {
   background-color: #b0be94;
-  border-radius: 2.5px;
-  height: 5px;
+  border-radius: 4px;
+  height: 8px;
 }
 
 .poe-cart-progress-active {
-  height: 10px;
-  background-color: #627E2A;
-  border-radius: 5px;
+  height: 16px;
+  background-color: #627e2a;
+  border-radius: 8px;
   margin: 0 5px;
 }
 
 .poe-bookmark-label {
   opacity: 50%;
-  background-color: #627E2A;
+  background-color: #627e2a;
   height: 30px;
   line-height: 30px;
   border-radius: 15px 15px 0 0;
@@ -158,7 +158,7 @@
 
 .poe-bookmark-content {
   width: 100%;
-  border: 3px solid #627E2A;
+  border: 3px solid #627e2a;
   padding: 8%;
   /* padding: 65px; */
   font-family: GenSenRounded TW;
@@ -172,11 +172,11 @@
 }
 
 .poe-bookmark-content thead {
-  border-bottom: 2px solid #627E2A;
+  border-bottom: 2px solid #627e2a;
 }
 
 .poe-bookmark-content td {
-  color: #627E2A;
+  color: #627e2a;
 }
 
 /* .poe-bookmark-content .txt-cap {
@@ -184,7 +184,7 @@
 } */
 
 .poe-green {
-  color: #627E2A !important;
+  color: #627e2a !important;
 }
 
 .poe-red {
@@ -201,12 +201,12 @@
 }
 
 .poe-bookmark-content-choice .fas {
-  color: #627E2A;
+  color: #627e2a;
 }
 
 .poe-bookmark-content-choice,
 .poe-bookmark-content-result {
-  border-top: 2px solid #627E2A;
+  border-top: 2px solid #627e2a;
   /* border-bottom: 2px solid #627E2A; */
 }
 
@@ -314,7 +314,5 @@
 }
 
 .poe-bbgreen {
-  border-bottom: 2px solid #627E2A;
+  border-bottom: 2px solid #627e2a;
 }
-
-

@@ -65,7 +65,7 @@ function CartFlow(props) {
       {/* 購物進度指示條 */}
       <div className="row justify-content-center poe-mb30 txt-btn poe-cart-progress">
         <div className="col-12 col-md-6 col-lg-4">
-          <div className="d-flex justify-content-between text-center">
+          <div className="d-flex justify-content-between text-center mb-1">
             {handleCartmodeFlowcart()}
           </div>
           <div className="d-flex justify-content-between align-items-center poe-cart-progress-line">

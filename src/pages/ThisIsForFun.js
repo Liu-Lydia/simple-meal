@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 function ThisIsForFun() {
   const [transX, setTransX] = useState(500)
   const [transY, setTransY] = useState(200)
-  const [time, setTime] = useState(5)
+  const [url, setUrl] = useState('http://localhost:3015/img/fun/129.gif')
   const [x, setX] = useState(1)
 
   function getRandomInt(min, max) {
@@ -15,21 +15,28 @@ function ThisIsForFun() {
     setTransX(getRandomInt(0, 1000))
     setTransY(getRandomInt(0, 400))
   }, [])
+  useEffect(() => {
+    transX === 500 &&
+      setTimeout(() => {
+        setUrl('http://localhost:3015/img/fun/130s.gif')
+      }, 30000)
+  }, [transX])
 
   return (
     <>
       <div
         style={{
-          background:
-            'url(http://localhost:3015/img/fun/129.gif) center center no-repeat',
+          background: `url(${url}) center center no-repeat`,
           height: '100px',
-          width: '200px',
+          width: '450px',
           transition: `5s`,
           transform: `translate(${transX}px,${transY}px) scalex(${x})`,
         }}
+        onMouseOver={() => {
+          setUrl('http://localhost:3015/img/fun/130s.gif')
+        }}
       >
-        <span className="poe-mr30 txt-btn poe-red">新年快樂!!{'　'}</span>
-        <p>師傅救我啊!!!</p>
+        <h4 className="poe-mr30 txt-btn poe-red">新年快樂!!{'　'}</h4>
       </div>
     </>
   )
