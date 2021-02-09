@@ -19,10 +19,18 @@
   }
 }
 
+@keyframes test {
+  0%{opacity: 0;}
+  50%{opacity: 1;}
+  100%{opacity: 0;}
+  
+}
+
 .lll-first-picture {
   height: 550px;
   background: url('http://localhost:3015/img/lydia/surprisekitcheninit.png');
   background-size: cover;
+  animation: test 6s ease;
 }
 
 @media (max-width: 991px) {

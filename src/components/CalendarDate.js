@@ -24,8 +24,9 @@ function CalendarDate() {
             <li
               className="lll-body-list-item"
               key={`${day}-${dIndex}`}
-              onClick={() => {
-                console.log('11')
+              value={day === 0 ? '' : day}
+              onClick={(event) => {
+                console.log(event.target.value)
               }}
             >
               {day === 0 ? '' : day}

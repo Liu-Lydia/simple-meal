@@ -40,12 +40,12 @@ function SurpriseContent() {
     if (bool) {
       if (aquantity < 7) {
         setAquantity(aquantity + 1) //範圍1~7
-        handleSetPrice(aquantity + 1)
+        handleSetPrice(aquantity + 1, cquantity)
       }
     } else {
       if (aquantity !== 0) {
         setAquantity(aquantity - 1) //>0
-        handleSetPrice(aquantity - 1)
+        handleSetPrice(aquantity - 1, cquantity)
       }
     }
   }
@@ -56,20 +56,20 @@ function SurpriseContent() {
     if (bool) {
       if (cquantity < 7) {
         setCquantity(cquantity + 1) //範圍1~7
-        handleSetPrice(cquantity + 1)
+        handleSetPrice(aquantity, cquantity + 1)
       }
     } else {
       if (cquantity !== 0) {
         setCquantity(cquantity - 1)
-        handleSetPrice(cquantity - 1)
+        handleSetPrice(aquantity, cquantity - 1)
       } //>0
     }
   }
 
   //金額顯示
   function handleSetPrice(aquantity, cquantity) {
-    const AdultPrice = [+aquantity] * 500
-    const ChildPrice = [+cquantity] * 100
+    const Price = aquantity * 500 + cquantity * 100
+
     // const allPrice = AdultPrice + ChildPrice
 
     setAppoint({
@@ -78,7 +78,7 @@ function SurpriseContent() {
       aquantity: 0,
       cquantity: 0,
       quantity: 0,
-      price: AdultPrice,
+      price: Price,
     })
   }
 
