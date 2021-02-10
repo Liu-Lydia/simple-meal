@@ -1,3 +1,6 @@
+import { BrowserRouter as Link, NavLink } from 'react-router-dom'
+
+
 function Home(props) {
   return (
     <>
@@ -67,15 +70,17 @@ function Home(props) {
                 alt=""
               />
             </div>
-            <a
-              href=""
+
+            <NavLink
+              to="/Milestone"
               className="btn-meun-big-gray d-flex txt-btn p1-right-but ml-auto"
             >
               <div className="btn-meun-big-gray2">
                 <i className="fas fa-medal"></i>
               </div>
               立即獲取優惠
-            </a>
+            </NavLink>
+
           </div>
           <div className="col-4 mx-auto d-flex justify-content-center d-flex align-items-center mb-5">
             <button className="col-gray p1-but-change1">
