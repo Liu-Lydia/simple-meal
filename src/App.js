@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
 
 // 頁面元件
+import Home from './pages/Home'
 import ThisIsForFun from './pages/ThisIsForFun'
 import Test from './pages/Test'
 import TestDatabase from './pages/TestDatabase'
@@ -70,8 +71,9 @@ function App() {
               <Route path="/surprisekitchen">
                 <SurpriseKitchen />
               </Route>
-              <Route path="/">
-                <ThisIsForFun />
+              {/* 首頁 */}
+              <Route exact path="/">
+                <Home />
               </Route>
             </Switch>
           </ScrollToTop>

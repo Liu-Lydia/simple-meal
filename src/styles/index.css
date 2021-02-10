@@ -63,7 +63,8 @@
   background-color: #F3E575;
   border-radius: 75px;
   margin-bottom: 200px;
-  padding: 0px;
+  padding: 0px !important;
+  
 }
 .p1-left-div{
   width: 318px;
