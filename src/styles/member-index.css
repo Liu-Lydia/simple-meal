@@ -13,13 +13,21 @@
   padding: 0;
   list-style: none;
 }
+.bt {
+  padding-top: 12px;
+  border-bottom: 3px solid #627e2a;
+}
+.bob {
+  padding-top: 12px;
+  border-top: 3px solid #627e2a;
+}
 .aa {
   border: 3px solid #627e2a;
   border-radius: 25px;
   height: 600px;
   padding-top: 75px;
 }
-.cc {
+.dd {
   border: 3px solid #627e2a;
   border-radius: 25px;
 }
@@ -31,7 +39,7 @@
   border: 3px solid #627e2a;
   border-radius: 25px;
 
-  padding-top: 75px;
+  padding-top: 65px;
 }
 
 .box {
@@ -86,9 +94,10 @@
 .tex2 {
   color: #434341;
 }
-.text :active {
-  color: #627e2a;
+.text3 {
+  color: #a3a4a5;
 }
+
 .item3 {
   width: 260px;
   height: 260px;
