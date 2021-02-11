@@ -1,0 +1,63 @@
+.carousel-demo-wrapper {
+  position: relative;
+  /* background: #3949C0; */
+  overflow: hidden;
+  height: 500px;
+}
+
+.carousel-demo {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-wrapper {
+  position: absolute;
+  /* 圖片大小 */
+  width: 400px;
+  height: 300px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 120px;
+  padding-top: 350px;
+  margin-top: -350px;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  height: 100%;
+}
+
+.carouselContent {
+  transform-style: preserve-3d;
+  width: 100%;
+}
+
+.itemWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  width: 100%;
+}
+
+.itemWrapper .rotateLayer .bgAndBlurLayer {
+  /* 圖片圓角 */
+  border-radius: 25px;
+  overflow: hidden;
+  background: rgb(255, 255, 255);
+  transition: filter .45s;
+  margin: auto;
+}
+
+.itemWrapper .rotateLayer .bgAndBlurLayer .contentLayer {
+  transition: opacity .65s;
+}
+
+.img-wrapper {
+  height: 300px;
+  background-size: cover;
+  background-position: center;
+}

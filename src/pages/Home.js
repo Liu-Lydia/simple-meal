@@ -1,5 +1,8 @@
 import { BrowserRouter as Link, NavLink } from 'react-router-dom'
-
+// import Carousel from '../components/home/Carousel'
+import React from 'react'
+import Carousel from '../components/home/Carousel'
+import '../components/home/carousel3d.css'
 
 function Home(props) {
   return (
@@ -80,7 +83,6 @@ function Home(props) {
               </div>
               立即獲取優惠
             </NavLink>
-
           </div>
           <div className="col-4 mx-auto d-flex justify-content-center d-flex align-items-center mb-5">
             <button className="col-gray p1-but-change1">
@@ -355,12 +357,18 @@ function Home(props) {
               快點來預約我們的驚喜廚房吧 !
             </p>
           </div>
-
-          <a href="" className="btn-green txt-btn mx-auto">
-            選項視窗
-          </a>
         </div>
+
+      <Carousel className="row mb-5 mx-auto " />
       </div>
+
+
+      <NavLink
+        to="/surprisekitchen"
+        className="btn-green txt-btn mt-5 mb-5 xxx-center"
+      >
+        立即預約
+      </NavLink>
 
       {/* p7 */}
       <div className="container">
