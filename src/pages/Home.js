@@ -8,7 +8,7 @@ function Home(props) {
   return (
     <>
       {/* p1 */}
-      <div className="container">
+      <div className="container xxx-p1-h">
         <div className="row">
           <div className="p1-bg col-12">
             <div className="p1-left-div offset-1 float-left">
@@ -24,8 +24,12 @@ function Home(props) {
               </p>
               <div className="p1-line"></div>
               <br />
-              <button className="btn-green txt-sub1">開始訂製</button>
+
+              <NavLink to="/meal" className="btn-green txt-sub1">
+                開始訂製
+              </NavLink>
             </div>
+            {/* 圈圈 */}
             <svg
               className="circle-spin"
               xmlns="http://www.w3.org/2000/svg"
@@ -102,8 +106,15 @@ function Home(props) {
             &nbsp; scroll
           </button>
         </div>
+        <div class="xxx-p1-hello">Hello!</div>
+        <img
+          className="xxx-boom"
+          src="http://localhost:3015/img/index/boom3.png"
+        />
+        <div class="arms">
+          <div class="arm"></div>
+        </div>
       </div>
-
       {/* p2 */}
       <div className="container-fluid">
         <div className="row">
@@ -131,8 +142,9 @@ function Home(props) {
               我們幫你一次搞定。
             </p>
             <br />
-
-            <button className="btn-red txt-sub1">開始訂製</button>
+            <NavLink to="/meal" className="btn-red txt-sub1">
+              開始訂製
+            </NavLink>
           </div>
         </div>
       </div>
@@ -279,7 +291,10 @@ function Home(props) {
                 快點來解鎖你的專屬食譜
               </p>
               <br />
-              <button className="btn-red txt-sub1">馬上出發</button>
+
+              <NavLink to="/meal" className="btn-red txt-sub1">
+                馬上出發
+              </NavLink>
             </div>
             {/* image要用div包起來才有rwd效果 */}
             <div>
@@ -348,9 +363,9 @@ function Home(props) {
       {/* p6 */}
       <div className="container">
         <div className="row mb-5">
-          <div className="mx-auto mb-5 col-12">
-            <h3 className="col-green text-center">驚喜廚房</h3>
-            <p className="txt-sub1 col-gray text-center">
+          <div className="mx-auto col-12">
+            <h3 className="col-green text-center mb-3">驚喜廚房</h3>
+            <p className="txt-sub1 col-gray text-center xxx-p6-mb">
               我們提供舒適的場地以及齊全的食材和器具，等著你來製作自己的餐點
               <br />
               只需要帶上期待的心情，等待著預約日那天直接來到現場 <br />
@@ -359,16 +374,11 @@ function Home(props) {
           </div>
         </div>
 
-      <Carousel className="row mb-5 mx-auto " />
+        <Carousel className="row mb-5 mx-auto " />
+        <NavLink to="/surprisekitchen" className="btn-green txt-btn xxx-center">
+          立即預約
+        </NavLink>
       </div>
-
-
-      <NavLink
-        to="/surprisekitchen"
-        className="btn-green txt-btn mt-5 mb-5 xxx-center"
-      >
-        立即預約
-      </NavLink>
 
       {/* p7 */}
       <div className="container">
