@@ -4,10 +4,45 @@ import { withRouter, Link } from 'react-router-dom'
 function CartMealDelivery(props) {
   const { setFlowchart, setCartMode } = props
 
+  const [deliveryData, setDeliveryData] = useState({
+    thisTime: [],
+    nextTime: [],
+  })
+
+  const [clickNum, setClickNum] = useState(0)
+
+  // 讀取資料庫
+  const handleGetData = () => {
+    const url = 'http://localhost:4000/mealdelivery/getdeliverycart'
+    fetch(url, {
+      method: 'get',
+    })
+      .then((r) => r.json())
+      .then((obj) => {
+        // console.log(obj)
+        setDeliveryData(obj)
+      })
+  }
+
+  const handleSetMealNum = (sid, quantity) => {
+    const url = `http://localhost:4000/mealdelivery/setmealquantity?sid=${sid}&quantity=${quantity}`
+    if (quantity >= 1 && quantity <= 10) {
+      fetch(url, {
+        method: 'get',
+      }).then(setClickNum(clickNum + 1))
+    }
+  }
+
   // 裝載時轉成流程1
   useEffect(() => {
     setFlowchart(1)
+    handleGetData()
   }, [])
+
+  // 當有任何點擊時
+  useEffect(() => {
+    handleGetData()
+  }, [clickNum])
 
   return (
     <>
@@ -33,33 +68,54 @@ function CartMealDelivery(props) {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th className="poe-pr15 align-middle" scope="row">
-                <input type="checkbox" />
-              </th>
-              <td className="align-middle poe-pr15 poe-cart-product-img">
-                <img
-                  className="w-100"
-                  src="/public/img/cart/bg/hero02.png"
-                  alt=""
-                />
-              </td>
-              <td>
-                <p className="txt-btn">羅勒鮮蔬通心麵</p>
-                <p className="txt-cap poe-gray">有羅勒香和奶香的一頓餐點</p>
-              </td>
-              <td className="text-center align-middle">
-                <div>
-                  <Link href="" className="px-3 poe-green">
-                    <i className="fas fa-minus-circle"></i>
-                  </Link>
-                  <span>2</span>
-                  <Link href="" className="px-3 poe-green">
-                    <i className="fas fa-plus-circle"></i>
-                  </Link>
-                </div>
-              </td>
-            </tr>
+            {/* 商品卡 */}
+            {deliveryData.thisTime.map((v, i) => (
+              <tr key={i}>
+                <th className="poe-pr15 align-middle" scope="row">
+                  <input type="checkbox" value={v.sid} />
+                </th>
+                <td className="align-middle poe-pr15 poe-cart-product-img">
+                  <img
+                    className="w-100"
+                    src={`http://localhost:3015/img/meal/未去背/${v.product_id}.png`}
+                    alt=""
+                  />
+                </td>
+                <td>
+                  <p className="txt-btn">{v.meal_name}</p>
+                  <p className="txt-cap poe-gray">{v.description}</p>
+                </td>
+                <td className="text-center align-middle">
+                  <div>
+                    <a
+                      onClick={() => {
+                        const sid = v.sid
+                        const quantity = v.quantity - 1
+                        handleSetMealNum(sid, quantity)
+                      }}
+                      className={`px-3 ${
+                        v.quantity > 1 ? 'poe-green' : 'poe-gray'
+                      }`}
+                    >
+                      <i className="fas fa-minus-circle"></i>
+                    </a>
+                    <span>{v.quantity}</span>
+                    <a
+                      onClick={() => {
+                        const sid = v.sid
+                        const quantity = v.quantity + 1
+                        handleSetMealNum(sid, quantity)
+                      }}
+                      className={`px-3 ${
+                        v.quantity < 10 ? 'poe-green' : 'poe-gray'
+                      }`}
+                    >
+                      <i className="fas fa-plus-circle"></i>
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
         <div className="poe-bookmark-content-result text-right">
