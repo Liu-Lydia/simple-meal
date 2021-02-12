@@ -4,7 +4,13 @@
   padding: 0px;
 }
 
-/* 手機按鈕 */
+/* 手機版假的第一頁跟第二頁切換*/
+.fff-ms-mobo-page-2{
+  display: none;
+}
+
+
+/* 手機版按鈕 */
 
 .fff-btn-mobo-style {
   border: 1px #627e2a solid;
@@ -168,6 +174,8 @@
   text-decoration: none;
   color: #b9433b;
 }
+
+
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {

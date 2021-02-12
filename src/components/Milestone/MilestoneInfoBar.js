@@ -2,13 +2,35 @@ import React, { props, useEffect } from 'react'
 import $ from 'jquery'
 
 function MilestoneInfoBar(props) {
-  // useEffect(() => {
-  //   $('#about').modal('show')
-  // }, [props.about])
+  useEffect(() => {
+    // Get the modal
+var modal = document.getElementsByClassName("modal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("howToGetPoints");
+
+// Get the <span> element that closes the modal
+var closeBtn = document.getElementsByClassName("aboutCloseBtn")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks closeBtn, close the modal
+closeBtn.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+  }, [])
   return (
     <>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
       {/* web virsion */}
       <div className="row fff-ms-web">
         {/* 佔空位的 */}
@@ -132,7 +154,7 @@ function MilestoneInfoBar(props) {
                 <div className="d-flex justify-content-center">
                   <button
                     type="button"
-                    className="btn-white txt-btn"
+                    className="btn-white txt-btn aboutCloseBtn"
                     data-dismiss="modal"
                   >
                     知道了！

@@ -11,13 +11,16 @@ function Milestone() {
   const [about, setAbout] = useState(0)
   return (
     <>
-      <div className="container">
+      <div className="container fff-ms-mobo-page-1">
         <MilestoneInfoBar
           btnText="兌換獎勵"
           href="./RewardExchange"
           setAbout={setAbout}
           about={about}
         />
+      </div>
+      <div className="container fff-ms-mobo-page-2">
+        <MsMoboPointInfo />
         <MilestoneListOption />
         <MilestoneList />
       </div>
