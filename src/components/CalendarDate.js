@@ -15,6 +15,11 @@ function CalendarDate() {
   let weekContentList = GetWeeksInMonth(mmt)
   let result = []
 
+  const [activeDindex, setActiveDindex] = useState(0)
+  const handleOnClick = (dIndex) => {
+    setActiveDindex(dIndex)
+  }
+
   return (
     <>
       <div className="lll-green lll-body-list">
@@ -25,9 +30,15 @@ function CalendarDate() {
               className="lll-body-list-item"
               key={`${day}-${dIndex}`}
               value={day === 0 ? '' : day}
-              onClick={(event) => {
-                console.log(event.target.value)
-              }}
+              // onClick={(event) => {
+              //   console.log(event.target.value)
+              // }}
+              onClick={() => handleOnClick(dIndex)} // pass the index
+              className={
+                activeDindex === dIndex
+                  ? 'lll-green-active'
+                  : 'lll-body-list-item'
+              }
             >
               {day === 0 ? '' : day}
             </li>

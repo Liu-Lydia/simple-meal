@@ -191,7 +191,7 @@ function SurpriseContent() {
                     handleAquantity(false)
                   }}
                 >
-                  <i className="fas fa-minus-circle"></i>
+                  <i className="fas fa-minus-circle lll-cursor"></i>
                 </a>
                 <span className="txt-sub1 lll-black">{aquantity}</span>
                 <a
@@ -200,7 +200,7 @@ function SurpriseContent() {
                     handleAquantity(true)
                   }}
                 >
-                  <i className="fas fa-plus-circle"></i>
+                  <i className="fas fa-plus-circle lll-cursor"></i>
                 </a>
               </div>
             </div>
@@ -217,7 +217,7 @@ function SurpriseContent() {
                     handleCquantity(false)
                   }}
                 >
-                  <i className="fas fa-minus-circle"></i>
+                  <i className="fas fa-minus-circle lll-cursor"></i>
                 </a>
                 <span className="txt-sub1 lll-black">{cquantity}</span>
                 <a
@@ -226,7 +226,7 @@ function SurpriseContent() {
                     handleCquantity(true)
                   }}
                 >
-                  <i className="fas fa-plus-circle"></i>
+                  <i className="fas fa-plus-circle lll-cursor"></i>
                 </a>
               </div>
             </div>
@@ -241,7 +241,7 @@ function SurpriseContent() {
                     handleQuantity(false)
                   }}
                 >
-                  <i className="fas fa-minus-circle"></i>
+                  <i className="fas fa-minus-circle lll-cursor"></i>
                 </a>
                 <span className="txt-sub1 lll-black">{quantity}</span>
                 <a
@@ -250,7 +250,7 @@ function SurpriseContent() {
                     handleQuantity(true)
                   }}
                 >
-                  <i className="fas fa-plus-circle"></i>
+                  <i className="fas fa-plus-circle lll-cursor"></i>
                 </a>
               </div>
             </div>
