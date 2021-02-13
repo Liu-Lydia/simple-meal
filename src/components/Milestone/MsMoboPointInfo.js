@@ -1,6 +1,7 @@
-import React, { props, useEffect } from 'react'
+import React, { props } from 'react'
+// 須從父親那邊接收“props”要引入{ props }，因為{ props }非extend default所以要{}包起來。
 
-function MsMoboPointInfo() {
+function MsMoboPointInfo(props) {
   return (
     <>
       <div
@@ -21,11 +22,6 @@ function MsMoboPointInfo() {
           </span>
         </div>
         
-      </div>
-      <div className="row fff-ms-mobo d-flex justify-content-center align-items-center">
-        <div id="howToGetPoints" className="fff-btn-mobo-style">
-          回前頁
-        </div>
       </div>
       
     </>

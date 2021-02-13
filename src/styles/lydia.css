@@ -265,6 +265,10 @@
   width: 100%;
 }
 
+.lll-cursor{
+  cursor: pointer;
+}
+
 .lll-body-list li {
   width: 14.28%;
   height: 50px;
@@ -285,6 +289,7 @@
   box-sizing: border-box;
   float: left;
   text-align: center;
+  cursor: pointer;
 }
 
 /* 日期選項顏色 */

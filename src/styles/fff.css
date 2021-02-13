@@ -4,12 +4,6 @@
   padding: 0px;
 }
 
-/* 手機版假的第一頁跟第二頁切換*/
-.fff-ms-mobo-page-2{
-  display: none;
-}
-
-
 /* 手機版按鈕 */
 
 .fff-btn-mobo-style {
@@ -629,6 +623,7 @@
 
 .modal {
   background: rgba(255, 255, 255, 0.5);
+  margin-top: 30px;
 }
 
 .fff-dialog p {
