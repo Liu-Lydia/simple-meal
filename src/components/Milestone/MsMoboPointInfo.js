@@ -1,6 +1,6 @@
-import React, { props, useEffect } from 'react'
+import React, { props } from 'react'
 
-function MsMoboPointInfo() {
+function MsMoboPointInfo(props) {
   return (
     <>
       <div
@@ -23,7 +23,8 @@ function MsMoboPointInfo() {
         
       </div>
       <div className="row fff-ms-mobo d-flex justify-content-center align-items-center">
-        <div id="howToGetPoints" className="fff-btn-mobo-style">
+        <div id="howToGetPoints" className="fff-btn-mobo-style"  onClick={()=>{props.setMoboMsPage2(false)}}>
+            {/* 在infoBar中只會設定關閉第二頁 所以不用傳入moboMsPage2 的值*/}
           回前頁
         </div>
       </div>

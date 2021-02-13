@@ -12,17 +12,29 @@ function RewardExchange() {
   const [optionTab, setOptionTab] = useState(1)
   //集點方式
   const [about, setAbout] = useState(0)
+  
+  // 控制手機版“我的成就”按鈕按下去來顯示成就清單 在兌換獎勵沒有使用 單純放著
+  const [mobomspage2, setMoboMsPage2] = useState(false)
 
   return (
     <>
+      <div className="fff-ms-web">
+        <div className="container">
+          <MilestoneInfoBar
+            btnText="我的成就"
+            href="./Milestone"
+            setAbout={setAbout}
+            about={about}
+          />
+        </div>
+      </div>
+      <div className="fff-ms-mobo">
+        <div className="container">
+        <MsMoboPointInfo setMoboMsPage2={setMoboMsPage2}
+          mobomspage2={mobomspage2} />
+        </div>
+      </div>
       <div className="container">
-        <MilestoneInfoBar
-          btnText="我的成就"
-          href="./Milestone"
-          setAbout={setAbout}
-          about={about}
-        />
-        <MsMoboPointInfo />
         <ExchangeOption setOptionTab={setOptionTab} optionTab={optionTab} />
         {optionTab == 1 && <ExangeGoodsList />}
 

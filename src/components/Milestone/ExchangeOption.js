@@ -6,29 +6,66 @@ import $ from 'jquery'
 function ExchangeOption(props) {
   useEffect(() => {
     if (props.optionTab == 0){
-      $("#tab0").removeClass("fff-txt-rw-unselect").addClass("fff-txt-rw-select-active");
-      $("#tab1").removeClass("fff-txt-rw-select-active").addClass("fff-txt-rw-unselect");
-      $("#tab2").removeClass("fff-txt-rw-select-active").addClass("fff-txt-rw-unselect");
-      $("#bar0").addClass("fff-rw-select-active");
-      $("#bar1").removeClass("fff-rw-select-active");
-      $("#bar2").removeClass("fff-rw-select-active");
+      const tab0 = document.getElementById("tab0");
+      tab0.classList.remove("fff-txt-rw-unselect");
+      tab0.classList.add("fff-txt-rw-select-active");
+      
+      const tab1 = document.getElementById("tab1");
+      tab1.classList.add("fff-txt-rw-unselect");
+      tab1.classList.remove("fff-txt-rw-select-active");
+      
+      const tab2 = document.getElementById("tab2");
+      tab2.classList.add("fff-txt-rw-unselect");
+      tab2.classList.remove("fff-txt-rw-select-active");
 
+      const bar0 = document.getElementById("bar0");
+      bar0.classList.add("fff-rw-select-active");
+      const bar1 = document.getElementById("bar1");
+      bar1.classList.remove("fff-rw-select-active");
+      const bar2 = document.getElementById("bar2");
+      bar2.classList.remove("fff-rw-select-active");
     }
     if (props.optionTab == 1){
-      $("#tab0").removeClass("fff-txt-rw-select-active").addClass("fff-txt-rw-unselect");
-      $("#tab1").removeClass("fff-txt-rw-unselect").addClass("fff-txt-rw-select-active");
-      $("#tab2").removeClass("fff-txt-rw-select-active").addClass("fff-txt-rw-unselect");
-      $("#bar0").removeClass("fff-rw-select-active");
-      $("#bar1").addClass("fff-rw-select-active");
-      $("#bar2").removeClass("fff-rw-select-active");
+      const tab0 = document.getElementById("tab0");
+      tab0.classList.add("fff-txt-rw-unselect");
+      tab0.classList.remove("fff-txt-rw-select-active");
+      
+      const tab1 = document.getElementById("tab1");
+      tab1.classList.remove("fff-txt-rw-unselect");
+      tab1.classList.add("fff-txt-rw-select-active");
+      
+      const tab2 = document.getElementById("tab2");
+      tab2.classList.add("fff-txt-rw-unselect");
+      tab2.classList.remove("fff-txt-rw-select-active");
+
+      const bar0 = document.getElementById("bar0");
+      bar0.classList.remove("fff-rw-select-active");
+      const bar1 = document.getElementById("bar1");
+      bar1.classList.add("fff-rw-select-active");
+      const bar2 = document.getElementById("bar2");
+      bar2.classList.remove("fff-rw-select-active");
     }
     if (props.optionTab == 2){
-      $("#tab0").removeClass("fff-txt-rw-select-active").addClass("fff-txt-rw-unselect");
-      $("#tab1").removeClass("fff-txt-rw-select-active").addClass("fff-txt-rw-unselect");
-      $("#tab2").removeClass("fff-txt-rw-unselect").addClass("fff-txt-rw-select-active");
-      $("#bar0").removeClass("fff-rw-select-active");
-      $("#bar1").removeClass("fff-rw-select-active");
-      $("#bar2").addClass("fff-rw-select-active");
+
+      const tab0 = document.getElementById("tab0");
+      tab0.classList.add("fff-txt-rw-unselect");
+      tab0.classList.remove("fff-txt-rw-select-active");
+      
+      const tab1 = document.getElementById("tab1");
+      tab1.classList.add("fff-txt-rw-unselect");
+      tab1.classList.remove("fff-txt-rw-select-active");
+      
+      const tab2 = document.getElementById("tab2");
+      tab2.classList.remove("fff-txt-rw-unselect");
+      tab2.classList.add("fff-txt-rw-select-active");
+
+      const bar0 = document.getElementById("bar0");
+      bar0.classList.remove("fff-rw-select-active");
+      const bar1 = document.getElementById("bar1");
+      bar1.classList.remove("fff-rw-select-active");
+      const bar2 = document.getElementById("bar2");
+      bar2.classList.add("fff-rw-select-active");
+
     }
   }, [props.optionTab])
   return (
@@ -61,13 +98,13 @@ function ExchangeOption(props) {
         {/* 那條Bar */}
         <div className="col-10 col-sm-11 col-lg-10 col-xl-10 d-flex justify-content-center text-center align-items-center fff-rw-select-line">
           <div className="col-xl-2 col-lg-3 d-flex justify-content-center">
-            <div id="bar0" className="col-9 "></div>
+            <div id="bar0" className="col-9 " style={{ transition: '1.5s' }}></div>
           </div>
           <div className="col-xl-2 col-lg-3 d-flex justify-content-center">
-            <div id="bar1" className="col-9 fff-rw-select-active"></div>
+            <div id="bar1" className="col-9 fff-rw-select-active" style={{ transition: '1.5s' }}></div>
           </div>
           <div className="col-xl-2 col-lg-3 d-flex justify-content-center">
-            <div id="bar2" className="col-9 "></div>
+            <div id="bar2" className="col-9 " style={{ transition: '1.5s' }}></div>
           </div>
         </div>
         <p className="fff-exchange-record-warning">僅顯示一週內兌換資料，詳細兌換資料請拜訪<a href>會員中心</a>查詢</p>

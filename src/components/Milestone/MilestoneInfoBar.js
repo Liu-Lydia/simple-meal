@@ -3,22 +3,30 @@ import $ from 'jquery'
 
 function MilestoneInfoBar(props) {
   useEffect(() => {
-    // Get the modal
-var modal = document.getElementsByClassName("modal");
+    // 取得對話框 等等要控制顯示或關閉
+    //ClassName 會回陣列 所以要取單個元件時 要給陣列值
+var modal = document.getElementsByClassName("modal")[0];
 
-// Get the button that opens the modal
-var btn = document.getElementById("howToGetPoints");
+// 兩個按鈕都要加入事件
+var openDialogbtn = document.getElementsByClassName("howToGetPoints")[0];
+var openDialogbtnMobo = document.getElementsByClassName("howToGetPoints")[1];
 
-// Get the <span> element that closes the modal
-var closeBtn = document.getElementsByClassName("aboutCloseBtn")[0];
+var closeBtnMobo = document.getElementsByClassName("aboutCloseBtn")[0];
+var closeBtn = document.getElementsByClassName("aboutCloseBtn")[1];
 
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
+openDialogbtn.onclick = function() {
+  modal.style.display = "block";
+}
+openDialogbtnMobo.onclick = function() {
   modal.style.display = "block";
 }
 
 // When the user clicks closeBtn, close the modal
 closeBtn.onclick = function() {
+  modal.style.display = "none";
+}
+closeBtnMobo.onclick = function() {
   modal.style.display = "none";
 }
 
@@ -28,7 +36,7 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-  }, [])
+  })
   return (
     <>
       {/* web virsion */}
@@ -55,11 +63,7 @@ window.onclick = function(event) {
           </div>
           <div className="">
             <div
-              id="howToGetPoints"
-              className="fff-btn-white fff-txt-btn"
-              onClick={() => {
-                props.setAbout(!props.about)
-              }}
+              className="fff-btn-white fff-txt-btn howToGetPoints"
             >
               集點方式
             </div>
@@ -102,18 +106,15 @@ window.onclick = function(event) {
         </div>
         <div style={{ height: '150px' }}></div>
         <div className="d-flex justify-content-center align-items-center">
-          <div id="howToGetPoints" className="fff-btn-mobo-style">
+          <div id="moboMsPage2" className="fff-btn-mobo-style" onClick={()=>{props.setMoboMsPage2(true)}}>
+            {/* 在infoBar中只會設定開啟第二頁 所以不用傳入moboMsPage2 的值*/}
             我的成就
           </div>
         </div>
 
         <div className="d-flex justify-content-center align-items-center">
           <div
-            id="howToGetPoints"
-            className="fff-btn-mobo-style"
-            onClick={() => {
-              props.setAbout(!props.about)
-            }}
+            className="fff-btn-mobo-style howToGetPoints"
           >
             集點方式
           </div>
@@ -127,20 +128,25 @@ window.onclick = function(event) {
       </div>
 
       <div
-        className="modal justify-content-center"
-        tabindex="-1"
-        role="dialog"
+        className="modal justify-content-center col-10 offset-1"
         id="about"
-        data-backdrop="false"
       >
-        <div className="modal-dialog" role="document">
           <div className="modal-content fff-dialog">
-            <div className="modal-body">
-              <div style={{ height: '200px' }}></div>
+            <div className="modal-body row">
+
+              {/* 圖片放置位置 先占高 mobo關閉 */}
+              <div className="fff-ms-web" style={{ height: '200px' }}></div>
+              <div className="fff-ms-mobo justify-content-end col-12">
+                <h6><i className="fas fa-times aboutCloseBtn"></i></h6>
+              </div>
+              <div className="fff-ms-mobo justify-content-center col-12">
+                <h4>集點方式</h4>
+              </div>
+
               <div className="row d-flex justify-content-center  flex-row">
                 <span
                   className="col-12"
-                  style={{ padding: '0 75px 90px 75px' }}
+                  style={{ padding: '0 75px 0 75px' }}
                 >
                   我們用輕鬆活潑的方式記錄您在極簡煮易當中的冒險故事！並提供許多成就目標讓您可以用有趣的方式獲得額外的優惠！
                   <br />
@@ -151,7 +157,10 @@ window.onclick = function(event) {
                   <br />
                   詳細的優惠兌換紀錄可於會員中心查詢喔！
                 </span>
-                <div className="d-flex justify-content-center">
+                <div className="col-12 d-flex justify-content-center fff-ms-web" ><span className="d-flex justify-content-center fff-ms-web" 
+                  style={{ padding: '0 75px 90px 75px' }}/></div>
+                
+                <div className="col-12 d-flex justify-content-center fff-ms-web" >
                   <button
                     type="button"
                     className="btn-white txt-btn aboutCloseBtn"
@@ -162,7 +171,6 @@ window.onclick = function(event) {
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </>
