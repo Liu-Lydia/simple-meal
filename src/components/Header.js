@@ -103,7 +103,7 @@ function Header() {
                   <Nav.Link className="text-nowrap" as={NavLink} to="/none1">
                     最新活動
                   </Nav.Link>
-                  <Nav.Link className="text-nowrap" as={NavLink} to="/none2">
+                  <Nav.Link className="text-nowrap" as={NavLink} to="/aboutus">
                     關於我們
                   </Nav.Link>
                   <NavDropdown title="菜單介紹" id="basic-nav-dropdown">

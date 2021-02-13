@@ -14,6 +14,7 @@ import RewardExchange from './pages/RewardExchange'
 import Meal from './pages/Meal'
 import Recipe from './pages/Recipe'
 import MemberCenter from './pages/MemberCenter'
+import AboutUs from './pages/AboutUs'
 
 // 組合用元件
 import Header from './components/Header'
@@ -70,6 +71,10 @@ function App() {
 
               <Route path="/surprisekitchen">
                 <SurpriseKitchen />
+              </Route>
+              {/* 關於我 */}
+              <Route path="/aboutus">
+                <AboutUs />
               </Route>
               {/* 首頁 */}
               <Route exact path="/">
