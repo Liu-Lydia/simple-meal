@@ -1,5 +1,5 @@
 /* 第一版圖片 */
-.lll-first-picture-width {
+/* .lll-first-picture-width {
   position: absolute;
   top: 225px;
   width: 478px;
@@ -20,23 +20,83 @@
 }
 
 @keyframes test {
-  0%{opacity: 0;}
-  50%{opacity: 1;}
-  100%{opacity: 0;}
-  
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .lll-first-picture {
   height: 550px;
   background: url('http://localhost:3015/img/lydia/surprisekitcheninit.png');
   background-size: cover;
-  animation: test 6s ease;
+  visibility: hidden;
+  animation: test ease;
 }
 
 @media (max-width: 991px) {
   .lll-first-picture {
     height: 275px;
   }
+} */
+
+.lll-change-picture-width {
+  position: absolute;
+  top: 225px;
+  width: 1090px;
+}
+
+.lll-change-picture {
+  height: 550px;
+  background: url('http://localhost:3015/img/lydia/surprisekitchenhero.jpg');
+  background-size: cover;
+  border-radius: 0 75px 75px 0;
+  opacity: 0.5;
+  animation: test2 6s ease;
+}
+
+@keyframes test2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+.lll-coupon-position {
+  position: absolute;
+  left: 1311px;
+  margin-top: 363px;
+  text-align: right;
+}
+
+.lll-get-coupon {
+  width: 248px;
+}
+
+.lll-meal-pictures {
+  height: 240px;
+  background: url('http://localhost:3015/img/lydia/hero01.png');
+  background-size: cover;
+}
+
+.lll-explain-coupon {
+  position: absolute;
+  padding-top: 270px;
+  color: #b9433b;
+  font-family: GenSenRounded TW;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 28px;
+  text-decoration: none !important;
+  letter-spacing: 0.22px;
 }
 
 /* 第一版文字 */
@@ -63,6 +123,16 @@
 .lll-firstpage-title {
   color: #434341;
   padding-bottom: 30px;
+  animation: test3 6s ease;
+}
+
+@keyframes test3 {
+  0% {
+    color: #ffffff;
+  }
+  100% {
+    color: #434341;
+  }
 }
 
 @media (max-width: 991px) {
@@ -73,7 +143,20 @@
 }
 
 .lll-detile-style {
-  color: #a2a3a5;
+  color: #ffffff;
+  animation: test4 6s ease;
+}
+
+@keyframes test4 {
+  0% {
+    color: #ffffff;
+  }
+  50% {
+    color: #a2a3a5;
+  }
+  100% {
+    color: #ffffff;
+  }
 }
 
 @media (max-width: 991px) {
@@ -124,7 +207,7 @@
 
 /* scroll位置, 顏色 */
 .lll-scroll {
-  margin-top: 200px;
+  margin-top: 240px;
   text-align: center;
 }
 
@@ -265,7 +348,7 @@
   width: 100%;
 }
 
-.lll-cursor{
+.lll-cursor {
   cursor: pointer;
 }
 
@@ -301,9 +384,9 @@
 }
 
 .lll-green-active {
-  width: 25px;
-  height: 25px;
-  border-radius: 12.5px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
   background-color: #627e2a;
   color: #ffffff;
 }
@@ -557,7 +640,7 @@
 }
 
 /* 地理位置 */
-.lll-mobile-block{
+.lll-mobile-block {
   display: flex;
 }
 
@@ -567,7 +650,7 @@
   }
 }
 
-.lll-max100{
+.lll-max100 {
   height: 400px;
   width: 100%;
 }
@@ -578,24 +661,22 @@
   }
 }
 
-.lll-max100-center{
+.lll-max100-center {
   margin-top: auto;
   margin-bottom: auto;
 }
 
 @media (max-width: 1700px) {
-  .lll-max100-center{
+  .lll-max100-center {
     max-width: 100% !important;
     justify-content: center !important;
     margin-top: 50px !important;
   }
 }
 
-.lll-pt50{
+.lll-pt50 {
   padding-top: 50px;
 }
-
-
 
 /* 顧客評論 */
 .lll-section {
