@@ -15,7 +15,6 @@ export class SingleMapDetail extends Component {
     super(props)
     this.state = {}
     console.log('類別型父傳子', props)
-
   }
 
   static defaultProps = {
@@ -23,12 +22,14 @@ export class SingleMapDetail extends Component {
     lng: 121.5703875,
   }
 
+  // 預設關閉InfoWindow
   state = {
     showingInfoWindow: false,
     activeMarker: {},
     selectedPlace: {},
   }
 
+  // 點標籤打開InfoWindow
   onMarkerClick = (props, marker, e) =>
     this.setState({
       selectedPlace: props,
@@ -36,6 +37,7 @@ export class SingleMapDetail extends Component {
       showingInfoWindow: true,
     })
 
+  // InfoWindow開啟時點地圖其他地方關閉InfoWindow
   onMapClicked = (props) => {
     if (this.state.showingInfoWindow) {
       this.setState({
@@ -57,14 +59,6 @@ export class SingleMapDetail extends Component {
       prevProps.lng,
       this.props.lng
     )
-
-    // 產生只有勾選的陣列
-    const filtertrue = this.props.todos.filter(function (item, index, array) {
-      return item.completed === true
-    })
-
-    console.log('filtertrue')
-    console.log(filtertrue)
 
     if (prevProps.google !== this.props.google) {
       this.loadMap()
@@ -96,11 +90,11 @@ export class SingleMapDetail extends Component {
       // infowindowCurrent.open(map, markerCurrent)
     }
   }
-
   render() {
     console.log(this.props)
     const { todos } = this.props
     console.log('todos:', todos)
+
     return (
       <>
         <Map
@@ -123,11 +117,12 @@ export class SingleMapDetail extends Component {
           onClick={this.onMapClicked}
           onReady={this.onMapReady}
         >
-          <Marker
+          {/* <Marker
             onClick={this.onMarkerClick}
             name={'物件位置'}
             position={{ lat: this.props.lat, lng: this.props.lng }}
-          />
+          /> */}
+          {/* ??map不能寫兩個標籤? */}
           {this.props.todos
             .filter(function (item, index, array) {
               return item.completed === true
@@ -136,21 +131,38 @@ export class SingleMapDetail extends Component {
               return (
                 <Marker
                   key={item.id}
+                  onClick={this.onMarkerClick}
                   title={'The marker`s title will appear as a tooltip.'}
                   name={'SOMA'}
                   position={{ lat: item.lat, lng: item.lng }}
                 />
               )
             })}
-          <InfoWindow
+
+          {todos.map((item, index) => {
+            return (
+              <InfoWindow
+                key={item.id}
+                marker={this.state.activeMarker}
+                // 是否顯示InfoWindow
+                visible={this.state.showingInfoWindow}
+              >
+                <div>
+                  <h1>{item.infoTitle}</h1>
+                  <p>{item.infoContent}</p>
+                </div>
+              </InfoWindow>
+            )
+          })}
+          {/* <InfoWindow
             marker={this.state.activeMarker}
             visible={this.state.showingInfoWindow}
           >
             <div>
-              <h1>{this.props.infoTitle}</h1>
-              <p>{this.props.infoContent}</p>
+              <h1>{infoTitle}</h1>
+              <p>{infoContent}</p>
             </div>
-          </InfoWindow>
+          </InfoWindow> */}
         </Map>
       </>
     )

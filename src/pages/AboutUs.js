@@ -16,6 +16,8 @@ function GoogleMapDemo() {
       add: '台北市北投區中央北路三段40巷',
       lat: 25.13988774719059,
       lng: 121.48458969806865,
+      infoTitle: '測試1',
+      infoContent: 'this is a sample string',
     },
     {
       id: 2,
@@ -24,6 +26,8 @@ function GoogleMapDemo() {
       add: '台南市柳營區果毅里南湖25號',
       lat: 23.240227242579074,
       lng: 120.37868608640444,
+      infoTitle: '測試2',
+      infoContent: 'this is a sample string',
     },
     {
       id: 3,
@@ -32,6 +36,8 @@ function GoogleMapDemo() {
       add: '屏東縣瑪家鄉114-6號',
       lat: 22.66255809598465,
       lng: 120.63152645571405,
+      infoTitle: '測試3',
+      infoContent: 'this is a sample string',
     },
     {
       id: 4,
@@ -40,6 +46,8 @@ function GoogleMapDemo() {
       add: '台中市太平區廓仔坑路119號',
       lat: 24.151732232849326,
       lng: 120.75964181229905,
+      infoTitle: '測試4',
+      infoContent: 'this is a sample string',
     },
     {
       id: 5,
@@ -48,6 +56,8 @@ function GoogleMapDemo() {
       add: '彰化縣彰化市水月台路218號',
       lat: 24.056362209222623,
       lng: 120.58705255572812,
+      infoTitle: '測試5',
+      infoContent: 'this is a sample string',
     },
     {
       id: 6,
@@ -56,6 +66,8 @@ function GoogleMapDemo() {
       add: '新北市瑞芳區深澳路',
       lat: 25.13131514828753,
       lng: 121.81920779806867,
+      infoTitle: '測試6',
+      infoContent: 'this is a sample string',
     },
   ])
 
@@ -105,8 +117,8 @@ function GoogleMapDemo() {
             <SingleMapDetail
               lat={lat}
               lng={lng}
-              infoTitle="測試"
-              infoContent="this is a sample string"
+              // infoTitle="測試"
+              // infoContent="this is a sample string"
               todos={todos}
             />
 
