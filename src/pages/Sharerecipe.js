@@ -1,140 +1,80 @@
+// 引用資料路徑 . 只寫目錄沒寫檔名專案會自動抓index檔名
+import { data } from '../data/'
 import '../styles/share-recipe.css'
 import { Container, Pagination, Col } from 'react-bootstrap'
-function Sharerecipe() {
-  return (
-    <>
-      <div class="container">
-        <div class="row mt-1 mb-1">
-          <h4>分享食譜</h4>
-          <div class="ml-auto">
-            <input type="text" class="input-style" />
+import { useState, useEffect } from 'react'
 
-            <button class="xxx-sr-btsearch" type="submit">
-              <i class="fas fa-search"></i>
+function Sharerecipe(props) {
+  // 資料的鉤子
+  const [recipe, setRecipe] = useState([])
+  // spinner的鉤子
+  const [isLoading, setIsLoading] = useState(true)
+
+  // 元件已經出現在網頁上才能跟伺服器相連 . 所以要寫在生命週期完成
+  useEffect(() => {
+    // 載入資料前先開啟spinner
+    setIsLoading(true)
+
+    // 模擬和伺服器要資料
+    // 最後設定到狀態中
+    setRecipe(data)
+
+    // 3秒後關閉指示器
+    setTimeout(() => {
+      setIsLoading(false)
+    }, 3000)
+  }, [])
+
+  // 等待時的畫面
+  const spinner = (
+    <>
+      <div className="spinner-grow text-primary" role="status">
+        <span className="sr-only">Loading...</span>
+      </div>
+      <div className="spinner-grow text-secondary" role="status">
+        <span className="sr-only">Loading...</span>
+      </div>
+      <div className="spinner-grow text-success" role="status">
+        <span className="sr-only">Loading...</span>
+      </div>
+    </>
+  )
+
+  // 顯示時的畫面
+  const display = (
+    <>
+      <div className="container">
+        <div className="row mt-1 mb-1">
+          <h4>分享食譜</h4>
+          <div className="ml-auto">
+            <input type="text" className="input-style" />
+
+            <button className="xxx-sr-btsearch" type="submit">
+              <i className="fas fa-search"></i>
             </button>
 
-            <button class="xxx-sr-foodsearch">食材搜尋</button>
+            <button className="xxx-sr-foodsearch">食材搜尋</button>
           </div>
         </div>
-        <div class="row">
-          <div class="card col-3">
-            <img
-              src="http://localhost:3015/img/sharerecipe/5fea5b5d27c560013957dcf9-b9960379.jpg"
-              class="card-img-top mt-3"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">青檸嫩雞直管麵</h5>
-              <p class="card-text">
-                沒有什麼組合比香腸和辣椒更令人滿意了。畢竟，在胃液中甜美的焦糖味和肉中的超鹹味，還有什麼比這更令人放鬆呢？
-              </p>
-              <div class="text-right">
-                <i class="far fa-clock col-green"></i>&nbsp; 40分鐘
+        <div className="row">
+          {/* 引入資料 */}
+          {recipe.map((v, i) => (
+            <div key={i} className="card col-3">
+              <img src={v.pic} className="card-img-top mt-3" alt="..." />
+              <div className="card-body">
+                <h5 className="card-title">{v.name}</h5>
+                <p className="card-text">{v.introduction}</p>
+                <div className="text-right">
+                  <i className="far fa-clock col-green"></i>&nbsp; {v.cook_time}
+                  分鐘
+                </div>
               </div>
             </div>
-          </div>
-          <div class="card col-3">
-            <img
-              src="http://localhost:3015/img/sharerecipe/5fea5b5d27c560013957dcf9-b9960379.jpg"
-              class="card-img-top mt-3"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">水稻上的西南植物基蛋白質</h5>
-              <p class="card-text">
-                沒有什麼組合比香腸和辣椒更令人滿意了。畢竟，在胃液中甜美的焦糖味和肉中的超鹹味，還有什麼比這
-              </p>
-              <div class="text-right">
-                <i class="far fa-clock col-green"></i>&nbsp; 40分鐘
-              </div>
-            </div>
-          </div>
-          <div class="card col-3">
-            <img
-              src="http://localhost:3015/img/sharerecipe/5fea5b5d27c560013957dcf9-b9960379.jpg"
-              class="card-img-top mt-3"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">蔬菜炒豬肉烤肉</h5>
-              <p class="card-text">
-                沒有什麼組合比香腸和辣椒更令人滿意了。畢竟，在胃液中甜美的焦糖味和肉中的超鹹味，還有什麼比這
-              </p>
-              <p class="card-text">
-                <small class="text-muted">dated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
-          <div class="card col-3">
-            <img
-              src="http://localhost:3015/img/sharerecipe/5fea5b5d27c560013957dcf9-b9960379.jpg"
-              class="card-img-top mt-3"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">酒吧風格的牧羊人派</h5>
-              <p class="card-text">
-                沒有什麼組合比香腸和辣椒更令人滿意了。畢竟，在胃液中甜美的焦糖味和肉中的超鹹味，還有什麼比這
-              </p>
-              <div class="text-right">
-                <i class="far fa-clock col-green"></i>&nbsp; 40分鐘
-              </div>
-            </div>
-          </div>
-
-          <div class="card col-3">
-            <img
-              src="http://localhost:3015/img/sharerecipe/5fea5b5d27c560013957dcf9-b9960379.jpg"
-              class="card-img-top mt-3"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">青檸嫩雞直管麵</h5>
-              <p class="card-text">
-                沒有什麼組合比香腸和辣椒更令人滿意了。畢竟，在胃液中甜美的焦糖味和肉中的超鹹味，還有什麼比這更令人放鬆呢？
-              </p>
-              <div class="text-right">
-                <i class="far fa-clock col-green"></i>&nbsp; 40分鐘
-              </div>
-            </div>
-          </div>
-          <div class="card col-3">
-            <img
-              src="http://localhost:3015/img/sharerecipe/5fea5b5d27c560013957dcf9-b9960379.jpg"
-              class="card-img-top mt-3"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">水稻上的西南植物基蛋白質</h5>
-              <p class="card-text">
-                沒有什麼組合比香腸和辣椒更令人滿意了。畢竟，在胃液中甜美的焦糖味和肉中的超鹹味，還有什麼比這
-              </p>
-              <div class="text-right">
-                <i class="far fa-clock col-green"></i>&nbsp; 40分鐘
-              </div>
-            </div>
-          </div>
-          <div class="card col-3">
-            <img
-              src="http://localhost:3015/img/sharerecipe/5fea5b5d27c560013957dcf9-b9960379.jpg"
-              class="card-img-top mt-3"
-              alt="..."
-            />
-
-            <div class="card-body">
-              <h5 class="card-title">蔬菜炒豬肉烤肉</h5>
-              <p class="card-text">
-                沒有什麼組合比香腸和辣椒更令人滿意了。畢竟，在胃液中甜美的焦糖味和肉中的超鹹味，還有什麼比這
-              </p>
-              <div class="text-right">
-                <i class="far fa-clock col-green"></i>&nbsp; 40分鐘
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
 
-        <div class="row">
-          <Pagination className="mx-auto mt-5">
+        <div className="row">
+          <Pagination classNameName="mx-auto mt-5">
             <Pagination.First />
             <Pagination.Prev />
             <Pagination.Item>{10}</Pagination.Item>
@@ -148,6 +88,13 @@ function Sharerecipe() {
           </Pagination>
         </div>
       </div>
+    </>
+  )
+
+  return (
+    <>
+      {/* 載入中顯示spinner . 載入完顯示display */}
+      {isLoading ? spinner : display}
     </>
   )
 }
