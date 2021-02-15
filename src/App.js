@@ -16,6 +16,7 @@ import Recipe from './pages/Recipe'
 import MemberCenter from './pages/MemberCenter'
 import AboutUs from './pages/AboutUs'
 import Sharerecipe from './pages/Sharerecipe'
+import MyRecipe from './pages/MyRecipe'
 
 // 組合用元件
 import Header from './components/Header'
@@ -65,6 +66,10 @@ function App() {
                   breadCrumbBool={breadCrumbBool}
                   setBreadCrumbBool={setBreadCrumbBool}
                 />
+              </Route>
+              {/* 我的食譜 */}
+              <Route path="/MemberCenter/MyRecipe">
+                <MyRecipe />
               </Route>
               <Route path="/MemberCenter">
                 <MemberCenter />
