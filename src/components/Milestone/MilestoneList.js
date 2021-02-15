@@ -1,7 +1,26 @@
 // 成就顯示
-import React from 'react'
+import React,{useState} from 'react'
 
 function MilestoneList() {
+
+  /*資料庫回來的東西 */
+  //milstonelist 二維陣列
+  const [milstonelist, setMilestoneList] = useState(/* 這邊要記得填欄位名稱 */);
+  //連結資料庫
+  const getMilestoneList = () => {
+    const url = 'http://localhost:4000/milestone/getMilestoneList';
+    fetch(url, {
+      method: 'get',
+    })
+      //then 是會接前方拋出的結果
+      .then((r) => r.json())
+      .then((obj) => {
+        // console.log(obj)
+        setMilestoneList(obj)
+      })
+  }
+
+
   return (
     <>
       <div className="row fff-no-mr-and-pad d-flex flex-shrink-0">
