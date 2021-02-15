@@ -8,8 +8,6 @@ import MsMoboPointInfo from '../components/Milestone/MsMoboPointInfo'
 import MsMoboBackToLastPageBtn from '../components/Milestone/MsMoboBackToLastPageBtn'
 
 function Milestone() {
-  //集點方式
-  const [about, setAbout] = useState(0)
   // 控制手機版“我的成就”按鈕按下去來顯示成就清單
   const [mobomspage2, setMoboMsPage2] = useState(false)
 
@@ -71,8 +69,6 @@ function Milestone() {
         <MilestoneInfoBar
           btnText="兌換獎勵"
           href="./RewardExchange"
-          setAbout={setAbout}
-          about={about}
           setMoboMsPage2={setMoboMsPage2}
         />
       </div>
