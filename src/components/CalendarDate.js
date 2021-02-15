@@ -5,8 +5,6 @@ import GetWeeksInMonth from './GetWeeksInMonth'
 
 //連結到GeWeekInMonth(mmt), 使用到moment
 
-//測試點選
-
 function CalendarDate() {
   const { timeReducer } = useContext(AppStore)
   const date = timeReducer[0]
@@ -14,6 +12,11 @@ function CalendarDate() {
 
   let weekContentList = GetWeeksInMonth(mmt)
   let result = []
+
+  const [activeDindex, setActiveDindex] = useState(0)
+  const handleOnClick = (day, dIndex) => {
+    setActiveDindex(`${day}-${dIndex}`)
+  }
 
   return (
     <>
@@ -23,11 +26,17 @@ function CalendarDate() {
           aWeek = week.map((day, dIndex) => (
             <li
               className="lll-body-list-item"
-              key={`${day}-${dIndex}`}
+              key={`${day}-${dIndex}`} //日期 - , index
               value={day === 0 ? '' : day}
-              onClick={(event) => {
-                console.log(event.target.value)
-              }}
+              // onClick={(event) => {
+              //   console.log(event.target.value)
+              // }}
+              onClick={() => handleOnClick(day, dIndex)}
+              className={
+                activeDindex === `${day}-${dIndex}`
+                  ? 'lll-green-active'
+                  : 'lll-body-list-item'
+              }
             >
               {day === 0 ? '' : day}
             </li>

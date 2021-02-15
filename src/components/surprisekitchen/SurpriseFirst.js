@@ -16,8 +16,22 @@ function SurpriseFirst() {
       {/* 第一版圖片 */}
       <div className="container-fluid">
         <div className="row">
-          <div className="lll-first-picture-width">
+          {/* <div className="lll-first-picture-width">
             <div className="lll-first-picture"></div>
+          </div> */}
+          <div className="lll-change-picture-width">
+            <div className="lll-change-picture"></div>
+          </div>
+
+          <div className="d-flex lll-coupon-position">
+            <div className="lll-get-coupon">
+              <div className="lll-meal-pictures"></div>
+            </div>
+
+            <h1 className="mt-auto lll-green">rder</h1>
+            <p className="m-0 lll-explain-coupon">
+              點擊到吉祥物咧夢就可立即獲取100元購物金
+            </p>
           </div>
         </div>
       </div>

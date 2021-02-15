@@ -1,5 +1,4 @@
 import { BrowserRouter as Link, NavLink } from 'react-router-dom'
-// import Carousel from '../components/home/Carousel'
 import React from 'react'
 import Carousel from '../components/home/Carousel'
 import '../components/home/carousel3d.css'
