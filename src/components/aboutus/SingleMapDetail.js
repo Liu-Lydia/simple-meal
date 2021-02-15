@@ -30,7 +30,9 @@ export class SingleMapDetail extends Component {
   }
 
   // 點標籤打開InfoWindow
+  // ??這裡的props . this
   onMarkerClick = (props, marker, e) =>
+    // console.log('props:',props)
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
@@ -92,8 +94,8 @@ export class SingleMapDetail extends Component {
   }
   render() {
     console.log(this.props)
-    const { todos } = this.props
-    console.log('todos:', todos)
+    // const { todos } = this.props
+    // console.log('todos:', todos)
 
     return (
       <>
@@ -133,13 +135,16 @@ export class SingleMapDetail extends Component {
                   key={item.id}
                   onClick={this.onMarkerClick}
                   title={'The marker`s title will appear as a tooltip.'}
-                  name={'SOMA'}
+                  name={item.address}
+                  // name="Dolores park"
                   position={{ lat: item.lat, lng: item.lng }}
                 />
               )
             })}
 
-          {todos.map((item, index) => {
+          {/* <Marker name="Current location" onClick={this.onMarkerClick} /> */}
+
+          {/* {todos.map((item, index) => {
             return (
               <InfoWindow
                 key={item.id}
@@ -153,7 +158,7 @@ export class SingleMapDetail extends Component {
                 </div>
               </InfoWindow>
             )
-          })}
+          })} */}
           {/* <InfoWindow
             marker={this.state.activeMarker}
             visible={this.state.showingInfoWindow}
@@ -163,6 +168,18 @@ export class SingleMapDetail extends Component {
               <p>{infoContent}</p>
             </div>
           </InfoWindow> */}
+
+          <InfoWindow
+            marker={this.state.activeMarker}
+            onClose={this.onInfoWindowClose}
+            visible={this.state.showingInfoWindow}
+          >
+            <div>
+              {/* ??name???? */}
+              {/* <h1>{this.state.selectedPlace.name}</h1> */}
+              <h1>666</h1>
+            </div>
+          </InfoWindow>
         </Map>
       </>
     )
