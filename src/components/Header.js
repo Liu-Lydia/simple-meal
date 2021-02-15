@@ -110,7 +110,7 @@ function Header() {
                     <NavDropdown.Item as={NavLink} to="/meal">
                       菜單介紹
                     </NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to="/none4">
+                    <NavDropdown.Item as={NavLink} to="/sharerecipe">
                       共享食譜
                     </NavDropdown.Item>
                   </NavDropdown>

@@ -19,6 +19,10 @@ export const pathnameList = [
   '/MemberCenter',
   // 商品
   '/meal',
+  // 分享食譜
+  '/sharerecipe',
+  // 關於我們
+  '/aboutus',
 ]
 
 export const pathnameTextList = [
@@ -36,4 +40,8 @@ export const pathnameTextList = [
   '/會員中心',
   // 商品
   '/菜單介紹',
+  // 分享食譜
+  '/分享食譜',
+  // 關於我們
+  '/關於我們',
 ]
