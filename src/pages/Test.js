@@ -19,7 +19,7 @@ function Test() {
             }}
           ></div>
 
-          <h3>掛CSS Class(CSS對應public資料夾路徑?)</h3>
+          <h3>掛CSS Class(CSS對應public資料夾路徑?)?</h3>
           <div className="poe-test my-5"></div>
           <h3>圖片(絕對路徑)</h3>
 
