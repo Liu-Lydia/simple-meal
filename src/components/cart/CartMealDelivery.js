@@ -1,15 +1,24 @@
+import { tr } from 'date-fns/locale'
 import React, { useEffect, useState } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 
 function CartMealDelivery(props) {
   const { setFlowchart, setCartMode } = props
 
+  // 接取資料庫的資料
   const [deliveryData, setDeliveryData] = useState({
     thisTime: [],
     nextTime: [],
   })
 
+  // 當有任何刷新時+1, 讓didupdate監控
   const [clickNum, setClickNum] = useState(0)
+
+  // 紀錄checkbox的SID
+  const [checkSid, setCheckSid] = useState({
+    thisTime: '0',
+    nextTime: '0',
+  })
 
   // 讀取資料庫
   const handleGetData = () => {
@@ -24,6 +33,7 @@ function CartMealDelivery(props) {
       })
   }
 
+  // 增減數量
   const handleSetMealNum = (sid, quantity) => {
     const url = `http://localhost:4000/mealdelivery/setmealquantity?sid=${sid}&quantity=${quantity}`
     if (quantity >= 1 && quantity <= 10) {
@@ -33,10 +43,62 @@ function CartMealDelivery(props) {
     }
   }
 
+  // 改變勾選
+  const handleSetCheckboxSid = (e, deliveryTime) => {
+    if (deliveryTime === 'thisTime') {
+      if (checkSid.thisTime.search(e.target.value) === -1) {
+        setCheckSid({
+          ...checkSid,
+          thisTime: checkSid.thisTime + `,${e.target.value}`,
+        })
+      } else {
+        setCheckSid({
+          ...checkSid,
+          thisTime: checkSid.thisTime.replace(`,${e.target.value}`, ''),
+        })
+      }
+    }
+    if (deliveryTime === 'nextTime') {
+      if (checkSid.nextTime.search(e.target.value) === -1) {
+        setCheckSid({
+          ...checkSid,
+          nextTime: checkSid.nextTime + `,${e.target.value}`,
+        })
+      } else {
+        setCheckSid({
+          ...checkSid,
+          nextTime: checkSid.nextTime.replace(`,${e.target.value}`, ''),
+        })
+      }
+    }
+    // console.log(checkSid)
+  }
+
+  // 移到下次
+  const handleSetNextTime = () => {
+    const url = `http://localhost:4000/mealdelivery/tonexttime?str=${checkSid.thisTime}`
+    fetch(url, {
+      method: 'get',
+    })
+      .then(setClickNum(clickNum + 1))
+      .then(setCheckSid({ thisTime: '0', nextTime: '0' }))
+  }
+
+  // 移到這次
+  const handleSetThisTime = () => {
+    const url = `http://localhost:4000/mealdelivery/tothistime?str=${checkSid.nextTime}`
+    fetch(url, {
+      method: 'get',
+    })
+      .then(setClickNum(clickNum + 1))
+      .then(setCheckSid({ thisTime: '0', nextTime: '0' }))
+  }
+
   // 裝載時轉成流程1
   useEffect(() => {
     setFlowchart(1)
     handleGetData()
+    console.log(deliveryData.thisTime)
   }, [])
 
   // 當有任何點擊時
@@ -46,6 +108,8 @@ function CartMealDelivery(props) {
 
   return (
     <>
+      {/* <input type="text" value={checkSid.thisTime} />
+      <input type="text" value={checkSid.nextTime} /> */}
       {/* 本次配送 */}
       <div className="">
         <h5>配送餐點</h5>
@@ -69,10 +133,23 @@ function CartMealDelivery(props) {
           </thead>
           <tbody>
             {/* 商品卡 */}
+            {deliveryData.thisTime.length === 0 && (
+              <tr className="text-center">
+                <td colspan="4">
+                  <h5 className="poe-mt15 poe-mb15">您沒有本次配送的餐點</h5>
+                </td>
+              </tr>
+            )}
             {deliveryData.thisTime.map((v, i) => (
               <tr key={i}>
                 <th className="poe-pr15 align-middle" scope="row">
-                  <input type="checkbox" value={v.sid} />
+                  <input
+                    type="checkbox"
+                    value={v.sid}
+                    onChange={(event) => {
+                      handleSetCheckboxSid(event, 'thisTime')
+                    }}
+                  />
                 </th>
                 <td className="align-middle poe-pr15 poe-cart-product-img">
                   <img
@@ -121,7 +198,7 @@ function CartMealDelivery(props) {
         <div className="poe-bookmark-content-result text-right">
           <div className="text-center text-sm-left">
             <Link
-              href=""
+              onClick={() => handleSetNextTime()}
               className="select-btn-green txt-btn mx-1 mx-sm-3 poe-mb20"
             >
               移到下次
@@ -183,40 +260,74 @@ function CartMealDelivery(props) {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th className="poe-pr15 align-middle" scope="row">
-                <input type="checkbox" />
-              </th>
-              <td className="align-middle poe-pr15 poe-cart-product-img">
-                <img
-                  className="w-100"
-                  src="/public/img/cart/bg/hero02.png"
-                  alt=""
-                />
-              </td>
-              <td>
-                <p className="txt-btn">羅勒鮮蔬通心麵</p>
-                <p className="txt-cap poe-gray">有羅勒香和奶香的一頓餐點</p>
-              </td>
-              <td className="text-center align-middle">
-                <div>
-                  <a href="" className="px-3 poe-green">
-                    <i className="fas fa-minus-circle"></i>
-                  </a>
-                  <span>2</span>
-                  <a href="" className="px-3 poe-green">
-                    <i className="fas fa-plus-circle"></i>
-                  </a>
-                </div>
-              </td>
-            </tr>
+            {/* 商品卡 */}
+            {deliveryData.nextTime.length === 0 && (
+              <tr className="text-center">
+                <td colspan="4">
+                  <h5 className="poe-mt15 poe-mb15">您沒有下次配送的餐點</h5>
+                </td>
+              </tr>
+            )}
+            {deliveryData.nextTime.map((v, i) => (
+              <tr key={i}>
+                <th className="poe-pr15 align-middle" scope="row">
+                  <input
+                    type="checkbox"
+                    value={v.sid}
+                    onChange={(event) => {
+                      handleSetCheckboxSid(event, 'nextTime')
+                    }}
+                  />
+                </th>
+                <td className="align-middle poe-pr15 poe-cart-product-img">
+                  <img
+                    className="w-100"
+                    src={`http://localhost:3015/img/meal/未去背/${v.product_id}.png`}
+                    alt=""
+                  />
+                </td>
+                <td>
+                  <p className="txt-btn">{v.meal_name}</p>
+                  <p className="txt-cap poe-gray">{v.description}</p>
+                </td>
+                <td className="text-center align-middle">
+                  <div>
+                    <a
+                      onClick={() => {
+                        const sid = v.sid
+                        const quantity = v.quantity - 1
+                        handleSetMealNum(sid, quantity)
+                      }}
+                      className={`px-3 ${
+                        v.quantity > 1 ? 'poe-green' : 'poe-gray'
+                      }`}
+                    >
+                      <i className="fas fa-minus-circle"></i>
+                    </a>
+                    <span>{v.quantity}</span>
+                    <a
+                      onClick={() => {
+                        const sid = v.sid
+                        const quantity = v.quantity + 1
+                        handleSetMealNum(sid, quantity)
+                      }}
+                      className={`px-3 ${
+                        v.quantity < 10 ? 'poe-green' : 'poe-gray'
+                      }`}
+                    >
+                      <i className="fas fa-plus-circle"></i>
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
 
         <div className="poe-bookmark-content-result text-right">
           <div className="text-center text-sm-left">
             <Link
-              href=""
+              onClick={() => handleSetThisTime()}
               className="select-btn-green txt-btn mx-1 mx-sm-3 poe-mb20"
             >
               移到本次
