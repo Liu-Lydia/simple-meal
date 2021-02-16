@@ -9,6 +9,11 @@ function CartMealDelivery(props) {
   const [deliveryData, setDeliveryData] = useState({
     thisTime: [],
     nextTime: [],
+    simpleMealCoupon: {
+      now: 0,
+      cost: 0,
+      remain: 0,
+    },
   })
 
   // 當有任何刷新時+1, 讓didupdate監控
@@ -18,6 +23,7 @@ function CartMealDelivery(props) {
   const [checkSid, setCheckSid] = useState({
     thisTime: '0',
     nextTime: '0',
+    simpleMealCoupon: 0,
   })
 
   // 讀取資料庫
@@ -28,7 +34,7 @@ function CartMealDelivery(props) {
     })
       .then((r) => r.json())
       .then((obj) => {
-        // console.log(obj)
+        console.log(obj)
         setDeliveryData(obj)
       })
   }
@@ -212,13 +218,30 @@ function CartMealDelivery(props) {
           </div>
           <div>
             <span>您的帳戶現有 </span>
+            <span className="poe-red">{deliveryData.simpleMealCoupon.now}</span>
+            <span> 張餐券,</span>
+            <br className="d-block d-sm-none" />
+            <span>配送將消耗 </span>
+            <span className="poe-red">
+              {deliveryData.simpleMealCoupon.cost}
+            </span>
+            <span> 張餐券,</span>
+            <br className="d-block d-sm-none" />
+            <span>您尚有 </span>
+            <span className="poe-red">
+              {deliveryData.simpleMealCoupon.remain}
+            </span>
+            <span> 張餐券可以使用</span>
+          </div>
+          {/* <div>
+            <span>您的帳戶現有 </span>
             <span className="poe-red">0</span>
             <span>
               {' '}
               張餐券,
               <br className="d-block d-sm-none" /> 請先購買餐券再進行餐點配送
             </span>
-          </div>
+          </div> */}
         </div>
         <div className="text-center text-sm-right poe-bookmark-btn-group">
           <Link
