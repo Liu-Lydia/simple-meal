@@ -82,6 +82,12 @@
   letter-spacing: 12px;
   font-size: 12px;
 }
+.cha-px0{
+  padding: 0!important;
+}
+.cha-ml1{
+  margin-left: 10px;
+}
 .cha-mr1 {
   margin-right: 10px;
 }
@@ -110,7 +116,9 @@
   margin-bottom: 0px;
 }
 .cha-cards {
+  /* position: fixed; */
   height: 270px;
+  left:10%;
   /* background-color: rgb(194, 202, 77); */
 }
 .cha-cards-over {
@@ -268,14 +276,16 @@ margin-left: 46px;
   font-size: 25px;
 }
 .cha-rigth-icon {
-  position: relative;
+  position: absolute;
   top: 130px;
   font-size: 35px;
+  right: 0;
 }
 .cha-left-icon {
-  position: relative;
+  position: absolute;
   top: 130px;
   font-size: 35px;
+  left: 0;
 }
 .cha-rec-search-bar {
   height: 100px;

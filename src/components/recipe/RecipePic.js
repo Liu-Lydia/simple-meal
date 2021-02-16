@@ -5,7 +5,7 @@ function RecipePic() {
         <div className="cha-rec-main-pic1">
           <img
             className="cha-rec-main-pic2"
-            src="/img/meal/china_01.png"
+            src="http://localhost:3015/img/meal/italy03.png"
             alt=""
           />
         </div>

@@ -7,7 +7,7 @@ function RecipeCards() {
             <div className="cha-card-img1">
               <img
                 className="cha-card-img2"
-                src="./img/meal/hero02.png"
+                src="http://localhost:3015/img/meal/italy03.png"
                 alt=""
               />
               <p className="txt-cap cha-gray cha-mb1">羅勒鮮蔬通心麵</p>
@@ -32,7 +32,7 @@ function RecipeCards() {
             <div className="cha-card-img1">
               <img
                 className="cha-card-img2"
-                src="./img/meal/french_02.png"
+                src="http://localhost:3015/img/meal/italy03.png"
                 alt=""
               />
               <p className="txt-cap cha-gray cha-mb1">羅勒鮮蔬通心麵</p>
@@ -57,7 +57,7 @@ function RecipeCards() {
             <div className="cha-card-img1">
               <img
                 className="cha-card-img2"
-                src="./img/meal/french_03.png"
+                src="http://localhost:3015/img/meal/italy03.png"
                 alt=""
               />
               <p className="txt-cap cha-gray cha-mb1">羅勒鮮蔬通心麵</p>
@@ -82,7 +82,7 @@ function RecipeCards() {
             <div className="cha-card-img1">
               <img
                 className="cha-card-img2"
-                src="./img/meal/french_01.png"
+                src="http://localhost:3015/img/meal/italy03.png"
                 alt=""
               />
               <p className="txt-cap cha-gray cha-mb1">羅勒鮮蔬通心麵</p>

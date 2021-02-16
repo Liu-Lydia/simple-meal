@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import MultiLevelBreadCrumb from '../MultiLevelBreadCrumb'
 
 function MealTittle(props) {
@@ -38,18 +39,15 @@ function MealTittle(props) {
               </div>
             </div>
             <div>
-              <a
-                href="http://google.com"
+              <Link
+                to="/cart"
                 className="cha-btn-cart btn-green txt-btn cha-mr5"
               >
                 加入訂單
-              </a>
-              <a
-                href="http://google.com"
-                className="cha-btn-recipe txt-btn btn-white"
-              >
+              </Link>
+              <Link to="/recipe" className="cha-btn-recipe txt-btn btn-white">
                 查看食譜
-              </a>
+              </Link>
             </div>
           </div>
         </div>

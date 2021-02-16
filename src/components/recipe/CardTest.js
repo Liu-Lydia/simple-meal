@@ -3,7 +3,7 @@ import 'react-multi-carousel/lib/styles.css'
 function CardTest() {
   const CustomLeftArrow = ({ onClick }) => (
     <i onClick={() => onClick()} className="custom-left-arrow" />
-  );
+  )
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -23,14 +23,59 @@ function CardTest() {
       items: 1,
     },
   }
+  function CustomRightArrow2({ onClick }) {
+    function handleClick() {
+      // do whatever you want on the right button click
+      console.log('Right button clicked, go to next slide')
+      // ... and don't forget to call onClick to slide
+      onClick()
+    }
+
+    return (
+      <button>
+        <i
+          onClick={handleClick}
+          aria-label="Go to next slide"
+          class="fas fa-chevron-circle-right cha-rigth-icon cha-green"
+        />
+      </button>
+    )
+  }
+  function CustomLeftArrow2({ onClick }) {
+    function handleClick() {
+      // do whatever you want on the right button click
+      console.log('Right button clicked, go to next slide')
+      // ... and don't forget to call onClick to slide
+      onClick()
+    }
+
+    return (
+      <button>
+        <i
+          onClick={handleClick}
+          aria-label="Go to next slide"
+          class="fas fa-chevron-circle-left cha-left-icon cha-green"
+        />
+      </button>
+    )
+  }
   return (
     <>
-      <Carousel responsive={responsive}>
-      <div className="cha-rec-card">
+      <Carousel
+        arrows={true}
+        // renderButtonGroupOutside={true}
+        // customButtonGroup={<MealMultiButton />}
+        responsive={responsive}
+        customRightArrow={<CustomRightArrow2 />}
+        customLeftArrow={<CustomLeftArrow2 />}
+        itemClass="d-flex justify-content-center "
+        containerClass="mx-auto col-10 cha-px0"
+      >
+        <div className="cha-rec-card">
           <div className="cha-card-img1">
             <img
               className="cha-card-img2"
-              src="./img/meal/french_03.png"
+              src="http://localhost:3015/img/meal/china02.png"
               alt=""
             />
             <p className="txt-cap cha-gray cha-mb1">羅勒鮮蔬通心麵</p>
@@ -55,7 +100,7 @@ function CardTest() {
           <div className="cha-card-img1">
             <img
               className="cha-card-img2"
-              src="./img/meal/french_03.png"
+              src="http://localhost:3015/img/meal/italy02.png"
               alt=""
             />
             <p className="txt-cap cha-gray cha-mb1">羅勒鮮蔬通心麵</p>
@@ -80,7 +125,7 @@ function CardTest() {
           <div className="cha-card-img1">
             <img
               className="cha-card-img2"
-              src="./img/meal/french_03.png"
+              src="http://localhost:3015/img/meal/italy01.png"
               alt=""
             />
             <p className="txt-cap cha-gray cha-mb1">羅勒鮮蔬通心麵</p>
@@ -105,7 +150,7 @@ function CardTest() {
           <div className="cha-card-img1">
             <img
               className="cha-card-img2"
-              src="./img/meal/french_03.png"
+              src="http://localhost:3015/img/meal/italy03.png"
               alt=""
             />
             <p className="txt-cap cha-gray cha-mb1">羅勒鮮蔬通心麵</p>
@@ -130,7 +175,7 @@ function CardTest() {
           <div className="cha-card-img1">
             <img
               className="cha-card-img2"
-              src="./img/meal/french_03.png"
+              src="http://localhost:3015/img/meal/china03.png"
               alt=""
             />
             <p className="txt-cap cha-gray cha-mb1">羅勒鮮蔬通心麵</p>
@@ -155,7 +200,7 @@ function CardTest() {
           <div className="cha-card-img1">
             <img
               className="cha-card-img2"
-              src="./img/meal/french_03.png"
+              src="http://localhost:3015/img/meal/china01.png"
               alt=""
             />
             <p className="txt-cap cha-gray cha-mb1">羅勒鮮蔬通心麵</p>

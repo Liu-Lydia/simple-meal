@@ -14,9 +14,6 @@ import RewardExchange from './pages/RewardExchange'
 import Meal from './pages/Meal'
 import Recipe from './pages/Recipe'
 import MemberCenter from './pages/MemberCenter'
-import AboutUs from './pages/AboutUs'
-import Sharerecipe from './pages/Sharerecipe'
-import MyRecipe from './pages/MyRecipe'
 
 // 組合用元件
 import Header from './components/Header'
@@ -67,24 +64,12 @@ function App() {
                   setBreadCrumbBool={setBreadCrumbBool}
                 />
               </Route>
-              {/* 我的食譜 */}
-              <Route path="/MemberCenter/MyRecipe">
-                <MyRecipe />
-              </Route>
               <Route path="/MemberCenter">
                 <MemberCenter />
               </Route>
 
               <Route path="/surprisekitchen">
                 <SurpriseKitchen />
-              </Route>
-              {/* 關於我 */}
-              <Route path="/aboutus">
-                <AboutUs />
-              </Route>
-              {/* 共享食譜 */}
-              <Route path="/sharerecipe">
-                <Sharerecipe />
               </Route>
               {/* 首頁 */}
               <Route exact path="/">

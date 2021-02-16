@@ -29,9 +29,7 @@ function Meal(props) {
         <div className="col-10">
           <SearchBarHidden />
           <MealMain breadCrumbBool={breadCrumbBool} />
-          <div className="mx-auto ">
-            <MealMultiCarousel />
-          </div>
+          <MealMultiCarousel />
         </div>
       </div>
       {/* </div> */}
