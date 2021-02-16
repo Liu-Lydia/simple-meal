@@ -37,7 +37,15 @@ function MealDelivery(props) {
           info={info}
         />
       )}
-      <form id="cart_mealdelivery"></form>
+      {/* 隱藏表單 */}
+      <form id="cart_mealdelivery" hidden>
+        <input type="text" name="name" value={info.name} />
+        <input type="text" name="mobile" value={info.mobile} />
+        <input type="text" name="email" value={info.email} />
+        <input type="text" name="address" value={info.address} />
+        <input type="text" name="date" value={info.date} />
+        <input type="text" name="time" value={info.time} />
+      </form>
     </>
   )
 }

@@ -30,6 +30,21 @@ function MealDeliveryCheck(props) {
         setDeliveryData(obj)
       })
   }
+
+  // 送出訂單
+  const handlePostcheck = async () => {
+    const fd = new FormData(document.querySelector('#cart_mealdelivery'))
+    await fetch('http://localhost:4000/mealdelivery/ordercheck', {
+      method: 'post',
+      body: fd,
+    })
+      .then((r) => r.json())
+      .then((obj) => {
+        alert(`您的訂單已完成, 訂單編號 ${obj.order_sid}`)
+        setCheckBool(true)
+      })
+  }
+
   // 裝載時轉成流程3
   useEffect(() => {
     setFlowchart(3)
@@ -169,8 +184,7 @@ function MealDeliveryCheck(props) {
           </Link>
           <Link
             onClick={() => {
-              setCheckBool(true)
-              // handlePostcheck()
+              handlePostcheck()
             }}
             className="btn-green txt-btn mx-2 poe-mb20"
           >
