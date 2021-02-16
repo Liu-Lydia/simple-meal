@@ -2,10 +2,40 @@ import React, { useEffect, useState } from 'react'
 import { Route, withRouter, Link, Switch, Redirect } from 'react-router-dom'
 
 function MealDeliveryCheck(props) {
-  const { flowchart, setFlowchart } = props
+  const { flowchart, setFlowchart, info } = props
 
   // 是否結帳完成
   const [checkBool, setCheckBool] = useState(false)
+
+  // 接取資料庫的資料
+  const [deliveryData, setDeliveryData] = useState({
+    thisTime: [],
+    nextTime: [],
+    simpleMealCoupon: {
+      now: 0,
+      cost: 0,
+      remain: 0,
+    },
+  })
+
+  // 讀取資料庫
+  const handleGetData = () => {
+    const url = 'http://localhost:4000/mealdelivery/getdeliverycart'
+    fetch(url, {
+      method: 'get',
+    })
+      .then((r) => r.json())
+      .then((obj) => {
+        console.log(obj)
+        setDeliveryData(obj)
+      })
+  }
+  // 裝載時轉成流程3
+  useEffect(() => {
+    setFlowchart(3)
+    handleGetData()
+    console.log(deliveryData.thisTime)
+  }, [])
 
   return (
     <>
@@ -40,56 +70,47 @@ function MealDeliveryCheck(props) {
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td className="align-middle poe-pr15 poe-cart-product-img">
-                    <img
-                      className="w-100"
-                      src="/public/img/cart/bg/hero02.png"
-                      alt=""
-                    />
-                  </td>
-                  <td>
-                    <p className="txt-btn">羅勒鮮蔬通心麵</p>
-                    <p className="txt-cap poe-gray">有羅勒香和奶香的一頓餐點</p>
-                  </td>
-                  <td className="text-center align-middle">
-                    <div>
-                      <span>2</span>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td className="align-middle poe-pr15 poe-cart-product-img">
-                    <img
-                      className="w-100"
-                      src="/public/img/cart/bg/hero02.png"
-                      alt=""
-                    />
-                  </td>
-                  <td>
-                    <p className="txt-btn">羅勒鮮蔬通心麵</p>
-                    <p className="txt-cap poe-gray">有羅勒香和奶香的一頓餐點</p>
-                  </td>
-                  <td className="text-center align-middle">
-                    <div>
-                      <span>2</span>
-                    </div>
-                  </td>
-                </tr>
+                {/* 商品卡 */}
+                {deliveryData.thisTime.map((v, i) => (
+                  <tr>
+                    <td className="align-middle poe-pr15 poe-cart-product-img">
+                      <img
+                        className="w-100"
+                        src="/public/img/cart/bg/hero02.png"
+                        alt=""
+                      />
+                    </td>
+                    <td>
+                      <p className="txt-btn">{v.meal_name}</p>
+                      <p className="txt-cap poe-gray">{v.description}</p>
+                    </td>
+                    <td className="text-center align-middle">
+                      <div>
+                        <span>{v.quantity}</span>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
             <div className="poe-bookmark-content-result text-right">
               <div>
                 <span>您的帳戶現有 </span>
-                <span className="poe-red">0</span>
+                <span className="poe-red">
+                  {deliveryData.simpleMealCoupon.now}
+                </span>
                 <span> 張餐券,</span>
                 <br className="d-block d-sm-none" />
                 <span>配送將消耗 </span>
-                <span className="poe-red">8</span>
-                <span> 張餐券, </span>
+                <span className="poe-red">
+                  {deliveryData.simpleMealCoupon.cost}
+                </span>
+                <span> 張餐券,</span>
                 <br className="d-block d-sm-none" />
                 <span>您尚有 </span>
-                <spanspan className="poe-red">12</spanspan>
+                <span className="poe-red">
+                  {deliveryData.simpleMealCoupon.remain}
+                </span>
                 <span> 張餐券可以使用</span>
               </div>
             </div>
@@ -111,29 +132,27 @@ function MealDeliveryCheck(props) {
           <div className="poe-bookmark-content txt-btn">
             <div className="row poe-mb30">
               <div className="col-4 col-sm-3 text-right">收件人</div>
-              <div className="col-8 col-sm-9 poe-green">真麻煩</div>
+              <div className="col-8 col-sm-9 poe-green">{info.name}</div>
             </div>
             <div className="row poe-mb30">
               <div className="col-4 col-sm-3 text-right">連絡電話</div>
-              <div className="col-8 col-sm-9 poe-green">0987563256</div>
+              <div className="col-8 col-sm-9 poe-green">{info.mobile}</div>
             </div>
             <div className="row poe-mb30">
               <div className="col-4 col-sm-3 text-right">Email</div>
-              <div className="col-8 col-sm-9 poe-green">abc@gmail.com</div>
+              <div className="col-8 col-sm-9 poe-green">{info.email}</div>
             </div>
             <div className="row poe-mb30">
               <div className="col-4 col-sm-3 text-right">收件地址</div>
-              <div className="col-8 col-sm-9 poe-green">
-                高雄市鳳山區文山里文化路666號
-              </div>
+              <div className="col-8 col-sm-9 poe-green">{info.address}</div>
             </div>
             <div className="row poe-mb30">
               <div className="col-4 col-sm-3 text-right">配送日期</div>
-              <div className="col-8 col-sm-9 poe-green">2021-02-02</div>
+              <div className="col-8 col-sm-9 poe-green">{info.date}</div>
             </div>
             <div className="row poe-mb30">
               <div className="col-4 col-sm-3 text-right">配送時間</div>
-              <div className="col-8 col-sm-9 poe-green">10:00-12:00</div>
+              <div className="col-8 col-sm-9 poe-green">{info.time}</div>
             </div>
           </div>
         </div>

@@ -26,6 +26,9 @@ function CartMealDelivery(props) {
     simpleMealCoupon: 0,
   })
 
+  // 紀錄是否check
+  const [checkBool, setCheckBool] = useState({})
+
   // 讀取資料庫
   const handleGetData = () => {
     const url = 'http://localhost:4000/mealdelivery/getdeliverycart'
@@ -88,6 +91,7 @@ function CartMealDelivery(props) {
     })
       .then(setClickNum(clickNum + 1))
       .then(setCheckSid({ thisTime: '0', nextTime: '0' }))
+      .then(setCheckBool({}))
   }
 
   // 移到這次
@@ -98,6 +102,7 @@ function CartMealDelivery(props) {
     })
       .then(setClickNum(clickNum + 1))
       .then(setCheckSid({ thisTime: '0', nextTime: '0' }))
+      .then(setCheckBool({}))
   }
 
   // 裝載時轉成流程1
@@ -154,7 +159,11 @@ function CartMealDelivery(props) {
                     value={v.sid}
                     onChange={(event) => {
                       handleSetCheckboxSid(event, 'thisTime')
+                      const key = event.target.value
+                      setCheckBool({ ...checkBool, [key]: !checkBool[key] })
+                      // console.log(checkBool)
                     }}
+                    checked={checkBool[v.sid]}
                   />
                 </th>
                 <td className="align-middle poe-pr15 poe-cart-product-img">
@@ -299,7 +308,11 @@ function CartMealDelivery(props) {
                     value={v.sid}
                     onChange={(event) => {
                       handleSetCheckboxSid(event, 'nextTime')
+                      const key = event.target.value
+                      setCheckBool({ ...checkBool, [key]: !checkBool[key] })
+                      // console.log(checkBool)
                     }}
+                    checked={checkBool[v.sid]}
                   />
                 </th>
                 <td className="align-middle poe-pr15 poe-cart-product-img">
