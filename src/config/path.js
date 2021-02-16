@@ -25,6 +25,8 @@ export const pathnameList = [
   '/aboutus',
   // 會員中心 / 我的食譜
   '/MemberCenter/MyRecipe',
+  // 會員中心 / 新增食譜
+  '/MemberCenter/addrecipe',
 ]
 
 export const pathnameTextList = [
@@ -48,4 +50,6 @@ export const pathnameTextList = [
   '/關於我們',
   // 會員中心 / 我的食譜
   '/會員中心 / 我的食譜',
+  // 會員中心 / 新增食譜
+  '/會員中心 / 新增食譜',
 ]

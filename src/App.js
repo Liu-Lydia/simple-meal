@@ -17,6 +17,7 @@ import MemberCenter from './pages/MemberCenter'
 import AboutUs from './pages/AboutUs'
 import Sharerecipe from './pages/Sharerecipe'
 import MyRecipe from './pages/MyRecipe'
+import AddRecipe from './pages/AddRecipe'
 
 // 組合用元件
 import Header from './components/Header'
@@ -70,6 +71,10 @@ function App() {
               {/* 我的食譜 */}
               <Route path="/MemberCenter/MyRecipe">
                 <MyRecipe />
+              </Route>
+              {/* 新增食譜 */}
+              <Route path="/MemberCenter/addrecipe">
+                <AddRecipe />
               </Route>
               <Route path="/MemberCenter">
                 <MemberCenter />
