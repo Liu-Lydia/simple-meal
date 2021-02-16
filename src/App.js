@@ -83,6 +83,14 @@ function App() {
               <Route path="/surprisekitchen">
                 <SurpriseKitchen />
               </Route>
+              {/* 關於我 */}
+              <Route path="/aboutus">
+                <AboutUs />
+              </Route>
+              {/* 共享食譜 */}
+              <Route path="/sharerecipe">
+                <Sharerecipe />
+              </Route>
               {/* 首頁 */}
               <Route exact path="/">
                 <Home />
