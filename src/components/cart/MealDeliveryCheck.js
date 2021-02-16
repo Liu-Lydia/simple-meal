@@ -88,10 +88,10 @@ function MealDeliveryCheck(props) {
                 {/* 商品卡 */}
                 {deliveryData.thisTime.map((v, i) => (
                   <tr>
-                    <td className="align-middle poe-pr15 poe-cart-product-img">
+                    <td className="align-middle px-0 poe-pr15 poe-cart-product-img">
                       <img
                         className="w-100"
-                        src="/public/img/cart/bg/hero02.png"
+                        src={`http://localhost:3015/img/meal/未去背/${v.product_id}.jpg`}
                         alt=""
                       />
                     </td>

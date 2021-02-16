@@ -166,10 +166,10 @@ function CartMealDelivery(props) {
                     checked={checkBool[v.sid]}
                   />
                 </th>
-                <td className="align-middle poe-pr15 poe-cart-product-img">
+                <td className="align-middle px-0 poe-pr15 poe-cart-product-img">
                   <img
                     className="w-100"
-                    src={`http://localhost:3015/img/meal/未去背/${v.product_id}.png`}
+                    src={`http://localhost:3015/img/meal/未去背/${v.product_id}.jpg`}
                     alt=""
                   />
                 </td>
@@ -315,10 +315,10 @@ function CartMealDelivery(props) {
                     checked={checkBool[v.sid]}
                   />
                 </th>
-                <td className="align-middle poe-pr15 poe-cart-product-img">
+                <td className="align-middle px-0 poe-pr15 poe-cart-product-img">
                   <img
                     className="w-100"
-                    src={`http://localhost:3015/img/meal/未去背/${v.product_id}.png`}
+                    src={`http://localhost:3015/img/meal/未去背/${v.product_id}.jpg`}
                     alt=""
                   />
                 </td>
