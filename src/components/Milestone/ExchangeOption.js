@@ -4,7 +4,8 @@ import '../../styles/fff.css'
 
 function ExchangeOption(props) {
 
-  const linBarClassArray = [['', 'col-3 poe-cart-progress-active', 'col'],
+  //二維陣列
+  const lineBarClassArray = [['', 'col-3 poe-cart-progress-active', 'col'],
   ['col-3', 'col-3 poe-cart-progress-active', 'col-3'],
   ['col', 'col-3 poe-cart-progress-active', '']];
 
@@ -22,7 +23,7 @@ function ExchangeOption(props) {
     const lineBarArray = document.getElementsByClassName("lineBar");
     const tabArray = document.getElementsByClassName("tabClass");
     for (var i = 0; i < 3; i++) {
-      lineBarArray[i].className = linBarClassArray[props.optionTab][i] + " lineBar";
+      lineBarArray[i].className = lineBarClassArray[props.optionTab][i] + " lineBar";
       tabArray[i].className = tabClassArray[props.optionTab][i] + " tabClass col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center";
     }
 

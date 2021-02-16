@@ -14,6 +14,13 @@ import RewardExchange from './pages/RewardExchange'
 import Meal from './pages/Meal'
 import Recipe from './pages/Recipe'
 import MemberCenter from './pages/MemberCenter'
+<<<<<<< HEAD
+=======
+import AboutUs from './pages/AboutUs'
+import Sharerecipe from './pages/Sharerecipe'
+import MyRecipe from './pages/MyRecipe'
+import AddRecipe from './pages/AddRecipe'
+>>>>>>> 148b27217b7ecdba4e736d5e0a97b2669e39cfe9
 
 // 組合用元件
 import Header from './components/Header'
@@ -63,6 +70,14 @@ function App() {
                   breadCrumbBool={breadCrumbBool}
                   setBreadCrumbBool={setBreadCrumbBool}
                 />
+              </Route>
+              {/* 我的食譜 */}
+              <Route path="/MemberCenter/MyRecipe">
+                <MyRecipe />
+              </Route>
+              {/* 新增食譜 */}
+              <Route path="/MemberCenter/addrecipe">
+                <AddRecipe />
               </Route>
               <Route path="/MemberCenter">
                 <MemberCenter />
