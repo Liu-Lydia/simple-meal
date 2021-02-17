@@ -123,9 +123,9 @@ function MilestoneInfoBar(props) {
           </div>
         </div>
       </div>
-
+      <div className="row fff-ms-how-to-section">
       <div
-        className="modal justify-content-center col-10 offset-1"
+        className="modal"
         id="about"
       >
         <div className="modal-content fff-dialog">
@@ -142,7 +142,7 @@ function MilestoneInfoBar(props) {
 
             <div className="row d-flex justify-content-center  flex-row">
               <span
-                className="col-12"
+                className="col-12 txt-btn"
                 style={{ padding: '0 75px 0 75px' }}
               >
                 我們用輕鬆活潑的方式記錄您在極簡煮易當中的冒險故事！並提供許多成就目標讓您可以用有趣的方式獲得額外的優惠！
@@ -169,6 +169,7 @@ function MilestoneInfoBar(props) {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   )

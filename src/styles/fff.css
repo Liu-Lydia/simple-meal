@@ -266,7 +266,13 @@
     text-decoration: none;
     color: #b9433b;
   }
+  /* 如何獲得點數格子*/
+  .fff-ms-how-to-section{
+    display: flex;
+   flex-direction: center;
 }
+}
+
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -581,8 +587,11 @@
 }
 
 .modal {
+  width: 650px;
+  height: 700px;
   background: rgba(255, 255, 255, 0.5);
   margin-top: 30px;
+  
 }
 
 .fff-dialog p {

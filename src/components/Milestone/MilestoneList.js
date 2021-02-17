@@ -117,7 +117,7 @@ function MilestoneList() {
                     className="fff-svg-painting"
                     style={{
                       backgroundImage:
-                        'url(http://localhost:3015/img/fff/' +
+                        'url(http://localhost:3015/img/milestonelist/'+
                         (v.AddProgress >= v.progress_goal
                           ? v.finished_goal_pic
                           : v.unfinished_goal_pic) +
