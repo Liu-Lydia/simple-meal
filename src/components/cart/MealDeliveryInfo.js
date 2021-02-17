@@ -1,18 +1,22 @@
 import { set } from 'date-fns'
 import React, { useEffect, useState } from 'react'
-import { withRouter, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function MealDeliveryInfo(props) {
   const { flowchart, setFlowchart, info, setInfo } = props
 
+  // placeholder
+  const [infoPlaceholder, setInfoPlaceholder] = useState({
+    name: '',
+    mobile: '',
+    email: '',
+    address: '',
+    date: '',
+    time: '',
+  })
+
   // 判斷有沒有填資料
   const [infoBool, setInfoBool] = useState({
-    // name: false,
-    // mobile: false,
-    // email: false,
-    // address: false,
-    // date: false,
-    // time: false,
     name: true,
     mobile: true,
     email: true,
@@ -40,108 +44,92 @@ function MealDeliveryInfo(props) {
     })
       .then((r) => r.json())
       .then((obj) => {
-        console.log(obj)
+        // console.log(obj)
         setDeliveryData(obj)
       })
   }
 
   // 下一步前檢查
   const handleCheckInfo = async () => {
-    // const checkInfo = new Promise(function (resolve, reject) {
-    //   console.log(info, infoBool)
-    // })
-    // checkInfo
-    //   .then(() => {
-    //     if (info.name === '') {
-    //       setInfoBool({ ...infoBool, name: false })
-    //       return
-    //     } else {
-    //       setInfoBool({ ...infoBool, name: true })
-    //     }
-    //   })
-    //   .then(() => {
-    //     if (info.mobile === '') {
-    //       setInfoBool({ ...infoBool, mobile: false })
-    //       return
-    //     } else {
-    //       setInfoBool({ ...infoBool, mobile: true })
-    //     }
-    //   })
-    //   .then(() => console.log(info, infoBool))
-    //   .then(() => {
-    //     if (
-    //       infoBool.name &&
-    //       infoBool.mobile &&
-    //       infoBool.email &&
-    //       infoBool.address &&
-    //       infoBool.date &&
-    //       infoBool.time
-    //     ) {
-    //       setFlowchart(3)
-    //     }
-    //   })
-    setFlowchart(3)
-    // // 檢查收件人
-    // if (info.name === '') {
-    //   setInfoBool({ ...infoBool, name: false })
-    //   return
-    // } else {
-    //   setInfoBool({ ...infoBool, name: true })
-    // }
-    // // 電話
-    // if (info.mobile === '') {
-    //   setInfoBool({ ...infoBool, mobile: false })
-    //   return
-    // } else {
-    //   setInfoBool({ ...infoBool, mobile: true })
-    // }
-    // // 信箱
-    // if (info.email === '') {
-    //   setInfoBool({ ...infoBool, email: false })
-    //   return
-    // } else {
-    //   setInfoBool({ ...infoBool, email: true })
-    // }
-    // // 地址
-    // if (info.address === '') {
-    //   setInfoBool({ ...infoBool, address: false })
-    //   return
-    // } else {
-    //   setInfoBool({ ...infoBool, address: true })
-    // }
-    // // 日期
-    // if (info.date === '') {
-    //   setInfoBool({ ...infoBool, date: false })
-    //   return
-    // } else {
-    //   setInfoBool({ ...infoBool, date: true })
-    // }
-    // // 時間
-    // if (info.time === '') {
-    //   setInfoBool({ ...infoBool, time: false })
-    //   return
-    // } else {
-    //   setInfoBool({ ...infoBool, time: true })
-    // }
-    // console.log(info, infoBool)
-    // 沒問題才給下一步
-    // if (
-    //   infoBool.name &&
-    //   infoBool.mobile &&
-    //   infoBool.email &&
-    //   infoBool.address &&
-    //   infoBool.date &&
-    //   infoBool.time
-    // ) {
-    //   setFlowchart(3)
-    // }
+    let newObj = { ...infoPlaceholder }
+    let newBool = { ...infoBool }
+    new Promise((resolve, reject) => {
+      resolve('go')
+    })
+      .then(() => {
+        if (info.name === '') {
+          newObj = { ...newObj, name: '請填寫收件人' }
+          newBool = { ...newBool, name: false }
+        } else {
+          newObj = { ...newObj, name: '' }
+          newBool = { ...newBool, name: true }
+        }
+      })
+      .then(() => {
+        if (info.mobile === '') {
+          newObj = { ...newObj, mobile: '請填寫連絡電話' }
+          newBool = { ...newBool, mobile: false }
+        } else {
+          newObj = { ...newObj, mobile: '' }
+          newBool = { ...newBool, mobile: true }
+        }
+      })
+      .then(() => {
+        if (info.email === '') {
+          newObj = { ...newObj, email: '請填寫電子信箱' }
+          newBool = { ...newBool, email: false }
+        } else {
+          newObj = { ...newObj, email: '' }
+          newBool = { ...newBool, email: true }
+        }
+      })
+      .then(() => {
+        if (info.address === '') {
+          newObj = { ...newObj, address: '請填寫收件地址' }
+          newBool = { ...newBool, address: false }
+        } else {
+          newObj = { ...newObj, address: '' }
+          newBool = { ...newBool, address: true }
+        }
+      })
+      .then(() => {
+        if (info.date === '') {
+          newBool = { ...newBool, date: false }
+        } else {
+          newBool = { ...newBool, date: true }
+        }
+      })
+      .then(() => {
+        if (info.time === '') {
+          newBool = { ...newBool, time: false }
+        } else {
+          newBool = { ...newBool, time: true }
+        }
+      })
+      .then(() => {
+        setInfoPlaceholder({ ...newObj })
+        setInfoBool({ ...newBool })
+      })
+      .then(() => {
+        if (
+          newBool.name === true &&
+          newBool.mobile === true &&
+          newBool.email === true &&
+          newBool.address === true &&
+          newBool.date === true &&
+          newBool.time === true
+        ) {
+          setFlowchart(3)
+        }
+        console.log(infoPlaceholder)
+      })
   }
 
   // 裝載時轉成流程2
   useEffect(() => {
     setFlowchart(2)
     handleGetData()
-    console.log(deliveryData.thisTime)
+    // console.log(deliveryData.thisTime)
   }, [])
 
   return (
@@ -176,7 +164,7 @@ function MealDeliveryInfo(props) {
               <tbody>
                 {/* 商品卡 */}
                 {deliveryData.thisTime.map((v, i) => (
-                  <tr>
+                  <tr key={i}>
                     <td className="align-middle px-0 poe-pr15 poe-cart-product-img">
                       <img
                         className="w-100"
@@ -235,7 +223,7 @@ function MealDeliveryInfo(props) {
             <div className="col"></div>
           </div>
 
-          <div className="poe-bookmark-content txt-btn">
+          <div className="poe-bookmark-content txt-btn poe-form">
             <div className="row align-items-center poe-mb30">
               <div className="col-2 px-md-0 text-md-right">
                 <input type="checkbox" />
@@ -245,7 +233,7 @@ function MealDeliveryInfo(props) {
             <div className="row align-items-center poe-mb30">
               <div
                 className={`col-12 col-md-2 px-md-0 text-md-right poe-mb15 ${
-                  !infoBool.name ? 'poe-red' : ''
+                  infoBool.name ? '' : 'poe-red'
                 }`}
               >
                 收件人
@@ -258,6 +246,7 @@ function MealDeliveryInfo(props) {
                   onChange={(event) =>
                     setInfo({ ...info, name: event.target.value })
                   }
+                  placeholder={infoPlaceholder.name}
                 />
               </div>
               <div className="col-md-2"></div>
@@ -268,7 +257,7 @@ function MealDeliveryInfo(props) {
             <div className="row align-items-center poe-mb30">
               <div
                 className={`col-12 col-md-2 px-md-0 text-md-right poe-mb15 ${
-                  !infoBool.mobile ? 'poe-red' : ''
+                  infoBool.mobile ? '' : 'poe-red'
                 }`}
               >
                 連絡電話
@@ -281,6 +270,7 @@ function MealDeliveryInfo(props) {
                   onChange={(event) =>
                     setInfo({ ...info, mobile: event.target.value })
                   }
+                  placeholder={infoPlaceholder.mobile}
                 />
               </div>
               <div className="col-md-2"></div>
@@ -291,7 +281,7 @@ function MealDeliveryInfo(props) {
             <div className="row align-items-center poe-mb30">
               <div
                 className={`col-12 col-md-2 px-md-0 text-md-right poe-mb15 ${
-                  !infoBool.email ? 'poe-red' : ''
+                  infoBool.email ? '' : 'poe-red'
                 }`}
               >
                 Email
@@ -304,6 +294,7 @@ function MealDeliveryInfo(props) {
                   onChange={(event) =>
                     setInfo({ ...info, email: event.target.value })
                   }
+                  placeholder={infoPlaceholder.email}
                 />
               </div>
               <div className="col-md-2"></div>
@@ -314,7 +305,7 @@ function MealDeliveryInfo(props) {
             <div className="row align-items-center poe-mb30">
               <div
                 className={`col-12 col-md-2 px-md-0 text-md-right poe-mb15 ${
-                  !infoBool.address ? 'poe-red' : ''
+                  infoBool.address ? '' : 'poe-red'
                 }`}
               >
                 收件地址
@@ -327,6 +318,7 @@ function MealDeliveryInfo(props) {
                   onChange={(event) =>
                     setInfo({ ...info, address: event.target.value })
                   }
+                  placeholder={infoPlaceholder.address}
                 />
               </div>
               <div className="col-md-2"></div>
@@ -337,7 +329,7 @@ function MealDeliveryInfo(props) {
             <div className="row align-items-center poe-mb30">
               <div
                 className={`col-12 col-md-2 px-md-0 text-md-right poe-mb15 ${
-                  !infoBool.date ? 'poe-red' : ''
+                  infoBool.date ? '' : 'poe-red'
                 }`}
               >
                 配送日期
@@ -360,7 +352,7 @@ function MealDeliveryInfo(props) {
             <div className="row align-items-center poe-mb30">
               <div
                 className={`col-12 col-md-2 px-md-0 text-md-right poe-mb15 ${
-                  !infoBool.time ? 'poe-red' : ''
+                  infoBool.time ? '' : 'poe-red'
                 }`}
               >
                 配送時間
