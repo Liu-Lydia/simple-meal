@@ -21,7 +21,7 @@ function Sharerecipe(props) {
     // 載入資料前先開啟spinner
     setIsLoading(true)
 
-    // 重點 !和伺服器要資料 . 搜部分'http://localhost:5555/share_recipe?recipe_name_like=123',
+    // 重點 !和伺服器要資料 . 搜部分'http://localhost:5555/share_recipe?recipe_name_like=123', 'http://localhost:4000/sharerecipe/getallmeal'
     const response = await fetch(
       'http://localhost:4000/sharerecipe/getallmeal',
       {
