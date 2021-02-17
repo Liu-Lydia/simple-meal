@@ -78,7 +78,7 @@ function MealDeliveryCheck(props) {
                   </th>
                   <th
                     className="d-none d-sm-block text-center text-nowrap"
-                    scope="col"
+                    style={{ width: '150px' }}
                   >
                     數量
                   </th>
@@ -97,7 +97,9 @@ function MealDeliveryCheck(props) {
                     </td>
                     <td>
                       <p className="txt-btn">{v.meal_name}</p>
-                      <p className="txt-cap poe-gray">{v.description}</p>
+                      <p className="txt-cap poe-gray poe-ellipsis">
+                        {v.description}
+                      </p>
                     </td>
                     <td className="text-center align-middle">
                       <div>
