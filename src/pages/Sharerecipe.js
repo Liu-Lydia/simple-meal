@@ -1,5 +1,5 @@
 // 引用資料路徑 . 只寫目錄沒寫檔名專案會自動抓index檔名
-import { data } from '../data/'
+// import { data } from '../data/'
 import '../styles/share-recipe.css'
 import { Container, Pagination, Col } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
@@ -16,12 +16,17 @@ function Sharerecipe(props) {
   // 搜尋用的文字輸入狀態
   const [searchInput, setSearchInput] = useState(null)
 
-  // 元件已經出現在網頁上才能跟伺服器相連 . 所以要寫在生命週期完成
-  useEffect(() => {
+  // 從伺服器抓資料
+  const getDataFromServer = async () => {
     // 載入資料前先開啟spinner
     setIsLoading(true)
 
-    // 模擬和伺服器要資料
+    // 重點 !和伺服器要資料 . 搜部分'http://localhost:5555/share_recipe?recipe_name_like=123',
+    const response = await fetch('http://localhost:5555/share_recipe', {
+      method: 'get',
+    })
+    const data = await response.json()
+
     // 最後設定到狀態中
     setRecipe(data)
     // 一開始的搜尋暫存值會與recipe一樣
@@ -30,6 +35,11 @@ function Sharerecipe(props) {
     setTimeout(() => {
       setIsLoading(false)
     }, 2000)
+  }
+
+  // 元件已經出現在網頁上才能跟伺服器相連 . 所以要寫在生命週期完成
+  useEffect(() => {
+    getDataFromServer()
   }, [])
 
   // 模擬componentDidMount + componentDidUpdate
@@ -42,7 +52,7 @@ function Sharerecipe(props) {
 
     // 過濾出輸入的字
     const newRecipe = recipe.filter((v, i) => {
-      return v.name.includes(searchInput)
+      return v.recipe_name.includes(searchInput)
     })
     // 把過濾出的結果給recipeDisplay
     setRecipeDisplay(newRecipe)
@@ -78,8 +88,8 @@ function Sharerecipe(props) {
             <div key={i} className="card col-3">
               <img src={v.pic} className="card-img-top mt-3" alt="..." />
               <div className="card-body">
-                <h5 className="card-title">{v.name}</h5>
-                <p className="card-text">{v.introduction}</p>
+                <h5 className="card-title">{v.recipe_name}</h5>
+                <p className="card-text">{v.Introduction}</p>
                 <div className="text-right">
                   <i className="far fa-clock col-green"></i>&nbsp; {v.cook_time}
                   分鐘
