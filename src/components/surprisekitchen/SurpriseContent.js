@@ -19,6 +19,27 @@ function SurpriseContent() {
   )
   //Collapse ↑↑↑
 
+  //接收資料庫資料　↓↓↓
+  const [timesData, setTimesData] = useState([])
+
+  //讀取資料　↓↓↓
+  const handleGetData = () => {
+    const url = 'http://localhost:4000/reservationTimes/getReservationTimes'
+    fetch(url, {
+      method: 'get',
+    })
+      .then((r) => r.json())
+      .then((obj) => {
+        console.log(obj)
+        setTimesData(obj)
+      })
+  }
+
+  useEffect(() => {
+    handleGetData()
+  }, [])
+  //讀取資料 ↑↑↑
+
   //預約內容選擇
   const [appoint, setAppoint] = useState({
     appointDate: '',
@@ -153,26 +174,37 @@ function SurpriseContent() {
             {/* 標示名額顏色 ↑↑↑ */}
 
             {/* 請選擇場次 ↓↓↓ */}
+
             <div className="lll-times-position">
               <p className="m-0 txt-sub1 lll-black lll-pb30">請選擇場次</p>
+
               <div className="d-flex">
-                <div className="lll-pr30">
-                  <Link to="" className="lll-select-btn-white txt-btn">
-                    10:00
-                  </Link>
-                </div>
-                <div className="lll-pr30">
-                  <Link to="" className="lll-select-btn-white txt-btn">
-                    14:00
-                  </Link>
-                </div>
-                <div>
-                  <Link to="" className="lll-select-btn-tryover lll-txt-btndel">
-                    18:00
-                  </Link>
-                </div>
+                {timesData.map((v, i) => (
+                  <div className="lll-pr30">
+                    <a
+                      to=""
+                      className="lll-select-btn-white txt-btn lll-cursor"
+                    >
+                      {v.reservation_time}
+                    </a>
+                  </div>
+                ))}
+                {/* <div className="lll-pr30">
+                    <Link to="" className="lll-select-btn-white txt-btn">
+                      {v.reservation_time}
+                    </Link>
+                  </div>
+                  <div>
+                    <Link
+                      to=""
+                      className="lll-select-btn-tryover lll-txt-btndel"
+                    >
+                      {v.reservation_time}
+                    </Link>
+                  </div> */}
               </div>
             </div>
+
             {/* 請選擇場次 ↑↑↑ */}
           </div>
           {/* 左半部 ↑↑↑ */}
