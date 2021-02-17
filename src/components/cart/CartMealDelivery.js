@@ -136,7 +136,7 @@ function CartMealDelivery(props) {
               </th>
               <th
                 className="d-none d-sm-block text-center text-nowrap"
-                scope="col"
+                style={{ width: '150px' }}
               >
                 數量
               </th>
@@ -175,9 +175,40 @@ function CartMealDelivery(props) {
                 </td>
                 <td>
                   <p className="txt-btn">{v.meal_name}</p>
-                  <p className="txt-cap poe-gray">{v.description}</p>
+                  <p className="txt-cap poe-gray poe-ellipsis">
+                    {v.description}
+                  </p>
+                  {/* 手機時的數量按鈕 */}
+                  <div className="text-right d-block d-sm-none ">
+                    <a
+                      onClick={() => {
+                        const sid = v.sid
+                        const quantity = v.quantity - 1
+                        handleSetMealNum(sid, quantity)
+                      }}
+                      className={`px-3 ${
+                        v.quantity > 1 ? 'poe-green' : 'poe-gray'
+                      }`}
+                    >
+                      <i className="fas fa-minus-circle"></i>
+                    </a>
+                    <span>{v.quantity}</span>
+                    <a
+                      onClick={() => {
+                        const sid = v.sid
+                        const quantity = v.quantity + 1
+                        handleSetMealNum(sid, quantity)
+                      }}
+                      className={`px-3 ${
+                        v.quantity < 10 ? 'poe-green' : 'poe-gray'
+                      }`}
+                    >
+                      <i className="fas fa-plus-circle"></i>
+                    </a>
+                  </div>
                 </td>
-                <td className="text-center align-middle">
+                {/* 正常的數量按鈕 */}
+                <td className="text-center align-middle d-none d-sm-table-cell">
                   <div>
                     <a
                       onClick={() => {
@@ -285,7 +316,7 @@ function CartMealDelivery(props) {
               </th>
               <th
                 className="d-none d-sm-block text-center text-nowrap"
-                scope="col"
+                style={{ width: '150px' }}
               >
                 數量
               </th>
@@ -324,9 +355,40 @@ function CartMealDelivery(props) {
                 </td>
                 <td>
                   <p className="txt-btn">{v.meal_name}</p>
-                  <p className="txt-cap poe-gray">{v.description}</p>
+                  <p className="txt-cap poe-gray poe-ellipsis">
+                    {v.description}
+                  </p>
+                  {/* 手機時的數量按鈕 */}
+                  <div className="d-block d-sm-none text-right">
+                    <a
+                      onClick={() => {
+                        const sid = v.sid
+                        const quantity = v.quantity - 1
+                        handleSetMealNum(sid, quantity)
+                      }}
+                      className={`px-3 ${
+                        v.quantity > 1 ? 'poe-green' : 'poe-gray'
+                      }`}
+                    >
+                      <i className="fas fa-minus-circle"></i>
+                    </a>
+                    <span>{v.quantity}</span>
+                    <a
+                      onClick={() => {
+                        const sid = v.sid
+                        const quantity = v.quantity + 1
+                        handleSetMealNum(sid, quantity)
+                      }}
+                      className={`px-3 ${
+                        v.quantity < 10 ? 'poe-green' : 'poe-gray'
+                      }`}
+                    >
+                      <i className="fas fa-plus-circle"></i>
+                    </a>
+                  </div>
                 </td>
-                <td className="text-center align-middle">
+                {/* 正常的數量按鈕 */}
+                <td className="text-center align-middle d-none d-sm-table-cell">
                   <div>
                     <a
                       onClick={() => {
