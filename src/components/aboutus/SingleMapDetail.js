@@ -30,14 +30,15 @@ export class SingleMapDetail extends Component {
   }
 
   // 點標籤打開InfoWindow
-  // ??這裡的props . this
-  onMarkerClick = (props, marker, e) =>
-    // console.log('props:',props)
+  // this
+  onMarkerClick = (props, marker, e) => {
+    console.log('props:', props)
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
       showingInfoWindow: true,
     })
+  }
 
   // InfoWindow開啟時點地圖其他地方關閉InfoWindow
   onMapClicked = (props) => {
@@ -176,7 +177,10 @@ export class SingleMapDetail extends Component {
           >
             <div>
               {/* ??name???? */}
-              {/* <h1>{this.state.selectedPlace.name}</h1> */}
+              <h3>
+                {/* 第一次沒有 */}
+                {this.state.selectedPlace && this.state.selectedPlace.name}
+              </h3>
               <h1>666</h1>
             </div>
           </InfoWindow>
