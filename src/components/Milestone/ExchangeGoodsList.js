@@ -19,25 +19,25 @@ function ExchangeGoodsList() {
                 <div className="row fff-no-mr-and-pad d-flex align-items-center justify-content-space-between ">
                     <div className="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
                         <div className="exchange">
-                            <img className="fff-reward-pic" src='http://localhost:3015/img/fff/reward-Env.png'alt="" />
+                            <img className="fff-reward-pic" src="http://localhost:3015/img/rewarditems/rw-example.png"alt="" />
                             <span className="d-flex justify-content-center">星巴克買一送一</span>
                         </div>
                     </div>
                     <div className="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
                         <div className="exchange">
-                            <img className="fff-reward-pic" src="http://localhost:3015/img/fff/reward-Env.png" alt="" />
+                            <img className="fff-reward-pic" src="http://localhost:3015/img/rewarditems/rw-example.png" alt="" />
                             <span className="d-flex justify-content-center">星巴克買一送一</span>
                         </div>
                     </div>
                     <div className="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
                         <div className="exchange">
-                            <img className="fff-reward-pic" src="http://localhost:3015/img/fff/reward-Env.png" alt="" />
+                            <img className="fff-reward-pic" src="http://localhost:3015/img/rewarditems/rw-example.png" alt="" />
                             <span className="d-flex justify-content-center">星巴克買一送一</span>
                         </div>
                     </div>
                     <div className="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center">
                         <div className="exchange">
-                            <img className="fff-reward-pic" src="http://localhost:3015/img/fff/reward-Env.png" alt="" />
+                            <img className="fff-reward-pic" src="http://localhost:3015/img/rewarditems/rw-example.png" alt="" />
                             <span className="d-flex justify-content-center">星巴克買一送一</span>
                         </div>
                     </div>
