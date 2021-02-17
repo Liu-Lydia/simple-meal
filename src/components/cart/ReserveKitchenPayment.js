@@ -16,6 +16,20 @@ function ReserveKitchenPayment(props) {
     setReservationInfo,
   } = props
 
+  // placeholder
+  const [infoPlaceholder, setInfoPlaceholder] = useState({
+    name: '',
+    mobile: '',
+    email: '',
+  })
+
+  // 判斷有沒有填資料
+  const [infoBool, setInfoBool] = useState({
+    name: true,
+    mobile: true,
+    email: true,
+  })
+
   // 改變付款方案
   const handleSetPaymentValue = (event) => {
     setPaymentValue(event.target.value)
@@ -36,6 +50,57 @@ function ReserveKitchenPayment(props) {
     }
   }
 
+  // 下一步前檢查
+  const handleCheckInfo = async () => {
+    let newObj = { ...infoPlaceholder }
+    let newBool = { ...infoBool }
+    new Promise((resolve, reject) => {
+      resolve('go')
+    })
+      .then(() => {
+        if (reservationInfo.reservation_name === '') {
+          newObj = { ...newObj, name: '請填寫預約人' }
+          newBool = { ...newBool, name: false }
+        } else {
+          newObj = { ...newObj, name: '' }
+          newBool = { ...newBool, name: true }
+        }
+      })
+      .then(() => {
+        if (reservationInfo.reservation_tel === '') {
+          newObj = { ...newObj, mobile: '請填寫連絡電話' }
+          newBool = { ...newBool, mobile: false }
+        } else {
+          newObj = { ...newObj, mobile: '' }
+          newBool = { ...newBool, mobile: true }
+        }
+      })
+      .then(() => {
+        if (reservationInfo.reservation_email === '') {
+          newObj = { ...newObj, email: '請填寫電子信箱' }
+          newBool = { ...newBool, email: false }
+        } else {
+          newObj = { ...newObj, email: '' }
+          newBool = { ...newBool, email: true }
+        }
+      })
+      .then(() => {
+        setInfoPlaceholder({ ...newObj })
+        setInfoBool({ ...newBool })
+      })
+      .then(() => {
+        if (
+          newBool.name === true &&
+          newBool.mobile === true &&
+          newBool.email === true &&
+          paymentObj.proj !== ''
+        ) {
+          setFlowchart(3)
+        }
+        console.log(infoPlaceholder)
+      })
+  }
+
   return (
     <>
       {/* 預約人資訊 */}
@@ -49,7 +114,7 @@ function ReserveKitchenPayment(props) {
             <div className="col"></div>
           </div>
 
-          <div className="poe-bookmark-content txt-btn">
+          <div className="poe-bookmark-content txt-btn poe-form">
             <div className="row align-items-center poe-mb30">
               <div className="col-2 px-md-0 text-md-right">
                 <input type="checkbox" />
@@ -57,7 +122,11 @@ function ReserveKitchenPayment(props) {
               <div className="col-10">同會員資料</div>
             </div>
             <div className="row align-items-center poe-mb30">
-              <div className="col-12 col-md-2 px-md-0 text-md-right poe-mb15">
+              <div
+                className={`col-12 col-md-2 px-md-0 text-md-right poe-mb15 ${
+                  infoBool.name ? '' : 'poe-red'
+                }`}
+              >
                 預約人
               </div>
               <div className="col-12 col-md-10 poe-mb15">
@@ -71,6 +140,7 @@ function ReserveKitchenPayment(props) {
                       reservation_name: event.target.value,
                     })
                   }}
+                  placeholder={infoPlaceholder.name}
                 />
               </div>
               <div className="col-md-2"></div>
@@ -79,7 +149,11 @@ function ReserveKitchenPayment(props) {
               </div>
             </div>
             <div className="row align-items-center poe-mb30">
-              <div className="col-12 col-md-2 px-md-0 text-md-right poe-mb15">
+              <div
+                className={`col-12 col-md-2 px-md-0 text-md-right poe-mb15 ${
+                  infoBool.mobile ? '' : 'poe-red'
+                }`}
+              >
                 連絡電話
               </div>
               <div className="col-12 col-md-10 poe-mb15">
@@ -93,6 +167,7 @@ function ReserveKitchenPayment(props) {
                       reservation_tel: event.target.value,
                     })
                   }}
+                  placeholder={infoPlaceholder.mobile}
                 />
               </div>
               <div className="col-md-2"></div>
@@ -101,7 +176,11 @@ function ReserveKitchenPayment(props) {
               </div>
             </div>
             <div className="row align-items-center poe-mb30">
-              <div className="col-12 col-md-2 px-md-0 text-md-right poe-mb15">
+              <div
+                className={`col-12 col-md-2 px-md-0 text-md-right poe-mb15 ${
+                  infoBool.email ? '' : 'poe-red'
+                }`}
+              >
                 Email
               </div>
               <div className="col-12 col-md-10 poe-mb15">
@@ -115,6 +194,7 @@ function ReserveKitchenPayment(props) {
                       reservation_email: event.target.value,
                     })
                   }}
+                  placeholder={infoPlaceholder.email}
                 />
               </div>
               <div className="col-md-2"></div>
@@ -212,7 +292,7 @@ function ReserveKitchenPayment(props) {
           </Link>
           {1 !== null ? (
             <Link
-              onClick={() => setFlowchart(3)}
+              onClick={() => handleCheckInfo()}
               className="btn-green txt-btn mx-2 poe-mb20"
             >
               下一步　<i className="fas fa-chevron-right"></i>

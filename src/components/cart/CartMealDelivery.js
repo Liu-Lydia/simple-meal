@@ -83,6 +83,25 @@ function CartMealDelivery(props) {
     // console.log(checkSid)
   }
 
+  // 刪除勾選
+  const handleDelete = (timeBool) => {
+    let url = ''
+    if (timeBool) {
+      url = `http://localhost:4000/mealdelivery/deletecheckbox?str=${checkSid.thisTime}`
+    } else {
+      url = `http://localhost:4000/mealdelivery/deletecheckbox?str=${checkSid.nextTime}`
+    }
+
+    fetch(url, {
+      method: 'get',
+    })
+      // .then((r) => r.json())
+      // .then((obj) => console.log(obj))
+      .then(setClickNum(clickNum + 1))
+      .then(setCheckSid({ thisTime: '0', nextTime: '0' }))
+      .then(setCheckBool({}))
+  }
+
   // 移到下次
   const handleSetNextTime = () => {
     const url = `http://localhost:4000/mealdelivery/tonexttime?str=${checkSid.thisTime}`
@@ -250,7 +269,7 @@ function CartMealDelivery(props) {
               移到下次
             </Link>
             <Link
-              href=""
+              onClick={() => handleDelete(true)}
               className="select-btn-green txt-btn mx-1 mx-sm-3 poe-mb20"
             >
               刪除餐點
@@ -431,7 +450,7 @@ function CartMealDelivery(props) {
               移到本次
             </Link>
             <Link
-              href=""
+              onClick={() => handleDelete(false)}
               className="select-btn-green txt-btn mx-1 mx-sm-3 poe-mb20"
             >
               刪除餐點

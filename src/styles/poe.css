@@ -327,6 +327,6 @@
 
 .poe-form ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: red;
+  color: #b9433b;
   opacity: 1; /* Firefox */
 }
