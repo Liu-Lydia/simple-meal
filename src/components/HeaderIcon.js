@@ -15,12 +15,16 @@ function HeaderIcon(props) {
       color: '#A2A3A5',
     },
     span: {
+      width: '0px',
       marginRight: '0px',
-      // display: 'inline',
+      display: 'inline-block',
       transition: '1s',
       color: '#fff ',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'clip',
     },
-    txt: '',
+    txt: text,
   }
   //   出現
   const block = {
@@ -31,10 +35,14 @@ function HeaderIcon(props) {
       color: '#627E2A',
     },
     span: {
+      width: '75px',
       marginRight: '24px',
-      // display: 'inline',
+      display: 'inline-block',
       transition: '1.2s',
       color: '#627E2A',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'clip',
     },
     txt: text,
   }
@@ -57,12 +65,14 @@ function HeaderIcon(props) {
         }}
         style={cssAndText.icon}
       >
-        <span style={cssAndText.span}>
-          <span>{cssAndText.txt}</span>
-        </span>
-        <span>
-          <i className={fa}></i>
-        </span>
+        <div className="text-center d-flex">
+          <div style={cssAndText.span}>
+            <span>{cssAndText.txt}</span>
+          </div>
+          <div>
+            <i className={fa}></i>
+          </div>
+        </div>
       </Nav.Link>
     </>
   )
