@@ -1,5 +1,8 @@
 import Carousel from 'react-multi-carousel'
 import 'react-multi-carousel/lib/styles.css'
+import CustomRightArrow from './CustomRightArrow'
+import CustomLeftArrow from './CustomLeftArrow'
+import React, { useEffect, useState } from 'react'
 function MealMultiCarousel(props) {
   const responsive = {
     superLargeDesktop: {
@@ -20,42 +23,7 @@ function MealMultiCarousel(props) {
       items: 1,
     },
   }
-  function CustomRightArrow({ onClick }) {
-    function handleClick() {
-      // do whatever you want on the right button click
-      console.log('Right button clicked, go to next slide')
-      // ... and don't forget to call onClick to slide
-      onClick()
-    }
 
-    return (
-      <button>
-        <i
-          onClick={handleClick}
-          aria-label="Go to next slide"
-          class="fas fa-chevron-circle-right cha-rigth-icon cha-green"
-        />
-      </button>
-    )
-  }
-  function CustomLeftArrow({ onClick }) {
-    function handleClick() {
-      // do whatever you want on the right button click
-      console.log('Right button clicked, go to next slide')
-      // ... and don't forget to call onClick to slide
-      onClick()
-    }
-
-    return (
-      <button>
-        <i
-          onClick={handleClick}
-          aria-label="Go to next slide"
-          class="fas fa-chevron-circle-left cha-left-icon cha-green"
-        />
-      </button>
-    )
-  }
   return (
     <>
       <Carousel
