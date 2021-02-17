@@ -79,7 +79,16 @@ function App() {
               <Route path="/MemberCenter">
                 <MemberCenter />
               </Route>
-
+              {/* <Route path="/MemberCenter/Index" component={MemberCenterIndex} />
+              <Route
+                path="/MemberCenter/RegiStered"
+                component={MemberCenterRegiStered}
+              />
+              <Route
+                path="/MemberCenter/ResetPassword"
+                component={MemberCenterResetPassword}
+              />
+              <Route path="/MemberCenter" component={MemberCenterLogin} /> */}
               <Route path="/surprisekitchen">
                 <SurpriseKitchen />
               </Route>
