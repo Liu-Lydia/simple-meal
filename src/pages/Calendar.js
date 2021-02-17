@@ -9,7 +9,7 @@ import CalendarDate from '../components/CalendarDate'
 
 export const AppStore = createContext()
 
-function Calendar() {
+function Calendar(props) {
   const mmt = new moment()
   const timeReducer = useReducer(calendar, mmt.format('YYYY-MM-DD'))
   // let result = GetWeeksInMonth();

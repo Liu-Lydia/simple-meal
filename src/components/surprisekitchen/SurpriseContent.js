@@ -5,7 +5,9 @@ import { Collapse } from 'react-collapse'
 import Calendar from '../../pages/Calendar'
 //import CalendarTest from '../../pages/CalendarTest'
 
-function SurpriseContent() {
+function SurpriseContent(props) {
+  const { activeDindex } = props
+
   //Collapse　↓↓↓
   const buttonCollapseId = {
     button: 'accessible',
@@ -41,7 +43,7 @@ function SurpriseContent() {
   //讀取資料 ↑↑↑
 
   //點擊場次　↓↓↓
-  const [isActive, setActive] = useState(0)
+  const [isActive, setActive] = useState([...timesData])
   const handleToggleClass = (i) => {
     setActive(i)
   }
@@ -129,6 +131,18 @@ function SurpriseContent() {
     }
   }
 
+  const handlePostOrder = async () => {
+    const fd = new FormData(document.querySelector('#reservation_kitchen'))
+    await fetch('http://localhost:4000/surprisekitchenOrder/addreservation', {
+      method: 'post',
+      body: fd,
+    })
+      .then((r) => r.json())
+      .then((obj) => {
+        console.log(obj)
+      })
+  }
+
   return (
     <>
       {/* 驚喜廚房title, 3項內容 ↓↓↓ */}
@@ -187,7 +201,6 @@ function SurpriseContent() {
             {/* 標示名額顏色 ↑↑↑ */}
 
             {/* 請選擇場次 ↓↓↓ */}
-
             <div className="lll-times-position">
               <p className="m-0 txt-sub1 lll-black lll-pb30">請選擇場次</p>
 
@@ -198,6 +211,9 @@ function SurpriseContent() {
                       key={i}
                       className="lll-select-btn-white txt-btn lll-cursor"
                       onClick={() => handleToggleClass(i)}
+                      // onClick={(event) => {
+                      //   console.log(v.reservation_time)
+                      // }}
                       className={
                         isActive === i
                           ? 'lll-select-btn-white-active txt-btn lll-cursor'
@@ -339,7 +355,12 @@ function SurpriseContent() {
               <Link to="" className="btn-green txt-btn">
                 加入購物車
               </Link>
-              <Link to="" className="btn-green txt-btn">
+              <Link
+                onClick={() => {
+                  handlePostOrder()
+                }}
+                className="btn-green txt-btn"
+              >
                 立即預約
               </Link>
             </div>
@@ -347,6 +368,25 @@ function SurpriseContent() {
           {/* 右半部 ↑↑↑ */}
         </div>
       </Collapse>
+      <form id="reservation_kitchen" hidden>
+        <input type="text" name="reservation_date" value={activeDindex} />
+        <input
+          type="text"
+          name="reservation_time"
+          value={isActive.reservation_time}
+        />
+        <input type="text" name="num_adult" value={num_adult} />
+        <input type="text" name="num_child" value={num_child} />
+        <input type="text" name="adult_price" value={500} />
+        <input type="text" name="child_price" value={200} />
+        <input type="text" name="num_meal" value={num_meal} />
+        {/* <input type="text" name="remark" value={} /> */}
+        <input
+          type="text"
+          name="reservation_price"
+          value={appoint.reservation_price}
+        />
+      </form>
     </>
   )
 }

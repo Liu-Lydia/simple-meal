@@ -5,7 +5,7 @@ import GetWeeksInMonth from './GetWeeksInMonth'
 
 //連結到GeWeekInMonth(mmt), 使用到moment
 
-function CalendarDate() {
+function CalendarDate(props) {
   const { timeReducer } = useContext(AppStore)
   const date = timeReducer[0]
   const mmt = new moment(date)
