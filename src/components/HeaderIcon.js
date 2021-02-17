@@ -48,11 +48,11 @@ function HeaderIcon(props) {
         as={NavLink}
         to={url}
         onMouseEnter={() => {
-          console.log('enter')
+          // console.log('enter')
           setCssAndText(block)
         }}
         onMouseLeave={() => {
-          console.log('leave')
+          // console.log('leave')
           setCssAndText(none)
         }}
         style={cssAndText.icon}

@@ -1,6 +1,6 @@
 import { tr } from 'date-fns/locale'
 import React, { useEffect, useState } from 'react'
-import { withRouter, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function CartMealDelivery(props) {
   const { setFlowchart, setCartMode } = props
@@ -37,7 +37,7 @@ function CartMealDelivery(props) {
     })
       .then((r) => r.json())
       .then((obj) => {
-        console.log(obj)
+        // console.log(obj)
         setDeliveryData(obj)
       })
   }
@@ -109,7 +109,7 @@ function CartMealDelivery(props) {
   useEffect(() => {
     setFlowchart(1)
     handleGetData()
-    console.log(deliveryData.thisTime)
+    // console.log(deliveryData.thisTime)
   }, [])
 
   // 當有任何點擊時
