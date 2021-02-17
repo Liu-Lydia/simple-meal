@@ -18,6 +18,7 @@ import AboutUs from './pages/AboutUs'
 import Sharerecipe from './pages/Sharerecipe'
 import MyRecipe from './pages/MyRecipe'
 import AddRecipe from './pages/AddRecipe'
+import XTest from './pages/XTest'
 
 // 組合用元件
 import Header from './components/Header'
@@ -79,7 +80,16 @@ function App() {
               <Route path="/MemberCenter">
                 <MemberCenter />
               </Route>
-
+              {/* <Route path="/MemberCenter/Index" component={MemberCenterIndex} />
+              <Route
+                path="/MemberCenter/RegiStered"
+                component={MemberCenterRegiStered}
+              />
+              <Route
+                path="/MemberCenter/ResetPassword"
+                component={MemberCenterResetPassword}
+              />
+              <Route path="/MemberCenter" component={MemberCenterLogin} /> */}
               <Route path="/surprisekitchen">
                 <SurpriseKitchen />
               </Route>
@@ -90,6 +100,10 @@ function App() {
               {/* 共享食譜 */}
               <Route path="/sharerecipe">
                 <Sharerecipe />
+              </Route>
+              {/* 測試 */}
+              <Route path="/xtest">
+                <XTest />
               </Route>
               {/* 首頁 */}
               <Route exact path="/">

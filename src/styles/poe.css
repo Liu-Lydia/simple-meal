@@ -324,3 +324,9 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+.poe-form ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #b9433b;
+  opacity: 1; /* Firefox */
+}

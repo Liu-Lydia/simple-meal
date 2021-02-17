@@ -1,6 +1,6 @@
 import { tr } from 'date-fns/locale'
 import React, { useEffect, useState } from 'react'
-import { withRouter, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function CartMealDelivery(props) {
   const { setFlowchart, setCartMode } = props
@@ -29,6 +29,12 @@ function CartMealDelivery(props) {
   // 紀錄是否check
   const [checkBool, setCheckBool] = useState({})
 
+  // 紀錄是否all check
+  const [allCheckBool, setAllCheckBool] = useState({
+    thisTime: false,
+    nextTime: false,
+  })
+
   // 讀取資料庫
   const handleGetData = () => {
     const url = 'http://localhost:4000/mealdelivery/getdeliverycart'
@@ -37,11 +43,47 @@ function CartMealDelivery(props) {
     })
       .then((r) => r.json())
       .then((obj) => {
-        console.log(obj)
+        // console.log(obj)
         setDeliveryData(obj)
+        let newCheckBool = {}
+        obj.thisTime.map((v, i) => {
+          // console.log(v)
+          newCheckBool[v.sid] = false
+        })
+        obj.nextTime.map((v, i) => {
+          // console.log(v)
+          newCheckBool[v.sid] = false
+        })
+        console.log(newCheckBool)
+        setCheckBool({ ...newCheckBool })
+        setAllCheckBool({ thisTime: false, nextTime: false })
       })
   }
 
+  // 要全選
+  const handleSelectAll = (Bool) => {
+    let newCheckBool = { ...checkBool }
+    let newCheckSid = { thisTime: '0', nextTime: '0' }
+    if (Bool) {
+      deliveryData.thisTime.map((v, i) => {
+        // console.log(v)
+        newCheckBool[v.sid] = !allCheckBool.thisTime
+        if (!allCheckBool.thisTime) {
+          newCheckSid.thisTime += `,${v.sid}`
+        }
+      })
+    } else {
+      deliveryData.nextTime.map((v, i) => {
+        // console.log(v)
+        newCheckBool[v.sid] = !allCheckBool.nextTime
+        if (!allCheckBool.nextTime) {
+          newCheckSid.nextTime += `,${v.sid}`
+        }
+      })
+    }
+    setCheckBool({ ...newCheckBool })
+    setCheckSid({ ...newCheckSid })
+  }
   // 增減數量
   const handleSetMealNum = (sid, quantity) => {
     const url = `http://localhost:4000/mealdelivery/setmealquantity?sid=${sid}&quantity=${quantity}`
@@ -83,6 +125,25 @@ function CartMealDelivery(props) {
     // console.log(checkSid)
   }
 
+  // 刪除勾選
+  const handleDelete = (timeBool) => {
+    let url = ''
+    if (timeBool) {
+      url = `http://localhost:4000/mealdelivery/deletecheckbox?str=${checkSid.thisTime}`
+    } else {
+      url = `http://localhost:4000/mealdelivery/deletecheckbox?str=${checkSid.nextTime}`
+    }
+
+    fetch(url, {
+      method: 'get',
+    })
+      // .then((r) => r.json())
+      // .then((obj) => console.log(obj))
+      .then(setClickNum(clickNum + 1))
+      .then(setCheckSid({ thisTime: '0', nextTime: '0' }))
+    // .then(setCheckBool({}))
+  }
+
   // 移到下次
   const handleSetNextTime = () => {
     const url = `http://localhost:4000/mealdelivery/tonexttime?str=${checkSid.thisTime}`
@@ -91,7 +152,7 @@ function CartMealDelivery(props) {
     })
       .then(setClickNum(clickNum + 1))
       .then(setCheckSid({ thisTime: '0', nextTime: '0' }))
-      .then(setCheckBool({}))
+    // .then(setCheckBool({}))
   }
 
   // 移到這次
@@ -102,14 +163,14 @@ function CartMealDelivery(props) {
     })
       .then(setClickNum(clickNum + 1))
       .then(setCheckSid({ thisTime: '0', nextTime: '0' }))
-      .then(setCheckBool({}))
+    // .then(setCheckBool({}))
   }
 
   // 裝載時轉成流程1
   useEffect(() => {
     setFlowchart(1)
     handleGetData()
-    console.log(deliveryData.thisTime)
+    // console.log(deliveryData.thisTime)
   }, [])
 
   // 當有任何點擊時
@@ -128,7 +189,17 @@ function CartMealDelivery(props) {
           <thead>
             <tr>
               <th scope="col">
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  onChange={() => {
+                    handleSelectAll(true)
+                    setAllCheckBool({
+                      ...allCheckBool,
+                      thisTime: !allCheckBool.thisTime,
+                    })
+                  }}
+                  checked={allCheckBool.thisTime}
+                />
               </th>
               <th scope="col"></th>
               <th className="text-center" scope="col">
@@ -250,7 +321,7 @@ function CartMealDelivery(props) {
               移到下次
             </Link>
             <Link
-              href=""
+              onClick={() => handleDelete(true)}
               className="select-btn-green txt-btn mx-1 mx-sm-3 poe-mb20"
             >
               刪除餐點
@@ -308,7 +379,17 @@ function CartMealDelivery(props) {
           <thead>
             <tr>
               <th scope="col">
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  onChange={() => {
+                    handleSelectAll(false)
+                    setAllCheckBool({
+                      ...allCheckBool,
+                      nextTime: !allCheckBool.nextTime,
+                    })
+                  }}
+                  checked={allCheckBool.nextTime}
+                />
               </th>
               <th scope="col"></th>
               <th className="text-center" scope="col">
@@ -431,7 +512,7 @@ function CartMealDelivery(props) {
               移到本次
             </Link>
             <Link
-              href=""
+              onClick={() => handleDelete(false)}
               className="select-btn-green txt-btn mx-1 mx-sm-3 poe-mb20"
             >
               刪除餐點

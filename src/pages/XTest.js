@@ -4,7 +4,7 @@ import '../styles/share-recipe.css'
 import { Container, Pagination, Col } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 
-function Sharerecipe(props) {
+function XTest(props) {
   // 資料的鉤子 . 未經過過濾的原始資料
   const [recipe, setRecipe] = useState([])
 
@@ -145,4 +145,4 @@ function Sharerecipe(props) {
     </>
   )
 }
-export default Sharerecipe
+export default XTest

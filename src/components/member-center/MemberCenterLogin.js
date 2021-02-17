@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
-import MemberCenterRegiStered from './MemberCenterRegiStered'
 
+import React from 'react'
 function MemberCenterLogin() {
   return (
     <>
@@ -19,7 +19,6 @@ function MemberCenterLogin() {
                     type="email"
                     className="form-control mb-3 br "
                     id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
                     placeholder="Enter email"
                   />
                 </div>
@@ -30,11 +29,10 @@ function MemberCenterLogin() {
                     type="email"
                     className="form-control br "
                     id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
                     placeholder="Enter Password"
                   />
                   <div className="txt-cap d-flex justify-content-end">
-                    <div className="text-dark">忘記密碼？</div>
+                    <Link to="/MemberCenter/ResetPassword">忘記密碼</Link>
                   </div>
                 </div>
 
@@ -44,13 +42,13 @@ function MemberCenterLogin() {
 
                 <div className="col-10 col-md-8 mx-auto d-flex justify-content-between">
                   <input
-                    type=""
+                    type="text"
                     className="form-control mr-2 col-6 col-sm-8  br "
                     id="exampleInputEmail1"
                     placeholder="驗證碼"
                   />
                   <input
-                    type=""
+                    type="text"
                     className="form-control mb-3  col-4 col-sm-4 br text-center"
                     id="exampleInputEmail1"
                     placeholder="驗證碼"
@@ -60,7 +58,8 @@ function MemberCenterLogin() {
                   <div className="btn-green txt-btn mt-2 ">送出</div>
                 </div>
                 <div className="txt-cap col-8  mb-4 mx-auto">
-                  還沒註冊會員嗎？ <Link to="/">註冊 </Link>
+                  還沒註冊會員嗎？{' '}
+                  <Link to="/MemberCenter/RegiStered">註冊</Link>
                 </div>
 
                 <div className="col-8 col-xs-8 mx-auto d-flex justify-content-between mb-5">
