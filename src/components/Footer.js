@@ -14,7 +14,7 @@ function Footer(props) {
   return (
     <>
       <footer
-        className="footer mt-auto py-3 txt-btn poe-gray"
+        className="footer d-none d-sm-block mt-auto py-3 txt-btn poe-gray"
         style={{ zIndex: '-1' }}
       >
         <div className="container">
@@ -45,6 +45,42 @@ function Footer(props) {
           </div>
         </div>
       </footer>
+      <div style={{ height: '100px', width: '100vw' }}></div>
+      <div
+        className="d-block d-sm-none text-center"
+        style={{
+          position: 'fixed',
+          bottom: '0px',
+          width: '100vw',
+          background: 'white',
+          borderTop: '1px solid black',
+          paddingTop: '17px',
+          paddingBottom: '18px',
+        }}
+      >
+        <div className="d-flex justify-content-center">
+          <div className="col">
+            <Link to="/cart">
+              <i className="fas fa-shopping-cart"></i>
+            </Link>
+          </div>
+          <div className="col">
+            <Link to="/Milestone">
+              <i className="fas fa-medal"></i>
+            </Link>
+          </div>
+          <div className="col">
+            <Link to="/MemberCenter">
+              <i className="fas fa-user"></i>
+            </Link>
+          </div>
+          <div className="col">
+            <Link to="/none8">
+              <i className="far fa-question-circle"></i>
+            </Link>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
