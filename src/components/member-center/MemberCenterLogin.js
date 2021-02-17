@@ -59,7 +59,7 @@ function MemberCenterLogin() {
                 </div>
                 <div className="txt-cap col-8  mb-4 mx-auto">
                   還沒註冊會員嗎？{' '}
-                  <Link to="/MemberCenter/RegiStered">註冊 </Link>
+                  <Link to="/MemberCenter/RegiStered">註冊</Link>
                 </div>
 
                 <div className="col-8 col-xs-8 mx-auto d-flex justify-content-between mb-5">

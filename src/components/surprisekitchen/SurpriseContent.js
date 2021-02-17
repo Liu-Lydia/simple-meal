@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 // import DropdownItem from '../components/DropdownItem'
 import { Collapse } from 'react-collapse'
 import Calendar from '../../pages/Calendar'
-import CalendarTest from '../../pages/CalendarTest'
+//import CalendarTest from '../../pages/CalendarTest'
 
 function SurpriseContent() {
   //Collapse　↓↓↓
@@ -40,14 +40,24 @@ function SurpriseContent() {
   }, [])
   //讀取資料 ↑↑↑
 
+  //點擊場次　↓↓↓
+  const [isActive, setActive] = useState(0)
+  const handleToggleClass = (i) => {
+    setActive(i)
+  }
+  //點擊場次 ↑↑↑
+
   //預約內容選擇
   const [appoint, setAppoint] = useState({
-    appointDate: '',
-    appointTime: '',
-    aquantity: 0,
-    cquantity: 0,
-    quantity: 0,
-    price: 0,
+    reservation_date: '',
+    reservation_time: '',
+    num_adult: 0,
+    num_child: 0,
+    adult_price: 500,
+    child_price: 200,
+    num_meal: 0,
+    remark: '',
+    reservation_price: 0,
   })
 
   //清空選項***
@@ -57,62 +67,65 @@ function SurpriseContent() {
   // }
 
   //成人數量選擇
-  const [aquantity, setAquantity] = useState(0)
-  const handleAquantity = (bool) => {
+  const [num_adult, setNum_adult] = useState(0)
+  const handleNum_adult = (bool) => {
     if (bool) {
-      if (aquantity < 7) {
-        setAquantity(aquantity + 1) //範圍1~7
-        handleSetPrice(aquantity + 1, cquantity)
+      if (num_adult < 7) {
+        setNum_adult(num_adult + 1) //範圍1~7
+        handleSetPrice(num_adult + 1, num_child)
       }
     } else {
-      if (aquantity !== 0) {
-        setAquantity(aquantity - 1) //>0
-        handleSetPrice(aquantity - 1, cquantity)
+      if (num_adult !== 0) {
+        setNum_adult(num_adult - 1) //>0
+        handleSetPrice(num_adult - 1, num_child)
       }
     }
   }
 
   //兒童數量選擇
-  const [cquantity, setCquantity] = useState(0)
-  const handleCquantity = (bool) => {
+  const [num_child, setNum_child] = useState(0)
+  const handleNum_child = (bool) => {
     if (bool) {
-      if (cquantity < 7) {
-        setCquantity(cquantity + 1) //範圍1~7
-        handleSetPrice(aquantity, cquantity + 1)
+      if (num_child < 7) {
+        setNum_child(num_child + 1) //範圍1~7
+        handleSetPrice(num_adult, num_child + 1)
       }
     } else {
-      if (cquantity !== 0) {
-        setCquantity(cquantity - 1)
-        handleSetPrice(aquantity, cquantity - 1)
+      if (num_child !== 0) {
+        setNum_child(num_child - 1)
+        handleSetPrice(num_adult, num_child - 1)
       } //>0
     }
   }
 
   //金額顯示
-  function handleSetPrice(aquantity, cquantity) {
-    const Price = aquantity * 500 + cquantity * 100
+  function handleSetPrice(num_adult, child_price) {
+    const Price = num_adult * 500 + child_price * 100
 
     // const allPrice = AdultPrice + ChildPrice
 
     setAppoint({
-      appointDate: '',
-      appointTime: '',
-      aquantity: 0,
-      cquantity: 0,
-      quantity: 0,
-      price: Price,
+      reservation_date: '',
+      reservation_time: '',
+      num_adult: 0,
+      num_child: 0,
+      adult_price: 500,
+      child_price: 200,
+      num_meal: 0,
+      remark: '',
+      reservation_price: Price,
     })
   }
 
   //餐點數量選擇
-  const [quantity, setQuantity] = useState(0)
-  const handleQuantity = (bool) => {
+  const [num_meal, setNum_meal] = useState(0)
+  const handleNum_meal = (bool) => {
     if (bool) {
-      if (quantity < 9) {
-        setQuantity(quantity + 1) //範圍1~10
+      if (num_meal < 9) {
+        setNum_meal(num_meal + 1) //範圍1~10
       }
     } else {
-      if (quantity !== 0) setQuantity(quantity - 1) //>0
+      if (num_meal !== 0) setNum_meal(num_meal - 1) //>0
     }
   }
 
@@ -181,12 +194,18 @@ function SurpriseContent() {
               <div className="d-flex">
                 {timesData.map((v, i) => (
                   <div className="lll-pr30">
-                    <a
-                      to=""
+                    <div
+                      key={i}
                       className="lll-select-btn-white txt-btn lll-cursor"
+                      onClick={() => handleToggleClass(i)}
+                      className={
+                        isActive === i
+                          ? 'lll-select-btn-white-active txt-btn lll-cursor'
+                          : 'lll-select-btn-white txt-btn lll-cursor'
+                      }
                     >
                       {v.reservation_time}
-                    </a>
+                    </div>
                   </div>
                 ))}
                 {/* <div className="lll-pr30">
@@ -219,18 +238,18 @@ function SurpriseContent() {
               <div className="ml-auto">
                 <span className="txt-sub1 lll-grey">500/每人</span>
                 <a
-                  className={`mx-3 ${aquantity === 0 && 'lll-grey'}`}
+                  className={`mx-3 ${num_adult === 0 && 'lll-grey'}`}
                   onClick={() => {
-                    handleAquantity(false)
+                    handleNum_adult(false)
                   }}
                 >
                   <i className="fas fa-minus-circle lll-cursor"></i>
                 </a>
-                <span className="txt-sub1 lll-black">{aquantity}</span>
+                <span className="txt-sub1 lll-black">{num_adult}</span>
                 <a
-                  className={`ml-3 ${aquantity === 7 && 'lll-grey'}`}
+                  className={`ml-3 ${num_adult === 7 && 'lll-grey'}`}
                   onClick={() => {
-                    handleAquantity(true)
+                    handleNum_adult(true)
                   }}
                 >
                   <i className="fas fa-plus-circle lll-cursor"></i>
@@ -245,18 +264,18 @@ function SurpriseContent() {
               <div className="ml-auto">
                 <span className="txt-sub1 lll-grey">100/每人</span>
                 <a
-                  className={`mx-3 ${cquantity === 0 && 'lll-grey'}`}
+                  className={`mx-3 ${num_child === 0 && 'lll-grey'}`}
                   onClick={() => {
-                    handleCquantity(false)
+                    handleNum_child(false)
                   }}
                 >
                   <i className="fas fa-minus-circle lll-cursor"></i>
                 </a>
-                <span className="txt-sub1 lll-black">{cquantity}</span>
+                <span className="txt-sub1 lll-black">{num_child}</span>
                 <a
-                  className={`ml-3 ${cquantity === 7 && 'lll-grey'}`}
+                  className={`ml-3 ${num_child === 7 && 'lll-grey'}`}
                   onClick={() => {
-                    handleCquantity(true)
+                    handleNum_child(true)
                   }}
                 >
                   <i className="fas fa-plus-circle lll-cursor"></i>
@@ -269,18 +288,18 @@ function SurpriseContent() {
 
               <div className="ml-auto">
                 <a
-                  className={`mx-3 ${quantity === 0 && 'lll-grey'}`}
+                  className={`mx-3 ${num_meal === 0 && 'lll-grey'}`}
                   onClick={() => {
-                    handleQuantity(false)
+                    handleNum_meal(false)
                   }}
                 >
                   <i className="fas fa-minus-circle lll-cursor"></i>
                 </a>
-                <span className="txt-sub1 lll-black">{quantity}</span>
+                <span className="txt-sub1 lll-black">{num_meal}</span>
                 <a
-                  className={`ml-3 ${quantity === 9 && 'lll-grey'}`}
+                  className={`ml-3 ${num_meal === 9 && 'lll-grey'}`}
                   onClick={() => {
-                    handleQuantity(true)
+                    handleNum_meal(true)
                   }}
                 >
                   <i className="fas fa-plus-circle lll-cursor"></i>
@@ -311,7 +330,7 @@ function SurpriseContent() {
               </span>
               <h4 className="lll-red lll-pb30">
                 <span>TWD</span>
-                {appoint.price}
+                {appoint.reservation_price}
               </h4>
             </div>
             {/* 顯示價格 ↑↑↑ */}
