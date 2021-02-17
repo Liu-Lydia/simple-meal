@@ -470,7 +470,7 @@
   transition: 0.2s;
 }
 
-.lll-select-btn-white:active {
+.lll-select-btn-white-active {
   background-color: #627e2a;
   width: 80px;
   height: 35px;
