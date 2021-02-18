@@ -14,6 +14,14 @@ function MealMeun(props) {
               所有餐點
             </Link>
           </li>
+          <li className="">
+            <Link
+              className="cha-meun-txt1 cha-gray"
+              onClick={() => setType('typeE')}
+            >
+              素食專區
+            </Link>
+          </li>
           <li className=" ">
             <Link
               className="cha-meun-txt1 cha-gray"
@@ -44,14 +52,6 @@ function MealMeun(props) {
               onClick={() => setType('typeD')}
             >
               義式料理
-            </Link>
-          </li>
-          <li className="">
-            <Link
-              className="cha-meun-txt1 cha-gray"
-              onClick={() => setType('typeE')}
-            >
-              素食專區
             </Link>
           </li>
         </ul>
