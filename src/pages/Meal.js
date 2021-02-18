@@ -12,6 +12,8 @@ function Meal(props) {
   const [type, setType] = useState('all')
   const { breadCrumbBool, setBreadCrumbBool } = props
   const [selectMeal, setSelectMeal] = useState(1)
+  const [updateNum, setUpdateNum] = useState(0)
+
   // 掛載時改動麵包屑位置
   useEffect(() => {
     setBreadCrumbBool(false)
@@ -30,7 +32,12 @@ function Meal(props) {
       <div class="container justify-content-center d-flex">
         <div className="col-10">
           <SearchBarHidden />
-          <MealMain breadCrumbBool={breadCrumbBool} selectMeal={selectMeal} />
+          <MealMain
+            breadCrumbBool={breadCrumbBool}
+            selectMeal={selectMeal}
+            updateNum={updateNum}
+            setUpdateNum={setUpdateNum}
+          />
           {/* <MealMultiCarousel type={type} /> */}
           <MealMultiCarouselTest
             type={type}
@@ -41,7 +48,7 @@ function Meal(props) {
       </div>
       {/* </div> */}
       <MealMeun type={type} setType={setType} />
-      <MealCart />
+      <MealCart updateNum={updateNum} />
     </>
   )
 }
