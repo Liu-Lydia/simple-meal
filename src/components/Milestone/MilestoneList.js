@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from 'react'
 
 function MilestoneList() {
-  /*資料庫回來的東西 */
-  //milstonelist []陣列包{}每筆資料
+  //資料庫回來的東西 milstonelist []陣列包{}每筆資料
   const [milstonelist, setMilestoneList] = useState([])
 
   //含三種大小的圈圈格式
@@ -17,12 +16,9 @@ function MilestoneList() {
 
   //真正使用的動畫值
   const [inUseAnimateValue, setInnUseAnimateValue] = useState([])
-  
   //連結資料庫
   const progresStyleArray = [] //儲存各milestone的進度與顏色
-
   const ProgressAnimateValueArray = []
-  
   const getMilestoneList = () => {
     const url = 'http://localhost:4000/milestone/getMilestoneList?sid=1' //sid 要從session來
     fetch(url, {
@@ -75,7 +71,7 @@ function MilestoneList() {
               strokeDasharray: xl_L + ',4000',
             }
             const ani_xl_L = '0,4000;' + xl_L + ',4000'
-            
+
             progresStyleArray.push({ xs: xs_style, md: md_style, xl: xl_style })
             ProgressAnimateValueArray.push({ xs: ani_xs_L, md: ani_md_L, xl: ani_xl_L })
           }
@@ -84,6 +80,11 @@ function MilestoneList() {
         setAnimateValueArray(ProgressAnimateValueArray)
       })
   }
+
+   // 當有任何render時呼叫
+   useEffect(() => {
+    webMoboExchange()
+  }, [])
 
   useEffect(() => {
     getMilestoneList()
@@ -117,8 +118,8 @@ function MilestoneList() {
     }
     setInUseStyle(tmepStyle)
     setInnUseAnimateValue(tempValue)
-    console.log(inUseStyle);
-    console.log(inUseAnimateValue);
+    console.log('inUseStyle',inUseStyle);
+    console.log('inUseAnimateValue',inUseAnimateValue);
   }
 
   // useEffect(() => {
