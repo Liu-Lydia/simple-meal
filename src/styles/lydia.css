@@ -74,17 +74,18 @@
   position: absolute;
   left: 1311px;
   margin-top: 363px;
-  text-align: right;
+  height: 248px;
 }
 
 .lll-get-coupon {
   width: 248px;
+  height: 240px;
 }
 
 .lll-meal-pictures {
+  position: absolute;
+  left: 0px;
   height: 240px;
-  background: url('http://localhost:3015/img/lydia/hero01.png');
-  background-size: cover;
 }
 
 .lll-explain-coupon {
