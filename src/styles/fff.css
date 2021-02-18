@@ -530,16 +530,6 @@
   font-size: 35px;
 }
 
-.fff-dialog {
-  background-color: white;
-  /* width: 600px; */
-  border-radius: 25px;
-  text-align: left;
-  line-height: 30px;
-  border: 5px #627e2a solid;
-  padding-bottom: 75px;
-  padding-top: 19px;
-}
 
 #fff-record-table {
   width: 100%;
@@ -590,17 +580,39 @@
   color: #a2a3a5;
 }
 
-.modal {
-  width: 650px;
-  height: 700px;
-  background: rgba(255, 255, 255, 0.5);
-  margin-top: 30px;
-  
+
+/* The Modal (background) */
+.fff-mshowto{
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(255, 255, 255); /* Fallback color */
+  background-color: rgba(255, 255, 255, 0.5); /* Black w/ opacity */
 }
 
-.fff-dialog p {
+.fff-mshowto-content p {
   margin-bottom: 0;
 }
+
+
+.fff-mshowto-content {
+  margin:auto auto;
+  background-color: white;
+  width: 650px;
+  height: 700px;
+  border-radius: 25px;
+  text-align: left;
+  line-height: 30px;
+  border: 5px #627e2a solid;
+  padding: 75px;
+  padding-top: 19px;
+}
+
 
 .circle-spin {
   animation-name: spin;

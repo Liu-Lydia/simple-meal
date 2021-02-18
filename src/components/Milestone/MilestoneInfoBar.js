@@ -1,9 +1,8 @@
 import React, { props, useEffect, useState } from 'react'
 
 function MilestoneInfoBar(props) {
-  
-  //集點說明狀態
-  const [modalStyle, setModalStyle] = useState({display: 'none'});
+  //集點說明要不要渲染(虛擬Dom)
+  const [modalStyle, setModalStyle] = useState({ display: 'none' })
 
   return (
     <>
@@ -34,12 +33,21 @@ function MilestoneInfoBar(props) {
           {/* 集點方式按鈕 */}
           <div className="">
             <div
-              className="fff-btn-white fff-txt-btn howToGetPoints" onClick={()=>{setModalStyle({display:'flex'})}}>
+              className="fff-btn-white fff-txt-btn howToGetPoints"
+              onClick={() => {
+                setModalStyle({ display: 'flex' })
+              }}
+            >
               集點方式
             </div>
           </div>
           {/* 在成就清單以及兌換獎勵區切換的按鈕 */}
-          <div className="fff-btn-white fff-txt-btn" onClick={() => { window.location.href = props.href }}>
+          <div
+            className="fff-btn-white fff-txt-btn"
+            onClick={() => {
+              window.location.href = props.href
+            }}
+          >
             {props.btnText}
           </div>
         </div>
@@ -52,7 +60,7 @@ function MilestoneInfoBar(props) {
       <div className="row fff-ms-web" style={{ height: '64px' }} />
 
       {/*手機版個人資料 mobo virsion */}
-      <div className="fff-ms-mobo d-flex flex-column"> 
+      <div className="fff-ms-mobo d-flex flex-column">
         {/* 使用者照片、使用者名稱(尚未連接資料庫)*/}
         <div
           className="d-flex justify-content-center"
@@ -77,40 +85,59 @@ function MilestoneInfoBar(props) {
         </div>
         <div style={{ height: '150px' }}></div>
         <div className="d-flex justify-content-center align-items-center">
-          <div id="moboMsPage2" className="fff-btn-mobo-style" onClick={() => { props.setMoboMsPage2(true) }}>
+          <div
+            id="moboMsPage2"
+            className="fff-btn-mobo-style"
+            onClick={() => {
+              props.setMoboMsPage2(true)
+            }}
+          >
             {/* 在infoBar中只會設定開啟第二頁 所以不用傳入moboMsPage2 的值*/}
             我的成就
           </div>
         </div>
 
         <div className="d-flex justify-content-center align-items-center">
+          {/* 按了集點方式按鈕把說明改成顯示 */}
           <a
-            className="fff-btn-mobo-style howToGetPoints"  onClick={()=>{setModalStyle({display:'flex'})}}
+            className="fff-btn-mobo-style howToGetPoints"
+            onClick={() => {
+              setModalStyle({ display: 'flex' })
+            }}
           >
             集點方式
           </a>
         </div>
 
         <div className="d-flex justify-content-center">
-          <div className="fff-btn-mobo-style" onClick={() => { window.location.href = props.href }}>
+          <div
+            className="fff-btn-mobo-style"
+            onClick={() => {
+              window.location.href = props.href
+            }}
+          >
             {props.btnText}
           </div>
         </div>
       </div>
-      <div className="row fff-ms-how-to-section">
-      <div
-        className="modal"
-        id="about"
-        style={modalStyle}
-      >
-        <div className="modal-content fff-dialog">
-          <div className="modal-body row">
 
+      <div className="fff-mshowto" style={modalStyle}>
+        <div className="fff-mshowto-content">
+          <div className="row">
             {/* 圖片放置位置 先占高 mobo關閉 */}
             <div className="fff-ms-web" style={{ height: '200px' }}></div>
             <div className="fff-ms-mobo justify-content-end col-12">
-              <h6><i className="fas fa-times aboutCloseBtn" onClick={()=>{setModalStyle({display:'none'})}}></i></h6>
+              {/* 關閉頁面的Ｘ */}
+              <h6>
+                <i
+                  className="fas fa-times aboutCloseBtn"
+                  onClick={() => {
+                    setModalStyle({ display: 'none' })
+                  }}
+                ></i>
+              </h6>
             </div>
+            {/* 手機版會顯示集點方式 */}
             <div className="fff-ms-mobo justify-content-center col-12">
               <h4>集點方式</h4>
             </div>
@@ -118,33 +145,39 @@ function MilestoneInfoBar(props) {
             <div className="row d-flex justify-content-center  flex-row">
               <span
                 className="col-12 txt-btn"
-                style={{ padding: '0 75px 0 75px' }}
               >
                 我們用輕鬆活潑的方式記錄您在極簡煮易當中的冒險故事！並提供許多成就目標讓您可以用有趣的方式獲得額外的優惠！
-                  <br />
-                  每一個達成的成就會提供相對應得獎勵點數，您可以使用點數換取站內或是相關企業的優惠卷！
-                  <br />
-                  站內優惠會歸入您的會員資料方便您於購餐時選用，而兌換相關企業優惠會寄送QR
-                  Code至您的信箱，您也可以列印出來！
-                  <br />
-                  詳細的優惠兌換紀錄可於會員中心查詢喔！
-                </span>
-              <div className="col-12 d-flex justify-content-center fff-ms-web" ><span className="d-flex justify-content-center fff-ms-web"
-                style={{ padding: '0 75px 90px 75px' }} /></div>
+                <br />
+                每一個達成的成就會提供相對應得獎勵點數，您可以使用點數換取站內或是相關企業的優惠卷！
+                <br />
+                站內優惠會歸入您的會員資料方便您於購餐時選用，而兌換相關企業優惠會寄送QR
+                Code至您的信箱，您也可以列印出來！
+                <br />
+                詳細的優惠兌換紀錄可於會員中心查詢喔！
+              </span>
+              <div className="col-12 d-flex justify-content-center fff-ms-web">
+                <span
+                  className="d-flex justify-content-center fff-ms-web"
+                  style={{ padding: '0 75px 90px 75px' }}
+                />
+              </div>
 
-              <div className="col-12 d-flex justify-content-center fff-ms-web" >
+              <div className="col-12 d-flex justify-content-center fff-ms-web">
+                {/* 關閉集點説明的按鈕 */}
                 <button
                   type="button"
-                  className="btn-white txt-btn aboutCloseBtn" onClick={()=>{setModalStyle({display:'none'})}}
+                  className="btn-white txt-btn aboutCloseBtn"
+                  onClick={() => {
+                    setModalStyle({ display: 'none' })
+                  }}
                   data-dismiss="modal"
                 >
                   知道了！
-                  </button>
+                </button>
               </div>
             </div>
           </div>
         </div>
-      </div>
       </div>
     </>
   )
