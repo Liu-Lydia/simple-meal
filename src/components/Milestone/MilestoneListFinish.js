@@ -87,7 +87,6 @@ function MilestoneListFinish() {
    但是不指定這兩個的時候不是每次rander都會刷新*/
    useEffect(() => {
     webMoboExchange()
-    console.log("webMoboExchange");
   }, [styleArray, animateValueArray]);
 
   useEffect(() => {
