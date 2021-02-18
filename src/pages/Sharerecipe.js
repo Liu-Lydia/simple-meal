@@ -91,10 +91,10 @@ function Sharerecipe(props) {
             <div key={i} className="card col-3">
               <img src={v.pic} className="card-img-top mt-3" alt="..." />
               <div className="card-body">
-                <h5 className="card-title">{v.recipe_name}</h5>
-                <p className="card-text">{v.Introduction}</p>
+                <h5 className="card-title">{v.name}</h5>
+                <p className="card-text">{v.introduction}</p>
                 <div className="text-right">
-                  <i className="far fa-clock col-green"></i>&nbsp; {v.cook_time}
+                  <i className="far fa-clock col-green"></i>&nbsp; {v.cooktime}
                   分鐘
                 </div>
               </div>
