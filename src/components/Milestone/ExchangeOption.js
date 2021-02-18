@@ -7,18 +7,20 @@ function ExchangeOption(props) {
   const [inUseTabStyle, setInUseTabStyle] = useState(["fff-txt-rw-unselect col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center", "fff-txt-rw-select-active col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center", "fff-txt-rw-unselect col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center"]);
 
 
-  //二維陣列
+  //二維陣列 lineBar [tab1[class,class,class],tab2[class,class,class],tab3[class,class,class]]
   const lineBarClassArray = [['', 'col-3 poe-cart-progress-active', 'col'],
   ['col-3', 'col-3 poe-cart-progress-active', 'col-3'],
   ['col', 'col-3 poe-cart-progress-active', '']];
 
+  //tab classname的二維陣列
   const tabClassArray = [
     ["fff-txt-rw-select-active col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center", "fff-txt-rw-unselect col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center", "fff-txt-rw-unselect col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center"],
     ["fff-txt-rw-unselect col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center", "fff-txt-rw-select-active col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center", "fff-txt-rw-unselect col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center"],
     ["fff-txt-rw-unselect col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center", "fff-txt-rw-unselect col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center", "fff-txt-rw-select-active col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center"]
   ]
 
-  useEffect(() => {
+  //當 父層送來的optionTab改變時(optionTab 的修改也是在這個js中 為了去調整父層的顯示)
+  useEffect(() => {//設定要套用的classname
     setInuseLineBarStyle(lineBarClassArray[props.optionTab]);
     setInUseTabStyle(tabClassArray[props.optionTab]);
   }, [props.optionTab])
@@ -30,6 +32,8 @@ function ExchangeOption(props) {
 
 
           <a className={inUseTabStyle[0]} onClick={() => { props.setOptionTab(0) }}>
+            {/* 吃屬性值 inuseTabStyle */}
+            {/* 利用設定父層屬性去修改父層要顯示的components */}
             合作<p className="fff-ms-web">廠商</p>優惠
           </a>
           <a className={inUseTabStyle[1]} onClick={() => { props.setOptionTab(1) }}>

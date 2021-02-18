@@ -28,7 +28,7 @@ function MilestoneList() {
       .then((r) => r.json())
       .then((obj) => {
         setMilestoneList(obj)
-        //前期處理各成就的進度style
+        //前期處理各成就的進度style 含不同的大小
         const xs_r = 40
         const md_r = 70
         const xl_r = 80
@@ -53,7 +53,7 @@ function MilestoneList() {
 
             const xs_style = {
               display: 'block',
-              stroke: '#f3e575',
+              stroke: '#f3e575',//黃色
               strokeDasharray: xs_L + ',4000',//顯示的弧長
             }
             const ani_xs_L = '0,4000;' + xs_L + ',4000'
@@ -78,13 +78,11 @@ function MilestoneList() {
         })
         setStyleArray(progresStyleArray)
         setAnimateValueArray(ProgressAnimateValueArray)
-        console.log('progresStyleArray',progresStyleArray);
-        console.log('ProgressAnimateValueArray',ProgressAnimateValueArray);
       })
   }
 
    // 當陣列值有變動時 更新畫面
-   /*正常來說不用這麼麻煩
+   /*正常來說應該不用這麼麻煩
    但是不指定這兩個的時候不是每次rander都會刷新*/
    useEffect(() => {
     webMoboExchange()
@@ -96,7 +94,7 @@ function MilestoneList() {
     window.addEventListener('resize', webMoboExchange)//畫面大小有更動時
   }, []);
 
-  const webMoboExchange = () => {
+  const webMoboExchange = () => {//style 選擇器 因應視窗大小決定要使用哪一個樣式
     let tmepStyle = []
     let tempValue = []
     if (window.innerWidth < 576) {
@@ -171,6 +169,7 @@ function MilestoneList() {
                         dur="1s"
                         repeatCount="1"
                         value={inUseAnimateValue[i]}
+                        begin="3s"
                       />
                     </circle>
                   </svg>
