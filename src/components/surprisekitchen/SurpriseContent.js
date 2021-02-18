@@ -6,7 +6,7 @@ import Calendar from '../../pages/Calendar'
 //import CalendarTest from '../../pages/CalendarTest'
 
 function SurpriseContent(props) {
-  // 接收配送日期值
+  // 接收預約日期值
   const [dateStr, setDateObj] = useState('')
 
   //Collapse　↓↓↓
@@ -100,6 +100,8 @@ function SurpriseContent(props) {
       } //>0
     }
   }
+
+  const [textarea, setTextarea] = useState('')
 
   //金額顯示
   function handleSetPrice(num_adult, child_price) {
@@ -336,7 +338,11 @@ function SurpriseContent(props) {
                 className="form-control lll-msg"
                 id="FormControlTextarea"
                 rows="3"
-              ></textarea>
+                value={textarea}
+                onChange={(e) => {
+                  setTextarea(e.target.value)
+                }}
+              />
             </div>
             {/* 選填備註欄 ↑↑↑ */}
 
@@ -379,10 +385,10 @@ function SurpriseContent(props) {
         />
         <input type="text" name="num_adult" value={num_adult} />
         <input type="text" name="num_child" value={num_child} />
-        <input type="text" name="adult_price" value={500} />
-        <input type="text" name="child_price" value={200} />
+        {/* <input type="text" name="adult_price" value={500} />
+        <input type="text" name="child_price" value={200} /> */}
         <input type="text" name="num_meal" value={num_meal} />
-        {/* <input type="text" name="remark" value={} /> */}
+        <input type="text" name="remark" value={textarea} />
         <input
           type="text"
           name="reservation_price"

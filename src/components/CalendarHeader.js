@@ -2,7 +2,7 @@ import React, { useEffect, useContext } from 'react'
 import { AppStore } from '../pages/Calendar'
 import moment from 'moment'
 
-function CalendarHeader(props) {
+function CalendarHeader() {
   const { timeReducer } = useContext(AppStore)
   const dateInfo = timeReducer[0]
   const mmt = new moment(dateInfo)

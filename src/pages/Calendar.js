@@ -12,6 +12,7 @@ export const AppStore = createContext()
 function Calendar(props) {
   // {改變日期選項的函式}
   const { setDateObj } = props
+
   const mmt = new moment()
   const timeReducer = useReducer(calendar, mmt.format('YYYY-MM-DD'))
   // let result = GetWeeksInMonth();

@@ -7,6 +7,7 @@ import GetWeeksInMonth from './GetWeeksInMonth'
 
 function CalendarDate(props) {
   const { setDateObj } = props
+
   const { timeReducer } = useContext(AppStore)
   const date = timeReducer[0]
   const mmt = new moment(date)
