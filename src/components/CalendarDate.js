@@ -6,6 +6,7 @@ import GetWeeksInMonth from './GetWeeksInMonth'
 //連結到GeWeekInMonth(mmt), 使用到moment
 
 function CalendarDate(props) {
+  const { setDateObj } = props
   const { timeReducer } = useContext(AppStore)
   const date = timeReducer[0]
   const mmt = new moment(date)
@@ -13,10 +14,17 @@ function CalendarDate(props) {
   let weekContentList = GetWeeksInMonth(mmt)
   let result = []
 
+  //點擊日期
   const [activeDindex, setActiveDindex] = useState(weekContentList)
   console.log(activeDindex)
   const handleOnClick = (day) => {
     setActiveDindex(`${day}`)
+
+    let dayStr = ''
+    day < 10 ? (dayStr = `0${day}`) : (dayStr = `${day}`)
+    const NewDateStr = `${mmt.format('YYYY')}-${mmt.format('MM')}-${dayStr}`
+    setDateObj(NewDateStr)
+    console.log(NewDateStr)
   }
 
   return (
@@ -32,7 +40,9 @@ function CalendarDate(props) {
               // onClick={(event) => {
               //   console.log(event.target.value)
               // }}
-              onClick={() => handleOnClick(day)}
+              onClick={() => {
+                handleOnClick(day)
+              }}
               className={
                 activeDindex === `${day}`
                   ? 'lll-green-active'

@@ -6,8 +6,9 @@ import Calendar from '../../pages/Calendar'
 //import CalendarTest from '../../pages/CalendarTest'
 
 function SurpriseContent(props) {
+  // 接收配送日期值
+  const [dateStr, setDateObj] = useState('')
 
-  
   //Collapse　↓↓↓
   const buttonCollapseId = {
     button: 'accessible',
@@ -140,6 +141,7 @@ function SurpriseContent(props) {
       .then((r) => r.json())
       .then((obj) => {
         console.log(obj)
+        alert(`您的訂單編號為 ${obj.order_sid}, 請前往購物車進行結帳。 `)
       })
   }
 
@@ -189,7 +191,7 @@ function SurpriseContent(props) {
           <div class="mr-auto">
             <p className="m-0 txt-sub1 lll-black">請選擇預約日期</p>
 
-            <Calendar />
+            <Calendar setDateObj={setDateObj} />
             {/* 標示名額顏色 ↓↓↓ */}
             <div className="lll-option-position">
               <ul className="m-0 list-unstyled txt-sub1 lll-black">
@@ -369,7 +371,7 @@ function SurpriseContent(props) {
         </div>
       </Collapse>
       <form id="reservation_kitchen" hidden>
-        {/* <input type="text" name="reservation_date" value={} /> */}
+        <input type="date" name="reservation_date" value={dateStr} />
         <input
           type="text"
           name="reservation_time"
