@@ -3,7 +3,8 @@ import '../styles/public.css'
 import '../styles/fff.css'
 import MilestoneInfoBar from '../components/Milestone/MilestoneInfoBar'
 import ExchangeOption from '../components/Milestone/ExchangeOption'
-import ExangeGoodsList from '../components/Milestone/ExchangeGoodsList'
+import ExangeGoodsList1 from '../components/Milestone/ExchangeGoodsList1'
+import ExangeGoodsList2 from '../components/Milestone/ExchangeGoodsList2'
 import ExchangeRecord from '../components/Milestone/ExchangeRecord'
 import MsMoboPointInfo from '../components/Milestone/MsMoboPointInfo'
 import MsMoboBackToLastPageBtn from '../components/Milestone/MsMoboBackToLastPageBtn'
@@ -44,7 +45,8 @@ function RewardExchange() {
       </div>
       <div className="container">
         <ExchangeOption setOptionTab={setOptionTab} optionTab={optionTab} />
-        {optionTab == 1 && <ExangeGoodsList />}
+        {optionTab == 0 && <ExangeGoodsList1 />}
+        {optionTab == 1 && <ExangeGoodsList2 />}
 
         {optionTab == 2 && <ExchangeRecord />}
       </div>
