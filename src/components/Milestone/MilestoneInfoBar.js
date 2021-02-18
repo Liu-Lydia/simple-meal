@@ -64,7 +64,7 @@ function MilestoneInfoBar(props) {
           ></img>
           <span className="fff-mobo-txt-info">Lydia Liu</span>
         </div>
-        
+
         {/* 點數資料(尚未連接資料庫) */}
         <div className="d-flex flex-column">
           <div className="d-flex justify-content-center">
