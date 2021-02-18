@@ -1,41 +1,9 @@
 import React, { props, useEffect, useState } from 'react'
 
 function MilestoneInfoBar(props) {
-  useEffect(() => {
-    // 取得對話框 等等要控制顯示或關閉
-    //ClassName 會回陣列 所以要取單個元件時 要給陣列值
-    var modal = document.getElementsByClassName("modal")[0];
 
-    // 兩個按鈕都要加入事件
-    var openDialogbtn = document.getElementsByClassName("howToGetPoints")[0];
-    var openDialogbtnMobo = document.getElementsByClassName("howToGetPoints")[1];
+  const [modalStyle, setModalStyle] = useState({display: 'none'});
 
-    var closeBtnMobo = document.getElementsByClassName("aboutCloseBtn")[0];
-    var closeBtn = document.getElementsByClassName("aboutCloseBtn")[1];
-
-    // When the user clicks the button, open the modal 
-    openDialogbtn.onclick = function () {
-      modal.style.display = "block";
-    }
-    openDialogbtnMobo.onclick = function () {
-      modal.style.display = "block";
-    }
-
-    // When the user clicks closeBtn, close the modal
-    closeBtn.onclick = function () {
-      modal.style.display = "none";
-    }
-    closeBtnMobo.onclick = function () {
-      modal.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
-  })
   return (
     <>
       {/* web virsion */}
@@ -62,8 +30,7 @@ function MilestoneInfoBar(props) {
           </div>
           <div className="">
             <div
-              className="fff-btn-white fff-txt-btn howToGetPoints"
-            >
+              className="fff-btn-white fff-txt-btn howToGetPoints" onClick={()=>{setModalStyle({display:'flex'})}}>
               集點方式
             </div>
           </div>
@@ -111,7 +78,7 @@ function MilestoneInfoBar(props) {
 
         <div className="d-flex justify-content-center align-items-center">
           <a
-            className="fff-btn-mobo-style howToGetPoints"
+            className="fff-btn-mobo-style howToGetPoints"  onClick={()=>{setModalStyle({display:'flex'})}}
           >
             集點方式
           </a>
@@ -127,6 +94,7 @@ function MilestoneInfoBar(props) {
       <div
         className="modal"
         id="about"
+        style={modalStyle}
       >
         <div className="modal-content fff-dialog">
           <div className="modal-body row">
@@ -134,7 +102,7 @@ function MilestoneInfoBar(props) {
             {/* 圖片放置位置 先占高 mobo關閉 */}
             <div className="fff-ms-web" style={{ height: '200px' }}></div>
             <div className="fff-ms-mobo justify-content-end col-12">
-              <h6><i className="fas fa-times aboutCloseBtn"></i></h6>
+              <h6><i className="fas fa-times aboutCloseBtn" onClick={()=>{setModalStyle({display:'none'})}}></i></h6>
             </div>
             <div className="fff-ms-mobo justify-content-center col-12">
               <h4>集點方式</h4>
@@ -160,7 +128,7 @@ function MilestoneInfoBar(props) {
               <div className="col-12 d-flex justify-content-center fff-ms-web" >
                 <button
                   type="button"
-                  className="btn-white txt-btn aboutCloseBtn"
+                  className="btn-white txt-btn aboutCloseBtn" onClick={()=>{setModalStyle({display:'none'})}}
                   data-dismiss="modal"
                 >
                   知道了！

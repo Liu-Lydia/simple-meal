@@ -45,7 +45,10 @@ function Footer(props) {
           </div>
         </div>
       </footer>
-      <div style={{ height: '100px', width: '100vw' }}></div>
+      <div
+        className="flex-shrink-0 d-block d-sm-none"
+        style={{ height: '60px', width: '100vw' }}
+      ></div>
       <div
         className="d-block d-sm-none text-center"
         style={{
@@ -53,7 +56,7 @@ function Footer(props) {
           bottom: '0px',
           width: '100vw',
           background: 'white',
-          borderTop: '1px solid black',
+          borderTop: '2px solid #A2A3A5',
           paddingTop: '17px',
           paddingBottom: '18px',
         }}
