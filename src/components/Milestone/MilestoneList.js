@@ -6,8 +6,12 @@ function MilestoneList() {
   //milstonelist []陣列包{}每筆資料
   const [milstonelist, setMilestoneList] = useState([])
   const [styleArray, setStyleArray] = useState([])
+  const [animateValue, setAnimateValue] = useState([])
+  const [inUseStyle, setInUseStyle] = useState([])
+  const [inUseAnimateValue, setInnUseAnimateValue] = useState([])
   //連結資料庫
   const progresStyleArray = [] //儲存各milestone的進度與顏色
+  const animateValueArray = []
   const getMilestoneList = () => {
     const url = 'http://localhost:4000/milestone/getMilestoneList?sid=1' //session要帶 這樣傳好危險 sid 要從session來
     fetch(url, {
@@ -23,76 +27,107 @@ function MilestoneList() {
         const xl_r = 80
         obj.map((v, i) => {
           if (v.AddProgress >= v.progress_goal) {
-            const xs_style = { display: 'block', stroke: '#627E2A'}
-            const md_style = { display: 'block', stroke: '#627E2A'}
-            const xl_style = { display: 'block', stroke: '#627E2A'}
-            progresStyleArray.push({xs:xs_style, md:md_style, xl:xl_style})
+            let xs_L = xs_r * 2 * Math.PI
+            let md_L = md_r * 2 * Math.PI
+            let xl_L = xl_r * 2 * Math.PI
+            const style = { display: 'block', stroke: '#627E2A' }
+            const ani_xs_L = '0,4000;' + xs_L + ',4000'
+            const ani_md_L = '0,4000;' + md_L + ',4000'
+            const ani_xl_L = '0,4000;' + xl_L + ',4000'
+            progresStyleArray.push({ xs: style, md: style, xl: style })
+            animateValueArray.push({ xs: ani_xs_L, md: ani_md_L, xl: ani_xl_L })
           } else {
             let xs_L = xs_r * 2 * Math.PI * (v.AddProgress / v.progress_goal)
             let md_L = md_r * 2 * Math.PI * (v.AddProgress / v.progress_goal)
             let xl_L = xl_r * 2 * Math.PI * (v.AddProgress / v.progress_goal)
 
-            const xs_style = { display: 'block', stroke: '#f3e575', strokeDasharray: xs_L + ',4000'}
-            const md_style = { display: 'block', stroke: '#f3e575', strokeDasharray: md_L + ',4000'}
-            const xl_style = { display: 'block', stroke: '#f3e575', strokeDasharray: xl_L + ',4000'}
-            progresStyleArray.push({xs:xs_style, md:md_style, xl:xl_style})
+            const xs_style = {
+              display: 'block',
+              stroke: '#f3e575',
+              strokeDasharray: xs_L + ',4000',
+            }
+            const ani_xs_L = '0,4000;' + xs_L + ',4000'
+            const md_style = {
+              display: 'block',
+              stroke: '#f3e575',
+              strokeDasharray: md_L + ',4000',
+            }
+            const ani_md_L = '0,4000;' + md_L + ',4000'
+            const xl_style = {
+              display: 'block',
+              stroke: '#f3e575',
+              strokeDasharray: xl_L + ',4000',
+            }
+            const ani_xl_L = '0,4000;' + xl_L + ',4000'
+            progresStyleArray.push({ xs: xs_style, md: md_style, xl: xl_style })
+            animateValueArray.push({ xs: ani_xs_L, md: ani_md_L, xl: ani_xl_L })
           }
         })
         setStyleArray(progresStyleArray)
+        setAnimateValue(animateValueArray)
       })
   }
 
   useEffect(() => {
-    getMilestoneList();
-    window.addEventListener('resize', webMoboExchange);
+    getMilestoneList()
+    window.addEventListener('resize', webMoboExchange)
   }, [])
 
-  const webMoboExchange = ()=>{
-    styleArray.map((value,index)=>{
-      const stone = document.getElementById("cycle"+index);
-      if(window.innerWidth>1200)
-      {
-        stone.style.stroke = value.xl.stroke;
-        stone.style.strokeDasharray= value.xl.strokeDasharray;
-      }
-      else if(window.innerWidth<576)
-      {
-        stone.style.stroke = value.xs.stroke;
-        stone.style.strokeDasharray= value.xs.strokeDasharray;
-      }
-      else
-      {
-        stone.style.stroke = value.md.stroke;
-        stone.style.strokeDasharray= value.md.strokeDasharray;
-      }
-    });
+  const webMoboExchange = () => {
+    let tmepStyle = []
+    let tempValue = []
+    if (window.innerWidth < 576) {
+      styleArray.map((value, index) => {
+        tmepStyle.push(value.xs)
+      })
+      animateValue.map((value, index) => {
+        tempValue.push(value.xs)
+      })
+    } else if (window.innerWidth > 1200) {
+      styleArray.map((value, index) => {
+        tmepStyle.push(value.xl)
+      })
+      animateValue.map((value, index) => {
+        tempValue.push(value.xl)
+      })
+    } else {
+      styleArray.map((value, index) => {
+        tmepStyle.push(value.md)
+      })
+      animateValue.map((value, index) => {
+        tempValue.push(value.md)
+      })
     }
-    
+    setInUseStyle(tmepStyle)
+    setInnUseAnimateValue(tempValue)
+    console.log(inUseStyle);
+    console.log(inUseAnimateValue);
+  }
 
-  useEffect(() => {
-    styleArray.map((value,index)=>{
-      const stone = document.getElementById("cycle"+index);
-      const animate = document.getElementById("animate"+index);
-      if(window.innerWidth>1200)
-      {
-        stone.style.stroke = value.xl.stroke;
-        stone.style.strokeDasharray= value.xl.strokeDasharray;
-        animate.value = "0,4000;"+ value.xl.strokeDasharray;
-      }
-      else if(window.innerWidth<576)
-      {
-        stone.style.stroke = value.xs.stroke;
-        stone.style.strokeDasharray= value.xs.strokeDasharray;
-        animate.value = "0,4000;"+ value.xs.strokeDasharray;
-      }
-      else
-      {
-        stone.style.stroke = value.md.stroke;
-        stone.style.strokeDasharray= value.md.strokeDasharray;
-        animate.value = "0,4000;"+ value.md.strokeDasharray;
-      }
-    });
-  }, [styleArray])
+  // useEffect(() => {
+  //   styleArray.map((value,index)=>{
+  //     const stone = document.getElementById("cycle"+index);
+  //     const animate = document.getElementById("animate"+index);
+  //     if(window.innerWidth>1200)
+  //     {
+  //       stone.style.stroke = value.xl.stroke;
+  //       stone.style.strokeDasharray= value.xl.strokeDasharray;
+  //       animate.value = "0,4000;"+ value.xl.strokeDasharray;
+  //     }
+  //     else if(window.innerWidth<576)
+  //     {
+  //       stone.style.stroke = value.xs.stroke;
+  //       stone.style.strokeDasharray= value.xs.strokeDasharray;
+  //       animate.value = "0,4000;"+ value.xs.strokeDasharray;
+  //     }
+  //     else
+  //     {
+  //       stone.style.stroke = value.md.stroke;
+  //       stone.style.strokeDasharray= value.md.strokeDasharray;
+  //       animate.value = "0,4000;"+ value.md.strokeDasharray;
+  //     }
+  //   });
+  // }, [styleArray])
 
   return (
     <>
@@ -117,7 +152,7 @@ function MilestoneList() {
                     className="fff-svg-painting"
                     style={{
                       backgroundImage:
-                        'url(http://localhost:3015/img/milestonelist/'+
+                        'url(http://localhost:3015/img/milestonelist/' +
                         (v.AddProgress >= v.progress_goal
                           ? v.finished_goal_pic
                           : v.unfinished_goal_pic) +
@@ -130,17 +165,16 @@ function MilestoneList() {
                       style={{ display: 'block' }}
                     />
                     <circle
-                    id={"cycle"+i}
                       className="fff-milestone-progress-svg d-flex justify-content-center"
                       transform="rotate(-90)"
+                      style={inUseStyle[i]}
                     >
                       <animate
-                    id={"animate"+i}
                         className="fff-milestone-progress-ani"
                         attributeName="stroke-dasharray"
                         dur="1s"
                         repeatCount="1"
-                        value = "0,4000;141,4000"
+                        value={inUseAnimateValue[i]}
                       />
                     </circle>
                   </svg>
