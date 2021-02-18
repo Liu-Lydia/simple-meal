@@ -43,55 +43,79 @@ function MemberCenterIndex() {
                 <div className="d-flex col-10 d-flex justify-content-md-between mx-auto">
                   <ul className="h6 item1  col-4">
                     <li>
-                      <i className="far fa-address-card mr-1 mb-2"></i>
+                      <i className="far fa-address-card mr-1 mb-3"></i>
                       我的帳戶
                     </li>
                     <li className="item2 ml-4 ">
-                      <Link to="/MemberCenter/Info">個人資料</Link>
+                      <Link to="/MemberCenter/Info" className="text-dark">
+                        個人資料
+                      </Link>
                     </li>
                     <li className="item2 ml-4">
-                      <Link to="">密碼變更</Link>
+                      <Link to="" className="text-dark">
+                        密碼變更
+                      </Link>
                     </li>
                     <li className="item2 ml-4">
-                      <Link to="">信用卡</Link>
+                      <Link to="" className="text-dark">
+                        信用卡
+                      </Link>
                     </li>
                     <li className="item2 ml-4">
-                      <Link to="">地址</Link>
+                      <Link to="" className="text-dark">
+                        地址
+                      </Link>
                     </li>
                     <li className="item2 ml-4">
-                      <Link to="">分級資訊</Link>
+                      <Link to="" className="text-dark">
+                        分級資訊
+                      </Link>
                     </li>
                   </ul>
                   <ul className="h6 item1 col-5 ">
                     <li className="item">
                       <i className="fas fa-heart mr-2 "></i>
-                      <Link to="">我的專屬菜單</Link>
+                      <Link to="" className="text-dark">
+                        我的專屬菜單
+                      </Link>
                     </li>
                     <li className="item ">
                       <i className="fas fa-carrot mr-2"></i>
-                      <Link to="">我的共享食譜</Link>
+                      <Link to="" className="text-dark">
+                        我的共享食譜
+                      </Link>
                     </li>
                     <li className="item ">
                       <i className="fas fa-medal mr-2"></i>
-                      <Link to="">我的成就</Link>
+                      <Link to="" className="text-dark">
+                        我的成就
+                      </Link>
                     </li>
                     <li className="item ">
                       <i className="fas fa-ticket-alt mr-1"></i>
-                      <Link to="">我的優惠卷</Link>
+                      <Link to="" className="text-dark">
+                        我的優惠卷
+                      </Link>
                     </li>
                   </ul>
                   <ul className="h6 col-4">
                     <li className="item ">
                       <i className="far fa-calendar-plus mr-2"></i>
-                      <Link to="">驚喜廚房</Link>
+                      <Link to="" className="text-dark">
+                        驚喜廚房
+                      </Link>
                     </li>
                     <li className="item ">
                       <i className="fas fa-utensils mr-2"></i>
-                      <Link to="">我的餐點</Link>
+                      <Link to="" className="text-dark">
+                        我的餐點
+                      </Link>
                     </li>
                     <li className="item ">
                       <i className="fas fa-clipboard mr-2"></i>
-                      <Link to="">我的餐卷</Link>
+                      <Link to="" className="text-dark">
+                        我的餐卷
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -152,51 +176,75 @@ function MemberCenterIndex() {
                       戶
                     </li>
                     <li className="txt-sub2 mt-2 ml-4 text3">
-                      <Link to="">個人資料</Link>
+                      <Link to="" className="text-dark">
+                        個人資料
+                      </Link>
                     </li>
                     <li className="txt-sub2 ml-4 text3">
-                      <Link to="">密碼變更</Link>
+                      <Link to="" className="text-dark">
+                        密碼變更
+                      </Link>
                     </li>
                     <li className="txt-sub2 ml-4 text3">
-                      <Link to="">信用卡</Link>
+                      <Link to="" className="text-dark">
+                        信用卡
+                      </Link>
                     </li>
                     <li className="txt-sub2 ml-4 text3">
-                      <Link to="">地址</Link>
+                      <Link to="" className="text-dark">
+                        地址
+                      </Link>
                     </li>
                     <li className="txt-sub2 ml-4 text3">
-                      <Link to="">分級資訊</Link>
+                      <Link to="" className="text-dark">
+                        分級資訊
+                      </Link>
                     </li>
                   </ul>
                   <ul className="h6 ">
                     <li className="bt bob item1">
                       <i className="fas fa-heart mr-2 "></i>
-                      <Link to="">我 的 專 屬 菜 單</Link>
+                      <Link to="" className="text-dark">
+                        我 的 專 屬 菜 單
+                      </Link>
                     </li>
                     <li className="bt item1 ">
                       <i className="fas fa-carrot mr-2"></i>
-                      <Link to="">我 的 共 享 食 譜</Link>
+                      <Link to="" className="text-dark">
+                        我 的 共 享 食 譜
+                      </Link>
                     </li>
                     <li className="bt item1">
                       <i className="fas fa-medal mr-2"></i>
-                      <Link to="">我 的 成 就</Link>
+                      <Link to="" className="text-dark">
+                        我 的 成 就
+                      </Link>
                     </li>
                     <li className="bt item1">
                       <i className="fas fa-ticket-alt mr-1"></i>
-                      <Link to="">我 的 優 惠 卷</Link>
+                      <Link to="" className="text-dark">
+                        我 的 優 惠 卷
+                      </Link>
                     </li>
                   </ul>
                   <ul className="h6">
                     <li className="bt item1">
                       <i className="far fa-calendar-plus mr-2"></i>
-                      <Link to="">驚 喜 廚 房</Link>
+                      <Link to="" className="text-dark">
+                        驚 喜 廚 房
+                      </Link>
                     </li>
                     <li className="bt item1">
                       <i className="fas fa-utensils mr-2"></i>
-                      <Link to="">我 的 餐 點</Link>
+                      <Link to="" className="text-dark">
+                        我 的 餐 點
+                      </Link>
                     </li>
                     <li className="bt item1">
                       <i className="fas fa-clipboard mr-2"></i>
-                      <Link to="">我 的 餐 卷</Link>
+                      <Link to="" className="text-dark">
+                        我 的 餐 卷
+                      </Link>
                     </li>
                   </ul>
                 </div>

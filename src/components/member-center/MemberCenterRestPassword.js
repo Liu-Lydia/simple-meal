@@ -55,7 +55,6 @@ function MemberCenterResetPassword() {
                 <a href="" className="btn-green txt-btn mt-2 mb-3">
                   送出
                 </a>
-                .
               </div>
             </div>
           </div>
