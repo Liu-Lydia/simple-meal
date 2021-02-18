@@ -46,15 +46,15 @@ function MilestoneList() {
 
             progresStyleArray.push({ xs: style, md: style, xl: style })
             ProgressAnimateValueArray.push({ xs: ani_xs_L, md: ani_md_L, xl: ani_xl_L })
-          } else {
-            let xs_L = xs_r * 2 * Math.PI * (v.AddProgress / v.progress_goal)
+          } else { //進度條尚未完成
+            let xs_L = xs_r * 2 * Math.PI * (v.AddProgress / v.progress_goal)//百分比的弧長
             let md_L = md_r * 2 * Math.PI * (v.AddProgress / v.progress_goal)
             let xl_L = xl_r * 2 * Math.PI * (v.AddProgress / v.progress_goal)
 
             const xs_style = {
               display: 'block',
               stroke: '#f3e575',
-              strokeDasharray: xs_L + ',4000',
+              strokeDasharray: xs_L + ',4000',//顯示的弧長
             }
             const ani_xs_L = '0,4000;' + xs_L + ',4000'
 
@@ -78,18 +78,23 @@ function MilestoneList() {
         })
         setStyleArray(progresStyleArray)
         setAnimateValueArray(ProgressAnimateValueArray)
+        console.log('progresStyleArray',progresStyleArray);
+        console.log('ProgressAnimateValueArray',ProgressAnimateValueArray);
       })
   }
 
-   // 當有任何render時呼叫
+   // 當陣列值有變動時 更新畫面
+   /*正常來說不用這麼麻煩
+   但是不指定這兩個的時候不是每次rander都會刷新*/
    useEffect(() => {
     webMoboExchange()
-  }, [])
+    console.log("webMoboExchange");
+  }, [styleArray, animateValueArray]);
 
   useEffect(() => {
     getMilestoneList()
-    window.addEventListener('resize', webMoboExchange)
-  }, [])
+    window.addEventListener('resize', webMoboExchange)//畫面大小有更動時
+  }, []);
 
   const webMoboExchange = () => {
     let tmepStyle = []
@@ -118,34 +123,7 @@ function MilestoneList() {
     }
     setInUseStyle(tmepStyle)
     setInnUseAnimateValue(tempValue)
-    console.log('inUseStyle',inUseStyle);
-    console.log('inUseAnimateValue',inUseAnimateValue);
   }
-
-  // useEffect(() => {
-  //   styleArray.map((value,index)=>{
-  //     const stone = document.getElementById("cycle"+index);
-  //     const animate = document.getElementById("animate"+index);
-  //     if(window.innerWidth>1200)
-  //     {
-  //       stone.style.stroke = value.xl.stroke;
-  //       stone.style.strokeDasharray= value.xl.strokeDasharray;
-  //       animate.value = "0,4000;"+ value.xl.strokeDasharray;
-  //     }
-  //     else if(window.innerWidth<576)
-  //     {
-  //       stone.style.stroke = value.xs.stroke;
-  //       stone.style.strokeDasharray= value.xs.strokeDasharray;
-  //       animate.value = "0,4000;"+ value.xs.strokeDasharray;
-  //     }
-  //     else
-  //     {
-  //       stone.style.stroke = value.md.stroke;
-  //       stone.style.strokeDasharray= value.md.strokeDasharray;
-  //       animate.value = "0,4000;"+ value.md.strokeDasharray;
-  //     }
-  //   });
-  // }, [styleArray])
 
   return (
     <>

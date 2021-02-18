@@ -11,17 +11,18 @@ import MemberCenterAddr from '../components/member-center/MemberCenterAddr'
 import MemberCenterCreditCard from '../components/member-center/MemberCenterCreditCard'
 import MemberCenterFoodDelivery from '../components/member-center/MemberCenterFoodDelivery'
 import MemberCenterSimpleMealCoupon from '../components/member-center/MemberCenterSimpleMealCoupon'
-
+import test from '../components/member-center/test'
 function MemberCenter() {
   return (
     <>
       <Switch>
+        <Route path="/MemberCenter/test" component={test}></Route>
         <Route
-          path="/MemberCenter/MemberCenterSimpleMealCoupon"
+          path="/MemberCenter/SimpleMealCoupon"
           component={MemberCenterSimpleMealCoupon}
         ></Route>
         <Route
-          path="/MemberCenter/MemberCenterFoodDelivery"
+          path="/MemberCenter/FoodDelivery"
           component={MemberCenterFoodDelivery}
         ></Route>
         <Route
@@ -29,6 +30,7 @@ function MemberCenter() {
           component={MemberCenterCreditCard}
         ></Route>
         <Route path="/MemberCenter/addr" component={MemberCenterAddr}></Route>
+
         <Route path="/MemberCenter/Info" component={MemberCenterInfo}></Route>
         <Route
           path="/MemberCenter/Navbar"

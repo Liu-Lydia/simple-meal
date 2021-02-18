@@ -16,6 +16,7 @@
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "formik": "^2.2.6",
     "google-map-react": "^2.1.9",
     "google-maps-react": "^2.0.6",
     "jquery": "^3.5.1",
@@ -39,7 +40,8 @@
     "redux-thunk": "^2.3.0",
     "sass": "^1.32.5",
     "spinners": "^1.2.2",
-    "web-vitals": "^0.2.4"
+    "web-vitals": "^0.2.4",
+    "yup": "^0.32.9"
   },
   "scripts": {
     "start": "react-scripts start",
