@@ -6,8 +6,8 @@ import Calendar from '../../pages/Calendar'
 //import CalendarTest from '../../pages/CalendarTest'
 
 function SurpriseContent(props) {
-  const { activeDindex } = props
 
+  
   //Collapse　↓↓↓
   const buttonCollapseId = {
     button: 'accessible',
@@ -43,9 +43,9 @@ function SurpriseContent(props) {
   //讀取資料 ↑↑↑
 
   //點擊場次　↓↓↓
-  const [isActive, setActive] = useState([...timesData])
-  const handleToggleClass = (i) => {
-    setActive(i)
+  const [isActive, setActive] = useState({ ...timesData })
+  const handleToggleClass = (v) => {
+    setActive(v)
   }
   //點擊場次 ↑↑↑
 
@@ -210,12 +210,12 @@ function SurpriseContent(props) {
                     <div
                       key={i}
                       className="lll-select-btn-white txt-btn lll-cursor"
-                      onClick={() => handleToggleClass(i)}
+                      onClick={() => handleToggleClass(v)}
                       // onClick={(event) => {
                       //   console.log(v.reservation_time)
                       // }}
                       className={
-                        isActive === i
+                        isActive === v
                           ? 'lll-select-btn-white-active txt-btn lll-cursor'
                           : 'lll-select-btn-white txt-btn lll-cursor'
                       }
@@ -369,7 +369,7 @@ function SurpriseContent(props) {
         </div>
       </Collapse>
       <form id="reservation_kitchen" hidden>
-        <input type="text" name="reservation_date" value={activeDindex} />
+        {/* <input type="text" name="reservation_date" value={} /> */}
         <input
           type="text"
           name="reservation_time"

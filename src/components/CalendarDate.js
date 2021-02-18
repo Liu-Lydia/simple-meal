@@ -13,9 +13,10 @@ function CalendarDate(props) {
   let weekContentList = GetWeeksInMonth(mmt)
   let result = []
 
-  const [activeDindex, setActiveDindex] = useState(0)
-  const handleOnClick = (day, dIndex) => {
-    setActiveDindex(`${day}-${dIndex}`)
+  const [activeDindex, setActiveDindex] = useState(weekContentList)
+  console.log(activeDindex)
+  const handleOnClick = (day) => {
+    setActiveDindex(`${day}`)
   }
 
   return (
@@ -31,9 +32,9 @@ function CalendarDate(props) {
               // onClick={(event) => {
               //   console.log(event.target.value)
               // }}
-              onClick={() => handleOnClick(day, dIndex)}
+              onClick={() => handleOnClick(day)}
               className={
-                activeDindex === `${day}-${dIndex}`
+                activeDindex === `${day}`
                   ? 'lll-green-active'
                   : 'lll-body-list-item'
               }
