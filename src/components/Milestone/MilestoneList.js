@@ -17,9 +17,12 @@ function MilestoneList() {
 
   //真正使用的動畫值
   const [inUseAnimateValue, setInnUseAnimateValue] = useState([])
+  
   //連結資料庫
   const progresStyleArray = [] //儲存各milestone的進度與顏色
+
   const ProgressAnimateValueArray = []
+  
   const getMilestoneList = () => {
     const url = 'http://localhost:4000/milestone/getMilestoneList?sid=1' //sid 要從session來
     fetch(url, {

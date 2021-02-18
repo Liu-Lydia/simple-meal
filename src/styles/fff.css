@@ -4,7 +4,7 @@
   padding: 0px;
 }
 
-/* 手機版按鈕 */
+/* 手機版長條按鈕 */
 
 .fff-btn-mobo-style {
   border: 1px #627e2a solid;
@@ -53,10 +53,14 @@
   margin-bottom: 30px;
 }
 
-/* 手機版 */
+
+
+/* 手機版排版*/
+/* 網頁版專用部分消失 */
 .fff-ms-web {
   display: none !important;
 }
+/* 手機版專用部分出現 */
 .fff-ms-mobo {
   display: flex !important;
 }

@@ -1,16 +1,19 @@
 import React, { props, useEffect, useState } from 'react'
 
 function MilestoneInfoBar(props) {
-
+  
+  //集點說明狀態
   const [modalStyle, setModalStyle] = useState({display: 'none'});
 
   return (
     <>
-      {/* web virsion */}
+      {/* 網頁版個人資料web virsion */}
       <div className="row fff-ms-web">
         {/* 佔空位的 */}
         <div className="col-1"></div>
+        {/*實際的框框 fff-my-info-box*/}
         <div className="col-xl-l0 col-lg-10 fff-my-info-box">
+          {/* 使用者照片、使用者名稱(尚未連接資料庫)*/}
           <div className="d-flex align-items-center">
             <img
               src="http://localhost:3015/img/fff/fff-info-pic.png"
@@ -18,7 +21,7 @@ function MilestoneInfoBar(props) {
             ></img>
             <span className="fff-txt-info">Lydia Liu</span>
           </div>
-
+          {/* 點數資料(尚未連接資料庫) */}
           <div className="d-flex align-items: center">
             <div>
               <span className="fff-txt-info">目前累積點數:</span>
@@ -28,12 +31,14 @@ function MilestoneInfoBar(props) {
               <span className="fff-txt-info">點</span>
             </div>
           </div>
+          {/* 集點方式按鈕 */}
           <div className="">
             <div
               className="fff-btn-white fff-txt-btn howToGetPoints" onClick={()=>{setModalStyle({display:'flex'})}}>
               集點方式
             </div>
           </div>
+          {/* 在成就清單以及兌換獎勵區切換的按鈕 */}
           <div className="fff-btn-white fff-txt-btn" onClick={() => { window.location.href = props.href }}>
             {props.btnText}
           </div>
@@ -46,8 +51,9 @@ function MilestoneInfoBar(props) {
       {/* 留空白 */}
       <div className="row fff-ms-web" style={{ height: '64px' }} />
 
-      {/* mobo virsion */}
-      <div className="fff-ms-mobo d-flex flex-column">
+      {/*手機版個人資料 mobo virsion */}
+      <div className="fff-ms-mobo d-flex flex-column"> 
+        {/* 使用者照片、使用者名稱(尚未連接資料庫)*/}
         <div
           className="d-flex justify-content-center"
           style={{ marginBottom: '40px' }}
@@ -58,7 +64,8 @@ function MilestoneInfoBar(props) {
           ></img>
           <span className="fff-mobo-txt-info">Lydia Liu</span>
         </div>
-
+        
+        {/* 點數資料(尚未連接資料庫) */}
         <div className="d-flex flex-column">
           <div className="d-flex justify-content-center">
             <span className="fff-mobo-txt-info">目前累積點數</span>
