@@ -5,15 +5,23 @@ function MilestoneList() {
   /*資料庫回來的東西 */
   //milstonelist []陣列包{}每筆資料
   const [milstonelist, setMilestoneList] = useState([])
+
+  //含三種大小的圈圈格式
   const [styleArray, setStyleArray] = useState([])
-  const [animateValue, setAnimateValue] = useState([])
+
+  //含三種大小的動畫弧長
+  const [animateValueArray, setAnimateValueArray] = useState([])
+
+  //真正使用的style
   const [inUseStyle, setInUseStyle] = useState([])
+
+  //真正使用的動畫值
   const [inUseAnimateValue, setInnUseAnimateValue] = useState([])
   //連結資料庫
   const progresStyleArray = [] //儲存各milestone的進度與顏色
-  const animateValueArray = []
+  const ProgressAnimateValueArray = []
   const getMilestoneList = () => {
-    const url = 'http://localhost:4000/milestone/getMilestoneList?sid=1' //session要帶 這樣傳好危險 sid 要從session來
+    const url = 'http://localhost:4000/milestone/getMilestoneList?sid=1' //sid 要從session來
     fetch(url, {
       method: 'get',
     })
@@ -26,16 +34,19 @@ function MilestoneList() {
         const md_r = 70
         const xl_r = 80
         obj.map((v, i) => {
-          if (v.AddProgress >= v.progress_goal) {
-            let xs_L = xs_r * 2 * Math.PI
-            let md_L = md_r * 2 * Math.PI
-            let xl_L = xl_r * 2 * Math.PI
-            const style = { display: 'block', stroke: '#627E2A' }
+          if (v.AddProgress >= v.progress_goal) {//進度大於等於目標 該成就完成
+            let xs_L = xs_r * 2 * Math.PI //計算小圖弧長
+            let md_L = md_r * 2 * Math.PI //計算中圖弧長
+            let xl_L = xl_r * 2 * Math.PI //計算大圖弧長
+            const style = { display: 'block', stroke: '#627E2A' }//綠色
+
+            //動畫的起始跟終點
             const ani_xs_L = '0,4000;' + xs_L + ',4000'
             const ani_md_L = '0,4000;' + md_L + ',4000'
             const ani_xl_L = '0,4000;' + xl_L + ',4000'
+
             progresStyleArray.push({ xs: style, md: style, xl: style })
-            animateValueArray.push({ xs: ani_xs_L, md: ani_md_L, xl: ani_xl_L })
+            ProgressAnimateValueArray.push({ xs: ani_xs_L, md: ani_md_L, xl: ani_xl_L })
           } else {
             let xs_L = xs_r * 2 * Math.PI * (v.AddProgress / v.progress_goal)
             let md_L = md_r * 2 * Math.PI * (v.AddProgress / v.progress_goal)
@@ -47,24 +58,27 @@ function MilestoneList() {
               strokeDasharray: xs_L + ',4000',
             }
             const ani_xs_L = '0,4000;' + xs_L + ',4000'
+
             const md_style = {
               display: 'block',
               stroke: '#f3e575',
               strokeDasharray: md_L + ',4000',
             }
             const ani_md_L = '0,4000;' + md_L + ',4000'
+
             const xl_style = {
               display: 'block',
               stroke: '#f3e575',
               strokeDasharray: xl_L + ',4000',
             }
             const ani_xl_L = '0,4000;' + xl_L + ',4000'
+            
             progresStyleArray.push({ xs: xs_style, md: md_style, xl: xl_style })
-            animateValueArray.push({ xs: ani_xs_L, md: ani_md_L, xl: ani_xl_L })
+            ProgressAnimateValueArray.push({ xs: ani_xs_L, md: ani_md_L, xl: ani_xl_L })
           }
         })
         setStyleArray(progresStyleArray)
-        setAnimateValue(animateValueArray)
+        setAnimateValueArray(ProgressAnimateValueArray)
       })
   }
 
@@ -80,21 +94,21 @@ function MilestoneList() {
       styleArray.map((value, index) => {
         tmepStyle.push(value.xs)
       })
-      animateValue.map((value, index) => {
+      animateValueArray.map((value, index) => {
         tempValue.push(value.xs)
       })
     } else if (window.innerWidth > 1200) {
       styleArray.map((value, index) => {
         tmepStyle.push(value.xl)
       })
-      animateValue.map((value, index) => {
+      animateValueArray.map((value, index) => {
         tempValue.push(value.xl)
       })
     } else {
       styleArray.map((value, index) => {
         tmepStyle.push(value.md)
       })
-      animateValue.map((value, index) => {
+      animateValueArray.map((value, index) => {
         tempValue.push(value.md)
       })
     }
