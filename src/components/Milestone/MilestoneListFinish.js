@@ -1,14 +1,14 @@
 // 成就顯示
 import React, { useState, useEffect } from 'react'
 
-function MilestoneList() {
+function MilestoneListFinish() {
   //資料庫回來的東西 milstonelist []陣列包{}每筆資料
   const [milstonelist, setMilestoneList] = useState([])
 
-  //含三種大小的圈圈格式
+  //含三種大小的圈圈格式 當畫面大小改變時要來這邊找適合的樣式
   const [styleArray, setStyleArray] = useState([])
 
-  //含三種大小的動畫弧長
+  //含三種大小的動畫弧長 當畫面大小改變時要來這邊找適合的樣式
   const [animateValueArray, setAnimateValueArray] = useState([])
 
   //真正使用的style
@@ -16,11 +16,12 @@ function MilestoneList() {
 
   //真正使用的動畫值
   const [inUseAnimateValue, setInnUseAnimateValue] = useState([])
+
   //連結資料庫
-  const progresStyleArray = [] //儲存各milestone的進度與顏色
-  const ProgressAnimateValueArray = []
+  const progresStyleArray = [] //儲存各milestone的進度與顏色 push完成後再塞入屬性值
+  const progressAnimateValueArray = []//儲存個動畫的值 push完成後再塞入屬性值
   const getMilestoneList = () => {
-    const url = 'http://localhost:4000/milestone/getMilestoneList?sid=1' //sid 要從session來
+    const url = 'http://localhost:4000/milestone/getMilestoneList?sid=1&filter=finish' //sid 要從session來
     fetch(url, {
       method: 'get',
     })
@@ -45,7 +46,7 @@ function MilestoneList() {
             const ani_xl_L = '0,4000;' + xl_L + ',4000'
 
             progresStyleArray.push({ xs: style, md: style, xl: style })
-            ProgressAnimateValueArray.push({ xs: ani_xs_L, md: ani_md_L, xl: ani_xl_L })
+            progressAnimateValueArray.push({ xs: ani_xs_L, md: ani_md_L, xl: ani_xl_L })
           } else { //進度條尚未完成
             let xs_L = xs_r * 2 * Math.PI * (v.AddProgress / v.progress_goal)//百分比的弧長
             let md_L = md_r * 2 * Math.PI * (v.AddProgress / v.progress_goal)
@@ -73,11 +74,11 @@ function MilestoneList() {
             const ani_xl_L = '0,4000;' + xl_L + ',4000'
 
             progresStyleArray.push({ xs: xs_style, md: md_style, xl: xl_style })
-            ProgressAnimateValueArray.push({ xs: ani_xs_L, md: ani_md_L, xl: ani_xl_L })
+            progressAnimateValueArray.push({ xs: ani_xs_L, md: ani_md_L, xl: ani_xl_L })
           }
         })
         setStyleArray(progresStyleArray)
-        setAnimateValueArray(ProgressAnimateValueArray)
+        setAnimateValueArray(progressAnimateValueArray)
       })
   }
 
@@ -192,4 +193,4 @@ function MilestoneList() {
   )
 }
 
-export default MilestoneList
+export default MilestoneListFinish

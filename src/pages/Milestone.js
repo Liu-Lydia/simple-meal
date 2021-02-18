@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react'
 import '../styles/public.css'
 import '../styles/fff.css'
 import MilestoneInfoBar from '../components/Milestone/MilestoneInfoBar'
-import MilestoneList from '../components/Milestone/MilestoneList'
+import MilestoneListAll from '../components/Milestone/MilestoneListAll'
 import MilestoneListOption from '../components/Milestone/MilestoneListOption'
 import MsMoboPointInfo from '../components/Milestone/MsMoboPointInfo'
 import MsMoboBackToLastPageBtn from '../components/Milestone/MsMoboBackToLastPageBtn'
+import MilestoneListLimit from '../components/Milestone/MilestoneListLimit'
+import MilestoneListFinish from '../components/Milestone/MilestoneListFinish'
+import MilestoneListUnfinish from '../components/Milestone/MilestoneListUnfinish'
 
 function Milestone() {
   // 控制手機版“我的成就”按鈕按下去來顯示成就清單
@@ -78,7 +81,10 @@ function Milestone() {
       </div>
       <div id="ms-p3" className="container" style={display.p3}>
         <MilestoneListOption setMilestoneFilter={setMilestoneFilter} milestoneFilter={milestoneFilter}/>
-        <MilestoneList milestoneFilter={milestoneFilter}/>
+        {milestoneFilter == 0 && <MilestoneListLimit/>}
+        {milestoneFilter == 1 && <MilestoneListAll/>}
+        {milestoneFilter == 2 && <MilestoneListFinish/>}
+        {milestoneFilter == 3 && <MilestoneListUnfinish/>}
       </div>
     </>
   )

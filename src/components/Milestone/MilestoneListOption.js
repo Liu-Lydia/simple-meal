@@ -4,103 +4,122 @@ import '../../styles/fff.css';
 
 function MilestoneListOption(props) {
 
+    //網頁版的選單文字
+    const tabClassArrayActive = "col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-select-active";
+    const tabClassArrayNonActive = "col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-unselect";
     const tabClassArray = [
+        //選擇到0限時活動
         [
-            "col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-select-active",
-            "col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-unselect",
-            "col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-unselect",
-            "col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-unselect"
-        ],[
-            "col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-unselect",
-            "col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-select-active",
-            "col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-unselect",
-            "col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-unselect"
-        ],[
-            "col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-unselect",
-            "col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-unselect",
-            "col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-select-active",
-            "col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-unselect"
-        ],[
-            "col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-unselect",
-            "col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-unselect",
-            "col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-unselect",
-            "col col-sm-2 mx-1 mx-sm-auto px-0 fff-txt-ms-select-active"
+            tabClassArrayActive,    //0限時活動 
+            tabClassArrayNonActive, //1全部成就
+            tabClassArrayNonActive, //2已達成成就
+            tabClassArrayNonActive  //3未達成成就
+        ],
+        //選擇到1全部成就
+        [
+            tabClassArrayNonActive,
+            tabClassArrayActive,
+            tabClassArrayNonActive,
+            tabClassArrayNonActive
+        ],
+        //選擇到2已達成成就
+        [
+            tabClassArrayNonActive,
+            tabClassArrayNonActive,
+            tabClassArrayActive,
+            tabClassArrayNonActive
+        ],
+        //選擇到3未達成成就
+        [
+            tabClassArrayNonActive,
+            tabClassArrayNonActive,
+            tabClassArrayNonActive,
+            tabClassArrayActive
         ]
     ];
 
+    //網頁版的lineBar
+    const barClassArrayActive = "col col-sm-2 mx-1 mx-sm-auto fff-ms-select-active";
+    const barClassArrayNonActive = "col col-sm-2 mx-1 mx-sm-auto ";
     const barClassArray = [
         [
-            "col col-sm-2 mx-1 mx-sm-auto fff-ms-select-active",
-            "col col-sm-2 mx-1 mx-sm-auto ",
-            "col col-sm-2 mx-1 mx-sm-auto ",
-            "col col-sm-2 mx-1 mx-sm-auto "
+            barClassArrayActive,
+            barClassArrayNonActive,
+            barClassArrayNonActive,
+            barClassArrayNonActive
         ],
         [
-            "col col-sm-2 mx-1 mx-sm-auto ",
-            "col col-sm-2 mx-1 mx-sm-auto fff-ms-select-active",
-            "col col-sm-2 mx-1 mx-sm-auto ",
-            "col col-sm-2 mx-1 mx-sm-auto "
+            barClassArrayNonActive,
+            barClassArrayActive,
+            barClassArrayNonActive,
+            barClassArrayNonActive
         ],
         [
-            "col col-sm-2 mx-1 mx-sm-auto ",
-            "col col-sm-2 mx-1 mx-sm-auto ",
-            "col col-sm-2 mx-1 mx-sm-auto fff-ms-select-active",
-            "col col-sm-2 mx-1 mx-sm-auto "
+            barClassArrayNonActive,
+            barClassArrayNonActive,
+            barClassArrayActive,
+            barClassArrayNonActive
         ],
         [
-            "col col-sm-2 mx-1 mx-sm-auto ",
-            "col col-sm-2 mx-1 mx-sm-auto ",
-            "col col-sm-2 mx-1 mx-sm-auto ",
-            "col col-sm-2 mx-1 mx-sm-auto fff-ms-select-active"
+            barClassArrayNonActive,
+            barClassArrayNonActive,
+            barClassArrayNonActive,
+            barClassArrayActive
         ]
     ];
 
+    //手機版的選單文字
+    const moboTabClassArrayActive = "col  mx-1 mx-sm-auto px-0 fff-txt-ms-select-active";
+    const moboTabClassArrayNonActive = "col  mx-1 mx-sm-auto px-0 fff-txt-ms-unselect";
     const moboTabClassArray = [
         [
-            "col  mx-1 mx-sm-auto px-0 fff-txt-ms-select-active",
-            "col  mx-1 mx-sm-auto px-0 fff-txt-ms-unselect",
-            "col  mx-1 mx-sm-auto px-0 fff-txt-ms-unselect",
-            "col  mx-1 mx-sm-auto px-0 fff-txt-ms-unselect"
+            moboTabClassArrayActive,
+            moboTabClassArrayNonActive,
+            moboTabClassArrayNonActive,
+            moboTabClassArrayNonActive
         ],[
-            "col  mx-1 mx-sm-auto px-0 fff-txt-ms-unselect",
-            "col  mx-1 mx-sm-auto px-0 fff-txt-ms-select-active",
-            "col  mx-1 mx-sm-auto px-0 fff-txt-ms-unselect",
-            "col  mx-1 mx-sm-auto px-0 fff-txt-ms-unselect"
+            moboTabClassArrayNonActive,
+            moboTabClassArrayActive,
+            moboTabClassArrayNonActive,
+            moboTabClassArrayNonActive
         ],[
-            "col  mx-1 mx-sm-auto px-0 fff-txt-ms-unselect",
-            "col  mx-1 mx-sm-auto px-0 fff-txt-ms-unselect",
-            "col  mx-1 mx-sm-auto px-0 fff-txt-ms-select-active",
-            "col  mx-1 mx-sm-auto px-0 fff-txt-ms-unselect"
+            moboTabClassArrayNonActive,
+            moboTabClassArrayNonActive,
+            moboTabClassArrayActive,
+            moboTabClassArrayNonActive
         ],[
-            "col  mx-1 mx-sm-auto px-0 fff-txt-ms-unselect",
-            "col  mx-1 mx-sm-auto px-0 fff-txt-ms-unselect",
-            "col  mx-1 mx-sm-auto px-0 fff-txt-ms-unselect",
-            "col  mx-1 mx-sm-auto px-0 fff-txt-ms-select-active"
+            moboTabClassArrayNonActive,
+            moboTabClassArrayNonActive,
+            moboTabClassArrayNonActive,
+            moboTabClassArrayActive
         ]
     ];
 
+    //手機版的lineBar
+    const moboBarClassArrayActvie = "col  mx-1 mx-sm-auto fff-ms-select-active";
+    const moboBarClassArrayNonActvie = "col  mx-1 mx-sm-auto ";
     const moboBarClassArray = 
     [
         [
-            "col  mx-1 mx-sm-auto fff-ms-select-active",
-            "col  mx-1 mx-sm-auto ",
-            "col  mx-1 mx-sm-auto ",
-            "col  mx-1 mx-sm-auto "
+            moboBarClassArrayActvie,
+            moboBarClassArrayNonActvie,
+            moboBarClassArrayNonActvie,
+            moboBarClassArrayNonActvie
         ],[
-            "col  mx-1 mx-sm-auto ",
-            "col  mx-1 mx-sm-auto fff-ms-select-active",
-            "col  mx-1 mx-sm-auto ",
-            "col  mx-1 mx-sm-auto "
+            moboBarClassArrayNonActvie,
+            moboBarClassArrayActvie,
+            moboBarClassArrayNonActvie,
+            moboBarClassArrayNonActvie
         ],[
-            "col  mx-1 mx-sm-auto ",
-            "col  mx-1 mx-sm-auto ",
-            "col  mx-1 mx-sm-auto fff-ms-select-active",
-            "col  mx-1 mx-sm-auto "
+            moboBarClassArrayNonActvie,
+            moboBarClassArrayNonActvie,
+            moboBarClassArrayActvie,
+            moboBarClassArrayNonActvie
         ],[
-            "col  mx-1 mx-sm-auto ",
-            "col  mx-1 mx-sm-auto ",
-            "col  mx-1 mx-sm-auto ",
-            "col  mx-1 mx-sm-auto fff-ms-select-active"
+            moboBarClassArrayNonActvie,
+            moboBarClassArrayNonActvie,
+            moboBarClassArrayNonActvie,
+            moboBarClassArrayActvie
         ]
     ];
 
@@ -139,10 +158,10 @@ function MilestoneListOption(props) {
             {/* 成就分類文字*/}
             <div className="col-10 d-flex justify-content-center fff-txt-ms-select">
                 <div className="col-12  d-flex justify-content-between">
-                    <div className={moboTabClassArray[props.milestoneFilter][0]}>&nbsp;限時&nbsp;</div>
-                    <div className={moboTabClassArray[props.milestoneFilter][1]}>&nbsp;全部&nbsp;</div>
-                    <div className={moboTabClassArray[props.milestoneFilter][2]}>已達成</div>
-                    <div className={moboTabClassArray[props.milestoneFilter][3]}>未達成</div>
+                    <div className={moboTabClassArray[props.milestoneFilter][0]} onClick={()=>{props.setMilestoneFilter(0)}}>&nbsp;限時&nbsp;</div>
+                    <div className={moboTabClassArray[props.milestoneFilter][1]} onClick={()=>{props.setMilestoneFilter(1)}}>&nbsp;全部&nbsp;</div>
+                    <div className={moboTabClassArray[props.milestoneFilter][2]} onClick={()=>{props.setMilestoneFilter(2)}}>已達成</div>
+                    <div className={moboTabClassArray[props.milestoneFilter][3]} onClick={()=>{props.setMilestoneFilter(3)}}>未達成</div>
                 </div>
             </div>
             {/*那條Bar*/}
