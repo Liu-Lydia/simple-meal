@@ -55,7 +55,7 @@ function Sharerecipe(props) {
 
     // 過濾出輸入的字
     const newRecipe = recipe.filter((v, i) => {
-      return v.recipe_name.includes(searchInput)
+      return v.name.includes(searchInput)
     })
     // 把過濾出的結果給recipeDisplay
     setRecipeDisplay(newRecipe)
