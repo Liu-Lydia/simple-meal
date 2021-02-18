@@ -51,6 +51,17 @@ function MealTittle(props) {
   //   </>
   // )
 
+  const handleGetMealToDelivery = (sid) => {
+    const url = `http://localhost:4000/mealdelivery/getmealtodelivery?sid=${sid}`
+
+    fetch(url, {
+      method: 'get',
+    })
+    .then(r=>r.json())
+    .then(obj=>alert(obj.msg))
+    // .then(() => alert('以加入購物車'))
+  }
+
   return (
     <>
       {/* {data.length &&
@@ -66,7 +77,7 @@ function MealTittle(props) {
               {props.data.product_name}
             </h3>
             <h5 className="cha-gray cha-mb2 cha-main-txt-sub">
-              有羅勒香和奶香的一頓餐點{props.data.introduction}
+              {props.data.introduction}
             </h5>
             <div className="cha-star cha-green cha-mb2">
               <i className="fas fa-star"></i>
@@ -78,11 +89,13 @@ function MealTittle(props) {
             <div className="cha-mb2 cha-main-icon-sub d-flex">
               <div className="cha-mr3 cha-main-icon-sub1">
                 <i className="far fa-clock cha-star-big cha-green"></i>
-                <span className="cha-gray txt-sub1">40分鐘</span>
+                <span className="cha-gray txt-sub1">{props.data.cooktime}</span>
               </div>
               <div className="cha-mr3 cha-main-icon-sub2">
                 <i className="fas fa-tag cha-star-big cha-green"></i>
-                <span className="cha-gray txt-sub1">義式料理</span>
+                <span className="cha-gray txt-sub1">
+                  {props.data.category_name}
+                </span>
               </div>
               <div className=" cha-main-icon-sub3">
                 <i className="fas fa-heart cha-star-big cha-green"></i>
@@ -91,8 +104,8 @@ function MealTittle(props) {
             </div>
             <div>
               <Link
-                to="/cart"
                 className="cha-btn-cart btn-green txt-btn cha-mr5"
+                onClick={() => handleGetMealToDelivery(props.data.sid)}
               >
                 加入訂單
               </Link>
