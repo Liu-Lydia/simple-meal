@@ -128,6 +128,30 @@ h6 {
   display: inline-block;
   transition: 0.2s;
 }
+.select-btn-red {
+  background-color: #b9433b;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+  border: 1px #627e2a solid;
+  display: inline-block;
+}
+
+.select-btn-red:hover {
+  background-color: #b9433b;
+  width: 120px;
+  height: 40px;
+  border-radius: 10px;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+  border: 1px#b9433b solid;
+  display: inline-block;
+  transition: 0.2s;
+}
 
 .select-btn-white {
   background-color: white;
