@@ -11,6 +11,10 @@ import MemberCenterAddr from '../components/member-center/MemberCenterAddr'
 import MemberCenterCreditCard from '../components/member-center/MemberCenterCreditCard'
 import MemberCenterFoodDelivery from '../components/member-center/MemberCenterFoodDelivery'
 import MemberCenterSimpleMealCoupon from '../components/member-center/MemberCenterSimpleMealCoupon'
+import MyRecipe from '../components/member-center/MyRecipe'
+import AddRecipe from '../components/member-center/AddRecipe'
+
+
 import Test from '../components/member-center/test'
 
 function MemberCenter() {
@@ -51,6 +55,15 @@ function MemberCenter() {
 
         <Route path="/MemberCenter/ResetPassword">
           <MemberCenterResetPassword />
+        </Route>
+
+        {/* 我的食譜 */}
+        <Route path="/MemberCenter/MyRecipe">
+          <MyRecipe />
+        </Route>
+        {/* 新增食譜 */}
+        <Route path="/MemberCenter/addrecipe">
+          <AddRecipe />
         </Route>
 
         <Route path="/MemberCenter/Index">
