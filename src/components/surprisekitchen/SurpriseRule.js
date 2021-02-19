@@ -3,9 +3,43 @@ import { Link } from 'react-router-dom'
 // import DropdownItem from '../components/DropdownItem'
 // import { Collapse } from 'react-collapse'
 // import Calendar from '../../pages/Calendar'
-import GoogleMap from '../GoogleMap'
 
 function SurpriseRule() {
+  //這寫法頗愚蠢, 捲至區塊　↓↓↓
+  const scrollToAnchorRule = (rule) => {
+    if (rule) {
+      let anchorElement = document.getElementById('rule')
+      if (anchorElement) {
+        anchorElement.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+  }
+  const scrollToAnchorMap = (map) => {
+    if (map) {
+      let anchorElement2 = document.getElementById('map')
+      if (anchorElement2) {
+        anchorElement2.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+  }
+  const scrollToAnchorPolicy = (policy) => {
+    if (policy) {
+      let anchorElement2 = document.getElementById('policy')
+      if (anchorElement2) {
+        anchorElement2.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+  }
+  const scrollToAnchorComment = (comment) => {
+    if (comment) {
+      let anchorElement2 = document.getElementById('comment')
+      if (anchorElement2) {
+        anchorElement2.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+  }
+  //這寫法頗愚蠢, 捲至區塊 ↑↑↑
+
   return (
     <>
       {/* 驚喜廚房規則說明 ↓↓↓ */}
@@ -25,7 +59,27 @@ function SurpriseRule() {
 
       {/* 預約規則說明 ↓↓↓ */}
       <div className="col p-0">
-        <h3 className="lll-title-style lll-mt110 lll-pb45">預約規則說明</h3>
+        <div className="lll-block float-right lll-onmenu" id="menu">
+          <h5 className="m-0" onClick={() => scrollToAnchorRule('qwe')}>
+            預約規則說明
+          </h5>
+          <br />
+          <h5 className="m-0" onClick={() => scrollToAnchorMap('map')}>
+            地理位置
+          </h5>
+          <br />
+          <h5 className="m-0" onClick={() => scrollToAnchorPolicy('policy')}>
+            取消政策
+          </h5>
+          <br />
+          <h5 className="m-0" onClick={() => scrollToAnchorComment('comment')}>
+            顧客評價
+          </h5>
+          <br />
+        </div>
+        <h3 className="lll-title-style lll-mt110 lll-pb45" id="rule">
+          預約規則說明
+        </h3>
         <div className="lll-title-line">
           <p className="m-0 txt-sub1 lll-grey">
             僅提供線上預約
@@ -50,7 +104,9 @@ function SurpriseRule() {
 
       {/* 地理位置 ↓↓↓ */}
       <div class="col p-0 ">
-        <h3 class="lll-title-style lll-mt110 lll-pb45">地理位置</h3>
+        <h3 class="lll-title-style lll-mt110 lll-pb45" id="map">
+          地理位置
+        </h3>
         <div class="lll-title-line lll-mobile-block">
           <div class="col-8 p-0 lll-max100">
             <iframe
@@ -85,7 +141,9 @@ function SurpriseRule() {
 
       {/* 取消政策 ↓↓↓ */}
       <div className="col p-0">
-        <h3 className="lll-title-style lll-mt110 lll-pb45">取消政策</h3>
+        <h3 className="lll-title-style lll-mt110 lll-pb45" id="policy">
+          取消政策
+        </h3>
         <div className="lll-title-line">
           <p className="m-0 txt-sub1 lll-grey">
             所選日期 6 天（含）之前取消，收取手續費 0%
@@ -101,8 +159,10 @@ function SurpriseRule() {
       {/* 取消政策 ↑↑↑ */}
 
       {/* 顧客評論 ↓↓↓ */}
-      <div className="col p-0">
-        <h3 className="lll-title-style lll-mt110 lll-pb45">顧客評論</h3>
+      <div className="col p-0 lll-mb110">
+        <h3 className="lll-title-style lll-mt110 lll-pb45" id="comment">
+          顧客評論
+        </h3>
         <div className="lll-title-line">
           <div className="lll-section" id="scroll">
             <div className="col-6 p-0 lll-change-max100">

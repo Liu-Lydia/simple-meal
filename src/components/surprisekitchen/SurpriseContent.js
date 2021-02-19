@@ -30,6 +30,7 @@ function SurpriseContent(props) {
     const url = 'http://localhost:4000/reservationTimes/getReservationTimes'
     fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       .then((r) => r.json())
       .then((obj) => {
@@ -139,6 +140,7 @@ function SurpriseContent(props) {
     await fetch('http://localhost:4000/surprisekitchenOrder/addreservation', {
       method: 'post',
       body: fd,
+      credentials: 'include',
     })
       .then((r) => r.json())
       .then((obj) => {
