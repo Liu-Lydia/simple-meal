@@ -9,6 +9,7 @@ import MsMoboBackToLastPageBtn from '../components/Milestone/MsMoboBackToLastPag
 import MilestoneListLimit from '../components/Milestone/MilestoneListLimit'
 import MilestoneListFinish from '../components/Milestone/MilestoneListFinish'
 import MilestoneListUnfinish from '../components/Milestone/MilestoneListUnfinish'
+import MsMainPic from '../components/Milestone/MsMainPic'
 
 function Milestone() {
   // 控制手機版“我的成就”按鈕按下去來顯示成就清單
@@ -66,6 +67,7 @@ function Milestone() {
           href="./RewardExchange"
           setMoboMsPage2={setMoboMsPage2}
         />
+        <MsMainPic />
       </div>
       <div id="ms-p2" className="container" style={display.p2}>
         <MsMoboPointInfo
