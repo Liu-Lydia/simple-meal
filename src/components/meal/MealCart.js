@@ -5,6 +5,17 @@ function MealCart(props) {
   const { data, updateNum } = props
   const [addRightCart, setAddRightCart] = useState([])
 
+  //切換右側購物車顯示或隱藏
+  const style0 = 'cha-cart'
+  const style1 = 'cha-cart-hidden cha-cart'
+  const style2 = 'cha-cart-hidden-smell'
+  const style3 = 'cha-cart-open'
+  const [classStyleBig, setClassStyleBig] = useState('cha-cart')
+  const [classStyleSmall, setclassStyleSmall] = useState(
+    'cha-cart-hidden-smell'
+  )
+
+  //連到後端抓會員加入購物車的資料
   const handleGetMealToRightCart = () => {
     const url = 'http://localhost:4000/mealDelivery/getdeliverycart'
     fetch(url, {
@@ -21,17 +32,34 @@ function MealCart(props) {
     handleGetMealToRightCart()
   }, [])
 
+  //計數器，加入定單後觸發，渲染購物車畫面
   useEffect(() => {
     handleGetMealToRightCart()
   }, [updateNum])
 
-
   return (
     <>
-      <div className="cha-cart">
+      <Link
+        className="cha-gray cha-icon"
+        onClick={() => {
+          setClassStyleBig(style0)
+          setclassStyleSmall(style2)
+        }}
+      >
+        <div className={classStyleSmall}>
+          <i className="fas fa-minus-circle cha-icon"></i>
+        </div>
+      </Link>
+      <div className={classStyleBig}>
         <div className="cha-cart-all">
           <div className="cha-cart-head d-flex justify-content-between">
-            <Link to="" className="cha-gray cha-icon">
+            <Link
+              className=" cha-gray cha-icon"
+              onClick={() => {
+                setClassStyleBig(style1)
+                setclassStyleSmall(style3)
+              }}
+            >
               <i className="fas fa-minus-circle cha-icon"></i>
             </Link>
 
@@ -63,9 +91,9 @@ function MealCart(props) {
           </div>
         </div>
         <div className="cha-cart-footer justify-content-center d-flex">
-          <a href="" className="btn-green txt-btn">
-            選項視窗
-          </a>
+          <Link to="/cart" className="btn-green txt-btn">
+            直接購買
+          </Link>
         </div>
       </div>
     </>

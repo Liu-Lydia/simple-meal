@@ -1,12 +1,42 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 function MealMeun(props) {
+  const [meunIconBig, setMealIconBig] = useState('cha-meun')
+  const [meunIconSmell, setMealIconSmell] = useState(
+    'cha-meun-icon cha-meun-hidden'
+  )
+  const mealiconbig = 'cha-meun'
+  const mealiconsmell = 'cha-meun-icon cha-meun-open'
+  const mealiconsmellhidden = 'cha-meun-icon cha-meun-hidden'
+  const mealicobighidden = 'cha-meun cha-meun-hidden'
   const { type, setType } = props
   return (
     <>
-      <div className="cha-meun">
+      <Link
+        className="cha-gray cha-icon"
+        onClick={() => {
+          setMealIconBig(mealiconbig)
+          setMealIconSmell(mealiconsmellhidden)
+        }}
+      >
+        <div className={meunIconSmell}>
+          <i className="fas fa-minus-circle cha-icon"></i>
+        </div>
+      </Link>
+      <div className={meunIconBig}>
+        <Link
+          className="cha-gray cha-icon"
+          onClick={() => {
+            setMealIconBig(mealicobighidden)
+            setMealIconSmell(mealiconsmell)
+          }}
+        >
+          <div className="cha-meun-icon">
+            <i className="fas fa-minus-circle cha-icon"></i>
+          </div>
+        </Link>
         <ul className="txt-sub2 cha-meun-li text-center">
-          <li className=" ">
+          <li className="">
             <Link
               className="cha-meun-txt1 cha-gray"
               onClick={() => setType('all')}
