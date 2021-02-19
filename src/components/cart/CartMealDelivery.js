@@ -357,7 +357,13 @@ function CartMealDelivery(props) {
         <div className="text-center text-sm-right poe-bookmark-btn-group">
           <Link
             onClick={() => setCartMode('SimpleMealCoupon')}
-            className="btn-green txt-btn mx-3 poe-mb20"
+            // 如果持有餐券數量小於消耗, 按鈕轉紅, 否則綠
+            className={`${
+              deliveryData.simpleMealCoupon.now <
+              deliveryData.simpleMealCoupon.cost
+                ? 'btn-red'
+                : 'btn-green'
+            } txt-btn mx-3 poe-mb20`}
           >
             購買餐券
           </Link>

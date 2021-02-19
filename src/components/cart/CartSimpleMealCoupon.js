@@ -133,11 +133,13 @@ function CartSimpleMealCoupon(props) {
               <br className="d-block d-sm-none" />
               <div className="d-block d-sm-none d-flex txt-cap">
                 <span className="poe-bookmark-content-m">優惠價</span>
-                <span className="poe-red">{choiceArray[1].price}</span>
+                <span className="poe-red">
+                  {Intl.NumberFormat().format(choiceArray[1].price)}
+                </span>
               </div>
             </td>
             <td className="d-none d-sm-block poe-red text-right">
-              {choiceArray[1].price}
+              {Intl.NumberFormat().format(choiceArray[1].price)}
             </td>
           </tr>
           <tr>
@@ -160,11 +162,13 @@ function CartSimpleMealCoupon(props) {
               <br className="d-block d-sm-none" />
               <div className="d-block d-sm-none d-flex txt-cap">
                 <span className="poe-bookmark-content-m">優惠價</span>
-                <span className="poe-red">{choiceArray[2].price}</span>
+                <span className="poe-red">
+                  {Intl.NumberFormat().format(choiceArray[2].price)}
+                </span>
               </div>
             </td>
             <td className="d-none d-sm-block poe-red text-right">
-              {choiceArray[2].price}
+              {Intl.NumberFormat().format(choiceArray[2].price)}
             </td>
           </tr>
           <tr>
@@ -187,11 +191,13 @@ function CartSimpleMealCoupon(props) {
               <br className="d-block d-sm-none" />
               <div className="d-block d-sm-none d-flex txt-cap">
                 <span className="poe-bookmark-content-m">優惠價</span>
-                <span className="poe-red">{choiceArray[3].price}</span>
+                <span className="poe-red">
+                  {Intl.NumberFormat().format(choiceArray[3].price)}
+                </span>
               </div>
             </td>
             <td className="d-none d-sm-block poe-red text-right">
-              {choiceArray[3].price}
+              {Intl.NumberFormat().format(choiceArray[3].price)}
             </td>
           </tr>
         </tbody>
@@ -223,7 +229,9 @@ function CartSimpleMealCoupon(props) {
             張餐券, <br className="d-block d-sm-none" />
             金額小計NT${' '}
           </span>
-          <span className="poe-red">{choiceObj.price}</span>
+          <span className="poe-red">
+            {Intl.NumberFormat().format(choiceObj.price)}
+          </span>
           <span> 元</span>
         </div>
       </div>

@@ -77,7 +77,9 @@ function ReserveKitchenCheck(props) {
                 <div className="text-right poe-w100px poe-mr30">成人</div>
                 <div className="poe-green">
                   {orderObj.num_adult} 人 / NT${' '}
-                  {orderObj.num_adult * orderObj.adult_price}
+                  {Intl.NumberFormat().format(
+                    orderObj.num_adult * orderObj.adult_price
+                  )}
                   <span className="d-none d-sm-inline txt-cap poe-ml30 poe-red">
                     成人500/人
                   </span>
@@ -87,7 +89,9 @@ function ReserveKitchenCheck(props) {
                 <div className="text-right poe-w100px poe-mr30">兒童</div>
                 <div className="poe-green">
                   {orderObj.num_child} 人 / NT${' '}
-                  {orderObj.num_child * orderObj.child_price}
+                  {Intl.NumberFormat().format(
+                    orderObj.num_child * orderObj.child_price
+                  )}
                   <span className="d-none d-sm-inline txt-cap poe-ml30 poe-red">
                     兒童100/人(4-11歲)
                   </span>
@@ -114,8 +118,10 @@ function ReserveKitchenCheck(props) {
                 金額小計NT${' '}
               </span>
               <span className="poe-red">
-                {orderObj.num_adult * orderObj.adult_price +
-                  orderObj.num_child * orderObj.child_price}
+                {Intl.NumberFormat().format(
+                  orderObj.num_adult * orderObj.adult_price +
+                    orderObj.num_child * orderObj.child_price
+                )}
               </span>
               <span> 元</span>
             </div>
@@ -129,9 +135,11 @@ function ReserveKitchenCheck(props) {
                   金額小計NT${' '}
                 </span>
                 <span className="poe-red">
-                  {orderObj.num_adult * orderObj.adult_price +
-                    orderObj.num_child * orderObj.child_price -
-                    coupon.cost}
+                  {Intl.NumberFormat().format(
+                    orderObj.num_adult * orderObj.adult_price +
+                      orderObj.num_child * orderObj.child_price -
+                      coupon.cost
+                  )}
                 </span>
                 <span> 元</span>
               </div>
@@ -148,9 +156,11 @@ function ReserveKitchenCheck(props) {
                 金額小計NT${' '}
               </span>
               <span className="poe-h6 poe-red">
-                {orderObj.num_adult * orderObj.adult_price +
-                  orderObj.num_child * orderObj.child_price -
-                  coupon.cost}
+                {Intl.NumberFormat().format(
+                  orderObj.num_adult * orderObj.adult_price +
+                    orderObj.num_child * orderObj.child_price -
+                    coupon.cost
+                )}
               </span>
               <span> 元</span>
             </div>

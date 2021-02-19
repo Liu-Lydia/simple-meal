@@ -78,7 +78,9 @@ function SimpleMealCouponPayment(props) {
                     <br className="d-block d-sm-none" />
                     <div className="d-block d-sm-none d-flex txt-cap">
                       <span className="poe-bookmark-content-m">優惠價</span>
-                      <span className="poe-red">{choiceArray[choice].price}</span>
+                      <span className="poe-red">
+                        {choiceArray[choice].price}
+                      </span>
                     </div>
                     <div className="d-block d-sm-none d-flex txt-cap">
                       <span className="poe-bookmark-content-m">數量</span>
@@ -86,7 +88,7 @@ function SimpleMealCouponPayment(props) {
                     </div>
                   </td>
                   <td className="d-none d-sm-block poe-red text-right">
-                    {choiceArray[choice].price}
+                    {Intl.NumberFormat().format(choiceArray[choice].price)}
                   </td>
                 </tr>
               </tbody>
@@ -103,7 +105,9 @@ function SimpleMealCouponPayment(props) {
                   張餐券, <br className="d-block d-sm-none" />
                   金額小計NT${' '}
                 </span>
-                <span className="poe-red">{choiceObj.price}</span>
+                <span className="poe-red">
+                  {Intl.NumberFormat().format(choiceObj.price)}
+                </span>
                 <span> 元</span>
               </div>
             </div>
@@ -139,7 +143,9 @@ function SimpleMealCouponPayment(props) {
               {coupon.cost !== 0 && (
                 <div className="col-12 text-right">
                   <span>折扣 </span>
-                  <span className="poe-red">- {coupon.cost}</span>
+                  <span className="poe-red">
+                    - {Intl.NumberFormat().format(coupon.cost)}
+                  </span>
                   <span> 元</span>
                 </div>
               )}

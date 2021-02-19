@@ -73,7 +73,7 @@ function SimpleMealCouponCheck(props) {
                     <div className="d-block d-sm-none d-flex txt-cap">
                       <span className="poe-bookmark-content-m">優惠價</span>
                       <span className="poe-red">
-                        {choiceArray[choice].price}
+                        {Intl.NumberFormat().format(choiceArray[choice].price)}
                       </span>
                     </div>
                     <div className="d-block d-sm-none d-flex txt-cap">
@@ -82,7 +82,7 @@ function SimpleMealCouponCheck(props) {
                     </div>
                   </td>
                   <td className="d-none d-sm-block poe-red text-right">
-                    {choiceArray[choice].price}
+                    {Intl.NumberFormat().format(choiceArray[choice].price)}
                   </td>
                 </tr>
               </tbody>
@@ -99,20 +99,24 @@ function SimpleMealCouponCheck(props) {
                   張餐券, <br className="d-block d-sm-none" />
                   金額小計NT${' '}
                 </span>
-                <span className="poe-red">{choiceObj.price}</span>
+                <span className="poe-red">
+                  {Intl.NumberFormat().format(choiceObj.price)}
+                </span>
                 <span> 元</span>
               </div>
               {coupon.cost !== 0 && (
                 <div className="poe-mb30">
                   <span>折扣 </span>
-                  <span className="poe-red">-{coupon.cost}</span>
+                  <span className="poe-red">
+                    -{Intl.NumberFormat().format(coupon.cost)}
+                  </span>
                   <span>
                     {' '}
                     元, <br className="d-block d-sm-none" />
                     金額小計NT${' '}
                   </span>
                   <span className="poe-red">
-                    {choiceObj.price - coupon.cost}
+                    {Intl.NumberFormat().format(choiceObj.price - coupon.cost)}
                   </span>
                   <span> 元</span>
                 </div>
@@ -129,7 +133,7 @@ function SimpleMealCouponCheck(props) {
                   金額小計NT${' '}
                 </span>
                 <span className="poe-red poe-h6">
-                  {choiceObj.price - coupon.cost}
+                  {Intl.NumberFormat().format(choiceObj.price - coupon.cost)}
                 </span>
                 <span> 元</span>
               </div>
