@@ -362,13 +362,13 @@ function CartMealDelivery(props) {
             購買餐券
           </Link>
           {/* 當本次配送沒東西或持有餐券數小於消耗數時不給按 */}
-          {deliveryData.thisTime.length === 0 ||
-            (deliveryData.simpleMealCoupon.now <
-              deliveryData.simpleMealCoupon.cost && (
-              <span className="btn-gray txt-btn mx-3 poe-mb20">
-                下一步　<i className="fas fa-chevron-right"></i>
-              </span>
-            ))}
+          {(deliveryData.thisTime.length === 0 ||
+            deliveryData.simpleMealCoupon.now <
+              deliveryData.simpleMealCoupon.cost) && (
+            <span className="btn-gray txt-btn mx-3 poe-mb20">
+              下一步　<i className="fas fa-chevron-right"></i>
+            </span>
+          )}
           {/* 當本次配送有東西且持有餐券數大於等於消耗數時給按 */}
           {deliveryData.thisTime.length > 0 &&
             deliveryData.simpleMealCoupon.now >=
