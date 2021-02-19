@@ -11,41 +11,55 @@ import MemberCenterAddr from '../components/member-center/MemberCenterAddr'
 import MemberCenterCreditCard from '../components/member-center/MemberCenterCreditCard'
 import MemberCenterFoodDelivery from '../components/member-center/MemberCenterFoodDelivery'
 import MemberCenterSimpleMealCoupon from '../components/member-center/MemberCenterSimpleMealCoupon'
-import test from '../components/member-center/test'
+import Test from '../components/member-center/test'
+
 function MemberCenter() {
   return (
     <>
       <Switch>
-        <Route path="/MemberCenter/test" component={test}></Route>
-        <Route
-          path="/MemberCenter/SimpleMealCoupon"
-          component={MemberCenterSimpleMealCoupon}
-        ></Route>
-        <Route
-          path="/MemberCenter/FoodDelivery"
-          component={MemberCenterFoodDelivery}
-        ></Route>
-        <Route
-          path="/MemberCenter/CreditCard"
-          component={MemberCenterCreditCard}
-        ></Route>
-        <Route path="/MemberCenter/addr" component={MemberCenterAddr}></Route>
+        <Route path="/MemberCenter/test">
+          <Test />
+        </Route>
 
-        <Route path="/MemberCenter/Info" component={MemberCenterInfo}></Route>
-        <Route
-          path="/MemberCenter/Navbar"
-          component={MemberCenterNavbar}
-        ></Route>
-        <Route
-          path="/MemberCenter/RegiStered"
-          component={MemberCenterRegiStered}
-        />
-        <Route
-          path="/MemberCenter/ResetPassword"
-          component={MemberCenterResetPassword}
-        />
-        <Route path="/MemberCenter/Index" component={MemberCenterIndex} />
-        <Route path="/" component={MemberCenterLogin} />
+        <Route path="/MemberCenter/SimpleMealCoupon">
+          <MemberCenterSimpleMealCoupon />
+        </Route>
+
+        <Route path="/MemberCenter/FoodDelivery">
+          <MemberCenterFoodDelivery />
+        </Route>
+
+        <Route path="/MemberCenter/CreditCard ">
+          <MemberCenterCreditCard />
+        </Route>
+
+        <Route path="/MemberCenter/addr">
+          <MemberCenterAddr />
+        </Route>
+
+        <Route path="/MemberCenter/Info">
+          <MemberCenterInfo />
+        </Route>
+
+        <Route path="/MemberCenter/Navbar">
+          <MemberCenterNavbar />
+        </Route>
+
+        <Route path="/MemberCenter/RegiStered">
+          <MemberCenterRegiStered />
+        </Route>
+
+        <Route path="/MemberCenter/ResetPassword">
+          <MemberCenterResetPassword />
+        </Route>
+
+        <Route path="/MemberCenter/Index">
+          <MemberCenterIndex />
+        </Route>
+
+        <Route path="/">
+          <MemberCenterLogin />
+        </Route>
       </Switch>
     </>
   )

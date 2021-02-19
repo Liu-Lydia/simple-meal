@@ -93,6 +93,7 @@ function MealMultiCarousel(props) {
             meal.map((value, index) => {
               return (
                 <Link
+                  className="cha-dl"
                   onClick={() => {
                     setSelectMeal(value.sid)
                   }}
@@ -118,9 +119,9 @@ function MealMultiCarousel(props) {
                           </div>
                           <div class="txt-cap  cha-card-hidden">
                             <i class="far fa-clock cha-star-small cha-green"></i>
-                            <i class="cha-gray cha-mr4">40分鐘</i>
+                            <span class="cha-gray cha-mr4">40分鐘</span>
                             <i class="fas fa-tag cha-star-small cha-green"></i>
-                            <i class="cha-gray">義式料理</i>
+                            <span class="cha-gray">義式料理</span>
                           </div>
                         </div>
                       </div>

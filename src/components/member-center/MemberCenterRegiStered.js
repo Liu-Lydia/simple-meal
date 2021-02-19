@@ -1,19 +1,22 @@
 import React from 'react'
 import { withFormik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
+import { Link } from 'react-router-dom'
 
 const errMsg = {
   color: 'red',
   fontSize: '12px',
 }
 
-const Register = ({ values, isSubmitting }) => (
+const MemberCenterRegiStered = ({ values, isSubmitting }) => (
   <div className="container">
     <div className="row">
       <div className="col-6 mx-auto">
         <div className="cc d-none d-sm-none d-md-none d-lg-none d-xl-block">
           <div className="col-10 d-flex justify-content-end ">
-            <i className="fas fa-times"></i>
+            <Link to="/MemberCenter">
+              <i className="fas fa-times" style={{ color: 'red' }}></i>
+            </Link>
           </div>
           <div className="txt-body">
             <div className="h3 text-center mb-4">註冊</div>
@@ -77,7 +80,6 @@ const Register = ({ values, isSubmitting }) => (
               </label>
               <ErrorMessage name="rule" component="span" style={errMsg} />
             </div>
-
             <div className="col-4 mx-auto ">
               <button
                 type="submit"
@@ -208,4 +210,4 @@ export default withFormik({
       alert(JSON.stringify(values, null, 2)) //alert values
     }, 1000)
   },
-})(Register)
+})(MemberCenterRegiStered)

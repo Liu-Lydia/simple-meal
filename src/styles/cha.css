@@ -82,10 +82,13 @@
   letter-spacing: 12px;
   font-size: 12px;
 }
-.cha-px0{
-  padding: 0!important;
+.cha-dl {
+  text-decoration: none !important;
 }
-.cha-ml1{
+.cha-px0 {
+  padding: 0 !important;
+}
+.cha-ml1 {
   margin-left: 10px;
 }
 .cha-mr1 {
@@ -118,7 +121,7 @@
 .cha-cards {
   /* position: fixed; */
   height: 270px;
-  left:10%;
+  left: 10%;
   /* background-color: rgb(194, 202, 77); */
 }
 .cha-cards-over {
@@ -135,25 +138,41 @@
   padding-top: 60px;
   /* margin: 0 30px 0 30px; */
   /* background-color: red; */
+  transition: .5s;
 }
+.cha-card:hover .cha-card-yellow {
+  background-color: rgba(255, 232, 61, 0.5);
+
+}
+.cha-card:hover .cha-card-img2 {
+  height: 155px;
+
+}
+
 .cha-card-yellow {
   height: 210px;
   width: 230px;
   background-color: rgba(243, 229, 117, 0.5);
   border-radius: 25px;
+  transition: .5s;
 }
+
 .cha-card-img1 {
   /* background-color: royalblue; */
   /* position: relative; */
   text-align: center;
   top: -65px;
   position: relative;
+  
 }
 .cha-card-img2 {
   height: 145px;
   width: 100%;
   object-fit: contain;
+  transition: .5s;
+  margin-bottom: 5px;
 }
+
 
 .cha-rights {
   line-height: 100px;
@@ -168,11 +187,27 @@
   border-radius: 0 25px 25px 0;
   box-shadow: 6px 0 5px rgba(0, 0, 0, 0.16);
   border: #a2a3a5 1px solid;
-  padding: 40px 25px 0 25px;
+  padding: 20px 20px 0 20px;
   position: fixed;
   top: 335px;
+  left:0px;
   background-color: #ffffff;
   /* display:none; */
+  transition: .5s;
+}
+.cha-meun-hidden{
+  position: fixed;
+  left:-210px;
+  transition: .5s;
+}
+.cha-meun-open{
+  position: fixed;
+  top: 355px;
+  left:0px;
+  transition: .5s;
+}
+.cha-meun-icon{
+  text-align:right;
 }
 .cha-meun-li {
   list-style-type: none;
@@ -224,11 +259,23 @@
   right: -0px;
   background-color: #ffffff;
   /* display:none; */
+  transition: .5s;
 }
 .cha-cart-open {
   position: fixed;
   top: 275px;
   right: -0px;
+  transition: .5s;
+}
+.cha-cart-hidden{
+  right: -350px;
+  transition: .5s;
+}
+.cha-cart-hidden-smell{
+  position: fixed;
+  top: 275px;
+  right: -350px;
+  transition: .5s;
 }
 .cha-cart-all {
   width: 300px;
