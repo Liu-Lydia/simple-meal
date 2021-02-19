@@ -95,6 +95,15 @@ h6 {
   letter-spacing: 0.2px;
   text-decoration: none !important;
 }
+.cha-text{
+  font-family: GenSenRounded TW!important;
+  font-size: 21px !important;
+  font-weight: 400 !important;
+  line-height: 24px !important;
+  letter-spacing: 0.29px!important;
+  text-decoration: none!important;
+  
+}
 
 .select-btn-green {
   background-color: #627e2a;
