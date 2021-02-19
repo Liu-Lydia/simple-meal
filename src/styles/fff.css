@@ -628,3 +628,8 @@
     transform: rotate(360deg);
   }
 }
+
+.svg-line-02 {
+  stroke-dasharray: 10;
+  stroke-dashoffset: 10;
+}

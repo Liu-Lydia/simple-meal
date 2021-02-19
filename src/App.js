@@ -19,6 +19,7 @@ import Sharerecipe from './pages/Sharerecipe'
 import MyRecipe from './pages/MyRecipe'
 import AddRecipe from './pages/AddRecipe'
 import XTest from './pages/XTest'
+import TestSvgAnimate from './pages/TestSvgAnimate'
 
 // 組合用元件
 import Header from './components/Header'
@@ -104,6 +105,10 @@ function App() {
               {/* 測試 */}
               <Route path="/xtest">
                 <XTest />
+              </Route>
+              {/* 測試 */}
+              <Route path="/TestSvgAnimate">
+                <TestSvgAnimate />
               </Route>
               {/* 首頁 */}
               <Route exact path="/">
