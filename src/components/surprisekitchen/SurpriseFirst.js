@@ -25,7 +25,18 @@ function SurpriseFirst() {
 
           <div className="d-flex lll-coupon-position">
             <div className="lll-get-coupon">
-              <div className="lll-meal-pictures"></div>
+              <img
+                className="lll-meal-pictures"
+                src="http://localhost:3015/img/lydia/hero01.png"
+                alt=""
+              />
+            </div>
+            <div className="lll-get-coupon">
+              <img
+                className="lll-meal-pictures"
+                src="http://localhost:3015/img/lydia/hero03.png"
+                alt=""
+              />
             </div>
 
             <h1 className="mt-auto lll-green">rder</h1>

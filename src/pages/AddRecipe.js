@@ -1,5 +1,6 @@
 import '../styles/addrecipe.css'
 import React, { useState, useEffect } from 'react'
+import ImageUploader from 'react-images-upload'
 
 function AddRecipe(props) {
   // 1.鉤子
@@ -14,11 +15,22 @@ function AddRecipe(props) {
   const [step3, setStep3] = useState('')
   const [step4, setStep4] = useState('')
   const [step5, setStep5] = useState('')
+  // 圖片上傳
+  const [pictures, setPictures] = useState([])
+
+  const onDrop = (picture) => {
+    // console.log('pictures:', pictures)
+    setPictures([...pictures, picture])
+  }
 
   // 2.送資料給主機
   async function addRecipeToSever() {
     // 1.開啟載入指示
     setDataLoading(true)
+
+    const newpic =
+      'http://localhost:3015/img/sharerecipe/' + pictures[0][0].name
+  
     // 2.要傳的值
     const newData = {
       name,
@@ -29,8 +41,9 @@ function AddRecipe(props) {
       step3,
       step4,
       step5,
+      newpic,
     }
-
+    console.log('newData:', newData)
     // 3.連接的伺服器資料網址
     const url = 'http://localhost:4000/sharerecipe/add'
 
@@ -168,7 +181,14 @@ function AddRecipe(props) {
                 rows="3"
               ></textarea>
             </div>
-
+            <ImageUploader
+              {...props}
+              withIcon={false}
+              withPreview={true}
+              onChange={onDrop}
+              imgExtension={['.jpg', '.gif', '.png', '.gif']}
+              maxFileSize={5242880}
+            />
             <button
               onClick={() => {
                 addRecipeToSever()

@@ -4,8 +4,7 @@ import MealPic from './MealPic'
 import MealTittle from './MealTittle'
 
 function MealMain(props) {
-  const { breadCrumbBool } = props
-  const { selectMeal } = props
+  const { breadCrumbBool, selectMeal, updateNum, setUpdateNum } = props
 
   const [data, setData] = useState({})
 
@@ -31,6 +30,8 @@ function MealMain(props) {
         breadCrumbBool={breadCrumbBool}
         selectMeal={selectMeal}
         data={data}
+        updateNum={updateNum}
+        setUpdateNum={setUpdateNum}
       />
       {/* {console.log(selectMeal)} */}
     </div>

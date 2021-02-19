@@ -6,8 +6,9 @@ import Calendar from '../../pages/Calendar'
 //import CalendarTest from '../../pages/CalendarTest'
 
 function SurpriseContent(props) {
+  // 接收預約日期值
+  const [dateStr, setDateObj] = useState('')
 
-  
   //Collapse　↓↓↓
   const buttonCollapseId = {
     button: 'accessible',
@@ -100,6 +101,8 @@ function SurpriseContent(props) {
     }
   }
 
+  const [textarea, setTextarea] = useState('')
+
   //金額顯示
   function handleSetPrice(num_adult, child_price) {
     const Price = num_adult * 500 + child_price * 100
@@ -140,6 +143,7 @@ function SurpriseContent(props) {
       .then((r) => r.json())
       .then((obj) => {
         console.log(obj)
+        alert(`您的訂單編號為 ${obj.order_sid}, 請前往購物車進行結帳。 `)
       })
   }
 
@@ -189,7 +193,7 @@ function SurpriseContent(props) {
           <div class="mr-auto">
             <p className="m-0 txt-sub1 lll-black">請選擇預約日期</p>
 
-            <Calendar />
+            <Calendar setDateObj={setDateObj} />
             {/* 標示名額顏色 ↓↓↓ */}
             <div className="lll-option-position">
               <ul className="m-0 list-unstyled txt-sub1 lll-black">
@@ -334,7 +338,11 @@ function SurpriseContent(props) {
                 className="form-control lll-msg"
                 id="FormControlTextarea"
                 rows="3"
-              ></textarea>
+                value={textarea}
+                onChange={(e) => {
+                  setTextarea(e.target.value)
+                }}
+              />
             </div>
             {/* 選填備註欄 ↑↑↑ */}
 
@@ -369,7 +377,7 @@ function SurpriseContent(props) {
         </div>
       </Collapse>
       <form id="reservation_kitchen" hidden>
-        {/* <input type="text" name="reservation_date" value={} /> */}
+        <input type="date" name="reservation_date" value={dateStr} />
         <input
           type="text"
           name="reservation_time"
@@ -377,10 +385,10 @@ function SurpriseContent(props) {
         />
         <input type="text" name="num_adult" value={num_adult} />
         <input type="text" name="num_child" value={num_child} />
-        <input type="text" name="adult_price" value={500} />
-        <input type="text" name="child_price" value={200} />
+        {/* <input type="text" name="adult_price" value={500} />
+        <input type="text" name="child_price" value={200} /> */}
         <input type="text" name="num_meal" value={num_meal} />
-        {/* <input type="text" name="remark" value={} /> */}
+        <input type="text" name="remark" value={textarea} />
         <input
           type="text"
           name="reservation_price"

@@ -30,6 +30,7 @@
     "react-geocode": "^0.2.3",
     "react-google-maps": "^9.4.5",
     "react-icons": "^4.1.0",
+    "react-images-upload": "^1.2.8",
     "react-modal": "^3.12.1",
     "react-multi-carousel": "^2.6.1",
     "react-pure-render": "^1.0.2",

@@ -1,4 +1,4 @@
-import React, { useReducer, createContext } from 'react'
+import React, { useEffect, useReducer, createContext } from 'react'
 import moment from 'moment'
 import calendar from '../reducers/calendar'
 
@@ -9,11 +9,16 @@ import CalendarDate from '../components/CalendarDate'
 
 export const AppStore = createContext()
 
-function Calendar() {
+function Calendar(props) {
+  // {改變日期選項的函式}
+  const { setDateObj } = props
+
   const mmt = new moment()
   const timeReducer = useReducer(calendar, mmt.format('YYYY-MM-DD'))
   // let result = GetWeeksInMonth();
   // console.log('result', result)
+
+  // useEffect(() => console.log(timeReducer), [])
 
   return (
     <>
@@ -26,7 +31,7 @@ function Calendar() {
           <CalendarHeader />
           <div className="lll-pt30">
             <CalendarWeekDay />
-            <CalendarDate />
+            <CalendarDate setDateObj={setDateObj} />
           </div>
         </div>
         {/* </div> */}

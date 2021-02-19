@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import 'react-multi-carousel/lib/styles.css'
 import { useState, useEffect } from 'react'
 function MealTittle(props) {
-  const { breadCrumbBool, selectMeal, data } = props
+  const { breadCrumbBool, selectMeal, data, updateNum, setUpdateNum } = props
   const mealData = selectMeal
   console.log(data)
   const [meal, setMeal] = useState([])
@@ -57,8 +57,12 @@ function MealTittle(props) {
     fetch(url, {
       method: 'get',
     })
-    .then(r=>r.json())
-    .then(obj=>alert(obj.msg))
+      .then((r) => r.json())
+      .then((obj) => {
+        setUpdateNum(updateNum + 1)
+        alert(obj.msg)
+      })
+
     // .then(() => alert('以加入購物車'))
   }
 

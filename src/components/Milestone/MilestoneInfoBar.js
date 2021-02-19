@@ -3,6 +3,28 @@ import React, { props, useEffect, useState } from 'react'
 function MilestoneInfoBar(props) {
   //集點說明要不要渲染(虛擬Dom)
   const [modalStyle, setModalStyle] = useState({ display: 'none' })
+  const [totalPoint, setTotalPoint] = useState(0);
+
+  const getMilestoneList = () => {
+    const url = 'http://localhost:4000/milestone/getPoint?sid=1' //sid 要從session來
+    fetch(url, {
+      method: 'get',
+    })
+      //then 是會接前方拋出的結果
+      .then((r) => r.json())
+      .then((obj) => {
+        //總獲得的點數
+        const totalGetPoint = obj.totalGetPoiont;
+        //總花費的點數
+        const totalSpendPoint = obj.totalSpendPoint;
+        //將目前有的點數設定成為屬性
+        setTotalPoint(totalGetPoint-totalSpendPoint);
+      })
+  }
+
+  useEffect(() => {
+    getMilestoneList()
+  }, []);
 
   return (
     <>
@@ -26,7 +48,7 @@ function MilestoneInfoBar(props) {
               <span className="fff-txt-info">目前累積點數:</span>
             </div>
             <div>
-              <span className="fff-txt-points">10000</span>
+              <span className="fff-txt-points">{totalPoint}</span>
               <span className="fff-txt-info">點</span>
             </div>
           </div>
@@ -79,7 +101,7 @@ function MilestoneInfoBar(props) {
             <span className="fff-mobo-txt-info">目前累積點數</span>
           </div>
           <div className="d-flex justify-content-center">
-            <span className="fff-mobo-txt-points">10000</span>
+            <span className="fff-mobo-txt-points">{totalPoint}</span>
             <span className="fff-mobo-txt-info">點</span>
           </div>
         </div>

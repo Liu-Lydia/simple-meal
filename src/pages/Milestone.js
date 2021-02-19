@@ -2,14 +2,18 @@ import React, { useState, useEffect } from 'react'
 import '../styles/public.css'
 import '../styles/fff.css'
 import MilestoneInfoBar from '../components/Milestone/MilestoneInfoBar'
-import MilestoneList from '../components/Milestone/MilestoneList'
+import MilestoneListAll from '../components/Milestone/MilestoneListAll'
 import MilestoneListOption from '../components/Milestone/MilestoneListOption'
 import MsMoboPointInfo from '../components/Milestone/MsMoboPointInfo'
 import MsMoboBackToLastPageBtn from '../components/Milestone/MsMoboBackToLastPageBtn'
+import MilestoneListLimit from '../components/Milestone/MilestoneListLimit'
+import MilestoneListFinish from '../components/Milestone/MilestoneListFinish'
+import MilestoneListUnfinish from '../components/Milestone/MilestoneListUnfinish'
 
 function Milestone() {
   // 控制手機版“我的成就”按鈕按下去來顯示成就清單
   const [mobomspage2, setMoboMsPage2] = useState(false)
+  const [milestoneFilter,setMilestoneFilter] = useState(1);//0限時活動 1全部成就 2已達成成就 3未達成成就
 
   //================================================================================================
   // 定義style物件
@@ -43,57 +47,16 @@ function Milestone() {
     }
   }
 
-  // 當有任何render時呼叫
+   // 按下按鈕 更新畫面
+   /*正常來說應該不用這麼麻煩
+   但是不指定mobomspage2的時候不會刷新*/
   useEffect(() => {
     webMoboExchange()
-  }, [])
-  //================================================================================================
-  // //DidMount
-  // useEffect(() => {
-  //   window.addEventListener('resize', webMoboExchange)
-  // }, [])
-  // // 如果今天監聽到視窗大小被改變做“webMoboExchange”這個function
+  }, [mobomspage2])
 
-  // const webMoboExchange = () => {
-  //   let win = window
-  //   const p1 = document.getElementById('ms-p1')
-  //   const p2 = document.getElementById('ms-p2')
-  //   const p3 = document.getElementById('ms-p3')
-  //   if (win.innerWidth >= 576) {
-  //     p1.style.display = 'block'
-  //     p2.style.display = 'none'
-  //     p3.style.display = 'block'
-  //   } else if (mobomspage2) {
-  //     p1.style.display = 'none'
-  //     p2.style.display = 'block'
-  //     p3.style.display = 'block'
-  //   } else {
-  //     p1.style.display = 'block'
-  //     p2.style.display = 'none'
-  //     p3.style.display = 'none'
-  //   }
-  // }
-
-  // //生命週期 監聽 mobomspage2 值有沒有改變 有改變的話就做裡面的事情
-  // //useEffect(箭頭函式,[監聽對象])  這是生命週期中update的部分
-  // useEffect(() => {
-  //   const p1 = document.getElementById('ms-p1')
-  //   const p2 = document.getElementById('ms-p2')
-  //   const p3 = document.getElementById('ms-p3')
-  //   if (window.innerWidth >= 576) {
-  //     p1.style.display = 'block'
-  //     p2.style.display = 'none'
-  //     p3.style.display = 'block'
-  //   } else if (mobomspage2) {
-  //     p1.style.display = 'none'
-  //     p2.style.display = 'block'
-  //     p3.style.display = 'block'
-  //   } else {
-  //     p1.style.display = 'block'
-  //     p2.style.display = 'none'
-  //     p3.style.display = 'none'
-  //   }
-  // }, [mobomspage2])
+  useEffect(() => {
+    window.addEventListener('resize', webMoboExchange)//畫面大小有更動時
+  }, []);
 
   return (
     <>
@@ -117,8 +80,11 @@ function Milestone() {
         />
       </div>
       <div id="ms-p3" className="container" style={display.p3}>
-        <MilestoneListOption />
-        <MilestoneList />
+        <MilestoneListOption setMilestoneFilter={setMilestoneFilter} milestoneFilter={milestoneFilter}/>
+        {milestoneFilter == 0 && <MilestoneListLimit/>}
+        {milestoneFilter == 1 && <MilestoneListAll/>}
+        {milestoneFilter == 2 && <MilestoneListFinish/>}
+        {milestoneFilter == 3 && <MilestoneListUnfinish/>}
       </div>
     </>
   )
