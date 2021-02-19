@@ -16,8 +16,6 @@ import Recipe from './pages/Recipe'
 import MemberCenter from './pages/MemberCenter'
 import AboutUs from './pages/AboutUs'
 import Sharerecipe from './pages/Sharerecipe'
-import MyRecipe from './pages/MyRecipe'
-import AddRecipe from './pages/AddRecipe'
 import XTest from './pages/XTest'
 import TestSvgAnimate from './pages/TestSvgAnimate'
 
@@ -70,14 +68,7 @@ function App() {
                   setBreadCrumbBool={setBreadCrumbBool}
                 />
               </Route>
-              {/* 我的食譜 */}
-              <Route path="/MemberCenter/MyRecipe">
-                <MyRecipe />
-              </Route>
-              {/* 新增食譜 */}
-              <Route path="/MemberCenter/addrecipe">
-                <AddRecipe />
-              </Route>
+
               <Route path="/MemberCenter">
                 <MemberCenter />
               </Route>
