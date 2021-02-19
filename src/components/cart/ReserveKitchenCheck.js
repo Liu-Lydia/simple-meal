@@ -23,6 +23,7 @@ function ReserveKitchenCheck(props) {
   const handleGetData = async () => {
     fetch('http://localhost:4000/reservekitchen/getorder', {
       method: 'get',
+      credentials: 'include',
     })
       .then((r) => r.json())
       .then((array) => {
@@ -39,6 +40,7 @@ function ReserveKitchenCheck(props) {
     await fetch('http://localhost:4000/reservekitchen/ordercheck', {
       method: 'post',
       body: fd,
+      credentials: 'include',
     })
       .then((r) => r.json())
       .then((obj) => {

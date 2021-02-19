@@ -23,6 +23,7 @@ function MealDeliveryCheck(props) {
     const url = 'http://localhost:4000/mealdelivery/getdeliverycart'
     fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       .then((r) => r.json())
       .then((obj) => {
@@ -37,6 +38,7 @@ function MealDeliveryCheck(props) {
     await fetch('http://localhost:4000/mealdelivery/ordercheck', {
       method: 'post',
       body: fd,
+      credentials: 'include',
     })
       .then((r) => r.json())
       .then((obj) => {

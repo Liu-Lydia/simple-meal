@@ -19,6 +19,7 @@ function CartReserveKitchen(props) {
   const handleGetData = async () => {
     fetch('http://localhost:4000/reservekitchen/getorder', {
       method: 'get',
+      credentials: 'include',
     })
       .then((r) => r.json())
       .then((array) => {

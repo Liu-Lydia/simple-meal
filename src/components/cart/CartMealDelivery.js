@@ -91,6 +91,7 @@ function CartMealDelivery(props) {
     if (quantity >= 1 && quantity <= 10) {
       fetch(url, {
         method: 'get',
+        credentials: 'include',
       }).then(setClickNum(clickNum + 1))
     }
   }
@@ -137,6 +138,7 @@ function CartMealDelivery(props) {
 
     fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       // .then((r) => r.json())
       // .then((obj) => console.log(obj))
@@ -150,6 +152,7 @@ function CartMealDelivery(props) {
     const url = `http://localhost:4000/mealdelivery/tonexttime?str=${checkSid.thisTime}`
     fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       .then(setClickNum(clickNum + 1))
       .then(setCheckSid({ thisTime: '0', nextTime: '0' }))
@@ -161,6 +164,7 @@ function CartMealDelivery(props) {
     const url = `http://localhost:4000/mealdelivery/tothistime?str=${checkSid.nextTime}`
     fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       .then(setClickNum(clickNum + 1))
       .then(setCheckSid({ thisTime: '0', nextTime: '0' }))

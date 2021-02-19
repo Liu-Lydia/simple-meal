@@ -21,6 +21,7 @@ function SimpleMealCouponCheck(props) {
     await fetch('http://localhost:4000/simplemealcoupon/addcheck', {
       method: 'post',
       body: fd,
+      credentials: 'include',
     })
       .then((r) => r.json())
       .then((obj) => {
