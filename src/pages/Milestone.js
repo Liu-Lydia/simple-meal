@@ -57,6 +57,7 @@ function Milestone() {
 
   useEffect(() => {
     window.addEventListener('resize', webMoboExchange)//畫面大小有更動時
+    return ()=>{window.removeEventListener('resize', webMoboExchange)}//當DOM元素移除時要將監聽一併移除
   }, []);
 
   return (
