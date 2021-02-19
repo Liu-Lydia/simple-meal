@@ -4,13 +4,13 @@ function MsMainPic() {
   return (
     <>
       <div
-        className="d-flex justify-content-center align-items-center"
+        className="d-flex justify-content-center align-items-center fff-ms-web"
         style={{ height: '600px', backgroundColor: 'lightgray' }}
       >
         <h5>我是佔空間的東西</h5>
       </div>
       <div
-        className="d-flex justify-content-center align-items-center"
+        className="d-flex justify-content-center align-items-center fff-ms-web"
         style={{ height: '50px' }}
       >
         <button className="p1-scroll-btn mx-auto d-flex align-items-center">

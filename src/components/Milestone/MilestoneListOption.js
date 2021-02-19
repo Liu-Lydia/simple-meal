@@ -148,7 +148,7 @@ function MilestoneListOption(props) {
             </div>
             {/*過濾器*/}
             <div className="col-12 col-md-11 col-xl-10 d-flex justify-content-end align-items-center fff-end-event-filter">
-                <input type="checkbox"></input><span>不過濾已結束活動</span>
+                <input type="checkbox"></input><span className="fff-checkbox-gap">不過濾已結束活動</span>
             </div>
 
         </div>
