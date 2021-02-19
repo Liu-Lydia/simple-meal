@@ -26,6 +26,7 @@ function Sharerecipe(props) {
       'http://localhost:4000/sharerecipe/getallmeal',
       {
         method: 'get',
+        credentials: 'include',
       }
     )
     const data = await response.json()
