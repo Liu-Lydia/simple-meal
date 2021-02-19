@@ -84,46 +84,48 @@
   top: 0;
   width: 248px;
   height: 240px;
-  
-  
-  transform: rotate(60deg);
   opacity: 0;
   filter: alpha(opacity=0);
-  animation: round 25s linear infinite;
+  animation: round 21s linear infinite;
 }
 
 @keyframes round {
   4% {
-      opacity: 1;
-      filter: alpha(opacity=100);
-      /* 0 - 1秒 淡入*/
+    opacity: 1;
+    filter: alpha(opacity=100);
+    /* 0 - 1秒 淡入*/
   }
   20% {
-      opacity: 1;
-      filter: alpha(opacity=100);
-      /* 1- 5秒靜止*/
+    opacity: 1;
+    filter: alpha(opacity=100);
+    /* 1- 5秒靜止*/
   }
   24% {
-      opacity: 0;
-      filter: alpha(opacity=0);
-      /* 5-6秒淡出*/
+    opacity: 0;
+    filter: alpha(opacity=0);
+    /* 5-6秒淡出*/
   }
 }
 
-.lll-get-coupon:nth-child(1){
+.lll-get-coupon:nth-child(1) {
   animation-delay: 0s;
 }
-.lll-get-coupon:nth-child(2){
+.lll-get-coupon:nth-child(2) {
   animation-delay: 5s;
 }
-.lll-get-coupon:nth-child(3){
+.lll-get-coupon:nth-child(3) {
   animation-delay: 10s;
 }
-.lll-get-coupon:nth-child(4){
+.lll-get-coupon:nth-child(4) {
   animation-delay: 15s;
 }
+/* .lll-get-coupon:nth-child(5) {
+  animation-delay: 20s;
+} */
 
 .lll-meal-pictures {
+  background: url('http://localhost:3015/img/lydia/hero03.png');
+  background-size: cover;
   overflow: hidden;
   height: 240px;
 }

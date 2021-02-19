@@ -41,6 +41,7 @@ function MealDeliveryInfo(props) {
     const url = 'http://localhost:4000/mealdelivery/getdeliverycart'
     fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       .then((r) => r.json())
       .then((obj) => {

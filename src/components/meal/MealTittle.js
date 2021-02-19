@@ -2,6 +2,7 @@ import MultiLevelBreadCrumb from '../MultiLevelBreadCrumb'
 import { Link } from 'react-router-dom'
 import 'react-multi-carousel/lib/styles.css'
 import { useState, useEffect } from 'react'
+import Swal from 'sweetalert2'
 function MealTittle(props) {
   const { breadCrumbBool, selectMeal, data, updateNum, setUpdateNum } = props
   const mealData = selectMeal
@@ -50,17 +51,33 @@ function MealTittle(props) {
   //     </div>
   //   </>
   // )
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      cancelButton: 'select-btn-green txt-btn',
+      title: 'cha-text cha-green',
+    },
+    buttonsStyling: false,
+  })
 
   const handleGetMealToDelivery = (sid) => {
     const url = `http://localhost:4000/mealdelivery/getmealtodelivery?sid=${sid}`
 
     fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       .then((r) => r.json())
       .then((obj) => {
         setUpdateNum(updateNum + 1)
-        alert(obj.msg)
+        swalWithBootstrapButtons.fire({
+          icon: 'success',
+          title: obj.msg,
+          showConfirmButton: false,
+          padding: '25px',
+          showCancelButton: true,
+          cancelButtonText: '確定',
+          showCloseButton: true,
+        })
       })
 
     // .then(() => alert('以加入購物車'))

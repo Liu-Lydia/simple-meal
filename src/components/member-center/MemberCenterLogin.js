@@ -179,7 +179,27 @@ export default withFormik({
     setTimeout(() => {
       resetForm() //重設表單
       setSubmitting(false) //狀態更新(true:傳送中, false:傳送完成)
-      alert(JSON.stringify(values, null, 2)) //alert values
+
+      fetch('http://localhost:4000/login', {
+        method: 'post',
+        body: JSON.stringify(values, null, 2),
+        credentials: 'include',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      })
+        .then((r) => r.json())
+        .then((obj) => {
+          // console.log(obj)
+          if (obj.success) {
+            // window.location.href = 'http://localhost:3015/'
+            alert('已登入')
+          } else {
+            alert('你的帳號密碼錯誤')
+          }
+        })
+      // alert(JSON.stringify(values, null, 2)) //alert values
     }, 1000)
   },
 })(MemberCenterLogin)

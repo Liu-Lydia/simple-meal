@@ -40,6 +40,7 @@ function CartMealDelivery(props) {
     const url = 'http://localhost:4000/mealdelivery/getdeliverycart'
     fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       .then((r) => r.json())
       .then((obj) => {
@@ -90,6 +91,7 @@ function CartMealDelivery(props) {
     if (quantity >= 1 && quantity <= 10) {
       fetch(url, {
         method: 'get',
+        credentials: 'include',
       }).then(setClickNum(clickNum + 1))
     }
   }
@@ -136,6 +138,7 @@ function CartMealDelivery(props) {
 
     fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       // .then((r) => r.json())
       // .then((obj) => console.log(obj))
@@ -149,6 +152,7 @@ function CartMealDelivery(props) {
     const url = `http://localhost:4000/mealdelivery/tonexttime?str=${checkSid.thisTime}`
     fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       .then(setClickNum(clickNum + 1))
       .then(setCheckSid({ thisTime: '0', nextTime: '0' }))
@@ -160,6 +164,7 @@ function CartMealDelivery(props) {
     const url = `http://localhost:4000/mealdelivery/tothistime?str=${checkSid.nextTime}`
     fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       .then(setClickNum(clickNum + 1))
       .then(setCheckSid({ thisTime: '0', nextTime: '0' }))
@@ -357,7 +362,13 @@ function CartMealDelivery(props) {
         <div className="text-center text-sm-right poe-bookmark-btn-group">
           <Link
             onClick={() => setCartMode('SimpleMealCoupon')}
-            className="btn-green txt-btn mx-3 poe-mb20"
+            // 如果持有餐券數量小於消耗, 按鈕轉紅, 否則綠
+            className={`${
+              deliveryData.simpleMealCoupon.now <
+              deliveryData.simpleMealCoupon.cost
+                ? 'btn-red'
+                : 'btn-green'
+            } txt-btn mx-3 poe-mb20`}
           >
             購買餐券
           </Link>
