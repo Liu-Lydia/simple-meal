@@ -125,7 +125,8 @@ function MilestoneInfoBar(props) {
         <div className="fff-mshowto-content">
           <div className="row">
             {/* 圖片放置位置 先占高 mobo關閉 */}
-            <div className="fff-ms-web" style={{ height: '200px' }}></div>
+            <div className="fff-ms-web" style={{ height: '200px' }}>
+            </div>
             <div className="fff-ms-mobo justify-content-end col-12">
               {/* 關閉頁面的Ｘ */}
               <h6>
