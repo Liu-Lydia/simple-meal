@@ -21,7 +21,7 @@ $primary: #627e2a;
 @import '/src/styles/cha.css';
 @import '/src/styles/fff.css';
 @import '/src/styles/lydia.css';
-@import '/src/styles/poe.scss';
+@import './src/styles/poe.scss'; // 不知為何, 引用SCSS檔如果使用絕對路徑會crash, 必須使用相對路徑
 @import '/src/styles/index.css';
 @import '/src/styles/member-index.css';
 
