@@ -11,8 +11,11 @@ import {
 import { NavLink } from 'react-router-dom'
 import HeaderIcon from './HeaderIcon'
 
-function Header() {
-  // 定義CSS物件
+function Header(props) {
+  // { 登入布林值, 設定登入布林值}
+  const { loginBool, setLoginBool } = props
+
+  // 定義logo用的CSS物件
   const cssObjNone = {
     transform: 'translateX(-100px)',
     opacity: '0',
@@ -31,6 +34,19 @@ function Header() {
     setTimeout(() => {
       setCssObj(cssObjShow)
     }, 10)
+  }
+
+  // 登出
+  const handleLogout = () => {
+    // console.log('登出')
+    fetch('http://localhost:4000/logout', {
+      method: 'get',
+    })
+      .then((r) => r.json())
+      .then((obj) => {
+        console.log(obj)
+        setLoginBool(false)
+      })
   }
 
   useEffect(() => {
@@ -135,7 +151,10 @@ function Header() {
                   ></HeaderIcon>
                   <HeaderIcon
                     text={'會員中心'}
-                    url={'/MemberCenter'}
+                    // 如果登入, 到會員首頁; 如果未登入, 到登入畫面
+                    url={`${
+                      loginBool ? '/MemberCenter/Index' : '/MemberCenter'
+                    }`}
                     fa={'fas fa-user'}
                   ></HeaderIcon>
                   <HeaderIcon
@@ -143,6 +162,43 @@ function Header() {
                     url={'/none8'}
                     fa={'far fa-question-circle'}
                   ></HeaderIcon>
+
+                  {/* 登入登出切換 */}
+                  {!loginBool && (
+                    <Nav.Link
+                      to="/MemberCenter"
+                      as={NavLink}
+                      style={{
+                        margin: '0 0',
+                        padding: '0 24px',
+                        transition: '1s',
+                        color: '#A2A3A5',
+                      }}
+                    >
+                      <div className="text-center d-flex">
+                        <div>登入</div>
+                      </div>
+                    </Nav.Link>
+                  )}
+                  {loginBool && (
+                    <Nav.Link
+                      to=""
+                      as={NavLink}
+                      style={{
+                        margin: '0 0',
+                        padding: '0 24px',
+                        transition: '1s',
+                        color: '#A2A3A5',
+                      }}
+                      onClick={() => {
+                        handleLogout()
+                      }}
+                    >
+                      <div className="text-center d-flex">
+                        <div>登出</div>
+                      </div>
+                    </Nav.Link>
+                  )}
                 </Nav>
               </Navbar.Collapse>
             </Navbar>

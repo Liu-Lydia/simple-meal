@@ -18,7 +18,7 @@ h1 {
 }
 h2 {
   font-family: GenSenRounded TW;
-  font-size: 58px !important; 
+  font-size: 58px !important;
   font-weight: 500 !important;
   line-height: 58px !important;
   letter-spacing: -0.02px;
@@ -95,14 +95,13 @@ h6 {
   letter-spacing: 0.2px;
   text-decoration: none !important;
 }
-.cha-text{
-  font-family: GenSenRounded TW!important;
+.cha-text {
+  font-family: GenSenRounded TW !important;
   font-size: 21px !important;
   font-weight: 400 !important;
   line-height: 24px !important;
-  letter-spacing: 0.29px!important;
-  text-decoration: none!important;
-  
+  letter-spacing: 0.29px !important;
+  text-decoration: none !important;
 }
 
 .select-btn-green {
@@ -314,7 +313,7 @@ h6 {
   line-height: 50px;
   color: white;
   border: 1px #627e2a solid;
-  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.5);
+  box-shadow:0 2px 4px -1px rgba(0,0,0,0.20), 0 1px 10px 0 rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.14);
   transition: 0.2s;
   display: inline-block;
 }
@@ -339,8 +338,7 @@ h6 {
   line-height: 50px;
   color: white;
   border: 1px #b9433b solid;
-  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.5);
-  transition: 0.2s;
+  box-shadow:0 2px 4px -1px rgba(0,0,0,0.20), 0 1px 10px 0 rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.14);
   display: inline-block;
 }
 .btn-gray {
@@ -364,7 +362,7 @@ h6 {
   color: white;
   border: 1px #a2a3a5 solid;
   display: inline-block;
-  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.5);
+  box-shadow:0 2px 4px -1px rgba(0,0,0,0.20), 0 1px 10px 0 rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.14);
   transition: 0.2s;
 }
 .btn-gray2 {
@@ -412,7 +410,7 @@ h6 {
   color: white;
   border: 1px #a2a3a5 solid;
   display: inline-block;
-  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.5);
+  box-shadow:0 2px 4px -1px rgba(0,0,0,0.20), 0 1px 10px 0 rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.14);
   transition: 0.2s;
 }
 
@@ -505,7 +503,7 @@ h6 {
   text-align: center;
   line-height: 85px;
   color: white;
-  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.20), 0 1px 10px 0 rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.14);
   transition: 0.2s;
 }
 .btn-meun-big-gray2 {
@@ -538,7 +536,7 @@ h6 {
   text-align: center;
   line-height: 85px;
   color: white;
-  box-shadow: 0px 5px 8px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px -1px rgba(0,0,0,0.20), 0 1px 10px 0 rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.14);
   transition: 0.2s;
 }
 .btn-meun-big-red2 {

@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { Link } from 'react-router-dom'
+import { Redirect, Route, withRouter, Link, Switch } from 'react-router-dom'
 // import DropdownItem from '../components/DropdownItem'
 import { Collapse } from 'react-collapse'
 import Calendar from '../../pages/Calendar'
-//import CalendarTest from '../../pages/CalendarTest'
 
 function SurpriseContent(props) {
+  // 有沒有登入
+  const { loginBool } = props
+
   // 接收預約日期值
   const [dateStr, setDateObj] = useState('')
 
@@ -137,20 +139,30 @@ function SurpriseContent(props) {
 
   const handlePostOrder = async () => {
     const fd = new FormData(document.querySelector('#reservation_kitchen'))
-    await fetch('http://localhost:4000/surprisekitchenOrder/addreservation', {
-      method: 'post',
-      body: fd,
-      credentials: 'include',
-    })
-      .then((r) => r.json())
-      .then((obj) => {
-        console.log(obj)
-        alert(`您的訂單編號為 ${obj.order_sid}, 請前往購物車進行結帳。 `)
+
+    if (!loginBool) {
+      console.log('滾去登入再說')
+      return <Redirect to="/MemberCenter" />
+    } else {
+      await fetch('http://localhost:4000/surprisekitchenOrder/addreservation', {
+        method: 'post',
+        body: fd,
+        credentials: 'include',
       })
+        .then((r) => r.json())
+        .then((obj) => {
+          console.log(obj)
+          alert(`您的訂單編號為 ${obj.order_sid}, 請前往購物車進行結帳。 `)
+        })
+    }
   }
+
+  const [btnBoll, setBtnBool] = useState(false) //測試
 
   return (
     <>
+      {/* {btnBoll && !loginBool && <Redirect to="/MemberCenter" />}測試 */}
+
       {/* 驚喜廚房title, 3項內容 ↓↓↓ */}
       <h3 className="lll-title-style">驚喜廚房</h3>
       <div className="lll-trans-block d-flex p-0 ">
@@ -159,7 +171,6 @@ function SurpriseContent(props) {
         <p className="txt-sub1 lll-grey">備註即有專人核對確認</p>
       </div>
       {/* 驚喜廚房title, 3項內容 ↑↑↑ */}
-
       {/* 展開預約Button ↓↓↓ */}
       <div className="col p-0 lll-textalign-right">
         <button
@@ -174,7 +185,6 @@ function SurpriseContent(props) {
       </div>
       <div className="col lll-hidden-line"></div>
       {/* 展開預約Button ↑↑↑ */}
-
       <Collapse isOpened={isButtonCollapseOpen}>
         <div id={buttonCollapseId.button} />
         {/* 選擇日期、選項 / 全部重選 ↓↓↓ */}
@@ -360,11 +370,7 @@ function SurpriseContent(props) {
               </h4>
             </div>
             {/* 顯示價格 ↑↑↑ */}
-
-            <div className="d-flex justify-content-between mt-1 lll-pt20">
-              <Link to="" className="btn-green txt-btn">
-                加入購物車
-              </Link>
+            <div className="d-flex justify-content-end mt-1 lll-pt20">
               <Link
                 onClick={() => {
                   handlePostOrder()
