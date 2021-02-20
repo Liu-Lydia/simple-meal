@@ -30,6 +30,25 @@ function ReserveKitchenPayment(props) {
     email: true,
   })
 
+  // 接會員資料
+  const [memberInfo, setMemberInfo] = useState({})
+
+  const handleGetMemberData = () => {
+    fetch('http://localhost:4000/getmemberinfo', {
+      method: 'get',
+      credentials: 'include',
+    })
+      .then((r) => r.json())
+      .then((obj) => {
+        // console.log(obj)
+        setMemberInfo(obj)
+      })
+  }
+  // 載入時取得會員資料
+  useEffect(() => {
+    handleGetMemberData()
+  }, [])
+
   // 改變付款方案
   const handleSetPaymentValue = (event) => {
     setPaymentValue(event.target.value)
@@ -48,6 +67,18 @@ function ReserveKitchenPayment(props) {
     } else {
       setCoupon({ string: couponText, cost: 0 })
     }
+  }
+
+  // 自動填入會員資料到表單
+  const handleAutoFillIn = () => {
+    const obj = { ...memberInfo }
+    const newInfo = { ...reservationInfo }
+    newInfo.reservation_name = obj.name
+    newInfo.reservation_tel = obj.mobile
+    newInfo.reservation_email = obj.email
+
+    setReservationInfo({ ...newInfo })
+    // console.log(obj, reservationInfo)
   }
 
   // 下一步前檢查
@@ -117,7 +148,7 @@ function ReserveKitchenPayment(props) {
           <div className="poe-bookmark-content txt-btn poe-form">
             <div className="row align-items-center poe-mb30">
               <div className="col-2 px-md-0 text-md-right">
-                <input type="checkbox" />
+                <input type="checkbox" onChange={() => handleAutoFillIn()} />
               </div>
               <div className="col-10">同會員資料</div>
             </div>
