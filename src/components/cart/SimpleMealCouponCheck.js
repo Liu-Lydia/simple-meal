@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Route, withRouter, Link, Switch, Redirect } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 function SimpleMealCouponCheck(props) {
   // {流程, 流程轉換設定, 方案id, 方案物件, 預設方案內容, 付款選項物件, 優惠碼物件}
@@ -25,10 +26,36 @@ function SimpleMealCouponCheck(props) {
     })
       .then((r) => r.json())
       .then((obj) => {
-        alert(`您的訂單已完成, 訂單編號 ${obj.order_sid}`)
-        setCheckBool(true)
+        // alert(`您的訂單已完成, 訂單編號 ${obj.order_sid}`)
+
+        swalWithBootstrapButtons
+          .fire({
+            icon: 'success',
+            title: '完成訂單',
+            text: `您的配送訂單已經完成, 訂單編號 ${obj.order_sid}`,
+            padding: '25px',
+            showConfirmButton: true,
+            confirmButtonText: '確定',
+            showCancelButton: false,
+            showCloseButton: true,
+            backdrop: `rgba(0,0,0,0.4)`,
+          })
+          .then((result) => {
+            setCheckBool(true)
+          })
       })
   }
+
+  // 定義SweetAlert2的按鈕
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      popup: 'poe-alert',
+      title: 'poe-green cha-text',
+      content: 'txt-btn',
+      confirmButton: 'btn-green txt-btn',
+    },
+    buttonsStyling: false,
+  })
 
   // 是否結帳完成
   const [checkBool, setCheckBool] = useState(false)
