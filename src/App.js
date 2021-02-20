@@ -30,10 +30,13 @@ function App() {
   // 麵包屑判斷 (true在左上 false由各頁面自訂, 需要改動者再引入)
   const [breadCrumbBool, setBreadCrumbBool] = useState(true)
 
+  // 登入狀態(未登入false, 登入true)
+  const [loginBool, setLoginBool] = useState(false)
+
   return (
     <Router>
       <>
-        <Header />
+        <Header loginBool={loginBool} setLoginBool={setLoginBool} />
         {/* 主內容 */}
         <MainContent>
           {breadCrumbBool && (
@@ -70,7 +73,10 @@ function App() {
               </Route>
 
               <Route path="/MemberCenter">
-                <MemberCenter />
+                <MemberCenter
+                  loginBool={loginBool}
+                  setLoginBool={setLoginBool}
+                />
               </Route>
               {/* <Route path="/MemberCenter/Index" component={MemberCenterIndex} />
               <Route

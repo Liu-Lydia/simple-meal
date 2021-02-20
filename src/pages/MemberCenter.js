@@ -14,10 +14,11 @@ import MemberCenterSimpleMealCoupon from '../components/member-center/MemberCent
 import MyRecipe from '../components/member-center/MyRecipe'
 import AddRecipe from '../components/member-center/AddRecipe'
 
-
 import Test from '../components/member-center/test'
 
-function MemberCenter() {
+function MemberCenter(props) {
+  // { 登入布林值, 設定登入布林值}
+  const { loginBool, setLoginBool } = props
   return (
     <>
       <Switch>
@@ -71,7 +72,10 @@ function MemberCenter() {
         </Route>
 
         <Route path="/">
-          <MemberCenterLogin />
+          <MemberCenterLogin
+            loginBool={loginBool}
+            setLoginBool={setLoginBool}
+          />
         </Route>
       </Switch>
     </>
