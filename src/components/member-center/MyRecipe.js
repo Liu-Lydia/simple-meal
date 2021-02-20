@@ -2,10 +2,13 @@ import MemberCenterNavbar from './MemberCenterNavbar'
 import React, { useState, useEffect } from 'react'
 import { Button } from 'react-bootstrap'
 import '../../styles/myrecipe.css'
+import { withRouter } from 'react-router-dom'
+
 
 function MyRecipe(props) {
   const [users, setUsers] = useState([])
   const [dataLoading, setDataLoading] = useState(false)
+  
 
   async function getUsersFromServer() {
     // 開啟載入指示
@@ -113,7 +116,9 @@ function MyRecipe(props) {
                     <button
                       className="select-btn-green txt-btn mb-2"
                       onClick={() => {
-                        props.history.push('/user-edit/' + value.id)
+                        props.history.push(
+                          '/MemberCenter/myrecipeedit/' + value.id
+                        )
                       }}
                     >
                       編輯
@@ -151,4 +156,4 @@ function MyRecipe(props) {
     </>
   )
 }
-export default MyRecipe
+export default withRouter(MyRecipe)
