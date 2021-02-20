@@ -46,6 +46,27 @@ function SurpriseContent(props) {
   }, [])
   //讀取資料 ↑↑↑
 
+  //接收資料庫資料　↓↓↓
+  // const [orderObj, setOrderObj] = useState({})
+
+  //讀取資料　↓↓↓
+  // const handleGetInfo = () => {
+  //   fetch('http://localhost:4000/surprisekitchenOrder/getReservationInfo', {
+  //     method: 'get',
+  //     credentials: 'include',
+  //   })
+  //     .then((r) => r.json())
+  //     .then((obj) => {
+  //       console.log(obj)
+  //       setOrderObj(obj)
+  //     })
+  // }
+
+  // useEffect(() => {
+  //   handleGetInfo()
+  // }, [])
+  //讀取資料 ↑↑↑
+
   //點擊場次　↓↓↓
   const [isActive, setActive] = useState({ ...timesData })
   const handleToggleClass = (v) => {
@@ -65,12 +86,6 @@ function SurpriseContent(props) {
     remark: '',
     reservation_price: 0,
   })
-
-  //清空選項***
-  // const handleSetAppoint = () => {
-  //   setAllPrice(0)
-
-  // }
 
   //成人數量選擇
   const [num_adult, setNum_adult] = useState(0)
@@ -109,8 +124,6 @@ function SurpriseContent(props) {
   //金額顯示
   function handleSetPrice(num_adult, child_price) {
     const Price = num_adult * 500 + child_price * 100
-
-    // const allPrice = AdultPrice + ChildPrice
 
     setAppoint({
       reservation_date: '',
@@ -157,6 +170,17 @@ function SurpriseContent(props) {
     }
   }
 
+  const handleClear = () => {
+    setNum_adult(0)
+    setNum_child(0)
+    setNum_meal(0)
+    setTextarea('')
+    setAppoint({
+      reservation_price: 0,
+    })
+    setActive({ ...timesData })
+  }
+
   const [btnBoll, setBtnBool] = useState(false) //測試
 
   return (
@@ -193,9 +217,9 @@ function SurpriseContent(props) {
             選擇日期、選項
           </div>
           <div className="ml-auto txt-sub1 lll-selected-position lll-grey">
-            <Link className="lll-grey">
+            <a className="lll-grey lll-cursor" onClick={() => handleClear()}>
               <i className="fas fa-redo-alt lll-pr20"></i>全部重選
-            </Link>
+            </a>
           </div>
         </div>
         {/* 選擇日期、選項 / 全部重選 ↑↑↑ */}
