@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { Link } from 'react-router-dom'
+import { Redirect, Route, withRouter, Link, Switch } from 'react-router-dom'
 // import DropdownItem from '../components/DropdownItem'
 import { Collapse } from 'react-collapse'
 import Calendar from '../../pages/Calendar'
-//import CalendarTest from '../../pages/CalendarTest'
 
 function SurpriseContent(props) {
+  // 有沒有登入
+  const { loginBool } = props
+
   // 接收預約日期值
   const [dateStr, setDateObj] = useState('')
 
@@ -137,16 +139,22 @@ function SurpriseContent(props) {
 
   const handlePostOrder = async () => {
     const fd = new FormData(document.querySelector('#reservation_kitchen'))
-    await fetch('http://localhost:4000/surprisekitchenOrder/addreservation', {
-      method: 'post',
-      body: fd,
-      credentials: 'include',
-    })
-      .then((r) => r.json())
-      .then((obj) => {
-        console.log(obj)
-        alert(`您的訂單編號為 ${obj.order_sid}, 請前往購物車進行結帳。 `)
+
+    if (!loginBool) {
+      console.log('滾去登入再說')
+      return <Redirect to="/MemberCenter" />
+    } else {
+      await fetch('http://localhost:4000/surprisekitchenOrder/addreservation', {
+        method: 'post',
+        body: fd,
+        credentials: 'include',
       })
+        .then((r) => r.json())
+        .then((obj) => {
+          console.log(obj)
+          alert(`您的訂單編號為 ${obj.order_sid}, 請前往購物車進行結帳。 `)
+        })
+    }
   }
 
   return (
@@ -360,11 +368,7 @@ function SurpriseContent(props) {
               </h4>
             </div>
             {/* 顯示價格 ↑↑↑ */}
-
-            <div className="d-flex justify-content-between mt-1 lll-pt20">
-              <Link to="" className="btn-green txt-btn">
-                加入購物車
-              </Link>
+            <div className="d-flex justify-content-end mt-1 lll-pt20">
               <Link
                 onClick={() => {
                   handlePostOrder()

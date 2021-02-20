@@ -783,6 +783,7 @@
   position: absolute;
   right: -183px;
   cursor: pointer;
+  width: auto;
 }
 
 h5:hover{
@@ -792,5 +793,5 @@ h5:hover{
 .sticky {
   position: fixed;
   top: 0;
-  width: 100%;
+ right:297px;
 }

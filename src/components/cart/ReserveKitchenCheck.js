@@ -283,4 +283,4 @@ function ReserveKitchenCheck(props) {
   )
 }
 
-export default ReserveKitchenCheck
+export default withRouter(ReserveKitchenCheck)

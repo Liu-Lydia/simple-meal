@@ -5,6 +5,24 @@ import { Link } from 'react-router-dom'
 // import Calendar from '../../pages/Calendar'
 
 function SurpriseRule() {
+  //滾動到一定位置定住menu　↓↓↓
+  useEffect(() => {
+    const menu = document.getElementById('menuScroll')
+    const sticky = 2420
+
+    const scrollCallBack = window.addEventListener('scroll', () => {
+      if (window.pageYOffset > sticky) {
+        menu.classList.add('sticky')
+      } else {
+        menu.classList.remove('sticky')
+      }
+    })
+    return () => {
+      window.removeEventListener('scroll', scrollCallBack)
+    }
+  }, [])
+  //滾動到一定位置定住menu ↑↑↑
+
   //這寫法頗愚蠢, 捲至區塊　↓↓↓
   const scrollToAnchorRule = (rule) => {
     if (rule) {
@@ -58,24 +76,29 @@ function SurpriseRule() {
       {/* 驚喜廚房規則說明 ↑↑↑ */}
 
       {/* 預約規則說明 ↓↓↓ */}
-      <div className="col p-0">
+      <div className="col p-0 w-100">
         <div className="lll-block float-right lll-onmenu" id="menu">
-          <h5 className="m-0" onClick={() => scrollToAnchorRule('qwe')}>
-            預約規則說明
-          </h5>
-          <br />
-          <h5 className="m-0" onClick={() => scrollToAnchorMap('map')}>
-            地理位置
-          </h5>
-          <br />
-          <h5 className="m-0" onClick={() => scrollToAnchorPolicy('policy')}>
-            取消政策
-          </h5>
-          <br />
-          <h5 className="m-0" onClick={() => scrollToAnchorComment('comment')}>
-            顧客評價
-          </h5>
-          <br />
+          <div id="menuScroll">
+            <h5 className="m-0" onClick={() => scrollToAnchorRule('rule')}>
+              預約規則說明
+            </h5>
+            <br />
+            <h5 className="m-0" onClick={() => scrollToAnchorMap('map')}>
+              地理位置
+            </h5>
+            <br />
+            <h5 className="m-0" onClick={() => scrollToAnchorPolicy('policy')}>
+              取消政策
+            </h5>
+            <br />
+            <h5
+              className="m-0"
+              onClick={() => scrollToAnchorComment('comment')}
+            >
+              顧客評價
+            </h5>
+            <br />
+          </div>
         </div>
         <h3 className="lll-title-style lll-mt110 lll-pb45" id="rule">
           預約規則說明

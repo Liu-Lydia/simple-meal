@@ -89,7 +89,7 @@ function App() {
               />
               <Route path="/MemberCenter" component={MemberCenterLogin} /> */}
               <Route path="/surprisekitchen">
-                <SurpriseKitchen />
+                <SurpriseKitchen loginBool={loginBool} />
               </Route>
               {/* 關於我 */}
               <Route path="/aboutus">
