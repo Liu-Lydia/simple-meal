@@ -13,6 +13,7 @@ import MemberCenterFoodDelivery from '../components/member-center/MemberCenterFo
 import MemberCenterSimpleMealCoupon from '../components/member-center/MemberCenterSimpleMealCoupon'
 import MyRecipe from '../components/member-center/MyRecipe'
 import AddRecipe from '../components/member-center/AddRecipe'
+import MyRecipeEdit from '../components/member-center/MyRecipeEdit'
 
 
 import Test from '../components/member-center/test'
@@ -64,6 +65,10 @@ function MemberCenter() {
         {/* 新增食譜 */}
         <Route path="/MemberCenter/addrecipe">
           <AddRecipe />
+        </Route>
+        {/* 修改食譜 注意：要加上網址參數 */}
+        <Route exact path="/MemberCenter/myrecipeedit/:id?">
+          <MyRecipeEdit />
         </Route>
 
         <Route path="/MemberCenter/Index">
