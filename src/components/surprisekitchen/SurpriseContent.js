@@ -157,8 +157,12 @@ function SurpriseContent(props) {
     }
   }
 
+  const [btnBoll, setBtnBool] = useState(false) //測試
+
   return (
     <>
+      {/* {btnBoll && !loginBool && <Redirect to="/MemberCenter" />}測試 */}
+
       {/* 驚喜廚房title, 3項內容 ↓↓↓ */}
       <h3 className="lll-title-style">驚喜廚房</h3>
       <div className="lll-trans-block d-flex p-0 ">
@@ -167,7 +171,6 @@ function SurpriseContent(props) {
         <p className="txt-sub1 lll-grey">備註即有專人核對確認</p>
       </div>
       {/* 驚喜廚房title, 3項內容 ↑↑↑ */}
-
       {/* 展開預約Button ↓↓↓ */}
       <div className="col p-0 lll-textalign-right">
         <button
@@ -182,7 +185,6 @@ function SurpriseContent(props) {
       </div>
       <div className="col lll-hidden-line"></div>
       {/* 展開預約Button ↑↑↑ */}
-
       <Collapse isOpened={isButtonCollapseOpen}>
         <div id={buttonCollapseId.button} />
         {/* 選擇日期、選項 / 全部重選 ↓↓↓ */}

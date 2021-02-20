@@ -420,6 +420,10 @@
   cursor: pointer;
 }
 
+.today{
+  color: #f3e575;
+}
+
 /* 日期選項顏色 */
 .lll-grey {
   color: #a2a3a5; /* 尚未開放, 過去的時間*/
@@ -779,19 +783,19 @@
 }
 
 /* menu位置 */
-.lll-onmenu{
+.lll-onmenu {
   position: absolute;
   right: -183px;
   cursor: pointer;
   width: auto;
 }
 
-h5:hover{
+h5:hover {
   color: #a2a3a5;
 }
 
 .sticky {
   position: fixed;
   top: 0;
- right:297px;
+  right: 297px;
 }
