@@ -5,6 +5,27 @@ import { Link } from 'react-router-dom'
 // import Calendar from '../../pages/Calendar'
 
 function SurpriseRule() {
+  //接收資料庫資料　↓↓↓
+  const [commentObj, setCommentObg] = useState([])
+
+  //讀取資料　↓↓↓
+  const handleGetComment = () => {
+    fetch('http://localhost:4000/reservationComment/getReservationComment', {
+      method: 'get',
+      credentials: 'include',
+    })
+      .then((r) => r.json())
+      .then((obj) => {
+        console.log(obj)
+        setCommentObg(obj)
+      })
+  }
+
+  useEffect(() => {
+    handleGetComment()
+  }, [])
+  //讀取資料 ↑↑↑
+
   //滾動到一定位置定住menu　↓↓↓
   useEffect(() => {
     const menu = document.getElementById('menuScroll')
@@ -188,50 +209,33 @@ function SurpriseRule() {
         </h3>
         <div className="lll-title-line">
           <div className="lll-section" id="scroll">
-            <div className="col-6 p-0 lll-change-max100">
-              <div className="d-flex">
-                <span className="txt-sub1 lll-black lll-lineheigh">Lydia</span>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <i className="fas fa-star lll-green lll-lineheigh"></i>
-                <i className="fas fa-star lll-green lll-lineheigh"></i>
-                <i className="fas fa-star lll-green lll-lineheigh"></i>
-                <i className="fas fa-star lll-green lll-lineheigh"></i>
-                <i className="fas fa-star lll-green lll-lineheigh"></i>
-                &nbsp;&nbsp;&nbsp;&nbsp;
-                <div>
-                  <span className="txt-sub2 lll-grey">使用日期</span>
-                  <span className="txt-sub2 lll-grey">2021/02/18</span>
-                  <br />
+            {commentObj.map((v, i) => (
+              <div className="col-6 p-0 lll-change-max100 lll-mb110">
+                <div className="d-flex">
+                  <span className="txt-sub1 lll-black lll-lineheigh">
+                    {v.nickname}
+                  </span>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <i className="fas fa-star lll-green lll-lineheigh"></i>
+                  <i className="fas fa-star lll-green lll-lineheigh"></i>
+                  <i className="fas fa-star lll-green lll-lineheigh"></i>
+                  <i className="fas fa-star lll-green lll-lineheigh"></i>
+                  <i className="fas fa-star lll-green lll-lineheigh"></i>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <div>
+                    <span className="txt-sub2 lll-grey">使用日期</span>
+                    <span className="txt-sub2 lll-grey">{v.used_date}</span>
+                    <br />
+                  </div>
                 </div>
+                <br />
+                <p className="m-0 txt-sub1 lll-black">{v.comment}</p>
+                <br />
+                <span className="txt-sub2 lll-grey">於</span>
+                <span className="txt-sub2 lll-grey">{v.builded_date}</span>
+                <span className="txt-sub2 lll-grey">評價</span>
               </div>
-              <br />
-              <p className="m-0 txt-sub1 lll-black">
-                試放評語試放評語試放評語試放評語
-                試放評語試放評語試放評語試放評語試
-                放評語試放評語試放評語試放評語試放
-                評語試放評語試放評語試放評語試放評 語試放評語試放評語試放評語
-                試放評語試放評語試放評語試放評語
-                試放評語試放評語試放評語試放評語試
-                放評語試放評語試放評語試放評語試放
-                評語試放評語試放評語試放評語試放評 語試放評語試放評語試放評語
-                試放評語試放評語試放評語試放評語
-                試放評語試放評語試放評語試放評語試
-                放評語試放評語試放評語試放評語試放
-                評語試放評語試放評語試放評語試放評 語試放評語試放評語試放評語
-                試放評語試放評語試放評語試放評語
-                試放評語試放評語試放評語試放評語試
-                放評語試放評語試放評語試放評語試放
-                評語試放評語試放評語試放評語試放評 語試放評語試放評語試放評語
-                試放評語試放評語試放評語試放評語
-                試放評語試放評語試放評語試放評語試
-                放評語試放評語試放評語試放評語試放
-                評語試放評語試放評語試放評語試放評 語試放評語試放評語試放評語
-              </p>
-              <br />
-              <span className="txt-sub2 lll-grey">於</span>
-              <span className="txt-sub2 lll-grey">2020/03/30</span>
-              <span className="txt-sub2 lll-grey">評價</span>
-            </div>
+            ))}
           </div>
         </div>
       </div>
