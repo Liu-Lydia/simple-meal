@@ -45,7 +45,7 @@ function App() {
           <ScrollToTop>
             <Switch>
               <Route path="/cart">
-                <Cart />
+                <Cart loginBool={loginBool} />
               </Route>
               <Route path="/TestDatabase">
                 <TestDatabase />

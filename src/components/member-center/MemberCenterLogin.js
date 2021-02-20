@@ -20,6 +20,7 @@ const MemberCenterLogin = (props, { values, isSubmitting }) => {
 
   return (
     <>
+      {/* 如果登入了, 跳轉首頁 */}
       {loginBool && <Redirect to="/" />}
 
       <div className="container">
