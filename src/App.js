@@ -34,6 +34,12 @@ function App() {
   // 登入狀態(未登入false, 登入true)
   const [loginBool, setLoginBool] = useState(false)
 
+  // 紀錄網址
+  const [pathName, setPathName] = useState({
+    last: '',
+    now: '',
+  })
+
   return (
     <Router>
       <>
@@ -43,10 +49,10 @@ function App() {
           {breadCrumbBool && (
             <MultiLevelBreadCrumb breadCrumbBool={breadCrumbBool} />
           )}
-          <ScrollToTop>
+          <ScrollToTop setPathName={setPathName}>
             <Switch>
               <Route path="/cart">
-                <Cart loginBool={loginBool} />
+                <Cart loginBool={loginBool} pathName={pathName} />
               </Route>
               <Route path="/TestDatabase">
                 <TestDatabase />
