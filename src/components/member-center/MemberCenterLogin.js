@@ -193,7 +193,7 @@ export default withFormik({
         .then((obj) => {
           // console.log(obj)
           if (obj.success) {
-            // window.location.href = 'http://localhost:3015/'
+            // window.location.href = 'http://localhost:3015/MemberCenter/Index'
             alert('已登入')
           } else {
             alert('你的帳號密碼錯誤')

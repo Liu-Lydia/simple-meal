@@ -17,7 +17,7 @@ function MemberCenter() {
   return (
     <>
       <Switch>
-        <Route path="/MemberCenter/test">
+        <Route path="/MemberCenter/Test">
           <Test />
         </Route>
 

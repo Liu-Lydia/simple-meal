@@ -29,7 +29,6 @@ function Sharerecipe(props) {
       }
     )
     const data = await response.json()
-
     // 最後設定到狀態中
     setRecipe(data)
     // 一開始的搜尋暫存值會與recipe一樣

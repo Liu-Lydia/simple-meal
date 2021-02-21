@@ -10,6 +10,7 @@ function MealMeun(props) {
   const mealiconsmellhidden = 'cha-meun-icon cha-meun-hidden'
   const mealicobighidden = 'cha-meun cha-meun-hidden'
   const { type, setType } = props
+
   return (
     <>
       <Link
