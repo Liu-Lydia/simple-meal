@@ -378,6 +378,19 @@
   color: #434341;
 }
 
+.lll-h5{
+  font-family: GenSenRounded TW;
+  font-size: 24px !important;
+  font-weight: 500 !important;
+  line-height: 36px !important;
+  letter-spacing: 0.32px;
+  text-decoration: none;
+}
+
+.lll-h5:hover{
+  color: #a2a3a5;
+}
+
 .lll-calendar {
   width: 320px;
   height: 400px;
@@ -788,10 +801,6 @@
   right: -183px;
   cursor: pointer;
   width: auto;
-}
-
-h5:hover {
-  color: #a2a3a5;
 }
 
 .sticky {

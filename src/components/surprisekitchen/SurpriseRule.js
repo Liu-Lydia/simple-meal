@@ -98,26 +98,32 @@ function SurpriseRule() {
 
       {/* 預約規則說明 ↓↓↓ */}
       <div className="col p-0 w-100">
-        <div className="lll-block float-right lll-onmenu" id="menu">
+        <div className="lll-black float-right lll-onmenu" id="menu">
           <div id="menuScroll">
-            <h5 className="m-0" onClick={() => scrollToAnchorRule('rule')}>
+            <p
+              className="m-0 lll-h5"
+              onClick={() => scrollToAnchorRule('rule')}
+            >
               預約規則說明
-            </h5>
+            </p>
             <br />
-            <h5 className="m-0" onClick={() => scrollToAnchorMap('map')}>
+            <p className="m-0 lll-h5" onClick={() => scrollToAnchorMap('map')}>
               地理位置
-            </h5>
+            </p>
             <br />
-            <h5 className="m-0" onClick={() => scrollToAnchorPolicy('policy')}>
+            <p
+              className="m-0 lll-h5"
+              onClick={() => scrollToAnchorPolicy('policy')}
+            >
               取消政策
-            </h5>
+            </p>
             <br />
-            <h5
-              className="m-0"
+            <p
+              className="m-0 lll-h5"
               onClick={() => scrollToAnchorComment('comment')}
             >
               顧客評價
-            </h5>
+            </p>
             <br />
           </div>
         </div>
