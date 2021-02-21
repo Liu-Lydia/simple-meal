@@ -18,6 +18,7 @@ import AboutUs from './pages/AboutUs'
 import Sharerecipe from './pages/Sharerecipe'
 import XTest from './pages/XTest'
 import TestSvgAnimate from './pages/TestSvgAnimate'
+import MyRecipePage from './pages/MyRecipePage'
 
 // 組合用元件
 import Header from './components/Header'
@@ -94,6 +95,10 @@ function App() {
               {/* 關於我 */}
               <Route path="/aboutus">
                 <AboutUs />
+              </Route>
+              {/* 食譜內容頁 注意：要加上網址參數 */}
+              <Route exact path="/myrecipepage/:id?">
+                <MyRecipePage />
               </Route>
               {/* 共享食譜 */}
               <Route path="/sharerecipe">
