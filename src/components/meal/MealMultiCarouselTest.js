@@ -5,8 +5,7 @@ import CustomRightArrow from './CustomRightArrow'
 import CustomLeftArrow from './CustomLeftArrow'
 import { useState, useEffect } from 'react'
 function MealMultiCarousel(props) {
-  const { type } = props
-  const { setSelectMeal } = props
+  const { setSelectMeal, meal, dataLoading, mealDisplay } = props
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -26,54 +25,18 @@ function MealMultiCarousel(props) {
       items: 1,
     },
   }
-  const [meal, setMeal] = useState([])
-  const [dataLoading, setDataLoading] = useState(false)
-  async function getUsersFromServer(props) {
-    // 開啟載入指示
-    setDataLoading(true)
-    // 連接的伺服器資料網址
-    const url = `http://localhost:4000/meal/${type}`
-    // const url = 'http://localhost:4000/meal/typeA'
-    console.log(type)
-    // 注意header資料格式要設定，伺服器才知道是json格式
-    const request = new Request(url, {
-      method: 'GET',
-      headers: new Headers({
-        Accept: 'application/json',
-        'Content-Type': 'appliaction/json',
-      }),
-    })
-
-    const response = await fetch(request)
-    const data = await response.json()
-    console.log(data)
-    // 設定資料
-    setMeal(data)
-  }
-
-  useEffect(() => {
-    getUsersFromServer()
-  }, [])
-
-  useEffect(() => {
-    getUsersFromServer()
-  }, [type])
-
-  useEffect(() => {
-    setTimeout(() => {
-      setDataLoading(false)
-    }, 1000)
-  }, [meal])
 
   const loading = (
     <>
-      <div className="d-flex justify-content-center">
-        <div className="spinner-border" role="status">
-          <span className="sr-only">Loading...</span>
+      <div className="cha-cards d-flex justify-content-center">
+        <div className="cha-card d-flex justify-content-center">
+          <img src="http://localhost:3015/img/meal/Empty.gif" alt="" />
         </div>
       </div>
     </>
   )
+  console.log(mealDisplay)
+
   return (
     <>
       {dataLoading ? (
@@ -89,8 +52,8 @@ function MealMultiCarousel(props) {
           itemClass="d-flex justify-content-center "
           containerClass="mx-auto col-10 cha-px0"
         >
-          {meal.length &&
-            meal.map((value, index) => {
+          {mealDisplay.length &&
+            mealDisplay.map((value, index) => {
               return (
                 <Link
                   className="cha-dl"

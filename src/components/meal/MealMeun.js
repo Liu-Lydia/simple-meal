@@ -9,7 +9,31 @@ function MealMeun(props) {
   const mealiconsmell = 'cha-meun-icon cha-meun-open'
   const mealiconsmellhidden = 'cha-meun-icon cha-meun-hidden'
   const mealicobighidden = 'cha-meun cha-meun-hidden'
-  const { type, setType } = props
+  const { type, setType, meal, setMealDisplay, setDataLoading } = props
+
+  const [searchInput, setSearchInput] = useState(null)
+
+  console.log()
+
+  useEffect(() => {
+    // 初次預設值也不處理
+    if (searchInput === null) return
+
+    // 先開起載入指示器
+    setDataLoading(true)
+
+    const newMeal = meal.filter((v, i) => {
+      return v.product_name.includes(searchInput)
+    })
+
+    setMealDisplay(newMeal)
+
+    // 3秒後關閉指示器
+    setTimeout(() => {
+      setDataLoading(false)
+    }, 1500)
+  }, [searchInput])
+
   return (
     <>
       <Link
@@ -90,6 +114,10 @@ function MealMeun(props) {
             type="text"
             placeholder="搜尋餐點"
             className="input-pic-style cha-search-put txt-sub2"
+            value={searchInput}
+            onChange={(e) => {
+              setSearchInput(e.target.value)
+            }}
           />
           <i className="fas fa-search cha-search-icon cha-gray"></i>
         </div>
