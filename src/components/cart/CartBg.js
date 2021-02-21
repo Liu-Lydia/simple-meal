@@ -29,8 +29,12 @@ function CartBg() {
     }, 10)
   }
 
+  // useEffect(() => {
+  //   console.log('didmount and didupdate')
+  // })
   useEffect(() => {
     handleSetCssObj()
+    // console.log('didmount')
   }, [])
   useEffect(() => {
     // console.log(2)

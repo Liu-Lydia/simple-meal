@@ -55,7 +55,7 @@ function CartMealDelivery(props) {
           // console.log(v)
           newCheckBool[v.sid] = false
         })
-        console.log(newCheckBool)
+        // console.log(newCheckBool)
         setCheckBool({ ...newCheckBool })
         setAllCheckBool({ thisTime: false, nextTime: false })
       })
@@ -253,61 +253,61 @@ function CartMealDelivery(props) {
                   </p>
                   {/* 手機時的數量按鈕 */}
                   <div className="text-right d-block d-sm-none text-nowrap">
-                    <a
+                    <button
                       onClick={() => {
                         const sid = v.sid
                         const quantity = v.quantity - 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 ${
+                      className={`px-3 border-0 ${
                         v.quantity > 1 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
                       <i className="fas fa-minus-circle"></i>
-                    </a>
+                    </button>
                     <span>{v.quantity}</span>
-                    <a
+                    <button
                       onClick={() => {
                         const sid = v.sid
                         const quantity = v.quantity + 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 ${
+                      className={`px-3 border-0 ${
                         v.quantity < 10 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
                       <i className="fas fa-plus-circle"></i>
-                    </a>
+                    </button>
                   </div>
                 </td>
                 {/* 正常的數量按鈕 */}
                 <td className="text-center align-middle d-none d-sm-table-cell text-nowrap">
                   <div>
-                    <a
+                    <button
                       onClick={() => {
                         const sid = v.sid
                         const quantity = v.quantity - 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 ${
+                      className={`px-3 border-0 ${
                         v.quantity > 1 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
                       <i className="fas fa-minus-circle"></i>
-                    </a>
+                    </button>
                     <span>{v.quantity}</span>
-                    <a
+                    <button
                       onClick={() => {
                         const sid = v.sid
                         const quantity = v.quantity + 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 ${
+                      className={`px-3 border-0 ${
                         v.quantity < 10 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
                       <i className="fas fa-plus-circle"></i>
-                    </a>
+                    </button>
                   </div>
                 </td>
               </tr>
@@ -466,61 +466,61 @@ function CartMealDelivery(props) {
                   </p>
                   {/* 手機時的數量按鈕 */}
                   <div className="text-right d-block d-sm-none  text-nowrap">
-                    <a
+                    <button
                       onClick={() => {
                         const sid = v.sid
                         const quantity = v.quantity - 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 ${
+                      className={`px-3 border-0 ${
                         v.quantity > 1 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
                       <i className="fas fa-minus-circle"></i>
-                    </a>
+                    </button>
                     <span>{v.quantity}</span>
-                    <a
+                    <button
                       onClick={() => {
                         const sid = v.sid
                         const quantity = v.quantity + 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 ${
+                      className={`px-3 border-0 ${
                         v.quantity < 10 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
                       <i className="fas fa-plus-circle"></i>
-                    </a>
+                    </button>
                   </div>
                 </td>
                 {/* 正常的數量按鈕 */}
                 <td className="text-center align-middle d-none d-sm-table-cell text-nowrap">
                   <div>
-                    <a
+                    <button
                       onClick={() => {
                         const sid = v.sid
                         const quantity = v.quantity - 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 ${
+                      className={`px-3 border-0 ${
                         v.quantity > 1 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
                       <i className="fas fa-minus-circle"></i>
-                    </a>
+                    </button>
                     <span>{v.quantity}</span>
-                    <a
+                    <button
                       onClick={() => {
                         const sid = v.sid
                         const quantity = v.quantity + 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 ${
+                      className={`px-3 border-0 ${
                         v.quantity < 10 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
                       <i className="fas fa-plus-circle"></i>
-                    </a>
+                    </button>
                   </div>
                 </td>
               </tr>
