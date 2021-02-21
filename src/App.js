@@ -34,11 +34,8 @@ function App() {
   // 登入狀態(未登入false, 登入true)
   const [loginBool, setLoginBool] = useState(false)
 
-  // 紀錄網址
-  const [pathName, setPathName] = useState({
-    last: '',
-    now: '',
-  })
+  // 非購物車頁面改變購物車模式
+  const [cartModeByRedirectFrom, setCartModeByRedirectFrom] = useState('')
 
   return (
     <Router>
@@ -49,10 +46,14 @@ function App() {
           {breadCrumbBool && (
             <MultiLevelBreadCrumb breadCrumbBool={breadCrumbBool} />
           )}
-          <ScrollToTop setPathName={setPathName}>
+          <ScrollToTop>
             <Switch>
               <Route path="/cart">
-                <Cart loginBool={loginBool} pathName={pathName} />
+                <Cart
+                  loginBool={loginBool}
+                  cartModeByRedirectFrom={cartModeByRedirectFrom}
+                  setCartModeByRedirectFrom={setCartModeByRedirectFrom}
+                />
               </Route>
               <Route path="/TestDatabase">
                 <TestDatabase />
@@ -96,7 +97,10 @@ function App() {
               />
               <Route path="/MemberCenter" component={MemberCenterLogin} /> */}
               <Route path="/surprisekitchen">
-                <SurpriseKitchen loginBool={loginBool} />
+                <SurpriseKitchen
+                  loginBool={loginBool}
+                  setCartModeByRedirectFrom={setCartModeByRedirectFrom}
+                />
               </Route>
               {/* 關於我 */}
               <Route path="/aboutus">

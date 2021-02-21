@@ -16,14 +16,6 @@ class ScrollToTop extends React.Component {
         behavior: 'smooth',
       })
     }
-
-    // 紀錄網址
-    if (prevProps.location.pathname === '/surprisekitchen') {
-      this.props.setPathName({
-        last: prevProps.location.pathname,
-        now: this.props.location.pathname,
-      })
-    }
   }
 
   render() {

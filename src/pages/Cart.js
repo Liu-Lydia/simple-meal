@@ -13,7 +13,7 @@ import CartModeControl from '../components/cart/CartModeControl'
 
 function Cart(props) {
   // { 登入布林值 }
-  const { loginBool, pathName } = props
+  const { loginBool, cartModeByRedirectFrom, setCartModeByRedirectFrom } = props
 
   // 切換購物車
   const [cartMode, setCartMode] = useState('SimpleMealCoupon')
@@ -90,12 +90,21 @@ function Cart(props) {
     }
   }
 
-  // 根據上一個網址切換購物車的內容
+  // 根據非購物車頁面設定, 來切換進到購物車的模式
   useEffect(() => {
-    if (pathName.last === '/surprisekitchen') {
+    // 改為配送料理
+    if (cartModeByRedirectFrom === 'MealDelivery') {
+      setCartMode('MealDelivery')
+    }
+
+    // 改為預約廚房
+    if (cartModeByRedirectFrom === 'ReserveKitchen') {
       setCartMode('ReserveKitchen')
     }
-  }, [pathName])
+
+    // 重設非購物車頁面設定
+    setCartModeByRedirectFrom('')
+  }, [cartModeByRedirectFrom])
 
   // 當購物車改變時切換流程到階段1
   useEffect(() => {
