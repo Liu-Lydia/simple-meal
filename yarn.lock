@@ -9475,7 +9475,7 @@ react-scripts@4.0.1:
 
 react-transition-group@^4.4.1:
   version "4.4.1"
-  resolved "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.4.1.tgz"
+  resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-4.4.1.tgz#63868f9325a38ea5ee9535d828327f85773345c9"
   integrity sha512-Djqr7OQ2aPUiYurhPalTrVy9ddmFCCzwhqQmtN+J3+3DzLO209Fdr70QrN8Z3DsglWql6iY1lDWAfpFiBtuKGw==
   dependencies:
     "@babel/runtime" "^7.5.5"
@@ -10788,6 +10788,11 @@ svgo@^1.0.0, svgo@^1.2.2:
     stable "^0.1.8"
     unquote "~1.1.1"
     util.promisify "~1.0.0"
+
+sweetalert2@^10.15.4:
+  version "10.15.4"
+  resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-10.15.4.tgz#27ec887417d2949e5759699c1c4e0824fe55f03c"
+  integrity sha512-s5fCMG+rP0a7dyLlb5t0502DCyRKtuQN6We5QqT7GNHv2SurmyQ5i/82tJaTz9dhISPGl8cOn9vo5v9NZ0DDdQ==
 
 symbol-observable@^1.0.4, symbol-observable@^1.2.0:
   version "1.2.0"

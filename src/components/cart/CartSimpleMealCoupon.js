@@ -205,17 +205,23 @@ function CartSimpleMealCoupon(props) {
       {/* 組合數量按鈕 */}
       <div className="poe-bookmark-content-choice text-right">
         <span className="">組合數量</span>
-        <a onClick={() => handleSetQuantity(false)} className="px-3">
+        <button
+          onClick={() => handleSetQuantity(false)}
+          className="px-3 border-0"
+        >
           <i
             className={`fas fa-minus-circle ${quantity <= 1 && 'poe-gray'}`}
           ></i>
-        </a>
+        </button>
         <span>{quantity}</span>
-        <a onClick={() => handleSetQuantity(true)} className="px-3">
+        <button
+          onClick={() => handleSetQuantity(true)}
+          className="px-3 border-0"
+        >
           <i
             className={`fas fa-plus-circle ${quantity === 10 && 'poe-gray'}`}
           ></i>
-        </a>
+        </button>
       </div>
       {/* 小計 */}
       <div className="poe-bookmark-content-result text-right">

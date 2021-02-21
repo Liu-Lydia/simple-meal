@@ -1,0 +1,27 @@
+/* 顏色 */
+.col-green {
+  color: #627e2a;
+}
+.col-gray {
+  color: #a2a3a5;
+}
+.col-red {
+  color: #b9433b;
+}
+.col-black {
+  color: #434341;
+}
+.col-white {
+  color: #FFFFFF;
+}
+
+.xxx-myrecipe-img-div{
+    width: 250px;
+    height: 150px;
+}
+.xxx-myrecipe-img-size{
+  width: 100%;
+}
+.xxx-w50{
+  width: 300px;
+}

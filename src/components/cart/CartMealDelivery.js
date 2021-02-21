@@ -55,7 +55,7 @@ function CartMealDelivery(props) {
           // console.log(v)
           newCheckBool[v.sid] = false
         })
-        console.log(newCheckBool)
+        // console.log(newCheckBool)
         setCheckBool({ ...newCheckBool })
         setAllCheckBool({ thisTime: false, nextTime: false })
       })
@@ -91,6 +91,7 @@ function CartMealDelivery(props) {
     if (quantity >= 1 && quantity <= 10) {
       fetch(url, {
         method: 'get',
+        credentials: 'include',
       }).then(setClickNum(clickNum + 1))
     }
   }
@@ -137,6 +138,7 @@ function CartMealDelivery(props) {
 
     fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       // .then((r) => r.json())
       // .then((obj) => console.log(obj))
@@ -150,6 +152,7 @@ function CartMealDelivery(props) {
     const url = `http://localhost:4000/mealdelivery/tonexttime?str=${checkSid.thisTime}`
     fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       .then(setClickNum(clickNum + 1))
       .then(setCheckSid({ thisTime: '0', nextTime: '0' }))
@@ -161,6 +164,7 @@ function CartMealDelivery(props) {
     const url = `http://localhost:4000/mealdelivery/tothistime?str=${checkSid.nextTime}`
     fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       .then(setClickNum(clickNum + 1))
       .then(setCheckSid({ thisTime: '0', nextTime: '0' }))
@@ -206,10 +210,7 @@ function CartMealDelivery(props) {
               <th className="text-center" scope="col">
                 餐點明細
               </th>
-              <th
-                className="d-none d-sm-block text-center text-nowrap"
-                style={{ width: '150px' }}
-              >
+              <th className="d-none d-sm-block text-center text-nowrap">
                 數量
               </th>
             </tr>
@@ -251,62 +252,62 @@ function CartMealDelivery(props) {
                     {v.description}
                   </p>
                   {/* 手機時的數量按鈕 */}
-                  <div className="text-right d-block d-sm-none ">
-                    <a
+                  <div className="text-right d-block d-sm-none text-nowrap">
+                    <button
                       onClick={() => {
                         const sid = v.sid
                         const quantity = v.quantity - 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 ${
+                      className={`px-3 border-0 ${
                         v.quantity > 1 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
                       <i className="fas fa-minus-circle"></i>
-                    </a>
+                    </button>
                     <span>{v.quantity}</span>
-                    <a
+                    <button
                       onClick={() => {
                         const sid = v.sid
                         const quantity = v.quantity + 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 ${
+                      className={`px-3 border-0 ${
                         v.quantity < 10 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
                       <i className="fas fa-plus-circle"></i>
-                    </a>
+                    </button>
                   </div>
                 </td>
                 {/* 正常的數量按鈕 */}
-                <td className="text-center align-middle d-none d-sm-table-cell">
+                <td className="text-center align-middle d-none d-sm-table-cell text-nowrap">
                   <div>
-                    <a
+                    <button
                       onClick={() => {
                         const sid = v.sid
                         const quantity = v.quantity - 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 ${
+                      className={`px-3 border-0 ${
                         v.quantity > 1 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
                       <i className="fas fa-minus-circle"></i>
-                    </a>
+                    </button>
                     <span>{v.quantity}</span>
-                    <a
+                    <button
                       onClick={() => {
                         const sid = v.sid
                         const quantity = v.quantity + 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 ${
+                      className={`px-3 border-0 ${
                         v.quantity < 10 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
                       <i className="fas fa-plus-circle"></i>
-                    </a>
+                    </button>
                   </div>
                 </td>
               </tr>
@@ -422,10 +423,7 @@ function CartMealDelivery(props) {
               <th className="text-center" scope="col">
                 餐點明細
               </th>
-              <th
-                className="d-none d-sm-block text-center text-nowrap"
-                style={{ width: '150px' }}
-              >
+              <th className="d-none d-sm-block text-center text-nowrap">
                 數量
               </th>
             </tr>
@@ -467,62 +465,62 @@ function CartMealDelivery(props) {
                     {v.description}
                   </p>
                   {/* 手機時的數量按鈕 */}
-                  <div className="d-block d-sm-none text-right">
-                    <a
+                  <div className="text-right d-block d-sm-none  text-nowrap">
+                    <button
                       onClick={() => {
                         const sid = v.sid
                         const quantity = v.quantity - 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 ${
+                      className={`px-3 border-0 ${
                         v.quantity > 1 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
                       <i className="fas fa-minus-circle"></i>
-                    </a>
+                    </button>
                     <span>{v.quantity}</span>
-                    <a
+                    <button
                       onClick={() => {
                         const sid = v.sid
                         const quantity = v.quantity + 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 ${
+                      className={`px-3 border-0 ${
                         v.quantity < 10 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
                       <i className="fas fa-plus-circle"></i>
-                    </a>
+                    </button>
                   </div>
                 </td>
                 {/* 正常的數量按鈕 */}
-                <td className="text-center align-middle d-none d-sm-table-cell">
+                <td className="text-center align-middle d-none d-sm-table-cell text-nowrap">
                   <div>
-                    <a
+                    <button
                       onClick={() => {
                         const sid = v.sid
                         const quantity = v.quantity - 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 ${
+                      className={`px-3 border-0 ${
                         v.quantity > 1 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
                       <i className="fas fa-minus-circle"></i>
-                    </a>
+                    </button>
                     <span>{v.quantity}</span>
-                    <a
+                    <button
                       onClick={() => {
                         const sid = v.sid
                         const quantity = v.quantity + 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 ${
+                      className={`px-3 border-0 ${
                         v.quantity < 10 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
                       <i className="fas fa-plus-circle"></i>
-                    </a>
+                    </button>
                   </div>
                 </td>
               </tr>

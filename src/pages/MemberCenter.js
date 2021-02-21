@@ -11,9 +11,15 @@ import MemberCenterAddr from '../components/member-center/MemberCenterAddr'
 import MemberCenterCreditCard from '../components/member-center/MemberCenterCreditCard'
 import MemberCenterFoodDelivery from '../components/member-center/MemberCenterFoodDelivery'
 import MemberCenterSimpleMealCoupon from '../components/member-center/MemberCenterSimpleMealCoupon'
+import MyRecipe from '../components/member-center/MyRecipe'
+import AddRecipe from '../components/member-center/AddRecipe'
+import MyRecipeEdit from '../components/member-center/MyRecipeEdit'
+
 import Test from '../components/member-center/test'
 
-function MemberCenter() {
+function MemberCenter(props) {
+  // { 登入布林值, 設定登入布林值}
+  const { loginBool, setLoginBool } = props
   return (
     <>
       <Switch>
@@ -53,12 +59,28 @@ function MemberCenter() {
           <MemberCenterResetPassword />
         </Route>
 
+        {/* 我的食譜 */}
+        <Route path="/MemberCenter/MyRecipe">
+          <MyRecipe />
+        </Route>
+        {/* 新增食譜 */}
+        <Route path="/MemberCenter/addrecipe">
+          <AddRecipe />
+        </Route>
+        {/* 修改食譜 注意：要加上網址參數 */}
+        <Route exact path="/MemberCenter/myrecipeedit/:id?">
+          <MyRecipeEdit />
+        </Route>
+
         <Route path="/MemberCenter/Index">
           <MemberCenterIndex />
         </Route>
 
         <Route path="/">
-          <MemberCenterLogin />
+          <MemberCenterLogin
+            loginBool={loginBool}
+            setLoginBool={setLoginBool}
+          />
         </Route>
       </Switch>
     </>

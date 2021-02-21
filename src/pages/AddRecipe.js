@@ -1,5 +1,6 @@
 import '../styles/addrecipe.css'
 
+
 function AddRecipe(props) {
   // 2.送資料給主機
   async function handleFormSubmit(event) {
@@ -27,22 +28,6 @@ function AddRecipe(props) {
 
     console.log('伺服器回傳的json資料', rdata)
   }
-
-  // function doUpload() {
-  //   const fd = new FormData(document.form1)
-
-  //   fetch('/try-upload2', {
-  //     method: 'POST',
-  //     body: fd,
-  //   })
-  //     .then((r) => r.json())
-  //     .then((info) => {
-  //       console.log(info)
-  //       // if(info.file){
-  //       //     document.querySelector('#myimg').src = '/img/' + info.file.filename;
-  //       // }
-  //     })
-  // }
 
   return (
     <>

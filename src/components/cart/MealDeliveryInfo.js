@@ -34,6 +34,7 @@ function MealDeliveryInfo(props) {
       cost: 0,
       remain: 0,
     },
+    memberInfoObj: {},
   })
 
   // 讀取資料庫
@@ -41,10 +42,11 @@ function MealDeliveryInfo(props) {
     const url = 'http://localhost:4000/mealdelivery/getdeliverycart'
     fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       .then((r) => r.json())
       .then((obj) => {
-        // console.log(obj)
+        console.log(obj)
         setDeliveryData(obj)
       })
   }
@@ -121,8 +123,21 @@ function MealDeliveryInfo(props) {
         ) {
           setFlowchart(3)
         }
-        console.log(infoPlaceholder)
+        // console.log(infoPlaceholder)
       })
+  }
+
+  // 自動填入會員資料到表單
+  const handleAutoFillIn = () => {
+    const obj = deliveryData.memberInfoObj
+    const newInfo = { ...info }
+    newInfo.name = obj.name
+    newInfo.mobile = obj.mobile
+    newInfo.email = obj.email
+    newInfo.address = obj.addr
+
+    setInfo({ ...newInfo })
+    // console.log(typeof obj.mobile, obj)
   }
 
   // 裝載時轉成流程2
@@ -153,12 +168,7 @@ function MealDeliveryInfo(props) {
                   <th className="" scope="col">
                     餐點明細
                   </th>
-                  <th
-                    className="d-none d-sm-block text-center text-nowrap"
-                    style={{ width: '150px' }}
-                  >
-                    數量
-                  </th>
+                  <th className="text-center text-nowrap">數量</th>
                 </tr>
               </thead>
               <tbody>
@@ -226,7 +236,7 @@ function MealDeliveryInfo(props) {
           <div className="poe-bookmark-content txt-btn poe-form">
             <div className="row align-items-center poe-mb30">
               <div className="col-2 px-md-0 text-md-right">
-                <input type="checkbox" />
+                <input type="checkbox" onChange={() => handleAutoFillIn()} />
               </div>
               <div className="col-10">同會員資料</div>
             </div>

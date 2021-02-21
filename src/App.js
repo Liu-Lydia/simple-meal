@@ -16,8 +16,6 @@ import Recipe from './pages/Recipe'
 import MemberCenter from './pages/MemberCenter'
 import AboutUs from './pages/AboutUs'
 import Sharerecipe from './pages/Sharerecipe'
-import MyRecipe from './pages/MyRecipe'
-import AddRecipe from './pages/AddRecipe'
 import XTest from './pages/XTest'
 import TestSvgAnimate from './pages/TestSvgAnimate'
 
@@ -32,10 +30,13 @@ function App() {
   // 麵包屑判斷 (true在左上 false由各頁面自訂, 需要改動者再引入)
   const [breadCrumbBool, setBreadCrumbBool] = useState(true)
 
+  // 登入狀態(未登入false, 登入true)
+  const [loginBool, setLoginBool] = useState(false)
+
   return (
     <Router>
       <>
-        <Header />
+        <Header loginBool={loginBool} setLoginBool={setLoginBool} />
         {/* 主內容 */}
         <MainContent>
           {breadCrumbBool && (
@@ -44,7 +45,7 @@ function App() {
           <ScrollToTop>
             <Switch>
               <Route path="/cart">
-                <Cart />
+                <Cart loginBool={loginBool} />
               </Route>
               <Route path="/TestDatabase">
                 <TestDatabase />
@@ -70,16 +71,12 @@ function App() {
                   setBreadCrumbBool={setBreadCrumbBool}
                 />
               </Route>
-              {/* 我的食譜 */}
-              <Route path="/MemberCenter/MyRecipe">
-                <MyRecipe />
-              </Route>
-              {/* 新增食譜 */}
-              <Route path="/MemberCenter/addrecipe">
-                <AddRecipe />
-              </Route>
+
               <Route path="/MemberCenter">
-                <MemberCenter />
+                <MemberCenter
+                  loginBool={loginBool}
+                  setLoginBool={setLoginBool}
+                />
               </Route>
               {/* <Route path="/MemberCenter/Index" component={MemberCenterIndex} />
               <Route
@@ -92,7 +89,7 @@ function App() {
               />
               <Route path="/MemberCenter" component={MemberCenterLogin} /> */}
               <Route path="/surprisekitchen">
-                <SurpriseKitchen />
+                <SurpriseKitchen loginBool={loginBool} />
               </Route>
               {/* 關於我 */}
               <Route path="/aboutus">

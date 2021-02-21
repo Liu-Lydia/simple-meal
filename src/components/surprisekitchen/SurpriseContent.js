@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { Link } from 'react-router-dom'
+import { Redirect, Route, withRouter, Link, Switch } from 'react-router-dom'
 // import DropdownItem from '../components/DropdownItem'
 import { Collapse } from 'react-collapse'
 import Calendar from '../../pages/Calendar'
-//import CalendarTest from '../../pages/CalendarTest'
 
 function SurpriseContent(props) {
+  // 有沒有登入
+  const { loginBool } = props
+
   // 接收預約日期值
   const [dateStr, setDateObj] = useState('')
 
@@ -30,6 +32,7 @@ function SurpriseContent(props) {
     const url = 'http://localhost:4000/reservationTimes/getReservationTimes'
     fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       .then((r) => r.json())
       .then((obj) => {
@@ -41,6 +44,27 @@ function SurpriseContent(props) {
   useEffect(() => {
     handleGetData()
   }, [])
+  //讀取資料 ↑↑↑
+
+  //接收資料庫資料　↓↓↓
+  // const [orderObj, setOrderObj] = useState({})
+
+  //讀取資料　↓↓↓
+  // const handleGetInfo = () => {
+  //   fetch('http://localhost:4000/surprisekitchenOrder/getReservationInfo', {
+  //     method: 'get',
+  //     credentials: 'include',
+  //   })
+  //     .then((r) => r.json())
+  //     .then((obj) => {
+  //       console.log(obj)
+  //       setOrderObj(obj)
+  //     })
+  // }
+
+  // useEffect(() => {
+  //   handleGetInfo()
+  // }, [])
   //讀取資料 ↑↑↑
 
   //點擊場次　↓↓↓
@@ -62,12 +86,6 @@ function SurpriseContent(props) {
     remark: '',
     reservation_price: 0,
   })
-
-  //清空選項***
-  // const handleSetAppoint = () => {
-  //   setAllPrice(0)
-
-  // }
 
   //成人數量選擇
   const [num_adult, setNum_adult] = useState(0)
@@ -107,8 +125,6 @@ function SurpriseContent(props) {
   function handleSetPrice(num_adult, child_price) {
     const Price = num_adult * 500 + child_price * 100
 
-    // const allPrice = AdultPrice + ChildPrice
-
     setAppoint({
       reservation_date: '',
       reservation_time: '',
@@ -136,19 +152,41 @@ function SurpriseContent(props) {
 
   const handlePostOrder = async () => {
     const fd = new FormData(document.querySelector('#reservation_kitchen'))
-    await fetch('http://localhost:4000/surprisekitchenOrder/addreservation', {
-      method: 'post',
-      body: fd,
-    })
-      .then((r) => r.json())
-      .then((obj) => {
-        console.log(obj)
-        alert(`您的訂單編號為 ${obj.order_sid}, 請前往購物車進行結帳。 `)
+
+    if (!loginBool) {
+      console.log('滾去登入再說')
+      return <Redirect to="/MemberCenter" />
+    } else {
+      await fetch('http://localhost:4000/surprisekitchenOrder/addreservation', {
+        method: 'post',
+        body: fd,
+        credentials: 'include',
       })
+        .then((r) => r.json())
+        .then((obj) => {
+          console.log(obj)
+          alert(`您的訂單編號為 ${obj.order_sid}, 請前往購物車進行結帳。 `)
+        })
+    }
   }
+
+  const handleClear = () => {
+    setNum_adult(0)
+    setNum_child(0)
+    setNum_meal(0)
+    setTextarea('')
+    setAppoint({
+      reservation_price: 0,
+    })
+    setActive({ ...timesData })
+  }
+
+  const [btnBoll, setBtnBool] = useState(false) //測試
 
   return (
     <>
+      {/* {btnBoll && !loginBool && <Redirect to="/MemberCenter" />}測試 */}
+
       {/* 驚喜廚房title, 3項內容 ↓↓↓ */}
       <h3 className="lll-title-style">驚喜廚房</h3>
       <div className="lll-trans-block d-flex p-0 ">
@@ -157,7 +195,6 @@ function SurpriseContent(props) {
         <p className="txt-sub1 lll-grey">備註即有專人核對確認</p>
       </div>
       {/* 驚喜廚房title, 3項內容 ↑↑↑ */}
-
       {/* 展開預約Button ↓↓↓ */}
       <div className="col p-0 lll-textalign-right">
         <button
@@ -172,7 +209,6 @@ function SurpriseContent(props) {
       </div>
       <div className="col lll-hidden-line"></div>
       {/* 展開預約Button ↑↑↑ */}
-
       <Collapse isOpened={isButtonCollapseOpen}>
         <div id={buttonCollapseId.button} />
         {/* 選擇日期、選項 / 全部重選 ↓↓↓ */}
@@ -181,9 +217,9 @@ function SurpriseContent(props) {
             選擇日期、選項
           </div>
           <div className="ml-auto txt-sub1 lll-selected-position lll-grey">
-            <Link className="lll-grey">
+            <a className="lll-grey lll-cursor" onClick={() => handleClear()}>
               <i className="fas fa-redo-alt lll-pr20"></i>全部重選
-            </Link>
+            </a>
           </div>
         </div>
         {/* 選擇日期、選項 / 全部重選 ↑↑↑ */}
@@ -358,11 +394,7 @@ function SurpriseContent(props) {
               </h4>
             </div>
             {/* 顯示價格 ↑↑↑ */}
-
-            <div className="d-flex justify-content-between mt-1 lll-pt20">
-              <Link to="" className="btn-green txt-btn">
-                加入購物車
-              </Link>
+            <div className="d-flex justify-content-end mt-1 lll-pt20">
               <Link
                 onClick={() => {
                   handlePostOrder()

@@ -1,4 +1,4 @@
-import React, { useReducer, createContext } from 'react'
+import React, { useState, useReducer, createContext } from 'react'
 import moment from 'moment'
 import calendar from '../reducers/calendar'
 
@@ -12,7 +12,10 @@ import SurpriseRule from '../components/surprisekitchen/SurpriseRule'
 
 export const AppStore = createContext()
 
-function SurpriseKitchen() {
+function SurpriseKitchen(props) {
+  // 有沒有登入
+  const { loginBool } = props
+
   const mmt = new moment()
   const timeReducer = useReducer(calendar, mmt.format('YYYY-MM-DD'))
   // let result = GetWeeksInMonth();
@@ -24,7 +27,7 @@ function SurpriseKitchen() {
       <div className="container lll-appoint col-sm-center">
         <div className="row justify-content-center">
           <div className="col-8 lll-appoint-w100">
-            <SurpriseContent />
+            <SurpriseContent loginBool={loginBool} />
             <SurpriseRule />
           </div>
         </div>

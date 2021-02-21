@@ -138,7 +138,7 @@
   padding-top: 60px;
   /* margin: 0 30px 0 30px; */
   /* background-color: red; */
-  transition: .5s;
+  transition: .2s;
 }
 .cha-card:hover .cha-card-yellow {
   background-color: rgba(255, 232, 61, 0.5);
@@ -154,7 +154,7 @@
   width: 230px;
   background-color: rgba(243, 229, 117, 0.5);
   border-radius: 25px;
-  transition: .5s;
+  transition: .2s;
 }
 
 .cha-card-img1 {
@@ -169,7 +169,7 @@
   height: 145px;
   width: 100%;
   object-fit: contain;
-  transition: .5s;
+  transition: .2s;
   margin-bottom: 5px;
 }
 

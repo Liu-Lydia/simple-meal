@@ -1,0 +1,337 @@
+.poe-h6 {
+  font-size: 21px;
+  font-family: GenSenRounded TW;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.29px;
+  text-decoration: none;
+}
+
+.poe-mr30 {
+  margin-right: 30px;
+}
+
+.poe-ml30 {
+  margin-left: 30px;
+}
+
+.poe-mt30 {
+  margin-top: 30px;
+}
+
+.poe-mb30 {
+  margin-bottom: 30px;
+}
+
+.poe-mr20 {
+  margin-right: 20px;
+}
+
+.poe-ml20 {
+  margin-left: 20px;
+}
+
+.poe-mt20 {
+  margin-top: 20px;
+}
+
+.poe-mb20 {
+  margin-bottom: 20px;
+}
+
+.poe-mr15 {
+  margin-right: 15px;
+}
+
+.poe-ml15 {
+  margin-left: 15px;
+}
+
+.poe-mt15 {
+  margin-top: 15px;
+}
+
+.poe-mb15 {
+  margin-bottom: 15px;
+}
+
+.poe-pr30 {
+  padding-right: 30px;
+}
+
+.poe-pl30 {
+  padding-left: 30px;
+}
+
+.poe-pt30 {
+  padding-top: 30px;
+}
+
+.poe-pb30 {
+  padding-bottom: 30px;
+}
+
+.poe-pr20 {
+  padding-right: 20px;
+}
+
+.poe-pl20 {
+  padding-left: 20px;
+}
+
+.poe-pt20 {
+  padding-top: 20px;
+}
+
+.poe-pb20 {
+  padding-bottom: 20px;
+}
+
+.poe-pr15 {
+  padding-right: 15px;
+}
+
+.poe-pl15 {
+  padding-left: 15px;
+}
+
+.poe-pt15 {
+  padding-top: 15px;
+}
+
+.poe-pb15 {
+  padding-bottom: 15px;
+}
+
+.poe-input-text,
+.poe-input-text:focus,
+.poe-input-text:hover {
+  height: 48px;
+}
+
+.poe-cart-progress .col-3 {
+  padding: 0;
+  color: #627e2a;
+  margin: 0 5px;
+}
+
+.poe-cart-progress-line {
+  background-color: #b0be94;
+  border-radius: 4px;
+  height: 8px;
+}
+
+.poe-cart-progress-active {
+  height: 16px;
+  background-color: #627e2a;
+  border-radius: 8px;
+  margin: 0 5px;
+}
+
+.poe-bookmark-label {
+  opacity: 50%;
+  background-color: #627e2a;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px 15px 0 0;
+  border: none;
+  margin: 0 1px;
+  text-align: center;
+  color: #fff;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.poe-bookmark-label:hover {
+  color: #a2a3a5;
+  text-decoration: none;
+}
+
+.poe-bookmark-label:focus {
+  border: none;
+  outline: none;
+}
+
+.poe-bookmark-label-active {
+  opacity: 100%;
+}
+
+.poe-bookmark-content {
+  width: 100%;
+  border: 3px solid #627e2a;
+  padding: 8%;
+  /* padding: 65px; */
+  font-family: GenSenRounded TW;
+  text-decoration: none;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.poe-bookmark-content > h5 {
+  margin-bottom: 20px;
+}
+
+.poe-bookmark-content thead {
+  border-bottom: 2px solid #627e2a;
+}
+
+.poe-bookmark-content td {
+  color: #627e2a;
+}
+
+/* .poe-bookmark-content .txt-cap {
+  color: #b9433b;
+} */
+
+.poe-green {
+  color: #627e2a !important;
+}
+
+.poe-red {
+  color: #b9433b !important;
+}
+
+.poe-gray {
+  color: #a2a3a5 !important;
+}
+
+.poe-bookmark-content-choice,
+.poe-bookmark-content-result {
+  padding: 20px 0 20px 0;
+}
+
+.poe-bookmark-content-choice .fas {
+  color: #627e2a;
+}
+
+.poe-bookmark-content-choice,
+.poe-bookmark-content-result {
+  border-top: 2px solid #627e2a;
+  /* border-bottom: 2px solid #627E2A; */
+}
+
+/* .poe-bookmark-content-result {
+
+} */
+
+.poe-bookmark-content-m {
+  width: 50px;
+  margin-right: 15px;
+  text-align: right;
+}
+
+.poe-bookmark-btn-group {
+  margin-top: 30px;
+}
+
+.poe-bookmark-content-coupon .poe-input-text {
+  width: 150px;
+}
+
+#poe-cart-bg01 {
+  background: url('http://localhost:3015/img/cart/bg/lemonUFO-Go.PNG') center
+    center no-repeat;
+  /* background: url('/public/img/cart/bg/lemonUFO-Go.PNG') center center no-repeat; */
+  background-size: contain;
+  transform: scalex(-1);
+  height: 200px;
+  width: 200px;
+  position: fixed;
+  left: -100%;
+  top: 150px;
+}
+
+@media (min-width: 572px) {
+  #poe-cart-bg01 {
+    left: -100%;
+  }
+}
+@media (min-width: 790px) {
+  #poe-cart-bg01 {
+    left: -5%;
+  }
+}
+@media (min-width: 992px) {
+  #poe-cart-bg01 {
+    left: 0%;
+  }
+}
+@media (min-width: 1200px) {
+  #poe-cart-bg01 {
+    left: 4%;
+  }
+}
+
+#poe-cart-bg02 {
+  background: url('http://localhost:3015/img/cart/bg/red-circle.png') center
+    center no-repeat;
+  /* background: url('../../public/img/cart/bg/red-circle.png') center center
+    no-repeat; */
+  background-size: contain;
+  height: 300px;
+  width: 300px;
+  position: fixed;
+  left: -5%;
+  bottom: -10%;
+}
+
+#poe-cart-bg03 {
+  background: url('http://localhost:3015/img/cart/bg/double-circle.png') center
+    center no-repeat;
+  background-size: contain;
+  height: 420px;
+  width: 250px;
+  position: fixed;
+  right: 0%;
+  top: 150px;
+  overflow: hidden;
+}
+
+.poe-cart-product-img {
+  width: 84px;
+  height: 84px;
+  overflow: hidden;
+}
+
+.poe-red-line {
+  width: 100%;
+  height: 2px;
+  background-color: #b9433b;
+  margin: 20px 0;
+}
+
+.poe-test {
+  /* background: url('/styles/only.png') center center no-repeat; */
+  background: url('http://localhost:3015/img/cart/bg/lemonUFO-Go.PNG') center
+    center no-repeat;
+  width: 200px;
+  height: 200px;
+  background-size: contain;
+}
+
+.poe-w100px {
+  width: 100px;
+}
+
+.poe-bbgreen {
+  border-bottom: 2px solid #627e2a;
+}
+
+.poe-ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.poe-form ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #b9433b;
+  opacity: 1; /* Firefox */
+}
+
+.poe-alert {
+  border-radius: 25px !important;
+  border: 5px solid #627e2a !important;
+}
