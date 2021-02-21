@@ -1,12 +1,15 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { Redirect, Route, withRouter, Link, Switch } from 'react-router-dom'
+import Swal from 'sweetalert2'
 // import DropdownItem from '../components/DropdownItem'
 import { Collapse } from 'react-collapse'
 import Calendar from '../../pages/Calendar'
 
 function SurpriseContent(props) {
-  // 有沒有登入
-  const { loginBool } = props
+  // {有沒有登入, 非購物車頁面改變購物車模式}
+  const { loginBool, setCartModeByRedirectFrom } = props
+
+  const [shouldRedirectTo, setShouldRedirectTo] = useState('')
 
   // 接收預約日期值
   const [dateStr, setDateObj] = useState('')
@@ -150,12 +153,26 @@ function SurpriseContent(props) {
     }
   }
 
+  // 定義SweetAlert2的按鈕
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      popup: 'poe-alert',
+      title: 'poe-green my-0',
+      content: 'txt-btn',
+      confirmButton: 'btn-green txt-btn mx-2 my-2',
+      cancelButton: 'btn-red txt-btn mx-2 my-2',
+      denyButton: 'btn-red txt-btn mx-2 my-2',
+    },
+    buttonsStyling: false,
+  })
+
   const handlePostOrder = async () => {
     const fd = new FormData(document.querySelector('#reservation_kitchen'))
 
     if (!loginBool) {
       console.log('滾去登入再說')
-      return <Redirect to="/MemberCenter" />
+      setShouldRedirectTo('memberCenter')
+      return
     } else {
       await fetch('http://localhost:4000/surprisekitchenOrder/addreservation', {
         method: 'post',
@@ -165,7 +182,34 @@ function SurpriseContent(props) {
         .then((r) => r.json())
         .then((obj) => {
           console.log(obj)
-          alert(`您的訂單編號為 ${obj.order_sid}, 請前往購物車進行結帳。 `)
+          // alert(`您的訂單編號為 ${obj.order_sid}, 請前往購物車進行結帳。 `)
+          // sweetAlert 第2階段
+          swalWithBootstrapButtons
+            .fire({
+              icon: 'success',
+              // imageUrl: 'http://localhost:3015/img/lydia/Omurice.GIF',
+              // imageHeight: 200,
+              title: '<h4>新增預約</h4>',
+              text: `預約編號 ${obj.order_sid}`,
+              padding: '25px',
+              showConfirmButton: true,
+              confirmButtonText: '回首頁',
+              showDenyButton: true,
+              denyButtonText: '前往購物車',
+              // showCloseButton: true,
+              backdrop: `rgba(0,0,0,0.4)`,
+            })
+            .then((result) => {
+              if (result.isConfirmed) {
+                setShouldRedirectTo('index')
+                return
+              }
+              if (result.isDenied) {
+                setCartModeByRedirectFrom('ReserveKitchen')
+                setShouldRedirectTo('cart')
+                return
+              }
+            })
         })
     }
   }
@@ -185,6 +229,11 @@ function SurpriseContent(props) {
 
   return (
     <>
+      {/* 不同的情況下改變轉址 */}
+      {shouldRedirectTo === 'memberCenter' && <Redirect to="/MemberCenter" />}
+      {shouldRedirectTo === 'index' && <Redirect to="/" />}
+      {shouldRedirectTo === 'cart' && <Redirect to="/cart" />}
+
       {/* {btnBoll && !loginBool && <Redirect to="/MemberCenter" />}測試 */}
 
       {/* 驚喜廚房title, 3項內容 ↓↓↓ */}

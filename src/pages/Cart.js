@@ -9,10 +9,11 @@ import CartReserveKitchen from '../components/cart/CartReserveKitchen'
 import SimpleMealCoupon from '../components/cart/SimpleMealCoupon'
 import MealDelivery from '../components/cart/MealDelivery'
 import ReserveKitchen from '../components/cart/ReserveKitchen'
+import CartModeControl from '../components/cart/CartModeControl'
 
 function Cart(props) {
   // { 登入布林值 }
-  const { loginBool } = props
+  const { loginBool, cartModeByRedirectFrom, setCartModeByRedirectFrom } = props
 
   // 切換購物車
   const [cartMode, setCartMode] = useState('SimpleMealCoupon')
@@ -89,6 +90,22 @@ function Cart(props) {
     }
   }
 
+  // 根據非購物車頁面設定, 來切換進到購物車的模式
+  useEffect(() => {
+    // 改為配送料理
+    if (cartModeByRedirectFrom === 'MealDelivery') {
+      setCartMode('MealDelivery')
+    }
+
+    // 改為預約廚房
+    if (cartModeByRedirectFrom === 'ReserveKitchen') {
+      setCartMode('ReserveKitchen')
+    }
+
+    // 重設非購物車頁面設定
+    setCartModeByRedirectFrom('')
+  }, [cartModeByRedirectFrom])
+
   // 當購物車改變時切換流程到階段1
   useEffect(() => {
     // console.log(cartMode)
@@ -107,64 +124,70 @@ function Cart(props) {
           flowchart={flowchart}
           setFlowchart={setFlowchart}
         />
-        <Switch>
-          <Route exact path="/cart">
-            {/* 購物車切換 */}
-            {/* {handleCartmode()} */}
-            <div className="row justify-content-center poe-bookmark">
-              <div className="col-12 col-md-8 col-xl-6">
-                {/* 頁籤按鈕 */}
-                <div className="d-flex justify-content-between txt-btn">
-                  <button
-                    onClick={() => setCartMode('SimpleMealCoupon')}
-                    className={`col poe-bookmark-label ${
-                      cartMode === 'SimpleMealCoupon' &&
-                      'poe-bookmark-label-active'
-                    }`}
-                  >
-                    購買餐券
-                  </button>
-                  <button
-                    onClick={() => setCartMode('MealDelivery')}
-                    className={`col poe-bookmark-label ${
-                      cartMode === 'MealDelivery' && 'poe-bookmark-label-active'
-                    }`}
-                  >
-                    餐點配送
-                  </button>
-                  <button
-                    onClick={() => setCartMode('ReserveKitchen')}
-                    className={`col poe-bookmark-label ${
-                      cartMode === 'ReserveKitchen' &&
-                      'poe-bookmark-label-active'
-                    }`}
-                  >
-                    預約廚房
-                  </button>
-                </div>
-                {/* 頁籤內容 */}
-                <div className="poe-bookmark-content txt-btn">
-                  {handleCartmode()}
+        <CartModeControl setCartMode={setCartMode}>
+          <Switch>
+            <Route exact path="/cart">
+              {/* 購物車切換 */}
+              {/* {handleCartmode()} */}
+              <div className="row justify-content-center poe-bookmark">
+                <div className="col-12 col-md-8 col-xl-6">
+                  {/* 頁籤按鈕 */}
+                  <div className="d-flex justify-content-between txt-btn">
+                    <button
+                      onClick={() => setCartMode('SimpleMealCoupon')}
+                      className={`col poe-bookmark-label ${
+                        cartMode === 'SimpleMealCoupon' &&
+                        'poe-bookmark-label-active'
+                      }`}
+                    >
+                      購買餐券
+                    </button>
+                    <button
+                      onClick={() => setCartMode('MealDelivery')}
+                      className={`col poe-bookmark-label ${
+                        cartMode === 'MealDelivery' &&
+                        'poe-bookmark-label-active'
+                      }`}
+                    >
+                      餐點配送
+                    </button>
+                    <button
+                      onClick={() => setCartMode('ReserveKitchen')}
+                      className={`col poe-bookmark-label ${
+                        cartMode === 'ReserveKitchen' &&
+                        'poe-bookmark-label-active'
+                      }`}
+                    >
+                      預約廚房
+                    </button>
+                  </div>
+                  {/* 頁籤內容 */}
+                  <div className="poe-bookmark-content txt-btn">
+                    {handleCartmode()}
+                  </div>
                 </div>
               </div>
-            </div>
-          </Route>
-          <Route path="/cart/simplemealcoupon">
-            <SimpleMealCoupon
-              flowchart={flowchart}
-              setFlowchart={setFlowchart}
-              choice={choice}
-              choiceObj={choiceObj}
-              choiceArray={choiceArray}
-            />
-          </Route>
-          <Route path="/cart/mealdelivery">
-            <MealDelivery flowchart={flowchart} setFlowchart={setFlowchart} />
-          </Route>
-          <Route path="/cart/reservekitchen">
-            <ReserveKitchen flowchart={flowchart} setFlowchart={setFlowchart} />
-          </Route>
-        </Switch>
+            </Route>
+            <Route path="/cart/simplemealcoupon">
+              <SimpleMealCoupon
+                flowchart={flowchart}
+                setFlowchart={setFlowchart}
+                choice={choice}
+                choiceObj={choiceObj}
+                choiceArray={choiceArray}
+              />
+            </Route>
+            <Route path="/cart/mealdelivery">
+              <MealDelivery flowchart={flowchart} setFlowchart={setFlowchart} />
+            </Route>
+            <Route path="/cart/reservekitchen">
+              <ReserveKitchen
+                flowchart={flowchart}
+                setFlowchart={setFlowchart}
+              />
+            </Route>
+          </Switch>
+        </CartModeControl>
       </div>
     </>
   )

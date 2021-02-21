@@ -1,6 +1,7 @@
 .img-size {
   width: 100%;
-  height: 100%;
+  border-radius: 25px;
+
 }
 /* 顏色 */
 .col-green {
@@ -40,20 +41,16 @@ body {
 }
 
 .xxx-img-div {
-  background: url('../../public/img/sharerecipe/photo-1546069901-d5bfd2cbfb1f.jpeg')
-    center;
-  background-size: cover;
-  /* border-radius: 25px 25px 0 0; */
-  height: 419px;
+  width: 450px;
+  height: 300px;
 }
 .xxx-rc-step {
   margin-bottom: 30px;
 }
 .xxx-rc-line {
   border-bottom: 1px solid #a2a3a5;
-  
 }
-.xxx-rc-pstep{
+.xxx-rc-pstep {
   padding: 0px;
 }
 .xxx-rc-bt {
@@ -76,12 +73,11 @@ body {
 }
 .xxx-ul {
   list-style-type: none;
-  
 }
 .xxx-rc-icon {
   font-size: 30px;
 }
-.xxx-rc-textarea{
-  margin-left:150px;
+.xxx-rc-textarea {
+  margin-left: 150px;
   margin-bottom: 100px;
 }

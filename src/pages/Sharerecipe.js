@@ -3,6 +3,8 @@
 import '../styles/share-recipe.css'
 import { Container, Pagination, Col } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
+import { BrowserRouter as Link, NavLink } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 function Sharerecipe(props) {
   // 資料的鉤子 . 未經過過濾的原始資料
@@ -30,7 +32,6 @@ function Sharerecipe(props) {
       }
     )
     const data = await response.json()
-
     // 最後設定到狀態中
     setRecipe(data)
     // 一開始的搜尋暫存值會與recipe一樣
@@ -38,7 +39,7 @@ function Sharerecipe(props) {
     // 3秒後關閉指示器
     setTimeout(() => {
       setIsLoading(false)
-    }, 2000)
+    }, 1000)
   }
 
   // 元件已經出現在網頁上才能跟伺服器相連 . 所以要寫在生命週期完成
@@ -86,11 +87,20 @@ function Sharerecipe(props) {
   const display = (
     <>
       <div className="container">
-        <div className="row">
+        <div className="row col offset-1 col-10">
           {/* 引入資料 */}
           {recipeDisplay.map((v, i) => (
             <div key={i} className="card col-3">
-              <img src={v.pic} className="card-img-top mt-3" alt="..." />
+              <div className="xxx-296x197 mb-3">
+                <img
+                  onClick={() => {
+                    props.history.push('/myrecipepage/' + v.id)
+                  }}
+                  src={v.pic}
+                  className="card-img-top mt-3 xxx-img xxx-br25"
+                  alt="..."
+                />
+              </div>
               <div className="card-body">
                 <h5 className="card-title">{v.name}</h5>
                 <p className="card-text">{v.introduction}</p>
@@ -102,7 +112,7 @@ function Sharerecipe(props) {
             </div>
           ))}
         </div>
-
+        {/* 
         <div className="row">
           <Pagination classNameName="mx-auto mt-5">
             <Pagination.First />
@@ -116,7 +126,7 @@ function Sharerecipe(props) {
             <Pagination.Next />
             <Pagination.Last />
           </Pagination>
-        </div>
+        </div> */}
       </div>
     </>
   )
@@ -124,7 +134,7 @@ function Sharerecipe(props) {
   return (
     <>
       <div className="container">
-        <div className="row mt-1 mb-1">
+        <div className="row col offset-1 col-10 mt-1 mb-1">
           <h4>分享食譜</h4>
           <div className="ml-auto">
             {/* 文字輸入框是表單元素 . 表單元素要讓react控管要兩個條件1.value必須對應到狀態值2.onChange要對應到設定狀態.且有固定寫法如下*/}
@@ -146,4 +156,4 @@ function Sharerecipe(props) {
     </>
   )
 }
-export default Sharerecipe
+export default withRouter(Sharerecipe)

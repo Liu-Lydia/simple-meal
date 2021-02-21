@@ -603,6 +603,18 @@
   margin-bottom: 0;
 }
 
+.fff-ms-detail-content {
+  margin:auto auto;
+  background-color: white;
+  width: 75%;
+  height: 90%;
+  border-radius: 25px;
+  text-align: left;
+  line-height: 30px;
+  border: 5px #627e2a solid;
+  padding: 75px;
+  padding-top: 19px;
+}
 
 .fff-mshowto-content {
   margin:auto auto;

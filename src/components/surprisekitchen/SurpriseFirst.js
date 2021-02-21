@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { Transition, TransitionGroup } from 'react-transition-group'
+// import { Transition, TransitionGroup } from 'react-transition-group'
 
 // import hero03 from '../../../public/img/lydia/hero03.png'
 // import hero04 from '../../../public/img/lydia/hero04.png'
@@ -12,7 +11,7 @@ import { Transition, TransitionGroup } from 'react-transition-group'
 function SurpriseFirst() {
   function ScrollToOrder() {
     window.scrollTo({
-      top: 300,
+      top: 1190,
       left: 0,
       behavior: 'smooth',
     })
@@ -44,41 +43,29 @@ function SurpriseFirst() {
               <p className="m-0 txt-sub1 lll-detile-style lll-detile-right lll-pb50">
                 等你來為自己準備一頓美好的餐點
               </p>
-              <div className="lll-mobile-btn">
-                <Link to="#" className="btn-red txt-btn">
+              <div className="lll-mobile-btn lll-cursor">
+                <a
+                  className="btn-red txt-btn"
+                  onClick={() => {
+                    ScrollToOrder()
+                  }}
+                >
                   前往預約
-                </Link>
+                </a>
               </div>
             </div>
           </div>
 
           <div className="d-flex lll-coupon-position">
-            <TransitionGroup>
-              <div className="lll-get-coupon">
-                <Transition
-                  in={inProp}
-                  timeout={{
-                    appear: 100,
-                    enter: 300,
-                    exit: 100,
-                  }}
-                >
-                  <img
-                    className="lll-meal-pictures"
-                    src="http://localhost:3015/img/lydia/Omurice4s.gif"
-                    alt=""
-                  />
-                </Transition>
-              </div>
-            </TransitionGroup>
-            {/* <div className="lll-get-coupon">
+            <div className="lll-get-coupon">
               <img
                 className="lll-meal-pictures"
                 src="http://localhost:3015/img/lydia/hero03.png"
                 alt=""
               />
             </div>
-            <div className="lll-get-coupon">
+
+            {/*  <div className="lll-get-coupon">
               <img
                 className="lll-meal-pictures"
                 src="http://localhost:3015/img/lydia/hero01.png"
@@ -136,9 +123,14 @@ function SurpriseFirst() {
       <div className="container lll-scroll">
         <div className="row">
           <div className="col">
-            <Link to="#" className="btn-yello txt-cap">
+            <a
+              className="btn-yello txt-cap"
+              onClick={() => {
+                ScrollToOrder()
+              }}
+            >
               scroll
-            </Link>
+            </a>
           </div>
         </div>
       </div>

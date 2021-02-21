@@ -18,6 +18,7 @@ import AboutUs from './pages/AboutUs'
 import Sharerecipe from './pages/Sharerecipe'
 import XTest from './pages/XTest'
 import TestSvgAnimate from './pages/TestSvgAnimate'
+import MyRecipePage from './pages/MyRecipePage'
 
 // 組合用元件
 import Header from './components/Header'
@@ -33,6 +34,9 @@ function App() {
   // 登入狀態(未登入false, 登入true)
   const [loginBool, setLoginBool] = useState(false)
 
+  // 非購物車頁面改變購物車模式
+  const [cartModeByRedirectFrom, setCartModeByRedirectFrom] = useState('')
+
   return (
     <Router>
       <>
@@ -45,7 +49,11 @@ function App() {
           <ScrollToTop>
             <Switch>
               <Route path="/cart">
-                <Cart loginBool={loginBool} />
+                <Cart
+                  loginBool={loginBool}
+                  cartModeByRedirectFrom={cartModeByRedirectFrom}
+                  setCartModeByRedirectFrom={setCartModeByRedirectFrom}
+                />
               </Route>
               <Route path="/TestDatabase">
                 <TestDatabase />
@@ -89,11 +97,18 @@ function App() {
               />
               <Route path="/MemberCenter" component={MemberCenterLogin} /> */}
               <Route path="/surprisekitchen">
-                <SurpriseKitchen loginBool={loginBool} />
+                <SurpriseKitchen
+                  loginBool={loginBool}
+                  setCartModeByRedirectFrom={setCartModeByRedirectFrom}
+                />
               </Route>
               {/* 關於我 */}
               <Route path="/aboutus">
                 <AboutUs />
+              </Route>
+              {/* 食譜內容頁 注意：要加上網址參數 */}
+              <Route exact path="/myrecipepage/:id?">
+                <MyRecipePage />
               </Route>
               {/* 共享食譜 */}
               <Route path="/sharerecipe">

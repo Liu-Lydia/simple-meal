@@ -1,12 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import '../../styles/public.css'
 import '../../styles/fff.css'
+//對話框
+import ExchangeDialog from './ExchangeDialog'
 
 function ExchangeGoodsList1() {
-  const [exchange, setExchange] = useState({ display: 'none' })
 
+  //兌換項目清單
   const [goodList, setGoodList] = useState([])
+
+  //彈跳視窗是不是要顯示
+  const [dialogStyle, setDialogStyle] = useState({display:'none'})
+
+  //彈跳視窗要顯示的內容（被點擊的那筆資料）
+  const [detailContext,setDetailContext] = useState({})
+
+  //取得兌換項目清單
   const getGoodList = () => {
+    //good_type=1 合作廠商優惠 2現金折價卷
     const url = 'http://localhost:4000/reward/getGooDList?good_type=1'
     fetch(url, {
       method: 'get',
@@ -18,7 +29,9 @@ function ExchangeGoodsList1() {
       })
   }
 
+  //DidMount
   useEffect(() => {
+    //執行後端撈資料
     getGoodList()
   }, [])
 
@@ -44,7 +57,10 @@ function ExchangeGoodsList1() {
                 className="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center"
                 key={index}
                 onClick={() => {
-                  setExchange({ display: 'flex' })
+                  //開啟視窗
+                  setDialogStyle({ display: 'flex' })
+                  //將點擊的內容打包 送入視窗中
+                  setDetailContext(value)
                 }}
               >
                 <div className="exchange">
@@ -62,68 +78,6 @@ function ExchangeGoodsList1() {
               </div>
             ))}
           </div>
-          <div className="fff-exchange" style={exchange}>
-            <div className="fff-exchange-content-box">
-              <div className="row">
-                {/* 圖片放置位置 先占高 mobo關閉 */}
-
-                {/* 關閉頁面的Ｘ */}
-                <div className=" justify-content-end col-12 "style={{marginBottom:"25px"}}>
-                  <h6 className="fff-no-mr-and-pad">
-                    <i
-                      className="fas fa-times aboutCloseBtn"
-                      onClick={() => {
-                        setExchange({ display: 'none' })
-                      }}
-                    ></i>
-                  </h6>
-                </div>
-
-                <div className="col fff-exchange-content">
-                  <div>
-                    <span>你點選了</span>
-                    <span>購物金100元</span>
-                  </div>
-                  <div>
-                    <span>選擇數量</span>
-                    <span>購物金100元</span>
-                  </div>
-                  <div>
-                    <span>花費點數</span>
-                    <span>50點</span>
-                  </div>
-                  <div>
-                    <span>剩餘點數</span>
-                    <span>1250點</span>
-                  </div>
-                  <div>
-                    <span className="txt-btn">
-                      兌換說明：
-                      以五十點成就點數兌換站內購物金100元，可於購買餐卷的結帳畫面使用。
-                      優惠卷兌換後使用期限為3個月
-                    </span>
-                  </div>
-
-                  <div>
-                    <span className="txt-btn">已兌換便無法退還點數喔！</span>
-                  </div>
-
-                  <div className="d-flex justify-content-center" style={{marginTop:"25px"}}>
-                    <button
-                      type="button"
-                      className="btn-green txt-btn aboutCloseBtn"
-                      onClick={() => {
-                        setExchange({ display: 'none' })
-                      }}
-                      data-dismiss="modal"
-                    >
-                      確定兌換
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
         {/* <!-- 右翻按鍵 --> */}
         <div className=" fff-ms-web col-1 col-xl-1 d-flex align-items-center flex-row-reverse fff-no-mr-and-pad">
@@ -132,6 +86,8 @@ function ExchangeGoodsList1() {
         {/* <!--保留空格 --> */}
         <div className="col fff-no-mr-and-pad"></div>
       </div>
+      {/* 彈跳視窗 傳入值：dialogStyle要不要顯示  setDialogStyle對話框中的關閉 detailContext顯示的內容*/}
+      <ExchangeDialog dialogStyle={dialogStyle} setDialogStyle={setDialogStyle} detailContext={detailContext}/>
     </>
   )
 }

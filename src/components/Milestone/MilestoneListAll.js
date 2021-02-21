@@ -1,5 +1,6 @@
 // 成就顯示
 import React, { useState, useEffect } from 'react'
+import MilestoneDetail from './MilestoneDetail'
 
 function MilestoneListAll() {
   //資料庫回來的東西 milstonelist []陣列包{}每筆資料
@@ -25,6 +26,13 @@ function MilestoneListAll() {
 
   //取得總成就數量
   const [totalCount,setTotalCount] = useState(0)
+
+  //detail的樣式 控制顯示不顯示
+  const [detailStyle, setDetailStyle] = useState({display:'none'})
+
+
+  //detail顯示的內容 
+  const [detailContext,setDetailContext] = useState({})
 
   //連結資料庫
   const progresStyleArray = [] //儲存各milestone的進度與顏色 push完成後再塞入屬性值
@@ -206,7 +214,10 @@ function MilestoneListAll() {
             {milstonelist.map((v, i) => (
               <div
                 className="col-4 col-sm-6 col-lg-3 d-flex justify-content-center"
-                key={i}
+                key={i}  onClick={()=>{
+                  setDetailStyle({display:'flex'})
+                  setDetailContext(v)
+                }}
               >
                 <div className="fff-stone-item-box justify-content-center">
                   <svg
@@ -241,7 +252,6 @@ function MilestoneListAll() {
                     </circle>
                   </svg>
                   <span className=" fff-ms-web d-flex justify-content-center">
-                    {v.stone_name}
                   </span>
                 </div>
               </div>
@@ -257,6 +267,7 @@ function MilestoneListAll() {
         {/* <!--保留空格 --> */}
         <div className="col-1 fff-no-mr-and-pad"></div>
       </div>
+      <MilestoneDetail detailStyle={detailStyle} setDetailStyle={setDetailStyle} detailContext={detailContext}/>
     </>
   )
 }

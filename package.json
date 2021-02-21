@@ -8,6 +8,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/react-transition-group": "^4.4.1",
     "bootstrap": "^4.6.0",
     "date-fns": "^2.16.1",
     "eslint-config-react-app": "^6.0.0",

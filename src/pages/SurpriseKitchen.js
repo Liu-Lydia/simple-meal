@@ -13,8 +13,8 @@ import SurpriseRule from '../components/surprisekitchen/SurpriseRule'
 export const AppStore = createContext()
 
 function SurpriseKitchen(props) {
-  // 有沒有登入
-  const { loginBool } = props
+  // {有沒有登入, 非購物車頁面改變購物車模式}
+  const { loginBool, setCartModeByRedirectFrom } = props
 
   const mmt = new moment()
   const timeReducer = useReducer(calendar, mmt.format('YYYY-MM-DD'))
@@ -27,7 +27,10 @@ function SurpriseKitchen(props) {
       <div className="container lll-appoint col-sm-center">
         <div className="row justify-content-center">
           <div className="col-8 lll-appoint-w100">
-            <SurpriseContent loginBool={loginBool} />
+            <SurpriseContent
+              loginBool={loginBool}
+              setCartModeByRedirectFrom={setCartModeByRedirectFrom}
+            />
             <SurpriseRule />
           </div>
         </div>
