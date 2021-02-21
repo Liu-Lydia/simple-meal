@@ -17,6 +17,42 @@ function SimpleMealCouponCheck(props) {
   // 掛載轉換階段3
   useEffect(() => setFlowchart(3), [])
 
+  // 定義SweetAlert2的按鈕
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      popup: 'poe-alert',
+      title: 'poe-green my-0',
+      content: 'txt-btn',
+      confirmButton: 'btn-green txt-btn mx-2 my-2',
+      cancelButton: 'btn-red txt-btn mx-2 my-2',
+    },
+    buttonsStyling: false,
+  })
+
+  // 第一階段送出前確認
+  const handlePostAlert = () => {
+    // sweetAlert 第1階段
+    swalWithBootstrapButtons
+      .fire({
+        imageUrl: 'http://localhost:3015/img/lydia/lemonCooking.PNG.PNG',
+        imageHeight: 200,
+        title:
+          '<h5 class="d-block d-sm-none">確定要送出訂單嗎?</h5>' +
+          '<h4 class="d-none d-sm-block">確定要送出訂單嗎?</h4>',
+        showCancelButton: true,
+        confirmButtonText: `確定`,
+        cancelButtonText: `再看一下`,
+        padding: '25px',
+      })
+      .then((result) => {
+        // 只有確認以後才連接資料庫
+        if (result.isConfirmed) {
+          handlePostcheck()
+        }
+      })
+  }
+
+  // 第二階段送出資料並接收訂單編號
   const handlePostcheck = async () => {
     const fd = new FormData(document.querySelector('#cart_simplemealcoupon'))
     await fetch('http://localhost:4000/simplemealcoupon/addcheck', {
@@ -26,18 +62,19 @@ function SimpleMealCouponCheck(props) {
     })
       .then((r) => r.json())
       .then((obj) => {
-        // alert(`您的訂單已完成, 訂單編號 ${obj.order_sid}`)
-
+        // sweetAlert 第2階段
         swalWithBootstrapButtons
           .fire({
-            icon: 'success',
-            title: '完成訂單',
+            // icon: 'success',
+            imageUrl: 'http://localhost:3015/img/lydia/Omurice.GIF',
+            imageHeight: 200,
+            title: '<h4>完成訂單</h4>',
             text: `您的配送訂單已經完成, 訂單編號 ${obj.order_sid}`,
             padding: '25px',
             showConfirmButton: true,
             confirmButtonText: '確定',
             showCancelButton: false,
-            showCloseButton: true,
+            // showCloseButton: true,
             backdrop: `rgba(0,0,0,0.4)`,
           })
           .then((result) => {
@@ -45,17 +82,6 @@ function SimpleMealCouponCheck(props) {
           })
       })
   }
-
-  // 定義SweetAlert2的按鈕
-  const swalWithBootstrapButtons = Swal.mixin({
-    customClass: {
-      popup: 'poe-alert',
-      title: 'poe-green cha-text',
-      content: 'txt-btn',
-      confirmButton: 'btn-green txt-btn',
-    },
-    buttonsStyling: false,
-  })
 
   // 是否結帳完成
   const [checkBool, setCheckBool] = useState(false)
@@ -209,7 +235,7 @@ function SimpleMealCouponCheck(props) {
           </Link>
           <Link
             onClick={() => {
-              handlePostcheck()
+              handlePostAlert()
             }}
             className="btn-green txt-btn mx-2 poe-mb20"
           >

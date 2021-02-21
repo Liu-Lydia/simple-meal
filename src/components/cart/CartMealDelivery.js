@@ -210,10 +210,7 @@ function CartMealDelivery(props) {
               <th className="text-center" scope="col">
                 餐點明細
               </th>
-              <th
-                className="d-none d-sm-block text-center text-nowrap"
-                style={{ width: '150px' }}
-              >
+              <th className="d-none d-sm-block text-center text-nowrap">
                 數量
               </th>
             </tr>
@@ -255,7 +252,7 @@ function CartMealDelivery(props) {
                     {v.description}
                   </p>
                   {/* 手機時的數量按鈕 */}
-                  <div className="text-right d-block d-sm-none ">
+                  <div className="text-right d-block d-sm-none text-nowrap">
                     <a
                       onClick={() => {
                         const sid = v.sid
@@ -284,7 +281,7 @@ function CartMealDelivery(props) {
                   </div>
                 </td>
                 {/* 正常的數量按鈕 */}
-                <td className="text-center align-middle d-none d-sm-table-cell">
+                <td className="text-center align-middle d-none d-sm-table-cell text-nowrap">
                   <div>
                     <a
                       onClick={() => {
@@ -426,10 +423,7 @@ function CartMealDelivery(props) {
               <th className="text-center" scope="col">
                 餐點明細
               </th>
-              <th
-                className="d-none d-sm-block text-center text-nowrap"
-                style={{ width: '150px' }}
-              >
+              <th className="d-none d-sm-block text-center text-nowrap">
                 數量
               </th>
             </tr>
@@ -471,7 +465,7 @@ function CartMealDelivery(props) {
                     {v.description}
                   </p>
                   {/* 手機時的數量按鈕 */}
-                  <div className="d-block d-sm-none text-right">
+                  <div className="text-right d-block d-sm-none  text-nowrap">
                     <a
                       onClick={() => {
                         const sid = v.sid
@@ -500,7 +494,7 @@ function CartMealDelivery(props) {
                   </div>
                 </td>
                 {/* 正常的數量按鈕 */}
-                <td className="text-center align-middle d-none d-sm-table-cell">
+                <td className="text-center align-middle d-none d-sm-table-cell text-nowrap">
                   <div>
                     <a
                       onClick={() => {

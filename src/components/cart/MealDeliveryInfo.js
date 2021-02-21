@@ -168,12 +168,7 @@ function MealDeliveryInfo(props) {
                   <th className="" scope="col">
                     餐點明細
                   </th>
-                  <th
-                    className="d-none d-sm-block text-center text-nowrap"
-                    style={{ width: '150px' }}
-                  >
-                    數量
-                  </th>
+                  <th className="text-center text-nowrap">數量</th>
                 </tr>
               </thead>
               <tbody>
