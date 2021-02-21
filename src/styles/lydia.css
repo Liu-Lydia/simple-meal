@@ -84,9 +84,9 @@
   top: 0;
   width: 248px;
   height: 240px;
-  opacity: 0;
+  /* opacity: 0;
   filter: alpha(opacity=0);
-  animation: round 21s linear infinite;
+  animation: round 21s linear infinite; */
 }
 
 @keyframes round {
@@ -107,7 +107,7 @@
   }
 }
 
-.lll-get-coupon:nth-child(1) {
+/* .lll-get-coupon:nth-child(1) {
   animation-delay: 0s;
 }
 .lll-get-coupon:nth-child(2) {
@@ -118,7 +118,7 @@
 }
 .lll-get-coupon:nth-child(4) {
   animation-delay: 15s;
-}
+} */
 /* .lll-get-coupon:nth-child(5) {
   animation-delay: 20s;
 } */
@@ -376,6 +376,19 @@
 
 .lll-black {
   color: #434341;
+}
+
+.lll-h5{
+  font-family: GenSenRounded TW;
+  font-size: 24px !important;
+  font-weight: 500 !important;
+  line-height: 36px !important;
+  letter-spacing: 0.32px;
+  text-decoration: none;
+}
+
+.lll-h5:hover{
+  color: #a2a3a5;
 }
 
 .lll-calendar {
@@ -769,29 +782,12 @@
   }
 }
 
-.marker {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 18px;
-  height: 18px;
-  background-color: #000;
-  border: 2px solid #fff;
-  border-radius: 100%;
-  user-select: none;
-  transform: translate(-50%, -50%);
-}
-
 /* menu位置 */
 .lll-onmenu {
   position: absolute;
   right: -183px;
   cursor: pointer;
   width: auto;
-}
-
-h5:hover {
-  color: #a2a3a5;
 }
 
 .sticky {
