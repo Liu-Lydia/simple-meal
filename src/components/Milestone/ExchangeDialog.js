@@ -1,9 +1,57 @@
-import React, { props } from 'react'
+import React, { props, useState,useEffect } from 'react'
 import '../../styles/public.css'
 import '../../styles/fff.css'
 
 //<ExchangeDialog dialogStyle={dialogStyle} setDialogStyle={setDialogStyle} detailContext={detailContext}/>
 function ExchangeDialog(props) {
+
+  //目前擁有點數
+  const [totalPoint, setTotalPoint] = useState(0)
+  const [count,setCount] = useState(0)
+  const [selectOption,setSelectOption] = useState([])
+
+  const getPoint = () => {
+    const url = 'http://localhost:4000/milestone/getPoint?sid=1' //sid 要從session來
+    fetch(url, {
+      method: 'get',
+    })
+      //then 是會接前方拋出的結果
+      .then((r) => r.json())
+      .then((obj) => {
+        //總獲得的點數
+        const totalGetPoint = obj.totalGetPoiont;
+        //總花費的點數
+        const totalSpendPoint = obj.totalSpendPoint;
+        //將目前有的點數設定成為屬性
+        setTotalPoint(totalGetPoint-totalSpendPoint);
+      })
+  }
+
+  const updateSelectOption = ()=>{
+    const temparray = []
+    console.log("\ttotalPoint",totalPoint,"\tneed_point",props.detailContext.need_point)
+    for(let i = 0;i*props.detailContext.need_point<=totalPoint;i++)
+    {
+      console.log("i",i,"\ttotalPoint",totalPoint,"\tneed_point",props.detailContext.need_point)
+      temparray.push(i*props.detailContext.need_point)
+    }
+    setSelectOption(temparray)
+    console.log(temparray)
+  }
+
+  useEffect(() => {
+    console.log("useEffect - detailContext")
+    getPoint()
+    updateSelectOption()
+  }, [props.detailContext]);
+
+    //當選擇兌換時 更新
+    useEffect(() => {
+      console.log("useEffect - count")
+      
+    }, [count]);
+
+
   return (
     <div className="fff-exchange" style={props.dialogStyle}>
       <div className="fff-exchange-content-box">
@@ -27,30 +75,31 @@ function ExchangeDialog(props) {
           <form>
             <div className="col fff-exchange-content ">
               <div className="d-flex justify-content-between">
-                <span classname="txt-h6">你點選了</span>
+                <span className="txt-h6">你點選了</span>
                 <span style={{ color: '#627E2A' }}>
                   {props.detailContext.good_name}
                 </span>
               </div>
               <div className="d-flex justify-content-between">
-                <span classname="txt-body" style={{ color: '#627E2A' }}>
+                <span className="txt-body" style={{ color: '#627E2A' }}>
                   選擇數量
                 </span>
-                <select></select>
+                <select onchange={setCount(this)}>
+                {selectOption.map((value,index)=>(<option key={index} >{index}</option>))}
+                </select>
               </div>
               <div className="d-flex justify-content-between">
                 <span>花費點數</span>
-                <span>50點</span>
+                <span>{count*props.detailContext.need_point}</span>
               </div>
               <div className="d-flex justify-content-between">
                 <span>剩餘點數</span>
-                <span>1250點</span>
+                <span>{totalPoint - count*props.detailContext.need_point}</span>
               </div>
               <div>
                 <span className="txt-btn">
                   兌換說明：
-                  以五十點成就點數兌換站內購物金100元，可於購買餐卷的結帳畫面使用。
-                  優惠卷兌換後使用期限為3個月
+                  {props.detailContext.good_subs}
                 </span>
               </div>
 
