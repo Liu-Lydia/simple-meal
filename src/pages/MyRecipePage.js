@@ -125,51 +125,7 @@ function MyRecipePage(props) {
             {step5 == null ? null : step55}
           </div>
 
-          {/* 討論區 */}
-          <ul class="mt-5 offset-1 xxx-ul col-8 mx-auto">
-            <li class="mb-5">
-              <div class="d-flex">
-                {/* 大頭照 */}
-                <div class="xxx-rc-dmugshot mr-4">
-                  <img
-                    class="img-size"
-                    src="../../public/img/recipe-content/20180810144507-d1dc2de3-sm.jpg"
-                    alt=""
-                  />
-                </div>
-                {/* 大頭右側 */}
-                <div class="col">
-                  <div class="d-flex justify-content-between">
-                    <div class="d-flex">
-                      <h6 class="xxx-rc-name">小豬:</h6>
-                      <span>2021年2月4日 週四 下午12:25</span>
-                    </div>
-                    <div></div>
-                    {/* 右側 */}
-                    <button class="xxx-rc-bt">
-                      <i class="fas fa-ellipsis-h"></i>
-                    </button>
-                  </div>
-                  {/* 評論內容 */}
-                  <p class="txt-body xxx-rc-comment">
-                    我們都有個共識，若問題很困難，那就勢必不好解決。菲律賓說過一句富有哲理的話，只有希望而沒有實踐，只能在夢裡收穫。但願諸位理解後能從中有所成長。既然，帶著這些問題，我們一起來審視青檸嫩雞直管麵。
-                  </p>
-
-                  {/* 點讚回覆按鈕 */}
-                  <div class="d-flex justify-content-end">
-                    <button class="xxx-rc-bt">
-                      <i class="fas fa-reply"></i>&nbsp;回覆
-                    </button>
-                    <button class="xxx-rc-bt">回覆數(666)</button>
-
-                    <button class="xxx-rc-bt">
-                      <i class="far fa-thumbs-up col-gray"></i>128
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
+         
         </div>
       </div>
     </>
