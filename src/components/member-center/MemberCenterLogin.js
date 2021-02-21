@@ -226,7 +226,11 @@ export default withFormik({
         .then((obj) => {
           // console.log(obj)
           if (obj.success) {
+<<<<<<< HEAD
+            // window.location.href = 'http://localhost:3015/MemberCenter/Index'
+=======
             setStatus(true) // 傳遞登入bool
+>>>>>>> b78df78025a31dbfa79bd2b9defd90d5564bda1d
             alert('已登入')
           } else {
             alert('你的帳號密碼錯誤')

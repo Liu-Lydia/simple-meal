@@ -6,7 +6,7 @@ function MemberCenterIndex() {
       <div className="container">
         <div className="row">
           <div className="col-8 mx-auto">
-            <div className="h3 text-rightt ml-2 mb-5 mt-5 d-none d-xl-block">
+            <div className="h3 text-rightt ml-2 mb-5 d-none d-xl-block">
               會員中心
             </div>
             <div className=" dd d-none d-xl-block">
@@ -123,7 +123,7 @@ function MemberCenterIndex() {
             </div>
 
             <div className="d-block d-xl-none">
-              <div className="h3 text-rightt ml-2 mb-5 mt-5 text-center">
+              <div className="h3 text-rightt ml-2 mb-5  text-center">
                 會員中心
               </div>
               <div className=" col-12">

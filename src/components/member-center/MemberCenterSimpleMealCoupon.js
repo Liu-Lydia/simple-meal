@@ -1,14 +1,80 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { data } from './data'
 import MemberCenterNavbar from './MemberCenterNavbar'
+import { withFormik, Form, Field, ErrorMessage } from 'formik'
+import * as yup from 'yup'
+
 function MemberCenterSimpleMealCoupon() {
+  const [Coupon, setCoupon] = useState([])
+
+  const getDataFromServer = async () => {
+    //模擬和伺服器要資料
+    const response = await fetch(
+      'http://localhost:4000/membercenter/cart_simplemealcoupon',
+      {
+        method: 'get',
+      }
+    )
+    const data = await response.json()
+    //最後設定要到狀態中
+    setCoupon(data)
+  }
+
+  useEffect(() => {
+    getDataFromServer()
+  }, [])
+
+  const Coupons = (
+    <>
+      {' '}
+      <table className="txt-body  text-nowrap table  mx-auto mx-xl-4 ">
+        <thead>
+          <tr className="text-center ">
+            <th>項次</th>
+            <th>訂單編號</th>
+            <th className=" d-none d-sm-none d-xl-block ">購買日期</th>
+            <th>餐卷方案明細</th>
+            <th className="d-none d-sm-none  d-md-none d-lg-block ">
+              數量（組）
+            </th>
+            <th>內含餐卷數</th>
+            <th>付款方式</th>
+            <th className=" d-none d-md-none d-lg-block ">總金額</th>
+          </tr>
+        </thead>
+
+        <tbody className="text-center txt-cap ">
+          {Coupon.map((v, i) => (
+            <tr key={i}>
+              <td>{v.member_sid}</td>
+              <td>{v.order_sid}</td>
+              <td className=" d-none d-sm-none d-xl-block ">{v.check_date}</td>
+              <td>{v.combination_name}</td>
+              <td className="d-none d-sm-none  d-md-none d-lg-block ">
+                {v.quantity}
+              </td>
+              <td>{v.total_coupon_num}</td>
+              <td>{v.payment_method}</td>
+              <td className=" d-none d-md-none d-lg-block ">{v.total_price}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>{' '}
+    </>
+  )
+
+  useEffect(() => {
+    setCoupon(data)
+  }, [])
+
   return (
     <>
       <div className="container">
-        <div className="row ">
+        <div className="row">
           <MemberCenterNavbar />
           <div className=" col-md-12 col-lg-12 col-sm-12 col-xl-8  col-12 ">
-            <div className="col-md-10 col-lg-10 col-sm-10 col-xl-10 col-10 mx-auto">
-              <div className="mb-4 mt-5 ml-2 d-none d-sm-none d-md-none d-lg- d-xl-block h4 ">
+            <div className="col-10 ">
+              <div className=" ml-2 d-none d-sm-none d-md-none d-lg- d-xl-block h4 ">
                 餐卷購買明細
               </div>
               <div className="d-block d-sm-block d-md-block d-lg-block d-xl-none mt-5 ">
@@ -62,18 +128,11 @@ function MemberCenterSimpleMealCoupon() {
                   <div className="btn border dropdown-toggle txt-cap1 mr-2 mb-2 col-12 col-sm-12 col-md-10 d-block d-sm-block d-md-none d-lg-none d-xl-none ">
                     起始日期
                   </div>
-                  <a
-                    href=""
-                    className="btn-green1  mt-2  d-block d-sm-block d-md-none d-lg-none d-xl-none col-10  mx-auto"
-                  >
-                    搜尋
-                  </a>
-                  <a
-                    href=""
-                    className="btn-green1 txt-cap  ml-2 d-none d-sm-none d-md-block d-lg-block d-xl-block "
-                  >
-                    搜尋
-                  </a>
+                </div>
+                <div className="col-12 col-sm-10 mx-auto d-flex justify-content-center">
+                  <button type="submit" className="btn-green txt-btn mt-2 mb-3">
+                    送出
+                  </button>
                 </div>
                 <div className=" txt-cap mt-2 ml-3 d-block d-sm-block d-md-block d-lg-none d-xl-none ">
                   請點選項目以取得更詳細的訂單資訊
@@ -81,47 +140,8 @@ function MemberCenterSimpleMealCoupon() {
                 <div className=" mt-2 ml-3  txt-cap d-none d-sm-none d-md-none d-lg-block d-xl-block ">
                   請點選項目以取得更詳細的訂單資訊
                 </div>
-
-                <table className="txt-body  text-nowrap table  mx-auto mx-xl-0 ">
-                  <thead className=" col-10 col-xl-12">
-                    <tr className="text-center  ">
-                      <th>項次</th>
-                      <th>訂單編號</th>
-                      <th className=" d-none d-md-block d-sm-none d-lg-block d-xl-block ">
-                        購買日期
-                      </th>
-                      <th>餐卷方案明細</th>
-                      <th className="d-none d-md-none d-sm-none d-lg-block d-xl-block  ">
-                        數量（組）
-                      </th>
-                      <th>內含餐卷數</th>
-                      <th>付款方式</th>
-                      <th className=" d-none d-md-none d-sm-none d-lg-block d-xl-block   ">
-                        總金額
-                      </th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    <tr className="text-center ">
-                      <td>1</td>
-                      <td className=" d-none d-md-block d-sm-none d-lg-block d-xl-block">
-                        abc1234
-                      </td>
-                      <td>2020/01/22</td>
-                      <td className=" d-none d-md-none d-sm-none d-lg-block d-xl-block">
-                        吃飽飽沒煩惱組合
-                      </td>
-                      <td>1</td>
-                      <td className=" d-none d-md-none d-sm-none d-lg-block d-xl-block">
-                        20
-                      </td>
-                      <td>信用卡</td>
-                      <td>3600</td>
-                    </tr>
-                  </tbody>
-                </table>
               </div>
+              {Coupons}
             </div>
           </div>
         </div>
