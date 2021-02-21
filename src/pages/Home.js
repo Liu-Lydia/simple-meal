@@ -260,7 +260,7 @@ function Home(props) {
       <div className="container">
         <div className="row mb-5">
           <div className="p7-left-div col-3 offset-1">
-            <p className="txt-sub col-red text-center">
+            <p className="txt-sub col-red text-center  txt-body">
               Tel. 02-6631 6666 <br />
               台北市大安區復興南路一段390號2樓 <br />
               Open. 10:00 ~ 21:00 <br />
