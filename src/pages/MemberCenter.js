@@ -14,7 +14,8 @@ import MemberCenterSimpleMealCoupon from '../components/member-center/MemberCent
 import MyRecipe from '../components/member-center/MyRecipe'
 import AddRecipe from '../components/member-center/AddRecipe'
 import MyRecipeEdit from '../components/member-center/MyRecipeEdit'
-
+import FoodDeliverys1 from '../components/member-center/FoodDeliverys1'
+import FoodDeliverys2 from '../components/member-center/FoodDeliverys1'
 import Test from '../components/member-center/test'
 
 function MemberCenter(props) {
@@ -26,6 +27,12 @@ function MemberCenter(props) {
         <Route path="/MemberCenter/Test">
           <Test />
         </Route>
+        <Route path="/MemberCenter/FoodDeliverys2">
+          <FoodDeliverys2 />
+        </Route>
+        <Route path="/MemberCenter/FoodDeliverys1">
+          <FoodDeliverys1 />
+        </Route>
 
         <Route path="/MemberCenter/SimpleMealCoupon">
           <MemberCenterSimpleMealCoupon />
@@ -35,7 +42,7 @@ function MemberCenter(props) {
           <MemberCenterFoodDelivery />
         </Route>
 
-        <Route path="/MemberCenter/CreditCard ">
+        <Route path="/MemberCenter/CreditCard">
           <MemberCenterCreditCard />
         </Route>
 

@@ -28,26 +28,26 @@ function MemberCenterNavbar() {
                   <i className="far fa-address-card mr-1"></i>我的帳戶
                 </ul>
                 <div
-                  className="collapse txt-sub2 ml-2 col-10"
+                  className="txt-sub2 ml-2 col-10"
                   // id="collapseExample"
                 >
                   <li>
-                    <Link to="" className="text-dark">
+                    <Link to="/MemberCenter/info" className="text-dark">
                       個人資料
                     </Link>
                   </li>
                   <li>
-                    <Link to="" className="text-dark">
+                    <Link to="/MemberCenter/" className="text-dark">
                       密碼變更
                     </Link>
                   </li>
                   <li>
-                    <Link to="" className="text-dark">
+                    <Link to="/MemberCenter/CreditCard" className="text-dark">
                       信用卡
                     </Link>
                   </li>
                   <li>
-                    <Link to="" className="text-dark">
+                    <Link to="/MemberCenter/addr" className="text-dark">
                       地址
                     </Link>
                   </li>
@@ -65,13 +65,16 @@ function MemberCenterNavbar() {
                 </li>
                 <li className="mb-3">
                   <i className="fas fa-utensils mr-2"></i>
-                  <Link to="" className="text-dark">
+                  <Link to="/MemberCenter/FoodDelivery" className="text-dark">
                     我的餐點
                   </Link>
                 </li>
                 <li className="mb-3">
                   <i className="fas fa-clipboard mr-2"></i>
-                  <Link to="" className="text-dark">
+                  <Link
+                    to="/MemberCenter/SimpleMealCoupon"
+                    className="text-dark"
+                  >
                     我的餐卷
                   </Link>
                 </li>
