@@ -83,7 +83,7 @@
   height: 240px;
   opacity: 0;
   filter: alpha(opacity=0);
-  animation: round 10s linear infinite;
+  animation: round 20s linear infinite;
 }
 
 /* .lll-testtransition{
@@ -113,15 +113,19 @@
 } */
 
 @keyframes round {
-  4%{opacity: 1;
-    filter: alpha(opacity=100);}
-  20% {
+ 4%{opacity: 1;
+  filter: alpha(opacity=100);
+  /* 0 - 1秒 淡入*/}
+  24% {
     opacity: 1;
     filter: alpha(opacity=100);
     /* 1- 5秒靜止*/
   }
- 48%{opacity: 1;
-  filter: alpha(opacity=100);}
+ 40%{
+  opacity: 0;
+  filter: alpha(opacity=0);
+  /* 1- 5秒靜止*/
+ }
 }
 
 .lll-get-coupon:nth-child(1) {
@@ -820,6 +824,11 @@
 }
 
 /*Lemon圖*/
+.lll-picture-position{
+  height: 625px;
+  width: 625px;
+}
+
 .lll-lemon-position{
   height: 223px;
   width: 286px;
@@ -827,8 +836,12 @@
 }
 
 .lll-lemon{
+  position: relative;
+  top: 100px;
   height:223px ;
+  width: 100%;
   background: url('http://localhost:3015/img/lydia/lemonCookingLemon.png');
   background-size: cover;
+  overflow: hidden;
 }
 
