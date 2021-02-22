@@ -4,9 +4,9 @@ function MilestoneInfoBar(props) {
   const [modalStyle, setModalStyle] = useState({ display: 'none' })
   const [totalPoint, setTotalPoint] = useState(0)
 
-  const getMilestoneList = () => {
+  const getMilestoneList = async () => {
     const url = 'http://localhost:4000/milestone/getPoint?sid=1' //sid 要從session來
-    fetch(url, {
+    await fetch(url, {
       method: 'get',
     })
       //then 是會接前方拋出的結果

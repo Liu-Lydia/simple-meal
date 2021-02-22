@@ -37,10 +37,10 @@ function MilestoneListFinish() {
   //連結資料庫
   const progresStyleArray = [] //儲存各milestone的進度與顏色 push完成後再塞入屬性值
   const progressAnimateValueArray = [] //儲存個動畫的值 push完成後再塞入屬性值
-  const getMilestoneList = () => {
+  const getMilestoneList = async () => {
     console.log("更新呈現表單")
     //先取得總數量作為分頁使用
-    fetch('http://localhost:4000/milestone/getMilestoneList?sid=1&page=1&perpage=0', {
+    await fetch('http://localhost:4000/milestone/getMilestoneList?sid=1&page=1&perpage=0', {
       method: 'get',
     })//then 是會接前方拋出的結果
     .then((r) => r.json())
@@ -50,8 +50,7 @@ function MilestoneListFinish() {
     })
 
     const url = 'http://localhost:4000/milestone/getMilestoneList?sid=1&filter=finish&page='+listPage+"&perpage="+perPage //sid 要從session來
-    setTimeout(() => {
-      fetch(url, {
+    await fetch(url, {
         method: 'get',
       })
         //then 是會接前方拋出的結果
@@ -121,7 +120,6 @@ function MilestoneListFinish() {
           setStyleArray(progresStyleArray)
           setAnimateValueArray(progressAnimateValueArray)
         })
-    }, 1000); 
     
   }
 
