@@ -240,8 +240,9 @@ top: 50px;
 }
 /* p3 */
 .p3-img-div {
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
+  margin-top: 80px;
   /* 置中 */
   margin-left: auto;
   margin-right: auto;
