@@ -84,7 +84,7 @@ function ExchangeDialog(props) {
                 <span className="txt-body" style={{ color: '#627E2A' }}>
                   選擇數量
                 </span>
-                <select onchange={setCount(this)}>
+                <select>
                 {selectOption.map((value,index)=>(<option key={index} >{index}</option>))}
                 </select>
               </div>
