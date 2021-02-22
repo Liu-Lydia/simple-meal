@@ -31,7 +31,7 @@ function ExchangeDialog(props) {
       })
   }
 
-  打包資料送後台
+  //打包資料送後台
   const setExchange = async ()=>{
     const fd = new FormData(document.querySelector('#dialog-form'))
     const url = 'http://localhost:4000/milestone/getPoint?sid=1' //sid 要從session來

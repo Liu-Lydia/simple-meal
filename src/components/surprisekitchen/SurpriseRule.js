@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
+import Lemon from './Lemon'
 
 function SurpriseRule() {
   //接收資料庫資料　↓↓↓
@@ -91,7 +92,7 @@ function SurpriseRule() {
         </ul>
       </div>
       {/* 驚喜廚房規則說明 ↑↑↑ */}
-
+      <Lemon />
       {/* 預約規則說明 ↓↓↓ */}
       <div className="col p-0 w-100">
         <div className="lll-black float-right lll-onmenu" id="menu">

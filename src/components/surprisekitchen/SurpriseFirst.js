@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { Transition, TransitionGroup } from 'react-transition-group'
 
 function SurpriseFirst() {
   function ScrollToOrder() {
@@ -14,6 +14,7 @@ function SurpriseFirst() {
   const [imgList, setImgList] = useState([
     { src: 'http://localhost:3015/img/lydia/Omurice4s.gif' },
     { src: 'http://localhost:3015/img/lydia/hero01.png' },
+    { src: 'http://localhost:3015/img/lydia/hero04.png' },
   ])
 
   return (
@@ -54,49 +55,50 @@ function SurpriseFirst() {
           </div>
 
           <div className="d-flex lll-coupon-position">
-            <TransitionGroup>
+            {/* <TransitionGroup>
               <div className="lll-get-coupon">
                 {imgList.map((v, i) => (
-                  <CSSTransition
+                  <Transition
                     in={inProp}
                     key={i}
                     timeout={200}
                     className="lll-testtransition"
                   >
                     <img  src={v.src} alt="" />
-                  </CSSTransition>
+                  </Transition>
                 ))}
               </div>
-            </TransitionGroup>
+            </TransitionGroup> */}
             {/* <div className="lll-get-coupon">
-              <img
-                className="lll-meal-pictures"
-                src="http://localhost:3015/img/lydia/hero03.png"
-                alt=""
-              />
-            </div> */}
-
-            {/*  <div className="lll-get-coupon">
               <img
                 className="lll-meal-pictures"
                 src="http://localhost:3015/img/lydia/hero01.png"
                 alt=""
               />
-            </div>
+            </div>*/}
+
             <div className="lll-get-coupon">
               <img
                 className="lll-meal-pictures"
-                src="http://localhost:3015/img/lydia/ClickMe.png"
+                src="http://localhost:3015/img/lydia/hero01.png"
+                alt=""
+              />
+            </div> 
+            {/* <div className="lll-get-coupons">
+              <img
+                className="lll-meal-pictures"
+                src="http://localhost:3015/img/lydia/test02.gif"
                 alt=""
               />
             </div> */}
-            {/* <div className="lll-get-coupons">
+            <div className="lll-get-coupon">
               <img
                 className="lll-meal-pictures"
                 src="http://localhost:3015/img/lydia/Omurice4s.gif"
                 alt=""
               />
-            </div> */}
+            </div>
+            
 
             <div className="mt-auto ml-auto">
               <h1 className="lll-green">rder</h1>
