@@ -116,12 +116,12 @@
  4%{opacity: 1;
   filter: alpha(opacity=100);
   /* 0 - 1秒 淡入*/}
-  24% {
+  60% {
     opacity: 1;
     filter: alpha(opacity=100);
     /* 1- 5秒靜止*/
   }
- 40%{
+ 64%{
   opacity: 0;
   filter: alpha(opacity=0);
   /* 1- 5秒靜止*/

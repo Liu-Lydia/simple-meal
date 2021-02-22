@@ -80,7 +80,7 @@ function SurpriseFirst() {
             <div className="lll-get-coupon">
               <img
                 className="lll-meal-pictures"
-                src="http://localhost:3015/img/lydia/hero01.png"
+                src="http://localhost:3015/img/lydia/ClickMe.png"
                 alt=""
               />
             </div> 
@@ -94,7 +94,7 @@ function SurpriseFirst() {
             <div className="lll-get-coupon">
               <img
                 className="lll-meal-pictures"
-                src="http://localhost:3015/img/lydia/Omurice4s.gif"
+                src="http://localhost:3015/img/lydia/test03.gif"
                 alt=""
               />
             </div>
