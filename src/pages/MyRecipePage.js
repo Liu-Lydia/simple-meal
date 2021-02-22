@@ -26,6 +26,7 @@ function MyRecipePage(props) {
     // 注意header資料格式要設定，伺服器才知道是json格式
     const request = new Request(url, {
       method: 'GET',
+      credentials: 'include',
       headers: new Headers({
         Accept: 'application/json',
         'Content-Type': 'appliaction/json',
@@ -75,8 +76,8 @@ function MyRecipePage(props) {
   const step33 = (
     <>
       <div class="d-flex xxx-rc-step">
-        <div class="xxx-rc-circle text-center">2</div>
-        <p class="txt-body col xxx-rc-pstep offset-1">{step2}</p>
+        <div class="xxx-rc-circle text-center">3</div>
+        <p class="txt-body col xxx-rc-pstep offset-1">{step3}</p>
       </div>
     </>
   )
@@ -118,14 +119,12 @@ function MyRecipePage(props) {
           {/* 步驟 */}
           <div class="offset-1 col-8 xxx-rc-line mx-auto" data-spy="scroll">
             <h5>步驟</h5>
-            {step1 == null ? null : step11}
-            {step2 == null ? null : step22}
-            {step3 == null ? null : step33}
-            {step4 == null ? null : step44}
-            {step5 == null ? null : step55}
+            {step1 == null || step1 == '' ? null : step11}
+            {step2 == null || step2 == '' ? null : step22}
+            {step3 == null || step3 == '' ? null : step33}
+            {step4 == null || step4 == '' ? null : step44}
+            {step5 == null || step5 == '' ? null : step55}
           </div>
-
-         
         </div>
       </div>
     </>

@@ -81,7 +81,7 @@ function MemberCenterIndex() {
                     </li>
                     <li className="item ">
                       <i className="fas fa-carrot mr-2"></i>
-                      <Link to="" className="text-dark">
+                      <Link to="/MemberCenter/MyRecipe" className="text-dark">
                         我的共享食譜
                       </Link>
                     </li>

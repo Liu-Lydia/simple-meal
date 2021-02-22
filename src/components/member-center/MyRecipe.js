@@ -3,12 +3,20 @@ import React, { useState, useEffect } from 'react'
 import { Button } from 'react-bootstrap'
 import '../../styles/myrecipe.css'
 import { withRouter } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 
 function MyRecipe(props) {
   const [users, setUsers] = useState([])
   const [dataLoading, setDataLoading] = useState(false)
-  
+  // sweetalert
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      
+      cancelButton: 'select-btn-green txt-btn',
+    },
+    buttonsStyling: false,
+  })
 
   async function getUsersFromServer() {
     // 開啟載入指示
@@ -63,7 +71,16 @@ function MyRecipe(props) {
       })
 
       setUsers(newUsers)
-      alert('刪除完成')
+      // alert('刪除完成')
+      swalWithBootstrapButtons.fire({
+        icon: 'success',
+        text: "刪除成功",
+        showConfirmButton: false,
+        padding: '25px',
+        showCancelButton: true,
+        cancelButtonText: '確定',
+        showCloseButton: true,
+      })
     }
   }
 

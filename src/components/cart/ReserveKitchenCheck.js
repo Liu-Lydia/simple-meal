@@ -88,7 +88,7 @@ function ReserveKitchenCheck(props) {
             imageUrl: 'http://localhost:3015/img/lydia/Omurice.GIF',
             imageHeight: 200,
             title: '<h4>完成訂單</h4>',
-            text: `您的配送訂單已經完成, 訂單編號 ${obj.order_sid}`,
+            text: `您的訂單已經完成, 訂單編號 ${obj.order_sid}`,
             padding: '25px',
             showConfirmButton: true,
             confirmButtonText: '確定',

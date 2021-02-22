@@ -1,7 +1,16 @@
 import '../../styles/addrecipe.css'
 import MemberCenterNavbar from './MemberCenterNavbar'
+import Swal from 'sweetalert2'
 
 function AddRecipe(props) {
+  // sweetalert
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      cancelButton: 'select-btn-green txt-btn',
+    },
+    buttonsStyling: false,
+  })
+
   // 2.送資料給主機
   async function handleFormSubmit(event) {
     // 必寫這行.擋住預設submit做法避免畫面刷新
@@ -10,12 +19,13 @@ function AddRecipe(props) {
     // 新寫法.用FormData接事件目標來得到欄位
     const data = new FormData(event.target)
     console.log('data666', data)
-    // 3.連接的伺服器資料網址 . http://localhost:4000/sharerecipe/add
+    // 3.連接的伺服器資料網址
     const url = 'http://localhost:4000/sharerecipe/try-upload'
 
     // 注意資料格式要設定，伺服器才知道是json格式
     const request = new Request(url, {
       method: 'POST',
+      credentials: 'include',
       body: data,
       headers: new Headers({
         Accept: 'application/json',
@@ -27,6 +37,16 @@ function AddRecipe(props) {
     const rdata = await response.json()
 
     console.log('伺服器回傳的json資料', rdata)
+    // alert('新增完成')
+    swalWithBootstrapButtons.fire({
+      icon: 'success',
+      text: '新增成功',
+      showConfirmButton: false,
+      padding: '25px',
+      showCancelButton: true,
+      cancelButtonText: '確定',
+      showCloseButton: true,
+    })
   }
 
   return (

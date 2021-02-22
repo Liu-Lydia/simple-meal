@@ -80,8 +80,14 @@ function MemberCenterNavbar() {
                 </li>
                 <li className="mb-3">
                   <i className="fas fa-carrot mr-1"></i>{' '}
-                  <Link to="" className="text-dark">
+                  <Link to="/MemberCenter/MyRecipe" className="text-dark">
                     我的共享食譜
+                  </Link>
+                </li>
+                <li className="mb-3">
+                  <i className="fas fa-carrot mr-1"></i>{' '}
+                  <Link to="/MemberCenter/addrecipe" className="text-dark">
+                    新增共享食譜
                   </Link>
                 </li>
                 <li className="mb-3">

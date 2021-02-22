@@ -130,7 +130,7 @@ function App() {
           </ScrollToTop>
         </MainContent>
 
-        <Footer />
+        <Footer loginBool={loginBool} setLoginBool={setLoginBool} />
       </>
     </Router>
   )

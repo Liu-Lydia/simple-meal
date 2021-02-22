@@ -4,7 +4,7 @@
   padding: 0px;
 }
 
-.fff-checkbox-gap{
+.fff-checkbox-gap {
   margin-left: 20px;
 }
 
@@ -56,8 +56,6 @@
   line-height: 40px;
   margin-bottom: 30px;
 }
-
-
 
 /* 手機版排版*/
 /* 網頁版專用部分消失 */
@@ -174,7 +172,21 @@
   color: #b9433b;
 }
 
+.fff-mshowto-content {
+  margin: auto auto;
+  background-color: white;
+  width: 302px;
+  border-radius: 25px;
+  text-align: left;
+  line-height: 30px;
+  border: 5px #627e2a solid;
+  padding: 30px;
+  margin-top: 30px;
+}
 
+.fff-mshowto-content span{
+  margin: 30px 0 30px 0
+}
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
@@ -275,12 +287,25 @@
     color: #b9433b;
   }
   /* 如何獲得點數格子*/
-  .fff-ms-how-to-section{
+  .fff-ms-how-to-section {
     display: flex;
-   flex-direction: center;
-}
-}
+    flex-direction: center;
+  }
 
+  .fff-mshowto-content {
+    margin: auto auto;
+    background-color: white;
+    width: 500px;
+    border-radius: 25px;
+    text-align: left;
+    line-height: 30px;
+    border: 5px #627e2a solid;
+    padding: 75px;
+  }
+  .fff-mshowto-content span{
+    margin: 60px 0 60px 0
+  }
+}
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -342,6 +367,17 @@
     stroke-width: 5;
     fill: none;
   }
+
+  .fff-mshowto-content {
+    margin: auto auto;
+    background-color: white;
+    width: 650px;
+    border-radius: 25px;
+    text-align: left;
+    line-height: 30px;
+    border: 5px #627e2a solid;
+    padding: 75px;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -378,8 +414,6 @@
     margin-bottom: 70px;
     max-width: 150px;
   }
-
- 
 
   .fff-milestone-background-svg {
     cx: 75;
@@ -534,7 +568,6 @@
   font-size: 35px;
 }
 
-
 #fff-record-table {
   width: 100%;
   text-align: center;
@@ -584,9 +617,8 @@
   color: #a2a3a5;
 }
 
-
 /* The Modal (background) */
-.fff-mshowto{
+.fff-mshowto {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -604,7 +636,7 @@
 }
 
 .fff-ms-detail-content {
-  margin:auto auto;
+  margin: auto auto;
   background-color: white;
   width: 75%;
   height: 90%;
@@ -616,20 +648,9 @@
   padding-top: 19px;
 }
 
-.fff-mshowto-content {
-  margin:auto auto;
-  background-color: white;
-  width: 650px;
-  height: 700px;
-  border-radius: 25px;
-  text-align: left;
-  line-height: 30px;
-  border: 5px #627e2a solid;
-  padding: 75px;
-  padding-top: 19px;
-}
+
 /* The Modal (background) */
-.fff-exchange{
+.fff-exchange {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -646,9 +667,8 @@
   margin-bottom: 0;
 }
 
-
 .fff-exchange-content-box {
-  margin:auto auto;
+  margin: auto auto;
   background-color: white;
   width: 420px;
   border-radius: 25px;
@@ -658,10 +678,9 @@
   padding: 75px;
 }
 
-.fff-exchange-content{
-  padding:0;
+.fff-exchange-content {
+  padding: 0;
 }
-
 
 .circle-spin {
   animation-name: spin;
@@ -678,7 +697,49 @@
   }
 }
 
-.svg-line-02 {
-  stroke-dasharray: 10;
-  stroke-dashoffset: 10;
+/* //先將stroke隱藏 */
+.stroke {
+  stroke-dashoffset: 100;
+  stroke-dasharray: 100;
 }
+
+/* //動畫效果 10秒 線性動畫 無限循環 */
+.ani {
+  animation: drawing-svg 3s linear infinite;
+}
+
+/* 
+//keyframes的值
+//將dashoffset拉回至0 */
+@keyframes drawing-svg {
+  10% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 100;
+  }
+
+  20% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 0;
+  }
+  30% {
+    stroke-dashoffset: 100;
+    stroke-dasharray: 100;
+  }
+  
+  40% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 100;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 0;
+  }
+  60% {
+    stroke-dashoffset: 100;
+    stroke-dasharray: 100;
+  }
+  
+}
+
+
