@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Route, withRouter, Link, Switch } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 function SimpleMealCouponPayment(props) {
   // {流程, 流程轉換設定, 方案id, 方案物件, 預設方案內容, 預設付款內容, 付款物件, 付款value, 設定付款value, 優惠券物件, 設定優惠券}
@@ -17,6 +18,9 @@ function SimpleMealCouponPayment(props) {
     coupon,
     setCoupon,
   } = props
+
+  // 優惠券資料(非餐券)
+  const [couponDatabase, setCouponDatabase] = useState([])
 
   // 改變付款方案
   const handleSetPaymentValue = (event) => {
@@ -38,8 +42,62 @@ function SimpleMealCouponPayment(props) {
     }
   }
 
-  // 掛載轉換階段2
-  useEffect(() => setFlowchart(2), [])
+  // // 產生彈出視窗來選優惠
+  // const handleSweetAlertCoupon = () => {
+  //   // 定義SweetAlert2的按鈕
+  //   const swalWithBootstrapButtons = Swal.mixin({
+  //     customClass: {
+  //       popup: 'poe-alert',
+  //       // title: 'poe-green my-0',
+  //       content: 'txt-btn',
+  //       confirmButton: 'btn-green txt-btn mx-2 my-2',
+  //       cancelButton: 'btn-red txt-btn mx-2 my-2',
+  //     },
+  //     buttonsStyling: false,
+  //   })
+
+  //   const handleSelectCoupon = (i) => {
+  //     const v = i
+  //     console.log(v)
+  //   }
+
+  //   let htmlInject = ''
+
+  //   const iWantHtmlInject = couponDatabase.map((v, i) => {
+  //     htmlInject += `<div><button class='btn-green txt-btn mx-2 my-2' onclick='${() =>
+  //       console.log('1')}'>${v.discount_code}</button></div>`
+  //   })
+  //   // console.log(htmlInject)
+
+  //   // sweetAlert
+  //   swalWithBootstrapButtons
+  //     .fire({
+  //       title: `</h2><div class=''>` + htmlInject + '</div><h2>',
+  //       showConfirmButton: false,
+  //       padding: '25px',
+  //     })
+  //     .then((result) => {})
+  // }
+
+  // 跟資料庫拿優惠券
+  const handleGetCouponFromDatabase = () => {
+    const url = 'http://localhost:4000/milestone/cartForDiscount'
+    fetch(url, {
+      method: 'get',
+      credentials: 'include',
+    })
+      .then((r) => r.json())
+      .then((array) => {
+        console.log(array)
+        setCouponDatabase(array)
+      })
+  }
+
+  // 掛載轉換階段2, 跟資料庫要優惠券
+  useEffect(() => {
+    setFlowchart(2)
+    handleGetCouponFromDatabase()
+  }, [])
 
   return (
     <>
@@ -138,7 +196,12 @@ function SimpleMealCouponPayment(props) {
                 />
               </div>
               <div className="col-12 col-sm-4 poe-mb15">
-                <a className="w-100 select-btn-white txt-btn">我的優惠</a>
+                <button
+                  className="w-100 select-btn-white txt-btn"
+                  // onClick={() => handleSweetAlertCoupon()}
+                >
+                  我的優惠
+                </button>
               </div>
               {coupon.cost !== 0 && (
                 <div className="col-12 text-right">

@@ -260,7 +260,9 @@ function ReserveKitchenPayment(props) {
                 />
               </div>
               <div className="col-12 col-sm-4 poe-mb15">
-                <a className="w-100 select-btn-white txt-btn">我的優惠</a>
+                <button className="w-100 select-btn-white txt-btn">
+                  我的優惠
+                </button>
               </div>
               {coupon.cost !== 0 && (
                 <div className="col-12 text-right">
