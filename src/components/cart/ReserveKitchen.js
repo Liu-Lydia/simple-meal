@@ -97,6 +97,12 @@ function ReserveKitchen(props) {
           value={paymentObj.proj}
           hidden
         />
+        <input
+          type="text"
+          name="couponString"
+          value={coupon.string}
+          hidden
+        ></input>
       </form>
     </>
   )

@@ -22,6 +22,9 @@ function SimpleMealCouponPayment(props) {
   // 優惠券資料(非餐券)
   const [couponDatabase, setCouponDatabase] = useState([])
 
+  // 切換隱藏視窗
+  const [modalStyle, setModalStyle] = useState({ display: 'none' })
+
   // 改變付款方案
   const handleSetPaymentValue = (event) => {
     setPaymentValue(event.target.value)
@@ -35,49 +38,22 @@ function SimpleMealCouponPayment(props) {
 
   const handleCoupon = (e) => {
     const couponText = e.target.value
-    if (couponText.length === 5) {
-      setCoupon({ string: couponText, cost: 100 })
-    } else {
-      setCoupon({ string: couponText, cost: 0 })
-    }
+    // if (couponText.length === 5) {
+    //   setCoupon({ string: couponText, cost: 100 })
+    // } else {
+    // setCoupon({ string: couponText, cost: 0 })
+    // }
+    setCoupon({ string: couponText, cost: 0 })
   }
 
-  // // 產生彈出視窗來選優惠
-  // const handleSweetAlertCoupon = () => {
-  //   // 定義SweetAlert2的按鈕
-  //   const swalWithBootstrapButtons = Swal.mixin({
-  //     customClass: {
-  //       popup: 'poe-alert',
-  //       // title: 'poe-green my-0',
-  //       content: 'txt-btn',
-  //       confirmButton: 'btn-green txt-btn mx-2 my-2',
-  //       cancelButton: 'btn-red txt-btn mx-2 my-2',
-  //     },
-  //     buttonsStyling: false,
-  //   })
-
-  //   const handleSelectCoupon = (i) => {
-  //     const v = i
-  //     console.log(v)
-  //   }
-
-  //   let htmlInject = ''
-
-  //   const iWantHtmlInject = couponDatabase.map((v, i) => {
-  //     htmlInject += `<div><button class='btn-green txt-btn mx-2 my-2' onclick='${() =>
-  //       console.log('1')}'>${v.discount_code}</button></div>`
-  //   })
-  //   // console.log(htmlInject)
-
-  //   // sweetAlert
-  //   swalWithBootstrapButtons
-  //     .fire({
-  //       title: `</h2><div class=''>` + htmlInject + '</div><h2>',
-  //       showConfirmButton: false,
-  //       padding: '25px',
-  //     })
-  //     .then((result) => {})
-  // }
+  // 選用優惠券填入
+  const handleSelectCoupon = (string, discount) => {
+    setCoupon({
+      string: string,
+      cost: discount,
+    })
+    setModalStyle({ display: 'none' })
+  }
 
   // 跟資料庫拿優惠券
   const handleGetCouponFromDatabase = () => {
@@ -199,6 +175,7 @@ function SimpleMealCouponPayment(props) {
                 <button
                   className="w-100 select-btn-white txt-btn"
                   // onClick={() => handleSweetAlertCoupon()}
+                  onClick={() => setModalStyle({ display: 'block' })}
                 >
                   我的優惠
                 </button>
@@ -276,6 +253,58 @@ function SimpleMealCouponPayment(props) {
               下一步　<i className="fas fa-chevron-right"></i>
             </span>
           )}
+        </div>
+      </div>
+
+      {/* 隱藏視窗 */}
+      <div className="fff-mshowto" style={modalStyle}>
+        <div className="fff-mshowto-content mt-5">
+          {/* 關閉頁面的Ｘ */}
+          <div className="fff-ms-mobo justify-content-end col-12">
+            <h6>
+              <i
+                className="fas fa-times aboutCloseBtn"
+                onClick={() => {
+                  setModalStyle({ display: 'none' })
+                }}
+              ></i>
+            </h6>
+          </div>
+          {/* 圖片放置位置*/}
+          <div className="row justify-content-center">
+            <h5>您的優惠券</h5>
+            {/* 按鈕 */}
+            <div className="w-100">
+              {couponDatabase.map((v, i) => (
+                <>
+                  <div className="my-2 w-100">
+                    <button
+                      className="select-btn-green txt-btn w-100"
+                      style={{ height: '50px' }}
+                      onClick={() => {
+                        handleSelectCoupon(v.discount_code, v.discount)
+                      }}
+                    >
+                      優惠折扣 {v.discount} 元, 優惠碼 {v.discount_code}
+                    </button>
+                  </div>
+                </>
+              ))}
+            </div>
+            {/* 取消按鈕 */}
+            <div className="col-12 d-flex justify-content-center mt-3">
+              <button
+                type="button"
+                className="btn-white txt-btn aboutCloseBtn"
+                onClick={() => {
+                  setModalStyle({ display: 'none' })
+                }}
+                data-dismiss="modal"
+              >
+                取消
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </>
