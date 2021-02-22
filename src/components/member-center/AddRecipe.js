@@ -10,12 +10,13 @@ function AddRecipe(props) {
     // 新寫法.用FormData接事件目標來得到欄位
     const data = new FormData(event.target)
     console.log('data666', data)
-    // 3.連接的伺服器資料網址 . http://localhost:4000/sharerecipe/add
+    // 3.連接的伺服器資料網址 
     const url = 'http://localhost:4000/sharerecipe/try-upload'
 
     // 注意資料格式要設定，伺服器才知道是json格式
     const request = new Request(url, {
       method: 'POST',
+      credentials: 'include',
       body: data,
       headers: new Headers({
         Accept: 'application/json',
