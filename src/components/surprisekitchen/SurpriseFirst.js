@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from 'react'
-// import { Transition, TransitionGroup } from 'react-transition-group'
-
-// import hero03 from '../../../public/img/lydia/hero03.png'
-// import hero04 from '../../../public/img/lydia/hero04.png'
-// import hero01 from '../../../public/img/lydia/hero01.png'
-// import ClickMe from '../../../public/img/lydia/ClickMe.png'
-
-// const imgsArr = [hero03, hero04, hero01, ClickMe]
+import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 function SurpriseFirst() {
   function ScrollToOrder() {
@@ -18,6 +11,10 @@ function SurpriseFirst() {
   }
 
   const [inProp, setInProp] = useState(false)
+  const [imgList, setImgList] = useState([
+    { src: 'http://localhost:3015/img/lydia/Omurice4s.gif' },
+    { src: 'http://localhost:3015/img/lydia/hero01.png' },
+  ])
 
   return (
     <>
@@ -57,13 +54,27 @@ function SurpriseFirst() {
           </div>
 
           <div className="d-flex lll-coupon-position">
-            <div className="lll-get-coupon">
+            <TransitionGroup>
+              <div className="lll-get-coupon">
+                {imgList.map((v, i) => (
+                  <CSSTransition
+                    in={inProp}
+                    key={i}
+                    timeout={200}
+                    className="lll-testtransition"
+                  >
+                    <img  src={v.src} alt="" />
+                  </CSSTransition>
+                ))}
+              </div>
+            </TransitionGroup>
+            {/* <div className="lll-get-coupon">
               <img
                 className="lll-meal-pictures"
                 src="http://localhost:3015/img/lydia/hero03.png"
                 alt=""
               />
-            </div>
+            </div> */}
 
             {/*  <div className="lll-get-coupon">
               <img
@@ -124,7 +135,7 @@ function SurpriseFirst() {
         <div className="row">
           <div className="col">
             <a
-              className="btn-yello txt-cap"
+              className="btn-yello txt-cap lll-cursor"
               onClick={() => {
                 ScrollToOrder()
               }}

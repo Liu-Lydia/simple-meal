@@ -89,6 +89,32 @@
   animation: round 21s linear infinite; */
 }
 
+.lll-testtransition{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 248px;
+  height: 240px;
+}
+
+.lll-testtransition-enter{
+  opacity: 0;
+}
+
+.lll-testtransition-enter-active{
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.lll-testtransition-exit {
+  opacity: 1;
+}
+
+.lll-testtransition-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
 @keyframes round {
   4% {
     opacity: 1;
@@ -124,7 +150,7 @@
 } */
 
 .lll-meal-pictures {
-  background: url('http://localhost:3015/img/lydia/hero03.png');
+  /* background: url('http://localhost:3015/img/lydia/hero03.png'); */
   background-size: cover;
   overflow: hidden;
   height: 240px;
@@ -353,6 +379,15 @@
 }
 
 /* 預約驚喜廚房選單 */
+.lll-grey-hover {
+  color: #a2a3a5;
+}
+
+.lll-grey-hover:hover {
+  color: #434341;
+  text-decoration: none;
+}
+
 @media (max-width: 991px) {
   .lll-appoint-w100 {
     max-width: 100% !important;
@@ -441,6 +476,7 @@
 .lll-grey {
   color: #a2a3a5; /* 尚未開放, 過去的時間*/
 }
+
 .lll-green {
   color: #627e2a; /*尚有名額, 此月開放的日期*/
 }
@@ -790,8 +826,9 @@
   width: auto;
 }
 
-.sticky {
+.lll-sticky {
   position: fixed;
   top: 0;
-  right: 297px;
+  right: 237px;
 }
+

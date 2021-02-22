@@ -214,6 +214,7 @@ function SurpriseContent(props) {
     }
   }
 
+  //立即重選按鈕　↓↓↓
   const handleClear = () => {
     setNum_adult(0)
     setNum_child(0)
@@ -224,8 +225,7 @@ function SurpriseContent(props) {
     })
     setActive({ ...timesData })
   }
-
-  const [btnBoll, setBtnBool] = useState(false) //測試
+  //立即重選 ↑↑↑
 
   return (
     <>
@@ -265,8 +265,11 @@ function SurpriseContent(props) {
           <div className="mr-auto txt-sub1 lll-selected-position lll-black">
             選擇日期、選項
           </div>
-          <div className="ml-auto txt-sub1 lll-selected-position lll-grey">
-            <a className="lll-grey lll-cursor" onClick={() => handleClear()}>
+          <div className="ml-auto txt-sub1 lll-selected-position ">
+            <a
+              className="lll-grey-hover lll-cursor"
+              onClick={() => handleClear()}
+            >
               <i className="fas fa-redo-alt lll-pr20"></i>全部重選
             </a>
           </div>
