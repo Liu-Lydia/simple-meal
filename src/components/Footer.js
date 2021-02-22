@@ -11,6 +11,8 @@ import { NavLink } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 function Footer(props) {
+  // { 登入布林值, 設定登入布林值}
+  const { loginBool, setLoginBool } = props
   return (
     <>
       <footer
@@ -73,7 +75,10 @@ function Footer(props) {
             </Link>
           </div>
           <div className="col">
-            <Link to="/MemberCenter">
+            <Link
+              // 如果登入, 到會員首頁; 如果未登入, 到登入畫面
+              to={`${loginBool ? '/MemberCenter/Index' : '/MemberCenter'}`}
+            >
               <i className="fas fa-user"></i>
             </Link>
           </div>
