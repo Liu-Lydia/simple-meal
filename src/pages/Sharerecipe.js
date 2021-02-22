@@ -87,17 +87,17 @@ function Sharerecipe(props) {
   const display = (
     <>
       <div className="container">
-        <div className="row col offset-1 col-10">
+        <div className="row offset-1 col-xl-10 col-12 xxx-m0">
           {/* 引入資料 */}
           {recipeDisplay.map((v, i) => (
-            <div key={i} className="card col-3">
-              <div className="xxx-296x197 mb-3">
+            <div key={i} className="card col-xl-3 col-12">
+              <div className="xxx-296x197 mb-3 mx-auto">
                 <img
                   onClick={() => {
                     props.history.push('/myrecipepage/' + v.id)
                   }}
                   src={v.pic}
-                  className="card-img-top mt-3 xxx-img xxx-br25"
+                  className="card-img-top xxx-img xxx-br25 xxx-m85"
                   alt="..."
                 />
               </div>
@@ -134,20 +134,20 @@ function Sharerecipe(props) {
   return (
     <>
       <div className="container">
-        <div className="row col offset-1 col-10 mt-1 mb-1">
-          <h4>分享食譜</h4>
-          <div className="ml-auto">
+        <div className="row col offset-1 col-10 mt-1 mb-1 xxx-m0p0">
+          <h4 className="col-green ">分享食譜</h4>
+          <div className="ml-auto ">
             {/* 文字輸入框是表單元素 . 表單元素要讓react控管要兩個條件1.value必須對應到狀態值2.onChange要對應到設定狀態.且有固定寫法如下*/}
             食譜搜尋：
             <input
               type="text"
-              className="input-style mr-2"
+              className="input-style mr-2 xxx-sr-input"
               value={searchInput}
               onChange={(e) => {
                 setSearchInput(e.target.value)
               }}
             />
-            <button className="xxx-sr-foodsearch">食材搜尋</button>
+            <button className="xxx-sr-foodsearch xxx-mb-10">食材搜尋</button>
           </div>
         </div>
       </div>
