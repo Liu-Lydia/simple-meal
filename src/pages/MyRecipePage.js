@@ -76,8 +76,8 @@ function MyRecipePage(props) {
   const step33 = (
     <>
       <div class="d-flex xxx-rc-step">
-        <div class="xxx-rc-circle text-center">2</div>
-        <p class="txt-body col xxx-rc-pstep offset-1">{step2}</p>
+        <div class="xxx-rc-circle text-center">3</div>
+        <p class="txt-body col xxx-rc-pstep offset-1">{step3}</p>
       </div>
     </>
   )
