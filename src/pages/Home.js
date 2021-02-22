@@ -1,6 +1,7 @@
 import { BrowserRouter as Link, NavLink } from 'react-router-dom'
 import React from 'react'
 import Carousel from '../components/home/Carousel'
+import Carousel2 from '../components/home/Carousel2'
 import '../components/home/carousel3d.css'
 import HomeP3 from '../components/home/HomeP3'
 
@@ -31,7 +32,7 @@ function Home(props) {
             </div>
             {/* 圈圈 */}
             <svg
-              className="circle-spin"
+              className="circle-spin d-none d-sm-block"
               xmlns="http://www.w3.org/2000/svg"
               width="630"
               height="625"
@@ -80,7 +81,7 @@ function Home(props) {
 
             <NavLink
               to="/Milestone"
-              className="btn-meun-big-gray d-flex txt-btn p1-right-but ml-auto"
+              className="btn-meun-big-gray d-flex txt-btn p1-right-but ml-auto xxx-miss"
             >
               <div className="btn-meun-big-gray2">
                 <i className="fas fa-medal"></i>
@@ -106,13 +107,13 @@ function Home(props) {
             &nbsp; scroll
           </button>
         </div>
-        <div class="xxx-p1-hello">Hello!</div>
+        <div class="xxx-p1-hello d-none d-sm-block">Hello!</div>
         <img
-          className="xxx-boom"
+          className="xxx-boom d-none d-sm-block"
           src="http://localhost:3015/img/index/boom3.png"
         />
-        <div class="arms">
-          <div class="arm"></div>
+        <div class="arms d-none d-sm-block">
+          <div class="arm d-none d-sm-block"></div>
         </div>
       </div>
       {/* p2 */}
@@ -168,10 +169,19 @@ function Home(props) {
               </p>
               <br />
 
-              <NavLink to="/meal" className="btn-red txt-sub1">
+              <NavLink
+                to="/meal"
+                className="btn-red txt-sub1 d-none d-sm-block"
+              >
                 馬上出發
               </NavLink>
             </div>
+            <NavLink
+              to="/meal"
+              className="btn-red txt-sub1 d-block d-sm-none mx-auto"
+            >
+              馬上出發
+            </NavLink>
             {/* image要用div包起來才有rwd效果 */}
             <div>
               <div className="p5-img-div">
@@ -236,10 +246,10 @@ function Home(props) {
         </div>
       </div>
 
-      {/* p6 */}
-      <div className="container">
+      {/* p6-x */}
+      <div className="container d-none d-sm-block">
         <div className="row mb-5">
-          <div className="mx-auto col-12">
+          <div className="mx-auto col-xl-12 col">
             <h3 className="col-green text-center mb-3">驚喜廚房</h3>
             <p className="txt-sub1 col-gray text-center xxx-p6-mb">
               我們提供舒適的場地以及齊全的食材和器具，等著你來製作自己的餐點
@@ -251,7 +261,32 @@ function Home(props) {
         </div>
 
         <Carousel className="row mb-5 mx-auto " />
-        <NavLink to="/surprisekitchen" className="btn-green txt-btn xxx-center">
+        <NavLink
+          to="/surprisekitchen"
+          className="btn-green txt-btn xxx-center d-none d-sm-block"
+        >
+          立即預約
+        </NavLink>
+      </div>
+      {/* p6-s */}
+      <div className="container d-block d-sm-none">
+        <div className="row mb-5">
+          <div className="mx-auto col-xl-12 col">
+            <h3 className="col-green text-center mb-3">驚喜廚房</h3>
+            <p className="txt-sub1 col-gray text-center xxx-p6-mb">
+              我們提供舒適的場地以及齊全的食材和器具，等著你來製作自己的餐點
+              <br />
+              只需要帶上期待的心情，等待著預約日那天直接來到現場 <br />
+              快點來預約我們的驚喜廚房吧 !
+            </p>
+          </div>
+        </div>
+
+        <Carousel2 className="row mb-5 mx-auto " />
+        <NavLink
+          to="/surprisekitchen"
+          className="btn-green txt-btn xxx-center d-none d-sm-block"
+        >
           立即預約
         </NavLink>
       </div>

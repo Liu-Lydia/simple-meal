@@ -9,6 +9,20 @@
   }
 }
 
+/* 網頁版 */
+@media (min-width: 900px) {
+  
+}
+/* 手機板 */
+@media (max-width: 572px) {
+  .xxx-miss{
+    display: block;
+  }
+  .xxx-h-center{
+    left: -1010px;
+  }
+}
+
 /* .container.custom-container-width {
         max-width: 1640px;
       } */
