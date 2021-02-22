@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import './carousel3d.css'
+import './carousel3d2.css'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -7,7 +7,7 @@ import React from 'react'
 // const defaultDpr = 2; // sketch 里用的是 iphone 6 尺寸;
 const dpr = 0.5 // currentDpr / defaultDpr;
 
-class Carousel3d extends React.PureComponent {
+class Carousel3d2 extends React.PureComponent {
   static propTypes = {
     children: PropTypes.any,
     style: PropTypes.object,
@@ -242,7 +242,7 @@ class Carousel3d extends React.PureComponent {
         onTouchEnd={this.onTouchEnd}
         onMouseUp={this.onTouchEnd}
       >
-        <div className="carousel-wrapper">
+        <div className="carousel2-wrapper">
           <div
             className="carousel"
             style={{
@@ -279,7 +279,7 @@ const imgWrapper = [
   'http://localhost:3015/img/index/index-p6-5.png',
 ]
 
-export default function Carousel() {
+export default function Carousel2() {
   const children = imgWrapper.map((src, i) => (
     <div
       key={i.toString()}
@@ -291,9 +291,9 @@ export default function Carousel() {
   ))
   return (
     <div className="carousel-demo-wrapper">
-      <Carousel3d className="carousel-demo" childMaxLength={5}>
+      <Carousel3d2 className="carousel-demo" childMaxLength={5}>
         {children}
-      </Carousel3d>
+      </Carousel3d2>
     </div>
   )
 }

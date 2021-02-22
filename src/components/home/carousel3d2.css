@@ -26,11 +26,11 @@
   height: 100%;
 }
 
-.carousel-wrapper {
+.carousel2-wrapper {
   position: absolute;
   /* 圖片大小 */
-  width: 400px;
-  height: 300px;
+  width: 300px;
+  height: 200px;
   margin: auto;
   left: 0;
   right: 0;

@@ -19,7 +19,7 @@ function HomeP3() {
     <>
       <div className="container">
         <div className="row">
-          <div className="p3-img-div col-4">
+          <div className="p3-img-div col-xl-4">
             <img
               className="img-size"
               src="http://localhost:3015/img/index/index-p3-simg3.png"
