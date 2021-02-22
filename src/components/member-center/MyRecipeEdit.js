@@ -2,9 +2,18 @@ import '../../styles/addrecipe.css'
 import MemberCenterNavbar from './MemberCenterNavbar'
 import { withRouter } from 'react-router-dom'
 import React, { useEffect, useState } from 'react'
+import Swal from 'sweetalert2'
+
 // import { useState, data } from 'jquery'
 
 function MyRecipeEdit(props) {
+  // sweetalert
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      cancelButton: 'select-btn-green txt-btn',
+    },
+    buttonsStyling: false,
+  })
   const [name, setName] = useState('')
   const [cooktime, setCooktime] = useState('')
   const [introduction, setIntroduction] = useState('')
@@ -82,6 +91,15 @@ function MyRecipeEdit(props) {
     const rdata = await response.json()
 
     console.log('伺服器回傳的json資料', rdata)
+    swalWithBootstrapButtons.fire({
+      icon: 'success',
+      text: '修改成功',
+      showConfirmButton: false,
+      padding: '25px',
+      showCancelButton: true,
+      cancelButtonText: '確定',
+      showCloseButton: true,
+    })
   }
   // 一開始就會開始載入資料
   useEffect(() => {
