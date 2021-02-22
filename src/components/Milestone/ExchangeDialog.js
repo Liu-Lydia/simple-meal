@@ -32,9 +32,9 @@ function ExchangeDialog(props) {
   }
 
   //打包資料送後台
-  const setExchange = async ()=>{
+  const setExchange = async () => {
     const fd = new FormData(document.querySelector('#dialog-form'))
-    const url = 'http://localhost:4000/milestone/getPoint?sid=1' //sid 要從session來
+    const url = 'http://localhost:4000/reward/setExchange' //sid 要從session來
     await fetch(url, {
       method: 'post',
       body: fd,
@@ -65,12 +65,16 @@ function ExchangeDialog(props) {
     console.log('useEffect - count')
   }, [count])
 
-    //當確認兌換時 更新
-    useEffect(() => {
+  //當確認兌換時 更新
+  useEffect(() => {
+    if (commit) {
       console.log('useEffect - commit')
       setExchange()
       //彈出結果視窗 還沒做
-    }, [commit])
+
+      setCommit(false)//復位 讓後面的兌換也能按
+    }
+  }, [commit])
 
   return (
     <div className="fff-exchange" style={props.dialogStyle}>

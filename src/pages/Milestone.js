@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect,props } from 'react'
+import { Redirect } from 'react-router-dom'
 import '../styles/public.css'
 import '../styles/fff.css'
 import MilestoneInfoBar from '../components/Milestone/MilestoneInfoBar'
@@ -11,7 +12,7 @@ import MilestoneListFinish from '../components/Milestone/MilestoneListFinish'
 import MilestoneListUnfinish from '../components/Milestone/MilestoneListUnfinish'
 import MsMainPic from '../components/Milestone/MsMainPic'
 
-function Milestone() {
+function Milestone(props) {
   // 控制手機版“我的成就”按鈕按下去來顯示成就清單
   const [mobomspage2, setMoboMsPage2] = useState(false)
   const [milestoneFilter,setMilestoneFilter] = useState(1);//0限時活動 1全部成就 2已達成成就 3未達成成就
@@ -62,6 +63,8 @@ function Milestone() {
 
   return (
     <>
+    {/* 沒登入時, 跳轉登入 */}
+    {/* {!props.loginBool && <Redirect to="/MemberCenter" />} */}
       <div id="ms-p1" className="container" style={display.p1}>
         <MilestoneInfoBar
           btnText="兌換獎勵"
