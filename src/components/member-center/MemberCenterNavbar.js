@@ -92,7 +92,10 @@ function MemberCenterNavbar() {
                 </li>
                 <li className="mb-3">
                   <i className="far fa-calendar-plus mr-2"></i>{' '}
-                  <Link to="" className="text-dark">
+                  <Link
+                    to="/MemberCenter/MemberCenterSurpriseKitchen"
+                    className="text-dark"
+                  >
                     驚喜廚房
                   </Link>
                 </li>

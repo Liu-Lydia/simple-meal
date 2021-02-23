@@ -17,6 +17,7 @@ import MyRecipeEdit from '../components/member-center/MyRecipeEdit'
 import FoodDeliverys1 from '../components/member-center/FoodDeliverys1'
 import FoodDeliverys2 from '../components/member-center/FoodDeliverys1'
 import Test from '../components/member-center/test'
+import MemberCenterSurpriseKitchen from '../components/member-center/MemberCenterSurpriseKitchen'
 
 function MemberCenter(props) {
   // { 登入布林值, 設定登入布林值}
@@ -26,6 +27,9 @@ function MemberCenter(props) {
       <Switch>
         <Route path="/MemberCenter/Test">
           <Test />
+        </Route>
+        <Route path="/MemberCenter/SurpriseKitchen">
+          <MemberCenterSurpriseKitchen />
         </Route>
         <Route path="/MemberCenter/FoodDeliverys2">
           <FoodDeliverys2 />

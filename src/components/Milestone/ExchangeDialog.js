@@ -35,6 +35,7 @@ function ExchangeDialog(props) {
   //打包資料送後台
   const setExchange = async () => {
     const fd = new FormData(document.querySelector('#dialog-form'))
+    console.log("setExchange")
     const url = 'http://localhost:4000/reward/setExchange' //sid 要從session來
     await fetch(url, {
       method: 'post',
@@ -43,7 +44,9 @@ function ExchangeDialog(props) {
     })
       //then 是會接前方拋出的結果
       .then((r) => r.json())
-      .then((obj) => {})
+      .then((obj) => {
+        console.log("obj",obj)
+      })
   }
 
   const updateSelectOption = () => {
