@@ -119,9 +119,6 @@
   max-width: 160px;
 }
 
-.fff-end-event-filter {
-}
-
 .fff-svg-painting {
   width: 90px;
   height: 90px;
@@ -184,8 +181,8 @@
   margin-top: 30px;
 }
 
-.fff-mshowto-content span{
-  margin: 30px 0 30px 0
+.fff-mshowto-content span {
+  margin: 30px 0 30px 0;
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -302,8 +299,8 @@
     border: 5px #627e2a solid;
     padding: 75px;
   }
-  .fff-mshowto-content span{
-    margin: 60px 0 60px 0
+  .fff-mshowto-content span {
+    margin: 60px 0 60px 0;
   }
 }
 
@@ -648,7 +645,6 @@
   padding-top: 19px;
 }
 
-
 /* The Modal (background) */
 .fff-exchange {
   display: none; /* Hidden by default */
@@ -725,7 +721,7 @@
     stroke-dashoffset: 100;
     stroke-dasharray: 100;
   }
-  
+
   40% {
     stroke-dashoffset: 0;
     stroke-dasharray: 100;
@@ -739,7 +735,4 @@
     stroke-dashoffset: 100;
     stroke-dasharray: 100;
   }
-  
 }
-
-
