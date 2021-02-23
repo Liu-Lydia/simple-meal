@@ -340,7 +340,7 @@ function SurpriseContent(props) {
           <div className="ml-auto lll-ml-position">
             <p className="m-0 txt-sub1 lll-black lll-pb30">請選擇人數</p>
             {/* 選擇成人數量 ↓↓↓ */}
-            <div className="d-flex">
+            <div className="d-flex lll-ml-width">
               <p className="m-0 txt-sub1 lll-black lll-pb20">成人</p>
 
               <div className="ml-auto">
