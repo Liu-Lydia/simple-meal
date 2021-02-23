@@ -26,7 +26,7 @@ function SurpriseRule() {
   //滾動到一定位置定住menu　↓↓↓
   useEffect(() => {
     const menu = document.getElementById('menuScroll')
-    const sticky = 2420
+    const sticky = 3050
 
     const scrollCallBack = window.addEventListener('scroll', () => {
       if (window.pageYOffset > sticky) {
