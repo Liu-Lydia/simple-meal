@@ -99,7 +99,7 @@ function CartSimpleMealCoupon(props) {
     <>
       {/* 選購方案表 */}
       <h5>選購方案</h5>
-      <table className="table table-borderless table-hover">
+      <table className="table table-borderless table-hover poe-cartTable">
         <thead>
           <tr>
             <th scope="col"></th>
@@ -207,7 +207,7 @@ function CartSimpleMealCoupon(props) {
         <span className="">組合數量</span>
         <button
           onClick={() => handleSetQuantity(false)}
-          className="px-3 border-0"
+          className="px-3 border-0 poe-bgcTransparent"
         >
           <i
             className={`fas fa-minus-circle ${quantity <= 1 && 'poe-gray'}`}
@@ -216,7 +216,7 @@ function CartSimpleMealCoupon(props) {
         <span>{quantity}</span>
         <button
           onClick={() => handleSetQuantity(true)}
-          className="px-3 border-0"
+          className="px-3 border-0 poe-bgcTransparent"
         >
           <i
             className={`fas fa-plus-circle ${quantity === 10 && 'poe-gray'}`}
