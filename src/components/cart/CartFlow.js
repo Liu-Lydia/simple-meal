@@ -69,9 +69,9 @@ function CartFlow(props) {
             {handleCartmodeFlowcart()}
           </div>
           <div className="d-flex justify-content-between align-items-center poe-cart-progress-line">
-            <div className={classArray[0]} style={{ transition: '1.5s' }}></div>
-            <div className={classArray[1]} style={{ transition: '1.5s' }}></div>
-            <div className={classArray[2]} style={{ transition: '1.5s' }}></div>
+            <div className={classArray[0]} style={{ transition: '2s' }}></div>
+            <div className={classArray[1]} style={{ transition: '2s' }}></div>
+            <div className={classArray[2]} style={{ transition: '2s' }}></div>
           </div>
         </div>
       </div>
