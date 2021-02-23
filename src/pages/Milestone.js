@@ -2,20 +2,31 @@ import React, { useState, useEffect,props } from 'react'
 import { Redirect } from 'react-router-dom'
 import '../styles/public.css'
 import '../styles/fff.css'
+// 個人資料
 import MilestoneInfoBar from '../components/Milestone/MilestoneInfoBar'
+// 成就清單
 import MilestoneListAll from '../components/Milestone/MilestoneListAll'
+// 成就選項
 import MilestoneListOption from '../components/Milestone/MilestoneListOption'
+//手機版點數顯示
 import MsMoboPointInfo from '../components/Milestone/MsMoboPointInfo'
+//手機版回前頁
 import MsMoboBackToLastPageBtn from '../components/Milestone/MsMoboBackToLastPageBtn'
+// 限時活動
 import MilestoneListLimit from '../components/Milestone/MilestoneListLimit'
+// 已達成成就
 import MilestoneListFinish from '../components/Milestone/MilestoneListFinish'
+// 未達成成就
 import MilestoneListUnfinish from '../components/Milestone/MilestoneListUnfinish'
+// 主圖
 import MsMainPic from '../components/Milestone/MsMainPic'
+
 
 function Milestone(props) {
   // 控制手機版“我的成就”按鈕按下去來顯示成就清單
   const [mobomspage2, setMoboMsPage2] = useState(false)
-  const [milestoneFilter,setMilestoneFilter] = useState(1);//0限時活動 1全部成就 2已達成成就 3未達成成就
+  const [milestoneFilter,setMilestoneFilter] = useState(1)
+  //0限時活動 1全部成就 2已達成成就 3未達成成就
 
   //================================================================================================
   // 定義style物件

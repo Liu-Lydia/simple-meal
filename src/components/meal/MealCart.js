@@ -24,7 +24,7 @@ function MealCart(props) {
     })
       .then((r) => r.json())
       .then((obj) => {
-        console.log(obj.thisTime)
+        // console.log(obj.thisTime)
         setAddRightCart(obj.thisTime)
       })
   }

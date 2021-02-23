@@ -6,6 +6,7 @@ import CustomLeftArrow from './CustomLeftArrow'
 import { useState, useEffect } from 'react'
 function MealMultiCarousel(props) {
   const { setSelectMeal, meal, dataLoading, mealDisplay } = props
+  
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -36,7 +37,6 @@ function MealMultiCarousel(props) {
     </>
   )
   console.log(mealDisplay)
-
   return (
     <>
       {dataLoading ? (
@@ -52,7 +52,7 @@ function MealMultiCarousel(props) {
           itemClass="d-flex justify-content-center "
           containerClass="mx-auto col-10 cha-px0"
         >
-          {mealDisplay.length &&
+          {mealDisplay.length > 0 &&
             mealDisplay.map((value, index) => {
               return (
                 <Link
@@ -82,9 +82,11 @@ function MealMultiCarousel(props) {
                           </div>
                           <div class="txt-cap  cha-card-hidden">
                             <i class="far fa-clock cha-star-small cha-green"></i>
-                            <span class="cha-gray cha-mr4">40分鐘</span>
+                            <span class="cha-gray cha-mr4">
+                              {value.cooktime}
+                            </span>
                             <i class="fas fa-tag cha-star-small cha-green"></i>
-                            <span class="cha-gray">義式料理</span>
+                            <span class="cha-gray">{value.category_name}</span>
                           </div>
                         </div>
                       </div>

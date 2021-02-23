@@ -344,7 +344,15 @@
 // }
 
 .poe-spiner {
-  background: url('http://localhost:3015/img/lemon/123.svg') center center
+  background: url('http://localhost:3015/img/lemon/Tometo.svg') center center
     no-repeat;
   background-size: contain;
+}
+
+.poe-cartTable tbody tr:hover {
+  background-color: #bbd883 !important;
+}
+
+.poe-bgcTransparent {
+  background-color: transparent;
 }

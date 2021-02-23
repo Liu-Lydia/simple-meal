@@ -4,7 +4,13 @@ import MealPic from './MealPic'
 import MealTittle from './MealTittle'
 
 function MealMain(props) {
-  const { breadCrumbBool, selectMeal, updateNum, setUpdateNum } = props
+  const {
+    breadCrumbBool,
+    selectMeal,
+    updateNum,
+    setUpdateNum,
+    setMealForRecipe,
+  } = props
 
   const [data, setData] = useState({})
 
@@ -15,11 +21,11 @@ function MealMain(props) {
     })
       .then((r) => r.json())
       .then((obj) => {
-        console.log(obj)
+        // console.log(obj)
         setData({ ...obj })
       })
   }
-
+  console.log(setData)
   useEffect(() => {
     handleGetData()
   }, [selectMeal])
@@ -32,6 +38,7 @@ function MealMain(props) {
         data={data}
         updateNum={updateNum}
         setUpdateNum={setUpdateNum}
+        setMealForRecipe={setMealForRecipe}
       />
       {/* {console.log(selectMeal)} */}
     </div>

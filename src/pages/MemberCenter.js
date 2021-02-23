@@ -28,7 +28,7 @@ function MemberCenter(props) {
         <Route path="/MemberCenter/Test">
           <Test />
         </Route>
-        <Route path="/MemberCenter/MemberCenterSurpriseKitchen">
+        <Route path="/MemberCenter/SurpriseKitchen">
           <MemberCenterSurpriseKitchen />
         </Route>
         <Route path="/MemberCenter/FoodDeliverys2">

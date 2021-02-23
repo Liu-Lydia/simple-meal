@@ -190,7 +190,7 @@ function CartMealDelivery(props) {
       {/* 本次配送 */}
       <div className="">
         <h5>配送餐點</h5>
-        <table className="table table-borderless table-hover">
+        <table className="table table-borderless table-hover poe-cartTable">
           <thead>
             <tr>
               <th scope="col">
@@ -259,7 +259,7 @@ function CartMealDelivery(props) {
                         const quantity = v.quantity - 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 border-0 ${
+                      className={`px-3 border-0 poe-bgcTransparent ${
                         v.quantity > 1 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
@@ -272,7 +272,7 @@ function CartMealDelivery(props) {
                         const quantity = v.quantity + 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 border-0 ${
+                      className={`px-3 border-0 poe-bgcTransparent ${
                         v.quantity < 10 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
@@ -289,7 +289,7 @@ function CartMealDelivery(props) {
                         const quantity = v.quantity - 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 border-0 ${
+                      className={`px-3 border-0 poe-bgcTransparent ${
                         v.quantity > 1 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
@@ -302,7 +302,7 @@ function CartMealDelivery(props) {
                         const quantity = v.quantity + 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 border-0 ${
+                      className={`px-3 border-0 poe-bgcTransparent ${
                         v.quantity < 10 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
@@ -403,7 +403,7 @@ function CartMealDelivery(props) {
       {/* 下次配送 */}
       <div className="">
         <h5>下次配送</h5>
-        <table className="table table-borderless table-hover">
+        <table className="table table-borderless table-hover poe-cartTable">
           <thead>
             <tr>
               <th scope="col">
@@ -472,7 +472,7 @@ function CartMealDelivery(props) {
                         const quantity = v.quantity - 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 border-0 ${
+                      className={`px-3 border-0 poe-bgcTransparent ${
                         v.quantity > 1 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
@@ -485,7 +485,7 @@ function CartMealDelivery(props) {
                         const quantity = v.quantity + 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 border-0 ${
+                      className={`px-3 border-0 poe-bgcTransparent ${
                         v.quantity < 10 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
@@ -502,7 +502,7 @@ function CartMealDelivery(props) {
                         const quantity = v.quantity - 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 border-0 ${
+                      className={`px-3 border-0 poe-bgcTransparent ${
                         v.quantity > 1 ? 'poe-green' : 'poe-gray'
                       }`}
                     >
@@ -515,7 +515,7 @@ function CartMealDelivery(props) {
                         const quantity = v.quantity + 1
                         handleSetMealNum(sid, quantity)
                       }}
-                      className={`px-3 border-0 ${
+                      className={`px-3 border-0 poe-bgcTransparent ${
                         v.quantity < 10 ? 'poe-green' : 'poe-gray'
                       }`}
                     >

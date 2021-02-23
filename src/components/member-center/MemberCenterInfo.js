@@ -25,15 +25,29 @@ const MemberCenterInfo = ({ values, isSubmitting }) => (
             </div>
 
             <div className="form-group ">
+              <div className="form-group">
+                <label>頭像</label>
+                <Field type="text" name="avater" className="form-control br" />
+              </div>
               <label>電子郵件</label>
               <ErrorMessage name="email" component="span" style={errMsg} />
-              <Field type="email" name="email" className="form-control br " />
+              <Field
+                type="email"
+                name="email"
+                className="form-control br "
+                disabled
+              />
             </div>
 
             <div className="form-group">
               <label>姓名</label>
               <ErrorMessage name="name" component="span" style={errMsg} />
-              <Field type="text" name="name" className="form-control br" />
+              <Field
+                type="text"
+                name="name"
+                className="form-control br"
+                disabled
+              />
             </div>
 
             <div className="form-group ">
