@@ -6,14 +6,20 @@ function RecipeIngredient(props) {
       <div className="col cha-sel-box-1 justify-content-between row">
         {getrecipeData.ingredientsData.map((value, index) => {
           return (
-            <div key={value.sid} className="col-6 cha-sel-box-1 ">
-              <div className="cha-ingredient-img1">
-                <img className="cha-ingredient-img2"
+            <div
+              key={value.sid}
+              className="col-4 cha-sel-box-1 justify-content-center row"
+            >
+              <div className=" cha-ingredient-img1 justify-content-center d-flex">
+                <img
+                  className="cha-ingredient-img2"
                   src={`http://localhost:3015/img/ingredient/${value.ingredient_id}.jpg`}
                   alt=""
                 />
               </div>
-              {value.ingredient_name}
+              <div className="col-12 cha-ingredient-txt">
+                {value.ingredient_name}
+              </div>
             </div>
           )
         })}

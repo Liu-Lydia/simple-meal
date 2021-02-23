@@ -217,11 +217,15 @@
 }
 .cha-ingredient-img1{
   width: 70px;
-
+  object-fit: contain;
 }
 .cha-ingredient-img2{
   width: 100%;
-  
+  object-fit: contain;
+
+}
+.cha-ingredient-txt{
+  text-align: center;
 }
 .cha-search-put {
   width: 150px;
