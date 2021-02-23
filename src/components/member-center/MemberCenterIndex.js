@@ -52,17 +52,17 @@ function MemberCenterIndex() {
                       </Link>
                     </li>
                     <li className="item2 ml-4">
-                      <Link to="" className="text-dark">
+                      <Link to="/MemberCenter/PasswordEx" className="text-dark">
                         密碼變更
                       </Link>
                     </li>
                     <li className="item2 ml-4">
-                      <Link to="" className="text-dark">
+                      <Link to="/MemberCenter/CreditCard" className="text-dark">
                         信用卡
                       </Link>
                     </li>
                     <li className="item2 ml-4">
-                      <Link to="" className="text-dark">
+                      <Link to="/MemberCenter/Addr" className="text-dark">
                         地址
                       </Link>
                     </li>
@@ -81,7 +81,7 @@ function MemberCenterIndex() {
                     </li>
                     <li className="item ">
                       <i className="fas fa-carrot mr-2"></i>
-                      <Link to="" className="text-dark">
+                      <Link to="/MemberCenter/MyRecipe" className="text-dark">
                         我的共享食譜
                       </Link>
                     </li>
@@ -101,19 +101,28 @@ function MemberCenterIndex() {
                   <ul className="h6 col-4">
                     <li className="item ">
                       <i className="far fa-calendar-plus mr-2"></i>
-                      <Link to="" className="text-dark">
+                      <Link
+                        to="/MemberCenter/SurpriseKitchen"
+                        className="text-dark"
+                      >
                         驚喜廚房
                       </Link>
                     </li>
                     <li className="item ">
                       <i className="fas fa-utensils mr-2"></i>
-                      <Link to="" className="text-dark">
+                      <Link
+                        to="/MemberCenter/FoodDelivery"
+                        className="text-dark"
+                      >
                         我的餐點
                       </Link>
                     </li>
                     <li className="item ">
                       <i className="fas fa-clipboard mr-2"></i>
-                      <Link to="" className="text-dark">
+                      <Link
+                        to="/MemberCenter/SimpleMealCoupon"
+                        className="text-dark"
+                      >
                         我的餐卷
                       </Link>
                     </li>

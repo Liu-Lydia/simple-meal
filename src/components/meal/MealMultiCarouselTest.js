@@ -29,9 +29,9 @@ function MealMultiCarousel(props) {
 
   const loading = (
     <>
-      <div className="cha-cards d-flex justify-content-center">
-        <div className="cha-card d-flex justify-content-center">
-          <img src="http://localhost:3015/img/meal/Empty.gif" alt="" />
+      <div className="d-flex justify-content-center mt-3">
+        <div className="col-12 col-sm-6" style={{ height: '200px' }}>
+          <div className="poe-spiner w-100 h-100"></div>
         </div>
       </div>
     </>

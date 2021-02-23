@@ -5,9 +5,9 @@ function MsMainPic() {
     <>
       <div
         className="d-flex justify-content-center align-items-center fff-ms-web"
-        style={{ height: '600px', backgroundColor: 'lightgray' }}
+        style={{ height: '600px', background: 'url("http://localhost:3015/img/fff/Neon.svg")' }}
       >
-        <h5>我是佔空間的東西</h5>
+        <h5 className="animate__animated animate__bounce" >我是佔空間的東西</h5>
       </div>
       <div
         className="d-flex justify-content-center align-items-center fff-ms-web"

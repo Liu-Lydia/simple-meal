@@ -16,10 +16,10 @@ function ExchangeGoodsList2() {
   const [detailContext,setDetailContext] = useState({})
 
   //取得兌換項目清單
-  const getGoodList = () => {
+  const getGoodList = async () => {
     //good_type=1 合作廠商優惠 2現金折價卷
     const url = 'http://localhost:4000/reward/getGooDList?good_type=2'
-    fetch(url, {
+    await fetch(url, {
       method: 'get',
     })
       //then 是會接前方拋出的結果

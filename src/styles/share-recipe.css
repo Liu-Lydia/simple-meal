@@ -1,6 +1,33 @@
+/* 網頁版 */
+@media (min-width: 900px) {
+  .xxx-m85 {
+    margin-top: 15px;
+  }
+}
+/* 手機板 */
+@media (max-width: 572px) {
+  .xxx-m0 {
+    margin: 0px;
+  }
+  .card{
+    padding: 0px;
+  }
+  .xxx-296x197{
+    margin-top: 8.5px;
+  }
+  .xxx-sr-input{
+    margin-bottom: 20px;
+  }
+  .xxx-mb-10{
+    margin-bottom: 10px;
+  }
+  .xxx-m0p0{
+    margin: 0px;
+    padding: 15px;
+  }
+}
 .img-size {
   width: 100%;
-  height: 100%;
 }
 /* 顏色 */
 .col-green {

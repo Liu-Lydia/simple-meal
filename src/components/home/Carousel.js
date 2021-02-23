@@ -265,6 +265,8 @@ class Carousel3d extends React.PureComponent {
           </div>
         </div>
       </div>
+      
+      
     )
   }
 }

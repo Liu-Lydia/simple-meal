@@ -1,6 +1,7 @@
 import { BrowserRouter as Link, NavLink } from 'react-router-dom'
 import React from 'react'
 import Carousel from '../components/home/Carousel'
+import Carousel2 from '../components/home/Carousel2'
 import '../components/home/carousel3d.css'
 import HomeP3 from '../components/home/HomeP3'
 
@@ -31,7 +32,7 @@ function Home(props) {
             </div>
             {/* 圈圈 */}
             <svg
-              className="circle-spin"
+              className="circle-spin d-none d-sm-block"
               xmlns="http://www.w3.org/2000/svg"
               width="630"
               height="625"
@@ -80,7 +81,7 @@ function Home(props) {
 
             <NavLink
               to="/Milestone"
-              className="btn-meun-big-gray d-flex txt-btn p1-right-but ml-auto"
+              className="btn-meun-big-gray d-flex txt-btn p1-right-but ml-auto xxx-miss"
             >
               <div className="btn-meun-big-gray2">
                 <i className="fas fa-medal"></i>
@@ -106,21 +107,24 @@ function Home(props) {
             &nbsp; scroll
           </button>
         </div>
-        <div class="xxx-p1-hello">Hello!</div>
+        <div class="xxx-p1-hello d-none d-sm-block">Hello!</div>
         <img
-          className="xxx-boom"
+          className="xxx-boom d-none d-sm-block"
           src="http://localhost:3015/img/index/boom3.png"
         />
-        <div class="arms">
-          <div class="arm"></div>
+        <div class="arms d-none d-sm-block">
+          <div class="arm d-none d-sm-block"></div>
         </div>
       </div>
       {/* p2 */}
       <div className="container-fluid">
         <div className="row">
-          <h1 className="mb-5 col-12 txt-h1 text-center col-green">
+          <h1 className="mb-5 col-12 txt-h1 text-center col-green d-none d-xl-block">
             極簡煮易帶來全新的烹飪體驗
           </h1>
+          <h4 className="mb-5 col-12 txt-h1 text-center col-green d-block d-sm-none">
+            極簡煮易帶來全新的烹飪體驗
+          </h4>
         </div>
         {/* 水平對齊 : d-flex align-items-center */}
         <div className="row d-flex align-items-center p2-mb">
@@ -153,10 +157,10 @@ function Home(props) {
       <HomeP3 />
 
       {/* p5 */}
-      <div className="container">
+      <div className="container mb-5 mt-5">
         <div className="row p5-mb">
-          <div className="col-8 offset-4 p5-bg">
-            <div className="offset-5 p5-bg-t">
+          <div className="col-xl-8 offset-xl-4 p5-bg col-12">
+            <div className="offset-xl-5 offset-0 p5-bg-t">
               <h3 className="txt-h3 col-green">食譜介紹</h3>
               <br />
               <p className="col-gray">
@@ -168,20 +172,29 @@ function Home(props) {
               </p>
               <br />
 
-              <NavLink to="/meal" className="btn-red txt-sub1">
+              <NavLink
+                to="/meal"
+                className="btn-red txt-sub1 d-none d-sm-block"
+              >
                 馬上出發
               </NavLink>
             </div>
+            <NavLink
+              to="/meal"
+              className="btn-red txt-sub1 d-block d-sm-none mx-auto"
+            >
+              馬上出發
+            </NavLink>
             {/* image要用div包起來才有rwd效果 */}
             <div>
-              <div className="p5-img-div">
+              <div className="p5-img-div d-none d-sm-block">
                 <img
                   className="img-size"
                   src="http://localhost:3015/img/index/index-p5-img.png"
                   alt=""
                 />
               </div>
-              <div className="p5-change d-flex justify-content-center d-flex align-items-center">
+              <div className="p5-change d-flex justify-content-center d-flex align-items-center ">
                 <button className="col-gray p5-but-change1">
                   <i className="fas fa-chevron-circle-left col-black"></i>{' '}
                   &nbsp;Prev
@@ -196,35 +209,35 @@ function Home(props) {
             </div>
 
             <div>
-              <div className="p5-leaf1-div">
+              <div className="p5-leaf1-div d-none d-sm-block">
                 <img
                   className="img-size"
                   src="http://localhost:3015/img/index/index-p5-leaf1.png"
                   alt=""
                 />
               </div>
-              <div className="p5-leaf2-div">
+              <div className="p5-leaf2-div d-none d-sm-block">
                 <img
                   className="img-size"
                   src="http://localhost:3015/img/index/index-p5-leaf2.png"
                   alt=""
                 />
               </div>
-              <div className="p5-leaf3-div">
+              <div className="p5-leaf3-div d-none d-sm-block">
                 <img
                   className="img-size"
                   src="http://localhost:3015/img/index/index-p5-leaf3.png"
                   alt=""
                 />
               </div>
-              <div className="p5-leaf4-div">
+              <div className="p5-leaf4-div d-none d-sm-block">
                 <img
                   className="img-size"
                   src="http://localhost:3015/img/index/index-p5-leaf4.png"
                   alt=""
                 />
               </div>
-              <div className="p5-leaf5-div">
+              <div className="p5-leaf5-div d-none d-sm-block">
                 <img
                   className="img-size"
                   src="http://localhost:3015/img/index/index-p5-leaf5.png"
@@ -236,10 +249,10 @@ function Home(props) {
         </div>
       </div>
 
-      {/* p6 */}
-      <div className="container">
+      {/* p6-x */}
+      <div className="container d-none d-sm-block">
         <div className="row mb-5">
-          <div className="mx-auto col-12">
+          <div className="mx-auto col-xl-12 col">
             <h3 className="col-green text-center mb-3">驚喜廚房</h3>
             <p className="txt-sub1 col-gray text-center xxx-p6-mb">
               我們提供舒適的場地以及齊全的食材和器具，等著你來製作自己的餐點
@@ -251,7 +264,32 @@ function Home(props) {
         </div>
 
         <Carousel className="row mb-5 mx-auto " />
-        <NavLink to="/surprisekitchen" className="btn-green txt-btn xxx-center">
+        <NavLink
+          to="/surprisekitchen"
+          className="btn-green txt-btn xxx-center d-none d-sm-block"
+        >
+          立即預約
+        </NavLink>
+      </div>
+      {/* p6-s */}
+      <div className="container d-block d-sm-none">
+        <div className="row mb-5">
+          <div className="mx-auto col-xl-12 col">
+            <h3 className="col-green text-center mb-3">驚喜廚房</h3>
+            <p className="txt-sub1 col-gray text-center xxx-p6-mb">
+              我們提供舒適的場地以及齊全的食材和器具，等著你來製作自己的餐點
+              <br />
+              只需要帶上期待的心情，等待著預約日那天直接來到現場 <br />
+              快點來預約我們的驚喜廚房吧 !
+            </p>
+          </div>
+        </div>
+
+        <Carousel2 className="row mb-5 mx-auto " />
+        <NavLink
+          to="/surprisekitchen"
+          className="btn-green txt-btn xxx-center d-block d-sm-none mx-auto"
+        >
           立即預約
         </NavLink>
       </div>
@@ -259,7 +297,7 @@ function Home(props) {
       {/* p7 */}
       <div className="container">
         <div className="row mb-5">
-          <div className="p7-left-div col-3 offset-1">
+          <div className="p7-left-div col-xl-3 offset-1 d-none d-xl-block">
             <p className="txt-sub col-red text-center  txt-body">
               Tel. 02-6631 6666 <br />
               台北市大安區復興南路一段390號2樓 <br />
@@ -274,7 +312,7 @@ function Home(props) {
             </div>
           </div>
           <iframe
-            className="col-7"
+            className="col-xl-7 mb-3"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.2718198865737!2d121.5398673153787!3d25.024847844811454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442aa29379b8db9%3A0x6c7f37e71cce4568!2z6LOH562W5pyD!5e0!3m2!1szh-TW!2stw!4v1611819063119!5m2!1szh-TW!2stw"
             width="600"
             height="450"
@@ -284,6 +322,21 @@ function Home(props) {
             aria-hidden="false"
             tabindex="0"
           ></iframe>
+          {/* 手機版 */}
+          <div className="p7-left-div d-block d-sm-none mx-auto">
+            <p className="txt-sub col-red text-center  txt-body xxx-m0">
+              Tel. 02-6631 6666 <br />
+              台北市大安區復興南路一段390號2樓 <br />
+              Open. 10:00 ~ 21:00 <br />
+              <br />
+            </p>
+            <div className="p7-font-div d-flex justify-content-between col-red">
+              <i className="far fa-envelope"></i>
+              <i className="fab fa-instagram"></i>
+              <i className="fab fa-facebook-square"></i>
+              <i className="fab fa-line"></i>
+            </div>
+          </div>
         </div>
       </div>
     </>

@@ -50,7 +50,7 @@ function App() {
           )}
           <ScrollToTop>
             <Switch>
-              <Route path="/cart">
+              <Route path="/cart/:mode?">
                 <Cart
                   loginBool={loginBool}
                   cartModeByRedirectFrom={cartModeByRedirectFrom}
@@ -134,7 +134,7 @@ function App() {
           </ScrollToTop>
         </MainContent>
 
-        <Footer />
+        <Footer loginBool={loginBool} setLoginBool={setLoginBool} />
       </>
     </Router>
   )

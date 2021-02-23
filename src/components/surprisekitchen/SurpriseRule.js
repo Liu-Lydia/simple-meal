@@ -1,9 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react'
-import { Link } from 'react-router-dom'
-import moment from 'moment'
-// import DropdownItem from '../components/DropdownItem'
-// import { Collapse } from 'react-collapse'
-// import Calendar from '../../pages/Calendar'
+import Lemon from './Lemon'
 
 function SurpriseRule() {
   //接收資料庫資料　↓↓↓
@@ -30,13 +26,13 @@ function SurpriseRule() {
   //滾動到一定位置定住menu　↓↓↓
   useEffect(() => {
     const menu = document.getElementById('menuScroll')
-    const sticky = 2420
+    const sticky = 3050
 
     const scrollCallBack = window.addEventListener('scroll', () => {
       if (window.pageYOffset > sticky) {
-        menu.classList.add('sticky')
+        menu.classList.add('lll-sticky')
       } else {
-        menu.classList.remove('sticky')
+        menu.classList.remove('lll-sticky')
       }
     })
     return () => {
@@ -96,7 +92,7 @@ function SurpriseRule() {
         </ul>
       </div>
       {/* 驚喜廚房規則說明 ↑↑↑ */}
-
+      <Lemon />
       {/* 預約規則說明 ↓↓↓ */}
       <div className="col p-0 w-100">
         <div className="lll-black float-right lll-onmenu" id="menu">
@@ -231,6 +227,7 @@ function SurpriseRule() {
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <div>
                     <span className="txt-sub2 lll-grey">使用日期</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
                     <span className="txt-sub2 lll-grey">{v.used_date}</span>
                     <br />
                   </div>
@@ -239,7 +236,9 @@ function SurpriseRule() {
                 <p className="m-0 txt-sub1 lll-black">{v.comment}</p>
                 <br />
                 <span className="txt-sub2 lll-grey">於</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <span className="txt-sub2 lll-grey">{v.builded_date}</span>
+                &nbsp;&nbsp;&nbsp;&nbsp;
                 <span className="txt-sub2 lll-grey">評價</span>
               </div>
             ))}

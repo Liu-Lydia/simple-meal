@@ -1,12 +1,4 @@
 import React, { useEffect, useState } from 'react'
-// import { Transition, TransitionGroup } from 'react-transition-group'
-
-// import hero03 from '../../../public/img/lydia/hero03.png'
-// import hero04 from '../../../public/img/lydia/hero04.png'
-// import hero01 from '../../../public/img/lydia/hero01.png'
-// import ClickMe from '../../../public/img/lydia/ClickMe.png'
-
-// const imgsArr = [hero03, hero04, hero01, ClickMe]
 
 function SurpriseFirst() {
   function ScrollToOrder() {
@@ -16,8 +8,6 @@ function SurpriseFirst() {
       behavior: 'smooth',
     })
   }
-
-  const [inProp, setInProp] = useState(false)
 
   return (
     <>
@@ -60,32 +50,17 @@ function SurpriseFirst() {
             <div className="lll-get-coupon">
               <img
                 className="lll-meal-pictures"
-                src="http://localhost:3015/img/lydia/hero03.png"
-                alt=""
-              />
-            </div>
-
-            {/*  <div className="lll-get-coupon">
-              <img
-                className="lll-meal-pictures"
-                src="http://localhost:3015/img/lydia/hero01.png"
-                alt=""
-              />
-            </div>
-            <div className="lll-get-coupon">
-              <img
-                className="lll-meal-pictures"
                 src="http://localhost:3015/img/lydia/ClickMe.png"
                 alt=""
               />
-            </div> */}
-            {/* <div className="lll-get-coupons">
+            </div>
+            <div className="lll-get-coupon2">
               <img
                 className="lll-meal-pictures"
-                src="http://localhost:3015/img/lydia/Omurice4s.gif"
+                src="http://localhost:3015/img/lydia/test03.gif"
                 alt=""
               />
-            </div> */}
+            </div>
 
             <div className="mt-auto ml-auto">
               <h1 className="lll-green">rder</h1>
@@ -124,7 +99,7 @@ function SurpriseFirst() {
         <div className="row">
           <div className="col">
             <a
-              className="btn-yello txt-cap"
+              className="btn-yello txt-cap lll-cursor"
               onClick={() => {
                 ScrollToOrder()
               }}

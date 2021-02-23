@@ -9,6 +9,76 @@
   }
 }
 
+/* 網頁版 */
+@media (min-width: 900px) {
+  .p5-bg {
+  background-color: #f3e575;
+  border-radius: 75px;
+  height: 400px;
+  margin-bottom: 200px;
+}
+.p5-leaf1-div {
+  position: absolute;
+  max-width: 220.54px;
+  max-height: 150px;
+  top: -50px;
+  left: -350px;
+  padding: 0;
+  image-orientation: 336deg;
+}
+.p5-leaf2-div {
+  position: absolute;
+  max-width: 182px;
+  max-height: 124px;
+  top: 420px;
+  left: -350px;
+  padding: 0;
+  image-orientation: 24deg;
+}
+.p5-leaf3-div {
+  position: absolute;
+  max-width: 93px;
+  max-height: 175px;
+  top: 450px;
+  left: -130px;
+  padding: 0;
+  image-orientation: -105deg;
+}
+.p5-leaf4-div {
+  position: absolute;
+  max-width: 145px;
+  max-height: 115px;
+  image-orientation: 15deg;
+  top: -100px;
+  padding: 0;
+  left: -330px;
+}
+.p5-leaf5-div {
+  position: absolute;
+  max-width: 420px;
+  max-height: 325px;
+  top: 220px;
+  padding: 0;
+  left: -710px;
+}
+}
+/* 手機板 */
+@media (max-width: 572px) {
+  .xxx-miss{
+    display: block;
+  }
+  .xxx-h-center{
+    left: -1010px;
+  }
+  .p5-bg {
+    background-color: white;
+  border-radius: 75px;
+  height: 400px;
+  margin: 0px;
+  
+}
+}
+
 /* .container.custom-container-width {
         max-width: 1640px;
       } */
@@ -240,8 +310,9 @@ top: 50px;
 }
 /* p3 */
 .p3-img-div {
-  width: 600px;
-  height: 600px;
+  width: 500px;
+  height: 500px;
+  margin-top: 80px;
   /* 置中 */
   margin-left: auto;
   margin-right: auto;
@@ -287,12 +358,7 @@ top: 50px;
 .p5-mb{
   margin-bottom: 200px;
 }
-.p5-bg {
-  background-color: #f3e575;
-  border-radius: 75px;
-  height: 400px;
-  margin-bottom: 200px;
-}
+
 .p5-change{
 
   position: absolute;
@@ -311,50 +377,7 @@ top: 50px;
   left: -220px;
   padding: 0;
 }
-.p5-leaf1-div {
-  position: absolute;
-  max-width: 220.54px;
-  max-height: 150px;
-  top: -50px;
-  left: -350px;
-  padding: 0;
-  image-orientation: 336deg;
-}
-.p5-leaf2-div {
-  position: absolute;
-  max-width: 182px;
-  max-height: 124px;
-  top: 420px;
-  left: -350px;
-  padding: 0;
-  image-orientation: 24deg;
-}
-.p5-leaf3-div {
-  position: absolute;
-  max-width: 93px;
-  max-height: 175px;
-  top: 450px;
-  left: -130px;
-  padding: 0;
-  image-orientation: -105deg;
-}
-.p5-leaf4-div {
-  position: absolute;
-  max-width: 145px;
-  max-height: 115px;
-  image-orientation: 15deg;
-  top: -100px;
-  padding: 0;
-  left: -330px;
-}
-.p5-leaf5-div {
-  position: absolute;
-  max-width: 420px;
-  max-height: 325px;
-  top: 220px;
-  padding: 0;
-  left: -710px;
-}
+
 .p5-but-change1{
   background-color:transparent;
   border: transparent;

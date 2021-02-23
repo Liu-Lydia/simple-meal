@@ -34,7 +34,7 @@ function SimpleMealCouponCheck(props) {
     // sweetAlert 第1階段
     swalWithBootstrapButtons
       .fire({
-        imageUrl: 'http://localhost:3015/img/lydia/lemonCooking.PNG.PNG',
+        imageUrl: 'http://localhost:3015/img/lemon/123.svg',
         imageHeight: 200,
         title:
           '<h5 class="d-block d-sm-none">確定要送出訂單嗎?</h5>' +
@@ -69,7 +69,7 @@ function SimpleMealCouponCheck(props) {
             imageUrl: 'http://localhost:3015/img/lydia/Omurice.GIF',
             imageHeight: 200,
             title: '<h4>完成訂單</h4>',
-            text: `您的配送訂單已經完成, 訂單編號 ${obj.order_sid}`,
+            text: `您的訂單已經完成, 訂單編號 ${obj.order_sid}`,
             padding: '25px',
             showConfirmButton: true,
             confirmButtonText: '確定',

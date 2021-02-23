@@ -104,6 +104,12 @@ function SimpleMealCoupon(props) {
         ></input>
         <input
           type="text"
+          name="couponString"
+          value={coupon.string}
+          hidden
+        ></input>
+        <input
+          type="text"
           name="payment_method"
           value={paymentObj.proj}
           hidden

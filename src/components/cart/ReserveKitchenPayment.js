@@ -16,6 +16,12 @@ function ReserveKitchenPayment(props) {
     setReservationInfo,
   } = props
 
+  // 優惠券資料(非餐券)
+  const [couponDatabase, setCouponDatabase] = useState([])
+
+  // 切換隱藏視窗
+  const [modalStyle, setModalStyle] = useState({ display: 'none' })
+
   // placeholder
   const [infoPlaceholder, setInfoPlaceholder] = useState({
     name: '',
@@ -44,9 +50,10 @@ function ReserveKitchenPayment(props) {
         setMemberInfo(obj)
       })
   }
-  // 載入時取得會員資料
+  // 載入時取得會員資料, 跟資料庫要優惠券
   useEffect(() => {
     handleGetMemberData()
+    handleGetCouponFromDatabase()
   }, [])
 
   // 改變付款方案
@@ -60,13 +67,42 @@ function ReserveKitchenPayment(props) {
     setPaymentObj(paymentArray[i])
   }
 
+  // 手動輸入優惠碼
   const handleCoupon = (e) => {
     const couponText = e.target.value
-    if (couponText.length === 5) {
-      setCoupon({ string: couponText, cost: 100 })
-    } else {
-      setCoupon({ string: couponText, cost: 0 })
-    }
+
+    // 先歸零
+    setCoupon({ string: couponText, cost: 0 })
+
+    // 如果輸入的字串有屬於優惠碼, 提供相應的優惠
+    couponDatabase.map((v, i) => {
+      console.log(v.discount_code, couponText)
+      v.discount_code === couponText &&
+        setCoupon({ string: couponText, cost: v.discount })
+    })
+  }
+
+  // 選用優惠券填入
+  const handleSelectCoupon = (string, discount) => {
+    setCoupon({
+      string: string,
+      cost: discount,
+    })
+    setModalStyle({ display: 'none' })
+  }
+
+  // 跟資料庫拿優惠券
+  const handleGetCouponFromDatabase = () => {
+    const url = 'http://localhost:4000/milestone/cartForDiscount'
+    fetch(url, {
+      method: 'get',
+      credentials: 'include',
+    })
+      .then((r) => r.json())
+      .then((array) => {
+        console.log(array)
+        setCouponDatabase(array)
+      })
   }
 
   // 自動填入會員資料到表單
@@ -260,7 +296,12 @@ function ReserveKitchenPayment(props) {
                 />
               </div>
               <div className="col-12 col-sm-4 poe-mb15">
-                <a className="w-100 select-btn-white txt-btn">我的優惠</a>
+                <button
+                  className="w-100 select-btn-white txt-btn"
+                  onClick={() => setModalStyle({ display: 'block' })}
+                >
+                  我的優惠
+                </button>
               </div>
               {coupon.cost !== 0 && (
                 <div className="col-12 text-right">
@@ -286,7 +327,7 @@ function ReserveKitchenPayment(props) {
           </div>
 
           <div className="poe-bookmark-content txt-btn">
-            <table className="table table-borderless table-hover">
+            <table className="table table-borderless table-hover poe-cartTable">
               <tbody>
                 {paymentArray.map((v, i) => (
                   <tr key={i}>
@@ -333,6 +374,77 @@ function ReserveKitchenPayment(props) {
               下一步　<i className="fas fa-chevron-right"></i>
             </span>
           )}
+        </div>
+      </div>
+
+      {/* 隱藏視窗 */}
+      <div className="fff-mshowto" style={modalStyle}>
+        <div className="fff-mshowto-content" style={{ marginTop: '20vh' }}>
+          {/* 關閉頁面的Ｘ */}
+          <div className="fff-ms-mobo justify-content-end col-12">
+            <h6>
+              <i
+                className="fas fa-times aboutCloseBtn"
+                onClick={() => {
+                  setModalStyle({ display: 'none' })
+                }}
+              ></i>
+            </h6>
+          </div>
+          {/* 如果沒有優惠券 */}
+          {couponDatabase.length === 0 && (
+            <div className="row justify-content-center poe-green">
+              <div
+                style={{
+                  width: '120px',
+                  height: '100px',
+                  background:
+                    'url("http://localhost:3015/img/lemon/Empty.GIF") center center no-repeat',
+                  backgroundSize: 'contain',
+                }}
+              ></div>
+            </div>
+          )}
+          {/* 優惠券位置*/}
+          <div className="row justify-content-center poe-green">
+            {couponDatabase.length === 0 ? (
+              <h5>您沒有可用的優惠券</h5>
+            ) : (
+              <h5>您的優惠券</h5>
+            )}
+
+            {/* 按鈕 */}
+            <div className="w-100">
+              {couponDatabase.map((v, i) => (
+                <>
+                  <div className="my-2 w-100">
+                    <button
+                      className="select-btn-green txt-btn w-100"
+                      style={{ height: '50px' }}
+                      onClick={() => {
+                        handleSelectCoupon(v.discount_code, v.discount)
+                      }}
+                    >
+                      優惠折扣 {v.discount} 元, 優惠碼 {v.discount_code}
+                    </button>
+                  </div>
+                </>
+              ))}
+            </div>
+            {/* 取消按鈕 */}
+            <div className="col-12 d-flex justify-content-center mt-3">
+              <button
+                type="button"
+                className="btn-white txt-btn aboutCloseBtn"
+                onClick={() => {
+                  setModalStyle({ display: 'none' })
+                }}
+                data-dismiss="modal"
+              >
+                取消
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </>

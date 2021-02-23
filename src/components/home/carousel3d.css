@@ -1,3 +1,19 @@
+/* 手機板 */
+@media (max-width: 572px) {
+ .carousel-wrapper {
+  position: absolute;
+  /* 圖片大小 */
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 120px;
+  padding-top: 350px;
+  margin-top: -350px;
+}
+}
+
 .carousel-demo-wrapper {
   position: relative;
   /* background: #3949C0; */

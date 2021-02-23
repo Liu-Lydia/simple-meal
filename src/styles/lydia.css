@@ -79,31 +79,68 @@
 }
 
 .lll-get-coupon {
+  width: 248px;
+  height: 240px;
+  visibility: visible;
+  animation: round 24s linear infinite;
+}
+
+.lll-get-coupon2 {
+  width: 248px;
+  height: 240px;
+  visibility: hidden;
+  animation: round2 24s linear infinite;
+}
+
+/* .lll-testtransition{
   position: absolute;
   left: 0;
   top: 0;
   width: 248px;
   height: 240px;
-  /* opacity: 0;
-  filter: alpha(opacity=0);
-  animation: round 21s linear infinite; */
 }
 
+.lll-testtransition-enter{
+  opacity: 0;
+}
+
+.lll-testtransition-enter-active{
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.lll-testtransition-exit {
+  opacity: 1;
+}
+
+.lll-testtransition-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+} */
+
 @keyframes round {
-  4% {
-    opacity: 1;
-    filter: alpha(opacity=100);
-    /* 0 - 1秒 淡入*/
+  49% {
+    visibility: visible;
   }
-  20% {
-    opacity: 1;
-    filter: alpha(opacity=100);
-    /* 1- 5秒靜止*/
+  50% {
+    visibility: hidden;
   }
-  24% {
-    opacity: 0;
-    filter: alpha(opacity=0);
-    /* 5-6秒淡出*/
+
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes round2 {
+  49% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+
+  100% {
+    visibility: visible;
   }
 }
 
@@ -112,21 +149,17 @@
 }
 .lll-get-coupon:nth-child(2) {
   animation-delay: 5s;
-}
-.lll-get-coupon:nth-child(3) {
+} */
+/* .lll-get-coupon:nth-child(3) {
   animation-delay: 10s;
 }
 .lll-get-coupon:nth-child(4) {
   animation-delay: 15s;
-} */
-/* .lll-get-coupon:nth-child(5) {
-  animation-delay: 20s;
-} */
+}  */
 
 .lll-meal-pictures {
-  background: url('http://localhost:3015/img/lydia/hero03.png');
-  background-size: cover;
-  overflow: hidden;
+  position: absolute;
+  left: 0px;
   height: 240px;
 }
 
@@ -353,6 +386,15 @@
 }
 
 /* 預約驚喜廚房選單 */
+.lll-grey-hover {
+  color: #a2a3a5;
+}
+
+.lll-grey-hover:hover {
+  color: #434341;
+  text-decoration: none;
+}
+
 @media (max-width: 991px) {
   .lll-appoint-w100 {
     max-width: 100% !important;
@@ -378,7 +420,7 @@
   color: #434341;
 }
 
-.lll-h5{
+.lll-h5 {
   font-family: GenSenRounded TW;
   font-size: 24px !important;
   font-weight: 500 !important;
@@ -387,7 +429,7 @@
   text-decoration: none;
 }
 
-.lll-h5:hover{
+.lll-h5:hover {
   color: #a2a3a5;
 }
 
@@ -433,7 +475,7 @@
   cursor: pointer;
 }
 
-.today{
+.today {
   color: #f3e575;
 }
 
@@ -441,6 +483,7 @@
 .lll-grey {
   color: #a2a3a5; /* 尚未開放, 過去的時間*/
 }
+
 .lll-green {
   color: #627e2a; /*尚有名額, 此月開放的日期*/
 }
@@ -790,8 +833,256 @@
   width: auto;
 }
 
-.sticky {
+.lll-sticky {
   position: fixed;
   top: 0;
-  right: 297px;
+  right: 237px;
+}
+
+/*Lemon圖*/
+.lll-picture-position {
+  position: relative;
+  height: 625px;
+  width: 625px;
+}
+
+.lll-lemon-position {
+  position: relative;
+  top: 402px;
+  left: 168px;
+  height: 223px;
+  width: 286px;
+}
+
+.lll-lemon {
+  height: 223px;
+  width: 100%;
+  background: url('http://localhost:3015/img/lydia/lemonCookingLemon.png');
+  background-size: cover;
+  overflow: hidden;
+}
+
+.lll-coriander {
+  height: 95px;
+  width: 92px;
+  position: absolute;
+  top: 393px;
+  left: 471px;
+  animation: coriander 4s ease-in-out infinite;
+}
+
+@keyframes coriander {
+  0% {
+    top: 393px;
+    left: 471px;
+  }
+
+  50% {
+    top: 420px;
+    left: 471px;
+  }
+  100% {
+    top: 393px;
+    left: 471px;
+  }
+}
+
+.lll-trout {
+  height: 61px;
+  width: 98px;
+  position: absolute;
+  top: 291px;
+  left: 488px;
+  animation: trout 4s ease-in-out infinite;
+}
+
+@keyframes trout {
+  0% {
+    top: 291px;
+    left: 488px;
+  }
+
+  50% {
+    top: 318px;
+    left: 488px;
+  }
+  100% {
+    top: 291px;
+    left: 488px;
+  }
+}
+
+.lll-mushroom {
+  height: 57px;
+  width: 74px;
+  position: absolute;
+  top: 178px;
+  left: 436px;
+  animation: mushroom 4s ease-in-out infinite;
+}
+
+@keyframes mushroom {
+  0% {
+    top: 178px;
+    left: 436px;
+  }
+
+  50% {
+    top: 205px;
+    left: 436px;
+  }
+  100% {
+    top: 178px;
+    left: 436px;
+  }
+}
+
+.lll-leef {
+  height: 92px;
+  width: 87px;
+  position: absolute;
+  top: 153px;
+  left: 226px;
+  animation: leef 4s ease-in-out infinite;
+}
+
+@keyframes leef {
+  0% {
+    top: 153px;
+    left: 226px;
+  }
+
+  50% {
+    top: 180px;
+    left: 226px;
+  }
+  100% {
+    top: 153px;
+    left: 226px;
+  }
+}
+
+.lll-cheese {
+  height: 73px;
+  width: 97px;
+  position: absolute;
+  top: 159px;
+  left: 61px;
+  animation: cheese 4s ease-in-out infinite;
+}
+
+@keyframes cheese {
+  0% {
+    top: 159px;
+    left: 61px;
+  }
+
+  50% {
+    top: 186px;
+    left: 61px;
+  }
+  100% {
+    top: 159px;
+    left: 61px;
+  }
+}
+
+.lll-tomato {
+  height: 63px;
+  width: 66px;
+  position: absolute;
+  top: 282px;
+  left: 357px;
+  animation: tomato 4s ease-in-out infinite;
+}
+
+@keyframes tomato {
+  0% {
+    top: 282px;
+    left: 357px;
+  }
+
+  50% {
+    top: 309px;
+    left: 357px;
+  }
+  100% {
+    top: 282px;
+    left: 357px;
+  }
+}
+
+.lll-bacon {
+  height: 59px;
+  width: 107px;
+  position: absolute;
+  top: 461px;
+  left: 52px;
+  animation: bacon 4s ease-in-out infinite;
+}
+
+@keyframes bacon {
+  0% {
+    top: 461px;
+    left: 52px;
+  }
+
+  50% {
+    top: 488px;
+    left: 52px;
+  }
+  100% {
+    top: 461px;
+    left: 52px;
+  }
+}
+
+.lll-eggplant {
+  height: 87px;
+  width: 76px;
+  position: absolute;
+  top: 279px;
+  left: 151px;
+  animation: eggplant 4s ease-in-out infinite;
+}
+
+@keyframes eggplant {
+  0% {
+    top: 279px;
+    left: 151px;
+  }
+
+  50% {
+    top: 306px;
+    left: 151px;
+  }
+  100% {
+    top: 279px;
+    left: 151px;
+  }
+}
+
+.lll-scallion {
+  height: 82px;
+  width: 79px;
+  position: absolute;
+  top: 301px;
+  left: 7px;
+  animation: scallion 4s ease-in-out infinite;
+}
+
+@keyframes scallion {
+  0% {
+    top: 301px;
+    left: 7px;
+  }
+
+  50% {
+    top: 328px;
+    left: 7px;
+  }
+  100% {
+    top: 301px;
+    left: 7px;
+  }
 }
