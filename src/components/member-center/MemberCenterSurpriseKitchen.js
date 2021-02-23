@@ -1,28 +1,31 @@
 import React, { useEffect, useState, nav } from 'react'
 import MemberCenterNavbar from './MemberCenterNavbar'
-import FoodDeliverys1 from './FoodDeliverys1'
-import FoodDeliverys2 from './FoodDeliverys2'
+import SurpriseKitchen1 from './SurpriseKitchen1'
+import SurpriseKitchen2 from './SurpriseKitchen2'
+import SurpriseKitchenAll from './SurpriseKitchenAll'
 import { Link } from 'react-router-dom'
 
-function MemberCenterFoodDelivery() {
+function MemberCenterSurpriseKitchen() {
   const [tittle, setTittle] = useState('testa')
 
   const selected = () => {
     switch (tittle) {
       case 'testa':
-        return <FoodDeliverys1 />
+        return <SurpriseKitchenAll />
       case 'testb':
-        return <FoodDeliverys2 />
+        return <SurpriseKitchen1 />
+      case 'testc':
+        return <SurpriseKitchen2 />
     }
   }
 
   const text = (
     <>
       <h4 className="mb-3 mt-3 ml-2 d-none d-sm-none d-md-none d-lg- d-xl-block ">
-        配送餐點
+        驚喜廚房
       </h4>
       <div className="d-block d-sm-block d-md-block d-lg-block d-xl-none text-center">
-        <h4>配送餐點</h4>
+        <h4>驚喜廚房</h4>
       </div>
       <div className="d-flex offset-3 mb-2 ">
         <img
@@ -56,13 +59,19 @@ function MemberCenterFoodDelivery() {
                     className="col-3 cha-rec-sel1 cha-rec-sel1-active"
                     onClick={() => setTittle('testa')}
                   >
-                    已配送
+                    全部
+                  </Link>
+                  <Link
+                    className="col-3 cha-rec-sel1 "
+                    onClick={() => setTittle('testb')}
+                  >
+                    進行中
                   </Link>
                   <Link
                     className="col-3 cha-rec-sel1"
-                    onClick={() => setTittle('testb')}
+                    onClick={() => setTittle('testc')}
                   >
-                    未配送
+                    已完成
                   </Link>
                 </div>
                 <div className="">{selected()}</div>
@@ -74,4 +83,4 @@ function MemberCenterFoodDelivery() {
     </>
   )
 }
-export default MemberCenterFoodDelivery
+export default MemberCenterSurpriseKitchen

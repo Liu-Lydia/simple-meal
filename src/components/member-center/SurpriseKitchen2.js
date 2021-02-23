@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import Moment from 'react-moment'
-function FoodDeliverys2() {
-  const [FoodDelivery, setFoodDelivery] = useState([])
+function SurpriseKitchen2() {
+  const [SurpriseKitchen, setSurpriseKitchen] = useState([])
 
-  const [FoodDeliverySeach, setFoodDeliverySeach] = useState('null')
-  const [FoodDeliverySeach1, setFoodDeliverySeach1] = useState('null')
+  const [SurpriseKitchenSeach, setSurpriseKitchenSeach] = useState('null')
+  const [SurpriseKitchenSeach1, setSurpriseKitchenSeach1] = useState('null')
   const getDataFromServer = async () => {
     //模擬和伺服器要資料
     const response = await fetch(
-      `http://localhost:4000/membercenter/history_mealdelivery?start=${FoodDeliverySeach}&end=${FoodDeliverySeach1}`,
+      `http://localhost:4000/membercenter/surprisekitchen_order?start=${SurpriseKitchenSeach}&end=${SurpriseKitchenSeach1}`,
       {
         method: 'get',
       }
     )
     const data = await response.json()
     //最後設定要到狀態中
-    setFoodDelivery(data)
+    setSurpriseKitchen(data)
   }
 
   useEffect(() => {
@@ -34,20 +34,20 @@ function FoodDeliverys2() {
           </div>
           <input
             type="date"
-            id="FoodDeliverySeach"
-            name="FoodDeliverySeach"
-            value={FoodDeliverySeach}
-            onChange={(e) => setFoodDeliverySeach(e.target.value)}
+            id="SurpriseKitchenSeach"
+            name="SurpriseKitchenSeach"
+            value={SurpriseKitchenSeach}
+            onChange={(e) => setSurpriseKitchenSeach(e.target.value)}
           ></input>
           <small className="txt-cap mx-2 d-none d-sm-none d-md-block d-lg-block d-xl-block">
             ～
           </small>
           <input
             type="date"
-            id="FoodDeliverySeach1"
-            name="FoodDeliverySeach1"
-            value={FoodDeliverySeach1}
-            onChange={(e) => setFoodDeliverySeach1(e.target.value)}
+            id="SurpriseKitchenSeach1"
+            name="SurpriseKitchenSeach1"
+            value={SurpriseKitchenSeach1}
+            onChange={(e) => setSurpriseKitchenSeach1(e.target.value)}
           ></input>
           <button
             className="btn-green3 ml-2"
@@ -63,43 +63,45 @@ function FoodDeliverys2() {
   return (
     <>
       {Seach}
-      <div className="tab-content" id="myTabContent">
+      {/* <div className="tab-content" id="myTabContent">
         <div className=" txt-cap mt-2 ml-3 d-block d-sm-block d-md-block d-lg-none d-xl-none ">
           請點選項目以取得更詳細的訂單資訊
         </div>
         <div className=" mt-2 ml-3  txt-cap d-none d-sm-none d-md-none d-lg-block d-xl-block">
           請點選項目以取得更詳細的訂單資訊
         </div>
-      </div>
+      </div> */}
       <div className="">
         <table className="txt-body  text-nowrap table col-10 mx-auto mx-xl-0">
-          <thead className=" ">
+          <thead>
             <tr className="text-center  ">
               <th>項次</th>
               <th className=" d-none d-md-block d-sm-none d-lg-block d-xl-block ">
                 訂單編號
               </th>
-              <th>訂單日期</th>
+              <th>預約日期</th>
               <th className="d-none d-md-none d-sm-none d-lg-block d-xl-block  ">
-                配送明細
+                預約時段
               </th>
-              <th>使用餐卷</th>
+              <th>付款方式</th>
               <th className=" d-none d-md-none d-sm-none d-lg-block d-xl-block   ">
-                配送日期
+                總金額
               </th>
             </tr>
           </thead>
           <tbody>
-            {FoodDelivery.map((v, i) => (
+            {SurpriseKitchen.map((v, i) => (
               <tr key={i}>
-                <td>{v.member_sid}</td>
                 <td>{v.sid}</td>
+                <td>{v.order_sid}</td>
                 <td className=" d-none d-sm-none d-xl-block ">
-                  {' '}
-                  <Moment format="YYYY/MM/DD">{v.check_date}</Moment>
+                  <Moment format="YYYY/MM/DD">{v.reservation_date}</Moment>
                 </td>
-                <td>{v.meal_name}</td>
-                <td className="d-none d-sm-none  d-md-none d-lg-block "></td>
+                <td>{v.reservation_time}</td>
+                <td className="d-none d-sm-none  d-md-none d-lg-block ">
+                  {v.payment_method}
+                </td>
+                <td>{v.reservation_price}</td>
               </tr>
             ))}
           </tbody>
@@ -108,4 +110,4 @@ function FoodDeliverys2() {
     </>
   )
 }
-export default FoodDeliverys2
+export default SurpriseKitchen2
