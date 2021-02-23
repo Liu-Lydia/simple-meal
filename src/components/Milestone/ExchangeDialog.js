@@ -15,7 +15,8 @@ function ExchangeDialog(props) {
   const [commit, setCommit] = useState(false)
 
   const getPoint = async () => {
-    const url = 'http://localhost:4000/milestone/getPoint?sid=1' //sid 要從session來
+    const url = 'http://localhost:4000/milestone/getPoint?sid=1'
+    //sid 要從session來
     await fetch(url, {
       method: 'get',
     })
@@ -72,22 +73,19 @@ function ExchangeDialog(props) {
       setExchange()
       //彈出結果視窗 還沒做
 
-      setCommit(false)//復位 讓後面的兌換也能按
+      setCommit(false) //復位 讓後面的兌換也能按
     }
   }, [commit])
 
   return (
     <div className="fff-exchange" style={props.dialogStyle}>
       <div className="fff-exchange-content-box">
-        <div className="row">
+        <div className="row justify-content-end fff-no-mr-and-pad">
           {/* 圖片放置位置 先占高 mobo關閉 */}
 
           {/* 關閉頁面的Ｘ */}
-          <div
-            className=" justify-content-end col-12 "
-            style={{ marginBottom: '25px' }}
-          >
-            <h6 className="fff-no-mr-and-pad">
+          <div className="" style={{ marginBottom: '10px' }}>
+            <h6 className="fff-no-mr-and-pad" style={{ color: '#627E2A' }}>
               <i
                 className="fas fa-times aboutCloseBtn"
                 onClick={() => {
@@ -96,18 +94,29 @@ function ExchangeDialog(props) {
               ></i>
             </h6>
           </div>
+        </div>
+        <div className="row fff-no-mr-and-pad">
           <form id="dialog-form">
-            <div className="col fff-exchange-content ">
-              <div className="d-flex justify-content-between">
-                <span className="txt-h6">你點選了</span>
+            <div className="col fff-exchange-content txt-btn">
+              <div
+                className="d-flex justify-content-between fff-txt-info
+              "
+                style={{ lineHeight: '50px' }}
+              >
+                <span style={{ color: '#707070' }}>你點選了</span>
                 <span style={{ color: '#627E2A' }}>
                   {props.detailContext.good_name}
                 </span>
               </div>
-              <div className="d-flex justify-content-between">
-                <span className="txt-body" style={{ color: '#627E2A' }}>
-                  選擇數量
-                </span>
+              <div
+                className="d-flex justify-content-between"
+                style={{
+                  lineHeight: '25px',
+                  marginBottom: '7px',
+                  marginTop: '7px',
+                }}
+              >
+                <span style={{ color: '#627E2A' }}>選擇數量</span>
                 <select
                   name="count"
                   onChange={(event) => {
@@ -119,25 +128,35 @@ function ExchangeDialog(props) {
                   ))}
                 </select>
               </div>
-              <div className="d-flex justify-content-between">
+              <div
+                className="d-flex justify-content-between"
+                style={{ lineHeight: '39px' }}
+              >
                 <span>花費點數</span>
-                <span>{count * props.detailContext.need_point}</span>
+                <span style={{ color: '#b9433b', fontSize: '21px' }}>
+                  {count * props.detailContext.need_point}
+                </span>
               </div>
-              <div className="d-flex justify-content-between">
-                <span>剩餘點數</span>
-                <span>
+              <div
+                className="d-flex justify-content-between"
+                style={{ lineHeight: '39px' }}
+              >
+                <span style={{ color: '#627E2A' }}>剩餘點數</span>
+                <span style={{ color: '#627E2A', fontSize: '21px' }}>
                   {totalPoint - count * props.detailContext.need_point}
                 </span>
               </div>
-              <div>
-                <span className="txt-btn">
+              <div style={{ marginTop: '20px' , marginBottom:'20px' }}>
+                <span className="txt-btn" style={{ color: '#A2A3A5' }}>
                   兌換說明：
                   {props.detailContext.good_subs}
                 </span>
               </div>
 
-              <div>
-                <span className="txt-btn">已兌換便無法退還點數喔！</span>
+              <div className="d-flex justify-content-center">
+                <span className="txt-btn" style={{ color: '#b9433b' }}>
+                  已兌換便無法退還點數喔！
+                </span>
               </div>
               <input
                 type="hidden"
