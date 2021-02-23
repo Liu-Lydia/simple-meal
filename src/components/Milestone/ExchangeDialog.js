@@ -19,7 +19,8 @@ function ExchangeDialog(props) {
   const [returnMsgDialog, setReturnMsgDialog] = useState({ display: 'none' })
 
   const getPoint = async () => {
-    const url = 'http://localhost:4000/milestone/getPoint?sid=1' //sid 要從session來
+    const url = 'http://localhost:4000/milestone/getPoint?sid=1'
+    //sid 要從session來
     await fetch(url, {
       method: 'get',
     })
@@ -81,7 +82,7 @@ function ExchangeDialog(props) {
       //彈出結果視窗
       setReturnMsgDialog({ display: 'flex' })
 
-      setCommit(false)//復位 讓後面的兌換也能按
+      setCommit(false) //復位 讓後面的兌換也能按
     }
   }, [commit])
 
