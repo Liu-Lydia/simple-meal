@@ -671,7 +671,7 @@
   text-align: left;
   line-height: 30px;
   border: 5px #627e2a solid;
-  padding: 75px;
+  padding: 36px 70px 70px 70px;
 }
 
 .fff-exchange-content {
@@ -693,11 +693,15 @@
   }
 }
 
+
+/* ------------------------------------------------------------------------------- */
 /* //先將stroke隱藏 */
 .stroke {
   stroke-dashoffset: 100;
   stroke-dasharray: 100;
 }
+
+
 
 /* //動畫效果 10秒 線性動畫 無限循環 */
 .ani {
@@ -736,3 +740,5 @@
     stroke-dasharray: 100;
   }
 }
+
+/* ------------------------------------------------------------------------------- */

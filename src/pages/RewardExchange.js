@@ -20,10 +20,7 @@ function RewardExchange() {
     <>
       <div className="fff-ms-web">
         <div className="container">
-          <MilestoneInfoBar
-            btnText="我的成就"
-            href="./Milestone"
-          />
+          <MilestoneInfoBar btnText="我的成就" href="./Milestone" />
         </div>
       </div>
       <div className="fff-ms-mobo">
