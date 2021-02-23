@@ -263,7 +263,7 @@ function SimpleMealCouponPayment(props) {
 
       {/* 隱藏視窗 */}
       <div className="fff-mshowto" style={modalStyle}>
-        <div className="fff-mshowto-content mt-5">
+        <div className="fff-mshowto-content" style={{ marginTop: '20vh' }}>
           {/* 關閉頁面的Ｘ */}
           <div className="fff-ms-mobo justify-content-end col-12">
             <h6>
@@ -275,9 +275,28 @@ function SimpleMealCouponPayment(props) {
               ></i>
             </h6>
           </div>
-          {/* 圖片放置位置*/}
-          <div className="row justify-content-center">
-            <h5>您的優惠券</h5>
+          {/* 如果沒有優惠券 */}
+          {couponDatabase.length === 0 && (
+            <div className="row justify-content-center poe-green">
+              <div
+                style={{
+                  width: '120px',
+                  height: '100px',
+                  background:
+                    'url("http://localhost:3015/img/lemon/Empty.GIF") center center no-repeat',
+                  backgroundSize: 'contain',
+                }}
+              ></div>
+            </div>
+          )}
+          {/* 優惠券位置*/}
+          <div className="row justify-content-center poe-green">
+            {couponDatabase.length === 0 ? (
+              <h5>您沒有可用的優惠券</h5>
+            ) : (
+              <h5>您的優惠券</h5>
+            )}
+
             {/* 按鈕 */}
             <div className="w-100">
               {couponDatabase.map((v, i) => (
