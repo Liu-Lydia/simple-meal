@@ -126,12 +126,11 @@ function Home(props) {
           </button>
         </div>
         <div class="xxx-p1-hello d-none d-sm-block">Hello!</div>
-        <img
-          className="xxx-boom d-none d-sm-block"
-          src="http://localhost:3015/img/index/boom3.png"
-        />
-        <div class="arms d-none d-sm-block">
-          <div class="arm d-none d-sm-block"></div>
+        <div className="xxx-450x540">
+          <img
+            className="xxx-boom d-none d-sm-block img-size"
+            src="http://localhost:3015/img/index/five.gif"
+          />
         </div>
       </div>
       {/* p2 */}

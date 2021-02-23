@@ -131,6 +131,10 @@
 }
 
 /* p1 */
+.xxx-450x540{
+  width: 450px;
+  height: 540px;
+}
 .p1-bg{
   height: 500px;
   background-color: #F3E575;
