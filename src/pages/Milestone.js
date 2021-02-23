@@ -64,7 +64,7 @@ function Milestone(props) {
   return (
     <>
     {/* 沒登入時, 跳轉登入 */}
-    {!props.loginBool && <Redirect to="/MemberCenter" />}
+    {/* {!props.loginBool && <Redirect to="/MemberCenter" />} */}
       <div id="ms-p1" className="container" style={display.p1}>
         <MilestoneInfoBar
           btnText="兌換獎勵"
