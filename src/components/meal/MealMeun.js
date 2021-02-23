@@ -13,7 +13,6 @@ function MealMeun(props) {
 
   const [searchInput, setSearchInput] = useState(null)
 
-  console.log()
 
   useEffect(() => {
     // 初次預設值也不處理

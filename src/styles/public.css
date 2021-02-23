@@ -457,14 +457,14 @@ h6 {
 .msg-style {
   background-color: white;
   border-radius: 25px;
-  border: 3px #627e2a solid;
+  border: 5px #627e2a solid;
 }
 .msg-style-demo {
   background-color: white;
   width: 417px;
   height: 370px;
   border-radius: 25px;
-  border: 3px #627e2a solid;
+  border: 5px #627e2a solid;
   padding: 75px;
   /* 範例用class，別用 */
 }
