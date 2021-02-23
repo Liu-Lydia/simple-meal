@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import MemberCenterNavbar from './MemberCenterNavbar'
 import Moment from 'react-moment'
+
 function MemberCenterSimpleMealCoupon() {
   //模擬和伺服器要的資料
   const [Coupon, setCoupon] = useState([])
-  //經過搜尋,排序,過濾要呈現的資料
 
   const [CouponSeach1, setCouponSeach1] = useState('null')
 
   const [CouponSeach, setCouponSeach] = useState('null')
+
   const getDataFromServer = async () => {
     //模擬和伺服器要資料
     const response = await fetch(
