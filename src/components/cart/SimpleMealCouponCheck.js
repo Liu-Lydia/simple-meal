@@ -21,6 +21,8 @@ function SimpleMealCouponCheck(props) {
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       popup: 'poe-alert',
+      header: 'overflow-hidden',
+      image: 'poe-sweetAlertGifNmt',
       title: 'poe-green my-0',
       content: 'txt-btn',
       confirmButton: 'btn-green txt-btn mx-2 my-2',
@@ -34,7 +36,8 @@ function SimpleMealCouponCheck(props) {
     // sweetAlert 第1階段
     swalWithBootstrapButtons
       .fire({
-        imageUrl: 'http://localhost:3015/img/lydia/lemonCooking.PNG.PNG',
+        // imageUrl: 'http://localhost:3015/img/lydia/lemonCooking.PNG.PNG',
+        imageUrl: 'http://localhost:3015/img/lemon/123.svg',
         imageHeight: 200,
         title:
           '<h5 class="d-block d-sm-none">確定要送出訂單嗎?</h5>' +
