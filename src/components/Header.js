@@ -36,6 +36,9 @@ function Header(props) {
     }, 10)
   }
 
+  // 控制漢堡選單
+  const [expanded, setExpanded] = useState(false)
+
   // 登出
   const handleLogout = () => {
     // console.log('登出')
@@ -60,38 +63,6 @@ function Header(props) {
 
   return (
     <>
-      {/* <Navbar
-        bg="light"
-        expand="lg"
-        // style={{ height: '100px', backgroundColor: 'white' }}
-      >
-        <Navbar.Brand as={NavLink} className="mx-auto" to="/">
-          <img
-            src="/img/lydia/SimpleMeal_LOGO.png"
-            class="lll-logo-square"
-            alt=""
-            style={cssObj}
-          />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar> */}
       <div
         // 背景色
         style={{ backgroundColor: 'white' }}
@@ -102,10 +73,13 @@ function Header(props) {
               // bg="light"
               // variant="dark"
               expand="lg"
-              // collapseOnSelect="false"
               className="col col-lg-10 py-0"
+              expanded={expanded}
             >
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Toggle
+                aria-controls="basic-navbar-nav"
+                onClick={() => setExpanded(expanded ? false : 'expanded')}
+              />
               <Navbar.Brand as={NavLink} className="mx-auto" to="/">
                 <img
                   src="/img/lydia/SimpleMeal_LOGO.png"
@@ -116,17 +90,35 @@ function Header(props) {
               </Navbar.Brand>
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                  <Nav.Link className="text-nowrap" as={NavLink} to="/none1">
+                  <Nav.Link
+                    className="text-nowrap"
+                    as={NavLink}
+                    to="/none1"
+                    onClick={() => setExpanded(false)}
+                  >
                     最新活動
                   </Nav.Link>
-                  <Nav.Link className="text-nowrap" as={NavLink} to="/aboutus">
+                  <Nav.Link
+                    className="text-nowrap"
+                    as={NavLink}
+                    to="/aboutus"
+                    onClick={() => setExpanded(false)}
+                  >
                     關於我們
                   </Nav.Link>
                   <NavDropdown title="菜單介紹" id="basic-nav-dropdown">
-                    <NavDropdown.Item as={NavLink} to="/meal">
+                    <NavDropdown.Item
+                      as={NavLink}
+                      to="/meal"
+                      onClick={() => setExpanded(false)}
+                    >
                       菜單介紹
                     </NavDropdown.Item>
-                    <NavDropdown.Item as={NavLink} to="/sharerecipe">
+                    <NavDropdown.Item
+                      as={NavLink}
+                      to="/sharerecipe"
+                      onClick={() => setExpanded(false)}
+                    >
                       共享食譜
                     </NavDropdown.Item>
                   </NavDropdown>
@@ -134,6 +126,7 @@ function Header(props) {
                     className="text-nowrap"
                     as={NavLink}
                     to="/surprisekitchen"
+                    onClick={() => setExpanded(false)}
                   >
                     驚喜廚房
                   </Nav.Link>
