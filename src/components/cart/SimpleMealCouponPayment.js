@@ -36,14 +36,19 @@ function SimpleMealCouponPayment(props) {
     setPaymentObj(paymentArray[i])
   }
 
+  // 手動輸入優惠碼
   const handleCoupon = (e) => {
     const couponText = e.target.value
-    // if (couponText.length === 5) {
-    //   setCoupon({ string: couponText, cost: 100 })
-    // } else {
-    // setCoupon({ string: couponText, cost: 0 })
-    // }
+
+    // 先歸零
     setCoupon({ string: couponText, cost: 0 })
+
+    // 如果輸入的字串有屬於優惠碼, 提供相應的優惠
+    couponDatabase.map((v, i) => {
+      console.log(v.discount_code, couponText)
+      v.discount_code === couponText &&
+        setCoupon({ string: couponText, cost: v.discount })
+    })
   }
 
   // 選用優惠券填入
