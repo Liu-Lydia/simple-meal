@@ -188,9 +188,17 @@ function Home(props) {
         <div className="row p5-mb">
           <div className="col-xl-8 offset-xl-4 p5-bg col-12">
             <div className="offset-xl-5 offset-0 p5-bg-t">
-              <h3 className="txt-h3 col-green">食譜介紹</h3>
+              <h3 className="txt-h3 col-green d-none d-xl-block">食譜介紹</h3>
+              <h6 className="txt-h3 col-green d-block d-sm-none">食譜介紹</h6>
               <br />
-              <p className="col-gray">
+              <p className="col-gray d-none d-xl-block txt-body">
+                您是否正在尋找味道鮮美，易於烹飪且輕而易舉的菜餚？
+                <br />
+                探索我們多樣化的食譜收藏，讓我們由廚師策​​劃的創意滿足您的所有求！
+                <br />
+                快點來解鎖你的專屬食譜
+              </p>
+              <p className="col-gray d-block d-sm-none txt-cap">
                 您是否正在尋找味道鮮美，易於烹飪且輕而易舉的菜餚？
                 <br />
                 探索我們多樣化的食譜收藏，讓我們由廚師策​​劃的創意滿足您的所有求！
@@ -208,10 +216,17 @@ function Home(props) {
             </div>
             <NavLink
               to="/meal"
-              className="btn-red txt-sub1 d-block d-sm-none mx-auto"
+              className="btn-red txt-sub1 d-block d-sm-none mx-auto mb-4"
             >
               馬上出發
             </NavLink>
+            <div className="p5-img-divxs d-block d-sm-none mx-auto">
+              <img
+                className="img-size100"
+                src="http://localhost:3015/img/index/index-p5-img.png"
+                alt=""
+              />
+            </div>
             {/* image要用div包起來才有rwd效果 */}
             <div>
               <div className="p5-img-div d-none d-sm-block">
@@ -221,17 +236,19 @@ function Home(props) {
                   alt=""
                 />
               </div>
-              <div className="p5-change d-flex justify-content-center d-flex align-items-center ">
-                <button className="col-gray p5-but-change1">
-                  <i className="fas fa-chevron-circle-left col-black"></i>{' '}
-                  &nbsp;Prev
-                </button>
-                <div className="p1-change-line"></div>
-                <div className="p1-change"></div>
-                <button className="col-gray p5-but-change2">
-                  Next &nbsp;
-                  <i className="fas fa-chevron-circle-right col-black"></i>
-                </button>
+              <div className="xxx-miss">
+                <div className="p5-change d-flex justify-content-center d-flex align-items-center ">
+                  <button className="col-gray p5-but-change1">
+                    <i className="fas fa-chevron-circle-left col-black"></i>{' '}
+                    &nbsp;Prev
+                  </button>
+                  <div className="p1-change-line"></div>
+                  <div className="p1-change"></div>
+                  <button className="col-gray p5-but-change2">
+                    Next &nbsp;
+                    <i className="fas fa-chevron-circle-right col-black"></i>
+                  </button>
+                </div>
               </div>
             </div>
 
@@ -302,7 +319,7 @@ function Home(props) {
       <div className="container d-block d-sm-none">
         <div className="row mb-5">
           <div className="mx-auto col-xl-12 col">
-            <h6 className="col-green text-center mb-3">驚喜廚房</h6>
+            <h6 className="col-green text-center mb-3 mt-100">驚喜廚房</h6>
             <p className="txt-cap col-gray text-center xxx-p6-mb">
               我們提供舒適的場地以及齊全的食材和器具，等著你來製作自己的餐點
               <br />
