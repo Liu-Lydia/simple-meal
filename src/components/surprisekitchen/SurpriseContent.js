@@ -238,7 +238,7 @@ function SurpriseContent(props) {
 
       {/* 驚喜廚房title, 3項內容 ↓↓↓ */}
       <h3 className="lll-title-style">驚喜廚房</h3>
-      <div className="lll-trans-block d-flex p-0 ">
+      <div className="lll-trans-block p-0 ">
         <p className="txt-sub1 lll-grey lll-pr30">6日前可免費取消</p>
         <p className="txt-sub1 lll-grey lll-pr30">立即發送電子憑證</p>
         <p className="txt-sub1 lll-grey">備註即有專人核對確認</p>
