@@ -116,7 +116,7 @@ function MemberCenterAddr() {
                 ))}
                 {Memberinfo.map((v) => (
                   <div className="form-group h7">
-                    <label htmlFor="inputAddr">修改信用卡</label>
+                    <label htmlFor="inputAddr">修改預設信用卡</label>
                     <input
                       type="text"
                       className={`form-control ${fieldValidCSS('Addr')}`}
@@ -126,26 +126,27 @@ function MemberCenterAddr() {
                     />
                   </div>
                 ))}
-
-                <div className="d-flex">
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    className="btn-green txt-btn  mb-5"
-                    onClick={handleSubmit}
-                  >
-                    重設
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    // eslint-disable-next-line react/jsx-no-duplicate-props
-                    className="btn-green txt-btn  mb-5"
-                    onClick={handleSubmit}
-                  >
-                    修改
-                  </button>
-                </div>
+                {Memberinfo.map((v) => (
+                  <div className="d-flex">
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      className="btn-green txt-btn  mb-5"
+                      onClick={handleSubmit}
+                    >
+                      重新設定
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      // eslint-disable-next-line react/jsx-no-duplicate-props
+                      className="btn-green txt-btn  mb-5"
+                      onClick={handleSubmit}
+                    >
+                      修改信用卡
+                    </button>
+                  </div>
+                ))}
               </form>
             </div>
           </div>
