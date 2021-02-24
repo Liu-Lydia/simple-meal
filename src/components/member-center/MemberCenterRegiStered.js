@@ -1,213 +1,199 @@
-import React from 'react'
-import { withFormik, Form, Field, ErrorMessage } from 'formik'
-import * as yup from 'yup'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+function MemberCenterRegiStered(props) {
+  const [inputs, setInputs] = useState({
+    email: '',
+    name: '',
+    password: '',
+    password1: '',
+    mobile: '',
+    addr: '',
+  })
 
-const errMsg = {
-  color: 'red',
-  fontSize: '12px',
+  // 切換開始作檢查的旗標
+  const [startToChecked, setStartToChecked] = useState(false)
+  // 錯誤陣列，記錄有錯誤的欄位名稱
+  const [errors, setErrors] = useState([])
+
+  const onChangeForField = (fieldName) => (event) => {
+    setInputs((state) => ({ ...state, [fieldName]: event.target.value }))
+  }
+
+  // 按了提交按鈕用的
+  const handleSubmit = (e) => {
+    //開啟開始觸發檢查的旗標
+    setStartToChecked(true)
+    const newErrors = []
+
+    // if (inputs.name.trim().length < 20) {
+    //   newErrors.push('name')
+    // }
+
+    if (inputs.password.trim().length < 6) {
+      newErrors.push('password')
+    }
+    if (inputs.password1.trim().length < 6) {
+      newErrors.push('password1')
+    }
+    // if (inputs.mobile.trim().length < 20) {
+    //   newErrors.push('mobile')
+    // }
+    if (inputs.addr.trim().length < 6) {
+      newErrors.push('addr')
+    }
+    const re = /\S+@\S+\.\S+/
+    if (!re.test(inputs.email.toLowerCase())) {
+      newErrors.push('email')
+    }
+
+    setErrors(newErrors)
+
+    if (newErrors.length == 0) {
+      const fd = new FormData(document.querySelector('#test'))
+      fetch('http://localhost:4000/membercenter/registered', {
+        method: 'post',
+        body: fd,
+        credentials: 'include',
+      })
+    }
+  }
+
+  // 切換合法不合法的css與提示字詞
+  const fieldValidCSS = (fieldName) => {
+    if (!startToChecked) return ''
+
+    return errors.includes(fieldName) ? 'is-invalid' : 'is-valid'
+  }
+
+  return (
+    <>
+      <div className="container">
+        <div className="row">
+          <div className="col-6 mx-auto cc d-none d-xl-block">
+            <div className="col-10 d-flex justify-content-end ">
+              <Link to="/MemberCenter">
+                <i className="fas fa-times" style={{ color: 'red' }}></i>
+              </Link>
+            </div>
+            <div className="txt-body">
+              <div className="h3 text-center mb-4">註冊</div>
+            </div>
+
+            <form id="test" className="col-8 mx-auto mb-2 mr-2 txt-body">
+              <div className="form-group ">
+                <label htmlFor="inputEmail" className="">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  required
+                  className={`form-control ${fieldValidCSS('email')}`}
+                  id="inputEmail"
+                  name="email"
+                  onChange={onChangeForField('email')}
+                />
+                <div class="valid-feedback">email正確</div>
+                <div class="invalid-feedback">email格式錯了</div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="inputPassword">密碼</label>
+                <input
+                  type="password"
+                  name="password"
+                  onChange={onChangeForField('password')}
+                  className={`form-control ${fieldValidCSS('password')}`}
+                  id="inputPassword"
+                />
+
+                <div class="valid-feedback">密碼輸入正確</div>
+                <div class="invalid-feedback">密碼格式錯了</div>
+                <div className="txt-cap ">
+                  密碼長度需為 6 個以上的英數字元，大小寫有區別。
+                </div>
+              </div>
+              <div className="form-group">
+                <label htmlFor="inputPassword1">確認密碼</label>
+                <input
+                  type="password"
+                  name="password1"
+                  onChange={onChangeForField('password1')}
+                  className={`form-control ${fieldValidCSS('password1')}`}
+                  id="inputPassword1"
+                  required
+                  minLength="6"
+                />
+                <div class="valid-feedback">密碼輸入正確</div>
+                <div class="invalid-feedback">密碼格式錯了</div>
+              </div>
+              <div className="form-group">
+                <label htmlFor="inputName">姓名</label>
+                <input
+                  type="text"
+                  className={`form-control ${fieldValidCSS('name')}`}
+                  id="inputName"
+                  name="name"
+                  onChange={onChangeForField('name')}
+                />
+                <div class="valid-feedback">姓名輸入正確</div>
+                <div class="invalid-feedback">姓名最多可輸入10個中英文字</div>
+              </div>
+              <div className="form-group">
+                <label htmlFor="inputMoblie">電話</label>
+                <input
+                  type="text"
+                  className={`form-control ${fieldValidCSS('mobile')}`}
+                  id="inputMoblie"
+                  name="moblie"
+                  onChange={onChangeForField('moblie')}
+                />
+                <div class="valid-feedback">電話格式正確</div>
+                <div class="invalid-feedback">電話格式錯誤</div>
+              </div>
+              <div className="form-group">
+                <label htmlFor="inputAddr">配送地址</label>
+                <input
+                  type="text"
+                  className={`form-control ${fieldValidCSS('addr')}`}
+                  id="inputAddr"
+                  name="addr"
+                  onChange={onChangeForField('addr')}
+                />
+
+                <div class="valid-feedback">地址格式正確</div>
+                <div class="invalid-feedback">地址格式錯誤</div>
+                <div className="txt-cap">
+                  本地址將作為您日後購物預設寄送地址
+                </div>
+              </div>
+
+              <div className="form-group txt-cap d-flex flex-column ">
+                <label>
+                  <input type="checkbox" name="rule" />
+                  訂閱電郵與簡訊
+                </label>
+                <label>
+                  <input type="checkbox" name="rule1" />
+                  我同意網站服務條款及隱私政策
+                </label>
+              </div>
+              <div className="form-group txt-cap"></div>
+              <div className="col-6 mx-auto">
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  className="btn-green txt-btn  mb-5"
+                  onClick={handleSubmit}
+                >
+                  註冊
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </>
+  )
 }
 
-const MemberCenterRegiStered = ({ values, isSubmitting }) => (
-  <div className="container">
-    <div className="row">
-      <div className="col-6 mx-auto">
-        <div className="cc d-none d-sm-none d-md-none d-lg-none d-xl-block">
-          <div className="col-10 d-flex justify-content-end ">
-            <Link to="/MemberCenter">
-              <i className="fas fa-times" style={{ color: 'red' }}></i>
-            </Link>
-          </div>
-          <div className="txt-body">
-            <div className="h3 text-center mb-4">註冊</div>
-          </div>
-
-          <Form>
-            <div className="col-8 mx-auto ">
-              <label className="mb-2 mr-2">電子郵件</label>
-              <ErrorMessage name="email" component="span" style={errMsg} />
-              <Field type="email" name="email" className="form-control br " />
-            </div>
-            <div className="col-8 mx-auto">
-              <label className="mb-2 mr-2 mt-2">密碼</label>
-              <ErrorMessage name="password" component="span" style={errMsg} />
-              <Field
-                type="password"
-                name="password"
-                className="form-control br"
-              />
-            </div>
-            <div className="col-8 mx-auto">
-              <label className="mb-2 mr-2 mt-2">確認密碼</label>
-              <ErrorMessage name="password1" component="span" style={errMsg} />
-              <Field
-                type="password"
-                name="password1"
-                className="form-control br"
-              />
-
-              <div className="txt-cap ">
-                密碼長度需為 6 個以上的英數字元，大小寫有區別。
-              </div>
-            </div>
-            <div className="col-8 mx-auto ">
-              <label className="mb-2 mr-2 mt-2">姓名</label>
-              <ErrorMessage name="name" component="span" style={errMsg} />
-              <Field type="text" name="name" className="form-control br " />
-            </div>
-            <div className="col-8 mx-auto ">
-              <label className="mb-2 mr-2 mt-2">手機</label>
-              <ErrorMessage name="phone" component="span" style={errMsg} />
-              <Field type="text" name="phone" className="form-control br " />
-            </div>
-            <div className="col-8 mx-auto mt-2">
-              <label className="mb-2 mr-2">地址</label>
-              <ErrorMessage name="addr" component="span" style={errMsg} />
-              <Field type="text" name="addr" className="form-control br " />
-              <div className="txt-cap ">本地址將作為您日後購物預設寄送地址</div>
-            </div>
-            <div className="col-8 mx-auto txt-cap mt-3 ">
-              <label>
-                <Field type="checkbox" name="rule1" checked={values.rule1} />
-                訂閱電郵與簡訊
-              </label>
-              <ErrorMessage name="rule1" component="span" style={errMsg} />
-            </div>
-            <div className="col-8 mx-auto txt-cap ">
-              <label>
-                <Field type="checkbox" name="rule" checked={values.rule} />
-                我同意網站服務條款及隱私政策
-              </label>
-              <ErrorMessage name="rule" component="span" style={errMsg} />
-            </div>
-            <div className="col-4 mx-auto ">
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="btn-green txt-btn mt-4 mb-5 "
-              >
-                送出
-              </button>
-            </div>
-          </Form>
-        </div>
-      </div>
-    </div>
-    <div className="row">
-      <div className="col-6 mx-auto">
-        <div className="d-block d-xl-none">
-          <div className="txt-body">
-            <div className="h3 text-center mb-4">註冊</div>
-          </div>
-
-          <Form>
-            <div className="col-12 col-sm-10  mx-auto  mt-5">
-              <label className="mb-2">電子郵件</label>
-              <ErrorMessage name="email" component="span" style={errMsg} />
-              <Field
-                type="email"
-                name="email"
-                className="form-control mb-3 br "
-              />
-            </div>
-
-            <div className="col-12 col-sm-10 mx-auto">
-              <label className="mb-2">密碼</label>
-              <ErrorMessage name="password" component="span" style={errMsg} />
-              <Field
-                type="password"
-                name="password"
-                className="form-control mb-3 br"
-              />
-            </div>
-
-            <div className="col-12 col-sm-10 mx-auto">
-              <label className="mb-2 mr-2">確認密碼</label>
-              <ErrorMessage name="password1" component="span" style={errMsg} />
-              <Field
-                type="password"
-                name="password1"
-                className="form-control br"
-              />
-
-              <div className="txt-cap ">
-                密碼長度需為 6 個以上的英數字元，大小寫有區別。
-              </div>
-            </div>
-
-            <div className="col-12 col-sm-10 mx-auto ">
-              <label className="mb-2 mr-2">姓名</label>
-              <ErrorMessage name="name" component="span" style={errMsg} />
-              <Field type="text" name="name" className="form-control br " />
-            </div>
-
-            <div className="col-12 col-sm-10 mx-auto ">
-              <label className="mb-2 mr-2">手機</label>
-              <ErrorMessage name="phone" component="span" style={errMsg} />
-              <Field type="text" name="phone" className="form-control br " />
-            </div>
-            <div className="col-12 col-sm-10 mx-auto ">
-              <label className="mb-2 mr-2">地址</label>
-              <ErrorMessage name="addr" component="span" style={errMsg} />
-              <Field type="text" name="addr" className="form-control br " />
-              <div className="txt-cap ">本地址將作為您日後購物預設寄送地址</div>
-            </div>
-
-            <div className="col-12 col-sm-10 mx-auto txt-cap">
-              <label>
-                <Field type="checkbox" name="rule" checked={values.rule} />
-                同意註冊條款
-              </label>
-              <ErrorMessage name="rule" component="span" style={errMsg} />
-            </div>
-
-            <div className="col-12 col-sm-10 mx-auto d-flex justify-content-center">
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="btn-green txt-btn mt-2 mb-3"
-              >
-                送出
-              </button>
-            </div>
-          </Form>
-        </div>
-      </div>
-    </div>
-  </div>
-)
-
-export default withFormik({
-  // input 預設值
-  mapPropsToValues({ email, password, password1, name, addr, phone, rule }) {
-    return {
-      email: email || '',
-      password: password || '',
-      password1: password1 || '',
-      name: name || '',
-      addr: addr || '',
-      phone: phone || '',
-      rule: rule || false,
-    }
-  },
-
-  // 表單驗證條件＆錯誤訊息
-  validationSchema: yup.object().shape({
-    email: yup.string().email('Email不符合格式').required('必填'),
-    password: yup.string().min(6, '密碼至少大於6').required('必填'),
-    password1: yup.string().min(6, '密碼至少大於6').required('必填'),
-    name: yup.string().max(10, '最多只能輸入10個中英文字').required('必填'),
-    addr: yup.string().required('必填'),
-    phone: yup.string().required('必填'),
-    rule: yup.boolean().oneOf([true], '一定要同意！'),
-  }),
-
-  // 點擊送出時
-  handleSubmit(values, { resetForm, setSubmitting }) {
-    setTimeout(() => {
-      resetForm() //重設表單
-      setSubmitting(false) //狀態更新(true:傳送中, false:傳送完成)
-      alert(JSON.stringify(values, null, 2)) //alert values
-    }, 1000)
-  },
-})(MemberCenterRegiStered)
+export default MemberCenterRegiStered

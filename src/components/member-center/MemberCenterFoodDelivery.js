@@ -45,12 +45,12 @@ function MemberCenterFoodDelivery() {
         <div className="row ">
           <MemberCenterNavbar />
 
-          <div className=" col-md-12 col-lg-12 col-sm-12 col-xl-8  col-12 ">
-            <div className="col-md-10 col-lg-10 col-sm-10 col-xl-10 col-10 mx-auto">
+          <div className="col-12 col-xl-8">
+            <div className="col-10 mx-auto">
               <div className="mt-4"></div>
               {text}
 
-              <div className="col-12 col-sm-12 col-md-12 mt-">
+              <div className="col-12">
                 <div className="d-flex  txt-btn">
                   <Link
                     className="col-3 cha-rec-sel1 cha-rec-sel1-active"
