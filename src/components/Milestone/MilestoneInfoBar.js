@@ -1,4 +1,9 @@
 import React, { props, useEffect, useState } from 'react'
+import {
+  Nav,
+} from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
+
 import Swal from 'sweetalert2'
 function MilestoneInfoBar(props) {
   //集點說明要不要渲染(虛擬Dom)
@@ -93,14 +98,14 @@ function MilestoneInfoBar(props) {
             </div>
           </div>
           {/* 在成就清單以及兌換獎勵區切換的按鈕 */}
-          <div
-            className="fff-btn-white fff-txt-btn"
-            onClick={() => {
-              window.location.href = props.href
-            }}
-          >
-            {props.btnText}
-          </div>
+          <Nav.Link
+                    className="fff-btn-white fff-txt-btn"
+                    as={NavLink}
+                    to={props.href}
+                    style={{display: 'flex',alignItems: 'center',textAlign:'center'}}
+                  >
+                    {props.btnText}
+                  </Nav.Link>
         </div>
 
         {/* 佔空位的 */}

@@ -4,6 +4,7 @@ import Carousel from '../components/home/Carousel'
 import Carousel2 from '../components/home/Carousel2'
 import '../components/home/carousel3d.css'
 import HomeP3 from '../components/home/HomeP3'
+import P3carousel from '../components/home/P3carousel'
 
 function Home(props) {
   return (

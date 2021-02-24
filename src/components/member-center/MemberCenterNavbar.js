@@ -1,20 +1,40 @@
 import { Link } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
 function MemberCenterNavbar() {
+  const [Memberinfo, setMemberinfo] = useState([])
+
+  const getDataFromServer = async () => {
+    //模擬和伺服器要資料
+    const response = await fetch(
+      `http://localhost:4000/membercenter/info?id=1`,
+      {
+        method: 'get',
+      }
+    )
+    const data = await response.json()
+    //最後設定要到狀態中
+    setMemberinfo(data)
+  }
+
+  useEffect(() => {
+    getDataFromServer()
+  }, [])
+
   return (
     <>
       <div className=" aa d-none d-mo-none d-sm-none d-lg-none d-xl-block col-lg-2 offset-1 ">
         <div className="d-flex ml-4">
-          <ul className="d-none d-mo-none d-sm-none d-lg-block d-xl-block ">
-            <img
-              src="../../../public/img/member-center/fish4.jpeg"
-              className="rounded-circle box1  "
-            />
-          </ul>
-          <div className="txt-cap ">
-            <li className="d-none d-xl-block">會員姓名:</li>
-            <li className="d-none d-xl-block  ">會員等級:</li>
-          </div>
+          {Memberinfo.map((v, i) => (
+            <ul className="d-none d-mo-none d-sm-none d-lg-block d-xl-block "></ul>
+          ))}
+          {Memberinfo.map((v, i) => (
+            <div className="txt-cap ">
+              <li className="d-none d-xl-block">會員姓名:{v.name}</li>
+              <li className="d-none d-xl-block  ">會員等級:{v.level}</li>
+            </div>
+          ))}
         </div>
+
         <div className="">
           <div className="txt-body align-middle">
             <div className="d-flex">

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import $ from 'jquery'
+import P3carousel from './P3carousel'
+
 
 function HomeP3() {
   const [total, setTotal] = useState(0)
@@ -40,6 +42,8 @@ function HomeP3() {
             </div>
           </div>
         </div>
+        {/* 測試 */}
+        <P3carousel />
         <div className="row">
           {/* 下一層要用col要加row才有效 */}
           <div className="col-8 p3-bottom d-flex justify-content-between row mx-auto">
