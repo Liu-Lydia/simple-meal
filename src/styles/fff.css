@@ -541,6 +541,8 @@
   background-color: #627e2a;
   border-radius: 5px;
   opacity: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 .fff-ms-select-active {

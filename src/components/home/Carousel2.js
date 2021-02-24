@@ -283,15 +283,15 @@ export default function Carousel2() {
   const children = imgWrapper.map((src, i) => (
     <div
       key={i.toString()}
-      className="img-wrapper"
+      className="img-wrapper2"
       style={{
         backgroundImage: `url(${src})`,
       }}
     />
   ))
   return (
-    <div className="carousel-demo-wrapper">
-      <Carousel3d2 className="carousel-demo" childMaxLength={5}>
+    <div className="carousel-demo-wrapper2">
+      <Carousel3d2 className="carousel-demo2" childMaxLength={5}>
         {children}
       </Carousel3d2>
     </div>

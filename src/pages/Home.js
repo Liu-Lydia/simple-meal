@@ -302,8 +302,8 @@ function Home(props) {
       <div className="container d-block d-sm-none">
         <div className="row mb-5">
           <div className="mx-auto col-xl-12 col">
-            <h3 className="col-green text-center mb-3">驚喜廚房</h3>
-            <p className="txt-sub1 col-gray text-center xxx-p6-mb">
+            <h6 className="col-green text-center mb-3">驚喜廚房</h6>
+            <p className="txt-cap col-gray text-center xxx-p6-mb">
               我們提供舒適的場地以及齊全的食材和器具，等著你來製作自己的餐點
               <br />
               只需要帶上期待的心情，等待著預約日那天直接來到現場 <br />
