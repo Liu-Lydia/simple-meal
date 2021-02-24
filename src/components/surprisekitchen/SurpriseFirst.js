@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 function SurpriseFirst() {
   function ScrollToOrder() {
     window.scrollTo({
-      top: 1190,
+      top: 1100,
       left: 0,
       behavior: 'smooth',
     })
@@ -23,8 +23,8 @@ function SurpriseFirst() {
             <div className="lll-change-picture"></div>
           </div>
 
-          <div className="col-xl-6 col-lg-6 col-md-6 col-sm lll-text ">
-            <div className="col-xl-6 lll-text-rwd">
+          <div className="lll-text">
+            <div className="lll-text-rwd">
               <h2 className="m-0 lll-firstpage-title">驚喜廚房預約</h2>
               <p className="txt-sub1 lll-detile-style">
                 <span className="lll-line">——</span>
