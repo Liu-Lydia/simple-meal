@@ -6,24 +6,6 @@ import '../components/home/carousel3d.css'
 import HomeP3 from '../components/home/HomeP3'
 
 function Home(props) {
-  // 吉祥物定位
-  const [lemonScrollObj, setLemonScrollObj] = useState({
-    lemon01: false,
-  })
-
-  // 偵測視窗位置
-  useEffect(() => {
-    window.addEventListener('scroll', function () {
-      console.log(window.pageYOffset)
-      if (window.pageYOffset > 500 && window.pageYOffset < 2000) {
-        setLemonScrollObj({ ...lemonScrollObj, lemon01: true })
-      }
-      if (window.pageYOffset < 500 || window.pageYOffset > 2000) {
-        setLemonScrollObj({ ...lemonScrollObj, lemon01: false })
-      }
-    })
-  }, [])
-
   return (
     <>
       {/* p1 */}
@@ -356,10 +338,6 @@ function Home(props) {
           </div>
         </div>
       </div>
-      <div
-        className="poe-indexLemon01"
-        style={lemonScrollObj.lemon01 ? { right: '0' } : {}}
-      ></div>
     </>
   )
 }
