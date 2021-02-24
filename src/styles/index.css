@@ -17,6 +17,9 @@
   height: 400px;
   margin-bottom: 200px;
 }
+.xxx-p1-h{
+  height: 1050px;
+}
 .p5-leaf1-div {
   position: absolute;
   max-width: 220.54px;
@@ -61,12 +64,57 @@
   padding: 0;
   left: -710px;
 }
+.p1-bg{
+  height: 500px;
+  background-color: #F3E575;
+  border-radius: 75px;
+  margin-bottom: 200px;
+  padding: 0px !important;
+  
+}.p1-left-div{
+  width: 318px;
+  height: 281px;
+  margin-top: 100px;
+  
+}
+.p1-line{
+  position: absolute;
+  top: 245px;
+  width: 47px;
+  height: 1.6px;
+  background-color: #a2a3a5;
+}
+.circle-spin{
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  position: absolute;
+  left: 490px;
+  top: 30px;
+  margin: 0px;
+}
+.p1-img-div{
+max-width: 620px;
+max-height: 614.44px;
+padding: 0px;
+position: absolute;
+left: 500px;
+top: 50px;
+
+}
 }
 /* 手機板 */
 @media (max-width: 572px) {
   .xxx-miss{
-    display: block;
+    display: none ;
   }
+  .xxx-p1-h{
+  height: 750px;
+}
+.xxx-ml50{
+  margin-left: 85px;
+}
   .xxx-h-center{
     left: -1010px;
   }
@@ -75,6 +123,35 @@
   border-radius: 75px;
   height: 400px;
   margin: 0px;
+  
+}.p1-bg{
+  height: 500px;
+  background-color: white;
+  border-radius: 75px;
+  margin-bottom: 200px;
+  padding: 0px !important;
+  
+}.p1-left-div{
+  width: 318px;
+  height: 281px;
+  margin-top: 20px;  
+}
+.p1-line{
+  position: absolute;
+  top: 165px;
+  left: 65px;
+  width: 47px;
+  height: 1.6px;
+  background-color: #a2a3a5;
+}
+.p1-img-div{
+max-width: 620px;
+max-height: 614.44px;
+padding: 0px;
+}
+.xxx-xscenter{
+  margin-left: 85px;
+  margin-top: 25px;
   
 }
 }
@@ -131,31 +208,21 @@
 }
 
 /* p1 */
-.p1-bg{
-  height: 500px;
-  background-color: #F3E575;
-  border-radius: 75px;
-  margin-bottom: 200px;
-  padding: 0px !important;
-  
+.xxx-p1-sc{
+  position: relative;
+  left: 610px;
 }
-.p1-left-div{
-  width: 318px;
-  height: 281px;
-  margin-top: 100px;
-  
+.xxx-450x540{
+  width: 450px;
+  height: 540px;
 }
+
+
 .p1-text-size{
   width: 193px;
   height: 130px;
 }
-.p1-line{
-  position: absolute;
-  top: 245px;
-  width: 47px;
-  height: 1.6px;
-  background-color: #a2a3a5;
-}
+
 .p1-right-but{
   margin-top: 300px;
 }
@@ -185,26 +252,8 @@
   margin-left: 100px;
 
 }
-.p1-img-div{
-max-width: 620px;
-max-height: 614.44px;
-padding: 0px;
-position: absolute;
-left: 500px;
-top: 50px;
 
-}
-.circle-spin{
-  animation-name: spin;
-  animation-duration: 2000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  position: absolute;
-  left: 490px;
-  top: 30px;
-  
 
-}
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -215,7 +264,7 @@ top: 50px;
 }
 
 .p1-scroll-btn{
-  background-color: #F3E575;
+  background-color: #ffffff;
   border-radius: 75px;
   width: 60px;
   height: 20px;
@@ -253,9 +302,7 @@ top: 50px;
   left: 45%;
 }
 
-.xxx-p1-h{
-  height: 1050px;
-}
+
 @keyframes fade {
   0% {opacity: 0;}
   30% {opacity: 1;}

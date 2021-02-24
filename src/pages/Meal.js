@@ -9,7 +9,6 @@ import MealMultiCarousel from '../components/meal/MealMultiCarousel'
 import MealMultiCarouselTest from '../components/meal/MealMultiCarouselTest'
 function Meal(props) {
   // {麵包屑bool, 改變麵包屑}
-
   //抓到的全部餐點資料
   const [meal, setMeal] = useState([])
   //抓到的全部餐點資料(只給搜尋用)
@@ -17,7 +16,7 @@ function Meal(props) {
   //設定跟哪個路由要分類，預設是抓全部給meal
   const [type, setType] = useState('all')
   //麵包屑
-  const { breadCrumbBool, setBreadCrumbBool } = props
+  const { breadCrumbBool, setBreadCrumbBool,setMealForRecipe } = props
   //點餐點卡會拿到的sid，對應資料顯示在圖片，標題裡
   const [selectMeal, setSelectMeal] = useState(1)
   //計數器，用來及時更新右側購物車資料
@@ -60,7 +59,7 @@ function Meal(props) {
   useEffect(() => {
     setTimeout(() => {
       setDataLoading(false)
-    }, 1500)
+    }, 3000)
   }, [meal])
 
   // 掛載時改動麵包屑位置
@@ -86,6 +85,7 @@ function Meal(props) {
             selectMeal={selectMeal}
             updateNum={updateNum}
             setUpdateNum={setUpdateNum}
+            setMealForRecipe={setMealForRecipe}
           />
           {/* <MealMultiCarousel type={type} /> */}
           <MealMultiCarouselTest

@@ -52,6 +52,13 @@
   width: 1090px;
 }
 
+@media (max-width: 375px) {
+  .lll-change-picture-width {
+    top: 110px;
+    width: 375px;
+  }
+}
+
 .lll-change-picture {
   height: 550px;
   background: url('http://localhost:3015/img/lydia/surprisekitchenhero.jpg');
@@ -59,6 +66,13 @@
   border-radius: 0 75px 75px 0;
   opacity: 0.5;
   animation: test2 6s ease;
+}
+
+@media (max-width: 375px) {
+  .lll-change-picture {
+    height: 204px;
+    border-radius: 0;
+  }
 }
 
 @keyframes test2 {
@@ -78,6 +92,15 @@
   height: 248px;
 }
 
+@media (max-width: 375px) {
+  .lll-coupon-position {
+    left: 100px;
+    margin-top: 363px;
+    width: 207px;
+    height: 100px;
+  }
+}
+
 .lll-get-coupon {
   width: 248px;
   height: 240px;
@@ -85,11 +108,25 @@
   animation: round 24s linear infinite;
 }
 
+@media (max-width: 375px) {
+  .lll-get-coupon {
+    width: 104px;
+    height: 100px;
+  }
+}
+
 .lll-get-coupon2 {
   width: 248px;
   height: 240px;
   visibility: hidden;
   animation: round2 24s linear infinite;
+}
+
+@media (max-width: 375px) {
+  .lll-get-coupon2 {
+    width: 104px;
+    height: 100px;
+  }
 }
 
 /* .lll-testtransition{
@@ -163,6 +200,32 @@
   height: 240px;
 }
 
+@media (max-width: 375px) {
+  .lll-meal-pictures {
+    height: 100px;
+  }
+}
+
+.lll-order-text {
+  font-family: GenSenRounded TW;
+  font-size: 93px !important;
+  font-weight: bold !important;
+  line-height: 93px !important;
+  letter-spacing: 1.01px;
+  text-decoration: none;
+}
+
+@media (max-width: 375px) {
+  .lll-order-text {
+    font-family: GenSenRounded TW;
+    font-size: 50px !important;
+    font-weight: bold !important;
+    line-height: 50px !important;
+    letter-spacing: -0.01px;
+    text-decoration: none;
+  }
+}
+
 .lll-explain-coupon {
   position: absolute;
   left: 1499px;
@@ -174,6 +237,20 @@
   line-height: 28px;
   text-decoration: none !important;
   letter-spacing: 0.22px;
+}
+
+@media (max-width: 375px) {
+  .lll-explain-coupon {
+    left: 100px;
+    padding-top: 633px;
+    color: #b9433b;
+    font-family: GenSenRounded TW;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    text-decoration: none !important;
+  }
 }
 
 /* 第一版文字 */
@@ -194,6 +271,17 @@
     margin-top: 10px;
     text-align: right;
     max-width: 100%;
+  }
+}
+
+.lll-text{
+  position: absolute;
+  left: 553px;
+}
+
+@media (max-width: 375px) {
+  .lll-text {
+    left: 46px;
   }
 }
 
@@ -643,6 +731,12 @@
 }
 
 @media (max-width: 768px) {
+  .lll-ml-width {
+    width: 345px;
+  }
+}
+
+@media (max-width: 768px) {
   .lll-ml-position {
     width: 345px !important;
     margin-top: 818px !important;
@@ -651,7 +745,6 @@
 
 @media (max-width: 1700px) {
   .lll-ml-position {
-    display: inline-block;
     position: relative;
     margin-top: 730px;
     left: -320px;
@@ -833,6 +926,12 @@
   width: auto;
 }
 
+@media (max-width: 375px) {
+  .lll-onmenu {
+    display: none;
+  }
+}
+
 .lll-sticky {
   position: fixed;
   top: 0;
@@ -846,12 +945,30 @@
   width: 625px;
 }
 
+@media (max-width: 375px) {
+  .lll-picture-position {
+    position: relative;
+    height: 270px;
+    width: 270px;
+  }
+}
+
 .lll-lemon-position {
   position: relative;
   top: 402px;
   left: 168px;
   height: 223px;
   width: 286px;
+}
+
+@media (max-width: 375px) {
+  .lll-lemon-position {
+    position: relative;
+    top: 161px;
+    left: 74.5px;
+    height: 96px;
+    width: 121px;
+  }
 }
 
 .lll-lemon {
@@ -862,6 +979,12 @@
   overflow: hidden;
 }
 
+@media (max-width: 375px) {
+  .lll-lemon {
+    height: 96px;
+  }
+}
+
 .lll-coriander {
   height: 95px;
   width: 92px;
@@ -869,6 +992,33 @@
   top: 393px;
   left: 471px;
   animation: coriander 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@media (max-width: 375px) {
+  .lll-coriander {
+    height: 38px;
+    width: 37px;
+    top: 173px;
+    left: 203px;
+    animation: coriander375 4s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+}
+
+@keyframes coriander375 {
+  0% {
+    top: 173px;
+    left: 203px;
+  }
+  50% {
+    top: 200px;
+    left: 203px;
+  }
+  100% {
+    top: 173px;
+    left: 203px;
+  }
 }
 
 @keyframes coriander {
@@ -876,7 +1026,6 @@
     top: 393px;
     left: 471px;
   }
-
   50% {
     top: 420px;
     left: 471px;
@@ -894,6 +1043,33 @@
   top: 291px;
   left: 488px;
   animation: trout 4s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+@media (max-width: 375px) {
+  .lll-trout {
+    height: 23px;
+    width: 43px;
+    top: 129px;
+    left: 211px;
+    animation: trout375 4s ease-in-out infinite;
+    animation-delay: 3s;
+  }
+}
+
+@keyframes trout375 {
+  0% {
+    top: 129px;
+    left: 211px;
+  }
+  50% {
+    top: 156px;
+    left: 211px;
+  }
+  100% {
+    top: 129px;
+    left: 211px;
+  }
 }
 
 @keyframes trout {
@@ -901,7 +1077,6 @@
     top: 291px;
     left: 488px;
   }
-
   50% {
     top: 318px;
     left: 488px;
@@ -919,6 +1094,18 @@
   top: 178px;
   left: 436px;
   animation: mushroom 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+@media (max-width: 375px) {
+  .lll-mushroom {
+    height: 25px;
+    width: 32px;
+    top: 78px;
+    left: 188px;
+    animation: mushroom375 4s ease-in-out infinite;
+    animation-delay: 2s;
+  }
 }
 
 @keyframes mushroom {
@@ -926,7 +1113,6 @@
     top: 178px;
     left: 436px;
   }
-
   50% {
     top: 205px;
     left: 436px;
@@ -934,6 +1120,21 @@
   100% {
     top: 178px;
     left: 436px;
+  }
+}
+
+@keyframes mushroom375 {
+  0% {
+    top: 78px;
+    left: 188px;
+  }
+  50% {
+    top: 105px;
+    left: 188px;
+  }
+  100% {
+    top: 78px;
+    left: 188px;
   }
 }
 
@@ -946,12 +1147,21 @@
   animation: leef 4s ease-in-out infinite;
 }
 
+@media (max-width: 375px) {
+  .lll-leef {
+    height: 40px;
+    width: 37px;
+    top: 68px;
+    left: 98px;
+    animation: leef375 4s ease-in-out infinite;
+  }
+}
+
 @keyframes leef {
   0% {
     top: 153px;
     left: 226px;
   }
-
   50% {
     top: 180px;
     left: 226px;
@@ -962,6 +1172,21 @@
   }
 }
 
+@keyframes leef375 {
+  0% {
+    top: 68px;
+    left: 98px;
+  }
+  50% {
+    top: 94px;
+    left: 98px;
+  }
+  100% {
+    top: 68px;
+    left: 98px;
+  }
+}
+
 .lll-cheese {
   height: 73px;
   width: 97px;
@@ -969,6 +1194,18 @@
   top: 159px;
   left: 61px;
   animation: cheese 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+@media (max-width: 375px) {
+  .lll-cheese {
+    height: 32px;
+    width: 43px;
+    top: 69px;
+    left: 26px;
+    animation: cheese375 4s ease-in-out infinite;
+    animation-delay: 2s;
+  }
 }
 
 @keyframes cheese {
@@ -987,6 +1224,22 @@
   }
 }
 
+@keyframes cheese375 {
+  0% {
+    top: 69px;
+    left: 26px;
+  }
+
+  50% {
+    top: 96px;
+    left: 26px;
+  }
+  100% {
+    top: 69px;
+    left: 26px;
+  }
+}
+
 .lll-tomato {
   height: 63px;
   width: 66px;
@@ -994,6 +1247,16 @@
   top: 282px;
   left: 357px;
   animation: tomato 4s ease-in-out infinite;
+}
+
+@media (max-width: 375px) {
+  .lll-tomato {
+    height: 27px;
+    width: 28px;
+    top: 123px;
+    left: 155px;
+    animation: tomato375 4s ease-in-out infinite;
+  }
 }
 
 @keyframes tomato {
@@ -1012,6 +1275,22 @@
   }
 }
 
+@keyframes tomato375 {
+  0% {
+    top: 123px;
+    left: 155px;
+  }
+
+  50% {
+    top: 150px;
+    left: 155px;
+  }
+  100% {
+    top: 123px;
+    left: 155px;
+  }
+}
+
 .lll-bacon {
   height: 59px;
   width: 107px;
@@ -1019,6 +1298,18 @@
   top: 461px;
   left: 52px;
   animation: bacon 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@media (max-width: 375px) {
+  .lll-bacon {
+    height: 25px;
+    width: 48px;
+    top: 202px;
+    left: 20px;
+    animation: bacon375 4s ease-in-out infinite;
+    animation-delay: 1s;
+  }
 }
 
 @keyframes bacon {
@@ -1037,6 +1328,22 @@
   }
 }
 
+@keyframes bacon375 {
+  0% {
+    top: 202px;
+    left: 20px;
+  }
+
+  50% {
+    top: 229px;
+    left: 20px;
+  }
+  100% {
+    top: 202px;
+    left: 20px;
+  }
+}
+
 .lll-eggplant {
   height: 87px;
   width: 76px;
@@ -1044,6 +1351,18 @@
   top: 279px;
   left: 151px;
   animation: eggplant 4s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+@media (max-width: 375px) {
+  .lll-eggplant {
+    height: 40px;
+    width: 33px;
+    top: 120px;
+    left: 65px;
+    animation: eggplant375 4s ease-in-out infinite;
+    animation-delay: 2s;
+  }
 }
 
 @keyframes eggplant {
@@ -1062,6 +1381,22 @@
   }
 }
 
+@keyframes eggplant375 {
+  0% {
+    top: 120px;
+    left: 65px;
+  }
+
+  50% {
+    top: 147px;
+    left: 65px;
+  }
+  100% {
+    top: 120px;
+    left: 65px;
+  }
+}
+
 .lll-scallion {
   height: 82px;
   width: 79px;
@@ -1069,6 +1404,18 @@
   top: 301px;
   left: 7px;
   animation: scallion 4s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+@media (max-width: 375px) {
+  .lll-scallion {
+    height: 38px;
+    width: 36px;
+    top: 130px;
+    left: 3px;
+    animation: scallion375 4s ease-in-out infinite;
+    animation-delay: 3s;
+  }
 }
 
 @keyframes scallion {
@@ -1084,5 +1431,21 @@
   100% {
     top: 301px;
     left: 7px;
+  }
+}
+
+@keyframes scallion375 {
+  0% {
+    top: 130px;
+    left: 3px;
+  }
+
+  50% {
+    top: 157px;
+    left: 3px;
+  }
+  100% {
+    top: 130px;
+    left: 3px;
   }
 }

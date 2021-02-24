@@ -211,7 +211,7 @@ function SimpleMealCouponPayment(props) {
           </div>
 
           <div className="poe-bookmark-content txt-btn">
-            <table className="table table-borderless table-hover">
+            <table className="table table-borderless table-hover poe-cartTable">
               <tbody>
                 {paymentArray.map((v, i) => (
                   <tr key={i}>

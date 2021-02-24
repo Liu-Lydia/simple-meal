@@ -23,7 +23,7 @@ function SurpriseFirst() {
             <div className="lll-change-picture"></div>
           </div>
 
-          <div className="col-xl-6 col-lg-6 col-md-6 col-sm offset-4 float-left">
+          <div className="col-xl-6 col-lg-6 col-md-6 col-sm lll-text ">
             <div className="col-xl-6 lll-text-rwd">
               <h2 className="m-0 lll-firstpage-title">驚喜廚房預約</h2>
               <p className="txt-sub1 lll-detile-style">
@@ -63,7 +63,7 @@ function SurpriseFirst() {
             </div>
 
             <div className="mt-auto ml-auto">
-              <h1 className="lll-green">rder</h1>
+              <p className="m-0 lll-green lll-order-text">rder</p>
             </div>
           </div>
           <p className="m-0 lll-explain-coupon">

@@ -1,11 +1,29 @@
 import { BrowserRouter as Link, NavLink } from 'react-router-dom'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Carousel from '../components/home/Carousel'
 import Carousel2 from '../components/home/Carousel2'
 import '../components/home/carousel3d.css'
 import HomeP3 from '../components/home/HomeP3'
 
 function Home(props) {
+  // 吉祥物定位
+  const [lemonScrollObj, setLemonScrollObj] = useState({
+    lemon01: false,
+  })
+
+  // 偵測視窗位置
+  useEffect(() => {
+    window.addEventListener('scroll', function () {
+      console.log(window.pageYOffset)
+      if (window.pageYOffset > 500 && window.pageYOffset < 2000) {
+        setLemonScrollObj({ ...lemonScrollObj, lemon01: true })
+      }
+      if (window.pageYOffset < 500 || window.pageYOffset > 2000) {
+        setLemonScrollObj({ ...lemonScrollObj, lemon01: false })
+      }
+    })
+  }, [])
+
   return (
     <>
       {/* p1 */}
@@ -23,10 +41,17 @@ function Home(props) {
                 極簡煮易隨時都準備好食材供予 <br />
                 為自己準備一頓美好的餐點
               </p>
-              <div className="p1-line"></div>
+              <div className="p1-line "></div>
               <br />
-
-              <NavLink to="/meal" className="btn-green txt-sub1">
+              {/* 首頁圖片 */}
+              <div className="p1-img-div d-block d-sm-none col-12">
+                <img
+                  className="img-size"
+                  src="http://localhost:3015/img/index/index-p1-img.png"
+                  alt=""
+                />
+              </div>
+              <NavLink to="/meal" className="btn-green txt-sub1 xxx-xscenter">
                 開始訂製
               </NavLink>
             </div>
@@ -71,49 +96,52 @@ function Home(props) {
                 />
               </g>
             </svg>
-            <div className="p1-img-div">
+            {/* 首頁圖片 */}
+            <div className="p1-img-div d-none d-xl-block">
               <img
                 className="img-size"
                 src="http://localhost:3015/img/index/index-p1-img.png"
                 alt=""
               />
             </div>
-
-            <NavLink
-              to="/Milestone"
-              className="btn-meun-big-gray d-flex txt-btn p1-right-but ml-auto xxx-miss"
-            >
-              <div className="btn-meun-big-gray2">
-                <i className="fas fa-medal"></i>
-              </div>
-              立即獲取優惠
-            </NavLink>
+            <div className="xxx-miss">
+              <NavLink
+                to="/Milestone"
+                className="btn-meun-big-gray d-flex txt-btn p1-right-but ml-auto"
+              >
+                <div className="btn-meun-big-gray2">
+                  <i className="fas fa-medal"></i>
+                </div>
+                立即獲取優惠
+              </NavLink>
+            </div>
           </div>
-          <div className="col-4 mx-auto d-flex justify-content-center d-flex align-items-center mb-5">
-            <button className="col-gray p1-but-change1">
-              <i className="fas fa-chevron-circle-left col-black"></i>{' '}
-              &nbsp;Prev
-            </button>
-            <div className="p1-change-line"></div>
-            <div className="p1-change"></div>
-            <button className="col-gray p1-but-change2">
-              Next &nbsp;{' '}
-              <i className="fas fa-chevron-circle-right col-black"></i>
-            </button>
+          <div className="xxx-miss">
+            <div className="d-flex justify-content-center d-flex align-items-center mb-5 xxx-p1-sc">
+              <button className="col-gray p1-but-change1">
+                <i className="fas fa-chevron-circle-left col-black"></i>{' '}
+                &nbsp;Prev
+              </button>
+              <div className="p1-change-line"></div>
+              <div className="p1-change"></div>
+              <button className="col-gray p1-but-change2">
+                Next &nbsp;{' '}
+                <i className="fas fa-chevron-circle-right col-black"></i>
+              </button>
+            </div>
           </div>
         </div>
-        <div className="row">
+        <div className="row d-none d-xl-block">
           <button className="p1-scroll-btn mx-auto d-flex align-items-center">
             &nbsp; scroll
           </button>
         </div>
         <div class="xxx-p1-hello d-none d-sm-block">Hello!</div>
-        <img
-          className="xxx-boom d-none d-sm-block"
-          src="http://localhost:3015/img/index/boom3.png"
-        />
-        <div class="arms d-none d-sm-block">
-          <div class="arm d-none d-sm-block"></div>
+        <div className="xxx-450x540 d-none d-xl-block">
+          <img
+            className="xxx-boom d-none d-sm-block img-size"
+            src="http://localhost:3015/img/index/five.gif"
+          />
         </div>
       </div>
       {/* p2 */}
@@ -137,7 +165,8 @@ function Home(props) {
             />
           </div>
           {/* 空一個col : offset-1 */}
-          <div className="col-4 offset-1">
+          {/* xl */}
+          <div className="col-4 offset-1 d-none d-xl-block">
             <h5 className="col-black">給喜歡做菜的你 帶來新鮮、美味、方便</h5>
             <br />
             <p className="txt-sub1 col-gray">
@@ -150,6 +179,22 @@ function Home(props) {
               開始訂製
             </NavLink>
           </div>
+        </div>
+        {/* xs */}
+        <div className="col-12 offset-1 d-block d-sm-none xxx-m0">
+          <p className="col-black txt-body">
+            給喜歡做菜的你 帶來新鮮、美味、方便
+          </p>
+          <br />
+          <p className="txt-sub1 col-gray txt-cap">
+            與在地農產合作，嚴選當季食材配送到府的服務 <br />
+            不需出門，不需煩惱吃什麼 <br />
+            我們幫你一次搞定。
+          </p>
+          <br />
+          <NavLink to="/meal" className="btn-red txt-sub1 xxx-ml50">
+            開始訂製
+          </NavLink>
         </div>
       </div>
 
@@ -339,6 +384,10 @@ function Home(props) {
           </div>
         </div>
       </div>
+      <div
+        className="poe-indexLemon01 d-none d-sm-block"
+        style={lemonScrollObj.lemon01 ? { right: '0' } : {}}
+      ></div>
     </>
   )
 }

@@ -4,9 +4,15 @@ import 'react-multi-carousel/lib/styles.css'
 import { useState, useEffect } from 'react'
 import Swal from 'sweetalert2'
 function MealTittle(props) {
-  const { breadCrumbBool, selectMeal, data, updateNum, setUpdateNum } = props
+  const {
+    breadCrumbBool,
+    selectMeal,
+    data,
+    updateNum,
+    setUpdateNum,
+    setMealForRecipe,
+  } = props
   const mealData = selectMeal
-  console.log(data)
   const [meal, setMeal] = useState([])
   const [dataLoading, setDataLoading] = useState(false)
   // async function getUsersFromServer() {
@@ -51,10 +57,12 @@ function MealTittle(props) {
   //     </div>
   //   </>
   // )
+
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       cancelButton: 'select-btn-green txt-btn',
       title: 'cha-text cha-green',
+      popup: 'msg-style',
     },
     buttonsStyling: false,
   })
@@ -76,7 +84,6 @@ function MealTittle(props) {
           padding: '25px',
           showCancelButton: true,
           cancelButtonText: '確定',
-          showCloseButton: true,
         })
       })
 
@@ -130,7 +137,13 @@ function MealTittle(props) {
               >
                 加入訂單
               </Link>
-              <Link to="/recipe" className="cha-btn-recipe txt-btn btn-white">
+              <Link
+                to="/recipe"
+                onClick={() =>
+                  setMealForRecipe([props.data.sid, props.data.ingredient_id])
+                }
+                className="cha-btn-recipe txt-btn cha-rec-btn-bye btn-white"
+              >
                 查看食譜
               </Link>
             </div>

@@ -348,3 +348,24 @@
     no-repeat;
   background-size: contain;
 }
+
+.poe-cartTable tbody tr:hover {
+  background-color: #bbd883 !important;
+}
+
+.poe-bgcTransparent {
+  background-color: transparent;
+}
+
+.poe-indexLemon01 {
+  background: url('http://localhost:3015/img/cart/bg/lemonUFO-Go.PNG') center
+    center no-repeat;
+  background-size: contain;
+  // transform: scalex(-1);
+  height: 200px;
+  width: 200px;
+  position: fixed;
+  right: -100%;
+  top: 150px;
+  transition: 1s;
+}

@@ -37,6 +37,8 @@ function App() {
   // 非購物車頁面改變購物車模式
   const [cartModeByRedirectFrom, setCartModeByRedirectFrom] = useState('')
 
+  const [meunForRecipe, setMealForRecipe] = useState([])
+
   return (
     <Router>
       <>
@@ -71,12 +73,14 @@ function App() {
                 <Meal
                   breadCrumbBool={breadCrumbBool}
                   setBreadCrumbBool={setBreadCrumbBool}
+                  setMealForRecipe={setMealForRecipe}
                 />
               </Route>
               <Route path="/recipe">
                 <Recipe
                   breadCrumbBool={breadCrumbBool}
                   setBreadCrumbBool={setBreadCrumbBool}
+                  meunForRecipe={meunForRecipe}
                 />
               </Route>
 
