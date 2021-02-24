@@ -38,14 +38,12 @@ function MilestoneListUnfinish() {
   const progresStyleArray = [] //儲存各milestone的進度與顏色 push完成後再塞入屬性值
   const progressAnimateValueArray = [] //儲存個動畫的值 push完成後再塞入屬性值
   const getMilestoneList = async () => {
-    console.log("更新呈現表單")
     //先取得總數量作為分頁使用
     await fetch('http://localhost:4000/milestone/getMilestoneList?sid=1&page=1&perpage=0', {
       method: 'get',
     })//then 是會接前方拋出的結果
     .then((r) => r.json())
     .then((obj) => {
-      console.log("更新呈現表單 - 成就總數為",obj.length)
       setTotalCount(obj.length)
     })
 
@@ -57,7 +55,6 @@ function MilestoneListUnfinish() {
         .then((r) => r.json())
         .then((obj) => {
           setMilestoneList(obj)
-        console.log("取得成就列表",obj)
           //前期處理各成就的進度style 含不同的大小
           const xs_r = 40
           const md_r = 70
@@ -116,7 +113,6 @@ function MilestoneListUnfinish() {
               })
             }
           })
-          console.log("設定樣式",progresStyleArray)
           setStyleArray(progresStyleArray)
           setAnimateValueArray(progressAnimateValueArray)
         })
@@ -127,18 +123,15 @@ function MilestoneListUnfinish() {
   /*正常來說應該不用這麼麻煩
    但是不指定的時候不是每次rander都會刷新*/
   useEffect(() => {
-    console.log("useEffect-update-perPage")
     webMoboExchange()
     getMilestoneList()
   }, [listPage,perPage])
 
   useEffect(() => {
-    console.log("re-render when style update")
     webMoboExchange()
   }, [styleArray])
 
   useEffect(() => {
-    console.log("useEffect-DidMount")
     webMoboExchange() //先去取得螢幕寬度決定每頁要呈現的數量
     getMilestoneList()
     window.addEventListener('resize', webMoboExchange) //畫面大小有更動時
@@ -148,7 +141,6 @@ function MilestoneListUnfinish() {
   }, [])
 
   const webMoboExchange = () => {
-    console.log("執行視窗改變")
     //style 選擇器 因應視窗大小決定要使用哪一個樣式
     let tmepStyle = []
     let tempValue = []
@@ -174,25 +166,20 @@ function MilestoneListUnfinish() {
         tempValue.push(value.md)
       })
     }
-    console.log("設定樣式",tmepStyle)
     setInUseStyle(tmepStyle)
     setInnUseAnimateValue(tempValue)
 
     if (window.innerWidth < 576) {
       setPerPage(0)
-      console.log("設定每頁數量為0?",perPage)
     }
     else if (window.innerWidth >= 992) 
     {
       setPerPage(8)
-      console.log("設定每頁數量為8?",perPage)
     }
     else 
     {
       setPerPage(4)
-      console.log("設定每頁數量為4?",perPage)
     }
-    console.log("設定每頁數量為?",perPage)
   }
 
   return (
@@ -202,8 +189,7 @@ function MilestoneListUnfinish() {
         <div className="col-1 fff-no-mr-and-pad"></div>
         {/* <!-- 左翻按鍵 --> */}
         <div className="fff-ms-web col-1 d-flex align-items-center fff-no-mr-and-pad">
-          <i className="fas fa-chevron-circle-left fff-stone-item-forword" onClick={()=>{setListPage(listPage-1<1?Math.ceil(totalCount/(perPage==0?4:perPage)):listPage-1)
-          console.log("totalCount:",totalCount,Math.ceil(totalCount/(perPage==0?4:perPage)))}}></i>
+          <i className="fas fa-chevron-circle-left fff-stone-item-forword" onClick={()=>{setListPage(listPage-1<1?1:listPage-1)}} style={listPage==1 ? {color: '#d0d1d2'}:{}}></i>
         </div>
         {/* <!-- 成就display --> */}
         <div className="col-10 col-sm-8 fff-no-mr-and-pad ">
@@ -258,9 +244,7 @@ function MilestoneListUnfinish() {
         </div>
         {/* <!-- 右翻按鍵 --> */}
         <div className="fff-ms-web col-1 d-flex align-items-center flex-row-reverse fff-no-mr-and-pad">
-          <i className="fas fa-chevron-circle-right fff-stone-item-forword" onClick={()=>{setListPage(listPage+1>Math.ceil(totalCount/(perPage==0?4:perPage))?1:listPage+1)
-          console.log("totalCount:",totalCount)
-          console.log("perPage",perPage==0?4:perPage)}}></i>
+          <i className="fas fa-chevron-circle-right fff-stone-item-forword" onClick={()=>{setListPage(listPage+1>Math.ceil(totalCount/(perPage==0?4:perPage))?Math.ceil(totalCount/(perPage==0?4:perPage)):listPage+1)}}  style={listPage==Math.ceil(totalCount/(perPage==0?4:perPage)) ? {color: '#d0d1d2'}:{}}></i>
         </div>
         {/* <!--保留空格 --> */}
         <div className="col-1 fff-no-mr-and-pad"></div>
