@@ -383,9 +383,11 @@
   border-radius: 50%;
   position: fixed;
   right: -100%;
+  // right: 3%;
   bottom: 10%;
   line-height: 50px;
   text-align: center;
   transition: 1s;
   color: #fff;
+  opacity: 0;
 }
