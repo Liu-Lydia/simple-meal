@@ -2,12 +2,12 @@ import React, { props, useState, useEffect } from 'react'
 import '../../styles/public.css'
 import '../../styles/fff.css'
 
-//<ExchangeDialog dialogStyle={dialogStyle} setDialogStyle={setDialogStyle} detailContext={detailContext}/>
+//<ExchangeDialog dialogStyle={dialogStyle} setDialogStyle={setDialogStyle} detailContext={detailContext} setCount={setCount} count={count}/>
 function ExchangeDialog(props) {
   //目前擁有點數
   const [totalPoint, setTotalPoint] = useState(0)
   //選擇的個數
-  const [count, setCount] = useState(0)
+  //const [count, setCount] = useState(0) 交給父層 點擊兌換的商品時要先設定為0
   //select option 選項
   const [selectOption, setSelectOption] = useState([])
 
@@ -71,7 +71,7 @@ function ExchangeDialog(props) {
   //當選擇兌換時 更新
   useEffect(() => {
     console.log('useEffect - count')
-  }, [count])
+  }, [props.count])
 
   //當確認兌換時 更新
   useEffect(() => {
@@ -130,7 +130,7 @@ function ExchangeDialog(props) {
                   <select
                     name="count"
                     onChange={(event) => {
-                      setCount(event.target.value)
+                      props.setCount(event.target.value)
                     }}
                   >
                     {selectOption.map((value, index) => (
@@ -144,7 +144,7 @@ function ExchangeDialog(props) {
                 >
                   <span>花費點數</span>
                   <span style={{ color: '#b9433b', fontSize: '21px' }}>
-                    {count * props.detailContext.need_point}
+                    {props.count * props.detailContext.need_point}
                   </span>
                 </div>
                 <div
@@ -153,7 +153,7 @@ function ExchangeDialog(props) {
                 >
                   <span style={{ color: '#627E2A' }}>剩餘點數</span>
                   <span style={{ color: '#627E2A', fontSize: '21px' }}>
-                    {totalPoint - count * props.detailContext.need_point}
+                    {totalPoint - props.count * props.detailContext.need_point}
                   </span>
                 </div>
                 <div style={{ marginTop: '20px', marginBottom: '20px' }}>
@@ -182,7 +182,9 @@ function ExchangeDialog(props) {
                     className="btn-green txt-btn aboutCloseBtn"
                     onClick={() => {
                       props.setDialogStyle({ display: 'none' })
-                      setCommit(true)
+                      if (props.count > 0) {
+                        setCommit(true)
+                      }
                     }}
                     data-dismiss="modal"
                   >
@@ -218,11 +220,11 @@ function ExchangeDialog(props) {
               <div className="col fff-exchange-content txt-btn">
                 <div className="d-flex justify-content-between fff-txt-info" style={{ lineHeight: '50px' }}
                 >
-                  <span className="txt-btn">{DBreturn.msg}</span>
+                  {DBreturn.success ? <span className="txt-btn">成功圖樣放這裡</span> : <span className="txt-btn">失敗訊息:{DBreturn.msg}</span>}
                 </div>
                 <div className="d-flex justify-content-center" style={{ marginTop: '25px' }} >
-                  <button type="button" className="btn-green txt-btn aboutCloseBtn" 
-                  onClick={() => { setReturnMsgDialog({ display: 'none' }) }}
+                  <button type="button" className="btn-green txt-btn aboutCloseBtn"
+                    onClick={() => { setReturnMsgDialog({ display: 'none' }) }}
                     data-dismiss="modal"
                   >
                     確定
