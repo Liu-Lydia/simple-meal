@@ -1,37 +1,11 @@
 import React, { useEffect, useState } from 'react'
+import { Redirect } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
-function SurpriseFirst() {
-  //接收資料庫資料　↓↓↓
+function SurpriseFirst(props) {
+  const { loginBool } = props
 
-  //讀取資料　↓↓↓
-  const handleGetCoupon = () => {
-    const url = 'http://localhost:4000/activityCoupon/getlemoncoupon'
-    fetch(url, {
-      method: 'get',
-      credentials: 'include',
-    })
-      .then((r) => r.json())
-      .then((obj) => {
-        console.log(obj)
-        swalWithBootstrapButtons.fire({
-          imageUrl: 'http://localhost:3015/img/lemon/Cupon.GIF',
-          imageHeight: 100,
-          title: '<h4>恭喜獲取100元購物金</h4>',
-          text: `100元優惠碼已新增至會員中心囉！`,
-          padding: '25px',
-          showConfirmButton: true,
-          confirmButtonText: '確認',
-          // showCloseButton: true,
-          backdrop: `rgba(255,255,255,.5)`,
-        })
-      })
-  }
-
-  // useEffect(() => {
-  //   handleGetCoupon()
-  // }, [])
-  //讀取資料 ↑↑↑
+  const [shouldRedirectTo, setShouldRedirectTo] = useState('')
 
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
@@ -42,7 +16,44 @@ function SurpriseFirst() {
     },
     buttonsStyling: false,
   })
+  //接收資料庫資料　↓↓↓
 
+  //讀取資料　↓↓↓
+  const handleGetCoupon = async () => {
+    if (!loginBool) {
+      console.log('滾去登入再說')
+      console.log(loginBool)
+      setShouldRedirectTo('memberCenter')
+      return
+    } else {
+      await fetch('http://localhost:4000/activityCoupon/getlemoncoupon', {
+        method: 'get',
+        credentials: 'include',
+      })
+        .then((r) => r.json())
+        .then((obj) => {
+          console.log(obj)
+          if (obj.success) {
+            swalWithBootstrapButtons.fire({
+              imageUrl: 'http://localhost:3015/img/lemon/Cupon.GIF',
+              imageHeight: 100,
+              title: '<h4>恭喜獲取100元購物金</h4>',
+              text: `100元優惠碼已新增至會員中心囉！`,
+              padding: '25px',
+              showConfirmButton: true,
+              confirmButtonText: '確認',
+              // showCloseButton: true,
+              backdrop: `rgba(255,255,255,.5)`,
+            })
+          }
+        })
+    }
+
+    // useEffect(() => {
+    //   handleGetCoupon()
+    // }, [])
+    //讀取資料 ↑↑↑
+  }
   function ScrollToOrder() {
     window.scrollTo({
       top: 1100,
@@ -50,9 +61,9 @@ function SurpriseFirst() {
       behavior: 'smooth',
     })
   }
-
   return (
     <>
+      {shouldRedirectTo === 'memberCenter' && <Redirect to="/MemberCenter" />}
       {/* 驚喜廚房第一版 */}
       {/* 第一版圖片 */}
       <div className="container-fluid">
