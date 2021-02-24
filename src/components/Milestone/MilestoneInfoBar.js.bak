@@ -1,7 +1,7 @@
 import React, { props, useEffect, useState } from 'react'
-import Swal from 'sweetalert2'
 function MilestoneInfoBar(props) {
   //集點說明要不要渲染(虛擬Dom)
+  const [modalStyle, setModalStyle] = useState({ display: 'none' })
   const [totalPoint, setTotalPoint] = useState(0)
 
   const getMilestoneList = async () => {
@@ -20,18 +20,6 @@ function MilestoneInfoBar(props) {
         setTotalPoint(totalGetPoint - totalSpendPoint)
       })
   }
-
-  const swalWithBootstrapButtons = Swal.mixin({
-    customClass: {
-      popup: 'poe-alert',
-      title: 'poe-green my-0',
-      content: 'txt-btn',
-      confirmButton: 'btn-green txt-btn mx-2 my-2',
-      cancelButton: 'btn-red txt-btn mx-2 my-2',
-      denyButton: 'btn-red txt-btn mx-2 my-2',
-    },
-    buttonsStyling: false,
-  })
 
   useEffect(() => {
     getMilestoneList()
@@ -69,24 +57,7 @@ function MilestoneInfoBar(props) {
             <div
               className="fff-btn-white fff-txt-btn howToGetPoints"
               onClick={() => {
-                swalWithBootstrapButtons.fire({
-                  // icon: 'success',
-                  imageUrl: 'http://localhost:3015/img/fff/SimpleMilestone.SVG',
-                  // imageHeight: 200,
-                  title: '<h6>在極簡煮易輕鬆獲取優惠</h6>',
-                  text: `我們用輕鬆活潑的方式記錄您在極簡煮易當中的冒險故事！並提供許多成就目標讓您可以用有趣的方式獲得額外的優惠！
-                  每一個達成的成就會提供相對應得獎勵點數，您可以使用點數換取站內或是相關企業的優惠卷！
-                  站內優惠會歸入您的會員資料方便您於購餐時選用，而兌換相關企業優惠會寄送QR
-                  Code至您的信箱，您也可以列印出來！
-                  詳細的優惠兌換紀錄可於會員中心查詢喔！`,
-                  padding: '25px',
-                  showConfirmButton: true,
-                  confirmButtonText: '知道了',
-                  // showDenyButton: true,
-                  denyButtonText: '前往購物車',
-                  // showCloseButton: true,
-                  backdrop: `rgba(255,255,255,0.4)`,
-                })
+                setModalStyle({ display: 'flex' })
               }}
             >
               集點方式
@@ -151,31 +122,14 @@ function MilestoneInfoBar(props) {
 
         <div className="d-flex justify-content-center align-items-center">
           {/* 按了集點方式按鈕把說明改成顯示 */}
-          <div
+          <a
             className="fff-btn-mobo-style howToGetPoints"
             onClick={() => {
-              swalWithBootstrapButtons.fire({
-                // icon: 'success',
-                imageUrl: 'http://localhost:3015/img/fff/SimpleMilestone.SVG',
-                // imageHeight: 200,
-                title: '<h6>在極簡煮易輕鬆獲取優惠</h6>',
-                text: `我們用輕鬆活潑的方式記錄您在極簡煮易當中的冒險故事！並提供許多成就目標讓您可以用有趣的方式獲得額外的優惠！
-                每一個達成的成就會提供相對應得獎勵點數，您可以使用點數換取站內或是相關企業的優惠卷！
-                站內優惠會歸入您的會員資料方便您於購餐時選用，而兌換相關企業優惠會寄送QR
-                Code至您的信箱，您也可以列印出來！
-                詳細的優惠兌換紀錄可於會員中心查詢喔！`,
-                padding: '25px',
-                showConfirmButton: true,
-                confirmButtonText: '知道了',
-                // showDenyButton: true,
-                denyButtonText: '前往購物車',
-                // showCloseButton: true,
-                backdrop: `rgba(255,255,255,0.4)`,
-              })
+              setModalStyle({ display: 'flex' })
             }}
           >
             集點方式
-          </div>
+          </a>
         </div>
 
         <div className="d-flex justify-content-center">
@@ -186,6 +140,50 @@ function MilestoneInfoBar(props) {
             }}
           >
             {props.btnText}
+          </div>
+        </div>
+      </div>
+
+      <div className="fff-mshowto" style={modalStyle}>
+        <div className="fff-mshowto-content">
+          {/* 關閉頁面的Ｘ */}
+          <div className="fff-ms-mobo justify-content-end col-12">
+            <h6>
+              <i
+                className="fas fa-times aboutCloseBtn"
+                onClick={() => {
+                  setModalStyle({ display: 'none' })
+                }}
+              ></i>
+            </h6>
+          </div>
+          {/* 圖片放置位置*/}
+          <div className="row justify-content-center">
+            <img
+              src="http://localhost:3015/img/fff/SimpleMilestone.svg"
+              alt=""
+            />
+          </div>
+          {/*說明文字 */}
+          <div className="row d-flex justify-content-center flex-row">
+            <span className="col-12 txt-btn">
+              
+              
+            </span>
+
+            <div className="col-12 d-flex justify-content-center">
+              {/* 關閉集點説明的按鈕 */}
+              <button
+                type="button"
+                className="btn-white txt-btn aboutCloseBtn"
+                onClick={() => {
+                  setModalStyle({ display: 'none' })
+                }}
+                data-dismiss="modal"
+              >
+                知道了！
+              </button>
+            </div>
           </div>
         </div>
       </div>
