@@ -44,16 +44,31 @@ function Header(props) {
     // console.log('登出')
     fetch('http://localhost:4000/logout', {
       method: 'get',
+      credentials: 'include',
     })
       .then((r) => r.json())
       .then((obj) => {
-        console.log(obj)
+        // console.log(obj)
         setLoginBool(false)
+      })
+  }
+
+  // 給判斷有沒有登入
+  const handleIsLogin = () => {
+    fetch('http://localhost:4000/isLogin', {
+      method: 'get',
+      credentials: 'include',
+    })
+      .then((r) => r.json())
+      .then((obj) => {
+        // console.log(obj)
+        obj.success ? setLoginBool(true) : setLoginBool(false)
       })
   }
 
   useEffect(() => {
     handleSetCssObj()
+    handleIsLogin()
   }, [])
 
   useEffect(() => {
