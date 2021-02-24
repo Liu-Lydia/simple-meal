@@ -3,8 +3,10 @@ import { Redirect } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 function SurpriseFirst(props) {
+  //會員傳入, 是否為會員
   const { loginBool } = props
 
+  //定義SweetAlert2的按鈕
   const [shouldRedirectTo, setShouldRedirectTo] = useState('')
 
   const swalWithBootstrapButtons = Swal.mixin({
@@ -16,9 +18,8 @@ function SurpriseFirst(props) {
     },
     buttonsStyling: false,
   })
-  //接收資料庫資料　↓↓↓
 
-  //讀取資料　↓↓↓
+  //取得優惠券　↓↓↓
   const handleGetCoupon = async () => {
     if (!loginBool) {
       console.log('滾去登入再說')
@@ -48,12 +49,10 @@ function SurpriseFirst(props) {
           }
         })
     }
-
-    // useEffect(() => {
-    //   handleGetCoupon()
-    // }, [])
-    //讀取資料 ↑↑↑
+    //取得優惠券 ↑↑↑
   }
+
+  //scroll定位　↓↓↓
   function ScrollToOrder() {
     window.scrollTo({
       top: 1100,
@@ -61,21 +60,22 @@ function SurpriseFirst(props) {
       behavior: 'smooth',
     })
   }
+  //scroll定位　↑↑↑
+
   return (
     <>
+      {/* 是不是會員的轉址 */}
       {shouldRedirectTo === 'memberCenter' && <Redirect to="/MemberCenter" />}
+
       {/* 驚喜廚房第一版 */}
       {/* 第一版圖片 */}
       <div className="container-fluid">
         <div className="row">
-          {/* <div className="lll-first-picture-width">
-            <div className="lll-first-picture"></div>
-          </div> */}
-
           <div className="lll-change-picture-width">
             <div className="lll-change-picture"></div>
           </div>
 
+          {/* 第一版文字 */}
           <div className="lll-text">
             <div className="lll-text-rwd">
               <h2 className="m-0 lll-firstpage-title">驚喜廚房預約</h2>
@@ -99,6 +99,7 @@ function SurpriseFirst(props) {
             </div>
           </div>
 
+          {/* 點擊優惠券Order圖片 */}
           <div className="d-flex lll-coupon-position">
             <div className="lll-get-coupon">
               <img
@@ -127,29 +128,8 @@ function SurpriseFirst(props) {
           </p>
         </div>
       </div>
-      {/* 第一版文字 */}
-      {/* <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-xl-6 col-lg-6 col-md-6 col-sm lll-text-position">
-            <div className="col-xl-6 lll-text-rwd">
-              <h2 className="m-0 lll-firstpage-title">驚喜廚房預約</h2>
-              <p className="txt-sub1 lll-detile-style">
-                <span className="lll-line">——</span>
-                　極簡煮易提供完善的場地與優良食材
-              </p>
-              <p className="m-0 txt-sub1 lll-detile-style lll-detile-right lll-pb50">
-                等你來為自己準備一頓美好的餐點
-              </p>
-              <div className="lll-mobile-btn">
-                <Link to="#" className="btn-red txt-btn">
-                  前往預約
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
       {/* 驚喜廚房第一版 */}
+
       {/* scroll */}
       <div className="container lll-scroll">
         <div className="row">
