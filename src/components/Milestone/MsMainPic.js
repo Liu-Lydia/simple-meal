@@ -10,7 +10,7 @@ function MsMainPic() {
           background: 'url("http://localhost:3015/img/fff/Neon.svg")',
         }}
       >
-        <h5 className="animate__animated animate__bounce" >我是佔空間的東西</h5>
+        <h5 className="animate__animated animate__bounce">我是佔空間的東西</h5>
       </div>
       <div
         className="d-flex justify-content-center align-items-center fff-ms-web"
