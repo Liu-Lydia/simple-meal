@@ -10,10 +10,13 @@ function ExchangeGoodsList1() {
   const [goodList, setGoodList] = useState([])
 
   //彈跳視窗是不是要顯示
-  const [dialogStyle, setDialogStyle] = useState({display:'none'})
+  const [dialogStyle, setDialogStyle] = useState({ display: 'none' })
 
   //彈跳視窗要顯示的內容（被點擊的那筆資料）
-  const [detailContext,setDetailContext] = useState({})
+  const [detailContext, setDetailContext] = useState({})
+
+  //選擇的個數
+  const [count, setCount] = useState(0)
 
   //取得兌換項目清單
   const getGoodList = async () => {
@@ -87,7 +90,7 @@ function ExchangeGoodsList1() {
         <div className="col fff-no-mr-and-pad"></div>
       </div>
       {/* 彈跳視窗 傳入值：dialogStyle要不要顯示  setDialogStyle對話框中的關閉 detailContext顯示的內容*/}
-      <ExchangeDialog dialogStyle={dialogStyle} setDialogStyle={setDialogStyle} detailContext={detailContext}/>
+      <ExchangeDialog dialogStyle={dialogStyle} setDialogStyle={setDialogStyle} detailContext={detailContext} setCount={setCount} count={count} />
     </>
   )
 }
