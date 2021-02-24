@@ -1,10 +1,9 @@
 import React, { props, useEffect, useState } from 'react'
-import {
-  Nav,
-} from 'react-bootstrap'
+import { Nav } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
-
 import Swal from 'sweetalert2'
+
+
 function MilestoneInfoBar(props) {
   //集點說明要不要渲染(虛擬Dom)
   const [totalPoint, setTotalPoint] = useState(0)
@@ -25,7 +24,7 @@ function MilestoneInfoBar(props) {
         setTotalPoint(totalGetPoint - totalSpendPoint)
       })
   }
-
+  // sweet alert集點按鈕
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       popup: 'poe-alert',
@@ -99,13 +98,16 @@ function MilestoneInfoBar(props) {
           </div>
           {/* 在成就清單以及兌換獎勵區切換的按鈕 */}
           <Nav.Link
-                    className="fff-btn-white fff-txt-btn"
-                    as={NavLink}
-                    to={props.href}
-                    style={{display: 'flex',alignItems: 'center',textAlign:'center'}}
-                  >
-                    {props.btnText}
-                  </Nav.Link>
+            className="fff-btn-white fff-txt-btn justify-content-center"
+            as={NavLink}
+            to={props.href}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
+          <div>{props.btnText}</div>
+          </Nav.Link>
         </div>
 
         {/* 佔空位的 */}
