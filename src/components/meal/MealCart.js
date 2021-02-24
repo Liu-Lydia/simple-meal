@@ -3,7 +3,13 @@ import { useState, useEffect } from 'react'
 
 function MealCart(props) {
   const { data, updateNum } = props
-  const [addRightCart, setAddRightCart] = useState([])
+  const [addRightCart, setAddRightCart] = useState({
+    thisTime: [],
+    nextTime: [],
+    simpleMealCoupon: {},
+    member_sid: 1,
+    memberInfoObj: {},
+  })
 
   //切換右側購物車顯示或隱藏
   const style0 = 'cha-cart'
@@ -25,7 +31,7 @@ function MealCart(props) {
       .then((r) => r.json())
       .then((obj) => {
         // console.log(obj.thisTime)
-        setAddRightCart(obj.thisTime)
+        setAddRightCart(obj)
       })
   }
 
@@ -48,7 +54,7 @@ function MealCart(props) {
         }}
       >
         <div className={classStyleSmall}>
-          <i className="fas fa-minus-circle cha-icon"></i>
+          <i className="fas fa-plus-circle cha-icon"></i>
         </div>
       </Link>
       <div className={classStyleBig}>
@@ -64,8 +70,15 @@ function MealCart(props) {
               <i className="fas fa-minus-circle cha-icon"></i>
             </Link>
 
-            <Link to="" className="cha-cart-user"></Link>
-            <span className="cha-cart-user-txt txt-sub1">Lydia Liu</span>
+            <Link to="/MemberCenter/Index" className="cha-cart-user">
+              <img className="cha-cart-user-img"
+                src={`http://localhost:3015/img/member-center/${addRightCart.memberInfoObj.avater}`}
+                alt=""
+              />
+            </Link>
+            <span className="cha-cart-user-txt txt-sub1">
+              {addRightCart.memberInfoObj.name}
+            </span>
             <Link to="" className="cha-yellow cha-icon">
               <i className="fas fa-pen"></i>
             </Link>
@@ -76,7 +89,7 @@ function MealCart(props) {
               <span className="cha-cart-main-title2">餐數</span>
             </div>
             <div className="cha-cart-user-meal txt-sub2 cha-green pl-4">
-              {addRightCart.map((v, i) => (
+              {addRightCart.thisTime.map((v, i) => (
                 <div className="justify-content-between d-flex" key={v.sid}>
                   <span className="cha-cart-main-name">{v.meal_name}</span>
                   <span className="cha-cart-main-count">x{v.quantity}</span>

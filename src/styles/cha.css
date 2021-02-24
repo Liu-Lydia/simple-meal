@@ -82,8 +82,11 @@
   letter-spacing: 12px;
   font-size: 12px;
 }
-.cha-dl {
-  text-decoration: none !important;
+.cha-dl{
+  text-decoration: none!important;
+}
+.cha-dl:hover {
+  text-decoration: none!important;
 }
 .cha-px0 {
   padding: 0 !important;
@@ -161,6 +164,7 @@
   text-align: center;
   top: -65px;
   position: relative;
+  transition: .2s;
 }
 .cha-card-img2 {
   height: 145px;
@@ -276,7 +280,7 @@
   transition: 0.5s;
 }
 .cha-cart-hidden {
-  right: -350px;
+  right: -360px;
   transition: 0.5s;
 }
 .cha-cart-hidden-smell {
@@ -301,6 +305,11 @@
   border-radius: 25px;
   /* background-color: #a2a3a5; */
   /* margin-left: 50px; */
+}
+.cha-cart-user-img{
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
 }
 .cha-cart-user-txt {
   margin-top: 7px;
@@ -400,15 +409,28 @@ margin-left: 46px;
   cursor: pointer;
 }
 .cha-rec-sel1-active {
+  height: 30px;
+  line-height: 30px;
+  border-radius: 15px 15px 0 0;
+  border: none;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
   color: #ffffff;
   background-color: #a2a3a5;
+  transition: .5s;
 }
 .cha-rec-sel1:hover {
   color: #a2a3a5;
-}
-.cha-rec-sel1:hover {
   text-decoration: none;
+  
 }
+.cha-rec-sel1-active:hover {
+  text-decoration: none;
+  color: #fff;
+  
+}
+
 .cha-rec-sel-box {
   border-top: #a2a3a5 solid 4px;
   height: 210px;
@@ -461,11 +483,20 @@ margin-left: 46px;
   width: 230px;
   padding-top: 100px;
   margin: 0 30px 0 30px;
-
   /* background-color: #b9433b; */
   /* background-color: red; */
 }
+.cha-rec-card:hover .cha-card-img1{
+  height: 170px;
+  top:-100px;
+}
+.cha-rec-card:hover .cha-card-img2{
+  height: 170px;
+}
 
+.cha-rec-card:hover{
+  text-decoration: none!important;
+}
 @media (max-width: 1199px) {
   .cha-main-txt2 {
     padding: 60px 0 0 90px;
@@ -511,6 +542,12 @@ margin-left: 46px;
   }
   .cha-meun-li {
     margin-top: 30px;
+  }
+  .cha-meun{
+    top:160px;
+  }
+  .cha-meun-open{
+    top:180px;
   }
   .cha-btn-recipe {
     display: none;

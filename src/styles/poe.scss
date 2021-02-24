@@ -140,6 +140,7 @@
   color: #fff;
   display: inline-block;
   cursor: pointer;
+  transition: 0.5s;
 }
 
 .poe-bookmark-label:hover {
@@ -347,6 +348,10 @@
   background: url('http://localhost:3015/img/lemon/Tometo.svg') center center
     no-repeat;
   background-size: contain;
+}
+
+.poe-cartTable tbody tr {
+  transition: 1s;
 }
 
 .poe-cartTable tbody tr:hover {

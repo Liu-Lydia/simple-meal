@@ -46,31 +46,31 @@ function RecipeCards(props) {
               onClick={() => {
                 setSidAndIngredient([value.sid, value.ingredient_id])
               }}
+              className="cha-rec-card"
+              key={value.sid}
             >
-              <div className="cha-rec-card" key={value.sid}>
-                <div className="cha-card-img1">
-                  <img
-                    className="cha-card-img2"
-                    src={`http://localhost:3015/img/meal/${value.product_id}.png`}
-                    alt=""
-                  />
-                  <p className="txt-cap cha-gray cha-mb1">
-                    {value.product_name}
-                  </p>
-                  <div className="cha-star cha-green">
-                    <div className="cha-mb1">
-                      <i className="fas fa-star"></i>
-                      <i className="fas fa-star"></i>
-                      <i className="fas fa-star"></i>
-                      <i className="fas fa-star"></i>
-                      <i className="far fa-star"></i>
-                    </div>
-                    <div className="txt-cap">
-                      <i className="far fa-clock cha-star-small cha-green"></i>
-                      <span className="cha-gray cha-mr4">{value.cooktime}</span>
-                      <i className="fas fa-tag cha-star-small cha-green"></i>
-                      <span className="cha-gray">{value.category_id}</span>
-                    </div>
+              <div className="cha-card-img1">
+                <img
+                  className="cha-card-img2"
+                  src={`http://localhost:3015/img/meal/${value.product_id}.png`}
+                  alt=""
+                />
+                <p className="txt-cap cha-gray cha-mb1 cha-dl">
+                  {value.product_name}
+                </p>
+                <div className="cha-star cha-green">
+                  <div className="cha-mb1">
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="fas fa-star"></i>
+                    <i className="far fa-star"></i>
+                  </div>
+                  <div className="txt-cap">
+                    <i className="far fa-clock cha-star-small cha-green"></i>
+                    <span className="cha-gray cha-mr4">{value.cooktime}</span>
+                    <i className="fas fa-tag cha-star-small cha-green"></i>
+                    <span className="cha-gray">{value.category_name}</span>
                   </div>
                 </div>
               </div>

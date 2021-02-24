@@ -197,7 +197,7 @@ function SurpriseContent(props) {
               showDenyButton: true,
               denyButtonText: '前往購物車',
               // showCloseButton: true,
-              backdrop: `rgba(0,0,0,0.4)`,
+              backdrop: `rgba(255,255,255,.5)`,
             })
             .then((result) => {
               if (result.isConfirmed) {

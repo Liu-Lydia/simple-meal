@@ -1,6 +1,48 @@
 import React, { useEffect, useState } from 'react'
+import Swal from 'sweetalert2'
 
 function SurpriseFirst() {
+  //接收資料庫資料　↓↓↓
+
+  //讀取資料　↓↓↓
+  const handleGetCoupon = () => {
+    const url = 'http://localhost:4000/activityCoupon/getlemoncoupon'
+    fetch(url, {
+      method: 'get',
+      credentials: 'include',
+    })
+      .then((r) => r.json())
+      .then((obj) => {
+        console.log(obj)
+        swalWithBootstrapButtons.fire({
+          imageUrl: 'http://localhost:3015/img/lemon/Cupon.GIF',
+          imageHeight: 100,
+          title: '<h4>恭喜獲取100元購物金</h4>',
+          text: `100元優惠碼已新增至會員中心囉！`,
+          padding: '25px',
+          showConfirmButton: true,
+          confirmButtonText: '確認',
+          // showCloseButton: true,
+          backdrop: `rgba(255,255,255,.5)`,
+        })
+      })
+  }
+
+  // useEffect(() => {
+  //   handleGetCoupon()
+  // }, [])
+  //讀取資料 ↑↑↑
+
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      popup: 'poe-alert',
+      title: 'poe-green my-0',
+      content: 'txt-btn poe-red',
+      confirmButton: 'btn-green txt-btn mx-2 my-3',
+    },
+    buttonsStyling: false,
+  })
+
   function ScrollToOrder() {
     window.scrollTo({
       top: 1100,
@@ -49,9 +91,12 @@ function SurpriseFirst() {
           <div className="d-flex lll-coupon-position">
             <div className="lll-get-coupon">
               <img
-                className="lll-meal-pictures"
+                className="lll-meal-pictures lll-cursor"
                 src="http://localhost:3015/img/lydia/ClickMe.png"
                 alt=""
+                onClick={() => {
+                  handleGetCoupon()
+                }}
               />
             </div>
             <div className="lll-get-coupon2">
