@@ -1,13 +1,10 @@
 import React, { props, useEffect, useState } from 'react'
-<<<<<<< HEAD
 import {
   Nav,
 } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 
-=======
 import Swal from 'sweetalert2'
->>>>>>> 21c378717a47a6a4cf4298d1593f97eeb00e1e5a
 function MilestoneInfoBar(props) {
   //集點說明要不要渲染(虛擬Dom)
   const [totalPoint, setTotalPoint] = useState(0)
