@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
 function ToTopButton(props) {
-  // 吉祥物定位
-  const [lemonScrollObj, setLemonScrollObj] = useState({
-    lemon01: false,
-  })
+  // 按鈕是否出現
+  const [toTopBool, setToTopBool] = useState(false)
 
   // 到頂
   const handleScrollToTop = () => {
@@ -17,28 +15,29 @@ function ToTopButton(props) {
   }
 
   // 偵測視窗位置改變出現效果
-  const handleLemonAppearByScroll = () => {
+  const handleBtnByScroll = () => {
     // console.log('i am scrolling')
+    console.log(window.pageYOffset)
     // window.pageYOffset > 500 && console.log(window.pageYOffset)
-    if (window.pageYOffset > 1000 && window.pageYOffset < 6000) {
-      setLemonScrollObj({ ...lemonScrollObj, lemon01: true })
+    if (window.pageYOffset > 200) {
+      setToTopBool(true)
     }
-    if (window.pageYOffset < 1000 || window.pageYOffset > 6000) {
-      setLemonScrollObj({ ...lemonScrollObj, lemon01: false })
+    if (window.pageYOffset <= 200) {
+      setToTopBool(false)
     }
   }
 
   // 在載入階段加掛事件
   useEffect(() => {
-    console.log('didMount')
-    window.addEventListener('scroll', handleLemonAppearByScroll)
+    // console.log('didMount')
+    window.addEventListener('scroll', handleBtnByScroll)
   }, [])
 
   // 在卸載階段移除事件
   useEffect(() => {
     return () => {
-      console.log('unMount')
-      window.removeEventListener('scroll', handleLemonAppearByScroll)
+      //   console.log('unMount')
+      window.removeEventListener('scroll', handleBtnByScroll)
     }
   }, [])
 
@@ -47,13 +46,14 @@ function ToTopButton(props) {
   return (
     <>
       <div
-        className="poe-indexLemon01"
-        style={lemonScrollObj.lemon01 ? { right: '3%' } : {}}
-        // onclick={() => {
-        //   console.log(1)
-        //   handleScrollToTop()
-        // }}
-      ></div>
+        className="poe-toTop"
+        style={toTopBool ? { right: '3%' } : {}}
+        onClick={() => {
+          handleScrollToTop()
+        }}
+      >
+        <i className="fas fa-chevron-up"></i>
+      </div>
     </>
   )
 }
