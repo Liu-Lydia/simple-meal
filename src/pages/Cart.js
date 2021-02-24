@@ -167,6 +167,33 @@ function Cart(props) {
                   </div>
                 </div>
               </div>
+              <div className="row justify-content-center poe-bookmark">
+                <div className="col-12 col-md-8 col-xl-6">
+                  <div className="poe-bookmark-content txt-btn">
+                    <h5>近期配送</h5>
+                    <div className="d-flex overflow-hidden">
+                      {[1, 2, 3].map((v, i) => (
+                        <div className="col-12">
+                          <div className="card">
+                            <img src="..." className="card-img-top" alt="..." />
+                            <div className="card-body">
+                              <h5 className="card-title">Card title</h5>
+                              <p className="card-text">
+                                Some quick example text to build on the card
+                                title and make up the bulk of the card's
+                                content.
+                              </p>
+                              <button href="#" className="btn btn-primary">
+                                Go somewhere
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
             </Route>
             <Route path="/cart/simplemealcoupon">
               <SimpleMealCoupon
