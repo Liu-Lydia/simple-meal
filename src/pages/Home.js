@@ -4,7 +4,6 @@ import Carousel from '../components/home/Carousel'
 import Carousel2 from '../components/home/Carousel2'
 import '../components/home/carousel3d.css'
 import HomeP3 from '../components/home/HomeP3'
-import P3carousel from '../components/home/P3carousel'
 
 function Home(props) {
   return (
@@ -182,10 +181,10 @@ function Home(props) {
       </div>
 
       {/* p3 */}
-      <HomeP3 />
+      <HomeP3  />
 
       {/* p5 */}
-      <div className="container mb-5 mt-5">
+      <div className="container mb-5 xxx-mt200 ">
         <div className="row p5-mb">
           <div className="col-xl-8 offset-xl-4 p5-bg col-12">
             <div className="offset-xl-5 offset-0 p5-bg-t">
