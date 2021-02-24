@@ -35,7 +35,7 @@ function SurpriseFirst(props) {
           console.log(obj)
           if (obj.success) {
             swalWithBootstrapButtons.fire({
-              imageUrl: 'http://localhost:3015/img/lemon/Cupon.GIF',
+              imageUrl: 'http://localhost:3015/img/lemon/Coupon.GIF',
               imageHeight: 100,
               title: '<h4>恭喜獲取100元購物金</h4>',
               text: `100元優惠碼已新增至會員中心囉！`,
