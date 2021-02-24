@@ -64,6 +64,7 @@
     padding: 0;
     left: -710px;
   }
+
   .p1-bg {
     height: 500px;
     background-color: #f3e575;
@@ -150,6 +151,54 @@
   .xxx-xscenter {
     margin-left: 85px;
     margin-top: 25px;
+  }
+  .p5s-leaf1-90x61 {
+    position: absolute;
+width: 90px;
+height: 61px;
+    padding: 0;
+    image-orientation: 336deg;
+    top: 380px;
+
+  }
+  .p5s-leaf2-74x51 {
+    position: absolute;
+    width: 74px;
+    height: 51px;
+    padding: 0;
+    image-orientation: 24deg;
+    top: 550px;
+
+  }
+  .p5s-leaf3-37x71 {
+    position: absolute;
+    width: 38px;
+    height: 71px;
+    padding: 0;
+    image-orientation: -105deg;
+    top: 550px;
+    left: 100px;
+
+  }
+  .img-size100{
+    width: 100%;
+  }
+  .p5s-leaf4-59x47 {
+    position: absolute;
+    width: 59px;
+    height: 47px;
+    image-orientation: 15deg;
+    top: 350px;
+
+    padding: 0;
+  }
+  .p5s-leaf5-172x132 {
+    width: 172px;height: 132px;
+    position: absolute;
+    padding: 0;
+    top: 500px;
+    left: -100px;
+
   }
 }
 
@@ -436,7 +485,7 @@
 .p5-bg-t {
   margin-top: 85px;
 }
-.p5-img-divxs{
+.p5-img-divxs {
   height: 250px;
   width: 234px;
   padding: 0;
@@ -450,10 +499,11 @@
   left: -220px;
   padding: 0;
 }
-.img-size100{
+.img-size100 {
   width: 100%;
-}.mt-100{
-  margin-top: 150px
+}
+.mt-100 {
+  margin-top: 150px;
 }
 
 .p5-but-change1 {
