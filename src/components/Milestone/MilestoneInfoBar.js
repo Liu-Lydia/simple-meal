@@ -38,7 +38,8 @@ function MilestoneInfoBar(props) {
             <img
               src="http://localhost:3015/img/fff/fff-info-pic.png"
               className="fff-info-pic"
-            ></img>
+              alt=""
+            />
             <span className="fff-txt-info">Lydia Liu</span>
           </div>
           {/* 點數資料(尚未連接資料庫) */}
@@ -90,7 +91,8 @@ function MilestoneInfoBar(props) {
           <img
             src="http://localhost:3015/img/fff/fff-info-pic.png"
             className="fff-mobo-info-pic"
-          ></img>
+            alt=""
+          />
           <span className="fff-mobo-txt-info">Lydia Liu</span>
         </div>
 
@@ -157,7 +159,10 @@ function MilestoneInfoBar(props) {
           </div>
           {/* 圖片放置位置*/}
           <div className="row justify-content-center">
-            <img src="http://localhost:3015/img/fff/SimpleMilestone.svg"></img>
+            <img
+              src="http://localhost:3015/img/fff/SimpleMilestone.svg"
+              alt=""
+            />
           </div>
           {/*說明文字 */}
           <div className="row d-flex justify-content-center flex-row">

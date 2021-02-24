@@ -361,11 +361,31 @@
   background: url('http://localhost:3015/img/cart/bg/lemonUFO-Go.PNG') center
     center no-repeat;
   background-size: contain;
-  transform: scalex(-1);
+  // transform: scalex(-1);
   height: 15vw;
   width: 15vw;
   position: fixed;
   right: -100%;
   bottom: 10%;
   transition: 1.5s;
+}
+
+.poe-toTop {
+  background-color: #c2d896;
+  // min-height: 50px;
+  // min-width: 50px;
+  // max-height: 50px;
+  // max-width: 50px;
+  // height: 5vw;
+  // width: 5vw;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  position: fixed;
+  right: -100%;
+  bottom: 10%;
+  line-height: 50px;
+  text-align: center;
+  transition: 1s;
+  color: #fff;
 }
