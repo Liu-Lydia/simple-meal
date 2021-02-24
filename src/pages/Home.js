@@ -289,6 +289,45 @@ function Home(props) {
                 />
               </div>
             </div>
+
+            {/* xs */}
+            <div className="d-block d-sm-none">
+              <div className="p5s-leaf1-90x61">
+                <img
+                  className="img-size"
+                  src="http://localhost:3015/img/index/index-p5-leaf1.png"
+                  alt=""
+                />
+              </div>
+              <div className="p5s-leaf2-74x51">
+                <img
+                  className="img-size"
+                  src="http://localhost:3015/img/index/index-p5-leaf2.png"
+                  alt=""
+                />
+              </div>
+              <div className="p5s-leaf3-37x71">
+                <img
+                  className="img-size100"
+                  src="http://localhost:3015/img/index/index-p5-leaf3.png"
+                  alt=""
+                />
+              </div>
+              <div className="p5s-leaf4-59x47">
+                <img
+                  className="img-size"
+                  src="http://localhost:3015/img/index/index-p5-leaf4.png"
+                  alt=""
+                />
+              </div>
+              <div className="p5s-leaf5-172x132">
+                <img
+                  className="img-size"
+                  src="http://localhost:3015/img/index/index-p5-leaf5.png"
+                  alt=""
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

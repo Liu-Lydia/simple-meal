@@ -17,7 +17,7 @@ function ToTopButton(props) {
   // 偵測視窗位置改變出現效果
   const handleBtnByScroll = () => {
     // console.log('i am scrolling')
-    console.log(window.pageYOffset)
+    // console.log(window.pageYOffset)
     // window.pageYOffset > 500 && console.log(window.pageYOffset)
     if (window.pageYOffset > 200) {
       setToTopBool(true)
@@ -47,7 +47,7 @@ function ToTopButton(props) {
     <>
       <div
         className="poe-toTop"
-        style={toTopBool ? { right: '3%' } : {}}
+        style={toTopBool ? { right: '3%', opacity: '1' } : {}}
         onClick={() => {
           handleScrollToTop()
         }}

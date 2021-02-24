@@ -44,6 +44,7 @@ function Header(props) {
     // console.log('登出')
     fetch('http://localhost:4000/logout', {
       method: 'get',
+      credentials: 'include',
     })
       .then((r) => r.json())
       .then((obj) => {
