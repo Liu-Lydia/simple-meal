@@ -71,7 +71,7 @@ function ExchangeOption(props) {
           >
             {/* 吃屬性值 inuseTabStyle */}
             {/* 利用設定父層屬性去修改父層要顯示的components */}
-            合作<p className="fff-ms-web">廠商</p>優惠
+            合作<p className="fff-ms-web fff-no-mr-and-pad">廠商</p>優惠
           </a>
           <a
             className={inUseTabStyle[1]}
@@ -79,7 +79,7 @@ function ExchangeOption(props) {
               props.setOptionTab(1)
             }}
           >
-            &nbsp;購物金<p className="fff-ms-web">回饋</p>&nbsp;
+            &nbsp;購物金<p className="fff-ms-web fff-no-mr-and-pad">回饋</p>&nbsp;
           </a>
           <a
             className={inUseTabStyle[2]}
