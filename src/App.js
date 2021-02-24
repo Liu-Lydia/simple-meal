@@ -65,10 +65,10 @@ function App() {
                 <Test />
               </Route>
               <Route path="/Milestone">
-                <Milestone />
+                <Milestone loginBool={loginBool}/>
               </Route>
               <Route path="/RewardExchange">
-                <RewardExchange />
+                <RewardExchange loginBool={loginBool}/>
               </Route>
               <Route path="/meal">
                 <Meal

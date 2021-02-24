@@ -27,6 +27,7 @@ function MilestoneDetail(props) {
                   ? props.detailContext.finished_goal_pic
                   : props.detailContext.unfinished_goal_pic)
               }
+              alt=""
             />
             <div className="col-8">
               <h3>{props.detailContext.stone_name}</h3>
@@ -57,6 +58,7 @@ function MilestoneDetail(props) {
               }
               width="150px"
               height="150px"
+              alt="s"
             />
             <h6>{props.detailContext.stone_name}</h6><br/>
             <span className="txt-h6">{props.detailContext.TriggerSubs}</span>
