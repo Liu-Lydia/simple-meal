@@ -59,7 +59,7 @@ function Meal(props) {
   useEffect(() => {
     setTimeout(() => {
       setDataLoading(false)
-    }, 3000)
+    }, 2000)
   }, [meal])
 
   // 掛載時改動麵包屑位置

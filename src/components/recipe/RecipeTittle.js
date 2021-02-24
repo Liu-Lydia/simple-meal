@@ -1,29 +1,40 @@
 import React, { useEffect, useState } from 'react'
-import TestOne from './TestOne'
-import TestTwo from './TestTwo'
+import Nutrition from './Nutrition'
+import Kitchenware from './Kitchenware'
 import RecipeIngredient from './RecipeIngredient'
 import { Link, useHistory } from 'react-router-dom'
 import Swal from 'sweetalert2'
 function RecipeTittle(props) {
-  //選擇標籤頁
-  const [tittle, setTittle] = useState('testb')
-  //選擇營養成分,使用器具,食材清單
+  //getrecipeData,傳送到畫面的食譜全資料(一筆)
+  //updateNum, setUpdateNum,更新cart畫面的計數器
   const { getrecipeData, updateNum, setUpdateNum } = props
+
+  //選擇標籤頁
+  const [tittle, setTittle] = useState('testa')
+  //設定標籤頁class
+  const [tittleStyleOne, setTittleStyleOne] = useState(
+    'col-3 cha-rec-sel1-active'
+  )
+  const [tittleStyleTwo, setTittleStyleTwo] = useState('col-3 cha-rec-sel1')
+  const [tittleStyleThree, setTittleStyleThree] = useState('col-3 cha-rec-sel1')
+
+  //選擇營養成分,使用器具,食材清單
   const history = useHistory()
   const selected = () => {
     switch (tittle) {
       case 'testa':
-        return <TestOne />
+        return <Nutrition />
       case 'testb':
-        return <TestTwo />
+        return <Kitchenware />
       case 'testc':
         return <RecipeIngredient getrecipeData={getrecipeData} />
     }
   }
-  console.log(getrecipeData.mealData[0].sid)
-  console.log(getrecipeData.recipeData[0])
-  console.log(getrecipeData.ingredientsData)
+  // console.log(getrecipeData.mealData[0].sid)
+  // console.log(getrecipeData.recipeData[0])
+  // console.log(getrecipeData.ingredientsData)
 
+  //sweatalert2設定檔
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       cancelButton: 'select-btn-green txt-btn',
@@ -32,7 +43,7 @@ function RecipeTittle(props) {
     },
     buttonsStyling: false,
   })
-
+  //傳送資料到cart
   const handleGetMealToDelivery = (sid) => {
     const url = `http://localhost:4000/mealdelivery/getmealtodelivery?sid=${sid}`
 
@@ -43,6 +54,7 @@ function RecipeTittle(props) {
       .then((r) => r.json())
       .then((obj) => {
         setUpdateNum(updateNum + 1)
+        //送出sweatalert2
         swalWithBootstrapButtons.fire({
           icon: 'success',
           title: obj.msg,
@@ -106,20 +118,35 @@ function RecipeTittle(props) {
         <div className="cha-rec-txt-down px-0 col-12 col-lg-7">
           <div className="d-flex justify-content-between txt-btn">
             <Link
-              className="col-3 cha-rec-sel1 cha-rec-sel1-active"
-              onClick={() => setTittle('testa')}
+              className={tittleStyleOne}
+              onClick={() => {
+                setTittle('testa')
+                setTittleStyleOne('col-3 cha-rec-sel1-active')
+                setTittleStyleTwo('col-3 cha-rec-sel1')
+                setTittleStyleThree('col-3 cha-rec-sel1')
+              }}
             >
               營養成分
             </Link>
             <Link
-              className="col-3 cha-rec-sel1"
-              onClick={() => setTittle('testb')}
+              className={tittleStyleTwo}
+              onClick={() => {
+                setTittle('testb')
+                setTittleStyleOne('col-3 cha-rec-sel1')
+                setTittleStyleTwo('col-3 cha-rec-sel1-active')
+                setTittleStyleThree('col-3 cha-rec-sel1')
+              }}
             >
               使用器具
             </Link>
             <Link
-              onClick={() => setTittle('testc')}
-              className="col-3 cha-rec-sel1"
+              className={tittleStyleThree}
+              onClick={() => {
+                setTittle('testc')
+                setTittleStyleOne('col-3 cha-rec-sel1')
+                setTittleStyleTwo('col-3 cha-rec-sel1')
+                setTittleStyleThree('col-3 cha-rec-sel1-active')
+              }}
             >
               食材清單
             </Link>
@@ -134,10 +161,9 @@ function RecipeTittle(props) {
             >
               加入訂單
             </Link>
-
-            <a href="" className="btn-white txt-btn cha-rec-btn-bye">
+            <Link className="btn-white txt-btn cha-rec-btn-bye">
               查看食譜步驟
-            </a>
+            </Link>
           </div>
         </div>
       </div>

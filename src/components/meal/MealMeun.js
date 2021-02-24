@@ -43,7 +43,7 @@ function MealMeun(props) {
         }}
       >
         <div className={meunIconSmell}>
-          <i className="fas fa-minus-circle cha-icon"></i>
+          <i className="fas fa-plus-circle cha-icon"></i>
         </div>
       </Link>
       <div className={meunIconBig}>
