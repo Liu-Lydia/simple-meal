@@ -95,20 +95,6 @@ function MemberCenterAddr() {
               <form>
                 {Memberinfo.map((v) => (
                   <div className="form-group h7">
-                    <label htmlFor="inputAddr">原始密碼</label>
-                    <input
-                      type="password"
-                      className={`form-control ${fieldValidCSS('password')}`}
-                      id="password"
-                      name="password"
-                      onChange={onChangeForField('password')}
-                      value={v.password}
-                      disabled
-                    />
-                  </div>
-                ))}
-                {Memberinfo.map((v) => (
-                  <div className="form-group h7">
                     <label htmlFor="inputAddr">新密碼</label>
                     <input
                       type="password"
@@ -129,27 +115,31 @@ function MemberCenterAddr() {
                       name="password"
                       onChange={onChangeForField('Addr')}
                     />
+                    <span className="txt-cap">
+                      輸入6個字元以上的英文字母及數字,不可使用特殊符號
+                    </span>
                   </div>
                 ))}
-
-                <div className="d-flex">
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    className="btn-green txt-btn  mb-5"
-                    onClick={handleSubmit}
-                  >
-                    重設
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    className="btn-green txt-btn  mb-5"
-                    onClick={handleSubmit}
-                  >
-                    修改
-                  </button>
-                </div>
+                {Memberinfo.map((v) => (
+                  <div className="d-flex">
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      className="btn-green txt-btn  mb-5"
+                      onClick={handleSubmit}
+                    >
+                      重設
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      className="btn-green txt-btn  mb-5"
+                      onClick={handleSubmit}
+                    >
+                      修改
+                    </button>
+                  </div>
+                ))}
               </form>
             </div>
           </div>

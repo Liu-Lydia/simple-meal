@@ -25,8 +25,11 @@ function Milestone(props) {
   // 控制手機版“我的成就”按鈕按下去來顯示成就清單
   const [mobomspage2, setMoboMsPage2] = useState(false)
 
-  const [milestoneFilter, setMilestoneFilter] = useState(1)
   //0限時活動 1全部成就 2已達成成就 3未達成成就
+  const [milestoneFilter, setMilestoneFilter] = useState(1)
+
+  //解構賦值 取得登入資訊
+  const { loginBool } = props
 
   //================================================================================================
   // 定義style物件，顯示預設網頁版配置
@@ -87,7 +90,7 @@ function Milestone(props) {
   return (
     <>
       {/* 沒登入時, 跳轉登入 */}
-      {/* {!props.loginBool && <Redirect to="/MemberCenter" />} */}
+      {!loginBool && <Redirect to="/MemberCenter" />}
       <div id="ms-p1" className="container" style={display.p1}>
         <MilestoneInfoBar
           btnText="兌換獎勵"

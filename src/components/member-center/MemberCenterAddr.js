@@ -51,24 +51,23 @@ function MemberCenterAddr() {
     //   newErrors.push('name')
     // }
 
-    if (inputs.password.trim().length < 6) {
-      newErrors.push('password')
-    }
-    if (inputs.password1.trim().length < 6) {
-      newErrors.push('password1')
-    }
     // if (inputs.mobile.trim().length < 20) {
     //   newErrors.push('mobile')
     // }
-    if (inputs.addr.trim().length < 6) {
-      newErrors.push('addr')
-    }
-    const re = /\S+@\S+\.\S+/
-    if (!re.test(inputs.email.toLowerCase())) {
-      newErrors.push('email')
-    }
+    // if (inputs.addr.trim().length < 6) {
+    //   newErrors.push('addr')
+    // }
 
     setErrors(newErrors)
+
+    if (newErrors.length == 0) {
+      const fd = new FormData(document.querySelector('#test'))
+      fetch('http://localhost:4000/membercenter/addr', {
+        method: 'post',
+        body: fd,
+        credentials: 'include',
+      })
+    }
   }
 
   const fieldValidCSS = (fieldName) => {
@@ -92,10 +91,10 @@ function MemberCenterAddr() {
               回上頁
             </div>
             <div className="col-6 ">
-              <form>
+              <form id="test">
                 {Memberinfo.map((v) => (
                   <div className="form-group h7">
-                    <label htmlFor="inputAddr">地址</label>
+                    <label htmlFor="inputAddr">配送地址</label>
                     <button
                       className="btn btn-success btn-sm box6 mb-2 ml-1 "
                       type="button"
@@ -105,10 +104,10 @@ function MemberCenterAddr() {
 
                     <input
                       type="text"
-                      className={`form-control ${fieldValidCSS('Addr')}`}
+                      className={`form-control ${fieldValidCSS('addr')}`}
                       id="inputemail"
-                      name="Addr"
-                      onChange={onChangeForField('Addr')}
+                      name="addr"
+                      onChange={onChangeForField('addr')}
                       value={v.addr}
                       disabled
                     />
@@ -116,35 +115,36 @@ function MemberCenterAddr() {
                 ))}
                 {Memberinfo.map((v) => (
                   <div className="form-group h7">
-                    <label htmlFor="inputAddr">修改地址</label>
+                    <label htmlFor="inputAddr">修改預設地址</label>
                     <input
                       type="text"
-                      className={`form-control ${fieldValidCSS('Addr')}`}
+                      className={`form-control ${fieldValidCSS('addr')}`}
                       id="inputemail"
-                      name="Addr"
-                      onChange={onChangeForField('Addr')}
+                      name="addr"
+                      onChange={onChangeForField('addr')}
                     />
                   </div>
                 ))}
-
-                <div className="d-flex">
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    className="btn-green txt-btn  mb-5"
-                    onClick={handleSubmit}
-                  >
-                    重設
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-primary"
-                    className="btn-green txt-btn  mb-5"
-                    onClick={handleSubmit}
-                  >
-                    修改
-                  </button>
-                </div>
+                {Memberinfo.map((v) => (
+                  <div className="d-flex">
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      className="btn-green txt-btn  mb-5"
+                      onClick={handleSubmit}
+                    >
+                      重新設定
+                    </button>
+                    <button
+                      type="button"
+                      className="btn btn-primary"
+                      className="btn-green txt-btn  mb-5"
+                      onClick={handleSubmit}
+                    >
+                      修改地址
+                    </button>
+                  </div>
+                ))}
               </form>
             </div>
           </div>
