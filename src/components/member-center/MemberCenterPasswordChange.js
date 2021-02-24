@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 
 import Moment from 'react-moment'
 
-function MemberCenterInfo() {
+function MemberCenterAddr() {
   const [Memberinfo, setMemberinfo] = useState([])
 
   const getDataFromServer = async () => {
@@ -84,7 +84,7 @@ function MemberCenterInfo() {
           {' '}
           <MemberCenterNavbar />
           <div className="col-7 mx-auto">
-            <h4 className="mb-3 mt-3 ml-2 d-none d-xl-block ">個人資料</h4>
+            <h4 className="mb-3 mt-3 ml-2 d-none d-xl-block h7">變更密碼</h4>
             <div
               className="btn border  txt-cap1 mr-2 mb-5  col-12
                  d-block d-sm-none d-md-none d-lg-none d-xl-none "
@@ -94,82 +94,44 @@ function MemberCenterInfo() {
             <div className="col-6 ">
               <form>
                 {Memberinfo.map((v) => (
-                  <div className="form-group">
-                    <label htmlFor="inputName">電子郵件</label>
-                    <button
-                      className="btn btn-success btn-sm box6 mb-2 ml-1 "
-                      type="button"
-                    >
-                      預 設
-                    </button>
-
+                  <div className="form-group h7">
+                    <label htmlFor="inputAddr">原始密碼</label>
                     <input
-                      type="text"
-                      className={`form-control ${fieldValidCSS('email')}`}
-                      id="inputemail"
-                      name="email"
-                      onChange={onChangeForField('email')}
-                      value={v.email}
+                      type="password"
+                      className={`form-control ${fieldValidCSS('password')}`}
+                      id="password"
+                      name="password"
+                      onChange={onChangeForField('password')}
+                      value={v.password}
                       disabled
                     />
                   </div>
                 ))}
+                {Memberinfo.map((v) => (
+                  <div className="form-group h7">
+                    <label htmlFor="inputAddr">新密碼</label>
+                    <input
+                      type="password"
+                      className={`form-control ${fieldValidCSS('password')}`}
+                      id="password"
+                      name="password"
+                      onChange={onChangeForField('password')}
+                    />
+                  </div>
+                ))}
+                {Memberinfo.map((v) => (
+                  <div className="form-group h7">
+                    <label htmlFor="inputpassword">確認新密碼</label>
+                    <input
+                      type="text"
+                      className={`form-control ${fieldValidCSS('passwordr')}`}
+                      id="password"
+                      name="password"
+                      onChange={onChangeForField('Addr')}
+                    />
+                  </div>
+                ))}
 
-                {Memberinfo.map((v) => (
-                  <div className="form-group">
-                    <label htmlFor="inputName">姓名</label>
-                    <input
-                      type="text"
-                      className={`form-control ${fieldValidCSS('name')}`}
-                      id="inputName"
-                      name="name"
-                      value={v.name}
-                      onChange={onChangeForField('name')}
-                    />
-                  </div>
-                ))}
-                <div className="form-group">
-                  <label htmlFor="inputName">暱稱</label>
-                  <input
-                    type="text"
-                    className={`form-control ${fieldValidCSS('Nikename')}`}
-                    id="inputNikename"
-                    name="Nikename"
-                    onChange={onChangeForField('Nikename')}
-                  />
-                </div>
-                {Memberinfo.map((v) => (
-                  <div className="form-group">
-                    <label htmlFor="inputbirthday">生日</label>
-                    <input
-                      type="text"
-                      className={`form-control ${fieldValidCSS('birthday')}`}
-                      id="inputbirthday"
-                      name="birthday"
-                      onChange={onChangeForField('birthday')}
-                    />
-                    <Moment format="YYYY/MM/DD">{v.birthday}</Moment>
-                  </div>
-                ))}
-                {Memberinfo.map((v) => (
-                  <div className="form-group">
-                    <label htmlFor="inputmobile">電話</label>
-                    <input
-                      type="text"
-                      className={`form-control ${fieldValidCSS('mobile')}`}
-                      id="inputmobile"
-                      name="mobile"
-                      onChange={onChangeForField('mobile')}
-                      value={v.mobile}
-                    />
-                  </div>
-                ))}
-                <div className="form-group txt-cap d-flex flex-column ">
-                  <label>
-                    <input type="checkbox" name="rule1" />
-                    我同意網站服務條款及隱私政策
-                  </label>
-                </div>
                 <div className="d-flex">
                   <button
                     type="button"
@@ -196,4 +158,4 @@ function MemberCenterInfo() {
     </>
   )
 }
-export default MemberCenterInfo
+export default MemberCenterAddr

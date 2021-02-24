@@ -94,8 +94,8 @@
 
 @media (max-width: 375px) {
   .lll-coupon-position {
-    left: 100px;
-    margin-top: 363px;
+    left: 85px;
+    margin-top: 254px;
     width: 207px;
     height: 100px;
   }
@@ -241,8 +241,8 @@
 
 @media (max-width: 375px) {
   .lll-explain-coupon {
-    left: 100px;
-    padding-top: 633px;
+    left: 70px;
+    padding-top: 384px;
     color: #b9433b;
     font-family: GenSenRounded TW;
     font-size: 12px;
@@ -254,8 +254,7 @@
 }
 
 /* 第一版文字 */
-.lll-text-position {
-  margin-top: 180px;
+/* .lll-text-position {
   text-align: right;
 }
 
@@ -272,7 +271,7 @@
     text-align: right;
     max-width: 100%;
   }
-}
+} */
 
 .lll-text{
   position: absolute;
@@ -281,7 +280,8 @@
 
 @media (max-width: 375px) {
   .lll-text {
-    left: 46px;
+    left: 50px;
+    text-align: right;
   }
 }
 
@@ -301,8 +301,16 @@
   }
 }
 
-@media (max-width: 991px) {
+/* @media (max-width: 991px) {
   .lll-firstpage-title {
+    font-size: 36px !important;
+    padding-bottom: 0px;
+  }
+} */
+
+@media (max-width: 375px) {
+  .lll-firstpage-title {
+    padding-top: 45px;
     font-size: 36px !important;
     padding-bottom: 0px;
   }
@@ -358,6 +366,15 @@
   }
 }
 
+@media (max-width: 375px) {
+  .lll-mobile-btn {
+    text-align: center;
+    padding-top: 225px;
+    padding-left: 30px;
+    max-width: 100%;
+  }
+}
+
 /* 第一版文字RWD */
 @media (max-width: 1700px) {
   .lll-text-rwd {
@@ -373,7 +390,7 @@
 
 /* scroll位置, 顏色 */
 .lll-scroll {
-  margin-top: 240px;
+  margin-top: 681px;
   text-align: center;
 }
 
@@ -404,7 +421,7 @@
 
 /* 預約驚喜廚房 */
 .lll-appoint {
-  margin-top: 300px;
+  margin-top: 220px;
 }
 
 .lll-title-style {
@@ -418,6 +435,10 @@
     font-size: 36px !important;
     padding-bottom: 10px;
   }
+}
+
+.lll-trans-block{
+  display: flex;
 }
 
 @media (max-width: 991px) {
@@ -747,7 +768,7 @@
   .lll-ml-position {
     position: relative;
     margin-top: 730px;
-    left: -320px;
+    left: -330px;
   }
 }
 
@@ -905,7 +926,7 @@
 
 @media (max-width: 1700px) {
   .lll-change-max100 {
-    max-width: 100%;
+    max-width: 100% !important;
   }
 }
 

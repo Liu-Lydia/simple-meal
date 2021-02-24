@@ -37,7 +37,10 @@ function MemberCenterNavbar() {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/MemberCenter/" className="text-dark">
+                    <Link
+                      to="/MemberCenter/PasswordChange"
+                      className="text-dark"
+                    >
                       密碼變更
                     </Link>
                   </li>
@@ -93,7 +96,7 @@ function MemberCenterNavbar() {
                 <li className="mb-3">
                   <i className="far fa-calendar-plus mr-2"></i>{' '}
                   <Link
-                    to="/MemberCenter/MemberCenterSurpriseKitchen"
+                    to="/MemberCenter/SurpriseKitchen"
                     className="text-dark"
                   >
                     驚喜廚房

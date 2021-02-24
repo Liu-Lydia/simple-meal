@@ -26,6 +26,7 @@ import MainContent from './components/MainContent'
 import ScrollToTop from './components/ScrollToTop'
 import MultiLevelBreadCrumb from './components/MultiLevelBreadCrumb'
 import Footer from './components/Footer'
+import ToTopButton from './components/ToTopButton'
 
 function App() {
   // 麵包屑判斷 (true在左上 false由各頁面自訂, 需要改動者再引入)
@@ -135,6 +136,7 @@ function App() {
         </MainContent>
 
         <Footer loginBool={loginBool} setLoginBool={setLoginBool} />
+        <ToTopButton />
       </>
     </Router>
   )

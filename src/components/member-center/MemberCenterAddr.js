@@ -1,76 +1,156 @@
 import MemberCenterNavbar from './MemberCenterNavbar'
-import React from 'react'
-import { withFormik, Form, Field, ErrorMessage } from 'formik'
-import * as yup from 'yup'
+import React, { useEffect, useState } from 'react'
 
-const errMsg = {
-  color: 'red',
-  fontSize: '12px',
-}
+import Moment from 'react-moment'
 
-const MemberCenterAddr = ({ values, isSubmitting }) => (
-  <div className="container">
-    <div className="row ">
-      <MemberCenterNavbar />
-      <div className="col-md-12 col-lg-12 col-sm-12 col-xl-6  col-12">
-        <div className="col-md-8 col-lg-8 col-xl-8 col-sm-8 col-10 mx-auto ">
-          <Form>
-            <div className="mb-4 offset-3 offset-sm-0 h3">地址</div>
+function MemberCenterAddr() {
+  const [Memberinfo, setMemberinfo] = useState([])
 
+  const getDataFromServer = async () => {
+    //模擬和伺服器要資料
+    const response = await fetch(
+      `http://localhost:4000/membercenter/info?id=1`,
+      {
+        method: 'get',
+      }
+    )
+    const data = await response.json()
+    //最後設定要到狀態中
+    setMemberinfo(data)
+  }
+
+  useEffect(() => {
+    getDataFromServer()
+  }, [])
+
+  const [inputs, setInputs] = useState({
+    email: '',
+    name: '',
+    password: '',
+    password1: '',
+    mobile: '',
+    addr: '',
+  })
+
+  // 切換開始作檢查的旗標
+  const [startToChecked, setStartToChecked] = useState(false)
+  // 錯誤陣列，記錄有錯誤的欄位名稱
+  const [errors, setErrors] = useState([])
+
+  const onChangeForField = (fieldName) => (event) => {
+    setInputs((state) => ({ ...state, [fieldName]: event.target.value }))
+  }
+
+  // 按了提交按鈕用的
+  const handleSubmit = (e) => {
+    //開啟開始觸發檢查的旗標
+    setStartToChecked(true)
+    const newErrors = []
+
+    // if (inputs.name.trim().length < 20) {
+    //   newErrors.push('name')
+    // }
+
+    if (inputs.password.trim().length < 6) {
+      newErrors.push('password')
+    }
+    if (inputs.password1.trim().length < 6) {
+      newErrors.push('password1')
+    }
+    // if (inputs.mobile.trim().length < 20) {
+    //   newErrors.push('mobile')
+    // }
+    if (inputs.addr.trim().length < 6) {
+      newErrors.push('addr')
+    }
+    const re = /\S+@\S+\.\S+/
+    if (!re.test(inputs.email.toLowerCase())) {
+      newErrors.push('email')
+    }
+
+    setErrors(newErrors)
+  }
+
+  const fieldValidCSS = (fieldName) => {
+    if (!startToChecked) return ''
+
+    return errors.includes(fieldName) ? 'is-invalid' : 'is-valid'
+  }
+
+  return (
+    <>
+      <div className="container">
+        <div className="row">
+          {' '}
+          <MemberCenterNavbar />
+          <div className="col-7 mx-auto">
+            <h4 className="mb-3 mt-3 ml-2 d-none d-xl-block h7">地址</h4>
             <div
               className="btn border  txt-cap1 mr-2 mb-5  col-12
                  d-block d-sm-none d-md-none d-lg-none d-xl-none "
             >
               回上頁
             </div>
+            <div className="col-6 ">
+              <form>
+                {Memberinfo.map((v) => (
+                  <div className="form-group h7">
+                    <label htmlFor="inputAddr">地址</label>
+                    <button
+                      className="btn btn-success btn-sm box6 mb-2 ml-1 "
+                      type="button"
+                    >
+                      預 設
+                    </button>
 
-            <div className="form-group ">
-              <label>配送地址</label>
-              <button
-                className="btn btn-success btn-sm box6 mb-2 ml-1 "
-                type="button"
-              >
-                預 設
-              </button>
+                    <input
+                      type="text"
+                      className={`form-control ${fieldValidCSS('Addr')}`}
+                      id="inputemail"
+                      name="Addr"
+                      onChange={onChangeForField('Addr')}
+                      value={v.addr}
+                      disabled
+                    />
+                  </div>
+                ))}
+                {Memberinfo.map((v) => (
+                  <div className="form-group h7">
+                    <label htmlFor="inputAddr">修改地址</label>
+                    <input
+                      type="text"
+                      className={`form-control ${fieldValidCSS('Addr')}`}
+                      id="inputemail"
+                      name="Addr"
+                      onChange={onChangeForField('Addr')}
+                    />
+                  </div>
+                ))}
 
-              <ErrorMessage name="addr" component="span" style={errMsg} />
-              <Field type="text" name="addr" className="form-control br " />
+                <div className="d-flex">
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    className="btn-green txt-btn  mb-5"
+                    onClick={handleSubmit}
+                  >
+                    重設
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    className="btn-green txt-btn  mb-5"
+                    onClick={handleSubmit}
+                  >
+                    修改
+                  </button>
+                </div>
+              </form>
             </div>
-
-            <div className="col-4 mx-auto ">
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="btn-green txt-btn mb-5 "
-              >
-                送出
-              </button>
-            </div>
-          </Form>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-)
-
-export default withFormik({
-  // input 預設值
-  mapPropsToValues({ addr }) {
-    return {
-      addr: addr || '',
-    }
-  },
-
-  // 表單驗證條件＆錯誤訊息
-  validationSchema: yup.object().shape({
-    addr: yup.string().min(10, '最多只能輸入10個中英文字').required('必填'),
-  }),
-
-  // 點擊送出時
-  handleSubmit(values, { setSubmitting }) {
-    setTimeout(() => {
-      setSubmitting(false) //狀態更新(true:傳送中, false:傳送完成)
-      alert(JSON.stringify(values, null, 2)) //alert values
-    }, 1000)
-  },
-})(MemberCenterAddr)
+    </>
+  )
+}
+export default MemberCenterAddr
