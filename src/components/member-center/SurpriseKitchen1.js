@@ -11,6 +11,7 @@ function SurpriseKitchen1() {
       `http://localhost:4000/membercenter/surprisekitchen_order?start=${SurpriseKitchenSeach}&end=${SurpriseKitchenSeach1}`,
       {
         method: 'get',
+        credentials: 'include',
       }
     )
     const data = await response.json()

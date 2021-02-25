@@ -5,9 +5,11 @@ import '../../styles/fff.css'
 function ExchangeRecord() {
   const [exchangeRecord, setExchangeRecord] = useState([])
   const getExchangeRecord = async () => {
-    const url = 'http://localhost:4000/reward/getExchangeRecord?sid=1' //sid 要從session來
+    const url = 'http://localhost:4000/reward/getExchangeRecord'
+     //sid 要從session來
     await fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       //then 是會接前方拋出的結果
       .then((r) => r.json())

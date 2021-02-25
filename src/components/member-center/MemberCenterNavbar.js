@@ -5,12 +5,10 @@ function MemberCenterNavbar() {
 
   const getDataFromServer = async () => {
     //模擬和伺服器要資料
-    const response = await fetch(
-      `http://localhost:4000/membercenter/info?id=1`,
-      {
-        method: 'get',
-      }
-    )
+    const response = await fetch(`http://localhost:4000/getmemberinfo`, {
+      method: 'get',
+      credentials: 'include',
+    })
     const data = await response.json()
     //最後設定要到狀態中
     setMemberinfo(data)
@@ -24,15 +22,12 @@ function MemberCenterNavbar() {
     <>
       <div className=" aa d-none d-mo-none d-sm-none d-lg-none d-xl-block col-lg-2 offset-1 ">
         <div className="d-flex ml-4">
-          {Memberinfo.map((v, i) => (
-            <ul className="d-none d-mo-none d-sm-none d-lg-block d-xl-block "></ul>
-          ))}
-          {Memberinfo.map((v, i) => (
-            <div className="txt-cap ">
-              <li className="d-none d-xl-block">會員姓名:{v.name}</li>
-              <li className="d-none d-xl-block  ">會員等級:{v.level}</li>
-            </div>
-          ))}
+          <ul className="d-none d-mo-none d-sm-none d-lg-block d-xl-block "></ul>
+
+          <div className="txt-cap ">
+            <li className="d-none d-xl-block">會員姓名:{Memberinfo.name}</li>
+            <li className="d-none d-xl-block  ">會員等級:{Memberinfo.level}</li>
+          </div>
         </div>
 
         <div className="">

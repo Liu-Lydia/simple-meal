@@ -11,8 +11,10 @@ function SurpriseKitchenAll() {
       `http://localhost:4000/membercenter/surprisekitchen_order?start=${SurpriseKitchenSeach}&end=${SurpriseKitchenSeach1}`,
       {
         method: 'get',
+        credentials: 'include',
       }
     )
+
     const data = await response.json()
     //最後設定要到狀態中
     setSurpriseKitchen(data)

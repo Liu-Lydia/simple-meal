@@ -283,11 +283,6 @@
     text-decoration: none;
     color: #b9433b;
   }
-  /* 如何獲得點數格子*/
-  .fff-ms-how-to-section {
-    display: flex;
-    flex-direction: center;
-  }
 
   .fff-mshowto-content {
     margin: auto auto;
@@ -618,7 +613,7 @@
 
 /* The Modal (background) */
 .fff-mshowto {
-  display: none; /* Hidden by default */
+  display: flex; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;
@@ -633,23 +628,22 @@
 .fff-mshowto-content p {
   margin-bottom: 0;
 }
-
+/* 單個成就介紹 */
 .fff-ms-detail-content {
+  display: block;
   margin: auto auto;
   background-color: white;
-  width: 75%;
-  height: 90%;
+  width: 60%;
   border-radius: 25px;
   text-align: left;
   line-height: 30px;
   border: 5px #627e2a solid;
   padding: 75px;
-  padding-top: 19px;
 }
 
 /* The Modal (background) */
 .fff-exchange {
-  display: none; /* Hidden by default */
+  display: flex; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   left: 0;

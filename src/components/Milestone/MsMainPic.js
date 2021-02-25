@@ -10,9 +10,7 @@ function MsMainPic() {
           background: 'url("http://localhost:3015/img/fff/Neon.svg")',
         }}
       >
-        <img
-            src="http://localhost:3015/img/fff/Kumo.svg"
-        />
+        <img src="http://localhost:3015/img/fff/Kumo.svg" alt="" />
 
         <h5 className="animate__animated animate__bounce">我是佔空間的東西</h5>
       </div>
