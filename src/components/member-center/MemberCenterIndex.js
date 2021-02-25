@@ -6,12 +6,10 @@ function MemberCenterIndex() {
 
   const getDataFromServer = async () => {
     //模擬和伺服器要資料
-    const response = await fetch(
-      `http://localhost:4000/membercenter/info?id=1`,
-      {
-        method: 'get',
-      }
-    )
+    const response = await fetch('http://localhost:4000/getmemberinfo', {
+      method: 'get',
+      credentials: 'include',
+    })
     const data = await response.json()
     //最後設定要到狀態中
     setMemberinfo(data)
@@ -20,7 +18,7 @@ function MemberCenterIndex() {
   useEffect(() => {
     getDataFromServer()
   }, [])
-
+  console.log(Memberinfo)
   return (
     <>
       <div className="container">
@@ -33,33 +31,31 @@ function MemberCenterIndex() {
             <div className=" dd d-none d-xl-block">
               <div className=" col-8 offset-1">
                 <div className="mb-5  col-8 d-flex mt-4">
-                  {Memberinfo.map((v, i) => (
-                    <ul className="col">
-                      <li>{v.avater}</li>
-                    </ul>
-                  ))}
-                  {Memberinfo.map((v, i) => (
-                    <ul className=" col-7 mt-3">
-                      <li className="item1 ">
-                        會員編號<span>{v.member_number}</span>
-                      </li>
-                      <li className="item1 ">{v.name}</li>
-                      <li className="item1 d-flex">會員等級:{v.level}</li>
-                    </ul>
-                  ))}
-                  {Memberinfo.map((v, i) => (
-                    <ul className="col-10 mt-3">
-                      <li className="item1 ">
-                        剩餘點數:<span style={{ color: 'red' }}>999</span>
-                      </li>
-                      <li className="item1 ">
-                        餐卷數量:
-                        <span style={{ color: 'red' }}>
-                          {v.simplemeal_coupon}
-                        </span>
-                      </li>
-                    </ul>
-                  ))}
+                  <ul className="col">
+                    <li>{Memberinfo.avater}</li>
+                  </ul>
+
+                  <ul className=" col-7 mt-3">
+                    <li className="item1 ">
+                      會員編號<span>{Memberinfo.member_number}</span>
+                    </li>
+                    <li className="item1 ">{Memberinfo.name}</li>
+                    <li className="item1 d-flex">
+                      會員等級:{Memberinfo.level}
+                    </li>
+                  </ul>
+
+                  <ul className="col-10 mt-3">
+                    <li className="item1 ">
+                      剩餘點數:<span style={{ color: 'red' }}>999</span>
+                    </li>
+                    <li className="item1 ">
+                      餐卷數量:
+                      <span style={{ color: 'red' }}>
+                        {Memberinfo.simplemeal_coupon}
+                      </span>
+                    </li>
+                  </ul>
                 </div>
               </div>
 
@@ -161,40 +157,38 @@ function MemberCenterIndex() {
               </div>
               <div className=" col-12">
                 <div className="col-12 ">
-                  {Memberinfo.map((v, i) => (
-                    <div className="col-12 d-flex ">
-                      <div className="">{v.avater}</div>
-                      <span className="item1  txt-cap mt-3  ">{v.name}</span>
-                    </div>
-                  ))}
-                  {Memberinfo.map((v, i) => (
-                    <div className="">
-                      <ul className=" mt-3 txt-cap d-flex">
-                        <li className="col-7 col-sm-8">
-                          會員編號
-                          <span>{v.member_number}</span>
-                        </li>
-                        <li className="col-7 ">
-                          餐卷數量:
-                          <span>{v.simplemeal_coupon}</span>
-                        </li>
-                      </ul>
-                    </div>
-                  ))}
-                  {Memberinfo.map((v, i) => (
-                    <div className="">
-                      <ul className="mt-3 d-flex txt-cap">
-                        <li className="col-7 col-sm-8">
-                          會員等級:
-                          <span>{v.level}</span>
-                        </li>
-                        <li className="col-7 ">
-                          剩餘點數:
-                          <span>999</span>
-                        </li>
-                      </ul>
-                    </div>
-                  ))}
+                  <div className="col-12 d-flex ">
+                    <div className="">{Memberinfo.avater}</div>
+                    <span className="item1  txt-cap mt-3  ">
+                      {Memberinfo.name}
+                    </span>
+                  </div>
+
+                  <div className="">
+                    <ul className=" mt-3 txt-cap d-flex">
+                      <li className="col-7 col-sm-8">
+                        會員編號
+                        <span>{Memberinfo.member_number}</span>
+                      </li>
+                      <li className="col-7 ">
+                        餐卷數量:
+                        <span>{Memberinfo.simplemeal_coupon}</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="">
+                    <ul className="mt-3 d-flex txt-cap">
+                      <li className="col-7 col-sm-8">
+                        會員等級:
+                        <span>{Memberinfo.level}</span>
+                      </li>
+                      <li className="col-7 ">
+                        剩餘點數:
+                        <span>999</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
 
                 <div className="btn border txt-cap1 col-12">回上頁</div>

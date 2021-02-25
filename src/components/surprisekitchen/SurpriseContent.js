@@ -27,10 +27,50 @@ function SurpriseContent(props) {
   )
   //Collapse ↑↑↑
 
-  //接收資料庫資料　↓↓↓
+  //接收場次資料庫資料　↓↓↓
   const [timesData, setTimesData] = useState([])
+  const [timeStyle, setTimesStyle] = useState([])
+  const [timeEnable, setTimeEnable] = useState([])
 
   //讀取資料　↓↓↓
+  const handleGetDataEnable = () => {
+    const url = `http://localhost:4000/surprisekitchenOrder/getReservationTime?reservation_date=${dateStr}`
+    fetch(url, {
+      method: 'get',
+      credentials: 'include',
+    })
+      .then((r) => r.json())
+      .then((obj) => {
+        const tmp = []
+        const tmp1 = []
+        if (obj[0].round1 == null) {
+          tmp.push({ display: 'flex' })
+          tmp1.push(true)
+        } else {
+          tmp.push({ display: 'none' })
+          tmp1.push(false)
+        }
+        if (obj[0].round2 == null) {
+          tmp.push({ display: 'flex' })
+          tmp1.push(true)
+        } else {
+          tmp.push({ display: 'none' })
+          tmp1.push(false)
+        }
+        if (obj[0].round3 == null) {
+          tmp.push({ display: 'flex' })
+          tmp1.push(true)
+        } else {
+          tmp.push({ display: 'none' })
+          tmp1.push(false)
+        }
+
+        setTimesStyle(tmp)
+        setTimeEnable(tmp1)
+        
+      })
+  }
+
   const handleGetData = () => {
     const url = 'http://localhost:4000/reservationTimes/getReservationTimes'
     fetch(url, {
@@ -45,29 +85,13 @@ function SurpriseContent(props) {
   }
 
   useEffect(() => {
+    handleGetDataEnable()
+    console.log("dateStr - useEffect")
+  }, [dateStr])
+
+  useEffect(() => {
     handleGetData()
   }, [])
-  //讀取資料 ↑↑↑
-
-  //接收資料庫資料　↓↓↓
-  // const [orderObj, setOrderObj] = useState({})
-
-  //讀取資料　↓↓↓
-  // const handleGetInfo = () => {
-  //   fetch('http://localhost:4000/surprisekitchenOrder/getReservationInfo', {
-  //     method: 'get',
-  //     credentials: 'include',
-  //   })
-  //     .then((r) => r.json())
-  //     .then((obj) => {
-  //       console.log(obj)
-  //       setOrderObj(obj)
-  //     })
-  // }
-
-  // useEffect(() => {
-  //   handleGetInfo()
-  // }, [])
   //讀取資料 ↑↑↑
 
   //點擊場次　↓↓↓
@@ -307,10 +331,11 @@ function SurpriseContent(props) {
                       //   console.log(v.reservation_time)
                       // }}
                       className={
-                        isActive === v
+                        timeEnable[i]
                           ? 'lll-select-btn-white-active txt-btn lll-cursor'
                           : 'lll-select-btn-white txt-btn lll-cursor'
                       }
+                      // style={timeStyle[i]}
                     >
                       {v.reservation_time}
                     </div>

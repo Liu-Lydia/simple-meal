@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Route, Switch } from 'react-router-dom'
+
 /* 子頁面載入*/
 import MemberCenterLogin from '../components/member-center/MemberCenterLogin'
 import MemberCenterRegiStered from '../components/member-center/MemberCenterRegiStered'
@@ -21,7 +22,10 @@ import MemberCenterSurpriseKitchen from '../components/member-center/MemberCente
 import MemberCenterPasswordChange from '../components/member-center/MemberCenterPasswordChange'
 
 function MemberCenter(props) {
+  const [MemberCenter, setMemberCenter] = useState()
+
   // { 登入布林值, 設定登入布林值}
+
   const { loginBool, setLoginBool } = props
   return (
     <>
@@ -58,12 +62,11 @@ function MemberCenter(props) {
           <MemberCenterAddr />
         </Route>
 
-        <Route path="/MemberCenter/Info">
-          <MemberCenterInfo />
-        </Route>
-
         <Route path="/MemberCenter/Navbar">
           <MemberCenterNavbar />
+        </Route>
+        <Route path="/MemberCenter/Info">
+          <MemberCenterInfo />
         </Route>
 
         <Route path="/MemberCenter/RegiStered">

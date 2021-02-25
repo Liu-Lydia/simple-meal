@@ -1,31 +1,15 @@
 import MemberCenterNavbar from './MemberCenterNavbar'
 import React, { useEffect, useState } from 'react'
-import ImageUploader from 'react-images-upload'
-import Moment from 'react-moment'
-import Test from './test'
-function MemberCenterInfo(props) {
-  const [file, setFile] = useState([])
-  const [Memberinfo, setMemberinfo] = useState([])
-  const onDrop = (pictures) => {
-    // console.log('pictures:', pictures)
-    setFile([...file, pictures])
-  }
-  const getDataFromServer = async () => {
-    //模擬和伺服器要資料
-    const response = await fetch(
-      `http://localhost:4000/membercenter/info?id=1`,
-      {
-        method: 'get',
-      }
-    )
-    const data = await response.json()
-    //最後設定要到狀態中
-    setMemberinfo(data)
-  }
+import { Redirect, Link } from 'react-router-dom'
 
+function MemberCenterInfo(props) {
+  const { loginBool, setLoginBool, status } = props
   useEffect(() => {
-    getDataFromServer()
-  }, [])
+    status && setLoginBool(true)
+    // console.log(status, !loginBool)
+  }, [status])
+
+  const [Memberinfo, setMemberinfo] = useState([])
 
   const [inputs, setInputs] = useState('')
 
@@ -38,6 +22,20 @@ function MemberCenterInfo(props) {
     setInputs((state) => ({ ...state, [fieldName]: event.target.value }))
   }
 
+  const getDataFromServer = async () => {
+    //模擬和伺服器要資料
+    const response = await fetch(`http://localhost:4000/membercenter/info`, {
+      method: 'get',
+      credentials: 'include',
+    })
+    const data = await response.json()
+    //最後設定要到狀態中
+    setMemberinfo(data)
+  }
+
+  useEffect(() => {
+    getDataFromServer()
+  }, [])
   // 按了提交按鈕用的
   const handleSubmit = (e) => {
     //開啟開始觸發檢查的旗標
@@ -67,6 +65,7 @@ function MemberCenterInfo(props) {
 
   return (
     <>
+      {loginBool && <Redirect to="/" />}
       <div className="container">
         <div className="row">
           {' '}
