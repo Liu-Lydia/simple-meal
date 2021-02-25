@@ -88,7 +88,7 @@ function MealCart(props) {
               <span className="cha-cart-main-title1">餐點名稱</span>
               <span className="cha-cart-main-title2">餐數</span>
             </div>
-            <div className="cha-cart-user-meal txt-sub2 cha-green pl-4">
+            <div className="cha-cart-user-meal txt-sub2 cha-green pl-4" id="scroll">
               {addRightCart.thisTime.map((v, i) => (
                 <div className="justify-content-between d-flex" key={v.sid}>
                   <span className="cha-cart-main-name">{v.meal_name}</span>

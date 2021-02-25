@@ -573,3 +573,15 @@ h6 {
   background-color: rgb(162, 163, 165);
   border-radius: 5px;
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgb(162, 163, 165, 0.3);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 10px;
+  background-color: rgb(162, 163, 165);
+  border-radius: 5px;
+}

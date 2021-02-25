@@ -63,7 +63,7 @@ function Recipe(props) {
             setAllmeal={setAllmeal}
             setSidAndIngredient={setSidAndIngredient}
           />
-          <MealCart updateNum={updateNum}/>
+          <MealCart updateNum={updateNum} />
         </div>
       </div>
     </>
