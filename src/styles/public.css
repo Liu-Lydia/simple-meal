@@ -575,13 +575,12 @@ h6 {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 20px;
   background-color: rgb(162, 163, 165, 0.3);
-  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  width: 10px;
-  background-color: rgb(162, 163, 165);
-  border-radius: 5px;
+  width: 20px;
+  background-color: #627e2a;
+  border-radius: 10px;
 }
