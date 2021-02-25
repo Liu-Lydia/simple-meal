@@ -381,7 +381,7 @@ function Home(props) {
       {/* test */}
 
       {/* <Run /> */}
-      <div className="container">
+      <div className="container d-none d-xl-block">
         <div className="row mb-5">
           <Run />
         </div>
