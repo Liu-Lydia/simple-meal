@@ -51,10 +51,8 @@ function MilestoneListAll() {
       })
 
     const url =
-      'http://localhost:4000/milestone/getMilestoneList?page=' +
-      listPage +
-      '&perpage=' +
-      perPage //sid 要從session來
+      `http://localhost:4000/milestone/getMilestoneList?page=${listPage}&perpage=${perPage}`
+       //sid 要從session來
     await fetch(url, {
       method: 'get',
       credentials: 'include',
@@ -62,6 +60,25 @@ function MilestoneListAll() {
       //then 是會接前方拋出的結果
       .then((r) => r.json())
       .then((obj) => {
+        //塞數量 讓物件靠左
+        if (window.innerWidth < 576) {
+          //手機版要三個
+          for (let i = obj.length % 3; i != 0 && i < 3; i++) {
+            obj.push({milestone_sid:'-1'})
+          }
+        } else if (window.innerWidth >= 1200) {
+          //特大要四個
+          for (let i = obj.length % 4; i != 0 && i < 4; i++) {
+            obj.push({milestone_sid:'-1'})
+          }
+        } else {
+          //兩個
+          for (let i = obj.length % 2; i != 0 && i < 2; i++) {
+            obj.push({milestone_sid:'-1'})
+          }
+        }
+
+
         setMilestoneList(obj)
         //前期處理各成就的進度style 含不同的大小
         const xs_r = 40
@@ -125,7 +142,6 @@ function MilestoneListAll() {
         setAnimateValueArray(progressAnimateValueArray)
       })
   }
-
   // 當陣列值有變動時 更新畫面
   /*正常來說應該不用這麼麻煩
    但是不指定的時候不是每次rander都會刷新*/
@@ -204,7 +220,14 @@ function MilestoneListAll() {
         <div className="col-10 col-sm-8 fff-no-mr-and-pad ">
           <div className="row fff-no-mr-and-pad d-flex align-items-center justify-content-around">
             {/* 單個成就 */}
-            {milstonelist.map((v, i) => (
+            {milstonelist.map((v, i) => (v.milestone_sid == '-1' ?(
+
+              <div
+                className="col-4 col-sm-6 col-lg-3 d-flex justify-content-center"
+                key={i}
+              />)
+
+              :(
               <div
                 className="col-4 col-sm-6 col-lg-3 d-flex justify-content-center"
                 key={i}
@@ -247,7 +270,7 @@ function MilestoneListAll() {
                   </svg>
                   <span className=" fff-ms-web d-flex justify-content-center"></span>
                 </div>
-              </div>
+              </div>)
             ))}
           </div>
         </div>
