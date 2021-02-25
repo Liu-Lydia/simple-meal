@@ -4,6 +4,7 @@ import Carousel from '../components/home/Carousel'
 import Carousel2 from '../components/home/Carousel2'
 import '../components/home/carousel3d.css'
 import HomeP3 from '../components/home/HomeP3'
+import Run from '../components/home/Run'
 
 function Home(props) {
   return (
@@ -181,7 +182,7 @@ function Home(props) {
       </div>
 
       {/* p3 */}
-      <HomeP3  />
+      <HomeP3 />
 
       {/* p5 */}
       <div className="container mb-5 xxx-mt200 ">
@@ -376,6 +377,12 @@ function Home(props) {
           立即預約
         </NavLink>
       </div>
+
+      {/* test */}
+
+      {/* <Run /> */}
+      <div id="app" />
+      <Run />
 
       {/* p7 */}
       <div className="container">
