@@ -32,7 +32,7 @@ function QRCodeDialog(props) {
               "
                   style={{ lineHeight: '50px' }}
                 >
-                 <QRCode value={props.qrcodeValue}/>
+                 <QRCode value={`${props.qrcodeValue}`}/>
                 </div><div
                   className="d-flex justify-content-center"
                   style={{ marginTop: '25px' }}
