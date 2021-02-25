@@ -1,18 +1,20 @@
 import React, { props, useEffect, useState } from 'react'
-import {
-  Nav,
-} from 'react-bootstrap'
+import { Nav } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
-
 import Swal from 'sweetalert2'
+import { string } from 'yup'
+
 function MilestoneInfoBar(props) {
   //集點說明要不要渲染(虛擬Dom)
   const [totalPoint, setTotalPoint] = useState(0)
+  const [userInfo, setUserInfo] = useState([])
 
   const getMilestoneList = async () => {
-    const url = 'http://localhost:4000/milestone/getPoint?sid=1' //sid 要從session來
+    const url = 'http://localhost:4000/milestone/getPoint'
+    //sid 要從session來
     await fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       //then 是會接前方拋出的結果
       .then((r) => r.json())
@@ -26,6 +28,20 @@ function MilestoneInfoBar(props) {
       })
   }
 
+  const getUserInfo = async () => {
+    const url = 'http://localhost:4000/milestone/getUserInfo'
+    //sid 要從session來
+    await fetch(url, {
+      method: 'get',
+      credentials: 'include',
+    })
+      //then 是會接前方拋出的結果
+      .then((r) => r.json())
+      .then((obj) => {
+        setUserInfo(obj)
+      })
+  }
+  // sweet alert集點按鈕
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       popup: 'poe-alert',
@@ -39,8 +55,14 @@ function MilestoneInfoBar(props) {
   })
 
   useEffect(() => {
+    getUserInfo()
     getMilestoneList()
   }, [])
+
+  useEffect(() => {
+    console.log('update userInfo')
+    console.log('userInfo', userInfo)
+  }, [userInfo])
 
   return (
     <>
@@ -53,11 +75,16 @@ function MilestoneInfoBar(props) {
           {/* 使用者照片、使用者名稱(尚未連接資料庫)*/}
           <div className="d-flex align-items-center">
             <img
-              src="http://localhost:3015/img/fff/fff-info-pic.png"
+              src={
+                userInfo.length == 1 &&
+                'http://localhost:3015/img/member-center/' + userInfo[0].avater
+              }
               className="fff-info-pic"
               alt=""
             />
-            <span className="fff-txt-info">Lydia Liu</span>
+            <span className="fff-txt-info">
+              {userInfo.length == 1 && userInfo[0].name}
+            </span>
           </div>
           {/* 點數資料(尚未連接資料庫) */}
           <div className="d-flex align-items: center">
@@ -99,13 +126,16 @@ function MilestoneInfoBar(props) {
           </div>
           {/* 在成就清單以及兌換獎勵區切換的按鈕 */}
           <Nav.Link
-                    className="fff-btn-white fff-txt-btn"
-                    as={NavLink}
-                    to={props.href}
-                    style={{display: 'flex',alignItems: 'center',textAlign:'center'}}
-                  >
-                    {props.btnText}
-                  </Nav.Link>
+            className="fff-btn-white fff-txt-btn justify-content-center"
+            as={NavLink}
+            to={props.href}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
+            <div>{props.btnText}</div>
+          </Nav.Link>
         </div>
 
         {/* 佔空位的 */}
@@ -123,11 +153,16 @@ function MilestoneInfoBar(props) {
           style={{ marginBottom: '40px' }}
         >
           <img
-            src="http://localhost:3015/img/fff/fff-info-pic.png"
+            src={
+              userInfo.length == 1 &&
+              'http://localhost:3015/img/member-center/' + userInfo[0].avater
+            }
             className="fff-mobo-info-pic"
             alt=""
           />
-          <span className="fff-mobo-txt-info">Lydia Liu</span>
+          <span className="fff-mobo-txt-info">
+            {userInfo.length == 1 && userInfo[0].name}
+          </span>
         </div>
 
         {/* 點數資料(尚未連接資料庫) */}

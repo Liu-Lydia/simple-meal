@@ -28,6 +28,8 @@ function CalendarDate(props) {
     console.log(NewDateStr)
   }
 
+  const dayBefore = moment('2020-01-01').isBefore('2021-03-05')
+  console.log('我是今天之前', dayBefore)
   return (
     <>
       <div className="lll-green lll-body-list">

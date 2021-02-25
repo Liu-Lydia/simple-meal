@@ -11,6 +11,7 @@ function FoodDeliverys1() {
       `http://localhost:4000/membercenter/history_mealdelivery?start=${FoodDeliverySeach}&end=${FoodDeliverySeach1}`,
       {
         method: 'get',
+        credentials: 'include',
       }
     )
     const data = await response.json()

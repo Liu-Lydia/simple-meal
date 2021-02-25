@@ -10,7 +10,7 @@ function RecipeIngredient(props) {
               key={value.sid}
               className="col-4 cha-sel-box-1 justify-content-center row"
             >
-              <div className=" cha-ingredient-img1 justify-content-center d-flex">
+              <div className=" cha-ingredient-img1 justify-content-center d-flex" >
                 <img
                   className="cha-ingredient-img2"
                   src={`http://localhost:3015/img/ingredient/${value.ingredient_id}.jpg`}

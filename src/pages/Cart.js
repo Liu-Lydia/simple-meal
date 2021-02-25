@@ -10,6 +10,7 @@ import SimpleMealCoupon from '../components/cart/SimpleMealCoupon'
 import MealDelivery from '../components/cart/MealDelivery'
 import ReserveKitchen from '../components/cart/ReserveKitchen'
 import CartModeControl from '../components/cart/CartModeControl'
+import CartCarousel from '../components/cart/CartCarousel'
 
 function Cart(props) {
   // { 登入布林值 }
@@ -164,6 +165,17 @@ function Cart(props) {
                   {/* 頁籤內容 */}
                   <div className="poe-bookmark-content txt-btn">
                     {handleCartmode()}
+                  </div>
+                </div>
+              </div>
+
+              {/* 追加的 */}
+              <div className="row justify-content-center poe-bookmark">
+                <div className="col-12 col-md-8 col-xl-6">
+                  <div className="poe-bookmark-content txt-btn">
+                    <h5>近期瀏覽</h5>
+                    <CartCarousel />
+                    {/* <div className="w-100 d-flex justify-content-center"></div> */}
                   </div>
                 </div>
               </div>

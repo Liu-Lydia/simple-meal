@@ -37,8 +37,13 @@ function MealMain(props) {
     })
       .then((r) => r.json())
       .then((obj) => {
-        // console.log(obj)
+        console.log(obj)
         setData({ ...obj })
+
+        // 存到localStorage
+        const recentData = JSON.parse(localStorage.getItem('recent')) || []
+        recentData.push(obj)
+        localStorage.setItem('recent', JSON.stringify(recentData))
       })
   }
   // console.log(data)
