@@ -4,7 +4,7 @@ import '../../styles/fff.css'
 //對話框
 import ExchangeDialog from './ExchangeDialog'
 
-function ExchangeGoodsList1() {
+function ExchangeGoodsList2() {
   //兌換項目清單
   const [goodList, setGoodList] = useState([])
 
@@ -101,4 +101,4 @@ function ExchangeGoodsList1() {
   )
 }
 
-export default ExchangeGoodsList1
+export default ExchangeGoodsList2

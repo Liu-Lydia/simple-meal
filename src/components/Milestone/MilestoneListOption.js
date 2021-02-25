@@ -176,7 +176,7 @@ function MilestoneListOption(props) {
             </div>
           </div>
         </div>
-        {/*那條Bar*/} 
+        {/*那條Bar*/}
         <div className="col-12 col-md-11 col-xl-10 d-flex justify-content-center fff-ms-select-line">
           <div className="col-12  col-lg-8 col-xl-7 d-flex justify-content-between align-items-center">
             <div className={barClassArray[props.milestoneFilter][0]}></div>

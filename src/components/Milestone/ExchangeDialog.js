@@ -50,7 +50,6 @@ function ExchangeDialog(props) {
       //then 是會接前方拋出的結果
       .then((r) => r.json())
       .then((obj) => {
-        console.log('obj', obj)
         setDBReturn(obj)
       })
   }
@@ -61,24 +60,20 @@ function ExchangeDialog(props) {
       temparray.push(i * props.detailContext.need_point)
     }
     setSelectOption(temparray)
-    console.log(temparray)
   }
 
   useEffect(() => {
-    console.log('useEffect - detailContext')
     getPoint()
     updateSelectOption()
   }, [props.detailContext])
 
   //當選擇兌換時 更新
   useEffect(() => {
-    console.log('useEffect - count')
   }, [props.count])
 
   //當確認兌換時 更新
   useEffect(() => {
     if (commit) {
-      console.log('useEffect - commit')
       setExchange()
       //彈出結果視窗
       setReturnMsgDialog({ visibility: 'visible' })
