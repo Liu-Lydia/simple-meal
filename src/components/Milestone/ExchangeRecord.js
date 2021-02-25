@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import '../../styles/public.css'
 import '../../styles/fff.css'
+import QRCodeDialog from './QRCodeDialog'
 
 function ExchangeRecord() {
   const [exchangeRecord, setExchangeRecord] = useState([])
+  const [qrcodeStyle, setqrcodeStyle] = useState({ visibility: 'hidden' })
+  const [qrcodeValue, setqrcodeValue] = useState('')
   const getExchangeRecord = async () => {
     const url = 'http://localhost:4000/reward/getExchangeRecord'
      //sid 要從session來
@@ -51,7 +54,8 @@ function ExchangeRecord() {
                     <td className="fff-reward-used">已使用</td>
                   )}
                   <td>
-                    <div className="record">檢視</div>
+                    <div className="record" onClick={()=>{setqrcodeStyle({ visibility: 'visible' })
+                  setqrcodeValue(value.exchange_sid)}}>檢視</div>
                   </td>
                 </tr>
               ))}
@@ -71,13 +75,14 @@ function ExchangeRecord() {
           <div className="row d-flex align-items-center justify-content-around fff-no-mr-and-pad">
             <table id="fff-record-table">
               {exchangeRecord.map((value, index) => (
-                <>
+                <div key={index}>
                   <tr>
                     <td rowSpan="4">{index+1}</td>
                     <th>兌換項目</th>
                     <td>{value.good_name}</td>
                     <td rowSpan="4">
-                      <div className="record">優惠條碼</div>
+                      <div className="record"  onClick={()=>{setqrcodeStyle({ visibility: 'visible' })
+                  setqrcodeValue(value.exchange_sid)}}>優惠條碼</div>
                     </td>
                   </tr>
                   <tr>
@@ -97,7 +102,7 @@ function ExchangeRecord() {
                     <td className="fff-reward-used">已使用</td>
                   )}
                   </tr>
-                </>
+                </div>
               ))}
             </table>
           </div>
@@ -106,6 +111,7 @@ function ExchangeRecord() {
         {/* <!--保留空格 --> */}
         <div className="col-2 fff-no-mr-and-pad"></div>
       </div>
+      <QRCodeDialog qrcodeStyle={qrcodeStyle} setqrcodeStyle={setqrcodeStyle} qrcodeValue={qrcodeValue}/>
     </>
   )
 }

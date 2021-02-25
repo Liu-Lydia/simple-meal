@@ -23,6 +23,7 @@ function ExchangeGoodsList1() {
     const url = 'http://localhost:4000/reward/getGooDList?good_type=1'
     await fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       //then 是會接前方拋出的結果
       .then((r) => r.json())

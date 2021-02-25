@@ -1,6 +1,6 @@
 // 成就顯示
 import React, { useState, useEffect } from 'react'
-import MilestoneDetail from './MilestoneDetail'
+import MilestoneDialog from './MilestoneDialog'
 
 function MilestoneListFinish() {
   //資料庫回來的東西 milstonelist []陣列包{}每筆資料
@@ -296,7 +296,7 @@ function MilestoneListFinish() {
         {/* <!--保留空格 --> */}
         <div className="col-1 fff-no-mr-and-pad"></div>
       </div>
-      <MilestoneDetail
+      <MilestoneDialog
         detailStyle={detailStyle}
         setDetailStyle={setDetailStyle}
         detailContext={detailContext}
