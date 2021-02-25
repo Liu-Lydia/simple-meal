@@ -9,7 +9,7 @@ function ExchangeRecord() {
   const [qrcodeValue, setqrcodeValue] = useState('')
   const getExchangeRecord = async () => {
     const url = 'http://localhost:4000/reward/getExchangeRecord'
-     //sid 要從session來
+    //sid 要從session來
     await fetch(url, {
       method: 'get',
       credentials: 'include',
@@ -54,8 +54,15 @@ function ExchangeRecord() {
                     <td className="fff-reward-used">已使用</td>
                   )}
                   <td>
-                    <div className="record" onClick={()=>{setqrcodeStyle({ visibility: 'visible' })
-                  setqrcodeValue(value.exchange_sid)}}>檢視</div>
+                    <div
+                      className="record"
+                      onClick={() => {
+                        setqrcodeStyle({ visibility: 'visible' })
+                        setqrcodeValue(value.exchange_sid)
+                      }}
+                    >
+                      檢視
+                    </div>
                   </td>
                 </tr>
               ))}
@@ -77,12 +84,19 @@ function ExchangeRecord() {
               {exchangeRecord.map((value, index) => (
                 <div key={index}>
                   <tr>
-                    <td rowSpan="4">{index+1}</td>
+                    <td rowSpan="4">{index + 1}</td>
                     <th>兌換項目</th>
                     <td>{value.good_name}</td>
                     <td rowSpan="4">
-                      <div className="record"  onClick={()=>{setqrcodeStyle({ visibility: 'visible' })
-                  setqrcodeValue(value.exchange_sid)}}>優惠條碼</div>
+                      <div
+                        className="record"
+                        onClick={() => {
+                          setqrcodeStyle({ visibility: 'visible' })
+                          setqrcodeValue(value.exchange_sid)
+                        }}
+                      >
+                        優惠條碼
+                      </div>
                     </td>
                   </tr>
                   <tr>
@@ -97,10 +111,10 @@ function ExchangeRecord() {
                   <tr>
                     <th>使用狀況</th>
                     {value.used_date == null ? (
-                    <td className="fff-reward-unuse">可使用</td>
-                  ) : (
-                    <td className="fff-reward-used">已使用</td>
-                  )}
+                      <td className="fff-reward-unuse">可使用</td>
+                    ) : (
+                      <td className="fff-reward-used">已使用</td>
+                    )}
                   </tr>
                 </div>
               ))}
@@ -111,7 +125,11 @@ function ExchangeRecord() {
         {/* <!--保留空格 --> */}
         <div className="col-2 fff-no-mr-and-pad"></div>
       </div>
-      <QRCodeDialog qrcodeStyle={qrcodeStyle} setqrcodeStyle={setqrcodeStyle} qrcodeValue={qrcodeValue}/>
+      <QRCodeDialog
+        qrcodeStyle={qrcodeStyle}
+        setqrcodeStyle={setqrcodeStyle}
+        qrcodeValue={qrcodeValue}
+      />
     </>
   )
 }

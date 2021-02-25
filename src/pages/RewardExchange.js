@@ -19,12 +19,11 @@ function RewardExchange(props) {
 
   //解構賦值 取得登入資訊
   const { loginBool } = props
-  console.log("RewardExchange - loginBool",loginBool)
 
   return (
     <>
-    {/* 沒登入時, 跳轉登入 */}
-    {!loginBool && <Redirect to="/MemberCenter" />}
+      {/* 沒登入時, 跳轉登入 */}
+      {!loginBool && <Redirect to="/MemberCenter" />}
       <div className="fff-ms-web">
         <div className="container">
           <MilestoneInfoBar btnText="我的成就" href="./Milestone" />
