@@ -1,18 +1,24 @@
-import React, { props, useState } from 'react'
+import React, { props, useState, useEffect } from 'react'
 
 //detailStyle={detailStyle} setDetailStyle={setDetailStyle} detailContext={detailContext}
-function MilestoneDetail(props) {
+function MilestoneDialog(props) {
   return (
     <div className="fff-mshowto" style={props.detailStyle}>
-      <div className="fff-ms-detail-content ">
-        <div className="row justify-content-center">
+      <div
+        id="fff-ms-detail-content"
+        className="row fff-ms-detail-content"
+        onMouseLeave={() => {
+          props.setDetailStyle({ visibility: 'hidden' })
+        }}
+      >
+        <div className="col justify-content-center">
           <div className="fff-ms-mobo justify-content-end col-12">
             {/* 關閉頁面的Ｘ */}
             <h6>
               <i
                 className="fas fa-times aboutCloseBtn"
                 onClick={() => {
-                  props.setDetailStyle({ display: 'none' })
+                  props.setDetailStyle({ visibility: 'hidden' })
                 }}
               ></i>
             </h6>
@@ -60,7 +66,8 @@ function MilestoneDetail(props) {
               height="150px"
               alt="s"
             />
-            <h6>{props.detailContext.stone_name}</h6><br/>
+            <h6>{props.detailContext.stone_name}</h6>
+            <br />
             <span className="txt-h6">{props.detailContext.TriggerSubs}</span>
             <span className="txt-sub1" style={{ color: '#627e2a' }}>
               {' '}
@@ -82,7 +89,7 @@ function MilestoneDetail(props) {
               type="button"
               className="btn-white txt-btn aboutCloseBtn"
               onClick={() => {
-                props.setDetailStyle({ display: 'none' })
+                props.setDetailStyle({ visibility: 'hidden' })
               }}
               data-dismiss="modal"
             >
@@ -95,4 +102,4 @@ function MilestoneDetail(props) {
   )
 }
 
-export default MilestoneDetail
+export default MilestoneDialog

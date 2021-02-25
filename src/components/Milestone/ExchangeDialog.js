@@ -19,10 +19,11 @@ function ExchangeDialog(props) {
   const [returnMsgDialog, setReturnMsgDialog] = useState({ display: 'none' })
 
   const getPoint = async () => {
-    const url = 'http://localhost:4000/milestone/getPoint?sid=1'
+    const url = 'http://localhost:4000/milestone/getPoint'
     //sid 要從session來
     await fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       //then 是會接前方拋出的結果
       .then((r) => r.json())
@@ -39,7 +40,8 @@ function ExchangeDialog(props) {
   //打包資料送後台
   const setExchange = async () => {
     const fd = new FormData(document.querySelector('#dialog-form'))
-    const url = 'http://localhost:4000/reward/setExchange' //sid 要從session來
+    const url = 'http://localhost:4000/reward/setExchange'
+    //sid 要從session來
     await fetch(url, {
       method: 'post',
       body: fd,
@@ -48,7 +50,7 @@ function ExchangeDialog(props) {
       //then 是會接前方拋出的結果
       .then((r) => r.json())
       .then((obj) => {
-        console.log("obj", obj)
+        console.log('obj', obj)
         setDBReturn(obj)
       })
   }
@@ -79,7 +81,7 @@ function ExchangeDialog(props) {
       console.log('useEffect - commit')
       setExchange()
       //彈出結果視窗
-      setReturnMsgDialog({ display: 'flex' })
+      setReturnMsgDialog({ visibility: 'visible' })
 
       setCommit(false) //復位 讓後面的兌換也能按
     }
@@ -159,14 +161,14 @@ function ExchangeDialog(props) {
                 <div style={{ marginTop: '20px', marginBottom: '20px' }}>
                   <span className="txt-btn" style={{ color: '#A2A3A5' }}>
                     兌換說明：
-                  {props.detailContext.good_subs}
+                    {props.detailContext.good_subs}
                   </span>
                 </div>
 
                 <div className="d-flex justify-content-center">
                   <span className="txt-btn" style={{ color: '#b9433b' }}>
                     已兌換便無法退還點數喔！
-                </span>
+                  </span>
                 </div>
                 <input
                   type="hidden"
@@ -189,7 +191,7 @@ function ExchangeDialog(props) {
                     data-dismiss="modal"
                   >
                     確定兌換
-                </button>
+                  </button>
                 </div>
               </div>
             </form>
@@ -218,17 +220,30 @@ function ExchangeDialog(props) {
           <div className="row fff-no-mr-and-pad">
             <form id="dialog-form">
               <div className="col fff-exchange-content txt-btn">
-                <div className="d-flex justify-content-between fff-txt-info" style={{ lineHeight: '50px' }}
+                <div
+                  className="d-flex justify-content-between fff-txt-info"
+                  style={{ lineHeight: '50px' }}
                 >
-                  {DBreturn.success ? <span className="txt-btn">成功圖樣放這裡</span> : <span className="txt-btn">失敗訊息:{DBreturn.msg}</span>}
+                  {DBreturn.success ? (
+                    <span className="txt-btn">成功圖樣放這裡</span>
+                  ) : (
+                    <span className="txt-btn">失敗訊息:{DBreturn.msg}</span>
+                  )}
                 </div>
-                <div className="d-flex justify-content-center" style={{ marginTop: '25px' }} >
-                  <button type="button" className="btn-green txt-btn aboutCloseBtn"
-                    onClick={() => { setReturnMsgDialog({ display: 'none' }) }}
+                <div
+                  className="d-flex justify-content-center"
+                  style={{ marginTop: '25px' }}
+                >
+                  <button
+                    type="button"
+                    className="btn-green txt-btn aboutCloseBtn"
+                    onClick={() => {
+                      setReturnMsgDialog({ display: 'none' })
+                    }}
                     data-dismiss="modal"
                   >
                     確定
-                </button>
+                  </button>
                 </div>
               </div>
             </form>

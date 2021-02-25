@@ -5,12 +5,11 @@ import '../../styles/fff.css'
 import ExchangeDialog from './ExchangeDialog'
 
 function ExchangeGoodsList1() {
-
   //兌換項目清單
   const [goodList, setGoodList] = useState([])
 
   //彈跳視窗是不是要顯示
-  const [dialogStyle, setDialogStyle] = useState({ display: 'none' })
+  const [dialogStyle, setDialogStyle] = useState({ visibility: 'hidden' })
 
   //彈跳視窗要顯示的內容（被點擊的那筆資料）
   const [detailContext, setDetailContext] = useState({})
@@ -24,6 +23,7 @@ function ExchangeGoodsList1() {
     const url = 'http://localhost:4000/reward/getGooDList?good_type=2'
     await fetch(url, {
       method: 'get',
+      credentials: 'include',
     })
       //then 是會接前方拋出的結果
       .then((r) => r.json())
@@ -61,7 +61,7 @@ function ExchangeGoodsList1() {
                 key={index}
                 onClick={() => {
                   //開啟視窗
-                  setDialogStyle({ display: 'flex' })
+                  setDialogStyle({ visibility: 'visible' })
                   //將點擊的內容打包 送入視窗中
                   setDetailContext(value)
                 }}
@@ -90,7 +90,13 @@ function ExchangeGoodsList1() {
         <div className="col fff-no-mr-and-pad"></div>
       </div>
       {/* 彈跳視窗 傳入值：dialogStyle要不要顯示  setDialogStyle對話框中的關閉 detailContext顯示的內容*/}
-      <ExchangeDialog dialogStyle={dialogStyle} setDialogStyle={setDialogStyle} detailContext={detailContext} setCount={setCount} count={count} />
+      <ExchangeDialog
+        dialogStyle={dialogStyle}
+        setDialogStyle={setDialogStyle}
+        detailContext={detailContext}
+        setCount={setCount}
+        count={count}
+      />
     </>
   )
 }
