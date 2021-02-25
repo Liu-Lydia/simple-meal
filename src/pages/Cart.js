@@ -10,6 +10,7 @@ import SimpleMealCoupon from '../components/cart/SimpleMealCoupon'
 import MealDelivery from '../components/cart/MealDelivery'
 import ReserveKitchen from '../components/cart/ReserveKitchen'
 import CartModeControl from '../components/cart/CartModeControl'
+import CartCarousel from '../components/cart/CartCarousel'
 
 function Cart(props) {
   // { 登入布林值 }
@@ -167,30 +168,13 @@ function Cart(props) {
                   </div>
                 </div>
               </div>
+
+              {/* 追加的 */}
               <div className="row justify-content-center poe-bookmark">
                 <div className="col-12 col-md-8 col-xl-6">
                   <div className="poe-bookmark-content txt-btn">
-                    <h5>近期配送</h5>
-                    <div className="d-flex overflow-hidden">
-                      {[1, 2, 3].map((v, i) => (
-                        <div className="col-12">
-                          <div className="card">
-                            <img src="..." className="card-img-top" alt="..." />
-                            <div className="card-body">
-                              <h5 className="card-title">Card title</h5>
-                              <p className="card-text">
-                                Some quick example text to build on the card
-                                title and make up the bulk of the card's
-                                content.
-                              </p>
-                              <button href="#" className="btn btn-primary">
-                                Go somewhere
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
+                    <h5>近期瀏覽</h5>
+                    <CartCarousel />
                   </div>
                 </div>
               </div>

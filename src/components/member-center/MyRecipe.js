@@ -125,7 +125,11 @@ function MyRecipe(props) {
                 <tr key={value.id}>
                   <td>
                     <div className="xxx-myrecipe-img-div">
-                      <img className="img-size" src={value.pic} alt="" />
+                      <img
+                        className="xxx-myrecipe-img-size"
+                        src={value.pic}
+                        alt=""
+                      />
                     </div>
                   </td>
                   <td className="xxx-w50">{value.name}</td>

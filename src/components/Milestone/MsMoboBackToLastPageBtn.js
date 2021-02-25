@@ -3,7 +3,7 @@ import React, { props } from 'react'
 // 須從父親那邊接收“props”要引入{ props }，因為{ props }非extend default所以要{}包起來。
 
 function MsMoboBackToLastPageBtn(props) {
-    // 如果在成就清單
+  // 如果在成就清單
   if (props.setPage == 'Milestone') {
     return (
       <>
@@ -27,7 +27,12 @@ function MsMoboBackToLastPageBtn(props) {
     return (
       <>
         <div className="row fff-ms-mobo d-flex justify-content-center align-items-center">
-          <div className="fff-btn-mobo-style" onClick={()=>{window.location.href='./Milestone'}}>
+          <div
+            className="fff-btn-mobo-style"
+            onClick={() => {
+              window.location.href = './Milestone'
+            }}
+          >
             回前頁
           </div>
         </div>

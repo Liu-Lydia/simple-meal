@@ -396,3 +396,66 @@
   color: #fff;
   opacity: 0;
 }
+
+.poe-carousel {
+  display: flex;
+  align-items: center;
+}
+
+.poe-carousel-btn {
+  width: 50px;
+  height: 50px;
+  background-color: aqua;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  border: 0;
+  color: azure;
+}
+.poe-carousel-wrap {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  // padding-right: 15px;
+  // padding-left: 15px;
+  overflow: hidden !important;
+}
+.poe-carousel-flex {
+  flex: 0 0 100%;
+  display: flex;
+  position: relative;
+  left: 0%;
+  transition: 0.5s;
+
+  // 變數看有幾個Card*100%
+  // width: 300%;
+}
+
+.poe-carousel-card {
+  // flex: 0 0 100%;
+  max-width: 100%;
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.poe-carousel-img {
+  border-radius: 20px;
+  width: 75%;
+  margin-left: 12.25%;
+  margin-right: 12.25%;
+}
+
+.poe-carousel-card-body {
+  padding: 15px;
+}
+.poe-carousel-card-body p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}

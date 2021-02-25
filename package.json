@@ -24,6 +24,7 @@
     "jquery": "^3.5.1",
     "moment": "^2.29.1",
     "prettier": "^2.2.1",
+    "qrcode.react": "^1.0.1",
     "rc-tween-one": "^2.7.3",
     "react": "^17.0.1",
     "react-addons": "^0.9.1-deprecated",
