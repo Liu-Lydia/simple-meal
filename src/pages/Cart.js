@@ -62,6 +62,9 @@ function Cart(props) {
   const [quantity, setQuantity] = useState(0)
   // ----餐券使用(結束)----
 
+  // 當有任何刷新時+1, 讓didupdate監控
+  const [clickNum, setClickNum] = useState(0)
+
   // 切換購買餐券/配送餐點/預約廚房
   const handleCartmode = () => {
     switch (cartMode) {
@@ -83,6 +86,8 @@ function Cart(props) {
           <CartMealDelivery
             setFlowchart={setFlowchart}
             setCartMode={setCartMode}
+            clickNum={clickNum}
+            setClickNum={setClickNum}
           />
         )
       case 'ReserveKitchen':
@@ -174,7 +179,10 @@ function Cart(props) {
                 <div className="col-12 col-md-8 col-xl-6">
                   <div className="poe-bookmark-content txt-btn">
                     <h5>近期瀏覽</h5>
-                    <CartCarousel />
+                    <CartCarousel
+                      clickNum={clickNum}
+                      setClickNum={setClickNum}
+                    />
                     {/* <div className="w-100 d-flex justify-content-center"></div> */}
                   </div>
                 </div>

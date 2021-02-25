@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function CartMealDelivery(props) {
-  const { setFlowchart, setCartMode } = props
+  const { setFlowchart, setCartMode, clickNum, setClickNum } = props
 
   // 接取資料庫的資料
   const [deliveryData, setDeliveryData] = useState({
@@ -16,8 +16,8 @@ function CartMealDelivery(props) {
     },
   })
 
-  // 當有任何刷新時+1, 讓didupdate監控
-  const [clickNum, setClickNum] = useState(0)
+  // // 當有任何刷新時+1, 讓didupdate監控
+  // const [clickNum, setClickNum] = useState(0)
 
   // 紀錄checkbox的SID
   const [checkSid, setCheckSid] = useState({
@@ -316,18 +316,18 @@ function CartMealDelivery(props) {
         </table>
         <div className="poe-bookmark-content-result text-right">
           <div className="text-center text-sm-left">
-            <Link
+            <button
               onClick={() => handleSetNextTime()}
               className="select-btn-green txt-btn mx-1 mx-sm-3 poe-mb20"
             >
               移到下次
-            </Link>
-            <Link
+            </button>
+            <button
               onClick={() => handleDelete(true)}
               className="select-btn-green txt-btn mx-1 mx-sm-3 poe-mb20"
             >
               刪除餐點
-            </Link>
+            </button>
           </div>
           <div>
             <span>您的帳戶現有 </span>
@@ -530,18 +530,18 @@ function CartMealDelivery(props) {
 
         <div className="poe-bookmark-content-result text-right">
           <div className="text-center text-sm-left">
-            <Link
+            <button
               onClick={() => handleSetThisTime()}
               className="select-btn-green txt-btn mx-1 mx-sm-3 poe-mb20"
             >
               移到本次
-            </Link>
-            <Link
+            </button>
+            <button
               onClick={() => handleDelete(false)}
               className="select-btn-green txt-btn mx-1 mx-sm-3 poe-mb20"
             >
               刪除餐點
-            </Link>
+            </button>
           </div>
         </div>
       </div>
