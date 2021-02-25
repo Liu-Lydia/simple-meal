@@ -3,15 +3,12 @@ import React, { useEffect, useState } from 'react'
 import { Redirect, Link } from 'react-router-dom'
 
 function MemberCenterInfo(props) {
-  const { loginBool, setLoginBool, status } = props
-  useEffect(() => {
-    status && setLoginBool(true)
-    // console.log(status, !loginBool)
-  }, [status])
-
   const [Memberinfo, setMemberinfo] = useState([])
 
-  const [inputs, setInputs] = useState('')
+  const [inputs, setInputs] = useState({
+    password: '',
+    password1: '',
+  })
 
   // 切換開始作檢查的旗標
   const [startToChecked, setStartToChecked] = useState(false)
@@ -36,6 +33,7 @@ function MemberCenterInfo(props) {
   useEffect(() => {
     getDataFromServer()
   }, [])
+
   // 按了提交按鈕用的
   const handleSubmit = (e) => {
     //開啟開始觸發檢查的旗標
@@ -54,6 +52,10 @@ function MemberCenterInfo(props) {
         method: 'post',
         body: fd,
         credentials: 'include',
+      }).then((obj) => {
+        console.log(obj)
+        alert('已修改')
+        return window.location.reload()
       })
     }
   }
@@ -65,21 +67,23 @@ function MemberCenterInfo(props) {
 
   return (
     <>
-      {loginBool && <Redirect to="/" />}
       <div className="container">
-        <div className="row">
+        <div className="row ml-2">
           {' '}
           <MemberCenterNavbar />
-          <div className="col-7 mx-auto">
-            <h4 className="mb-3 mt-3 ml-2 d-none d-xl-block ">個人資料</h4>
-            <div
-              className="btn border  txt-cap1 mr-2 mb-5  col-12
+          <div className="col-12 col-lg-8  mx-auto">
+            <div className="col-12 col-sm-10  col-lg-12 col-xl-7 mx-md-auto mx-lg-0">
+              <div className="mb-5 mt-3  h3 text-center text-xl-left ee">
+                個人資料
+              </div>
+              <div
+                className="btn border  txt-cap1 mr-2 mb-5  col-12
                  d-block d-sm-none d-md-none d-lg-none d-xl-none "
-            >
-              回上頁
-            </div>
-            <div className="col-6 ">
-              <form id="test">
+              >
+                回上頁
+              </div>
+
+              <form id="test" className="txt-body">
                 {Memberinfo.map((v) => (
                   <div className="form-group">
                     <label htmlFor="inputName">電子郵件</label>
@@ -114,11 +118,11 @@ function MemberCenterInfo(props) {
                     <label htmlFor="inputName">暱稱</label>
                     <input
                       type="text"
-                      className={`form-control ${fieldValidCSS('ikename')}`}
-                      id="inputNikename"
+                      className={`form-control ${fieldValidCSS('nickname')}`}
+                      id="inputnickname"
                       name="nickname"
                       defaultValue={v.nickname}
-                      onChange={onChangeForField('nikename')}
+                      onChange={onChangeForField('nickname')}
                     />
                   </div>
                 ))}
@@ -159,8 +163,6 @@ function MemberCenterInfo(props) {
                 {Memberinfo.map((v) => (
                   <div className="mx-auto col-6">
                     <button
-                      type="button"
-                      className="btn btn-primary"
                       className="btn-green txt-btn  mb-5"
                       onClick={handleSubmit}
                     >

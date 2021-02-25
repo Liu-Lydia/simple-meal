@@ -24,8 +24,9 @@
 .aa {
   border: 3px solid #627e2a;
   border-radius: 25px;
+
   height: 665px;
-  padding-top: 75px;
+  padding-top: 65px;
 }
 .dd {
   border: 3px solid #627e2a;
@@ -41,7 +42,9 @@
 
   padding-top: 65px;
 }
-
+.ee {
+  color: #627e2a;
+}
 .box {
   width: 125px;
   height: 125px;
@@ -71,7 +74,18 @@
   border: 2px;
 }
 .box6 {
+  background-color: #627e2a;
+  color: white;
   border-radius: 50px;
+  width: 60px;
+  height: 30px;
+  text-align: center;
+  border: 2px;
+  font-family: GenSenRounded TW;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.2px;
+  text-decoration: none !important;
 }
 .item {
   color: #434341;
