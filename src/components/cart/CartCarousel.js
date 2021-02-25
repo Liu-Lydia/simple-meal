@@ -3,6 +3,7 @@ import Swal from 'sweetalert2'
 import { withRouter, Link } from 'react-router-dom'
 
 function CartCarousel() {
+  // 用來存localStorage
   const [data, setData] = useState([
     {
       category_id: '',
@@ -20,13 +21,20 @@ function CartCarousel() {
       vegetarian_food: 0,
     },
   ])
+
   // const [order, setOrder] = useState(Math.floor(data.length / 2))
-  const [order, setOrder] = useState(0)
-  const btnClickColor = 'green'
-  const btnUnClickColor = 'gray'
+  // 紀錄現在是編號幾(定位用)
+  const [order, setOrder] = useState(data.length - 1)
+
+  // 紀錄timeOutBool
+  const [timeOutBool, setTimeOutBool] = useState(true)
+
+  const btnClickColor = '#627e2a'
+  const btnUnClickColor = '#a2a3a5'
 
   // 左右移動
   const handleDirectBtn = (bool) => {
+    // console.log(order)
     if (bool && order < data.length - 1) {
       setOrder(order + 1)
     }
@@ -37,7 +45,7 @@ function CartCarousel() {
 
   // 自動移動
   const handleAutoDirection = () => {
-    console.log(1)
+    console.log(order)
     if (order > 0) {
       setOrder(order - 1)
       return
@@ -57,7 +65,7 @@ function CartCarousel() {
     buttonsStyling: false,
   })
 
-  // 送到購物車
+  // 加到到購物車
   const handleGetMealToDelivery = (sid) => {
     const url = `http://localhost:4000/mealdelivery/getmealtodelivery?sid=${sid}`
 
@@ -85,19 +93,25 @@ function CartCarousel() {
     setOrder(localData.length - 1)
   }
 
-  // 載入時讀取localstorage
+  // 載入時讀取localstorage, 並且觸發setTimeOutBool
   useEffect(() => {
     handleGetLocalStorage()
+    setTimeOutBool(true)
   }, [])
 
-  // // 當order改變自動移動
-  useEffect(() => {
-    //  每3秒動一次
-    setTimeout(() => {
-      handleAutoDirection()
-      // console.log(1)
-    }, 5000)
-  }, [order])
+  // 自動移動迴圈
+  // 當timeOutBool有任何改變, 先把它設為false, 由於非同步可繼續判斷if
+  // 當timeOutBool為true, 3秒後移動卡片並setTimeOutBool(true), 藉此來重新觸發useEffect迴圈
+  // useEffect(() => {
+  //   // console.log(timeOutBool, order)
+  //   setTimeOutBool(false)
+  //   if (timeOutBool) {
+  //     setTimeout(() => {
+  //       handleAutoDirection()
+  //       setTimeOutBool(true)
+  //     }, 3000)
+  //   }
+  // }, [timeOutBool])
 
   return (
     <>

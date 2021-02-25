@@ -400,6 +400,9 @@
 .poe-carousel {
   display: flex;
   align-items: center;
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .poe-carousel-btn {

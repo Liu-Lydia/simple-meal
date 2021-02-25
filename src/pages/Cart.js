@@ -175,6 +175,7 @@ function Cart(props) {
                   <div className="poe-bookmark-content txt-btn">
                     <h5>近期瀏覽</h5>
                     <CartCarousel />
+                    {/* <div className="w-100 d-flex justify-content-center"></div> */}
                   </div>
                 </div>
               </div>
