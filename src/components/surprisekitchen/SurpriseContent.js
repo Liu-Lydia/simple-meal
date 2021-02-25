@@ -98,36 +98,45 @@ function SurpriseContent(props) {
   }, [])
   //讀取資料 ↑↑↑
 
+  //設定場次時間, 點擊onClick之後設定傳送的場次''　↓↓↓
   const [selectTime, setSelectTime] = useState('')
 
   //點擊場次　↓↓↓
+  //初始值樣式
   const [isActive, setActive] = useState([
-    'lll-select-btn-white txt-btn lll-cursor',
-    'lll-select-btn-white txt-btn lll-cursor',
-    'lll-select-btn-white txt-btn lll-cursor',
+    'lll-select-btn-white  lll-cursor',
+    'lll-select-btn-white  lll-cursor',
+    'lll-select-btn-white  lll-cursor',
   ])
+  //設定active樣式
   const roundArray = [
     [
       'lll-select-btn-white-active',
-      'lll-select-btn-white txt-btn lll-cursor',
-      'lll-select-btn-white txt-btn lll-cursor',
+      'lll-select-btn-white lll-cursor',
+      'lll-select-btn-white lll-cursor',
     ],
     [
-      'lll-select-btn-white txt-btn lll-cursor',
+      'lll-select-btn-white lll-cursor',
       'lll-select-btn-white-active',
-      'lll-select-btn-white txt-btn lll-cursor',
+      'lll-select-btn-white lll-cursor',
     ],
     [
-      'lll-select-btn-white txt-btn lll-cursor',
-      'lll-select-btn-white txt-btn lll-cursor',
+      'lll-select-btn-white lll-cursor',
+      'lll-select-btn-white lll-cursor',
       'lll-select-btn-white-active',
     ],
   ]
   //點擊場次 ↑↑↑
 
+  //點擊場次時觸發　↓↓↓
   useEffect(() => {
-    console.log('aaaaa')
+    console.log('點擊到場次了')
   }, [isActive])
+
+  useEffect(() => {
+    setActive([0])
+    console.log('點擊日期, 刷新場次style')
+  }, [dateStr])
 
   //預約內容選擇　↓↓↓
   const [appoint, setAppoint] = useState({
@@ -276,7 +285,7 @@ function SurpriseContent(props) {
     setAppoint({
       reservation_price: 0,
     })
-    setActive({ ...timesData })
+    setActive([0])
   }
   //立即重選按鈕 ↑↑↑
 
