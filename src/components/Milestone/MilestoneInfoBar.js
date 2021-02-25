@@ -77,7 +77,7 @@ function MilestoneInfoBar(props) {
             <img
               src={
                 userInfo.length == 1 &&
-                'http://localhost:4000/img/profile/' + userInfo[0].avater
+                'http://localhost:3015/img/member-center/' + userInfo[0].avater
               }
               className="fff-info-pic"
               alt=""

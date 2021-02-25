@@ -54,7 +54,10 @@ function MsMoboPointInfo(props) {
       >
         <div className="col d-flex justify-content-center align-items-center">
           <img
-            src="http://localhost:3015/img/fff/fff-info-pic.png"
+            src={
+              userInfo.length == 1 &&
+              'http://localhost:3015/img/member-center/' + userInfo[0].avater
+            }
             className="fff-mobo-info-pic"
             alt=""
           />
