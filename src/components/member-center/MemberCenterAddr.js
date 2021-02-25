@@ -1,19 +1,26 @@
 import MemberCenterNavbar from './MemberCenterNavbar'
 import React, { useEffect, useState } from 'react'
+import { Redirect, Link } from 'react-router-dom'
 
 import Moment from 'react-moment'
 
-function MemberCenterAddr() {
+function MemberCenterAddr(props) {
+  const { loginBool, setLoginBool, status } = props
+
+  // 如果Status為true, 登入loginBool改為true
+  useEffect(() => {
+    status && setLoginBool(true)
+    // console.log(status, !loginBool)
+  }, [status])
+
   const [Memberinfo, setMemberinfo] = useState([])
 
   const getDataFromServer = async () => {
     //模擬和伺服器要資料
-    const response = await fetch(
-      `http://localhost:4000/membercenter/info?id=1`,
-      {
-        method: 'get',
-      }
-    )
+    const response = await fetch(`http://localhost:4000/membercenter/info`, {
+      method: 'get',
+      credentials: 'include',
+    })
     const data = await response.json()
     //最後設定要到狀態中
     setMemberinfo(data)
@@ -66,6 +73,9 @@ function MemberCenterAddr() {
         method: 'post',
         body: fd,
         credentials: 'include',
+      }).then((obj) => {
+        console.log(obj)
+        alert('已修改')
       })
     }
   }
@@ -78,6 +88,7 @@ function MemberCenterAddr() {
 
   return (
     <>
+      {loginBool && <Redirect to="/" />}
       <div className="container">
         <div className="row">
           {' '}
@@ -104,7 +115,7 @@ function MemberCenterAddr() {
 
                     <input
                       type="text"
-                      className={`form-control ${fieldValidCSS('addr')}`}
+                      className="form-control"
                       id="inputemail"
                       name="addr"
                       onChange={onChangeForField('addr')}

@@ -16,6 +16,7 @@ function MemberCenterSimpleMealCoupon() {
       `http://localhost:4000/membercenter/cart_simplemealcoupon?start=${CouponSeach}&end=${CouponSeach1}`,
       {
         method: 'get',
+        credentials: 'include',
       }
     )
     const data = await response.json()
