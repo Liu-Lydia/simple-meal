@@ -20,18 +20,20 @@ function MemberCenterNavbar() {
 
   return (
     <>
-      <div className=" aa d-none d-mo-none d-sm-none d-lg-none d-xl-block col-lg-2 offset-1 ">
+      <div className=" aa d-none d-xl-block col-2 offset-1 mt-2  ">
         <div className="d-flex ml-4">
-          <ul className="d-none d-mo-none d-sm-none d-lg-block d-xl-block "></ul>
+          <ul className="d-none  d-xl-block "></ul>
 
-          <div className="txt-cap ">
-            <li className="d-none d-xl-block">會員姓名:{Memberinfo.name}</li>
-            <li className="d-none d-xl-block  ">會員等級:{Memberinfo.level}</li>
+          <div className="txt-sub2 col-10">
+            <li className="d-none d-xl-block  ">會員姓名:{Memberinfo.name}</li>
+            <li className="d-none d-xl-block  mb-3">
+              會員等級:{Memberinfo.level}
+            </li>
           </div>
         </div>
 
         <div className="">
-          <div className="txt-body align-middle">
+          <div className="h6 align-middle">
             <div className="d-flex">
               <ul className="mt-1 h6 mx-auto">
                 <ul

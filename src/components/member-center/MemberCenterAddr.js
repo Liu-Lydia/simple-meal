@@ -76,6 +76,7 @@ function MemberCenterAddr(props) {
       }).then((obj) => {
         console.log(obj)
         alert('已修改')
+        return window.location.reload()
       })
     }
   }
@@ -90,32 +91,29 @@ function MemberCenterAddr(props) {
     <>
       {loginBool && <Redirect to="/" />}
       <div className="container">
-        <div className="row">
+        <div className="row ml-2">
           {' '}
           <MemberCenterNavbar />
-          <div className="col-7 mx-auto">
-            <h4 className="mb-3 mt-3 ml-2 d-none d-xl-block h7">地址</h4>
-            <div
-              className="btn border  txt-cap1 mr-2 mb-5  col-12
+          <div className="col-12 col-lg-8  mx-auto ">
+            <div className="col-12 col-sm-10  col-md-10 col-lg-12 col-xl-7 mx-md-auto mx-lg-0">
+              <div className="mb-5 mt-3 d-none d-xl-block h3 ee">地址</div>
+
+              <div
+                className="btn border  txt-cap1 mr-2 mb-5  col-12
                  d-block d-sm-none d-md-none d-lg-none d-xl-none "
-            >
-              回上頁
-            </div>
-            <div className="col-6 ">
+              >
+                回上頁
+              </div>
+
               <form id="test">
                 {Memberinfo.map((v) => (
-                  <div className="form-group h7">
+                  <div className="form-group txt-body ">
                     <label htmlFor="inputAddr">配送地址</label>
-                    <button
-                      className="btn btn-success btn-sm box6 mb-2 ml-1 "
-                      type="button"
-                    >
-                      預 設
-                    </button>
+                    <button className=" box6   ml-2 ">預 設</button>
 
                     <input
                       type="text"
-                      className="form-control"
+                      className="form-control mt-2"
                       id="inputemail"
                       name="addr"
                       onChange={onChangeForField('addr')}
@@ -125,7 +123,7 @@ function MemberCenterAddr(props) {
                   </div>
                 ))}
                 {Memberinfo.map((v) => (
-                  <div className="form-group h7">
+                  <div className="form-group ">
                     <label htmlFor="inputAddr">修改預設地址</label>
                     <input
                       type="text"
@@ -137,19 +135,15 @@ function MemberCenterAddr(props) {
                   </div>
                 ))}
                 {Memberinfo.map((v) => (
-                  <div className="d-flex">
+                  <div className="d-flex justify-content-between mb-5 mt-3">
                     <button
-                      type="button"
-                      className="btn btn-primary"
-                      className="btn-green txt-btn  mb-5"
+                      className="btn-white txt-btn mb-5"
                       onClick={handleSubmit}
                     >
                       重新設定
                     </button>
                     <button
-                      type="button"
-                      className="btn btn-primary"
-                      className="btn-green txt-btn  mb-5"
+                      className="btn-green txt-btn mb-5"
                       onClick={handleSubmit}
                     >
                       修改地址
