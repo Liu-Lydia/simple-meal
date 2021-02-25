@@ -1,17 +1,17 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { Redirect, Route, withRouter, Link, Switch } from 'react-router-dom'
 import Swal from 'sweetalert2'
-// import DropdownItem from '../components/DropdownItem'
 import { Collapse } from 'react-collapse'
 import Calendar from '../../pages/Calendar'
 
 function SurpriseContent(props) {
-  // {有沒有登入, 非購物車頁面改變購物車模式}
+  // 有沒有登入, 非購物車頁面改變購物車模式　↓↓↓
   const { loginBool, setCartModeByRedirectFrom } = props
 
+  //轉址　↓↓↓
   const [shouldRedirectTo, setShouldRedirectTo] = useState('')
 
-  // 接收預約日期值
+  // 接收預約日期值　↓↓↓
   const [dateStr, setDateObj] = useState('')
 
   //Collapse　↓↓↓
@@ -28,11 +28,14 @@ function SurpriseContent(props) {
   //Collapse ↑↑↑
 
   //接收場次資料庫資料　↓↓↓
+  //接收場次資料表初始值
   const [timesData, setTimesData] = useState([])
+  //場次狀態style
   const [timeStyle, setTimesStyle] = useState([])
+  //場次是true or false, 一樣是場次狀態
   const [timeEnable, setTimeEnable] = useState([])
 
-  //讀取資料　↓↓↓
+  //讀取該日期該場次是否有資料　↓↓↓
   const handleGetDataEnable = () => {
     const url = `http://localhost:4000/surprisekitchenOrder/getReservationTime?reservation_date=${dateStr}`
     fetch(url, {
@@ -41,33 +44,34 @@ function SurpriseContent(props) {
     })
       .then((r) => r.json())
       .then((obj) => {
-        const tmp = []
-        const tmp1 = []
+        //判斷是否有場次null or 1的呈現狀態
+        const timeStyle = []
+        //判斷是true or false 的呈現狀態
+        const activeState = []
         if (obj[0].round1 == null) {
-          tmp.push({ display: 'flex' })
-          tmp1.push(true)
+          timeStyle.push({ display: 'flex' }) //沒使用到的style
+          activeState.push(true)
         } else {
-          tmp.push({ display: 'none' })
-          tmp1.push(false)
+          timeStyle.push({ color: 'red' }) //沒使用到的style
+          activeState.push(false)
         }
         if (obj[0].round2 == null) {
-          tmp.push({ display: 'flex' })
-          tmp1.push(true)
+          timeStyle.push({ display: 'flex' }) //沒使用到的style
+          activeState.push(true)
         } else {
-          tmp.push({ display: 'none' })
-          tmp1.push(false)
+          timeStyle.push({ color: 'red' }) //沒使用到的style
+          activeState.push(false)
         }
         if (obj[0].round3 == null) {
-          tmp.push({ display: 'flex' })
-          tmp1.push(true)
+          timeStyle.push({ display: 'flex' }) //沒使用到的style
+          activeState.push(true)
         } else {
-          tmp.push({ display: 'none' })
-          tmp1.push(false)
+          timeStyle.push({ display: 'none' }) //沒使用到的style
+          activeState.push(false)
         }
 
-        setTimesStyle(tmp)
-        setTimeEnable(tmp1)
-        
+        setTimesStyle(timeStyle) //沒使用到的style
+        setTimeEnable(activeState)
       })
   }
 
@@ -86,22 +90,46 @@ function SurpriseContent(props) {
 
   useEffect(() => {
     handleGetDataEnable()
-    console.log("dateStr - useEffect")
-  }, [dateStr])
+    console.log('dateStr - useEffect')
+  }, [dateStr]) //取得日期值的時候執行動作handleGetDataEnable()
 
   useEffect(() => {
-    handleGetData()
+    handleGetData() //獲取場次資料表初始值及樣貌
   }, [])
   //讀取資料 ↑↑↑
 
+  const [selectTime, setSelectTime] = useState('')
+
   //點擊場次　↓↓↓
-  const [isActive, setActive] = useState({ ...timesData })
-  const handleToggleClass = (v) => {
-    setActive(v)
-  }
+  const [isActive, setActive] = useState([
+    'lll-select-btn-white txt-btn lll-cursor',
+    'lll-select-btn-white txt-btn lll-cursor',
+    'lll-select-btn-white txt-btn lll-cursor',
+  ])
+  const roundArray = [
+    [
+      'lll-select-btn-white-active',
+      'lll-select-btn-white txt-btn lll-cursor',
+      'lll-select-btn-white txt-btn lll-cursor',
+    ],
+    [
+      'lll-select-btn-white txt-btn lll-cursor',
+      'lll-select-btn-white-active',
+      'lll-select-btn-white txt-btn lll-cursor',
+    ],
+    [
+      'lll-select-btn-white txt-btn lll-cursor',
+      'lll-select-btn-white txt-btn lll-cursor',
+      'lll-select-btn-white-active',
+    ],
+  ]
   //點擊場次 ↑↑↑
 
-  //預約內容選擇
+  useEffect(() => {
+    console.log('aaaaa')
+  }, [isActive])
+
+  //預約內容選擇　↓↓↓
   const [appoint, setAppoint] = useState({
     reservation_date: '',
     reservation_time: '',
@@ -114,7 +142,7 @@ function SurpriseContent(props) {
     reservation_price: 0,
   })
 
-  //成人數量選擇
+  //成人數量選擇　↓↓↓
   const [num_adult, setNum_adult] = useState(0)
   const handleNum_adult = (bool) => {
     if (bool) {
@@ -130,7 +158,7 @@ function SurpriseContent(props) {
     }
   }
 
-  //兒童數量選擇
+  //兒童數量選擇　↓↓↓
   const [num_child, setNum_child] = useState(0)
   const handleNum_child = (bool) => {
     if (bool) {
@@ -148,7 +176,7 @@ function SurpriseContent(props) {
 
   const [textarea, setTextarea] = useState('')
 
-  //金額顯示
+  //金額顯示　↓↓↓
   function handleSetPrice(num_adult, child_price) {
     const Price = num_adult * 500 + child_price * 100
 
@@ -165,7 +193,7 @@ function SurpriseContent(props) {
     })
   }
 
-  //餐點數量選擇
+  //餐點數量選擇　↓↓↓
   const [num_meal, setNum_meal] = useState(0)
   const handleNum_meal = (bool) => {
     if (bool) {
@@ -177,7 +205,7 @@ function SurpriseContent(props) {
     }
   }
 
-  // 定義SweetAlert2的按鈕
+  // 定義SweetAlert2的按鈕　↓↓↓
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       popup: 'poe-alert',
@@ -190,6 +218,7 @@ function SurpriseContent(props) {
     buttonsStyling: false,
   })
 
+  //發送預約　↓↓↓
   const handlePostOrder = async () => {
     const fd = new FormData(document.querySelector('#reservation_kitchen'))
 
@@ -249,7 +278,7 @@ function SurpriseContent(props) {
     })
     setActive({ ...timesData })
   }
-  //立即重選 ↑↑↑
+  //立即重選按鈕 ↑↑↑
 
   return (
     <>
@@ -325,17 +354,24 @@ function SurpriseContent(props) {
                   <div className="lll-pr30">
                     <div
                       key={i}
-                      className="lll-select-btn-white txt-btn lll-cursor"
-                      onClick={() => handleToggleClass(v)}
+                      // className={isActive[i]}
+                      onClick={
+                        timeEnable[i]
+                          ? () => {
+                              setActive(roundArray[i])
+                              setSelectTime(v.reservation_time)
+                            }
+                          : () => {}
+                      }
                       // onClick={(event) => {
                       //   console.log(v.reservation_time)
                       // }}
-                      className={
+                      className={`${
                         timeEnable[i]
-                          ? 'lll-select-btn-white-active txt-btn lll-cursor'
-                          : 'lll-select-btn-white txt-btn lll-cursor'
-                      }
-                      // style={timeStyle[i]}
+                          ? 'lll-select-btn-white txt-btn lll-cursor'
+                          : 'lll-select-btn-tryover lll-txt-btndel lll-cursor'
+                      } ${isActive[i]}`}
+                      // style={tmp[i]}
                     >
                       {v.reservation_time}
                     </div>
@@ -487,11 +523,7 @@ function SurpriseContent(props) {
       </Collapse>
       <form id="reservation_kitchen" hidden>
         <input type="date" name="reservation_date" value={dateStr} />
-        <input
-          type="text"
-          name="reservation_time"
-          value={isActive.reservation_time}
-        />
+        <input type="text" name="reservation_time" value={selectTime} />
         <input type="text" name="num_adult" value={num_adult} />
         <input type="text" name="num_child" value={num_child} />
         {/* <input type="text" name="adult_price" value={500} />
