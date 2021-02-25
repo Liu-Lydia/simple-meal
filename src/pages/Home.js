@@ -381,9 +381,11 @@ function Home(props) {
       {/* test */}
 
       {/* <Run /> */}
-      <div id="app" />
-      <Run />
-
+      <div className="container">
+        <div className="row mb-5">
+          <Run />
+        </div>
+      </div>
       {/* p7 */}
       <div className="container">
         <div className="row mb-5">
