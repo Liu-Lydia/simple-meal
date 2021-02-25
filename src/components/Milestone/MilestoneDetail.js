@@ -7,7 +7,7 @@ function MilestoneDetail(props) {
       <div
         id="fff-ms-detail-content"
         className="row fff-ms-detail-content"
-        onMouseOut={() => {
+        onMouseLeave={() => {
           props.setDetailStyle({ visibility: 'hidden' })
         }}
       >
