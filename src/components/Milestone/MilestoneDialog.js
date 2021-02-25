@@ -1,13 +1,13 @@
 import React, { props, useState, useEffect } from 'react'
 
 //detailStyle={detailStyle} setDetailStyle={setDetailStyle} detailContext={detailContext}
-function MilestoneDetail(props) {
+function MilestoneDialog(props) {
   return (
     <div className="fff-mshowto" style={props.detailStyle}>
       <div
         id="fff-ms-detail-content"
         className="row fff-ms-detail-content"
-        onMouseOut={() => {
+        onMouseLeave={() => {
           props.setDetailStyle({ visibility: 'hidden' })
         }}
       >
@@ -102,4 +102,4 @@ function MilestoneDetail(props) {
   )
 }
 
-export default MilestoneDetail
+export default MilestoneDialog

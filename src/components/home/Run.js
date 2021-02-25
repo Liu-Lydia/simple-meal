@@ -52,7 +52,6 @@ export default class Run extends React.Component {
             margin: '40px auto',
           }}
         >
-          {/* <h1>123</h1> */}
           <TweenOne
             animation={this.animation}
             style={{ margin: 0 }}
