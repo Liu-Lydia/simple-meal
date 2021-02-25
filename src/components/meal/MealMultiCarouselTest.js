@@ -5,8 +5,14 @@ import CustomRightArrow from './CustomRightArrow'
 import CustomLeftArrow from './CustomLeftArrow'
 import { useState, useEffect } from 'react'
 function MealMultiCarousel(props) {
-  const { setSelectMeal, meal, dataLoading, mealDisplay } = props
-  
+  const {
+    setSelectMeal,
+    meal,
+    dataLoading,
+    mealDisplay,
+    setDataLoadingforTittle,
+  } = props
+
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -58,7 +64,10 @@ function MealMultiCarousel(props) {
                 <Link
                   className="cha-dl"
                   onClick={() => {
-                    setSelectMeal(value.sid)
+                    setDataLoadingforTittle(true)
+                    setTimeout(() => {
+                      setSelectMeal(value.sid)
+                    }, 400)
                   }}
                 >
                   <div class="cha-card" key={value.sid}>

@@ -23,7 +23,8 @@ function Meal(props) {
   const [updateNum, setUpdateNum] = useState(0)
   //開啟載入指示
   const [dataLoading, setDataLoading] = useState(false)
-
+//設定點選菜單卡，送一個dataloading給主標題和圖片
+const  [dataLoadingforTittle, setDataLoadingforTittle] = useState(false)
   async function getUsersFromServer() {
     // 開啟載入指示
     setDataLoading(true)
@@ -86,6 +87,8 @@ function Meal(props) {
             updateNum={updateNum}
             setUpdateNum={setUpdateNum}
             setMealForRecipe={setMealForRecipe}
+            dataLoadingforTittle={dataLoadingforTittle}
+            setDataLoadingforTittle={setDataLoadingforTittle}
           />
           {/* <MealMultiCarousel type={type} /> */}
           <MealMultiCarouselTest
@@ -95,6 +98,7 @@ function Meal(props) {
             dataLoading={dataLoading}
             mealDisplay={mealDisplay}
             setSelectMeal={setSelectMeal}
+            setDataLoadingforTittle={setDataLoadingforTittle}
           />
         </div>
       </div>

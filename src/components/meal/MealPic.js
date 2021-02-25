@@ -1,13 +1,22 @@
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
 
 function MealPic(props) {
-  const { data } = props
+  const { data, dataLoadingforTittle, setDataLoadingforTittle } = props
   // const pic2 = [{ itemName: 'american01' }, { itemName: 'american02' }]
+
+  useEffect(() => {}, [dataLoadingforTittle])
   return (
     <>
-      <div className="cha-main-pic col-12 col-lg-5">
+      <div
+        className={
+          dataLoadingforTittle
+            ? 'cha-main-pic col-12 col-lg-5 cha-loading'
+            : 'cha-main-pic col-12 col-lg-5'
+        }
+      >
         <img
-          className="cha-main-pic2"
+          className="cha-main-pic2 "
           src={`http://localhost:3015/img/meal/${data.product_id}.png`}
           alt=""
         />

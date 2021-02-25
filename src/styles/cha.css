@@ -23,6 +23,7 @@
   padding: 0;
   top: -50%;
   text-align: center;
+  transition: .5s;
 }
 .cha-main-pic2 {
   width: 100%;
@@ -41,6 +42,7 @@
 
 .cha-main-txt {
   padding: 0;
+  transition: .5s;
 }
 .cha-main-txt1 {
   height: 100px;
@@ -82,11 +84,11 @@
   letter-spacing: 12px;
   font-size: 12px;
 }
-.cha-dl{
-  text-decoration: none!important;
+.cha-dl {
+  text-decoration: none !important;
 }
 .cha-dl:hover {
-  text-decoration: none!important;
+  text-decoration: none !important;
 }
 .cha-px0 {
   padding: 0 !important;
@@ -120,6 +122,10 @@
 }
 .cha-mb0 {
   margin-bottom: 0px;
+}
+.cha-loading {
+  opacity: 0;
+  
 }
 .cha-cards {
   /* position: fixed; */
@@ -164,7 +170,7 @@
   text-align: center;
   top: -65px;
   position: relative;
-  transition: .2s;
+  transition: 0.2s;
 }
 .cha-card-img2 {
   height: 145px;
@@ -219,16 +225,15 @@
   color: #627e2a;
   text-decoration: none;
 }
-.cha-ingredient-img1{
+.cha-ingredient-img1 {
   width: 70px;
   object-fit: contain;
 }
-.cha-ingredient-img2{
+.cha-ingredient-img2 {
   width: 100%;
   object-fit: contain;
-
 }
-.cha-ingredient-txt{
+.cha-ingredient-txt {
   text-align: center;
 }
 .cha-search-put {
@@ -306,10 +311,10 @@
   /* background-color: #a2a3a5; */
   /* margin-left: 50px; */
 }
-.cha-cart-user-img{
+.cha-cart-user-img {
   width: 100%;
   height: 100%;
-  object-fit:cover;
+  object-fit: cover;
 }
 .cha-cart-user-txt {
   margin-top: 7px;
@@ -418,17 +423,15 @@ margin-left: 46px;
   cursor: pointer;
   color: #ffffff;
   background-color: #a2a3a5;
-  transition: .5s;
+  transition: 0.5s;
 }
 .cha-rec-sel1:hover {
   color: #a2a3a5;
   text-decoration: none;
-  
 }
 .cha-rec-sel1-active:hover {
   text-decoration: none;
   color: #fff;
-  
 }
 
 .cha-rec-sel-box {
@@ -486,16 +489,16 @@ margin-left: 46px;
   /* background-color: #b9433b; */
   /* background-color: red; */
 }
-.cha-rec-card:hover .cha-card-img1{
+.cha-rec-card:hover .cha-card-img1 {
   height: 170px;
-  top:-100px;
+  top: -100px;
 }
-.cha-rec-card:hover .cha-card-img2{
+.cha-rec-card:hover .cha-card-img2 {
   height: 170px;
 }
 
-.cha-rec-card:hover{
-  text-decoration: none!important;
+.cha-rec-card:hover {
+  text-decoration: none !important;
 }
 @media (max-width: 1199px) {
   .cha-main-txt2 {
@@ -543,11 +546,11 @@ margin-left: 46px;
   .cha-meun-li {
     margin-top: 30px;
   }
-  .cha-meun{
-    top:160px;
+  .cha-meun {
+    top: 160px;
   }
-  .cha-meun-open{
-    top:180px;
+  .cha-meun-open {
+    top: 180px;
   }
   .cha-btn-recipe {
     display: none;
@@ -652,7 +655,7 @@ margin-left: 46px;
     margin: 20px auto 20px 55px;
   }
   .cha-rec-btn-bye {
-    display: none!important;
+    display: none !important;
   }
   .cha-rec-main-txt-main {
     margin-bottom: 0px;

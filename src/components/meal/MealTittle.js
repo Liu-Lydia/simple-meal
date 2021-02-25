@@ -11,52 +11,57 @@ function MealTittle(props) {
     updateNum,
     setUpdateNum,
     setMealForRecipe,
+    dataLoadingforTittle,
+    setDataLoadingforTittle,
   } = props
-  const mealData = selectMeal
   const [meal, setMeal] = useState([])
+  //fetch到的會員資料
   const [dataLoading, setDataLoading] = useState(false)
-  // async function getUsersFromServer() {
-  //   開啟載入指示
-  //   setDataLoading(true)
-  //   連接的伺服器資料網址
-  //   const url = 'http://localhost:4000/meal/selectMeal'
-  //   const url = 'http://localhost:4000/meal/typeA'
-  //   注意header資料格式要設定，伺服器才知道是json格式
-  //   const request = new Request(url, {
-  //     method: 'get',
-  //     // body: JSON.stringify(mealData),
-  //     headers: new Headers({
-  //       Accept: 'application/json',
-  //       'Content-Type': 'appliaction/json',
-  //     }),
-  //   })
+  const [memberData, setMemberData] = useState({
+    id: 1,
+    member_number: '',
+    avater: '',
+    level: '',
+    email: '',
+    password: '',
+    name: '',
+    nickname: '',
+    mobile: '',
+    birthday: '',
+    credit＿card: '',
+    addr: '',
+    love: '',
+    simplemeal_coupon: 0,
+  })
+  //按下切換最愛圖示
+  const [heart, setHeart] = useState(false)
+  // SELECT * FROM `membercenter` WHERE `id` = ?",
+  // [req.query.sid]
 
-  //   const response = await fetch(request)
-  //   const data = await response.json()
-  //   console.log(data)
-  //   // 設定資料
-  //   setMeal(data)
-  // }
+  function handleGetLove() {
+    const url = `http://localhost:4000/getmemberinfo`
 
-  // useEffect(() => {
-  //   getUsersFromServer()
-  // }, [])
+    fetch(url, {
+      medhod: 'get',
+      credentials: 'include',
+    })
+      .then((r) => r.json())
+      .then((obj) => {
+        setMemberData({ ...obj })
+      })
+      .then(() => {})
+  }
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setDataLoading(false)
-  //   }, 1000)
-  // }, [meal])
+  const thisMealSid = data.sid.toString()
+  const thisMemberLoveId = memberData.love.split(',')
 
-  // const loading = (
-  //   <>
-  //     <div className="d-flex justify-content-center">
-  //       <div className="spinner-border" role="status">
-  //         <span className="sr-only">Loading...</span>
-  //       </div>
-  //     </div>
-  //   </>
-  // )
+  const inLove = thisMemberLoveId.includes(thisMealSid)
+
+  useEffect(() => {
+    handleGetLove()
+  }, [])
+
+  console.log(inLove)
 
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
@@ -90,12 +95,38 @@ function MealTittle(props) {
     // .then(() => alert('以加入購物車'))
   }
 
+  const addlove = (mealsid) => {
+    const url = `http://localhost:4000/meal/getlove?sid=${mealsid}`
+    fetch(url, {
+      medhod: 'get',
+      credentials: 'include',
+    })
+      .then((r) => r.json())
+      .then((obj) => {
+        alert(obj.msg)
+        handleGetLove()
+      })
+  }
+
+  useEffect(() => {
+    // 初次預設值也不處理
+    // 先開起載入指示器
+
+    // 3秒後關閉指示器
+    setTimeout(() => {
+      setDataLoadingforTittle(false)
+    }, 500)
+  }, [dataLoadingforTittle])
+
   return (
     <>
-      {/* {data.length &&
-        data.map((value, index) => {
-          return ( */}
-      <div className="cha-main-txt col-12 col-lg-7">
+      <div
+        className={
+          dataLoadingforTittle
+            ? 'cha-main-txt col-12 col-lg-7 cha-loading'
+            : 'cha-main-txt col-12 col-lg-7 '
+        }
+      >
         <div className="cha-main-txt1 txt-sub1">
           {!breadCrumbBool && <MultiLevelBreadCrumb />}
         </div>
@@ -112,7 +143,9 @@ function MealTittle(props) {
               <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>
-              <i className="far fa-star"></i>
+              <Link onClick={() => {}}>
+                <i className="far fa-star"></i>
+              </Link>
             </div>
             <div className="cha-mb2 cha-main-icon-sub d-flex">
               <div className="cha-mr3 cha-main-icon-sub1">
@@ -126,8 +159,19 @@ function MealTittle(props) {
                 </span>
               </div>
               <div className=" cha-main-icon-sub3">
-                <i className="fas fa-heart cha-star-big cha-green"></i>
-                <span className="cha-gray txt-sub1">加入收藏</span>
+                <Link
+                  onClick={() => inLove !== true && addlove(props.data.sid)}
+                >
+                  <i
+                    className={
+                      inLove
+                        ? 'fas fa-heart cha-star-big cha-green'
+                        : 'far fa-heart cha-star-big cha-green'
+                    }
+                  ></i>
+
+                  <span className="cha-gray txt-sub1">加入收藏</span>
+                </Link>
               </div>
             </div>
             <div>
@@ -150,8 +194,6 @@ function MealTittle(props) {
           </div>
         </div>
       </div>
-      {/* )
-        })} */}
     </>
   )
 }
