@@ -151,7 +151,7 @@ function RecipeTittle(props) {
               食材清單
             </Link>
           </div>
-          <div className="cha-rec-sel-box  txt-body cha-gray">{selected()}</div>
+          <div className="cha-rec-sel-box  txt-body cha-gray" id="scroll">{selected()}</div>
           <div className="cha-rec-btns d-flex justify-content-between">
             <Link
               onClick={() =>
