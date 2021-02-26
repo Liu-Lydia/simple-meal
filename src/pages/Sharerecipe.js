@@ -65,20 +65,22 @@ function Sharerecipe(props) {
     // 3秒後關閉spinner
     setTimeout(() => {
       setIsLoading(false)
-    }, 1500)
+    }, 4000)
   }, [searchInput])
 
   // 等待時的畫面
   const spinner = (
     <>
-      <div className="spinner-grow text-primary" role="status">
-        <span className="sr-only">Loading...</span>
-      </div>
-      <div className="spinner-grow text-secondary" role="status">
-        <span className="sr-only">Loading...</span>
-      </div>
-      <div className="spinner-grow text-success" role="status">
-        <span className="sr-only">Loading...</span>
+      <div className="container">
+        <div className="row mt-5">
+          <div className="mt-5 mx-auto xxx-200x200">
+            <img
+              src="http://localhost:3015/img/lemon/empty.gif"
+              className="card-img-top xxx-img xxx-br25 xxx-m85"
+              alt="..."
+            />
+          </div>
+        </div>
       </div>
     </>
   )

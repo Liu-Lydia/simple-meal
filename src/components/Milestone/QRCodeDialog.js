@@ -9,8 +9,6 @@ function QRCodeDialog(props) {
     <div className="fff-exchange" style={props.qrcodeStyle}>
       <div className="fff-exchange-content-box">
         <div className="row justify-content-end fff-no-mr-and-pad">
-          {/* 圖片放置位置 先占高 mobo關閉 */}
-
           {/* 關閉頁面的Ｘ */}
           <div className="" style={{ marginBottom: '10px' }}>
             <h6 className="fff-no-mr-and-pad" style={{ color: '#627E2A' }}>
@@ -23,31 +21,26 @@ function QRCodeDialog(props) {
             </h6>
           </div>
         </div>
-        <div className="row fff-no-mr-and-pad">
+        <div className="row justify-content-center fff-no-mr-and-pad">
           <form id="dialog-form">
-            <div className="col fff-exchange-content txt-btn">
-              <div
-                className="d-flex justify-content-between fff-txt-info
-              "
-                style={{ lineHeight: '50px' }}
+            <div className="">
+              <QRCode value={`${props.qrcodeValue}`} />
+            </div>
+            <div className="txt-btn text-center">可使用</div>
+            <div
+              className="col d-column fff-exchange-content txt-btn"
+              style={{ marginTop: '30px' }}
+            >
+              <button
+                type="button"
+                className="btn-green txt-btn aboutCloseBtn"
+                onClick={() => {
+                  props.setqrcodeStyle({ display: 'none' })
+                }}
+                data-dismiss="modal"
               >
-                <QRCode value={`${props.qrcodeValue}`} />
-              </div>
-              <div
-                className="d-flex justify-content-center"
-                style={{ marginTop: '25px' }}
-              >
-                <button
-                  type="button"
-                  className="btn-green txt-btn aboutCloseBtn"
-                  onClick={() => {
-                    props.setqrcodeStyle({ display: 'none' })
-                  }}
-                  data-dismiss="modal"
-                >
-                  關閉
-                </button>
-              </div>
+                關閉
+              </button>
             </div>
           </form>
         </div>

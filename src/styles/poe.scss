@@ -395,7 +395,7 @@
   transition: 1s;
   color: #fff;
   opacity: 0;
-  cursor: pointer;  //莉苓偷加的030
+  cursor: pointer; //莉苓偷加的030
 }
 
 .poe-carousel {
@@ -464,59 +464,51 @@
   -webkit-box-orient: vertical;
 }
 
-// .poe-creditcard-content {
-//   margin-left: auto;
-//   margin-right: auto;
-//   margin-top: 10vh;
-//   background-color: white;
-//   width: 302px;
-//   border-radius: 25px;
-//   text-align: left;
-//   line-height: 30px;
-//   border: 5px #627e2a solid;
-//   padding: 30px;
-// }
-
-// .poe-centered-wrap {
-//   margin-left: auto;
-//   margin-right: auto;
-//   position: absolute;
-//   transform: translate(-50%, -50%);
-// }
-.poe-center-wrap {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.poe-card-wrap {
-  position: relative;
-
-  width: 232px;
-  height: 146px;
+.poe-creditcard-container {
+  -webkit-perspective: 700;
+  -moz-perspective: 700;
+  perspective: 700;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
 }
 
-.poe-card-body {
-  position: absolute;
+.poe-creditcard-body {
+  margin: auto;
+  // background-color: #0871b0;
+  width: 232px;
+  height: 146px;
+  // text-align: center;
+  line-height: 200px;
+  // color: #fff;
+  transition: all 0.6s ease;
+  -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  transition: 0.5s all ease;
+  position: relative;
 }
 
-.poe-card-body:hover {
-  transform: rotateY(180deg);
-}
-
-.poe-creditcard-front {
-  position: absolute;
-  backface-visibility: hidden;
-}
+.poe-creditcard-front,
 .poe-creditcard-back {
+  // background-color: #0871b0;
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 232px;
+  // height: 200px;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+}
+
+.poe-creditcard-back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
+// .poe-creditcard-body:hover {
+//   -webkit-transform: rotateY(180deg);
+//   -moz-transform: rotateY(180deg);
+//   transform: rotateY(180deg);
+// }
 
 .poe-creditcard {
   // max-width: 428px;
@@ -580,4 +572,33 @@
   // padding-right: 30px;
   line-height: 25px !important;
   text-align: right;
+}
+.poe-creditblackbar {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(41, 38, 38);
+}
+.poe-credit-backbox {
+  width: 100%;
+  height: 30px;
+  margin-top: 15px;
+  padding-right: 10px;
+  padding-left: 10px;
+  display: flex;
+  justify-content: space-between;
+  // background-color: rgb(218, 72, 72);
+}
+.poe-credit-username {
+  height: 30px;
+  width: 150px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 30px;
+}
+.poe-credit-cvn {
+  height: 30px;
+  width: 50px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  line-height: 30px;
 }

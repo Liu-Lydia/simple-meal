@@ -98,9 +98,15 @@ function MyRecipe(props) {
 
   const loading = (
     <>
-      <div className="d-flex justify-content-center">
-        <div className="spinner-border" role="status">
-          <span className="sr-only">Loading...</span>
+      <div className="container">
+        <div className="row mt-5">
+          <div className="mt-5 mx-auto xxx-200x200">
+            <img
+              src="http://localhost:3015/img/lemon/empty.gif"
+              className="card-img-top xxx-img xxx-br25 xxx-m85"
+              alt="..."
+            />
+          </div>
         </div>
       </div>
     </>

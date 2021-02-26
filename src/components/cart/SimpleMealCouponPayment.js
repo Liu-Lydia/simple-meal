@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { Route, withRouter, Link, Switch } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
@@ -28,16 +28,24 @@ function SimpleMealCouponPayment(props) {
   // 切換信用卡隱藏視窗
   const [creditModalStyle, setCreditModalStyle] = useState({ display: 'none' })
 
+  // 信用卡填入資訊
   const [creditCardInfo, setCreditCardInfo] = useState({
     num: '',
     date: '',
     cvn: '',
   })
 
+  // 信用卡是否翻轉
+  const [creditTransBool, setCreditTransBool] = useState(false)
+
+  // 指定信用卡
+  const creditCard = useRef()
+
   // 改變付款方案
   const handleSetPaymentValue = (event) => {
     setPaymentValue(event.target.value)
     handleSetPaymentObj(event.target.value)
+    // 如果是信用卡就跳出填寫視窗
     if (event.target.value === '0') {
       setCreditModalStyle({ display: 'block' })
     }
@@ -274,8 +282,11 @@ function SimpleMealCouponPayment(props) {
       </div>
 
       {/* 隱藏視窗(優惠券) */}
-      <div className="fff-mshowto" style={modalStyle}>
-        <div className="fff-mshowto-content" style={{ marginTop: '20vh' }}>
+      <div className="fff-handmadepopup" style={modalStyle}>
+        <div
+          className="fff-handmadepopup-content"
+          style={{ marginTop: '20vh' }}
+        >
           {/* 關閉頁面的Ｘ */}
           <div className="fff-ms-mobo justify-content-end col-12">
             <h6>
@@ -345,8 +356,8 @@ function SimpleMealCouponPayment(props) {
       </div>
 
       {/* 隱藏視窗(信用卡) */}
-      <div className="fff-mshowto" style={creditModalStyle}>
-        <div className="fff-mshowto-content" style={{ marginTop: '5vh' }}>
+      <div className="fff-handmadepopup" style={creditModalStyle}>
+        <div className="fff-handmadepopup-content" style={{ marginTop: '5vh' }}>
           {/* 關閉頁面的Ｘ */}
           <div className="fff-ms-mobo justify-content-end col-12">
             <h6>
@@ -359,42 +370,64 @@ function SimpleMealCouponPayment(props) {
             </h6>
           </div>
           {/* 信用卡圖樣 */}
-          {/* <div className="poe-center-wrap">
-            <div className="poe-card-wrap">
-              <div className="poe-card-body">
-                <div className="poe-creditcard-front"> */}
-          <div className="poe-creditcard">
-            <div className="poe-credit-title txt-btn">
-              <i class="fas fa-caret-left"></i>&nbsp;&nbsp; Credit Card
-            </div>
-            <div className="poe-credit-chip"></div>
-            <div className="poe-credit-numbox txt-btn">
-              <div className="poe-credit-num">
-                {creditCardInfo.num.slice(0, 4)}
+          <div className="poe-creditcard-container">
+            <div
+              className="poe-creditcard-body"
+              ref={creditCard}
+              style={
+                creditTransBool
+                  ? {
+                      webkitTransform: 'rotateY(180deg)',
+                      mozTransform: 'rotateY(180deg)',
+                      transform: 'rotateY(180deg)',
+                    }
+                  : {}
+              }
+              onMouseEnter={() => {
+                setCreditTransBool(true)
+              }}
+              onMouseLeave={() => {
+                setCreditTransBool(false)
+              }}
+            >
+              <div className="poe-creditcard-front">
+                <div className="poe-creditcard">
+                  <div className="poe-credit-title txt-btn">
+                    <i class="fas fa-caret-left"></i>&nbsp;&nbsp; Credit Card
+                  </div>
+                  <div className="poe-credit-chip"></div>
+                  <div className="poe-credit-numbox txt-btn">
+                    <div className="poe-credit-num">
+                      {creditCardInfo.num.slice(0, 4)}
+                    </div>
+                    <div className="poe-credit-num">
+                      {creditCardInfo.num.slice(4, 8)}
+                    </div>
+                    <div className="poe-credit-num">
+                      {creditCardInfo.num.slice(8, 12)}
+                    </div>
+                    <div className="poe-credit-num">
+                      {creditCardInfo.num.slice(12, 16)}
+                    </div>
+                  </div>
+                  <div className="poe-credit-effective text-center txt-btn">
+                    &nbsp;&nbsp;{creditCardInfo.date.slice(0, 2)}/
+                    {creditCardInfo.date.slice(2, 4)}
+                  </div>
+                </div>
               </div>
-              <div className="poe-credit-num">
-                {creditCardInfo.num.slice(4, 8)}
-              </div>
-              <div className="poe-credit-num">
-                {creditCardInfo.num.slice(8, 12)}
-              </div>
-              <div className="poe-credit-num">
-                {creditCardInfo.num.slice(12, 16)}
-              </div>
-            </div>
-            <div className="poe-credit-effective text-center txt-btn">
-              &nbsp;&nbsp;{creditCardInfo.date.slice(0, 2)}/
-              {creditCardInfo.date.slice(2, 4)}
-            </div>
-          </div>
-          {/* </div> */}
-          {/* 背面 */}
-          {/* <div className="poe-creditcard-back">
-                  <div className="poe-creditcard"></div>
+              <div className="poe-creditcard-back">
+                <div className="poe-creditcard">
+                  <div className="poe-creditblackbar"></div>
+                  <div className="poe-credit-backbox">
+                    <div className="poe-credit-username">user name</div>
+                    <div className="poe-credit-cvn">{creditCardInfo.cvn}</div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
+
           {/* 信用卡輸入位置*/}
           {/* 填入 */}
           <div className="mx-auto mx-sm-5 mt-4 txt-btn poe-form">
@@ -411,12 +444,15 @@ function SimpleMealCouponPayment(props) {
                   type="text"
                   className="w-100 input-style"
                   value={creditCardInfo.num}
-                  onChange={(event) =>
-                    setCreditCardInfo({
-                      ...creditCardInfo,
-                      num: event.target.value,
-                    })
-                  }
+                  onChange={(event) => {
+                    setCreditTransBool(false)
+                    if (event.target.value.length <= 16) {
+                      setCreditCardInfo({
+                        ...creditCardInfo,
+                        num: event.target.value,
+                      })
+                    }
+                  }}
                   // placeholder={infoPlaceholder.name}
                 />
               </div>
@@ -438,12 +474,15 @@ function SimpleMealCouponPayment(props) {
                   type="text"
                   className="w-100 input-style"
                   value={creditCardInfo.date}
-                  onChange={(event) =>
-                    setCreditCardInfo({
-                      ...creditCardInfo,
-                      date: event.target.value,
-                    })
-                  }
+                  onChange={(event) => {
+                    setCreditTransBool(false)
+                    if (event.target.value.length <= 4) {
+                      setCreditCardInfo({
+                        ...creditCardInfo,
+                        date: event.target.value,
+                      })
+                    }
+                  }}
                   // placeholder={infoPlaceholder.name}
                 />
               </div>
@@ -465,12 +504,16 @@ function SimpleMealCouponPayment(props) {
                   type="text"
                   className="w-100 input-style"
                   value={creditCardInfo.cvn}
-                  onChange={(event) =>
-                    setCreditCardInfo({
-                      ...creditCardInfo,
-                      cvn: event.target.value,
-                    })
-                  }
+                  onChange={(event) => {
+                    setCreditTransBool(true)
+                    if (event.target.value.length <= 3) {
+                      setCreditCardInfo({
+                        ...creditCardInfo,
+                        cvn: event.target.value,
+                      })
+                    }
+                  }}
+
                   // placeholder={infoPlaceholder.name}
                 />
               </div>

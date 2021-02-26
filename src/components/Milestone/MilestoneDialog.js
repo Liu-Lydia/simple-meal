@@ -1,31 +1,33 @@
 import React, { props, useState, useEffect } from 'react'
+import { ProgressBar } from 'react-bootstrap'
 
 //detailStyle={detailStyle} setDetailStyle={setDetailStyle} detailContext={detailContext}
 function MilestoneDialog(props) {
   return (
-    <div className="fff-mshowto" style={props.detailStyle}>
+    <div className="fff-handmadepopup" style={props.detailStyle}>
       <div
         id="fff-ms-detail-content"
-        className="row fff-ms-detail-content"
-        onMouseLeave={() => {
+        className="fff-ms-detail-content"
+        onClick={() => {
           props.setDetailStyle({ visibility: 'hidden' })
         }}
       >
-        <div className="col justify-content-center">
-          <div className="fff-ms-mobo justify-content-end col-12">
-            {/* 關閉頁面的Ｘ */}
-            <h6>
-              <i
-                className="fas fa-times aboutCloseBtn"
-                onClick={() => {
-                  props.setDetailStyle({ visibility: 'hidden' })
-                }}
-              ></i>
-            </h6>
-          </div>
-          <div className="fff-ms-web">
+        {/* 關閉頁面的Ｘ */}
+        <div className="row justify-content-end fff-no-mr-and-pad fff-ms-mobo">
+          <h6 style={{ color: '#627e2a' }}>
+            <i
+              className="fas fa-times aboutCloseBtn"
+              onClick={() => {
+                props.setDetailStyle({ visibility: 'hidden' })
+              }}
+            ></i>
+          </h6>
+        </div>
+        {/* 兌換內容 */}
+        <div className="row fff-no-mr-and-pad">
+          {/*圖片區 */}
+          <div className="col align-self-center">
             <img
-              className="col-4 align-center"
               src={
                 'http://localhost:3015/img/milestonelist/' +
                 (props.detailContext.AddProgress >=
@@ -33,69 +35,55 @@ function MilestoneDialog(props) {
                   ? props.detailContext.finished_goal_pic
                   : props.detailContext.unfinished_goal_pic)
               }
-              alt=""
-            />
-            <div className="col-8">
-              <h3>{props.detailContext.stone_name}</h3>
-              <h5>{props.detailContext.TriggerSubs}</h5>
-              <p className="txt-h6" style={{ color: '#627e2a' }}>
-                {' '}
-                獎勵點數：{props.detailContext.reward_point}點
-              </p>
-              <p className="txt-h6">達成方式{props.detailContext.subs}</p>
-              <p className="txt-h6">
-                目前進度
-                {props.detailContext.AddProgress == null
-                  ? 0
-                  : props.detailContext.AddProgress}
-                /{props.detailContext.progress_goal}
-              </p>
-            </div>
-          </div>
-          <div className="fff-ms-mobo row justify-content-center">
-            <img
-              className="align-center"
-              src={
-                'http://localhost:3015/img/milestonelist/' +
-                (props.detailContext.AddProgress >=
-                props.detailContext.progress_goal
-                  ? props.detailContext.finished_goal_pic
-                  : props.detailContext.unfinished_goal_pic)
-              }
-              width="150px"
-              height="150px"
+              width="80%"
+              height="80%"
               alt="s"
             />
-            <h6>{props.detailContext.stone_name}</h6>
-            <br />
-            <span className="txt-h6">{props.detailContext.TriggerSubs}</span>
+          </div>
+          {/* 文字區 */}
+          <div className="col fff-txt-ms-detail">
+            {/* 成就名稱 */}
+            <h4>{props.detailContext.stone_name}</h4>
+
+            {/* 獎勵點數 */}
             <span className="txt-sub1" style={{ color: '#627e2a' }}>
               {' '}
               獎勵點數：{props.detailContext.reward_point}點
             </span>
+            <br />
+            {/* 達成方法 */}
+            <span className="txt-h6">
+              達成方式：
+              <br />
+              {props.detailContext.subs}
+            </span>
+
+            <br />
             <span className="txt-sub1" style={{ color: '#B9433B' }}>
-              目前進度
+              目前進度:
+              <span className="txt-h6">{props.detailContext.TriggerSubs}</span>
               {props.detailContext.AddProgress == null
                 ? 0
                 : props.detailContext.AddProgress}
               /{props.detailContext.progress_goal}
             </span>
-            <span className="txt-h6">{props.detailContext.subs}</span>
+            <div style={{marginTop:'1rem'}}>
+              <ProgressBar animated now={45} />
+            </div>
           </div>
-
-          <div className="col-12 d-flex justify-content-center fff-ms-web">
-            {/* 關閉的按鈕 */}
-            <button
-              type="button"
-              className="btn-white txt-btn aboutCloseBtn"
-              onClick={() => {
-                props.setDetailStyle({ visibility: 'hidden' })
-              }}
-              data-dismiss="modal"
-            >
-              知道了！
-            </button>
-          </div>
+        </div>
+        {/* 關閉的按鈕 */}
+        <div className="row justify-content-center fff-no-mr-and-pad">
+          <button
+            type="button"
+            className="btn-white txt-btn aboutCloseBtn"
+            onClick={() => {
+              props.setDetailStyle({ visibility: 'hidden' })
+            }}
+            data-dismiss="modal"
+          >
+            知道了！
+          </button>
         </div>
       </div>
     </div>
