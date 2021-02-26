@@ -39,7 +39,8 @@ function ExchangeRecord() {
                 <th>兌換項目</th>
                 <th>兌換日期</th>
                 <th>到期日期</th>
-                <th>使用狀況</th>
+                {/* <th>使用狀況</th> */}
+                <th>兌換張數</th>
                 <th>優惠條碼</th>
               </tr>
               {exchangeRecord.map((value, index) => (
@@ -48,11 +49,12 @@ function ExchangeRecord() {
                   <td>{value.good_name}</td>
                   <td>{value.event_time}</td>
                   <td>{value.end_date}</td>
-                  {value.used_date == null ? (
+                  <td>{value.spend_point / value.need_point}</td>
+                  {/* {value.used_date == null ? (
                     <td className="fff-reward-unuse">可使用</td>
                   ) : (
                     <td className="fff-reward-used">已使用</td>
-                  )}
+                  )} */}
                   <td>
                     <div
                       className="record"
@@ -87,7 +89,7 @@ function ExchangeRecord() {
                     <td rowSpan="4">{index + 1}</td>
                     <th>兌換項目</th>
                     <td>{value.good_name}</td>
-                    <td rowSpan="4">
+                    <td rowSpan="4" className="d-flex align-items-center">
                       <div
                         className="record"
                         onClick={() => {
@@ -109,12 +111,14 @@ function ExchangeRecord() {
                     <td>{value.end_date}</td>
                   </tr>
                   <tr>
-                    <th>使用狀況</th>
+                    {/* <th>使用狀況</th>
                     {value.used_date == null ? (
                       <td className="fff-reward-unuse">可使用</td>
                     ) : (
                       <td className="fff-reward-used">已使用</td>
-                    )}
+                    )} */}
+                    <th>兌換張數</th>
+                    <td>{value.spend_point / value.need_point}</td>
                   </tr>
                 </div>
               ))}
