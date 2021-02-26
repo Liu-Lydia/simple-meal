@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { withRouter, Link } from 'react-router-dom'
 
 function ReserveKitchenPayment(props) {
@@ -39,6 +39,22 @@ function ReserveKitchenPayment(props) {
   // 接會員資料
   const [memberInfo, setMemberInfo] = useState({})
 
+  // 切換信用卡隱藏視窗
+  const [creditModalStyle, setCreditModalStyle] = useState({ display: 'none' })
+
+  // 信用卡填入資訊
+  const [creditCardInfo, setCreditCardInfo] = useState({
+    num: '',
+    date: '',
+    cvn: '',
+  })
+
+  // 信用卡是否翻轉
+  const [creditTransBool, setCreditTransBool] = useState(false)
+
+  // 指定信用卡
+  const creditCard = useRef()
+
   const handleGetMemberData = () => {
     fetch('http://localhost:4000/getmemberinfo', {
       method: 'get',
@@ -60,6 +76,10 @@ function ReserveKitchenPayment(props) {
   const handleSetPaymentValue = (event) => {
     setPaymentValue(event.target.value)
     handleSetPaymentObj(event.target.value)
+    // 如果是信用卡就跳出填寫視窗
+    if (event.target.value === '0') {
+      setCreditModalStyle({ display: 'block' })
+    }
   }
 
   // 設定決定的付款選項物件
@@ -445,6 +465,198 @@ function ReserveKitchenPayment(props) {
                 data-dismiss="modal"
               >
                 取消
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 隱藏視窗(信用卡) */}
+      <div className="fff-handmadepopup" style={creditModalStyle}>
+        <div className="fff-handmadepopup-content" style={{ marginTop: '5vh' }}>
+          {/* 關閉頁面的Ｘ */}
+          <div className="fff-ms-mobo justify-content-end col-12">
+            <h6>
+              <i
+                className="fas fa-times aboutCloseBtn"
+                onClick={() => {
+                  setCreditModalStyle({ display: 'none' })
+                }}
+              ></i>
+            </h6>
+          </div>
+          {/* 信用卡圖樣 */}
+          <div className="poe-creditcard-container">
+            <div
+              className="poe-creditcard-body"
+              ref={creditCard}
+              style={
+                creditTransBool
+                  ? {
+                      webkitTransform: 'rotateY(180deg)',
+                      mozTransform: 'rotateY(180deg)',
+                      transform: 'rotateY(180deg)',
+                    }
+                  : {}
+              }
+              onMouseEnter={() => {
+                console.log(1)
+                setCreditTransBool(true)
+              }}
+              onMouseLeave={() => {
+                console.log(2)
+                setCreditTransBool(false)
+              }}
+            >
+              <div className="poe-creditcard-front">
+                <div className="poe-creditcard">
+                  <div className="poe-credit-title txt-btn">
+                    <i class="fas fa-caret-left"></i>&nbsp;&nbsp; Credit Card
+                  </div>
+                  <div className="poe-credit-chip"></div>
+                  <div className="poe-credit-numbox txt-btn">
+                    <div className="poe-credit-num">
+                      {creditCardInfo.num.slice(0, 4)}
+                    </div>
+                    <div className="poe-credit-num">
+                      {creditCardInfo.num.slice(4, 8)}
+                    </div>
+                    <div className="poe-credit-num">
+                      {creditCardInfo.num.slice(8, 12)}
+                    </div>
+                    <div className="poe-credit-num">
+                      {creditCardInfo.num.slice(12, 16)}
+                    </div>
+                  </div>
+                  <div className="poe-credit-effective text-center txt-btn">
+                    &nbsp;&nbsp;{creditCardInfo.date.slice(0, 2)}/
+                    {creditCardInfo.date.slice(2, 4)}
+                  </div>
+                </div>
+              </div>
+              <div className="poe-creditcard-back">
+                <div className="poe-creditcard">
+                  <div className="poe-creditblackbar"></div>
+                  <div className="poe-credit-backbox">
+                    <div className="poe-credit-username">user name</div>
+                    <div className="poe-credit-cvn">{creditCardInfo.cvn}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 信用卡輸入位置*/}
+          {/* 填入 */}
+          <div className="mx-auto mx-sm-5 mt-4 txt-btn poe-form">
+            <div className="row align-items-center poe-mb15">
+              <div
+                className={`col-12 col-md-2 px-md-0 text-md-right poe-mb15 ${
+                  true ? '' : 'poe-red'
+                }`}
+              >
+                卡號
+              </div>
+              <div className="col-12 col-md-10 poe-mb15">
+                <input
+                  type="text"
+                  className="w-100 input-style"
+                  value={creditCardInfo.num}
+                  onChange={(event) => {
+                    setCreditTransBool(false)
+                    setCreditCardInfo({
+                      ...creditCardInfo,
+                      num: event.target.value,
+                    })
+                  }}
+                  // placeholder={infoPlaceholder.name}
+                />
+              </div>
+              {/* <div className="col-md-2"></div>
+              <div className="col-12 col-md-10 txt-cap">
+                姓名請填寫中文或英文(限10個中英文字)
+              </div> */}
+            </div>
+            <div className="row align-items-center poe-mb15">
+              <div
+                className={`col-12 col-md-2 px-md-0 text-md-right poe-mb15 ${
+                  true ? '' : 'poe-red'
+                }`}
+              >
+                有效期
+              </div>
+              <div className="col-12 col-md-10 poe-mb15">
+                <input
+                  type="text"
+                  className="w-100 input-style"
+                  value={creditCardInfo.date}
+                  onChange={(event) => {
+                    setCreditTransBool(false)
+                    setCreditCardInfo({
+                      ...creditCardInfo,
+                      date: event.target.value,
+                    })
+                  }}
+                  // placeholder={infoPlaceholder.name}
+                />
+              </div>
+              {/* <div className="col-md-2"></div>
+              <div className="col-12 col-md-10 txt-cap">
+                姓名請填寫中文或英文(限10個中英文字)
+              </div> */}
+            </div>
+            <div className="row align-items-center poe-mb15">
+              <div
+                className={`col-12 col-md-2 px-md-0 text-md-right poe-mb15 ${
+                  true ? '' : 'poe-red'
+                }`}
+              >
+                驗證碼
+              </div>
+              <div className="col-12 col-md-10 poe-mb15">
+                <input
+                  type="text"
+                  className="w-100 input-style"
+                  value={creditCardInfo.cvn}
+                  onChange={(event) => {
+                    setCreditTransBool(true)
+                    setCreditCardInfo({
+                      ...creditCardInfo,
+                      cvn: event.target.value,
+                    })
+                  }}
+
+                  // placeholder={infoPlaceholder.name}
+                />
+              </div>
+              {/* <div className="col-md-2"></div>
+              <div className="col-12 col-md-10 txt-cap">
+                姓名請填寫中文或英文(限10個中英文字)
+              </div> */}
+            </div>
+          </div>
+          <div className="row justify-content-center poe-green">
+            {/* 按鈕 */}
+            <div className="col-12 d-flex justify-content-center">
+              <button
+                type="button"
+                className="btn-red txt-btn mx-2 my-2"
+                onClick={() => {
+                  setCreditModalStyle({ display: 'none' })
+                }}
+                data-dismiss="modal"
+              >
+                取消
+              </button>
+              <button
+                type="button"
+                className="aboutCloseBtn btn-green txt-btn mx-2 my-2"
+                onClick={() => {
+                  setCreditModalStyle({ display: 'none' })
+                }}
+                data-dismiss="modal"
+              >
+                確定
               </button>
             </div>
           </div>

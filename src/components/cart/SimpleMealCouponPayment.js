@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { Route, withRouter, Link, Switch } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
@@ -28,16 +28,24 @@ function SimpleMealCouponPayment(props) {
   // 切換信用卡隱藏視窗
   const [creditModalStyle, setCreditModalStyle] = useState({ display: 'none' })
 
+  // 信用卡填入資訊
   const [creditCardInfo, setCreditCardInfo] = useState({
     num: '',
     date: '',
     cvn: '',
   })
 
+  // 信用卡是否翻轉
+  const [creditTransBool, setCreditTransBool] = useState(false)
+
+  // 指定信用卡
+  const creditCard = useRef()
+
   // 改變付款方案
   const handleSetPaymentValue = (event) => {
     setPaymentValue(event.target.value)
     handleSetPaymentObj(event.target.value)
+    // 如果是信用卡就跳出填寫視窗
     if (event.target.value === '0') {
       setCreditModalStyle({ display: 'block' })
     }
@@ -363,7 +371,27 @@ function SimpleMealCouponPayment(props) {
           </div>
           {/* 信用卡圖樣 */}
           <div className="poe-creditcard-container">
-            <div className="poe-creditcard-body">
+            <div
+              className="poe-creditcard-body"
+              ref={creditCard}
+              style={
+                creditTransBool
+                  ? {
+                      webkitTransform: 'rotateY(180deg)',
+                      mozTransform: 'rotateY(180deg)',
+                      transform: 'rotateY(180deg)',
+                    }
+                  : {}
+              }
+              onMouseEnter={() => {
+                console.log(1)
+                setCreditTransBool(true)
+              }}
+              onMouseLeave={() => {
+                console.log(2)
+                setCreditTransBool(false)
+              }}
+            >
               <div className="poe-creditcard-front">
                 <div className="poe-creditcard">
                   <div className="poe-credit-title txt-btn">
@@ -418,12 +446,13 @@ function SimpleMealCouponPayment(props) {
                   type="text"
                   className="w-100 input-style"
                   value={creditCardInfo.num}
-                  onChange={(event) =>
+                  onChange={(event) => {
+                    setCreditTransBool(false)
                     setCreditCardInfo({
                       ...creditCardInfo,
                       num: event.target.value,
                     })
-                  }
+                  }}
                   // placeholder={infoPlaceholder.name}
                 />
               </div>
@@ -445,12 +474,13 @@ function SimpleMealCouponPayment(props) {
                   type="text"
                   className="w-100 input-style"
                   value={creditCardInfo.date}
-                  onChange={(event) =>
+                  onChange={(event) => {
+                    setCreditTransBool(false)
                     setCreditCardInfo({
                       ...creditCardInfo,
                       date: event.target.value,
                     })
-                  }
+                  }}
                   // placeholder={infoPlaceholder.name}
                 />
               </div>
@@ -472,12 +502,14 @@ function SimpleMealCouponPayment(props) {
                   type="text"
                   className="w-100 input-style"
                   value={creditCardInfo.cvn}
-                  onChange={(event) =>
+                  onChange={(event) => {
+                    setCreditTransBool(true)
                     setCreditCardInfo({
                       ...creditCardInfo,
                       cvn: event.target.value,
                     })
-                  }
+                  }}
+
                   // placeholder={infoPlaceholder.name}
                 />
               </div>
