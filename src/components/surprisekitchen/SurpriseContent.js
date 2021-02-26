@@ -104,9 +104,9 @@ function SurpriseContent(props) {
   //點擊場次　↓↓↓
   //初始值樣式
   const [isActive, setActive] = useState([
-    'lll-select-btn-white  lll-cursor',
-    'lll-select-btn-white  lll-cursor',
-    'lll-select-btn-white  lll-cursor',
+    'lll-select-btn-white lll-cursor',
+    'lll-select-btn-white lll-cursor',
+    'lll-select-btn-white lll-cursor',
   ])
   //設定active樣式
   const roundArray = [

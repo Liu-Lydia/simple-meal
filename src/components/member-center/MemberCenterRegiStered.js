@@ -111,7 +111,7 @@ function MemberCenterRegiStered(props) {
               </Link>
             </div>
             <div className="txt-body">
-              <div className="h3 text-center mb-4">註冊</div>
+              <div className="h4 text-center mb-4 lll-green">註冊</div>
             </div>
 
             <form id="test" className="col-8 mx-auto mb-2 mr-2 txt-body">
