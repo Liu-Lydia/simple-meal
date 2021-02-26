@@ -1,6 +1,15 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
+
 function MemberCenterRegiStered(props) {
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      cancelButton: 'select-btn-green txt-btn',
+    },
+    buttonsStyling: false,
+  })
+
   const [inputs, setInputs] = useState({
     email: '',
     name: '',
@@ -25,19 +34,19 @@ function MemberCenterRegiStered(props) {
     setStartToChecked(true)
     const newErrors = []
 
-    // if (inputs.name.trim().length < 20) {
-    //   newErrors.push('name')
-    // }
+    if (inputs.name.trim().length > 10) {
+      newErrors.push('name')
+    }
 
     if (inputs.password.trim().length < 6) {
       newErrors.push('password')
     }
-    if (inputs.password1.trim().length < 6) {
+    if (inputs.password1.trim().length !== inputs.password.length) {
       newErrors.push('password1')
     }
-    // if (inputs.mobile.trim().length < 20) {
-    //   newErrors.push('mobile')
-    // }
+    if (inputs.mobile.trim().length > 6) {
+      newErrors.push('mobile')
+    }
     if (inputs.addr.trim().length < 6) {
       newErrors.push('addr')
     }
@@ -48,14 +57,36 @@ function MemberCenterRegiStered(props) {
 
     setErrors(newErrors)
 
-    if (newErrors.length == 0) {
-      const fd = new FormData(document.querySelector('#test'))
-      fetch('http://localhost:4000/membercenter/registered', {
-        method: 'post',
-        body: fd,
-        credentials: 'include',
+    if (newErrors.length !== 0) {
+      swalWithBootstrapButtons.fire({
+        icon: 'error',
+        text: '有欄位未填寫 請再檢查',
+        showConfirmButton: false,
+        padding: '25px',
+        showCancelButton: true,
+        cancelButtonText: '確定',
+        showCloseButton: true,
       })
     }
+
+    if (newErrors.length == 0) {
+      swalWithBootstrapButtons.fire({
+        icon: 'success',
+        text: '註冊成功',
+        showConfirmButton: false,
+        padding: '25px',
+        showCancelButton: true,
+        cancelButtonText: '確定',
+        showCloseButton: true,
+      })
+    }
+    const fd = new FormData(document.querySelector('#test'))
+
+    fetch('http://localhost:4000/membercenter/registered', {
+      method: 'post',
+      body: fd,
+      credentials: 'include',
+    })
   }
 
   // 切換合法不合法的css與提示字詞
@@ -124,7 +155,7 @@ function MemberCenterRegiStered(props) {
                   minLength="6"
                 />
                 <div class="valid-feedback">密碼輸入正確</div>
-                <div class="invalid-feedback">密碼格式錯了</div>
+                <div class="invalid-feedback">密碼與確認密碼不符合</div>
               </div>
               <div className="form-group">
                 <label htmlFor="inputName">姓名</label>

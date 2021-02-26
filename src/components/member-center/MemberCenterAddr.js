@@ -1,17 +1,15 @@
 import MemberCenterNavbar from './MemberCenterNavbar'
 import React, { useEffect, useState } from 'react'
 import { Redirect, Link } from 'react-router-dom'
-
-import Moment from 'react-moment'
+import Swal from 'sweetalert2'
 
 function MemberCenterAddr(props) {
-  const { loginBool, setLoginBool, status } = props
-
-  // 如果Status為true, 登入loginBool改為true
-  useEffect(() => {
-    status && setLoginBool(true)
-    // console.log(status, !loginBool)
-  }, [status])
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      cancelButton: 'select-btn-green txt-btn',
+    },
+    buttonsStyling: false,
+  })
 
   const [Memberinfo, setMemberinfo] = useState([])
 
@@ -73,10 +71,15 @@ function MemberCenterAddr(props) {
         method: 'post',
         body: fd,
         credentials: 'include',
-      }).then((obj) => {
-        console.log(obj)
-        alert('已修改')
-        return window.location.reload()
+      })
+      swalWithBootstrapButtons.fire({
+        icon: 'success',
+        text: '修改成功',
+        showConfirmButton: false,
+        padding: '25px',
+        showCancelButton: true,
+        cancelButtonText: '確定',
+        showCloseButton: true,
       })
     }
   }
@@ -89,7 +92,6 @@ function MemberCenterAddr(props) {
 
   return (
     <>
-      {loginBool && <Redirect to="/" />}
       <div className="container">
         <div className="row ml-2">
           {' '}

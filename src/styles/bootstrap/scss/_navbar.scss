@@ -239,7 +239,7 @@
 
   .navbar-nav {
     .nav-link {
-      color: $navbar-light-color;
+      color: #a2a3a5;
 
       @include hover-focus() {
         color: $navbar-light-hover-color;
@@ -254,7 +254,7 @@
     .active > .nav-link,
     .nav-link.show,
     .nav-link.active {
-      color: $navbar-light-active-color;
+      color: #627e2a;
     }
   }
 

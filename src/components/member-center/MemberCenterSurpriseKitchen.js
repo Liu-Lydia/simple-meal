@@ -21,10 +21,8 @@ function MemberCenterSurpriseKitchen() {
 
   const text = (
     <>
-      <h4 className="mb-3 mt-3 ml-2 d-none d-sm-none d-md-none d-lg- d-xl-block ">
-        驚喜廚房
-      </h4>
-      <div className="d-block d-sm-block d-md-block d-lg-block d-xl-none text-center">
+      <h4 className="h3 ee d-none d-xl-block mb-3 ml-3 mt-3">驚喜廚房</h4>
+      <div className="mt-5 h3 ee col-12 text-center  d-block d-xl-none">
         <h4>驚喜廚房</h4>
       </div>
       <div className="d-flex offset-3 mb-2 ">

@@ -81,7 +81,7 @@ function CartCarousel(props) {
             icon: 'success',
             title: obj.msg,
             showConfirmButton: false,
-            padding: '25px',
+            padding: '45px',
             showCancelButton: true,
             cancelButtonText: '確定',
           })

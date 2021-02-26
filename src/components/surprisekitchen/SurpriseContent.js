@@ -253,13 +253,13 @@ function SurpriseContent(props) {
               // imageHeight: 200,
               title: '<h4>新增預約</h4>',
               text: `預約編號 ${obj.order_sid}`,
-              padding: '25px',
+              padding: '45px',
               showConfirmButton: true,
               confirmButtonText: '回首頁',
               showDenyButton: true,
               denyButtonText: '前往購物車',
               // showCloseButton: true,
-              backdrop: `rgba(255,255,255,.5)`,
+              backdrop: `rgba(0,0,0,.5)`,
             })
             .then((result) => {
               if (result.isConfirmed) {
@@ -377,7 +377,7 @@ function SurpriseContent(props) {
                       // }}
                       className={`${
                         timeEnable[i]
-                          ? 'lll-select-btn-white txt-btn lll-cursor'
+                          ? 'lll-select-btn-white llltxt-btn lll-cursor'
                           : 'lll-select-btn-tryover lll-txt-btndel lll-cursor'
                       } ${isActive[i]}`}
                       // style={tmp[i]}

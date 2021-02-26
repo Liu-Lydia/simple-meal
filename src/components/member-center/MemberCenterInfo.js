@@ -1,17 +1,28 @@
 import MemberCenterNavbar from './MemberCenterNavbar'
 import React, { useEffect, useState } from 'react'
-import { Redirect, Link } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 function MemberCenterInfo(props) {
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      cancelButton: 'select-btn-green txt-btn',
+    },
+    buttonsStyling: false,
+  })
+
   const [Memberinfo, setMemberinfo] = useState([])
 
   const [inputs, setInputs] = useState({
-    password: '',
-    password1: '',
+    name: '',
+    nickname: '',
+    mobile: '',
+    addr: '',
+    birthday: '',
   })
 
   // 切換開始作檢查的旗標
   const [startToChecked, setStartToChecked] = useState(false)
+
   // 錯誤陣列，記錄有錯誤的欄位名稱
   const [errors, setErrors] = useState([])
 
@@ -35,16 +46,21 @@ function MemberCenterInfo(props) {
   }, [])
 
   // 按了提交按鈕用的
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
     //開啟開始觸發檢查的旗標
     setStartToChecked(true)
+
     const newErrors = []
 
-    // if (inputs.name.trim().length < 20) {
-    //   newErrors.push('name')
-    // }
-
-    setErrors(newErrors)
+    if (inputs.name.trim().length > 10) {
+      newErrors.push('name')
+    }
+    if (inputs.mobile.trim().length > 6) {
+      newErrors.push('mobile')
+    }
+    if (inputs.addr.trim().length < 6) {
+      newErrors.push('addr')
+    }
 
     if (newErrors.length == 0) {
       const fd = new FormData(document.querySelector('#test'))
@@ -52,12 +68,18 @@ function MemberCenterInfo(props) {
         method: 'post',
         body: fd,
         credentials: 'include',
-      }).then((obj) => {
-        console.log(obj)
-        alert('已修改')
-        return window.location.reload()
+      })
+      swalWithBootstrapButtons.fire({
+        icon: 'success',
+        text: '修改成功',
+        showConfirmButton: false,
+        padding: '25px',
+        showCancelButton: true,
+        cancelButtonText: '確定',
+        showCloseButton: true,
       })
     }
+    setErrors(newErrors)
   }
 
   const fieldValidCSS = (fieldName) => {
@@ -110,6 +132,10 @@ function MemberCenterInfo(props) {
                       defaultValue={v.name}
                       onChange={onChangeForField('name')}
                     />
+                    <div class="valid-feedback">姓名輸入正確</div>
+                    <div class="invalid-feedback">
+                      姓名最多可輸入10個中英文字
+                    </div>
                   </div>
                 ))}
 

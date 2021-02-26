@@ -108,13 +108,13 @@ function MilestoneInfoBar(props) {
                   站內優惠會歸入您的會員資料方便您於購餐時選用，而兌換相關企業優惠會寄送QR
                   Code至您的信箱，您也可以列印出來！
                   詳細的優惠兌換紀錄可於會員中心查詢喔！`,
-                  padding: '25px',
+                  padding: '75px',
                   showConfirmButton: true,
                   confirmButtonText: '知道了',
                   // showDenyButton: true,
                   denyButtonText: '前往購物車',
                   // showCloseButton: true,
-                  backdrop: `rgba(255,255,255,0.4)`,
+                  backdrop: `rgba(0,0,0,.5)`,
                 })
               }}
             >
@@ -207,7 +207,7 @@ function MilestoneInfoBar(props) {
                 // showDenyButton: true,
                 denyButtonText: '前往購物車',
                 // showCloseButton: true,
-                backdrop: `rgba(255,255,255,0.4)`,
+                backdrop: `rgba(0,0,0,.5)`,
               })
             }}
           >
