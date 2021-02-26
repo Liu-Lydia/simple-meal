@@ -64,8 +64,8 @@ function MealTittle(props) {
     handleGetLove()
   }, [])
 
-  console.log(inLove)
-console.log(props.data.sid)
+  // console.log(inLove)
+// console.log(props.data.sid)
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       cancelButton: 'select-btn-green txt-btn',
