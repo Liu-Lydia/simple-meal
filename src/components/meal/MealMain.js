@@ -40,9 +40,20 @@ function MealMain(props) {
         console.log(obj)
         setData({ ...obj })
 
-        // 存到localStorage
+        // ---存到localStorage 用來顯示近期瀏覽---
+        // 先抓取localStorage, 如果沒抓到給空陣列
         const recentData = JSON.parse(localStorage.getItem('recent')) || []
-        recentData.push(obj)
+        //  如果不是空陣列, 先找出localStorage有沒有相同的紀錄
+        let sameSidInData = 0
+        if (recentData.length > 0) {
+          sameSidInData = recentData.filter((v, i) => v.sid === selectMeal)
+            .length
+        }
+        // 如果沒有把這個瀏覽加到最近
+        if (sameSidInData === 0) {
+          recentData.push(obj)
+        }
+        // 存回去
         localStorage.setItem('recent', JSON.stringify(recentData))
       })
   }

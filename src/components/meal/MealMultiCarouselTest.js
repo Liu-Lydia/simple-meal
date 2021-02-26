@@ -42,7 +42,7 @@ function MealMultiCarousel(props) {
       </div>
     </>
   )
-  console.log(mealDisplay)
+  // console.log(mealDisplay)
   return (
     <>
       {dataLoading ? (
