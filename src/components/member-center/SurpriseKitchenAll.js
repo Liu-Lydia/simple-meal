@@ -93,9 +93,7 @@ function SurpriseKitchenAll() {
           <div className="row fff-no-mr-and-pad">
             <form id="dialog-form">
               <div className="col fff-exchange-content txt-btn">
-                <div
-                  className="d-flex justify-content-between fff-txt-info
-              "
+                <div className="d-flex justify-content-between fff-txt-info"
                   style={{ lineHeight: '50px' }}
                 >
                   <span style={{ color: '#707070' }}>你點選了</span>
@@ -179,30 +177,37 @@ function SurpriseKitchenAll() {
             </tr>
           </thead>
           <tbody>
-            {SurpriseKitchen.map((v, i) => (
-              <tr key={i}>
-                <td>{v.sid}</td>
-                <td>{v.order_sid}</td>
-                <td className=" d-none d-sm-none d-xl-block ">
-                  <Moment format="YYYY/MM/DD">{v.reservation_date}</Moment>
-                </td>
-                <td>{v.reservation_time}</td>
-                <td className="d-none d-sm-none  d-md-none d-lg-block ">
-                  {v.payment_method}
-                </td>
-                <td>{v.reservation_price}</td>
-                <td>
-                  <a
-                    className="btn-yello txt-cap lll-cursor"
-                    onClick={() => {
-                      setDialogStyle({ visibility: 'visible' })
-                    }}
-                  >
-                    給予評論
-                  </a>
-                </td>
-              </tr>
-            ))}
+            {SurpriseKitchen.map((v, i) => {
+              console.log(v)
+              return (
+                <tr key={i}>
+                  <td>{v.sid}</td>
+                  <td>{v.order_sid}</td>
+                  <td className=" d-none d-sm-none d-xl-block ">
+                    <Moment format="YYYY/MM/DD">{v.reservation_date}</Moment>
+                  </td>
+                  <td>{v.reservation_time}</td>
+                  <td className="d-none d-sm-none  d-md-none d-lg-block ">
+                    {v.payment_method}
+                  </td>
+                  <td>{v.reservation_price}</td>
+                  <td>
+                    {v.status ? (
+                      <a
+                        className="btn-yello txt-cap lll-cursor"
+                        onClick={() => {
+                          setDialogStyle({ visibility: 'visible' })
+                        }}
+                      >
+                        給予評論
+                      </a>
+                    ) : (
+                      ''
+                    )}
+                  </td>
+                </tr>
+              )
+            })}
           </tbody>
         </table>
       </div>

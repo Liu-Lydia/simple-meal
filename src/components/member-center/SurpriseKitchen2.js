@@ -8,7 +8,7 @@ function SurpriseKitchen2() {
   const getDataFromServer = async () => {
     //模擬和伺服器要資料
     const response = await fetch(
-      `http://localhost:4000/membercenter/surprisekitchen_order?start=${SurpriseKitchenSeach}&end=${SurpriseKitchenSeach1}`,
+      `http://localhost:4000/membercenter/surprisekitchen_order?start=${SurpriseKitchenSeach}&end=${SurpriseKitchenSeach1}&status=1`,
       {
         method: 'get',
         credentials: 'include',
@@ -103,6 +103,9 @@ function SurpriseKitchen2() {
                   {v.payment_method}
                 </td>
                 <td>{v.reservation_price}</td>
+                <td>
+                  <button>1234</button>
+                </td>
               </tr>
             ))}
           </tbody>

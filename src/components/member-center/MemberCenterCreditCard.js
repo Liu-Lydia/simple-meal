@@ -148,7 +148,14 @@ function MemberCenterAddr() {
 
                 {Memberinfo.map((v) => (
                   <div className="d-flex justify-content-between mb-5 mt-3">
-                    <button className="btn-white txt-btn mb-5 ">
+                    <button
+                      className="btn-white txt-btn mb-5 "
+                      type="button"
+                      onClick={(e) => {
+                        //e.preventDefault()
+                        document.getElementById('inputcreditcard').value = ''
+                      }}
+                    >
                       重新設定
                     </button>
                     <button
