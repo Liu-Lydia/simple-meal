@@ -24,7 +24,7 @@ function MilestoneDialog(props) {
           </h6>
         </div>
         {/* 兌換內容 */}
-        <div className="row fff-no-mr-and-pad">
+        <div className="row fff-no-mr-and-pad fff-txt-ms-detail">
           {/*圖片區 */}
           <div className="col align-self-center">
             <img
@@ -41,27 +41,27 @@ function MilestoneDialog(props) {
             />
           </div>
           {/* 文字區 */}
-          <div className="col fff-txt-ms-detail">
+          <div className="col fff-txt-ms-detail align-self-center">
             {/* 成就名稱 */}
-            <h4>{props.detailContext.stone_name}</h4>
+            <p>{props.detailContext.stone_name}</p>
 
             {/* 獎勵點數 */}
-            <span className="txt-sub1" style={{ color: '#627e2a' }}>
+            <span className="" style={{ color: '#627e2a' }}>
               {' '}
               獎勵點數：{props.detailContext.reward_point}點
             </span>
             <br />
             {/* 達成方法 */}
-            <span className="txt-h6">
+            <span className="">
               達成方式：
               <br />
               {props.detailContext.subs}
             </span>
 
             <br />
-            <span className="txt-sub1" style={{ color: '#B9433B' }}>
+            <span className="" style={{ color: '#B9433B' }}>
               目前進度:
-              <span className="txt-h6">{props.detailContext.TriggerSubs}</span>
+              <span className="">{props.detailContext.TriggerSubs}</span>
               {props.detailContext.AddProgress == null
                 ? 0
                 : props.detailContext.AddProgress}
@@ -77,6 +77,7 @@ function MilestoneDialog(props) {
           <button
             type="button"
             className="btn-white txt-btn aboutCloseBtn"
+            style={{marginTop:'30px'}}
             onClick={() => {
               props.setDetailStyle({ visibility: 'hidden' })
             }}

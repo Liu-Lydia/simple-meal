@@ -200,9 +200,12 @@
   padding: 30px;
   margin-top: 30px;
 }
-.fff-txt-ms-detail
-{
-
+.fff-txt-ms-detail {
+  display: flex;
+  flex-direction: column;
+}
+.fff-txt-ms-detail-title {
+  font-size: '21px';
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -328,6 +331,10 @@
     line-height: 30px;
     border: 5px #627e2a solid;
     padding: 75px;
+  }
+  .fff-txt-ms-detail {
+    display: flex;
+    flex-direction: row;
   }
 }
 
