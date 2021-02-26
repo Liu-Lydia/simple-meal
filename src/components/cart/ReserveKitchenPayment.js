@@ -378,8 +378,11 @@ function ReserveKitchenPayment(props) {
       </div>
 
       {/* 隱藏視窗 */}
-      <div className="fff-mshowto" style={modalStyle}>
-        <div className="fff-mshowto-content" style={{ marginTop: '20vh' }}>
+      <div className="fff-handmadepopup" style={modalStyle}>
+        <div
+          className="fff-handmadepopup-content"
+          style={{ marginTop: '20vh' }}
+        >
           {/* 關閉頁面的Ｘ */}
           <div className="fff-ms-mobo justify-content-end col-12">
             <h6>

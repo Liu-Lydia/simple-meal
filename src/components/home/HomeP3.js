@@ -57,7 +57,7 @@ function HomeP3() {
                 </div>
                 <div className="ml-5">
                   <p className="txt-btn col-gray text-center">最新餐點</p>
-                  <button className="p3-line-button ml-auto mr-auto"></button>
+                  <button className="p3-line-button2 ml-auto mr-auto"></button>
                 </div>
               </div>
             </div>
@@ -90,7 +90,7 @@ function HomeP3() {
                   </div>
                   <div className="col-green p3-timesize txt-body xxx-h50">
                     <i className="far fa-clock col-green"></i>&nbsp;
-                    40分鐘&nbsp;
+                    50分鐘&nbsp;
                     <i className="fas fa-tag col-green"></i>&nbsp;義式料理
                   </div>
                 </div>
@@ -121,7 +121,7 @@ function HomeP3() {
                   </div>
                   <div className="col-green p3-timesize txt-body">
                     <i className="far fa-clock col-green"></i>&nbsp;
-                    40分鐘&nbsp;
+                    60分鐘&nbsp;
                     <i className="fas fa-tag col-green"></i>&nbsp;義式料理
                   </div>
                 </div>
@@ -151,7 +151,7 @@ function HomeP3() {
                   </div>
                   <div className="col-green p3-timesize txt-body">
                     <i className="far fa-clock col-green"></i>&nbsp;
-                    40分鐘&nbsp;
+                    45分鐘&nbsp;
                     <i className="fas fa-tag col-green"></i>&nbsp;義式料理
                   </div>
                 </div>
@@ -181,7 +181,7 @@ function HomeP3() {
                   </div>
                   <div className="col-green p3-timesize txt-body">
                     <i className="far fa-clock col-green"></i>&nbsp;
-                    40分鐘&nbsp;
+                    30分鐘&nbsp;
                     <i className="fas fa-tag col-green"></i>&nbsp;義式料理
                   </div>
                 </div>
@@ -189,18 +189,16 @@ function HomeP3() {
                   <div className="p3-simg-div ml-auto mr-auto">
                     <img
                       onClick={() => {
-                        setP3src(
-                          'http://localhost:3015/img/index/index-p3-simg4.png'
-                        )
+                        setP3src('http://localhost:3015/img/index/italy02.png')
                       }}
                       className="img-size"
-                      src="http://localhost:3015/img/index/index-p3-simg4.png"
+                      src="http://localhost:3015/img/index/italy02.png"
                       alt=""
                     />
                   </div>
                   <br />
                   <p className="xxx-txt-cap col-green text-center ml-auto mr-auto p3-name mb-1 txt-body">
-                    羅勒培根奶焗飯
+                    羅勒培根披薩
                   </p>
                   <div className="col-green text-center mb-2">
                     <i className="fas fa-star"></i>
@@ -211,7 +209,7 @@ function HomeP3() {
                   </div>
                   <div className="col-green p3-timesize txt-body">
                     <i className="far fa-clock col-green"></i>&nbsp;
-                    40分鐘&nbsp;
+                    60分鐘&nbsp;
                     <i className="fas fa-tag col-green"></i>&nbsp;義式料理
                   </div>
                 </div>
