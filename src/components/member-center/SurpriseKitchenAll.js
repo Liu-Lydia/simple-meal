@@ -93,9 +93,7 @@ function SurpriseKitchenAll() {
           <div className="row fff-no-mr-and-pad">
             <form id="dialog-form">
               <div className="col fff-exchange-content txt-btn">
-                <div
-                  className="d-flex justify-content-between fff-txt-info
-              "
+                <div className="d-flex justify-content-between fff-txt-info"
                   style={{ lineHeight: '50px' }}
                 >
                   <span style={{ color: '#707070' }}>你點選了</span>
