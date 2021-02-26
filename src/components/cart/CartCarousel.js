@@ -105,16 +105,16 @@ function CartCarousel(props) {
   // 自動移動迴圈
   // 當timeOutBool有任何改變, 先把它設為false, 由於非同步可繼續判斷if
   // 當timeOutBool為true, 3秒後移動卡片並setTimeOutBool(true), 藉此來重新觸發useEffect迴圈
-  // useEffect(() => {
-  //   // console.log(timeOutBool, order)
-  //   setTimeOutBool(false)
-  //   if (timeOutBool) {
-  //     setTimeout(() => {
-  //       handleAutoDirection()
-  //       setTimeOutBool(true)
-  //     }, 3000)
-  //   }
-  // }, [timeOutBool])
+  useEffect(() => {
+    // console.log(timeOutBool, order)
+    setTimeOutBool(false)
+    if (timeOutBool) {
+      setTimeout(() => {
+        handleAutoDirection()
+        setTimeOutBool(true)
+      }, 5000)
+    }
+  }, [timeOutBool])
 
   return (
     <>
