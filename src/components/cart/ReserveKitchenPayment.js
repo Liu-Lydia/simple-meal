@@ -500,11 +500,9 @@ function ReserveKitchenPayment(props) {
                   : {}
               }
               onMouseEnter={() => {
-                console.log(1)
                 setCreditTransBool(true)
               }}
               onMouseLeave={() => {
-                console.log(2)
                 setCreditTransBool(false)
               }}
             >
@@ -564,10 +562,12 @@ function ReserveKitchenPayment(props) {
                   value={creditCardInfo.num}
                   onChange={(event) => {
                     setCreditTransBool(false)
-                    setCreditCardInfo({
-                      ...creditCardInfo,
-                      num: event.target.value,
-                    })
+                    if (event.target.value.length <= 16) {
+                      setCreditCardInfo({
+                        ...creditCardInfo,
+                        num: event.target.value,
+                      })
+                    }
                   }}
                   // placeholder={infoPlaceholder.name}
                 />
@@ -592,10 +592,12 @@ function ReserveKitchenPayment(props) {
                   value={creditCardInfo.date}
                   onChange={(event) => {
                     setCreditTransBool(false)
-                    setCreditCardInfo({
-                      ...creditCardInfo,
-                      date: event.target.value,
-                    })
+                    if (event.target.value.length <= 4) {
+                      setCreditCardInfo({
+                        ...creditCardInfo,
+                        date: event.target.value,
+                      })
+                    }
                   }}
                   // placeholder={infoPlaceholder.name}
                 />
@@ -620,10 +622,12 @@ function ReserveKitchenPayment(props) {
                   value={creditCardInfo.cvn}
                   onChange={(event) => {
                     setCreditTransBool(true)
-                    setCreditCardInfo({
-                      ...creditCardInfo,
-                      cvn: event.target.value,
-                    })
+                    if (event.target.value.length <= 3) {
+                      setCreditCardInfo({
+                        ...creditCardInfo,
+                        cvn: event.target.value,
+                      })
+                    }
                   }}
 
                   // placeholder={infoPlaceholder.name}
