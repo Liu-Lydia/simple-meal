@@ -21,15 +21,22 @@ function MemberCenterNavbar() {
   return (
     <>
       <div className=" aa d-none d-xl-block col-2 offset-1 mt-2  ">
-        <div className="d-flex ml-4">
-          <ul className="d-none  d-xl-block "></ul>
-
-          <div className="txt-sub2 col-10">
-            <li className="d-none d-xl-block  ">會員姓名:{Memberinfo.name}</li>
-            <li className="d-none d-xl-block  mb-3">
-              會員等級:{Memberinfo.level}
-            </li>
-          </div>
+        <div className="txt-cap col-10 col-xl-12  style={{ color: '#434341' }}">
+          <li className="d-none d-xl-block box1 mx-auto mb-2">
+            <img
+              className="cha-cart-user-img "
+              src={`http://localhost:3015/img/member-center/${Memberinfo.avater}`}
+              alt=""
+            />
+          </li>
+          <li className="d-none d-xl-block ml-3 col-8 mx-auto">
+            會員姓名:
+            <span>{Memberinfo.name}</span>
+          </li>
+          <li className="d-none d-xl-block mb-3 ml-3 col-8 mx-auto">
+            會員等級:
+            <span style={{ color: 'red' }}>{Memberinfo.level}</span>
+          </li>
         </div>
 
         <div className="">
@@ -79,7 +86,7 @@ function MemberCenterNavbar() {
                 </div>
                 <li className="mb-3 mt-3">
                   <i className="fas fa-heart mr-1"></i>
-                  <Link to="" className="text-dark">
+                  <Link to="/meal" className="text-dark">
                     我的專屬菜單
                   </Link>
                 </li>
@@ -99,19 +106,19 @@ function MemberCenterNavbar() {
                   </Link>
                 </li>
                 <li className="mb-3">
-                  <i className="fas fa-carrot mr-1"></i>{' '}
+                  <i className="fas fa-carrot "></i>{' '}
                   <Link to="/MemberCenter/MyRecipe" className="text-dark">
                     我的共享食譜
                   </Link>
                 </li>
                 <li className="mb-3">
-                  <i className="fas fa-carrot mr-1"></i>{' '}
+                  <i className="fas fa-carrot "></i>{' '}
                   <Link to="/MemberCenter/addrecipe" className="text-dark">
                     新增共享食譜
                   </Link>
                 </li>
                 <li className="mb-3">
-                  <i className="far fa-calendar-plus mr-2"></i>{' '}
+                  <i className="far fa-calendar-plus mr-1"></i>{' '}
                   <Link
                     to="/MemberCenter/SurpriseKitchen"
                     className="text-dark"
@@ -120,13 +127,13 @@ function MemberCenterNavbar() {
                   </Link>
                 </li>
                 <li className="mb-3">
-                  <i className="fas fa-medal mr-1"></i>
-                  <Link to="" className="text-dark">
+                  <i className="fas fa-medal mr-2"></i>
+                  <Link to="/RewardExchange" className="text-dark">
                     我的成就
                   </Link>
                 </li>
                 <li className="mb-3">
-                  <i className="fas fa-ticket-alt mr-1"></i>{' '}
+                  <i className="fas fa-ticket-alt "></i>{' '}
                   <Link to="" className="text-dark">
                     我的優惠卷
                   </Link>

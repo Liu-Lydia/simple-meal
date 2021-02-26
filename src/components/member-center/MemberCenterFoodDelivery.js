@@ -18,11 +18,9 @@ function MemberCenterFoodDelivery() {
 
   const text = (
     <>
-      <h4 className="mb-3 mt-3 ml-2 d-none d-sm-none d-md-none d-lg- d-xl-block ">
+      <div className="h3 ee d-none d-xl-block mb-3 ml-3 mt-3">配送餐點</div>
+      <div className="mt-5 h3 ee col-12 text-center  d-block d-xl-none">
         配送餐點
-      </h4>
-      <div className="d-block d-sm-block d-md-block d-lg-block d-xl-none text-center">
-        <h4>配送餐點</h4>
       </div>
       <div className="d-flex offset-3 mb-2 ">
         <img
@@ -42,16 +40,14 @@ function MemberCenterFoodDelivery() {
   return (
     <>
       <div className="container">
-        <div className="row ">
+        <div className="row ml-2">
           <MemberCenterNavbar />
-
-          <div className="col-12 col-xl-8">
-            <div className="col-10 mx-auto">
-              <div className="mt-4"></div>
+          <div className="col-12 col-xl-8 ml-5">
+            <div className="col-10 mx-auto mx-xl-0 ">
               {text}
 
-              <div className="col-12">
-                <div className="d-flex  txt-btn">
+              <div className="col-12 ">
+                <div className="d-flex  txt-btn mb-4 mt-5 ">
                   <Link
                     className="col-3 cha-rec-sel1 cha-rec-sel1-active"
                     onClick={() => setTittle('testa')}

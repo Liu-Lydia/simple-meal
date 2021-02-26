@@ -17,6 +17,11 @@
     background: no-repeat url("http://localhost:3015/img/index/index-p2-img.png");
     margin: 0px;
   }
+  .xxx-w20h200{
+    width: 20px;
+    /* height: 100px; */
+    height: 300px;
+  }
   
   .xxx-mt200{
     margin-top: 250px;
@@ -257,6 +262,9 @@ height: 61px;
 
 /* 此頁面共用 */
 /* div裡的圖片都這樣設 . 大小位置依外層div*/
+.xxx-mt100{
+  margin-top: 200px;
+}
 .img-size {
   width: 100%;
 }

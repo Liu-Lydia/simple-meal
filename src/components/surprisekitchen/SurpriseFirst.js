@@ -44,7 +44,7 @@ function SurpriseFirst(props) {
               showConfirmButton: true,
               confirmButtonText: '確認',
               // showCloseButton: true,
-              backdrop: `rgba(255,255,255,.5)`,
+              backdrop: `rgba(0,0,0,.5)`,
             })
           }
         })

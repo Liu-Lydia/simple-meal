@@ -2,11 +2,17 @@ import React, { useEffect } from 'react'
 import { withFormik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 import { Redirect, Link } from 'react-router-dom'
-
+import Swal from 'sweetalert2'
 const errMsg = {
   color: 'red',
   fontSize: '12px',
 }
+const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    cancelButton: 'select-btn-green txt-btn',
+  },
+  buttonsStyling: false,
+})
 
 const MemberCenterLogin = (props, { values, isSubmitting }) => {
   // { 登入布林值, 設定登入布林值, }
@@ -33,7 +39,7 @@ const MemberCenterLogin = (props, { values, isSubmitting }) => {
                 </Link>
               </div>
 
-              <div className="h3  text-center">登入</div>
+              <div className="h4 text-center lll-green">登入</div>
               <Form>
                 <div className="col-8 mx-auto ">
                   <label className="mb-2 mr-2">電子郵件</label>
@@ -82,16 +88,16 @@ const MemberCenterLogin = (props, { values, isSubmitting }) => {
                   />
                 </div>
 
-                <div className="col-4 mx-auto ">
+                <div className="col-3 mx-auto ">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-green txt-btn mt-4 mb-5 "
+                    className="btn-green txt-btn mt-2 mb-3 "
                   >
                     送出
                   </button>
                 </div>
-                <div className="txt-cap col-8  mb-4 mx-auto">
+                <div className="txt-cap col-4  mb-4 mx-auto">
                   還沒註冊會員嗎？{' '}
                   <Link to="/MemberCenter/RegiStered">註冊</Link>
                 </div>
@@ -227,12 +233,28 @@ export default withFormik({
           // console.log(obj)
           if (obj.success) {
             setStatus(true) // 傳遞登入bool
-            alert('已登入')
+            swalWithBootstrapButtons.fire({
+              icon: 'success',
+              text: '登入成功',
+              showConfirmButton: false,
+              padding: '25px',
+              showCancelButton: true,
+              cancelButtonText: '確定',
+              showCloseButton: true,
+            })
           } else {
-            alert('你的帳號密碼錯誤')
+            swalWithBootstrapButtons.fire({
+              icon: 'error',
+              text: '帳號密碼錯誤',
+              showConfirmButton: false,
+              padding: '25px',
+              showCancelButton: true,
+              cancelButtonText: '確定',
+              showCloseButton: true,
+            })
           }
         })
       // alert(JSON.stringify(values, null, 2)) //alert values
-    }, 1000)
+    }, 100)
   },
 })(MemberCenterLogin)

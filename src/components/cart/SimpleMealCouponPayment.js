@@ -25,10 +25,22 @@ function SimpleMealCouponPayment(props) {
   // 切換隱藏視窗
   const [modalStyle, setModalStyle] = useState({ display: 'none' })
 
+  // 切換信用卡隱藏視窗
+  const [creditModalStyle, setCreditModalStyle] = useState({ display: 'none' })
+
+  const [creditCardInfo, setCreditCardInfo] = useState({
+    num: '',
+    date: '',
+    cvn: '',
+  })
+
   // 改變付款方案
   const handleSetPaymentValue = (event) => {
     setPaymentValue(event.target.value)
     handleSetPaymentObj(event.target.value)
+    if (event.target.value === '0') {
+      setCreditModalStyle({ display: 'block' })
+    }
   }
 
   // 設定決定的付款選項物件
@@ -333,39 +345,160 @@ function SimpleMealCouponPayment(props) {
       </div>
 
       {/* 隱藏視窗(信用卡) */}
-      <div className="fff-mshowto" style={{ display: 'block' }}>
-        <div className="fff-mshowto-content" style={{ marginTop: '20vh' }}>
+      <div className="fff-mshowto" style={creditModalStyle}>
+        <div className="fff-mshowto-content" style={{ marginTop: '5vh' }}>
           {/* 關閉頁面的Ｘ */}
           <div className="fff-ms-mobo justify-content-end col-12">
             <h6>
               <i
                 className="fas fa-times aboutCloseBtn"
                 onClick={() => {
-                  setModalStyle({ display: 'block' })
+                  setCreditModalStyle({ display: 'none' })
                 }}
               ></i>
             </h6>
           </div>
+          {/* 信用卡圖樣 */}
+          {/* <div className="poe-center-wrap">
+            <div className="poe-card-wrap">
+              <div className="poe-card-body">
+                <div className="poe-creditcard-front"> */}
+          <div className="poe-creditcard">
+            <div className="poe-credit-title txt-btn">
+              <i class="fas fa-caret-left"></i>&nbsp;&nbsp; Credit Card
+            </div>
+            <div className="poe-credit-chip"></div>
+            <div className="poe-credit-numbox txt-btn">
+              <div className="poe-credit-num">
+                {creditCardInfo.num.slice(0, 4)}
+              </div>
+              <div className="poe-credit-num">
+                {creditCardInfo.num.slice(4, 8)}
+              </div>
+              <div className="poe-credit-num">
+                {creditCardInfo.num.slice(8, 12)}
+              </div>
+              <div className="poe-credit-num">
+                {creditCardInfo.num.slice(12, 16)}
+              </div>
+            </div>
+            <div className="poe-credit-effective text-center txt-btn">
+              &nbsp;&nbsp;{creditCardInfo.date.slice(0, 2)}/
+              {creditCardInfo.date.slice(2, 4)}
+            </div>
+          </div>
+          {/* </div> */}
+          {/* 背面 */}
+          {/* <div className="poe-creditcard-back">
+                  <div className="poe-creditcard"></div>
+                </div>
+              </div>
+            </div>
+          </div> */}
           {/* 信用卡輸入位置*/}
+          {/* 填入 */}
+          <div className="mx-auto mx-sm-5 mt-4 txt-btn poe-form">
+            <div className="row align-items-center poe-mb15">
+              <div
+                className={`col-12 col-md-2 px-md-0 text-md-right poe-mb15 ${
+                  true ? '' : 'poe-red'
+                }`}
+              >
+                卡號
+              </div>
+              <div className="col-12 col-md-10 poe-mb15">
+                <input
+                  type="text"
+                  className="w-100 input-style"
+                  value={creditCardInfo.num}
+                  onChange={(event) =>
+                    setCreditCardInfo({
+                      ...creditCardInfo,
+                      num: event.target.value,
+                    })
+                  }
+                  // placeholder={infoPlaceholder.name}
+                />
+              </div>
+              {/* <div className="col-md-2"></div>
+              <div className="col-12 col-md-10 txt-cap">
+                姓名請填寫中文或英文(限10個中英文字)
+              </div> */}
+            </div>
+            <div className="row align-items-center poe-mb15">
+              <div
+                className={`col-12 col-md-2 px-md-0 text-md-right poe-mb15 ${
+                  true ? '' : 'poe-red'
+                }`}
+              >
+                有效期
+              </div>
+              <div className="col-12 col-md-10 poe-mb15">
+                <input
+                  type="text"
+                  className="w-100 input-style"
+                  value={creditCardInfo.date}
+                  onChange={(event) =>
+                    setCreditCardInfo({
+                      ...creditCardInfo,
+                      date: event.target.value,
+                    })
+                  }
+                  // placeholder={infoPlaceholder.name}
+                />
+              </div>
+              {/* <div className="col-md-2"></div>
+              <div className="col-12 col-md-10 txt-cap">
+                姓名請填寫中文或英文(限10個中英文字)
+              </div> */}
+            </div>
+            <div className="row align-items-center poe-mb15">
+              <div
+                className={`col-12 col-md-2 px-md-0 text-md-right poe-mb15 ${
+                  true ? '' : 'poe-red'
+                }`}
+              >
+                驗證碼
+              </div>
+              <div className="col-12 col-md-10 poe-mb15">
+                <input
+                  type="text"
+                  className="w-100 input-style"
+                  value={creditCardInfo.cvn}
+                  onChange={(event) =>
+                    setCreditCardInfo({
+                      ...creditCardInfo,
+                      cvn: event.target.value,
+                    })
+                  }
+                  // placeholder={infoPlaceholder.name}
+                />
+              </div>
+              {/* <div className="col-md-2"></div>
+              <div className="col-12 col-md-10 txt-cap">
+                姓名請填寫中文或英文(限10個中英文字)
+              </div> */}
+            </div>
+          </div>
           <div className="row justify-content-center poe-green">
             {/* 按鈕 */}
-            <div className="col-12 d-flex justify-content-center mt-3">
+            <div className="col-12 d-flex justify-content-center">
               <button
                 type="button"
-                className="aboutCloseBtn btn-green txt-btn mx-2 my-2"
-                // onClick={() => {
-                //   setModalStyle({ display: 'none' })
-                // }}
+                className="btn-red txt-btn mx-2 my-2"
+                onClick={() => {
+                  setCreditModalStyle({ display: 'none' })
+                }}
                 data-dismiss="modal"
               >
                 取消
               </button>
               <button
                 type="button"
-                className="btn-red txt-btn mx-2 my-2"
-                // onClick={() => {
-                //   setModalStyle({ display: 'none' })
-                // }}
+                className="aboutCloseBtn btn-green txt-btn mx-2 my-2"
+                onClick={() => {
+                  setCreditModalStyle({ display: 'none' })
+                }}
                 data-dismiss="modal"
               >
                 確定

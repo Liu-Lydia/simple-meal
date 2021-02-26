@@ -1,4 +1,4 @@
-import React, { useState, useEffect, props } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Redirect } from 'react-router-dom'
 import '../styles/public.css'
 import '../styles/fff.css'
@@ -116,10 +116,10 @@ function Milestone(props) {
           setMilestoneFilter={setMilestoneFilter}
           milestoneFilter={milestoneFilter}
         />
-        {milestoneFilter == 0 && <MilestoneListLimit />}
-        {milestoneFilter == 1 && <MilestoneListAll />}
-        {milestoneFilter == 2 && <MilestoneListFinish />}
-        {milestoneFilter == 3 && <MilestoneListUnfinish />}
+        {milestoneFilter === 0 && <MilestoneListLimit />}
+        {milestoneFilter === 1 && <MilestoneListAll />}
+        {milestoneFilter === 2 && <MilestoneListFinish />}
+        {milestoneFilter === 3 && <MilestoneListUnfinish />}
       </div>
     </>
   )

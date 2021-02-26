@@ -395,6 +395,7 @@
   transition: 1s;
   color: #fff;
   opacity: 0;
+  cursor: pointer;  //莉苓偷加的030
 }
 
 .poe-carousel {
@@ -461,4 +462,122 @@
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
+}
+
+// .poe-creditcard-content {
+//   margin-left: auto;
+//   margin-right: auto;
+//   margin-top: 10vh;
+//   background-color: white;
+//   width: 302px;
+//   border-radius: 25px;
+//   text-align: left;
+//   line-height: 30px;
+//   border: 5px #627e2a solid;
+//   padding: 30px;
+// }
+
+// .poe-centered-wrap {
+//   margin-left: auto;
+//   margin-right: auto;
+//   position: absolute;
+//   transform: translate(-50%, -50%);
+// }
+.poe-center-wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.poe-card-wrap {
+  position: relative;
+
+  width: 232px;
+  height: 146px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.poe-card-body {
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: 0.5s all ease;
+}
+
+.poe-card-body:hover {
+  transform: rotateY(180deg);
+}
+
+.poe-creditcard-front {
+  position: absolute;
+  backface-visibility: hidden;
+}
+.poe-creditcard-back {
+  position: absolute;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+.poe-creditcard {
+  // max-width: 428px;
+  // max-height: 270px;
+  width: 232px;
+  height: 146px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  background-color: rgb(167, 166, 228);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.poe-credit-title {
+  width: 100%;
+  height: 25px;
+  // background: rgb(223, 163, 163);
+  padding-left: 10px;
+  line-height: 30px;
+}
+.poe-credit-chip {
+  width: 30px;
+  height: 20px;
+  border-radius: 3px;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: auto;
+  background-color: rgb(216, 188, 31);
+  margin-bottom: 10px;
+}
+.poe-credit-numbox {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  // background: rgb(194, 95, 95);
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.poe-credit-num {
+  margin: auto;
+  width: 43.453px;
+  height: 25px;
+  line-height: 25px;
+  padding-left: 3px;
+  padding-right: 3px;
+  background-color: rgba(255, 255, 255, 0.253);
+}
+
+.poe-credit-effective {
+  width: 60px;
+  height: 25px;
+  display: flex;
+  justify-content: end;
+  background: rgb(207, 184, 184);
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: 30px;
+  // padding-left: 5px;
+  // padding-right: 30px;
+  line-height: 25px !important;
+  text-align: right;
 }

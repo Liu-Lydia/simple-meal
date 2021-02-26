@@ -229,6 +229,7 @@
     border: 1px #627e2a solid;
     display: inline-block;
     margin: 5px;
+    cursor: pointer; /*莉苓到此一遊*/
   }
   .fff-my-info-box {
     height: 120px;

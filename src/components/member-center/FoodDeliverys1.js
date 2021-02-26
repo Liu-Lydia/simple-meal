@@ -30,9 +30,7 @@ function FoodDeliverys1() {
           <div className=" mt-2 mr-2 txt-cap d-none d-sm-none d-md-block d-lg-block d-xl-block">
             輸入查詢區間
           </div>
-          <div className=" txt-sub2 mt-3 d-block d-sm-block d-md-none d-lg-none d-xl-none col-10  offset-3  offset-sm-4">
-            輸入查詢區間
-          </div>
+
           <input
             type="date"
             id="FoodDeliverySeach"
@@ -40,9 +38,7 @@ function FoodDeliverys1() {
             value={FoodDeliverySeach}
             onChange={(e) => setFoodDeliverySeach(e.target.value)}
           ></input>
-          <small className="txt-cap mx-2 d-none d-sm-none d-md-block d-lg-block d-xl-block">
-            ～
-          </small>
+          <small className="txt-cap mx-2 d-none d-md-block">～</small>
           <input
             type="date"
             id="FoodDeliverySeach1"

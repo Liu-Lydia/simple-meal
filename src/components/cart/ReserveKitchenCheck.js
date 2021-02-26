@@ -61,7 +61,7 @@ function ReserveKitchenCheck(props) {
         showCancelButton: true,
         confirmButtonText: `確定`,
         cancelButtonText: `再看一下`,
-        padding: '25px',
+        padding: '45px',
       })
       .then((result) => {
         // 只有確認以後才連接資料庫
@@ -89,12 +89,12 @@ function ReserveKitchenCheck(props) {
             imageHeight: 200,
             title: '<h4>完成訂單</h4>',
             text: `您的訂單已經完成, 訂單編號 ${obj.order_sid}`,
-            padding: '25px',
+            padding: '45px',
             showConfirmButton: true,
             confirmButtonText: '確定',
             showCancelButton: false,
             // showCloseButton: true,
-            backdrop: `rgba(0,0,0,0.4)`,
+            backdrop: `rgba(0,0,0,.5)`,
           })
           .then((result) => {
             setCheckBool(true)
