@@ -97,7 +97,7 @@ const MemberCenterLogin = (props, { values, isSubmitting }) => {
                     送出
                   </button>
                 </div>
-                <div className="txt-cap col-4  mb-4 mx-auto">
+                <div className="txt-cap col-4 d-flex justify-content-center mb-4 mx-auto">
                   還沒註冊會員嗎？{' '}
                   <Link to="/MemberCenter/RegiStered">註冊</Link>
                 </div>
