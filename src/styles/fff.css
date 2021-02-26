@@ -190,16 +190,17 @@
 }
 
 .fff-ms-detail-content {
-  display: block;
   margin: auto auto;
   background-color: white;
-  width: 60%;
+  width: 302px;
   border-radius: 25px;
   text-align: left;
   line-height: 30px;
   border: 5px #627e2a solid;
-  padding: 75px;
+  padding: 30px;
+  margin-top: 30px;
 }
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   .fff-ms-web {
@@ -315,7 +316,6 @@
   }
   /* 單個成就介紹 */
   .fff-ms-detail-content {
-    display: block;
     margin: auto auto;
     background-color: white;
     width: 60%;

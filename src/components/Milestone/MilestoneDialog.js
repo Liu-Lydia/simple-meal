@@ -11,24 +11,22 @@ function MilestoneDialog(props) {
           props.setDetailStyle({ visibility: 'hidden' })
         }}
       >
-        <div className="row justify-content-end ">
-          <div className="fff-ms-mobo justify-content-end col-12">
-            {/* 關閉頁面的Ｘ */}
-            <h6>
-              <i
-                className="fas fa-times aboutCloseBtn"
-                onClick={() => {
-                  props.setDetailStyle({ visibility: 'hidden' })
-                }}
-              ></i>
-            </h6>
-          </div>
+        <div className="row justify-content-end fff-ms-mobo">
+          {/* 關閉頁面的Ｘ */}
+          <h6>
+            <i
+              className="fas fa-times aboutCloseBtn"
+              onClick={() => {
+                props.setDetailStyle({ visibility: 'hidden' })
+              }}
+            ></i>
+          </h6>
         </div>
+
         <div className="row justify-content-center ">
           <div className="fff-ms-web row justify-content-between">
             <div className="col-4 align-self-center">
               <img
-                style={{ width: '100%' }}
                 src={
                   'http://localhost:3015/img/milestonelist/' +
                   (props.detailContext.AddProgress >=
@@ -65,6 +63,7 @@ function MilestoneDialog(props) {
               </div>
             </div>
           </div>
+          
           <div className="fff-ms-mobo row justify-content-center">
             <img
               className="align-center"
