@@ -1,4 +1,4 @@
-import React, { useState, props } from 'react'
+import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
 import '../styles/public.css'
 import '../styles/fff.css'
@@ -19,12 +19,11 @@ function RewardExchange(props) {
 
   //解構賦值 取得登入資訊
   const { loginBool } = props
-  console.log("RewardExchange - loginBool",loginBool)
 
   return (
     <>
-    {/* 沒登入時, 跳轉登入 */}
-    {!loginBool && <Redirect to="/MemberCenter" />}
+      {/* 沒登入時, 跳轉登入 */}
+      {!loginBool && <Redirect to="/MemberCenter" />}
       <div className="fff-ms-web">
         <div className="container">
           <MilestoneInfoBar btnText="我的成就" href="./Milestone" />
@@ -49,10 +48,10 @@ function RewardExchange(props) {
       </div>
       <div className="container">
         <ExchangeOption setOptionTab={setOptionTab} optionTab={optionTab} />
-        {optionTab == 0 && <ExangeGoodsList1 />}
-        {optionTab == 1 && <ExangeGoodsList2 />}
+        {optionTab === 0 && <ExangeGoodsList1 />}
+        {optionTab === 1 && <ExangeGoodsList2 />}
 
-        {optionTab == 2 && <ExchangeRecord />}
+        {optionTab === 2 && <ExchangeRecord />}
       </div>
     </>
   )

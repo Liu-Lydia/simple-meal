@@ -16,21 +16,9 @@ function ExchangeOption(props) {
 
   //二維陣列 lineBar [tab1[class,class,class],tab2[class,class,class],tab3[class,class,class]]
   const lineBarClassArray = [
-    [
-      '',
-      ' col-4 fff-rw-select-active',
-      ' col',
-    ],
-    [
-      ' col-4',
-      ' col-4 fff-rw-select-active',
-      ' col-4',
-    ],
-    [
-      ' col',
-      ' col-4 fff-rw-select-active',
-      '',
-    ],
+    ['', ' col-4 fff-rw-select-active', ' col'],
+    [' col-4', ' col-4 fff-rw-select-active', ' col-4'],
+    [' col', ' col-4 fff-rw-select-active', ''],
   ]
 
   //tab classname的二維陣列
@@ -79,7 +67,8 @@ function ExchangeOption(props) {
               props.setOptionTab(1)
             }}
           >
-            &nbsp;購物金<p className="fff-ms-web fff-no-mr-and-pad">回饋</p>&nbsp;
+            &nbsp;購物金<p className="fff-ms-web fff-no-mr-and-pad">回饋</p>
+            &nbsp;
           </a>
           <a
             className={inUseTabStyle[2]}

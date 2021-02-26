@@ -59,10 +59,7 @@ function MilestoneInfoBar(props) {
     getMilestoneList()
   }, [])
 
-  useEffect(() => {
-    console.log('update userInfo')
-    console.log('userInfo', userInfo)
-  }, [userInfo])
+  useEffect(() => {}, [userInfo])
 
   return (
     <>

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Swal from 'sweetalert2'
 import { withRouter, Link } from 'react-router-dom'
 
-function CartCarousel() {
+function CartCarousel(props) {
+  const { clickNum, setClickNum } = props
   // 用來存localStorage
   const [data, setData] = useState([
     {
@@ -75,14 +76,16 @@ function CartCarousel() {
     })
       .then((r) => r.json())
       .then((obj) => {
-        swalWithBootstrapButtons.fire({
-          icon: 'success',
-          title: obj.msg,
-          showConfirmButton: false,
-          padding: '25px',
-          showCancelButton: true,
-          cancelButtonText: '確定',
-        })
+        swalWithBootstrapButtons
+          .fire({
+            icon: 'success',
+            title: obj.msg,
+            showConfirmButton: false,
+            padding: '25px',
+            showCancelButton: true,
+            cancelButtonText: '確定',
+          })
+          .then(() => setClickNum(clickNum + 1)) // 重新渲染
       })
   }
 

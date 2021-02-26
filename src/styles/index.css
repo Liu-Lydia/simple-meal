@@ -11,6 +11,13 @@
 
 /* 網頁版 */
 @media (min-width: 900px) {
+  .xxx-p2-image{
+    width: 977px;
+    height: 647px;
+    background: no-repeat url("http://localhost:3015/img/index/index-p2-img.png");
+    margin: 0px;
+  }
+  
   .xxx-mt200{
     margin-top: 250px;
   }

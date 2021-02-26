@@ -5,8 +5,15 @@ import Carousel2 from '../components/home/Carousel2'
 import '../components/home/carousel3d.css'
 import HomeP3 from '../components/home/HomeP3'
 import Run from '../components/home/Run'
+import Page1 from '../components/home/Page1'
+import Page2 from '../components/home/Page2'
+
+
+
 
 function Home(props) {
+
+  
   return (
     <>
       {/* p1 */}
@@ -130,17 +137,16 @@ function Home(props) {
       {/* p2 */}
       <div className="container-fluid">
         <div className="row">
-          <h1 className="mb-5 col-12 txt-h1 text-center col-green d-none d-xl-block">
+          {/* <h1 className="mb-5 col-12 txt-h1 text-center col-green d-none d-xl-block">
             極簡煮易帶來全新的烹飪體驗
-          </h1>
+          </h1> */}
           <h4 className="mb-5 col-12 txt-h1 text-center col-green d-block d-sm-none">
             極簡煮易帶來全新的烹飪體驗
           </h4>
         </div>
         {/* 水平對齊 : d-flex align-items-center */}
         <div className="row d-flex align-items-center p2-mb">
-          {/* <img className="col-6" src="./img/index-p2-img.png" alt="" /> */}
-          <div className="p2-img-div">
+          <div className="p2-img-div d-block d-sm-none">
             <img
               className="img-size"
               src="http://localhost:3015/img/index/index-p2-img.png"
@@ -149,7 +155,7 @@ function Home(props) {
           </div>
           {/* 空一個col : offset-1 */}
           {/* xl */}
-          <div className="col-4 offset-1 d-none d-xl-block">
+          {/* <div className="col-4 offset-1 d-none d-xl-block">
             <h5 className="col-black">給喜歡做菜的你 帶來新鮮、美味、方便</h5>
             <br />
             <p className="txt-sub1 col-gray">
@@ -161,7 +167,7 @@ function Home(props) {
             <NavLink to="/meal" className="btn-red txt-sub1">
               開始訂製
             </NavLink>
-          </div>
+          </div> */}
         </div>
         {/* xs */}
         <div className="col-12 offset-1 d-block d-sm-none xxx-m0">
@@ -180,7 +186,10 @@ function Home(props) {
           </NavLink>
         </div>
       </div>
-
+      {/* p2動 網頁版 */}
+      
+          <Page2 key="page2" />
+        
       {/* p3 */}
       <HomeP3 />
 

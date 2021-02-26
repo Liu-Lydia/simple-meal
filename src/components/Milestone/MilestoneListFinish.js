@@ -50,9 +50,8 @@ function MilestoneListFinish() {
         setTotalCount(obj.length)
       })
 
-    const url =
-      `http://localhost:4000/milestone/getMilestoneList?filter=finish&page=${listPage}&perpage=${perPage}`
-       //sid 要從session來
+    const url = `http://localhost:4000/milestone/getMilestoneList?filter=finish&page=${listPage}&perpage=${perPage}`
+    //sid 要從session來
     await fetch(url, {
       method: 'get',
       credentials: 'include',
@@ -64,20 +63,19 @@ function MilestoneListFinish() {
         if (window.innerWidth < 576) {
           //手機版要三個
           for (let i = obj.length % 3; i != 0 && i < 3; i++) {
-            obj.push({milestone_sid:'-1'})
+            obj.push({ milestone_sid: '-1' })
           }
         } else if (window.innerWidth >= 1200) {
           //特大要四個
           for (let i = obj.length % 4; i != 0 && i < 4; i++) {
-            obj.push({milestone_sid:'-1'})
+            obj.push({ milestone_sid: '-1' })
           }
         } else {
           //兩個
           for (let i = obj.length % 2; i != 0 && i < 2; i++) {
-            obj.push({milestone_sid:'-1'})
+            obj.push({ milestone_sid: '-1' })
           }
         }
-
 
         setMilestoneList(obj)
         //前期處理各成就的進度style 含不同的大小
@@ -220,58 +218,58 @@ function MilestoneListFinish() {
         <div className="col-10 col-sm-8 fff-no-mr-and-pad ">
           <div className="row fff-no-mr-and-pad d-flex align-items-center justify-content-around">
             {/* 單個成就 */}
-            {milstonelist.map((v, i) => (v.milestone_sid == '-1' ?(
-
-              <div
-                className="col-4 col-sm-6 col-lg-3 d-flex justify-content-center"
-                key={i}
-              />)
-
-              :(
-              <div
-                className="col-4 col-sm-6 col-lg-3 d-flex justify-content-center"
-                key={i}
-                onClick={() => {
-                  setDetailStyle({ visibility: 'visible' })
-                  setDetailContext(v)
-                }}
-              >
-                <div className="fff-stone-item-box justify-content-center">
-                  <svg
-                    className="fff-svg-painting"
-                    style={{
-                      backgroundImage:
-                        'url(http://localhost:3015/img/milestonelist/' +
-                        (v.AddProgress >= v.progress_goal
-                          ? v.finished_goal_pic
-                          : v.unfinished_goal_pic) +
-                        ')',
-                    }}
-                  >
-                    {/* 檢查進度是否超過設定，超過顯示完成圖示，否則顯示未完成圖示 */}
-                    <circle
-                      className="fff-milestone-background-svg d-flex justify-content-center"
-                      style={{ display: 'block' }}
-                    />
-                    <circle
-                      className="fff-milestone-progress-svg d-flex justify-content-center"
-                      transform="rotate(-90)"
-                      style={inUseStyle[i]}
+            {milstonelist.map((v, i) =>
+              v.milestone_sid == '-1' ? (
+                <div
+                  className="col-4 col-sm-6 col-lg-3 d-flex justify-content-center"
+                  key={i}
+                />
+              ) : (
+                <div
+                  className="col-4 col-sm-6 col-lg-3 d-flex justify-content-center"
+                  key={i}
+                  onClick={() => {
+                    setDetailStyle({ visibility: 'visible' })
+                    setDetailContext(v)
+                  }}
+                >
+                  <div className="fff-stone-item-box justify-content-center">
+                    <svg
+                      className="fff-svg-painting"
+                      style={{
+                        backgroundImage:
+                          'url(http://localhost:3015/img/milestonelist/' +
+                          (v.AddProgress >= v.progress_goal
+                            ? v.finished_goal_pic
+                            : v.unfinished_goal_pic) +
+                          ')',
+                      }}
                     >
-                      <animate
-                        className="fff-milestone-progress-ani"
-                        attributeName="stroke-dasharray"
-                        dur="1s"
-                        repeatCount="1"
-                        value={inUseAnimateValue[i]}
-                        begin="3s"
+                      {/* 檢查進度是否超過設定，超過顯示完成圖示，否則顯示未完成圖示 */}
+                      <circle
+                        className="fff-milestone-background-svg d-flex justify-content-center"
+                        style={{ display: 'block' }}
                       />
-                    </circle>
-                  </svg>
-                  <span className=" fff-ms-web d-flex justify-content-center"></span>
+                      <circle
+                        className="fff-milestone-progress-svg d-flex justify-content-center"
+                        transform="rotate(-90)"
+                        style={inUseStyle[i]}
+                      >
+                        <animate
+                          className="fff-milestone-progress-ani"
+                          attributeName="stroke-dasharray"
+                          dur="1s"
+                          repeatCount="1"
+                          value={inUseAnimateValue[i]}
+                          begin="3s"
+                        />
+                      </circle>
+                    </svg>
+                    <span className=" fff-ms-web d-flex justify-content-center"></span>
+                  </div>
                 </div>
-              </div>)
-            ))}
+              )
+            )}
           </div>
         </div>
         {/* <!-- 右翻按鍵 --> */}
