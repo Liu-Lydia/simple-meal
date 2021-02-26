@@ -359,42 +359,46 @@ function SimpleMealCouponPayment(props) {
             </h6>
           </div>
           {/* 信用卡圖樣 */}
-          {/* <div className="poe-center-wrap">
-            <div className="poe-card-wrap">
-              <div className="poe-card-body">
-                <div className="poe-creditcard-front"> */}
-          <div className="poe-creditcard">
-            <div className="poe-credit-title txt-btn">
-              <i class="fas fa-caret-left"></i>&nbsp;&nbsp; Credit Card
-            </div>
-            <div className="poe-credit-chip"></div>
-            <div className="poe-credit-numbox txt-btn">
-              <div className="poe-credit-num">
-                {creditCardInfo.num.slice(0, 4)}
+          <div className="poe-creditcard-container">
+            <div className="poe-creditcard-body">
+              <div className="poe-creditcard-front">
+                <div className="poe-creditcard">
+                  <div className="poe-credit-title txt-btn">
+                    <i class="fas fa-caret-left"></i>&nbsp;&nbsp; Credit Card
+                  </div>
+                  <div className="poe-credit-chip"></div>
+                  <div className="poe-credit-numbox txt-btn">
+                    <div className="poe-credit-num">
+                      {creditCardInfo.num.slice(0, 4)}
+                    </div>
+                    <div className="poe-credit-num">
+                      {creditCardInfo.num.slice(4, 8)}
+                    </div>
+                    <div className="poe-credit-num">
+                      {creditCardInfo.num.slice(8, 12)}
+                    </div>
+                    <div className="poe-credit-num">
+                      {creditCardInfo.num.slice(12, 16)}
+                    </div>
+                  </div>
+                  <div className="poe-credit-effective text-center txt-btn">
+                    &nbsp;&nbsp;{creditCardInfo.date.slice(0, 2)}/
+                    {creditCardInfo.date.slice(2, 4)}
+                  </div>
+                </div>
               </div>
-              <div className="poe-credit-num">
-                {creditCardInfo.num.slice(4, 8)}
-              </div>
-              <div className="poe-credit-num">
-                {creditCardInfo.num.slice(8, 12)}
-              </div>
-              <div className="poe-credit-num">
-                {creditCardInfo.num.slice(12, 16)}
-              </div>
-            </div>
-            <div className="poe-credit-effective text-center txt-btn">
-              &nbsp;&nbsp;{creditCardInfo.date.slice(0, 2)}/
-              {creditCardInfo.date.slice(2, 4)}
-            </div>
-          </div>
-          {/* </div> */}
-          {/* 背面 */}
-          {/* <div className="poe-creditcard-back">
-                  <div className="poe-creditcard"></div>
+              <div className="poe-creditcard-back">
+                <div className="poe-creditcard">
+                  <div className="poe-creditblackbar"></div>
+                  <div className="poe-credit-backbox">
+                    <div className="poe-credit-username">user name</div>
+                    <div className="poe-credit-cvn">{creditCardInfo.cvn}</div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div> */}
+          </div>
+
           {/* 信用卡輸入位置*/}
           {/* 填入 */}
           <div className="mx-auto mx-sm-5 mt-4 txt-btn poe-form">
