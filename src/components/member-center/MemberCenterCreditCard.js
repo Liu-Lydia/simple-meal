@@ -1,9 +1,16 @@
 import MemberCenterNavbar from './MemberCenterNavbar'
 import React, { useEffect, useState } from 'react'
-
-import Moment from 'react-moment'
+import Swal from 'sweetalert2'
 
 function MemberCenterAddr() {
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      cancelButton: 'select-btn-green txt-btn',
+    },
+    buttonsStyling: false,
+    timer: 8000,
+  })
+
   const [Memberinfo, setMemberinfo] = useState([])
 
   const getDataFromServer = async () => {
@@ -74,10 +81,15 @@ function MemberCenterAddr() {
         method: 'post',
         body: fd,
         credentials: 'include',
-      }).then((obj) => {
-        console.log(obj)
-        alert('已修改')
-        return window.location.reload()
+      })
+      swalWithBootstrapButtons.fire({
+        icon: 'success',
+        text: '修改成功',
+        showConfirmButton: false,
+        padding: '25px',
+        showCancelButton: true,
+        cancelButtonText: '確定',
+        showCloseButton: true,
       })
     }
   }
