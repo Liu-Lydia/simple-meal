@@ -147,6 +147,9 @@ function SurpriseKitchenAll() {
                         type="text"
                         className="input-style lll-input-width"
                         value={comment.nickname}
+                        onChange={(e) => {
+                          setComment(e.target.value)
+                        }}
                       />
                     </div>
                     <div>
@@ -169,6 +172,9 @@ function SurpriseKitchenAll() {
                             id="FormControlTextarea"
                             rows="5"
                             value={comment.comment}
+                            onChange={(e) => {
+                              setComment(e.target.value)
+                            }}
                           />
                         </div>
 
