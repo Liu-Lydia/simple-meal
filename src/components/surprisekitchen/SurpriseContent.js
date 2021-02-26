@@ -416,7 +416,7 @@ function SurpriseContent(props) {
               <div className="ml-auto">
                 <span className="txt-sub1 lll-grey">500/每人</span>
                 <a
-                  className={`mx-3 ${num_adult === 0 && 'lll-grey'}`}
+                  className={`mx-3 ${num_adult === 0 ? 'lll-grey' : 'lll-green'}`}
                   onClick={() => {
                     handleNum_adult(false)
                   }}
@@ -425,7 +425,7 @@ function SurpriseContent(props) {
                 </a>
                 <span className="txt-sub1 lll-black">{num_adult}</span>
                 <a
-                  className={`ml-3 ${num_adult === 7 && 'lll-grey'}`}
+                  className={`ml-3 ${num_adult === 7 ? 'lll-grey' : 'lll-green'}`}
                   onClick={() => {
                     handleNum_adult(true)
                   }}
@@ -442,7 +442,7 @@ function SurpriseContent(props) {
               <div className="ml-auto">
                 <span className="txt-sub1 lll-grey">100/每人</span>
                 <a
-                  className={`mx-3 ${num_child === 0 && 'lll-grey'}`}
+                  className={`mx-3 ${num_child === 0 ? 'lll-grey' : 'lll-green'}`}
                   onClick={() => {
                     handleNum_child(false)
                   }}
@@ -451,7 +451,7 @@ function SurpriseContent(props) {
                 </a>
                 <span className="txt-sub1 lll-black">{num_child}</span>
                 <a
-                  className={`ml-3 ${num_child === 7 && 'lll-grey'}`}
+                  className={`ml-3 ${num_child === 7 ? 'lll-grey' : 'lll-green'}`}
                   onClick={() => {
                     handleNum_child(true)
                   }}
@@ -466,7 +466,7 @@ function SurpriseContent(props) {
 
               <div className="ml-auto">
                 <a
-                  className={`mx-3 ${num_meal === 0 && 'lll-grey'}`}
+                  className={`mx-3 ${num_meal === 0 ? 'lll-grey' : 'lll-green'}`}
                   onClick={() => {
                     handleNum_meal(false)
                   }}
@@ -475,7 +475,7 @@ function SurpriseContent(props) {
                 </a>
                 <span className="txt-sub1 lll-black">{num_meal}</span>
                 <a
-                  className={`ml-3 ${num_meal === 9 && 'lll-grey'}`}
+                  className={`ml-3 ${num_meal === 9 ? 'lll-grey' : 'lll-green'}`}
                   onClick={() => {
                     handleNum_meal(true)
                   }}

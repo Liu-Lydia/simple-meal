@@ -52,15 +52,15 @@ function MemberCenterInfo(props) {
 
     const newErrors = []
 
-    if (inputs.name.trim().length > 10) {
-      newErrors.push('name')
-    }
-    if (inputs.mobile.trim().length > 6) {
-      newErrors.push('mobile')
-    }
-    if (inputs.addr.trim().length < 6) {
-      newErrors.push('addr')
-    }
+    // if (inputs.name.trim().length > 10) {
+    //   newErrors.push('name')
+    // }
+    // if (inputs.mobile.trim().length > 6) {
+    //   newErrors.push('mobile')
+    // }
+    // if (inputs.addr.trim().length < 6) {
+    //   newErrors.push('addr')
+    // }
 
     if (newErrors.length == 0) {
       const fd = new FormData(document.querySelector('#test'))

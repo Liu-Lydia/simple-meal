@@ -21,12 +21,21 @@ function MemberCenterNavbar() {
   return (
     <>
       <div className=" aa d-none d-xl-block col-2 offset-1 mt-2  ">
-        <ul className="d-none  d-xl-block "></ul>
-
-        <div className="txt-cap col-10 col-xl-12  ">
-          <li className="d-none d-xl-block  ">會員姓名:{Memberinfo.name}</li>
-          <li className="d-none d-xl-block  mb-3">
-            會員等級:{Memberinfo.level}
+        <div className="txt-cap col-10 col-xl-12  style={{ color: '#434341' }}">
+          <li className="d-none d-xl-block box1 mx-auto mb-2">
+            <img
+              className="cha-cart-user-img "
+              src={`http://localhost:3015/img/member-center/${Memberinfo.avater}`}
+              alt=""
+            />
+          </li>
+          <li className="d-none d-xl-block ml-3 col-8 mx-auto">
+            會員姓名:
+            <span>{Memberinfo.name}</span>
+          </li>
+          <li className="d-none d-xl-block mb-3 ml-3 col-8 mx-auto">
+            會員等級:
+            <span style={{ color: 'red' }}>{Memberinfo.level}</span>
           </li>
         </div>
 

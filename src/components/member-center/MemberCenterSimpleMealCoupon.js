@@ -162,7 +162,7 @@ function MemberCenterSimpleMealCoupon() {
       <div className="container">
         <div className="row ml-2">
           <MemberCenterNavbar />
-          <div className="col-12 col-xl-8">
+          <div className="col-12 col-xl-8 ml-5">
             <div className="col-10 mx-auto mx-xl-0 ">
               <div className=" mt-3  h3 ee d-none d-xl-block">餐卷購買明細</div>
 
@@ -170,7 +170,7 @@ function MemberCenterSimpleMealCoupon() {
                 餐卷購買明細
               </div>
               {Coupon1.map((v) => (
-                <div className="col-12 d-none d-xl-block mt-3">
+                <div className="col-12 d-none d-xl-block mt-5">
                   購買餐卷數量:
                   <span style={{ color: 'red' }}>{v.simplemeal_coupon}</span>
                 </div>

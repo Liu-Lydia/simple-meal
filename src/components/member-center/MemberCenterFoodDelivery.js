@@ -40,14 +40,14 @@ function MemberCenterFoodDelivery() {
   return (
     <>
       <div className="container">
-        <div className="row ">
+        <div className="row ml-2">
           <MemberCenterNavbar />
-          <div className="col-12 col-xl-8">
+          <div className="col-12 col-xl-8 ml-5">
             <div className="col-10 mx-auto mx-xl-0 ">
               {text}
 
               <div className="col-12 ">
-                <div className="d-flex  txt-btn mb-4 ">
+                <div className="d-flex  txt-btn mb-4 mt-5 ">
                   <Link
                     className="col-3 cha-rec-sel1 cha-rec-sel1-active"
                     onClick={() => setTittle('testa')}
