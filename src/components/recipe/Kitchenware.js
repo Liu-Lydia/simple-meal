@@ -1,7 +1,7 @@
 function Kitchenware() {
   return (
     <>
-      <div className=" cha-sel-box-1 justify-content-between d-flex">
+      <div className=" cha-sel-box-1  justify-content-between d-flex">
         <div className="col-6 justify-content-between d-flex">
           <span>一把</span>
           <span className="cha-sel-box-txt1">永靈刀</span>

@@ -53,6 +53,9 @@ function MealTittle(props) {
   }
 
   const thisMealSid = data.sid.toString()
+  if (memberData.love === null) {
+    memberData.love = ''
+  }
   const thisMemberLoveId = memberData.love.split(',')
 
   const inLove = thisMemberLoveId.includes(thisMealSid)
@@ -62,7 +65,7 @@ function MealTittle(props) {
   }, [])
 
   console.log(inLove)
-
+console.log(props.data.sid)
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       cancelButton: 'select-btn-green txt-btn',
@@ -160,7 +163,11 @@ function MealTittle(props) {
               </div>
               <div className=" cha-main-icon-sub3">
                 <Link
-                  onClick={() => inLove !== true && addlove(props.data.sid)}
+                  onClick={() => {
+                    inLove !== true
+                      ? addlove(props.data.sid)
+                      : alert('已加入過摟')
+                  }}
                 >
                   <i
                     className={

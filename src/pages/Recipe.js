@@ -4,6 +4,7 @@ import RecipeSearchBar from '../components/recipe/RecipeSearchBar'
 import RecipeSelectTittle from '../components/recipe/RecipeSelectTittle'
 import MealCart from '../components/meal/MealCart'
 import RecipeCards from '../components/recipe/RecipeCards'
+import RecipeStep from '../components/recipe/RecipeStep'
 function Recipe(props) {
   //切換麵包屑顯示
   const { breadCrumbBool, setBreadCrumbBool, meunForRecipe } = props
@@ -64,6 +65,7 @@ function Recipe(props) {
             setSidAndIngredient={setSidAndIngredient}
           />
           <MealCart updateNum={updateNum} />
+          
         </div>
       </div>
     </>

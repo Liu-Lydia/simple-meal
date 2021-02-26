@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react'
 import Nutrition from './Nutrition'
 import Kitchenware from './Kitchenware'
 import RecipeIngredient from './RecipeIngredient'
+import RecipeStep from './RecipeStep'
 import { Link, useHistory } from 'react-router-dom'
 import Swal from 'sweetalert2'
 function RecipeTittle(props) {
   //getrecipeData,傳送到畫面的食譜全資料(一筆)
   //updateNum, setUpdateNum,更新cart畫面的計數器
   const { getrecipeData, updateNum, setUpdateNum } = props
-
+  //設定食譜步驟是否顯示
+  const [recipeStepDisplay, setRecipeStepDisplay] = useState({
+    visibility: 'hidden',
+  })
   //選擇標籤頁
   const [tittle, setTittle] = useState('testa')
   //設定標籤頁class
@@ -151,8 +155,10 @@ function RecipeTittle(props) {
               食材清單
             </Link>
           </div>
-          <div className="cha-rec-sel-box  txt-body cha-gray" id="scroll">{selected()}</div>
-          <div className="cha-rec-btns d-flex justify-content-between">
+          <div className="cha-rec-sel-box  txt-body cha-gray" id="scroll">
+            {selected()}
+          </div>
+          <div className="cha-rec-btns d-flex justify-content-between ">
             <Link
               onClick={() =>
                 handleGetMealToDelivery(getrecipeData.mealData[0].sid)
@@ -161,12 +167,21 @@ function RecipeTittle(props) {
             >
               加入訂單
             </Link>
-            <Link className="btn-white txt-btn cha-rec-btn-bye">
+            <Link
+              className="btn-white txt-btn cha-rec-btn-bye"
+              onClick={() => {
+                setRecipeStepDisplay({ visibility: 'visible' })
+              }}
+            >
               查看食譜步驟
             </Link>
           </div>
         </div>
       </div>
+      <RecipeStep
+        recipeStepDisplay={recipeStepDisplay}
+        setRecipeStepDisplay={setRecipeStepDisplay}
+      />
     </>
   )
 }
