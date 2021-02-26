@@ -33,7 +33,7 @@ const MemberCenterLogin = (props, { values, isSubmitting }) => {
                 </Link>
               </div>
 
-              <div className="h3  text-center">登入</div>
+              <div className="h4 text-center lll-green">登入</div>
               <Form>
                 <div className="col-8 mx-auto ">
                   <label className="mb-2 mr-2">電子郵件</label>
@@ -233,6 +233,6 @@ export default withFormik({
           }
         })
       // alert(JSON.stringify(values, null, 2)) //alert values
-    }, 1000)
+    }, 100)
   },
 })(MemberCenterLogin)

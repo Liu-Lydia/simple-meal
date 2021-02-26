@@ -42,7 +42,7 @@ function SimpleMealCouponCheck(props) {
         showCancelButton: true,
         confirmButtonText: `確定`,
         cancelButtonText: `再看一下`,
-        padding: '25px',
+        padding: '45px',
       })
       .then((result) => {
         // 只有確認以後才連接資料庫
@@ -75,7 +75,7 @@ function SimpleMealCouponCheck(props) {
             confirmButtonText: '確定',
             showCancelButton: false,
             // showCloseButton: true,
-            backdrop: `rgba(0,0,0,0.4)`,
+            backdrop: `rgba(0,0,0,.5)`,
           })
           .then((result) => {
             setCheckBool(true)

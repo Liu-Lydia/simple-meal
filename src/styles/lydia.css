@@ -398,10 +398,10 @@
 .btn-yello {
   background-color: #f3e575;
   width: 80px;
-  height: 20px;
-  border-radius: 10px;
+  height: 24px;
+  border-radius: 12px;
   text-align: center;
-  line-height: 20px;
+  line-height: 24px;
   color: white;
   border: 1px solid #f3e575;
   display: inline-block;
@@ -410,14 +410,14 @@
 .btn-yello:hover {
   background-color: #627e2a;
   width: 80px;
-  height: 20px;
-  border-radius: 10px;
+  height: 24px;
+  border-radius: 12px;
   text-align: center;
-  line-height: 20px;
+  line-height: 24px;
   color: white;
   border: 1px solid#627E2A;
   display: inline-block;
-  transition: 0.2s;
+  transition: 0.4s;
 }
 
 /* 預約驚喜廚房 */
@@ -564,7 +564,7 @@
 
 .lll-body-list li {
   width: 14.28%;
-  height: 50px;
+  height: 48px;
   line-height: 50px;
   list-style-type: none;
   display: block;
@@ -601,7 +601,7 @@
 .lll-green-active {
   width: 50px;
   height: 50px;
-  border-radius: 25px;
+  border-radius: 60px 60px 60px 60px;
   background-color: #627e2a;
   color: #ffffff;
 }
@@ -653,6 +653,15 @@
   margin-top: px;
 }
 /* 這個很怪???? */
+
+.llltxt-btn{
+  /* 刪除line-height版 */
+  font-family: GenSenRounded TW;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none !important;
+  letter-spacing: 0.24px;
+}
 
 @media (max-width: 768px) {
   .lll-times-position {

@@ -114,6 +114,7 @@ h6 {
   color: white;
   border: 1px #627e2a solid;
   display: inline-block;
+  cursor: pointer;
 }
 .select-btn-green:hover {
   background-color: #5b722d;
@@ -125,7 +126,7 @@ h6 {
   color: white;
   border: 1px#5b722d solid;
   display: inline-block;
-  transition: 0.2s;
+  transition: 0.4s;
 }
 .select-btn-red {
   background-color: #b9433b;
@@ -137,6 +138,7 @@ h6 {
   color: white;
   border: 1px #627e2a solid;
   display: inline-block;
+  cursor: pointer;
 }
 
 .select-btn-red:hover {
@@ -149,7 +151,7 @@ h6 {
   color: white;
   border: 1px#b9433b solid;
   display: inline-block;
-  transition: 0.2s;
+  transition: 0.4s;
 }
 
 .select-btn-white {
@@ -162,6 +164,7 @@ h6 {
   color: #627e2a;
   border: 1px #627e2a solid;
   display: inline-block;
+  cursor: pointer;
 }
 .select-btn-white:hover {
   background-color: #627e2a;
@@ -173,7 +176,7 @@ h6 {
   color: #ffffff;
   border: 1px #627e2a solid;
   display: inline-block;
-  transition: 0.2s;
+  transition: 0.4s;
 }
 
 .btn-group-left {
@@ -186,6 +189,7 @@ h6 {
   color: white;
   border: 1px #627e2a solid;
   display: inline-block;
+  cursor: pointer;
 }
 .btn-group-left:hover {
   background-color: #5b722d;
@@ -197,7 +201,7 @@ h6 {
   color: white;
   border: 1px #5b722d solid;
   display: inline-block;
-  transition: 0.2s;
+  transition: 0.4s;
 }
 .btn-group-right {
   background-color: white;
@@ -209,6 +213,7 @@ h6 {
   color: #627e2a;
   border: 1px #627e2a solid;
   display: inline-block;
+  cursor: pointer;
 }
 .btn-group-right:hover {
   background-color: rgb(245, 245, 245);
@@ -220,7 +225,7 @@ h6 {
   color: #5b722d;
   border: 1px #5b722d solid;
   display: inline-block;
-  transition: 0.2s;
+  transition: 0.4s;
 }
 .btn-group-left2 {
   background-color: #627e2a;
@@ -232,6 +237,7 @@ h6 {
   color: white;
   border: 1px #627e2a solid;
   display: inline-block;
+  cursor: pointer;
 }
 .btn-group-left2:hover {
   background-color: #5b722d;
@@ -243,7 +249,7 @@ h6 {
   color: white;
   border: 1px #5b722d solid;
   display: inline-block;
-  transition: 0.2s;
+  transition: 0.4s;
 }
 .btn-group-right2 {
   background-color: white;
@@ -255,6 +261,7 @@ h6 {
   color: #627e2a;
   border: 1px #627e2a solid;
   display: inline-block;
+  cursor: pointer;
 }
 .btn-group-right2:hover {
   background-color: rgb(245, 245, 245);
@@ -266,8 +273,7 @@ h6 {
   color: #5b722d;
   border: 1px #5b722d solid;
   display: inline-block;
-
-  transition: 0.2s;
+  transition: 0.4s;
 }
 .btn-white {
   background-color: white;
@@ -279,6 +285,7 @@ h6 {
   color: #627e2a;
   border: 1px #627e2a solid;
   display: inline-block;
+  cursor: pointer;
 }
 .btn-white:hover {
   background-color: white;
@@ -290,7 +297,7 @@ h6 {
   color: #a2a3a5;
   border: 1px #a2a3a5 solid;
   display: inline-block;
-  transition: 0.2s;
+  transition: 0.4s;
 }
 .btn-green {
   background-color: #627e2a;
@@ -302,6 +309,7 @@ h6 {
   color: white;
   border: 1px #627e2a solid;
   display: inline-block;
+  cursor: pointer;
 }
 
 .btn-green:hover {
@@ -314,7 +322,7 @@ h6 {
   color: white;
   border: 1px #627e2a solid;
   box-shadow:0 2px 4px -1px rgba(0,0,0,0.20), 0 1px 10px 0 rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.14);
-  transition: 0.2s;
+  transition: 0.4s;
   display: inline-block;
 }
 
@@ -328,6 +336,7 @@ h6 {
   color: white;
   border: 1px #b9433b solid;
   display: inline-block;
+  cursor: pointer;
 }
 .btn-red:hover {
   background-color: #b9433b;
@@ -340,6 +349,7 @@ h6 {
   border: 1px #b9433b solid;
   box-shadow:0 2px 4px -1px rgba(0,0,0,0.20), 0 1px 10px 0 rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.14);
   display: inline-block;
+  transition: 0.4s;
 }
 .btn-gray {
   background-color: #a2a3a5;
@@ -351,6 +361,7 @@ h6 {
   color: white;
   border: 1px #a2a3a5 solid;
   display: inline-block;
+  cursor: pointer;
 }
 .btn-gray:hover {
   background-color: #a2a3a5;
@@ -363,7 +374,7 @@ h6 {
   border: 1px #a2a3a5 solid;
   display: inline-block;
   box-shadow:0 2px 4px -1px rgba(0,0,0,0.20), 0 1px 10px 0 rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.14);
-  transition: 0.2s;
+  transition: 0.4s;
 }
 .btn-gray2 {
   background-color: white;
@@ -375,6 +386,7 @@ h6 {
   color: #a2a3a5;
   border: 1px #a2a3a5 solid;
   display: inline-block;
+  cursor: pointer;
 }
 .btn-gray2:hover {
   background-color: white;
@@ -386,7 +398,7 @@ h6 {
   color: #627e2a;
   border: 1px#627e2a solid;
   display: inline-block;
-  transition: 0.2s;
+  transition: 0.4s;
 }
 
 .btn-meun-gray {
@@ -411,7 +423,7 @@ h6 {
   border: 1px #a2a3a5 solid;
   display: inline-block;
   box-shadow:0 2px 4px -1px rgba(0,0,0,0.20), 0 1px 10px 0 rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.14);
-  transition: 0.2s;
+  transition: 0.4s;
 }
 
 .input-style {
@@ -504,7 +516,7 @@ h6 {
   line-height: 85px;
   color: white;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.20), 0 1px 10px 0 rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.14);
-  transition: 0.2s;
+  transition: 0.4s;
 }
 .btn-meun-big-gray2 {
   width: 60px;
@@ -537,7 +549,7 @@ h6 {
   line-height: 85px;
   color: white;
   box-shadow: 0 2px 4px -1px rgba(0,0,0,0.20), 0 1px 10px 0 rgba(0,0,0,0.12), 0 4px 5px 0 rgba(0,0,0,0.14);
-  transition: 0.2s;
+  transition: 0.4s;
 }
 .btn-meun-big-red2 {
   width: 60px;
