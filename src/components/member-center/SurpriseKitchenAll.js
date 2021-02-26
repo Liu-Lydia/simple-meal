@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Moment from 'react-moment'
+import Swal from 'sweetalert2'
+
 function SurpriseKitchenAll() {
   const [SurpriseKitchen, setSurpriseKitchen] = useState([])
 
@@ -23,6 +25,11 @@ function SurpriseKitchenAll() {
   useEffect(() => {
     getDataFromServer()
   }, [])
+
+  //Lydia加的
+  const [dialogStyle, setDialogStyle] = useState({ visibility: 'hidden' })
+
+  const handleWriteComment = () => {}
 
   const Seach = (
     <>
@@ -64,6 +71,86 @@ function SurpriseKitchenAll() {
   )
   return (
     <>
+      {/* Lydia加的 */}
+      {/* 兌換視窗 */}
+      <div className="fff-exchange" style={dialogStyle}>
+        <div className="fff-exchange-content-box">
+          <div className="row justify-content-end fff-no-mr-and-pad">
+            {/* 圖片放置位置 先占高 mobo關閉 */}
+
+            {/* 關閉頁面的Ｘ */}
+            <div className="" style={{ marginBottom: '10px' }}>
+              <h6 className="fff-no-mr-and-pad" style={{ color: '#627E2A' }}>
+                <i
+                  className="fas fa-times aboutCloseBtn"
+                  onClick={() => {
+                    setDialogStyle({ display: 'none' })
+                  }}
+                ></i>
+              </h6>
+            </div>
+          </div>
+          <div className="row fff-no-mr-and-pad">
+            <form id="dialog-form">
+              <div className="col fff-exchange-content txt-btn">
+                <div
+                  className="d-flex justify-content-between fff-txt-info
+              "
+                  style={{ lineHeight: '50px' }}
+                >
+                  <span style={{ color: '#707070' }}>你點選了</span>
+                </div>
+                <div
+                  className="d-flex justify-content-between"
+                  style={{
+                    lineHeight: '25px',
+                    marginBottom: '7px',
+                    marginTop: '7px',
+                  }}
+                >
+                  <span style={{ color: '#627E2A' }}>選擇數量</span>
+                </div>
+                <div
+                  className="d-flex justify-content-between"
+                  style={{ lineHeight: '39px' }}
+                >
+                  <span>花費點數</span>
+                  <span style={{ color: '#b9433b', fontSize: '21px' }}></span>
+                </div>
+                <div
+                  className="d-flex justify-content-between"
+                  style={{ lineHeight: '39px' }}
+                >
+                  <span style={{ color: '#627E2A' }}>剩餘點數</span>
+                  <span style={{ color: '#627E2A', fontSize: '21px' }}></span>
+                </div>
+                <div style={{ marginTop: '20px', marginBottom: '20px' }}></div>
+
+                <div className="d-flex justify-content-center">
+                  <span className="txt-btn" style={{ color: '#b9433b' }}>
+                    已兌換便無法退還點數喔！
+                  </span>
+                </div>
+
+                <div
+                  className="d-flex justify-content-center"
+                  style={{ marginTop: '25px' }}
+                >
+                  <button
+                    type="button"
+                    className="btn-green txt-btn aboutCloseBtn"
+                    onClick={() => {}}
+                    data-dismiss="modal"
+                  >
+                    確定兌換
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      {/* Lydia加的 */}
       {Seach}
       {/* <div className="tab-content" id="myTabContent">
         <div className=" txt-cap mt-2 ml-3 d-block d-sm-block d-md-block d-lg-none d-xl-none ">
@@ -104,6 +191,16 @@ function SurpriseKitchenAll() {
                   {v.payment_method}
                 </td>
                 <td>{v.reservation_price}</td>
+                <td>
+                  <a
+                    className="btn-yello txt-cap lll-cursor"
+                    onClick={() => {
+                      setDialogStyle({ visibility: 'visible' })
+                    }}
+                  >
+                    給予評論
+                  </a>
+                </td>
               </tr>
             ))}
           </tbody>
