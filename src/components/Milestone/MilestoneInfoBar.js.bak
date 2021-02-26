@@ -144,8 +144,8 @@ function MilestoneInfoBar(props) {
         </div>
       </div>
 
-      <div className="fff-mshowto" style={modalStyle}>
-        <div className="fff-mshowto-content">
+      <div className="fff-handmadepopup" style={modalStyle}>
+        <div className="fff-handmadepopup-content">
           {/* 關閉頁面的Ｘ */}
           <div className="fff-ms-mobo justify-content-end col-12">
             <h6>
