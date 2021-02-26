@@ -7,6 +7,12 @@ import { Link } from 'react-router-dom'
 
 function MemberCenterSurpriseKitchen() {
   const [tittle, setTittle] = useState('testa')
+  //設定標籤頁class
+  const [tittleStyleOne, setTittleStyleOne] = useState(
+    'col-3 cha-rec-sel1-active'
+  )
+  const [tittleStyleTwo, setTittleStyleTwo] = useState('col-3 cha-rec-sel1')
+  const [tittleStyleThree, setTittleStyleThree] = useState('col-3 cha-rec-sel1')
 
   const selected = () => {
     switch (tittle) {
@@ -54,20 +60,35 @@ function MemberCenterSurpriseKitchen() {
               <div className="col-12 col-sm-12 col-md-12 mt-5">
                 <div className="d-flex  txt-btn">
                   <Link
-                    className="col-3 cha-rec-sel1 cha-rec-sel1-active"
-                    onClick={() => setTittle('testa')}
+                    className={tittleStyleOne}
+                    onClick={() => {
+                      setTittle('testa')
+                      setTittleStyleOne('col-3 cha-rec-sel1-active')
+                      setTittleStyleTwo('col-3 cha-rec-sel1')
+                      setTittleStyleThree('col-3 cha-rec-sel1')
+                    }}
                   >
                     全部
                   </Link>
                   <Link
-                    className="col-3 cha-rec-sel1 "
-                    onClick={() => setTittle('testb')}
+                    className={tittleStyleTwo}
+                    onClick={() => {
+                      setTittle('testb')
+                      setTittleStyleOne('col-3 cha-rec-sel1')
+                      setTittleStyleTwo('col-3 cha-rec-sel1-active')
+                      setTittleStyleThree('col-3 cha-rec-sel1')
+                    }}
                   >
                     進行中
                   </Link>
                   <Link
-                    className="col-3 cha-rec-sel1"
-                    onClick={() => setTittle('testc')}
+                    className={tittleStyleThree}
+                    onClick={() => {
+                      setTittle('testc')
+                      setTittleStyleOne('col-3 cha-rec-sel1')
+                      setTittleStyleTwo('col-3 cha-rec-sel1')
+                      setTittleStyleThree('col-3 cha-rec-sel1-active')
+                    }}
                   >
                     已完成
                   </Link>

@@ -28,6 +28,7 @@ function MemberCenterInfo(props) {
 
   const onChangeForField = (fieldName) => (event) => {
     checkErrors()
+
     setInputs((state) => ({ ...state, [fieldName]: event.target.value }))
   }
 
@@ -52,7 +53,7 @@ function MemberCenterInfo(props) {
 
     const newErrors = []
 
-    if (inputs.name.trim().length > 10) {
+    if (inputs.name.trim().length > 6 && inputs.name.trim().length < 10) {
       newErrors.push('name')
     }
     if (inputs.mobile.trim().length > 6) {
@@ -152,9 +153,7 @@ function MemberCenterInfo(props) {
                       onChange={onChangeForField('name')}
                     />
                     <div class="valid-feedback">姓名輸入正確</div>
-                    <div class="invalid-feedback">
-                      姓名最多可輸入10個中英文字
-                    </div>
+                    <div class="invalid-feedback">姓名請輸入3個字</div>
                   </div>
                 ))}
 

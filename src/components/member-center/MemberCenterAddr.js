@@ -130,7 +130,7 @@ function MemberCenterAddr(props) {
                     <input
                       type="text"
                       className={`form-control ${fieldValidCSS('addr')}`}
-                      id="inputemail"
+                      id="inputaddr"
                       name="addr"
                       onChange={onChangeForField('addr')}
                     />
@@ -140,7 +140,11 @@ function MemberCenterAddr(props) {
                   <div className="d-flex justify-content-between mb-5 mt-3">
                     <button
                       className="btn-white txt-btn mb-5"
-                      onClick={handleSubmit}
+                      type="button"
+                      onClick={(e) => {
+                        //e.preventDefault()
+                        document.getElementById('inputaddr').value = ''
+                      }}
                     >
                       重新設定
                     </button>

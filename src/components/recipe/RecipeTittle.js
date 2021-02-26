@@ -124,7 +124,7 @@ function RecipeTittle(props) {
             <Link
               className={tittleStyleOne}
               onClick={() => {
-                setTittle('testa')
+                setTittle('testva')
                 setTittleStyleOne('col-3 cha-rec-sel1-active')
                 setTittleStyleTwo('col-3 cha-rec-sel1')
                 setTittleStyleThree('col-3 cha-rec-sel1')

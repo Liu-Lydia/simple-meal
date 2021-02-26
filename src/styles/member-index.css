@@ -31,6 +31,8 @@
 .dd {
   border: 3px solid #627e2a;
   border-radius: 25px;
+  padding-top: 65px;
+  height: 563px;
 }
 .bb {
   margin-left: 30px;
@@ -46,9 +48,9 @@
   color: #627e2a;
 }
 .box {
-  width: 125px;
-  height: 125px;
-  padding: 0;
+  width: 150px;
+  height: 150px;
+  border-radius: 25px;
 }
 .box1 {
   width: 65px;

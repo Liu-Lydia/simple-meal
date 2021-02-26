@@ -20,7 +20,7 @@ function MemberCenterNavbar() {
 
   return (
     <>
-      <div className=" aa d-none d-xl-block col-2 offset-1 mt-2  ">
+      <div className="aa d-none d-xl-block col-2 offset-1 mt-2  ">
         <div className="txt-cap col-10 col-xl-12  style={{ color: '#434341' }}">
           <li className="d-none d-xl-block box1 mx-auto mb-2">
             <img
@@ -29,7 +29,7 @@ function MemberCenterNavbar() {
               alt=""
             />
           </li>
-          <li className="d-none d-xl-block ml-3 col-8 mx-auto">
+          <li className="d-none d-xl-block ml-3 col-10 mx-auto">
             會員姓名:
             <span>{Memberinfo.name}</span>
           </li>

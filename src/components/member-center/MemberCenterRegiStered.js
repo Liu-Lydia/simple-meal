@@ -216,7 +216,6 @@ function MemberCenterRegiStered(props) {
               <div className="col-6 mx-auto">
                 <button
                   type="button"
-                  className="btn btn-primary"
                   className="btn-green txt-btn  mb-5"
                   onClick={handleSubmit}
                 >

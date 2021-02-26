@@ -113,7 +113,7 @@ function MemberCenterAddr(props) {
                     <input
                       type="password"
                       className="form-control"
-                      id="password"
+                      id="inputpassword"
                       name="password"
                       onChange={onChangeForField('password')}
                     />
@@ -126,7 +126,7 @@ function MemberCenterAddr(props) {
                     <input
                       type="text"
                       className={`form-control ${fieldValidCSS('password1')}`}
-                      id="password1"
+                      id="inputpassword1"
                       name="password1"
                     />
                     <span className="txt-cap">
@@ -136,7 +136,18 @@ function MemberCenterAddr(props) {
                 ))}
                 {Memberinfo.map((v) => (
                   <div className="d-flex justify-content-between mb-5 mt-3">
-                    <button className="btn-white txt-btn">重新設定</button>
+                    <button
+                      className="btn-white txt-btn mb-5"
+                      type="button"
+                      onClick={(e) => {
+                        //e.preventDefault()
+
+                        document.getElementById('inputpassword').value = ''
+                        document.getElementById('inputpassword1').value = ''
+                      }}
+                    >
+                      重新設定
+                    </button>
                     <button
                       className="btn-green txt-btn "
                       onClick={handleSubmit}
