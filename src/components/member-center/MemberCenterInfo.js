@@ -27,6 +27,7 @@ function MemberCenterInfo(props) {
   const [errors, setErrors] = useState([])
 
   const onChangeForField = (fieldName) => (event) => {
+    checkErrors()
     setInputs((state) => ({ ...state, [fieldName]: event.target.value }))
   }
 
@@ -45,24 +46,32 @@ function MemberCenterInfo(props) {
     getDataFromServer()
   }, [])
 
-  // 按了提交按鈕用的
-  const handleSubmit = () => {
+  const checkErrors = () => {
     //開啟開始觸發檢查的旗標
     setStartToChecked(true)
 
     const newErrors = []
 
-    // if (inputs.name.trim().length > 10) {
-    //   newErrors.push('name')
-    // }
-    // if (inputs.mobile.trim().length > 6) {
-    //   newErrors.push('mobile')
-    // }
+    if (inputs.name.trim().length > 10) {
+      newErrors.push('name')
+    }
+    if (inputs.mobile.trim().length > 6) {
+      newErrors.push('mobile')
+    }
+
+    console.log(newErrors)
+
+    setErrors(newErrors)
+  }
+
+  // 按了提交按鈕用的
+  const handleSubmit = (e) => {
     // if (inputs.addr.trim().length < 6) {
     //   newErrors.push('addr')
     // }
+    e.preventDefault()
 
-    if (newErrors.length == 0) {
+    if (errors.length === 0) {
       const fd = new FormData(document.querySelector('#test'))
       fetch('http://localhost:4000/membercenter/information', {
         method: 'post',
@@ -71,7 +80,18 @@ function MemberCenterInfo(props) {
       })
       swalWithBootstrapButtons.fire({
         icon: 'success',
-        text: '修改成功',
+        text: '修改成功！！',
+        showConfirmButton: false,
+        padding: '25px',
+        showCancelButton: true,
+        cancelButtonText: '確定',
+        showCloseButton: true,
+      })
+    } else {
+      // alert('has errors not submit')
+      swalWithBootstrapButtons.fire({
+        icon: 'error',
+        text: '有欄位未填寫正確,請確認！',
         showConfirmButton: false,
         padding: '25px',
         showCancelButton: true,
@@ -79,7 +99,6 @@ function MemberCenterInfo(props) {
         showCloseButton: true,
       })
     }
-    setErrors(newErrors)
   }
 
   const fieldValidCSS = (fieldName) => {

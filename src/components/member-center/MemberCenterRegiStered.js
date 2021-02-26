@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
 function MemberCenterRegiStered(props) {
+  let history = useHistory()
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       cancelButton: 'select-btn-green txt-btn',
@@ -86,6 +87,9 @@ function MemberCenterRegiStered(props) {
         body: fd,
         credentials: 'include',
       })
+
+      // to index
+      history.push('/')
     }
   }
 
