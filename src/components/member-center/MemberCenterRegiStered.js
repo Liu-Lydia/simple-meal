@@ -79,14 +79,14 @@ function MemberCenterRegiStered(props) {
         cancelButtonText: '確定',
         showCloseButton: true,
       })
-    }
-    const fd = new FormData(document.querySelector('#test'))
+      const fd = new FormData(document.querySelector('#test'))
 
-    fetch('http://localhost:4000/membercenter/registered', {
-      method: 'post',
-      body: fd,
-      credentials: 'include',
-    })
+      fetch('http://localhost:4000/membercenter/registered', {
+        method: 'post',
+        body: fd,
+        credentials: 'include',
+      })
+    }
   }
 
   // 切換合法不合法的css與提示字詞
