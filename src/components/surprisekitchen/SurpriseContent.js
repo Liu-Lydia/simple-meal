@@ -14,6 +14,8 @@ function SurpriseContent(props) {
   // 接收預約日期值　↓↓↓
   const [dateStr, setDateObj] = useState('')
 
+  const [activeDindex, setActiveDindex] = useState('')
+
   //Collapse　↓↓↓
   const buttonCollapseId = {
     button: 'accessible',
@@ -286,6 +288,7 @@ function SurpriseContent(props) {
       reservation_price: 0,
     })
     setActive([0])
+    setActiveDindex('')
   }
   //立即重選按鈕 ↑↑↑
 
@@ -343,7 +346,7 @@ function SurpriseContent(props) {
           <div class="mr-auto">
             <p className="m-0 txt-sub1 lll-black">請選擇預約日期</p>
 
-            <Calendar setDateObj={setDateObj} />
+            <Calendar setDateObj={setDateObj} activeDindex={activeDindex} setActiveDindex={setActiveDindex}/>
             {/* 標示名額顏色 ↓↓↓ */}
             <div className="lll-option-position">
               <ul className="m-0 list-unstyled txt-sub1 lll-black">
