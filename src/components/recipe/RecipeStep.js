@@ -2,8 +2,39 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 function RecipeStep(props) {
   const [pageButton, setPageButton] = useState(1)
-  const { setRecipeStepDisplay } = props
-  console.log(pageButton)
+  const { setRecipeStepDisplay, getrecipeData } = props
+//   console.log(pageButton)
+  //   const recipeStepData = () => {
+  //     switch (pageButton) {
+  //       case 1:
+  //         return [getrecipeData.recipeData[0].recipe01, getrecipeData.recipeData[0].recipe_pic_01]
+  //       case 2:
+  //         return [getrecipeData.recipeData[0].recipe02, getrecipeData.recipeData[0].recipe_pic_02]
+  //       case 3:
+  //         return [getrecipeData.recipeData[0].recipe03, getrecipeData.recipeData[0].recipe_pic_03]
+  //       case 4:
+  //         return [getrecipeData.recipeData[0].recipe04, getrecipeData.recipeData[0].recipe_pic_04]
+  //       case 5:
+  //         return [getrecipeData.recipeData[0].recipe05, getrecipeData.recipeData[0].recipe_pic_05]
+  //       case 6:
+  //         return [getrecipeData.recipeData[0].recipe06, getrecipeData.recipeData[0].recipe_pic_06]
+  //       case 7:
+  //         return [getrecipeData.recipeData[0].recipe07, getrecipeData.recipeData[0].recipe_pic_07]
+  //     }
+  //   }
+
+  const a = getrecipeData.recipeData[0]
+  //a[b] = getrecipeData.recipeData[0].recipe07
+  const b = 'recipe0' + pageButton.toString()
+  //a[c] = getrecipeData.recipeData[0].recipe_pic_07
+  const c = 'recipe_pic_0' + pageButton.toString()
+
+  //   const test = recipeStepData()
+  //   console.log(test[0])
+  //   console.log(getrecipeData.recipeData[0].recipe01)
+  //   useEffect(() => {
+  //     recipeStepData()
+  //   }, [pageButton])
   return (
     <>
       <div
@@ -12,11 +43,15 @@ function RecipeStep(props) {
       >
         <div className="msg-style cha-step-msg col-6 my-auto px-5 py-4">
           <div className="col cha-step-top d-flex justify-content-between">
-            <div>step {pageButton}</div>
+            <h6 className=" cha-gray">step {pageButton}</h6>
             <div>
               <Link
                 onClick={() => {
-                  setRecipeStepDisplay({ visibility: 'hidden' })
+                  setRecipeStepDisplay({
+                    visibility: 'hidden',
+                    opacity: '0',
+                    transition: '.5s',
+                  })
                 }}
               >
                 <i class="fas fa-times"></i>
@@ -28,16 +63,13 @@ function RecipeStep(props) {
               <img
                 className=" "
                 style={{ width: '100%' }}
-                src="http://localhost:3015/img/recipe/american01_01.jpg"
+                src={`http://localhost:3015/img/recipe/${a[c]}.jpg`}
                 alt=""
               />
             </div>
             <div className="col-6 cha-step-mid my-auto cha-text cha-green">
-              <p>
-                燒水壺 將烤箱預熱至220°C / 200°C（風扇）/ 425°F /氣體7
-                將白土豆洗淨切成3厘米的立方體
-                將它們放入帶有匹配蓋的大鍋中，加熱時要蓋上鍋蓋，鍋中要加2英寸長的鹽（開水）
-              </p>
+              {/* <p>{test[0]}</p> */}
+              <p>{a[b]}</p>
             </div>
           </div>
           <div className="col cha-step-bottom d-flex justify-content-between ">
