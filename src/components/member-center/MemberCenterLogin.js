@@ -120,7 +120,7 @@ const MemberCenterLogin = (props, { values, isSubmitting }) => {
         <div className="row">
           <div className="col">
             <div className=" d-block d-md-block d-sm-block d-lg-block d-xl-none">
-              <div className="h3  text-center mt-3">登入</div>
+              <div className="h4 text-center mt-3 lll-green">登入</div>
               <Form>
                 <div className="col-12 col-sm-10  mx-auto  mt-5">
                   <label className="mb-2">電子郵件</label>
@@ -176,7 +176,7 @@ const MemberCenterLogin = (props, { values, isSubmitting }) => {
                     送出
                   </button>
                 </div>
-                <div className="txt-cap mr-5 d-flex justify-content-center mb-3">
+                <div className="txt-cap d-flex justify-content-center mb-3">
                   還沒註冊會員嗎？{' '}
                   <Link to="/MemberCenter/RegiStered">註冊</Link>
                 </div>
