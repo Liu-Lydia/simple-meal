@@ -494,6 +494,13 @@ height: 61px;
   border-radius: 45px;
   border-color: transparent;
 }
+.p3-line-button2 {
+  width: 80px;
+  height: 10px;
+  background-color: transparent;
+  border-radius: 45px;
+  border-color: transparent;
+}
 .p3LineButtonDiv {
   position: relative;
   top: -66px;
