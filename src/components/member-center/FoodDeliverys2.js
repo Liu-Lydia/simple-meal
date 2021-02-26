@@ -68,9 +68,6 @@ function FoodDeliverys2() {
         <div className=" txt-cap mt-2 ml-3 d-block d-sm-block d-md-block d-lg-none d-xl-none ">
           請點選項目以取得更詳細的訂單資訊
         </div>
-        <div className=" mt-2 ml-3  txt-cap d-none d-sm-none d-md-none d-lg-block d-xl-block">
-          請點選項目以取得更詳細的訂單資訊
-        </div>
       </div>
       <div className="">
         <table className="txt-body  text-nowrap table col-10 mx-auto mx-xl-0">
