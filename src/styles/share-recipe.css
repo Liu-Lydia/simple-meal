@@ -57,7 +57,10 @@
   width: 100%;
   height: 100%;
 }
-
+.xxx-200x200{
+  width: 300px;
+  height: 300px;
+}
 .xxx-imgdiv{
   width: 315px;
   height: 153px;
