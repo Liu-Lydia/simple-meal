@@ -19,7 +19,7 @@ const MemberCenterRegiStered = ({ values, isSubmitting }) => (
             </Link>
           </div>
           <div className="txt-body">
-            <div className="h3 text-center mb-4">註冊</div>
+            <div className="h4 text-center mb-4 lll-green">註冊</div>
           </div>
 
           <Form>

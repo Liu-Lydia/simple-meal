@@ -144,7 +144,8 @@
 }
 
 .poe-bookmark-label:hover {
-  color: #a2a3a5;
+  opacity: 70%;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -470,14 +471,15 @@
   perspective: 700;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
 }
 
 .poe-creditcard-body {
   margin: auto;
   // background-color: #0871b0;
-  width: 200px;
+  width: 232px;
   height: 146px;
-  text-align: center;
+  // text-align: center;
   line-height: 200px;
   // color: #fff;
   transition: all 0.6s ease;
@@ -492,7 +494,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 200px;
+  width: 232px;
   // height: 200px;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -503,11 +505,11 @@
   -moz-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
-.poe-creditcard-body:hover {
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-}
+// .poe-creditcard-body:hover {
+//   -webkit-transform: rotateY(180deg);
+//   -moz-transform: rotateY(180deg);
+//   transform: rotateY(180deg);
+// }
 
 .poe-creditcard {
   // max-width: 428px;

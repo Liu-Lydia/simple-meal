@@ -8,10 +8,12 @@ import Swal from 'sweetalert2'
 function RecipeTittle(props) {
   //getrecipeData,傳送到畫面的食譜全資料(一筆)
   //updateNum, setUpdateNum,更新cart畫面的計數器
-  const { getrecipeData, updateNum, setUpdateNum } = props
+  const { getrecipeData, updateNum, setUpdateNum, recipeData } = props
   //設定食譜步驟是否顯示
   const [recipeStepDisplay, setRecipeStepDisplay] = useState({
     visibility: 'hidden',
+    opacity: '0',
+    transition: '.5s',
   })
   //選擇標籤頁
   const [tittle, setTittle] = useState('testa')
@@ -36,7 +38,7 @@ function RecipeTittle(props) {
   }
   // console.log(getrecipeData.mealData[0].sid)
   // console.log(getrecipeData.recipeData[0])
-  // console.log(getrecipeData.ingredientsData)
+  console.log(getrecipeData.recipeData[0])
 
   //sweatalert2設定檔
   const swalWithBootstrapButtons = Swal.mixin({
@@ -68,7 +70,6 @@ function RecipeTittle(props) {
           cancelButtonText: '確定',
         })
       })
-
     // .then(() => alert('以加入購物車'))
   }
 
@@ -89,13 +90,6 @@ function RecipeTittle(props) {
               <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>
               <i className="far fa-star"></i>
-              <Link
-                onClick={() => {
-                  history.goBack()
-                }}
-              >
-                <i className="far fa-star"></i>
-              </Link>
             </div>
             <div className=" cha-mb2 cha-rec-main-icon-sub d-flex">
               <div className="cha-mr3">
@@ -170,7 +164,11 @@ function RecipeTittle(props) {
             <Link
               className="btn-white txt-btn cha-rec-btn-bye"
               onClick={() => {
-                setRecipeStepDisplay({ visibility: 'visible' })
+                setRecipeStepDisplay({
+                  visibility: 'visible',
+                  opacity: '1',
+                  transition: '.5s',
+                })
               }}
             >
               查看食譜步驟
@@ -181,6 +179,7 @@ function RecipeTittle(props) {
       <RecipeStep
         recipeStepDisplay={recipeStepDisplay}
         setRecipeStepDisplay={setRecipeStepDisplay}
+        getrecipeData={getrecipeData}
       />
     </>
   )

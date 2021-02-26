@@ -319,6 +319,7 @@
 
 .lll-detile-style {
   color: #ffffff;
+  text-shadow: #434341  0.1em 0.1em 1em;
   animation: test4 6s ease;
 }
 
@@ -1479,4 +1480,48 @@
     top: 130px;
     left: 3px;
   }
+}
+
+/* 送出評論 */
+.lll-exchange-content-box {
+  margin: auto auto;
+  background-color: white;
+  width: 1244px;
+  border-radius: 25px;
+  text-align: left;
+  line-height: 30px;
+  border: 5px #627e2a solid;
+  padding: 36px 70px 70px 70px;
+}
+
+.lll-title-line-bottom{
+  width: 100%;
+  height: 5px;
+  background-color: #a2a3a5;
+  border-radius: 2.5px;
+}
+
+.lll-comment-info{
+  width: 1094px;
+}
+
+.lll-pt45{
+  padding-top: 45px;
+}
+
+.lll-input-width{
+  width: 150px;
+}
+
+.lll-comment-msg {
+  background-color: white;
+  width: 536px;
+  height: 150px;
+  border-radius: 10px;
+  border: 10px #627e2a solid;
+}
+
+
+.lll-comment-msg-width{
+  width: 536px;
 }

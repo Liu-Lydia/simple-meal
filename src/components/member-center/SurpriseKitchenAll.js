@@ -27,9 +27,50 @@ function SurpriseKitchenAll() {
   }, [])
 
   //Lydia加的
-  const [dialogStyle, setDialogStyle] = useState({ visibility: 'hidden' })
+  //發送預約　↓↓↓
+  // 定義SweetAlert2的按鈕　↓↓↓
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      popup: 'poe-alert',
+      title: 'poe-green my-0',
+      content: 'txt-btn',
+      confirmButton: 'btn-green txt-btn mx-2 my-2',
+      cancelButton: 'btn-red txt-btn mx-2 my-2',
+      denyButton: 'btn-red txt-btn mx-2 my-2',
+    },
+    buttonsStyling: false,
+  })
+  const handleWriteComment = async () => {
+    const fd = new FormData(document.querySelector('#kitchenComment'))
 
-  const handleWriteComment = () => {}
+    await fetch('http://localhost:4000/surpriseKitchenHistory/getoverlist', {
+      method: 'post',
+      body: fd,
+      credentials: 'include',
+    })
+      .then((r) => r.json())
+      .then((obj) => {
+        console.log(obj)
+        // alert(`您的訂單編號為 ${obj.order_sid}, 請前往購物車進行結帳。 `)
+        // sweetAlert 第2階段
+        swalWithBootstrapButtons.fire({
+          // imageUrl: 'http://localhost:3015/img/lydia/Omurice.GIF',
+          // imageHeight: 200,
+          title: '<h4>新增預約</h4>',
+          padding: '45px',
+          showConfirmButton: true,
+          confirmButtonText: '回首頁',
+          backdrop: `rgba(0,0,0,.5)`,
+        })
+      })
+  }
+
+  const [dialogStyle, setDialogStyle] = useState({ visibility: 'hidden' })
+  const [comment, setComment] = useState({
+    nickname: '',
+    used_date: '',
+    comment: '',
+  })
 
   const Seach = (
     <>
@@ -73,8 +114,8 @@ function SurpriseKitchenAll() {
     <>
       {/* Lydia加的 */}
       {/* 兌換視窗 */}
-      <div className="fff-exchange" style={dialogStyle}>
-        <div className="fff-exchange-content-box">
+      <div className="fff-handmadepopup" style={dialogStyle}>
+        <div className="lll-exchange-content-box">
           <div className="row justify-content-end fff-no-mr-and-pad">
             {/* 圖片放置位置 先占高 mobo關閉 */}
 
@@ -91,59 +132,68 @@ function SurpriseKitchenAll() {
             </div>
           </div>
           <div className="row fff-no-mr-and-pad">
-            <form id="dialog-form">
+            <form id="kitchenComment">
               <div className="col fff-exchange-content txt-btn">
                 <div
-                  className="d-flex justify-content-between fff-txt-info
-              "
+                  className="d-flex justify-content-between fff-txt-info"
                   style={{ lineHeight: '50px' }}
                 >
-                  <span style={{ color: '#707070' }}>你點選了</span>
-                </div>
-                <div
-                  className="d-flex justify-content-between"
-                  style={{
-                    lineHeight: '25px',
-                    marginBottom: '7px',
-                    marginTop: '7px',
-                  }}
-                >
-                  <span style={{ color: '#627E2A' }}>選擇數量</span>
-                </div>
-                <div
-                  className="d-flex justify-content-between"
-                  style={{ lineHeight: '39px' }}
-                >
-                  <span>花費點數</span>
-                  <span style={{ color: '#b9433b', fontSize: '21px' }}></span>
-                </div>
-                <div
-                  className="d-flex justify-content-between"
-                  style={{ lineHeight: '39px' }}
-                >
-                  <span style={{ color: '#627E2A' }}>剩餘點數</span>
-                  <span style={{ color: '#627E2A', fontSize: '21px' }}></span>
-                </div>
-                <div style={{ marginTop: '20px', marginBottom: '20px' }}></div>
+                  <span className="lll-comment-info">
+                    <h3 className="m-0 lll-green lll-pb45">給予評論</h3>
+                    <div className="lll-title-line-bottom"></div>
+                    <div className="lll-pt45 text-align-center">
+                      <span className="lll-black txt-btn lll-pr30">暱稱</span>
+                      <input
+                        type="text"
+                        className="input-style lll-input-width"
+                        value={comment.nickname}
+                        onChange={(e) => {
+                          setComment(e.target.value)
+                        }}
+                      />
+                    </div>
+                    <div>
+                      <span className="lll-black txt-btn lll-pr30">
+                        使用日期
+                      </span>
+                      <span className="txt-btn lll-grey">2020 / 02 / 20</span>
+                    </div>
+                    <label
+                      for="FormControlTextarea"
+                      className="m-0 txt-sub1 lll-black lll-pb20"
+                    >
+                      留下評論
+                    </label>
+                    <div className="form-group m-0">
+                      <div className="d-flex">
+                        <div className="lll-comment-msg-width">
+                          <textarea
+                            className="form-control lll-comment-msg"
+                            id="FormControlTextarea"
+                            rows="5"
+                            value={comment.comment}
+                            onChange={(e) => {
+                              setComment(e.target.value)
+                            }}
+                          />
+                        </div>
 
-                <div className="d-flex justify-content-center">
-                  <span className="txt-btn" style={{ color: '#b9433b' }}>
-                    已兌換便無法退還點數喔！
+                        <span className="txt-sub2 lll-red mt-auto pl-3">
+                          評論送出後便無法再做任何更動 !
+                        </span>
+                        <button
+                          type="button"
+                          className="btn-green txt-btn aboutCloseBtn mt-auto ml-auto"
+                          onClick={() => {
+                            handleWriteComment()
+                          }}
+                          data-dismiss="modal"
+                        >
+                          送出評論
+                        </button>
+                      </div>
+                    </div>
                   </span>
-                </div>
-
-                <div
-                  className="d-flex justify-content-center"
-                  style={{ marginTop: '25px' }}
-                >
-                  <button
-                    type="button"
-                    className="btn-green txt-btn aboutCloseBtn"
-                    onClick={() => {}}
-                    data-dismiss="modal"
-                  >
-                    確定兌換
-                  </button>
                 </div>
               </div>
             </form>
