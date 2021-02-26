@@ -261,7 +261,7 @@ function SimpleMealCouponPayment(props) {
         </div>
       </div>
 
-      {/* 隱藏視窗 */}
+      {/* 隱藏視窗(優惠券) */}
       <div className="fff-mshowto" style={modalStyle}>
         <div className="fff-mshowto-content" style={{ marginTop: '20vh' }}>
           {/* 關閉頁面的Ｘ */}
@@ -326,6 +326,49 @@ function SimpleMealCouponPayment(props) {
                 data-dismiss="modal"
               >
                 取消
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 隱藏視窗(信用卡) */}
+      <div className="fff-mshowto" style={{ display: 'block' }}>
+        <div className="fff-mshowto-content" style={{ marginTop: '20vh' }}>
+          {/* 關閉頁面的Ｘ */}
+          <div className="fff-ms-mobo justify-content-end col-12">
+            <h6>
+              <i
+                className="fas fa-times aboutCloseBtn"
+                onClick={() => {
+                  setModalStyle({ display: 'block' })
+                }}
+              ></i>
+            </h6>
+          </div>
+          {/* 信用卡輸入位置*/}
+          <div className="row justify-content-center poe-green">
+            {/* 按鈕 */}
+            <div className="col-12 d-flex justify-content-center mt-3">
+              <button
+                type="button"
+                className="aboutCloseBtn btn-green txt-btn mx-2 my-2"
+                // onClick={() => {
+                //   setModalStyle({ display: 'none' })
+                // }}
+                data-dismiss="modal"
+              >
+                取消
+              </button>
+              <button
+                type="button"
+                className="btn-red txt-btn mx-2 my-2"
+                // onClick={() => {
+                //   setModalStyle({ display: 'none' })
+                // }}
+                data-dismiss="modal"
+              >
+                確定
               </button>
             </div>
           </div>
