@@ -187,7 +187,7 @@ function SimpleMealCouponPayment(props) {
 
           <div className="poe-bookmark-content txt-btn">
             <div className="row d-flex justify-content-between align-items-center poe-bookmark-content-coupon">
-              <div className="col-12 col-sm-3 poe-mb15">優惠碼</div>
+              <div className="col-12 col-sm-3 poe-mb15 text-center">優惠碼</div>
               <div className="col-12 col-sm-5 poe-mb15">
                 <input
                   type="text"
