@@ -46,7 +46,7 @@ function CartCarousel(props) {
 
   // 自動移動
   const handleAutoDirection = () => {
-    console.log(order)
+    // console.log(order)
     if (order > 0) {
       setOrder(order - 1)
       return

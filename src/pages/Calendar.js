@@ -10,8 +10,8 @@ import CalendarDate from '../components/CalendarDate'
 export const AppStore = createContext()
 
 function Calendar(props) {
-  // {改變日期選項的函式}
-  const { setDateObj, activeDindex, setActiveDindex} = props
+  // 改變日期選項的函式
+  const { setDateObj, activeDindex, setActiveDindex } = props
 
   const mmt = new moment()
   const timeReducer = useReducer(calendar, mmt.format('YYYY-MM-DD'))
@@ -31,7 +31,11 @@ function Calendar(props) {
           <CalendarHeader />
           <div className="lll-pt30">
             <CalendarWeekDay />
-            <CalendarDate setDateObj={setDateObj} activeDindex={activeDindex} setActiveDindex={setActiveDindex}/>
+            <CalendarDate
+              setDateObj={setDateObj}
+              activeDindex={activeDindex}
+              setActiveDindex={setActiveDindex}
+            />
           </div>
         </div>
         {/* </div> */}

@@ -1,6 +1,8 @@
 //手機版內回前頁的按鈕
 import React, { props } from 'react'
 // 須從父親那邊接收“props”要引入{ props }，因為{ props }非extend default所以要{}包起來。
+import { Nav } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
 
 function MsMoboBackToLastPageBtn(props) {
   // 如果在成就清單
@@ -26,15 +28,18 @@ function MsMoboBackToLastPageBtn(props) {
   if (props.setPage == 'RewardExchange') {
     return (
       <>
-        <div className="row fff-ms-mobo d-flex justify-content-center align-items-center">
-          <div
+        <div className="row fff-ms-mobo d-flex justify-content-center">
+          <Nav.Link
             className="fff-btn-mobo-style"
-            onClick={() => {
-              window.location.href = './Milestone'
+            as={NavLink}
+            to={'./Milestone'}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
             }}
           >
-            回前頁
-          </div>
+            <div className="col justify-self-center">回前頁</div>
+          </Nav.Link>
         </div>
       </>
     )

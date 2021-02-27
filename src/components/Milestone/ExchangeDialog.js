@@ -2,10 +2,25 @@ import React, { props, useState, useEffect } from 'react'
 import '../../styles/public.css'
 import '../../styles/fff.css'
 
-//<ExchangeDialog dialogStyle={dialogStyle} setDialogStyle={setDialogStyle} detailContext={detailContext} setCount={setCount} count={count}/>
+//<ExchangeDialog
+// dialogStyle={dialogStyle}
+// setDialogStyle={setDialogStyle}
+// detailContext={detailContext}
+// setCount={setCount}
+// count={count}
+// getPoint={getPoint}
+// totalPoint={totalPoint}
+// />
 function ExchangeDialog(props) {
-  //目前擁有點數
-  const [totalPoint, setTotalPoint] = useState(0)
+  const {
+    dialogStyle,
+    setDialogStyle,
+    detailContext,
+    setCount,
+    count,
+    getPoint,
+    totalPoint,
+  } = props
   //選擇的個數
   //const [count, setCount] = useState(0) 交給父層 點擊兌換的商品時要先設定為0
   //select option 選項
@@ -17,25 +32,6 @@ function ExchangeDialog(props) {
   const [DBreturn, setDBReturn] = useState({})
 
   const [returnMsgDialog, setReturnMsgDialog] = useState({ display: 'none' })
-
-  const getPoint = async () => {
-    const url = 'http://localhost:4000/milestone/getPoint'
-    //sid 要從session來
-    await fetch(url, {
-      method: 'get',
-      credentials: 'include',
-    })
-      //then 是會接前方拋出的結果
-      .then((r) => r.json())
-      .then((obj) => {
-        //總獲得的點數
-        const totalGetPoint = obj.totalGetPoiont
-        //總花費的點數
-        const totalSpendPoint = obj.totalSpendPoint
-        //將目前有的點數設定成為屬性
-        setTotalPoint(totalGetPoint - totalSpendPoint)
-      })
-  }
 
   //打包資料送後台
   const setExchange = async () => {
@@ -51,25 +47,24 @@ function ExchangeDialog(props) {
       .then((r) => r.json())
       .then((obj) => {
         setDBReturn(obj)
+        getPoint()
       })
   }
 
   const updateSelectOption = () => {
     const temparray = []
-    for (let i = 0; i * props.detailContext.need_point <= totalPoint; i++) {
-      temparray.push(i * props.detailContext.need_point)
+    for (let i = 0; i * detailContext.need_point <= totalPoint; i++) {
+      temparray.push(i * detailContext.need_point)
     }
     setSelectOption(temparray)
   }
 
   useEffect(() => {
-    getPoint()
     updateSelectOption()
-  }, [props.detailContext])
+  }, [detailContext])
 
   //當選擇兌換時 更新
-  useEffect(() => {
-  }, [props.count])
+  useEffect(() => {}, [count])
 
   //當確認兌換時 更新
   useEffect(() => {
@@ -85,7 +80,7 @@ function ExchangeDialog(props) {
   return (
     <>
       {/* 兌換視窗 */}
-      <div className="fff-exchange" style={props.dialogStyle}>
+      <div className="fff-exchange" style={dialogStyle}>
         <div className="fff-exchange-content-box">
           <div className="row justify-content-end fff-no-mr-and-pad">
             {/* 圖片放置位置 先占高 mobo關閉 */}
@@ -96,7 +91,7 @@ function ExchangeDialog(props) {
                 <i
                   className="fas fa-times aboutCloseBtn"
                   onClick={() => {
-                    props.setDialogStyle({ display: 'none' })
+                    setDialogStyle({ display: 'none' })
                   }}
                 ></i>
               </h6>
@@ -112,7 +107,7 @@ function ExchangeDialog(props) {
                 >
                   <span style={{ color: '#707070' }}>你點選了</span>
                   <span style={{ color: '#627E2A' }}>
-                    {props.detailContext.good_name}
+                    {detailContext.good_name}
                   </span>
                 </div>
                 <div
@@ -127,7 +122,7 @@ function ExchangeDialog(props) {
                   <select
                     name="count"
                     onChange={(event) => {
-                      props.setCount(event.target.value)
+                      setCount(event.target.value)
                     }}
                   >
                     {selectOption.map((value, index) => (
@@ -141,7 +136,7 @@ function ExchangeDialog(props) {
                 >
                   <span>花費點數</span>
                   <span style={{ color: '#b9433b', fontSize: '21px' }}>
-                    {props.count * props.detailContext.need_point}
+                    {count * detailContext.need_point}
                   </span>
                 </div>
                 <div
@@ -150,13 +145,13 @@ function ExchangeDialog(props) {
                 >
                   <span style={{ color: '#627E2A' }}>剩餘點數</span>
                   <span style={{ color: '#627E2A', fontSize: '21px' }}>
-                    {totalPoint - props.count * props.detailContext.need_point}
+                    {totalPoint - count * detailContext.need_point}
                   </span>
                 </div>
                 <div style={{ marginTop: '20px', marginBottom: '20px' }}>
                   <span className="txt-btn" style={{ color: '#A2A3A5' }}>
                     兌換說明：
-                    {props.detailContext.good_subs}
+                    {detailContext.good_subs}
                   </span>
                 </div>
 
@@ -168,7 +163,7 @@ function ExchangeDialog(props) {
                 <input
                   type="hidden"
                   name="good_ID"
-                  value={props.detailContext.good_ID}
+                  value={detailContext.good_ID}
                 ></input>
                 <div
                   className="d-flex justify-content-center"
@@ -178,8 +173,8 @@ function ExchangeDialog(props) {
                     type="button"
                     className="btn-green txt-btn aboutCloseBtn"
                     onClick={() => {
-                      props.setDialogStyle({ display: 'none' })
-                      if (props.count > 0) {
+                      setDialogStyle({ display: 'none' })
+                      if (count > 0) {
                         setCommit(true)
                       }
                     }}
