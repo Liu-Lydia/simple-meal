@@ -23,7 +23,6 @@ function QRCodeDialog(props) {
       .then((r) => r.json())
       .then((couponList) => {
         setCoupon(couponList)
-        console.log("couponList",couponList,"couponKey",couponKey)
       })
   }
 
