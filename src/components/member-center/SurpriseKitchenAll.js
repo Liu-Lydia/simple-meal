@@ -16,7 +16,6 @@ function SurpriseKitchenAll() {
         credentials: 'include',
       }
     )
-
     const data = await response.json()
     //最後設定要到狀態中
     setSurpriseKitchen(data)
@@ -66,6 +65,7 @@ function SurpriseKitchenAll() {
   }
 
   const [dialogStyle, setDialogStyle] = useState({ visibility: 'hidden' })
+
   const [comment, setComment] = useState({
     nickname: '',
     used_date: '',
@@ -74,8 +74,8 @@ function SurpriseKitchenAll() {
 
   const Seach = (
     <>
-      <div className="d-flex ">
-        <div className=" mt-md-2  mt-2 txt-sub2 col-12 col-sm-12 d-flex ">
+      <div className="d-flex  ">
+        <div className=" mt-md-2  mt-3 mb-4 txt-sub2 col-12 col-sm-12 d-flex ">
           <div className=" mt-2 mr-2 txt-cap d-none d-sm-none d-md-block d-lg-block d-xl-block">
             輸入查詢區間
           </div>
@@ -106,7 +106,6 @@ function SurpriseKitchenAll() {
             送出
           </button>
         </div>
-        <div className="col-12 col-sm-10 mx-auto"></div>{' '}
       </div>{' '}
     </>
   )

@@ -47,11 +47,6 @@ function MemberCenterSimpleMealCoupon() {
 
   const Coupons = (
     <>
-      <div className="col">
-        <div className="mt-2 ml-5 txt-cap d-block d-xl-none col-8">
-          請點選項目以取得更詳細的訂單資訊
-        </div>
-      </div>
       <table className="table txt-body  text-nowrap  mx-auto mx-xl-0">
         <thead>
           <tr className="text-center  d-none d-xl-block col-8">
@@ -129,6 +124,7 @@ function MemberCenterSimpleMealCoupon() {
           >
             送出
           </button>
+
           <input
             className="col-12 col-sm-12 col-md-10 d-block  d-md-none mb-3 "
             type="date"
