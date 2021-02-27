@@ -8,11 +8,19 @@ import '../../styles/fff.css'
 // detailContext={detailContext}
 // setCount={setCount}
 // count={count}
-// getPoint={getPoint} 
+// getPoint={getPoint}
 // totalPoint={totalPoint}
 // />
 function ExchangeDialog(props) {
-  const{dialogStyle,setDialogStyle,detailContext,setCount,count,getPoint,totalPoint} = props
+  const {
+    dialogStyle,
+    setDialogStyle,
+    detailContext,
+    setCount,
+    count,
+    getPoint,
+    totalPoint,
+  } = props
   //選擇的個數
   //const [count, setCount] = useState(0) 交給父層 點擊兌換的商品時要先設定為0
   //select option 選項
@@ -24,7 +32,6 @@ function ExchangeDialog(props) {
   const [DBreturn, setDBReturn] = useState({})
 
   const [returnMsgDialog, setReturnMsgDialog] = useState({ display: 'none' })
-
 
   //打包資料送後台
   const setExchange = async () => {
@@ -57,8 +64,7 @@ function ExchangeDialog(props) {
   }, [detailContext])
 
   //當選擇兌換時 更新
-  useEffect(() => {
-  }, [count])
+  useEffect(() => {}, [count])
 
   //當確認兌換時 更新
   useEffect(() => {

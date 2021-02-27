@@ -40,22 +40,22 @@ function MemberCenterIndex() {
                     </li>
                   </ul>
 
-                  <ul className="col-7 mt-3">
-                    <li className="item1txt-cap ">
+                  <ul className="col-7 mt-3 txt-body">
+                    <li className="item1">
                       會員編號<span>{Memberinfo.member_number}</span>
                     </li>
-                    <li className="item1 txt-cap">{Memberinfo.name}</li>
+                    <li className="item1">{Memberinfo.name}</li>
 
-                    <li className="item1 txt-cap">
+                    <li className="item1">
                       會員等級:{' '}
                       <span style={{ color: 'red' }}>{Memberinfo.level}</span>
                     </li>
                   </ul>
-                  <ul className="col-8 mt-3">
-                    <li className="item1 txt-cap">
+                  <ul className="col-8 mt-3 txt-body">
+                    <li className="item1">
                       剩餘點數:<span style={{ color: 'red' }}>999</span>
                     </li>
-                    <li className="item1 txt-cap">
+                    <li className="item1">
                       餐卷數量:
                       <span style={{ color: 'red' }}>
                         {Memberinfo.simplemeal_coupon}
@@ -168,10 +168,10 @@ function MemberCenterIndex() {
                   alt="1234"
                 />
 
-                <span className="item1  txt-cap mt-3  ">{Memberinfo.name}</span>
+                <span className="item1 txt-body mt-3  ">{Memberinfo.name}</span>
               </div>
 
-              <ul className=" mt-3 txt-cap d-flex">
+              <ul className=" mt-3 txt-body d-flex">
                 <li className="col-7">
                   會員編號:
                   <span style={{ color: 'red' }}>
@@ -186,7 +186,7 @@ function MemberCenterIndex() {
                 </li>
               </ul>
 
-              <ul className="mt-3 d-flex txt-cap">
+              <ul className="mt-3 d-flex txt-body">
                 <li className="col-7">
                   會員等級:
                   <span style={{ color: 'red' }}>{Memberinfo.level}</span>

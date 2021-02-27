@@ -194,7 +194,7 @@
   background-color: white;
   width: 302px;
   border-radius: 25px;
-  text-align: left;
+  text-align: center;
   line-height: 30px;
   border: 5px #627e2a solid;
   padding: 30px;
@@ -203,10 +203,13 @@
 .fff-txt-ms-detail {
   display: flex;
   flex-direction: column;
+  font-size: 16px;
 }
 .fff-txt-ms-detail-title {
-  font-size: '21px';
+  font-size: 21px;
 }
+
+
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {

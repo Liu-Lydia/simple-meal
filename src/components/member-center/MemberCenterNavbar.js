@@ -21,28 +21,32 @@ function MemberCenterNavbar() {
   return (
     <>
       <div className="aa d-none d-xl-block col-2 offset-1 mt-2  ">
-        <div className="txt-cap col-10 col-xl-12  style={{ color: '#434341' }}">
-          <li className="d-none d-xl-block box1 mx-auto mb-2">
-            <img
-              className="cha-cart-user-img "
-              src={`http://localhost:3015/img/member-center/${Memberinfo.avater}`}
-              alt=""
-            />
-          </li>
-          <li className="d-none d-xl-block ml-3 col-10 mx-auto">
-            會員姓名:
-            <span>{Memberinfo.name}</span>
-          </li>
-          <li className="d-none d-xl-block mb-3 ml-3 col-8 mx-auto">
-            會員等級:
-            <span style={{ color: 'red' }}>{Memberinfo.level}</span>
-          </li>
+        <div className="txt-body style={{ color: '#434341' }}">
+          <div>
+            <li className="box1 mb-2 offset-4">
+              <img
+                className="cha-cart-user-img "
+                src={`http://localhost:3015/img/member-center/${Memberinfo.avater}`}
+                alt=""
+              />
+            </li>
+          </div>
+          <div className="offset-2">
+            <li className="text-nowrap ">
+              會員姓名:
+              <span>{Memberinfo.name}</span>
+            </li>
+            <li className="mb-3 text-nowrap">
+              會員等級:
+              <span style={{ color: 'red' }}>{Memberinfo.level}</span>
+            </li>
+          </div>
         </div>
 
-        <div className="">
-          <div className="h6 align-middle">
+        <div className="text-nowrap ">
+          <div className="h6  align-middle">
             <div className="d-flex">
-              <ul className="mt-1 h6 mx-auto">
+              <ul className="mt-1  mx-auto">
                 <ul
                 // data-target="#collapseExample"
                 // aria-expanded="false"
@@ -52,7 +56,7 @@ function MemberCenterNavbar() {
                   <i className="far fa-address-card mr-1"></i>我的帳戶
                 </ul>
                 <div
-                  className="txt-sub2 ml-2 col-10"
+                  className="txt-sub2 ml-3 col-10"
                   // id="collapseExample"
                 >
                   <li>

@@ -81,9 +81,6 @@ function FoodDeliverys2() {
                 配送明細
               </th>
               <th>使用餐卷</th>
-              <th className=" d-none d-md-none d-sm-none d-lg-block d-xl-block   ">
-                配送日期
-              </th>
             </tr>
           </thead>
           <tbody>
@@ -96,7 +93,6 @@ function FoodDeliverys2() {
                   <Moment format="YYYY/MM/DD">{v.check_date}</Moment>
                 </td>
                 <td>{v.meal_name}</td>
-                <td className="d-none d-sm-none  d-md-none d-lg-block "></td>
               </tr>
             ))}
           </tbody>

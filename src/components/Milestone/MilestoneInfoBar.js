@@ -7,7 +7,7 @@ function MilestoneInfoBar(props) {
   //集點說明要不要渲染(虛擬Dom)
   const [userInfo, setUserInfo] = useState([])
 
-  const {totalPoint, href, btnText, setMoboMsPage2} = props
+  const { totalPoint, href, btnText, setMoboMsPage2 } = props
 
   const getUserInfo = async () => {
     const url = 'http://localhost:4000/milestone/getUserInfo'
@@ -196,14 +196,17 @@ function MilestoneInfoBar(props) {
         </div>
 
         <div className="d-flex justify-content-center">
-          <div
+          <Nav.Link
             className="fff-btn-mobo-style"
-            onClick={() => {
-              window.location.href = href
+            as={NavLink}
+            to={href}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
             }}
           >
-            {btnText}
-          </div>
+            <div className="col justify-self-center">{btnText}</div>
+          </Nav.Link>
         </div>
       </div>
     </>
