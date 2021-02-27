@@ -5,19 +5,14 @@ import '../styles/fff.css'
 // 個人資料
 import MilestoneInfoBar from '../components/Milestone/MilestoneInfoBar'
 // 成就清單
-import MilestoneListAll from '../components/Milestone/MilestoneListAll'
+import MilestoneList from '../components/Milestone/MilestoneList'
 // 成就選項
 import MilestoneListOption from '../components/Milestone/MilestoneListOption'
 //手機版點數顯示
 import MsMoboPointInfo from '../components/Milestone/MsMoboPointInfo'
 //手機版回前頁
 import MsMoboBackToLastPageBtn from '../components/Milestone/MsMoboBackToLastPageBtn'
-// 限時活動
-import MilestoneListLimit from '../components/Milestone/MilestoneListLimit'
-// 已達成成就
-import MilestoneListFinish from '../components/Milestone/MilestoneListFinish'
-// 未達成成就
-import MilestoneListUnfinish from '../components/Milestone/MilestoneListUnfinish'
+
 // 主圖
 import MsMainPic from '../components/Milestone/MsMainPic'
 
@@ -30,7 +25,7 @@ function Milestone(props) {
 
   //解構賦值 取得登入資訊
   const { loginBool } = props
-  
+
   //使用者點數
   const [totalPoint, setTotalPoint] = useState(0)
 
@@ -144,10 +139,10 @@ function Milestone(props) {
           setMilestoneFilter={setMilestoneFilter}
           milestoneFilter={milestoneFilter}
         />
-        {milestoneFilter === 0 && <MilestoneListLimit />}
-        {milestoneFilter === 1 && <MilestoneListAll />}
-        {milestoneFilter === 2 && <MilestoneListFinish />}
-        {milestoneFilter === 3 && <MilestoneListUnfinish />}
+        {milestoneFilter === 0 && <MilestoneList filter='limit'/>}
+        {milestoneFilter === 1 && <MilestoneList filter='all'/>}
+        {milestoneFilter === 2 && <MilestoneList filter='finished'/>}
+        {milestoneFilter === 3 && <MilestoneList filter='unfinished'/>}
       </div>
     </>
   )

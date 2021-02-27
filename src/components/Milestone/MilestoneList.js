@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import MilestoneDialog from './MilestoneDialog'
 
-function MilestoneListAll() {
+function MilestoneList(props) {
   //資料庫回來的東西 milstonelist []陣列包{}每筆資料
   const [milstonelist, setMilestoneList] = useState([])
 
@@ -50,7 +50,7 @@ function MilestoneListAll() {
         setTotalCount(obj.length)
       })
 
-    const url = `http://localhost:4000/milestone/getMilestoneList?page=${listPage}&perpage=${perPage}`
+    const url = `http://localhost:4000/milestone/getMilestoneList?filter=${props.filter}&page=${listPage}&perpage=${perPage}`
     //sid 要從session來
     await fetch(url, {
       method: 'get',
@@ -319,4 +319,4 @@ function MilestoneListAll() {
   )
 }
 
-export default MilestoneListAll
+export default MilestoneList
