@@ -43,32 +43,37 @@ function MilestoneDialog(props) {
           {/* 文字區 */}
           <div className="col fff-txt-ms-detail align-self-center">
             {/* 成就名稱 */}
-            <p>{props.detailContext.stone_name}</p>
+            <span className="fff-txt-ms-detail-title">
+              {props.detailContext.stone_name}
+            </span>
 
             {/* 獎勵點數 */}
             <span className="" style={{ color: '#627e2a' }}>
               {' '}
               獎勵點數：{props.detailContext.reward_point}點
             </span>
-            <br />
+
             {/* 達成方法 */}
             <span className="">
-              達成方式：
-              <br />
+              <p className="fff-ms-web">達成方式：</p>
+              <p className="fff-ms-mobo fff-txt-ms-detail">
+                -----達成方式-----
+              </p>
               {props.detailContext.subs}
             </span>
 
-            <br />
-            <span className="" style={{ color: '#B9433B' }}>
-              目前進度:
-              <span className="">{props.detailContext.TriggerSubs}</span>
-              {props.detailContext.AddProgress == null
-                ? 0
-                : props.detailContext.AddProgress}
-              /{props.detailContext.progress_goal}
-            </span>
-            <div style={{marginTop:'1rem'}}>
-              <ProgressBar animated now={45} />
+            <div style={{ color: '#B9433B' }}>
+              <p className="fff-ms-web">目前進度:</p>
+              <p>{props.detailContext.TriggerSubs}</p>
+              <p className="fff-txt-ms-detail-title">
+                {props.detailContext.AddProgress == null
+                  ? 0
+                  : props.detailContext.AddProgress}
+                /{props.detailContext.progress_goal}
+              </p>
+            </div>
+            <div style={{ marginTop: '1rem' }}>
+              <ProgressBar animated now={props.msProgressNow} />
             </div>
           </div>
         </div>
@@ -77,7 +82,7 @@ function MilestoneDialog(props) {
           <button
             type="button"
             className="btn-white txt-btn aboutCloseBtn"
-            style={{marginTop:'30px'}}
+            style={{ marginTop: '30px' }}
             onClick={() => {
               props.setDetailStyle({ visibility: 'hidden' })
             }}
