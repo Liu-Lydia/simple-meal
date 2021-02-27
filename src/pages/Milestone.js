@@ -30,6 +30,32 @@ function Milestone(props) {
 
   //解構賦值 取得登入資訊
   const { loginBool } = props
+  
+  //使用者點數
+  const [totalPoint, setTotalPoint] = useState(0)
+
+  const getPoint = async () => {
+    const url = 'http://localhost:4000/milestone/getPoint'
+    //sid 要從session來
+    await fetch(url, {
+      method: 'get',
+      credentials: 'include',
+    })
+      //then 是會接前方拋出的結果
+      .then((r) => r.json())
+      .then((obj) => {
+        //總獲得的點數
+        const totalGetPoint = obj.totalGetPoiont
+        //總花費的點數
+        const totalSpendPoint = obj.totalSpendPoint
+        //將目前有的點數設定成為屬性
+        setTotalPoint(totalGetPoint - totalSpendPoint)
+      })
+  }
+
+  useEffect(() => {
+    getPoint()
+  }, [])
 
   //================================================================================================
   // 定義style物件，顯示預設網頁版配置
@@ -96,6 +122,7 @@ function Milestone(props) {
           btnText="兌換獎勵"
           href="./RewardExchange"
           setMoboMsPage2={setMoboMsPage2}
+          totalPoint={totalPoint}
         />
         <MsMainPic />
       </div>
@@ -104,6 +131,7 @@ function Milestone(props) {
           //切換假分頁
           setMoboMsPage2={setMoboMsPage2}
           mobomspage2={mobomspage2}
+          totalPoint={totalPoint}
         />
         <MsMoboBackToLastPageBtn
           //控制回前頁的按鈕是做什麼

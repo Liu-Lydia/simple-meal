@@ -1,32 +1,13 @@
-import React, { props, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Nav } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import Swal from 'sweetalert2'
-import { string } from 'yup'
 
 function MilestoneInfoBar(props) {
   //集點說明要不要渲染(虛擬Dom)
-  const [totalPoint, setTotalPoint] = useState(0)
   const [userInfo, setUserInfo] = useState([])
 
-  const getMilestoneList = async () => {
-    const url = 'http://localhost:4000/milestone/getPoint'
-    //sid 要從session來
-    await fetch(url, {
-      method: 'get',
-      credentials: 'include',
-    })
-      //then 是會接前方拋出的結果
-      .then((r) => r.json())
-      .then((obj) => {
-        //總獲得的點數
-        const totalGetPoint = obj.totalGetPoiont
-        //總花費的點數
-        const totalSpendPoint = obj.totalSpendPoint
-        //將目前有的點數設定成為屬性
-        setTotalPoint(totalGetPoint - totalSpendPoint)
-      })
-  }
+  const {totalPoint, href, btnText, setMoboMsPage2} = props
 
   const getUserInfo = async () => {
     const url = 'http://localhost:4000/milestone/getUserInfo'
@@ -56,7 +37,6 @@ function MilestoneInfoBar(props) {
 
   useEffect(() => {
     getUserInfo()
-    getMilestoneList()
   }, [])
 
   useEffect(() => {}, [userInfo])
@@ -125,13 +105,13 @@ function MilestoneInfoBar(props) {
           <Nav.Link
             className="fff-btn-white fff-txt-btn justify-content-center"
             as={NavLink}
-            to={props.href}
+            to={href}
             style={{
               display: 'flex',
               alignItems: 'center',
             }}
           >
-            <div>{props.btnText}</div>
+            <div>{btnText}</div>
           </Nav.Link>
         </div>
 
@@ -178,7 +158,7 @@ function MilestoneInfoBar(props) {
             id="moboMsPage2"
             className="fff-btn-mobo-style"
             onClick={() => {
-              props.setMoboMsPage2(true)
+              setMoboMsPage2(true)
             }}
           >
             {/* 在infoBar中只會設定開啟第二頁 所以不用傳入moboMsPage2 的值*/}
@@ -219,10 +199,10 @@ function MilestoneInfoBar(props) {
           <div
             className="fff-btn-mobo-style"
             onClick={() => {
-              window.location.href = props.href
+              window.location.href = href
             }}
           >
-            {props.btnText}
+            {btnText}
           </div>
         </div>
       </div>

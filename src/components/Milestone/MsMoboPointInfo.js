@@ -1,29 +1,13 @@
-import React, { props, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 // 須從父親那邊接收“props”要引入{ props }，因為{ props }非extend default所以要{}包起來。
 import { Nav } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 
 function MsMoboPointInfo(props) {
-  const [totalPoint, setTotalPoint] = useState(0)
   const [userInfo, setUserInfo] = useState([])
+  const {totalPoint} = props
 
-  const getMilestoneList = async () => {
-    const url = 'http://localhost:4000/milestone/getPoint/' //sid 要從session來
-    await fetch(url, {
-      method: 'get',
-      credentials: 'include',
-    })
-      //then 是會接前方拋出的結果
-      .then((r) => r.json())
-      .then((obj) => {
-        //總獲得的點數
-        const totalGetPoint = obj.totalGetPoiont
-        //總花費的點數
-        const totalSpendPoint = obj.totalSpendPoint
-        //將目前有的點數設定成為屬性
-        setTotalPoint(totalGetPoint - totalSpendPoint)
-      })
-  }
+  
   const getUserInfo = async () => {
     const url = 'http://localhost:4000/milestone/getUserInfo'
     //sid 要從session來
@@ -39,7 +23,6 @@ function MsMoboPointInfo(props) {
   }
   useEffect(() => {
     getUserInfo()
-    getMilestoneList()
   }, [])
 
   useEffect(() => {}, [userInfo])
