@@ -52,7 +52,7 @@ function RewardExchange(props) {
       {!loginBool && <Redirect to="/MemberCenter" />}
       <div className="fff-ms-web">
         <div className="container">
-          <MilestoneInfoBar btnText="我的成就" href="./Milestone" totalPoint={totalPoint} setMoboMsPage2={setMoboMsPage2} />
+          <MilestoneInfoBar btnText="我的成就" href="./Milestone" totalPoint={totalPoint} setMoboMsPage2={setMoboMsPage2} loginBool={loginBool} />
         </div>
       </div>
       <div className="fff-ms-mobo">
@@ -62,6 +62,7 @@ function RewardExchange(props) {
             mobomspage2={mobomspage2}
             setPage="RewardExange"
             totalPoint={totalPoint}
+            loginBool={loginBool}
           />
         </div>
       </div>
@@ -70,15 +71,16 @@ function RewardExchange(props) {
           <MsMoboBackToLastPageBtn
             //控制回前頁的按鈕是做什麼
             setPage="RewardExchange"
+            loginBool={loginBool}
           />
         </div>
       </div>
       <div className="container">
-        <ExchangeOption setOptionTab={setOptionTab} optionTab={optionTab} />
-        {optionTab === 0 && <ExangeGoodsList1 getPoint={getPoint} totalPoint={totalPoint}/>}
-        {optionTab === 1 && <ExangeGoodsList2 getPoint={getPoint} totalPoint={totalPoint}/>}
+        <ExchangeOption setOptionTab={setOptionTab} optionTab={optionTab} loginBool={loginBool} />
+        {optionTab === 0 && <ExangeGoodsList1 getPoint={getPoint} totalPoint={totalPoint} loginBool={loginBool} />}
+        {optionTab === 1 && <ExangeGoodsList2 getPoint={getPoint} totalPoint={totalPoint} loginBool={loginBool} />}
 
-        {optionTab === 2 && <ExchangeRecord />}
+        {optionTab === 2 && <ExchangeRecord loginBool={loginBool} />}
       </div>
     </>
   )
