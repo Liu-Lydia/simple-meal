@@ -922,7 +922,7 @@
 }
 
 .lll-lineheigh {
-  line-height: 28px;
+  line-height: 32px !important;
 }
 
 @media (max-width: 991px) {

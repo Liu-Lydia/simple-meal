@@ -215,20 +215,22 @@ function SurpriseRule() {
             {commentObj.map((v, i) => (
               <div className="col-6 p-0 lll-change-max100 lll-mb110">
                 <div className="d-flex">
-                  <span className="txt-sub1 lll-black lll-lineheigh">
-                    {v.nickname}
-                  </span>
+                  <span className="txt-sub1 lll-black ">{v.nickname}</span>
                   &nbsp;&nbsp;&nbsp;&nbsp;
+                  {/* <i className="fas fa-star lll-green lll-lineheigh"></i>
                   <i className="fas fa-star lll-green lll-lineheigh"></i>
                   <i className="fas fa-star lll-green lll-lineheigh"></i>
                   <i className="fas fa-star lll-green lll-lineheigh"></i>
-                  <i className="fas fa-star lll-green lll-lineheigh"></i>
-                  <i className="fas fa-star lll-green lll-lineheigh"></i>
+                  <i className="fas fa-star lll-green lll-lineheigh"></i> */}
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <div>
-                    <span className="txt-sub2 lll-grey">使用日期</span>
+                    <span className="txt-sub2 lll-grey lll-lineheigh">
+                      使用日期
+                    </span>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span className="txt-sub2 lll-grey">{v.used_date}</span>
+                    <span className="txt-sub2 lll-grey lll-lineheigh">
+                      {v.used_date}
+                    </span>
                     <br />
                   </div>
                 </div>
