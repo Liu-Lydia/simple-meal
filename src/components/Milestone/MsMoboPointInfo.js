@@ -35,14 +35,14 @@ function MsMoboPointInfo(props) {
         <div className="col d-flex justify-content-center align-items-center">
           <img
             src={
-              userInfo.length == 1 &&
+              userInfo.length === 1 &&
               'http://localhost:3015/img/member-center/' + userInfo[0].avater
             }
             className="fff-mobo-info-pic"
             alt=""
           />
           <span className="fff-mobo-txt-info">
-            {userInfo.length == 1 && userInfo[0].name}
+            {userInfo.length === 1 && userInfo[0].name}
           </span>
           <span className="fff-mobo-txt-info" style={{ marginLeft: '15px' }}>
             點數:

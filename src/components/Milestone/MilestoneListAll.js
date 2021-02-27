@@ -199,6 +199,21 @@ function MilestoneListAll() {
     }
   }
 
+  const Progress =
+    detailContext.AddProgress == null
+      ? 0
+      : (detailContext.AddProgress / detailContext.progress_goal) * 100
+
+  const [msProgressNow, setMsProgress] = useState(0)
+
+  useEffect(() => {
+    if (detailStyle.visibility === 'hidden') setMsProgress(0)
+    // eslint-disable-next-line no-lone-blocks
+    else {
+      setMsProgress(Progress)
+    }
+  }, [detailStyle])
+
   return (
     <>
       <div className="row fff-no-mr-and-pad d-flex flex-shrink-0">
@@ -298,6 +313,7 @@ function MilestoneListAll() {
         detailStyle={detailStyle}
         setDetailStyle={setDetailStyle}
         detailContext={detailContext}
+        msProgressNow={msProgressNow}
       />
     </>
   )

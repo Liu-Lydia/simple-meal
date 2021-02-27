@@ -52,7 +52,12 @@ function RewardExchange(props) {
       {!loginBool && <Redirect to="/MemberCenter" />}
       <div className="fff-ms-web">
         <div className="container">
-          <MilestoneInfoBar btnText="我的成就" href="./Milestone" totalPoint={totalPoint} setMoboMsPage2={setMoboMsPage2} />
+          <MilestoneInfoBar
+            btnText="我的成就"
+            href="./Milestone"
+            totalPoint={totalPoint}
+            setMoboMsPage2={setMoboMsPage2}
+          />
         </div>
       </div>
       <div className="fff-ms-mobo">
@@ -75,8 +80,12 @@ function RewardExchange(props) {
       </div>
       <div className="container">
         <ExchangeOption setOptionTab={setOptionTab} optionTab={optionTab} />
-        {optionTab === 0 && <ExangeGoodsList1 getPoint={getPoint} totalPoint={totalPoint}/>}
-        {optionTab === 1 && <ExangeGoodsList2 getPoint={getPoint} totalPoint={totalPoint}/>}
+        {optionTab === 0 && (
+          <ExangeGoodsList1 getPoint={getPoint} totalPoint={totalPoint} />
+        )}
+        {optionTab === 1 && (
+          <ExangeGoodsList2 getPoint={getPoint} totalPoint={totalPoint} />
+        )}
 
         {optionTab === 2 && <ExchangeRecord />}
       </div>
