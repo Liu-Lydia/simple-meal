@@ -89,9 +89,7 @@ function SurpriseKitchenAll() {
             value={SurpriseKitchenSeach}
             onChange={(e) => setSurpriseKitchenSeach(e.target.value)}
           ></input>
-          <small className="txt-cap mx-2 d-none d-sm-none d-md-block d-lg-block d-xl-block">
-            ～
-          </small>
+          <small className="txt-cap mx-2 d-none d-md-block ">～</small>
           <input
             type="date"
             id="SurpriseKitchenSeach1"

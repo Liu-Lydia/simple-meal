@@ -47,9 +47,9 @@ function MemberCenterSimpleMealCoupon() {
 
   const Coupons = (
     <>
-      <table className="table txt-body  text-nowrap  mx-auto mx-xl-0">
+      <table className="table txt-sub1  text-nowrap text-center">
         <thead>
-          <tr className="text-center  d-none d-xl-block col-8">
+          <tr className="">
             <th>項次</th>
             <th>訂單編號</th>
             <th>購買日期</th>
@@ -60,96 +60,112 @@ function MemberCenterSimpleMealCoupon() {
             <th>總金額</th>
           </tr>
         </thead>
-        <thead>
-          <tr className="text-center  d-block d-xl-none col-10">
-            <th>項次</th>
-            <th>訂單編號</th>
-            <th>餐卷方案明細</th>
-            <th>付款方式</th>
-          </tr>
-        </thead>
 
-        <tbody className="text-center txt-cap ">
+        <tbody className="text-cap">
           {Coupon.map((v, i) => (
             <tr key={i}>
               <td>{v.member_sid}</td>
               <td>{v.order_sid}</td>
-              <td className=" d-none d-sm-none d-xl-block ">
+              <td>
                 <Moment format="YYYY/MM/DD">{v.check_date}</Moment>
               </td>
               <td>{v.combination_name}</td>
-              <td className="d-none d-sm-none  d-md-none d-lg-block ">
-                {v.quantity}
-              </td>
+              <td>{v.quantity}</td>
               <td>{v.total_coupon_num}</td>
               <td>{v.payment_method}</td>
-              <td className=" d-none d-md-none d-lg-block ">{v.total_price}</td>
+              <td>{v.total_price}</td>
             </tr>
           ))}
         </tbody>
       </table>{' '}
     </>
   )
+  const Coupons1 = (
+    <>
+      <table className="table txt-sub1 text-right text-sm-center ">
+        <thead>
+          <tr>
+            <th>項次</th>
+            <th>訂單編號</th>
+
+            <th>餐卷方案明細</th>
+          </tr>
+        </thead>
+
+        <tbody className="text-cap">
+          {Coupon.map((v, i) => (
+            <tr key={i}>
+              <td>{v.member_sid}</td>
+              <td>{v.order_sid}</td>
+              <td>{v.combination_name}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>{' '}
+    </>
+  )
+
   const saech = (
     <>
-      <div className="d-flex ">
-        {' '}
-        <div className=" mt-md-2  mt-2 txt-sub2 col-12  d-md-flex">
-          <div className=" mt-2 mr-2 txt-cap d-none  d-md-block ">
-            輸入查詢區間
-          </div>
-          <div className=" txt-sub2 mt-3 d-block d-xl-none col-10 offset-3 offset-sm-4 mb-3">
-            輸入查詢區間
-          </div>
-          <input
-            className="mr-2 d-none d-xl-block"
-            type="date"
-            id="CouponSeach"
-            name="CouponSeach"
-            value={CouponSeach}
-            onChange={(e) => setCouponSeach(e.target.value)}
-          ></input>
-          <small className="txt-cap mt-2 d-none d-md-block ">～</small>
-          <input
-            className="mr-2 d-none d-xl-block"
-            type="date"
-            id="CouponSeach1"
-            name="CouponSeach1"
-            value={CouponSeach1}
-            onChange={(e) => setCouponSeach1(e.target.value)}
-          ></input>
-          <button
-            className="btn-green3 ml-2 txt-cap ml-2 d-none d-md-block "
-            onClick={() => getDataFromServer()}
-          >
-            送出
-          </button>
-
-          <input
-            className="col-12 col-sm-12 col-md-10 d-block  d-md-none mb-3 "
-            type="date"
-            id="CouponSeach"
-            name="CouponSeach"
-            value={CouponSeach}
-            onChange={(e) => setCouponSeach(e.target.value)}
-          ></input>
-
-          <input
-            className="col-12 col-sm-12 col-md-10 d-block  d-md-none "
-            type="date"
-            id="CouponSeach1"
-            name="CouponSeach1"
-            value={CouponSeach1}
-            onChange={(e) => setCouponSeach1(e.target.value)}
-          ></input>
-          <button
-            className="btn-green3 mt-2  d-block d-md-none col-6  mx-auto"
-            onClick={() => getDataFromServer()}
-          >
-            送出
-          </button>
+      <div className="mt-2 txt-sub2 d-md-flex ">
+        <div className=" mt-2 mr-2 txt-cap  d-none d-md-none d-lg-block ">
+          輸入查詢區間
         </div>
-      </div>{' '}
+
+        <input
+          className="mr-2 d-none d-md-none d-lg-block"
+          type="date"
+          id="CouponSeach"
+          name="CouponSeach"
+          value={CouponSeach}
+          onChange={(e) => setCouponSeach(e.target.value)}
+        ></input>
+        <small className="txt-cap mt-2 d-none d-md-none d-lg-block ">～</small>
+        <input
+          className="mr-2 d-none d-md-none d-lg-block"
+          type="date"
+          id="CouponSeach1"
+          name="CouponSeach1"
+          value={CouponSeach1}
+          onChange={(e) => setCouponSeach1(e.target.value)}
+        ></input>
+        <button
+          className="btn-green3 ml-2 txt-cap ml-2 d-none d-md-none d-lg-block "
+          onClick={() => getDataFromServer()}
+        >
+          送出
+        </button>
+      </div>
+
+      <div className="mt-2 txt-sub2 mx-auto">
+        <div className="col-4 mx-auto txt-sub2 mt-3 d-block d-lg-none mb-3">
+          輸入查詢區間
+        </div>
+
+        <input
+          className="col-12 d-block  d-lg-none mb-3 "
+          type="date"
+          id="CouponSeach"
+          name="CouponSeach"
+          value={CouponSeach}
+          onChange={(e) => setCouponSeach(e.target.value)}
+        ></input>
+
+        <input
+          className="col-12 d-block  d-lg-none "
+          type="date"
+          id="CouponSeach1"
+          name="CouponSeach1"
+          value={CouponSeach1}
+          onChange={(e) => setCouponSeach1(e.target.value)}
+        ></input>
+        <button
+          className="btn-green3 mt-2  d-block d-md-none col-6  mx-auto"
+          onClick={() => getDataFromServer()}
+        >
+          送出
+        </button>
+      </div>
     </>
   )
 
@@ -158,45 +174,58 @@ function MemberCenterSimpleMealCoupon() {
       <div className="container">
         <div className="row ml-2">
           <MemberCenterNavbar />
-          <div className="col-12 col-xl-8 ml-5">
-            <div className="col-10 mx-auto mx-xl-0 ">
-              <div className=" mt-3  h3 ee d-none d-xl-block">餐卷購買明細</div>
 
-              <div className="mt-5 h3 ee col-12 text-center  d-block d-xl-none">
-                餐卷購買明細
-              </div>
+          <div className="col-8 ml-5 ">
+            <div className="mt-5 h4 ee d-block d-xl-none">餐卷購買明細</div>
+
+            <div>
+              <div className=" mt-3  h3 ee d-none d-xl-block">餐卷購買明細</div>
               {Coupon1.map((v) => (
-                <div className="col-12 d-none d-xl-block mt-5">
-                  購買餐卷數量:
+                <li className="d-bolck d-lg-none box1 mr-4 mx-auto mx-sm-0 mx-lg-0 mb-2">
+                  <img
+                    className="cha-cart-user-img "
+                    src={`http://localhost:3015/img/member-center/${v.avater}`}
+                    alt=""
+                  />
+                </li>
+              ))}
+
+              {Coupon1.map((v) => (
+                <li className="d-block d-lg-none  col-8 col-sm-12 mx-md-0 mx-auto">
+                  會員姓名:
+                  <span>{v.name}</span>
+                </li>
+              ))}
+              {Coupon1.map((v) => (
+                <li className="d-block d-xl-none col-8 col-sm-12 mx-md-0 mx-auto">
+                  餐卷剩餘數量:
+                  <span style={{ color: 'red' }}>{v.simplemeal_coupon}</span>
+                </li>
+              ))}
+              <div className="btn border dropdown-toggle txt-cap1 mr-2 mb-4  col-12 d-block d-lg-none ">
+                回上頁
+              </div>
+            </div>
+
+            <div className="d-sm-flex d-flex-none ">
+              {Coupon1.map((v) => (
+                <div className="d-none d-xl-none">
+                  目前餐卷剩餘數量:
                   <span style={{ color: 'red' }}>{v.simplemeal_coupon}</span>
                 </div>
               ))}
-              <div>
-                <div className="d-flex offset-3 mb-2">
-                  <img
-                    src="../../../public/img/member-center/fish4.jpeg"
-                    className="rounded-circle box1 mt-3 d-block d-sm-block d-md-none d-lg-none d-xl-none mb-2 mr-2"
-                  />
-                  <div className="mt-4 d-block d-sm-block d-md-none d-lg-none d-xl-none  d-inline">
-                    admin
-                  </div>
-                </div>
-                <div className="btn border dropdown-toggle txt-cap1 mr-2 mb-4  col-12 d-block d-sm-block d-md-none d-lg-none d-xl-none ">
-                  回上頁
-                </div>
-              </div>
-              <div className="d-sm-flex d-flex-none ">
-                {Coupon1.map((v) => (
-                  <div className="d-block d-xl-none offset-3 offset-md-0 ml-md-3">
-                    目前餐卷剩餘數量:
-                    <span style={{ color: 'red' }}>{v.simplemeal_coupon}</span>
-                  </div>
-                ))}
-              </div>
-
-              {saech}
             </div>
-            {Coupons}
+
+            {saech}
+            <div className="d-none d-lg-block col-8">{Coupons}</div>
+          </div>
+
+          <div className="d-block d-lg-none  mx-auto col-12">
+            <div class=" txt-cap mt-2 ml-3 col-12">
+              請點選餐卷方案明細以取得更詳細的訂單資訊
+            </div>
+
+            {Coupons1}
           </div>
         </div>
       </div>

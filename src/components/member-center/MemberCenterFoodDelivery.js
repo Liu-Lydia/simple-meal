@@ -14,9 +14,9 @@ function MemberCenterFoodDelivery() {
   const selected = () => {
     switch (tittle) {
       case 'testa':
-        return <FoodDeliverys1 />
-      case 'testb':
         return <FoodDeliverys2 />
+      case 'testb':
+        return <FoodDeliverys1 />
     }
   }
 
