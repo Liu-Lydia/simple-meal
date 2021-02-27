@@ -23,11 +23,11 @@ function MemberCenterIndex() {
     <>
       <div className="container">
         <div className="row ">
-          <div className="col-8 mx-auto">
-            <div className="h3 text-rightt ml-2 mb-5 mt-5 d-none d-xl-block ee">
+          <div className="col-10 mx-auto ">
+            <div className="h4 ml-2 mb-5 mt-5 d-none d-xl-block ee">
               會員中心
             </div>
-            <div className=" dd d-none d-xl-block">
+            <div className=" dd d-none d-xl-block ml-2">
               <div className="col-8 offset-1">
                 <div className="mb-5 col-8 d-flex mt-4">
                   <ul className="col">
@@ -41,21 +41,21 @@ function MemberCenterIndex() {
                   </ul>
 
                   <ul className="col-7 mt-3">
-                    <li className="item1 ">
+                    <li className="item1txt-cap ">
                       會員編號<span>{Memberinfo.member_number}</span>
                     </li>
-                    <li className="item1 ">{Memberinfo.name}</li>
+                    <li className="item1 txt-cap">{Memberinfo.name}</li>
 
-                    <li className="item1 ">
+                    <li className="item1 txt-cap">
                       會員等級:{' '}
                       <span style={{ color: 'red' }}>{Memberinfo.level}</span>
                     </li>
                   </ul>
                   <ul className="col-8 mt-3">
-                    <li className="item1 ">
+                    <li className="item1 txt-cap">
                       剩餘點數:<span style={{ color: 'red' }}>999</span>
                     </li>
-                    <li className="item1 ">
+                    <li className="item1 txt-cap">
                       餐卷數量:
                       <span style={{ color: 'red' }}>
                         {Memberinfo.simplemeal_coupon}
@@ -156,130 +156,136 @@ function MemberCenterIndex() {
                 </div>
               </div>
             </div>
+          </div>
 
-            <div className="d-block d-xl-none">
-              <div className="h3 text-rightt ml-2 mb-5  text-center">
-                會員中心
-              </div>
-              <div className=" col-12">
-                <div className="col-12 ">
-                  <div className="col-12 d-flex ">
-                    <div className="">{Memberinfo.avater}</div>
-                    <span className="item1  txt-cap mt-3  ">
-                      {Memberinfo.name}
-                    </span>
-                  </div>
+          <div className="d-block d-xl-none col-10 col-md-10 mx-auto txt-btn ">
+            <div className="h4 mb-5 mt-5 text-center ee">會員中心</div>
+            <div className="">
+              <div className="col d-flex  ">
+                <img
+                  className="box1 "
+                  src={`http://localhost:3015/img/member-center/${Memberinfo.avater}`}
+                  alt="1234"
+                />
 
-                  <div className="">
-                    <ul className=" mt-3 txt-cap d-flex">
-                      <li className="col-7 col-sm-8">
-                        會員編號
-                        <span>{Memberinfo.member_number}</span>
-                      </li>
-                      <li className="col-7 ">
-                        餐卷數量:
-                        <span>{Memberinfo.simplemeal_coupon}</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="">
-                    <ul className="mt-3 d-flex txt-cap">
-                      <li className="col-7 col-sm-8">
-                        會員等級:
-                        <span>{Memberinfo.level}</span>
-                      </li>
-                      <li className="col-7 ">
-                        剩餘點數:
-                        <span>999</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="btn border txt-cap1 col-12">回上頁</div>
+                <span className="item1  txt-cap mt-3  ">{Memberinfo.name}</span>
               </div>
 
-              <div className="col-12 ">
-                <div className="col-12">
-                  <ul className="h6 item1  mt-4 mb-1 ">
-                    <li className="bt">
-                      <i className="far fa-address-card mr-1 mb-2"></i> 我 的 帳
-                      戶
-                    </li>
-                    <li className="txt-sub2 mt-2 ml-4 text3">
-                      <Link to="/MemberCenter/Info" className="text-dark">
-                        個人資料
-                      </Link>
-                    </li>
-                    <li className="txt-sub2 ml-4 text3">
-                      <Link to="/MemberCenter/PasswordEx" className="text-dark">
-                        密碼變更
-                      </Link>
-                    </li>
-                    <li className="txt-sub2 ml-4 text3">
-                      <Link to="/MemberCenter/CreditCard" className="text-dark">
-                        信用卡
-                      </Link>
-                    </li>
-                    <li className="txt-sub2 ml-4 text3">
-                      <Link to="/MemberCenter/Addr" className="text-dark">
-                        地址
-                      </Link>
-                    </li>
-                    <li className="txt-sub2 ml-4 text3">
-                      <Link to="/MemberCenter/" className="text-dark">
-                        分級資訊
-                      </Link>
-                    </li>
-                  </ul>
-                  <ul className="h6 ">
-                    <li className="bt bob item1">
-                      <i className="fas fa-heart mr-2 "></i>
-                      <Link to="/MemberCenter/" className="text-dark">
-                        我 的 專 屬 菜 單
-                      </Link>
-                    </li>
-                    <li className="bt item1 ">
-                      <i className="fas fa-carrot mr-2"></i>
-                      <Link to="/MemberCenter/" className="text-dark">
-                        我 的 共 享 食 譜
-                      </Link>
-                    </li>
-                    <li className="bt item1">
-                      <i className="fas fa-medal mr-2"></i>
-                      <Link to="/MemberCenter/" className="text-dark">
-                        我 的 成 就
-                      </Link>
-                    </li>
-                    <li className="bt item1">
-                      <i className="fas fa-ticket-alt mr-1"></i>
-                      <Link to="/MemberCenter/" className="text-dark">
-                        我 的 優 惠 卷
-                      </Link>
-                    </li>
-                  </ul>
-                  <ul className="h6">
-                    <li className="bt item1">
-                      <i className="far fa-calendar-plus mr-2"></i>
-                      <Link to="/MemberCenter/" className="text-dark">
-                        驚 喜 廚 房
-                      </Link>
-                    </li>
-                    <li className="bt item1">
-                      <i className="fas fa-utensils mr-2"></i>
-                      <Link to="/MemberCenter/" className="text-dark">
-                        我 的 餐 點
-                      </Link>
-                    </li>
-                    <li className="bt item1">
-                      <i className="fas fa-clipboard mr-2"></i>
-                      <Link to="/MemberCenter/" className="text-dark">
-                        我 的 餐 卷
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
+              <ul className=" mt-3 txt-cap d-flex">
+                <li className="col-7">
+                  會員編號:
+                  <span style={{ color: 'red' }}>
+                    {Memberinfo.member_number}
+                  </span>
+                </li>
+                <li className="col-5 ">
+                  餐卷數量:
+                  <span style={{ color: 'red' }}>
+                    {Memberinfo.simplemeal_coupon}
+                  </span>
+                </li>
+              </ul>
+
+              <ul className="mt-3 d-flex txt-cap">
+                <li className="col-7">
+                  會員等級:
+                  <span style={{ color: 'red' }}>{Memberinfo.level}</span>
+                </li>
+                <li className="col-5">
+                  剩餘點數:
+                  <span style={{ color: 'red' }}>
+                    {Memberinfo.simplemeal_coupon}
+                  </span>
+                </li>
+              </ul>
+            </div>
+            <div className="btn border txt-cap1 col-12">回上頁</div>
+
+            <div className="">
+              <div className="">
+                <ul className="h6 item1  mt-4 mb-1 ">
+                  <li className="bt">
+                    <i className="far fa-address-card mr-1 mb-2"></i> 我 的 帳
+                    戶
+                  </li>
+                  <li className="txt-sub2 mt-2 ml-4 text3">
+                    <Link to="/MemberCenter/Info" className="text-dark">
+                      個人資料
+                    </Link>
+                  </li>
+                  <li className="txt-sub2 ml-4 text3">
+                    <Link to="/MemberCenter/PasswordEx" className="text-dark">
+                      密碼變更
+                    </Link>
+                  </li>
+                  <li className="txt-sub2 ml-4 text3">
+                    <Link to="/MemberCenter/CreditCard" className="text-dark">
+                      信用卡
+                    </Link>
+                  </li>
+                  <li className="txt-sub2 ml-4 text3">
+                    <Link to="/MemberCenter/Addr" className="text-dark">
+                      地址
+                    </Link>
+                  </li>
+                  <li className="txt-sub2 ml-4 text3">
+                    <Link to="/MemberCenter/" className="text-dark">
+                      分級資訊
+                    </Link>
+                  </li>
+                </ul>
+                <ul className="h6 ">
+                  <li className="bt bob item1">
+                    <i className="fas fa-heart mr-2 "></i>
+                    <Link to="/meal" className="text-dark">
+                      我 的 專 屬 菜 單
+                    </Link>
+                  </li>
+                  <li className="bt item1 ">
+                    <i className="fas fa-carrot mr-2"></i>
+                    <Link to="/MemberCenter/MyRecipe" className="text-dark">
+                      我 的 共 享 食 譜
+                    </Link>
+                  </li>
+                  <li className="bt item1">
+                    <i className="fas fa-medal mr-2"></i>
+                    <Link to="/RewardExchange" className="text-dark">
+                      我 的 成 就
+                    </Link>
+                  </li>
+                  <li className="bt item1">
+                    <i className="fas fa-ticket-alt mr-1"></i>
+                    <Link to="/MemberCenter/" className="text-dark">
+                      我 的 優 惠 卷
+                    </Link>
+                  </li>
+                </ul>
+                <ul className="h6">
+                  <li className="bt item1">
+                    <i className="far fa-calendar-plus mr-2"></i>
+                    <Link
+                      to="/MemberCenter/SurpriseKitchen"
+                      className="text-dark"
+                    >
+                      驚 喜 廚 房
+                    </Link>
+                  </li>
+                  <li className="bt item1">
+                    <i className="fas fa-utensils mr-2"></i>
+                    <Link to="/MemberCenter/FoodDelivery" className="text-dark">
+                      我 的 餐 點
+                    </Link>
+                  </li>
+                  <li className="bt item1">
+                    <i className="fas fa-clipboard mr-2"></i>
+                    <Link
+                      to="/MemberCenter/SimpleMealCoupon"
+                      className="text-dark"
+                    >
+                      我 的 餐 卷
+                    </Link>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>

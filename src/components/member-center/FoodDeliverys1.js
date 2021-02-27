@@ -53,7 +53,6 @@ function FoodDeliverys1() {
             送出
           </button>
         </div>
-        <div className="col-12 col-sm-10 mx-auto"></div>{' '}
       </div>{' '}
     </>
   )

@@ -6,6 +6,10 @@ import { Link } from 'react-router-dom'
 
 function MemberCenterFoodDelivery() {
   const [tittle, setTittle] = useState('testa')
+  const [tittleStyleOne, setTittleStyleOne] = useState(
+    'col-3 cha-rec-sel1-active'
+  )
+  const [tittleStyleTwo, setTittleStyleTwo] = useState('col-3 cha-rec-sel1')
 
   const selected = () => {
     switch (tittle) {
@@ -49,14 +53,23 @@ function MemberCenterFoodDelivery() {
               <div className="col-12 ">
                 <div className="d-flex  txt-btn mb-4 mt-5 ">
                   <Link
-                    className="col-3 cha-rec-sel1 cha-rec-sel1-active"
-                    onClick={() => setTittle('testa')}
+                    className={tittleStyleOne}
+                    onClick={() => {
+                      setTittle('testa')
+                      setTittleStyleOne('col-3 cha-rec-sel1-active')
+                      setTittleStyleTwo('col-3 cha-rec-sel1')
+                    }}
                   >
                     已配送
                   </Link>
+
                   <Link
-                    className="col-3 cha-rec-sel1"
-                    onClick={() => setTittle('testb')}
+                    className={tittleStyleTwo}
+                    onClick={() => {
+                      setTittle('testb')
+                      setTittleStyleOne('col-3 cha-rec-sel1')
+                      setTittleStyleTwo('col-3 cha-rec-sel1-active')
+                    }}
                   >
                     未配送
                   </Link>

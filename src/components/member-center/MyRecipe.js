@@ -5,14 +5,12 @@ import '../../styles/myrecipe.css'
 import { withRouter } from 'react-router-dom'
 import Swal from 'sweetalert2'
 
-
 function MyRecipe(props) {
   const [users, setUsers] = useState([])
   const [dataLoading, setDataLoading] = useState(false)
   // sweetalert
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
-      
       cancelButton: 'select-btn-green txt-btn',
     },
     buttonsStyling: false,
@@ -62,7 +60,7 @@ function MyRecipe(props) {
 
     const response = await fetch(request)
     const data = await response.json()
-    console.log('data:',data)
+    console.log('data:', data)
 
     // 設定資料
     if (!data.id) {
@@ -74,7 +72,7 @@ function MyRecipe(props) {
       // alert('刪除完成')
       swalWithBootstrapButtons.fire({
         icon: 'success',
-        text: "刪除成功",
+        text: '刪除成功',
         showConfirmButton: false,
         padding: '25px',
         showCancelButton: true,
@@ -170,7 +168,7 @@ function MyRecipe(props) {
   return (
     <>
       <div className="container">
-        <div className="row ">
+        <div className="row ml-2">
           <MemberCenterNavbar />
           <div className="col-md-12 col-lg-12 col-sm-12 col-xl-8  col-12">
             <div className="col-md-8 col-lg-8 col-xl-8 col-sm-8 col-10 mx-auto ">

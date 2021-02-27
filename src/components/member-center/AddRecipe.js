@@ -52,7 +52,7 @@ function AddRecipe(props) {
   return (
     <>
       <div className="container">
-        <div className="row ">
+        <div className="row ml-2">
           <MemberCenterNavbar />
           <div className="col-md-12 col-lg-12 col-sm-12 col-xl-6  col-12">
             <div className="col-md-8 col-lg-8 col-xl-8 col-sm-8 col-10 mx-auto ">

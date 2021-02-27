@@ -4,7 +4,10 @@ import '../../styles/fff.css'
 //對話框
 import ExchangeDialog from './ExchangeDialog'
 
-function ExchangeGoodsList1() {
+function ExchangeGoodsList1(props) {
+  // getPoint={getPoint} totalPoint={totalPoint}
+  const {getPoint,totalPoint} = props
+
   //兌換項目清單
   const [goodList, setGoodList] = useState([])
 
@@ -96,6 +99,8 @@ function ExchangeGoodsList1() {
         detailContext={detailContext}
         setCount={setCount}
         count={count}
+        getPoint={getPoint} 
+        totalPoint={totalPoint}
       />
     </>
   )

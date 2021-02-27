@@ -49,16 +49,16 @@ function MemberCenterSurpriseKitchen() {
   return (
     <>
       <div className="container">
-        <div className="row ">
+        <div className="row ml-2">
           <MemberCenterNavbar />
 
-          <div className="col-12 col-xl-8 ml-5">
-            <div className="col-10 mx-auto mx-xl-0 ">
+          <div className="col-12 col-xl-8 ml-5 ">
+            <div className="col-12 col-sm-10  col-md-10 col-lg-12 col-xl-10 mx-md-auto mx-lg-0">
               <div className="mt-4"></div>
               {text}
 
-              <div className="col-12 col-sm-12 col-md-12 mt-5">
-                <div className="d-flex  txt-btn">
+              <div className="col-12 mt-5">
+                <div className="d-flex  txt-btn mb-4 mt-5">
                   <Link
                     className={tittleStyleOne}
                     onClick={() => {
