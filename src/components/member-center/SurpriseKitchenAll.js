@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Moment from 'react-moment'
 import Swal from 'sweetalert2'
+import { Redirect } from 'react-router-dom'
 
 function SurpriseKitchenAll() {
   const [SurpriseKitchen, setSurpriseKitchen] = useState([])
@@ -26,9 +27,20 @@ function SurpriseKitchenAll() {
     getDataFromServer()
   }, [])
 
-  //Lydia加的
-  //發送預約　↓↓↓
-  // 定義SweetAlert2的按鈕　↓↓↓
+  //Lydia加的 ***
+  //轉址　↓↓↓
+  const [shouldRedirectTo, setShouldRedirectTo] = useState('')
+
+  //視窗狀態　↓↓↓
+  const [dialogStyle, setDialogStyle] = useState({ visibility: 'hidden' })
+
+  const [comment, setComment] = useState({
+    nickname: '',
+    used_date: '',
+    comment: '',
+  })
+
+  // 定義SweetAlert2的按鈕
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       popup: 'poe-alert',
@@ -36,11 +48,34 @@ function SurpriseKitchenAll() {
       content: 'txt-btn',
       confirmButton: 'btn-green txt-btn mx-2 my-2',
       cancelButton: 'btn-red txt-btn mx-2 my-2',
-      denyButton: 'btn-red txt-btn mx-2 my-2',
     },
     buttonsStyling: false,
   })
-  const handleWriteComment = async () => {
+
+  // 第一階段送出前確認
+  const handleWriteComment = () => {
+    // sweetAlert 第1階段
+    swalWithBootstrapButtons
+      .fire({
+        imageUrl: 'http://localhost:3015/img/lemon/123.svg',
+        imageHeight: 200,
+        title:
+          '<h5 class="d-block d-sm-none">確定要送出評論嗎?</h5>' +
+          '<h4 class="d-none d-sm-block">確定要送出評論嗎?</h4>',
+        showCancelButton: true,
+        confirmButtonText: `確定`,
+        cancelButtonText: `再編輯一下`,
+        padding: '45px',
+      })
+      .then((result) => {
+        // 只有確認以後才連接資料庫
+        if (result.isConfirmed) {
+          handleCheckComment()
+        }
+      })
+  }
+  //發送評論　↓↓↓
+  const handleCheckComment = async () => {
     const fd = new FormData(document.querySelector('#kitchenComment'))
 
     await fetch('http://localhost:4000/surpriseKitchenHistory/getoverlist', {
@@ -51,26 +86,27 @@ function SurpriseKitchenAll() {
       .then((r) => r.json())
       .then((obj) => {
         console.log(obj)
-        // alert(`您的訂單編號為 ${obj.order_sid}, 請前往購物車進行結帳。 `)
+        setComment(obj)
         // sweetAlert 第2階段
-        swalWithBootstrapButtons.fire({
-          // imageUrl: 'http://localhost:3015/img/lydia/Omurice.GIF',
-          // imageHeight: 200,
-          title: '<h4>新增預約</h4>',
-          padding: '45px',
-          showConfirmButton: true,
-          confirmButtonText: '回首頁',
-          backdrop: `rgba(0,0,0,.5)`,
-        })
+        swalWithBootstrapButtons
+          .fire({
+            // imageUrl: 'http://localhost:3015/img/lydia/Omurice.GIF',
+            // imageHeight: 200,
+            title: '<h4>評論完成</h4>',
+            padding: '45px',
+            showConfirmButton: true,
+            confirmButtonText: '確認',
+            backdrop: `rgba(0,0,0,.5)`,
+          })
+          .then((result) => {
+            if (result.isConfirmed) {
+              setShouldRedirectTo('index')
+              return
+            }
+          })
+        setDialogStyle({ visibility: 'hidden' })
       })
   }
-
-  const [dialogStyle, setDialogStyle] = useState({ visibility: 'hidden' })
-  const [comment, setComment] = useState({
-    nickname: '',
-    used_date: '',
-    comment: '',
-  })
 
   const Seach = (
     <>
@@ -113,6 +149,8 @@ function SurpriseKitchenAll() {
   return (
     <>
       {/* Lydia加的 */}
+      {shouldRedirectTo === 'index' && <Redirect to="/" />}
+
       {/* 兌換視窗 */}
       <div className="fff-handmadepopup" style={dialogStyle}>
         <div className="lll-exchange-content-box">
@@ -146,17 +184,20 @@ function SurpriseKitchenAll() {
                       <input
                         type="text"
                         className="input-style lll-input-width"
+                        name="nickname"
                         value={comment.nickname}
                         onChange={(e) => {
                           setComment(e.target.value)
                         }}
                       />
                     </div>
+
                     <div>
                       <span className="lll-black txt-btn lll-pr30">
                         使用日期
                       </span>
-                      <span className="txt-btn lll-grey">2020 / 02 / 20</span>
+
+                      <span className="txt-btn lll-grey">123</span>
                     </div>
                     <label
                       for="FormControlTextarea"
@@ -171,6 +212,7 @@ function SurpriseKitchenAll() {
                             className="form-control lll-comment-msg"
                             id="FormControlTextarea"
                             rows="5"
+                            name="comment"
                             value={comment.comment}
                             onChange={(e) => {
                               setComment(e.target.value)
