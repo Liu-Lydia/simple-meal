@@ -48,11 +48,11 @@ function Footer(props) {
         </div>
       </footer>
       <div
-        className="container flex-shrink-0 d-block d-sm-none"
+        className="container flex-shrink-0 d-block d-lg-none"
         style={{ height: '60px' }}
       ></div>
       <div
-        className="container d-block d-sm-none text-center"
+        className="container-fluid d-block d-lg-none text-center"
         style={{
           position: 'fixed',
           bottom: '0px',
