@@ -148,7 +148,7 @@ function Header(props) {
                     驚喜廚房
                   </Nav.Link>
                 </Nav>
-                <Nav className="d-none d-lg-flex">
+                <Nav className="d-none d-lg-flex text-nowrap">
                   <HeaderIcon
                     text={'購物車'}
                     url={'/cart'}
