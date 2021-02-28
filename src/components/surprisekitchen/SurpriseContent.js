@@ -333,16 +333,27 @@ function SurpriseContent(props) {
       {/* 展開預約Button ↓↓↓ */}
       <div className="col p-0 lll-textalign-right">
         <button
-          className="lll-btn-hidden txt-sub1 justify-content-end"
+          className={
+            isButtonCollapseOpen
+              ? 'lll-btn-open txt-sub1 justify-content-end'
+              : 'lll-btn-hidden txt-sub1 justify-content-end'
+          }
           aria-controls={buttonCollapseId.button}
           aria-expanded={isButtonCollapseOpen}
           onClick={onClick}
           type="button"
         >
-          展開預約
+          {isButtonCollapseOpen ? '隱藏' : '展開預約'}
         </button>
       </div>
-      <div className="col lll-hidden-line"></div>
+      <div
+        className={
+          isButtonCollapseOpen
+            ? 'col lll-hidden-grayline'
+            : 'col lll-hidden-line'
+        }
+      ></div>
+
       {/* 展開預約Button ↑↑↑ */}
       <Collapse isOpened={isButtonCollapseOpen}>
         <div id={buttonCollapseId.button} />

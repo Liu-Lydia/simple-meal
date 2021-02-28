@@ -473,6 +473,18 @@
   display: inline-block;
 }
 
+.lll-btn-open {
+  width: 120px;
+  height: 30px;
+  background-color: #a2a3a5;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+  border-radius: 15px 15px 0 0;
+  border: 1px #a2a3a5 solid;
+  display: inline-block;
+}
+
 /* .lll-btn-hidden:hover {
   width: 120px;
   height: 30px;
@@ -488,6 +500,12 @@
 
 .lll-hidden-line {
   background-color: #627e2a;
+  height: 5px;
+  width: 100%;
+}
+
+.lll-hidden-grayline {
+  background-color: #a2a3a5;
   height: 5px;
   width: 100%;
 }
@@ -847,9 +865,50 @@
 }
 
 /* 預約規則說明 */
+.lll-rw-select-active {
+  height: 10px;
+  background-color: #434341;
+  border-radius: 5px;
+  opacity: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.lll-barwidth{
+width: 80px;
+}
+
+.lll-pb1{
+  padding-bottom: 1px;
+}
+
+.lll-rw-select-line {
+  background-color: rgb(162, 163, 165, .3);
+  height: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.lll-rw-title-line {
+  background-color: rgba(162, 163, 165, 0.3);
+  height: 10px;
+  border-radius: 5px;
+}
+
+.lll-txt-rw-select-active {
+  font-family: GenSenRounded TW;
+  font-weight: 500;
+  text-decoration: none !important;
+  color: #627e2a;
+}
+
+.lll-textposition{
+  margin-right: 86px;
+}
+
 .lll-title-line {
   padding-top: 50px;
-  border-top: 5px solid #a2a3a5;
 }
 
 .lll-mt110 {
@@ -881,6 +940,23 @@
 @media (max-width: 1700px) {
   .lll-mobile-block {
     display: block !important;
+  }
+}
+
+.lll-mobile-lemon{
+  height: 400px;
+}
+
+.lll-lemon-howtogo{
+  width: 300px;
+  height: 300px;
+  position: relative;
+  top: 50px;
+}
+
+@media (max-width: 375px) {
+  .lll-mobile-lemon {
+    max-width: 100% !important;
   }
 }
 
