@@ -221,7 +221,7 @@ function Home(props) {
           立即預約
         </NavLink>
       </div>
-  
+
       {/* p6-s */}
       <div className="container d-block d-sm-none xxx-mt100">
         <div className="row mb-5">
