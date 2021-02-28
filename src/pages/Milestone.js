@@ -112,7 +112,7 @@ function Milestone(props) {
   }, [])
 
   // 當app.js沒有Milestone.js出現的時候把showEndMs的值改為false避免crash
-  useEffect(() => {return()=>{setShowEndedMs(false)}})
+  //useEffect(() => {return()=>{setShowEndedMs(false)}})
 
   return (
     <>

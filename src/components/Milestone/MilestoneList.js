@@ -146,7 +146,7 @@ function MilestoneList(props) {
   useEffect(() => {
     webMoboExchange()
     getMilestoneList()
-  }, [listPage, perPage])
+  }, [listPage, perPage, props.showEndedMs])
 
   useEffect(() => {
     webMoboExchange()

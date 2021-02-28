@@ -1,4 +1,4 @@
-import React, { props } from 'react'
+import React from 'react'
 import '../../styles/public.css'
 import '../../styles/fff.css'
 
@@ -115,20 +115,18 @@ function MilestoneListOption(props) {
           </div>
         </div>
         {/*過濾器*/}
-        <div className="fff-ms-web col-12 col-md-11 col-xl-10 d-flex justify-content-end align-items-center fff-end-event-filter">
-          <input type="checkbox"></input>
-          <span className="fff-checkbox-gap">不過濾已結束活動</span>
-        </div>
-        <div className="fff-ms-mobo col-12 d-flex justify-content-center align-items-center fff-end-event-filter">
-          <input
-            type="checkbox"
-            onChange={() => {
-              props.setShowEndedMs(!props.showEndedMs)
-            }}
-            // 勾勾的樣式要跟原本的不一樣
-            checked={props.showEndedMs}
-          ></input>
-          <span>不過濾已結束活動</span>
+        <div className="ms-check-bar col-12 col-md-11 col-xl-9 d-flex">
+          <div className="">
+            <input
+              type="checkbox"
+              onChange={() => {
+                props.setShowEndedMs(!props.showEndedMs)
+              }}
+              // 勾勾的樣式要跟原本的不一樣
+              checked={props.showEndedMs}
+            ></input>
+            <span className="fff-checkbox-gap">不過濾已結束活動</span>
+          </div>
         </div>
       </div>
     </>

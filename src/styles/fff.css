@@ -217,6 +217,10 @@
   margin-bottom: 12px;
   margin-top: 12px;
 }
+/* 手機靠中 */
+.ms-check-bar {
+  justify-items: center;
+}
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
@@ -353,6 +357,10 @@
     height: 5px;
     margin-bottom: 24px;
     margin-top: 24px;
+  }
+  /* 網頁靠左 */
+  .ms-check-bar {
+    justify-content: end;
   }
 }
 
@@ -561,7 +569,6 @@
   margin: 0px;
   padding: 0px;
 }
-
 
 .fff-stone-item-icon {
   margin-bottom: 25px;
