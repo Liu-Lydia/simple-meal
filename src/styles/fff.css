@@ -219,7 +219,9 @@
 }
 /* 手機靠中 */
 .ms-check-bar {
-  justify-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -346,6 +348,20 @@
     border: 5px #627e2a solid;
     padding: 75px;
   }
+  /* 文字敘述區 */
+  #fff-ms-detail-subs {
+    display: flex;
+    flex-direction: column ;
+    justify-content: space-between;
+    align-self: center;
+    margin: 0px;
+    padding: 0px;
+  }
+  /* 成就標題大小 */
+  .fff-txt-ms-detail-title {
+    font-size: 24px;
+  }
+  
   .fff-txt-ms-detail {
     display: flex;
     flex-direction: row;
@@ -360,8 +376,12 @@
   }
   /* 網頁靠左 */
   .ms-check-bar {
+    display: flex;
+    flex-direction: row-reverse;
     justify-content: end;
   }
+
+
 }
 
 /* Medium devices (tablets, 768px and up) */

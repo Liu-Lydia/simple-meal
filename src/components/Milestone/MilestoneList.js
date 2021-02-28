@@ -1,4 +1,5 @@
 // 成就顯示
+import moment from 'moment'
 import React, { useState, useEffect } from 'react'
 import MilestoneDialog from './MilestoneDialog'
 
@@ -280,7 +281,40 @@ function MilestoneList(props) {
                         />
                       </circle>
                     </svg>
-                    <span className=" fff-ms-web d-flex justify-content-center"></span>
+                    <span
+                      style={{ color: '#627e2a' }}
+                      className=" fff-ms-web d-flex justify-content-center"
+                    >
+                      {v.event_startime > moment().format('YYYY/MM/DD') &&
+                        `將於${v.event_startime}開始`}
+                    </span>
+                    <span
+                      style={{ color: '#627e2a' }}
+                      className=" fff-ms-web d-flex justify-content-center"
+                    >
+                      {v.event_startime < moment().format('YYYY/MM/DD') &&
+                        v.event_endtime === null &&
+                        `常態活動`}
+                    </span>
+                    <span
+                      style={{ color: '#a2a3a5' }}
+                      className=" fff-ms-web d-flex justify-content-center"
+                    >
+                      {v.event_startime < moment().format('YYYY/MM/DD') &&
+                        v.event_endtime < moment().format('YYYY/MM/DD') &&
+                        `活動結束`}
+                    </span>
+                    <span
+                      style={{ color: '#b9433b' }}
+                      className=" fff-ms-web d-flex justify-content-center"
+                    >
+                      {v.event_endtime > moment().format('YYYY/MM/DD') &&
+                        v.event_startime <= moment().format('YYYY/MM/DD') &&
+                        `將於${moment(v.event_endtime, 'YYYY/MM/DD').diff(
+                          moment(),
+                          'days'
+                        )}天後截止`}
+                    </span>
                   </div>
                 </div>
               )

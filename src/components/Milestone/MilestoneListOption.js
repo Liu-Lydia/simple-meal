@@ -115,7 +115,7 @@ function MilestoneListOption(props) {
           </div>
         </div>
         {/*過濾器*/}
-        <div className="ms-check-bar col-12 col-md-11 col-xl-9 d-flex">
+        <div className="ms-check-bar col-12 col-md-11 col-xl-9">
           <div className="">
             <input
               type="checkbox"
