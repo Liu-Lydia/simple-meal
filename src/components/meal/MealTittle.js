@@ -65,7 +65,7 @@ function MealTittle(props) {
   }, [])
 
   // console.log(inLove)
-// console.log(props.data.sid)
+  // console.log(props.data.sid)
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {
       cancelButton: 'select-btn-green txt-btn',
@@ -106,8 +106,15 @@ function MealTittle(props) {
     })
       .then((r) => r.json())
       .then((obj) => {
-        alert(obj.msg)
         handleGetLove()
+        swalWithBootstrapButtons.fire({
+          icon: 'success',
+          title: obj.msg,
+          showConfirmButton: false,
+          padding: '25px',
+          showCancelButton: true,
+          cancelButtonText: '確定',
+        })
       })
   }
 
@@ -146,9 +153,7 @@ function MealTittle(props) {
               <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>
-              <Link onClick={() => {}}>
-                <i className="far fa-star"></i>
-              </Link>
+              <i className="fas fa-star"></i>
             </div>
             <div className="cha-mb2 cha-main-icon-sub d-flex">
               <div className="cha-mr3 cha-main-icon-sub1">
@@ -164,9 +169,7 @@ function MealTittle(props) {
               <div className=" cha-main-icon-sub3">
                 <Link
                   onClick={() => {
-                    inLove !== true
-                      ? addlove(props.data.sid)
-                      : alert('已加入過摟')
+                    addlove(props.data.sid)
                   }}
                 >
                   <i

@@ -1,8 +1,14 @@
 function RecipePic(props) {
-  const { getrecipeData } = props
+  const { getrecipeData, dataLoadingforTittle, setDataLoadingforTittle } = props
   return (
     <>
-      <div className="cha-rec-main-pic col-12 col-lg-5">
+      <div
+        className={
+          dataLoadingforTittle
+            ? 'cha-rec-main-pic col-12 col-lg-5 cha-loading'
+            : 'cha-rec-main-pic col-12 col-lg-5 '
+        }
+      >
         <div className="cha-rec-main-pic1">
           <img
             className="cha-rec-main-pic2"

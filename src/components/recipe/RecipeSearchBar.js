@@ -9,11 +9,6 @@ function RecipeSearchBar(porps) {
           {!breadCrumbBool && <MultiLevelBreadCrumb />}
         </div>
         <div className="cha-rec-search-put-top row justify-content-center">
-          <Link to="/meal">
-            <div className="mb-3 txt-sub1">
-              <p >返回菜單</p>
-            </div>
-          </Link>
           <input
             type="text"
             placeholder="搜尋餐點"

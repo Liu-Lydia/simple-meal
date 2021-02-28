@@ -8,7 +8,14 @@ import Swal from 'sweetalert2'
 function RecipeTittle(props) {
   //getrecipeData,傳送到畫面的食譜全資料(一筆)
   //updateNum, setUpdateNum,更新cart畫面的計數器
-  const { getrecipeData, updateNum, setUpdateNum, recipeData } = props
+  const {
+    getrecipeData,
+    updateNum,
+    setUpdateNum,
+    recipeData,
+    dataLoadingforTittle,
+    setDataLoadingforTittle,
+  } = props
   //設定食譜步驟是否顯示
   const [recipeStepDisplay, setRecipeStepDisplay] = useState({
     visibility: 'hidden',
@@ -72,10 +79,25 @@ function RecipeTittle(props) {
       })
     // .then(() => alert('以加入購物車'))
   }
+  useEffect(() => {
+    // 初次預設值也不處理
+    // 先開起載入指示器
+
+    // 3秒後關閉指示器
+    setTimeout(() => {
+      setDataLoadingforTittle(false)
+    }, 500)
+  }, [dataLoadingforTittle])
 
   return (
     <>
-      <div className="cha-rec-main-txt col-12 col-lg-7">
+      <div
+        className={
+          dataLoadingforTittle
+            ? 'cha-rec-main-txt col-12 col-lg-7 cha-loading'
+            : 'cha-rec-main-txt col-12 col-lg-7 '
+        }
+      >
         <div className="px-0 px-sm-auto cha-rec-txt-up col-10 col-lg-7">
           <div className=" cha-rec-main-txt-all">
             <h3 className="cha-mb3 cha-black cha-rec-main-txt-main">
@@ -89,7 +111,7 @@ function RecipeTittle(props) {
               <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>
               <i className="fas fa-star"></i>
-              <i className="far fa-star"></i>
+              <i className="fas fa-star"></i>
             </div>
             <div className=" cha-mb2 cha-rec-main-icon-sub d-flex">
               <div className="cha-mr3">
@@ -118,7 +140,7 @@ function RecipeTittle(props) {
             <Link
               className={tittleStyleOne}
               onClick={() => {
-                setTittle('testva')
+                setTittle('testa')
                 setTittleStyleOne('col-3 cha-rec-sel1-active')
                 setTittleStyleTwo('col-3 cha-rec-sel1')
                 setTittleStyleThree('col-3 cha-rec-sel1')

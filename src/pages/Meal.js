@@ -16,15 +16,15 @@ function Meal(props) {
   //設定跟哪個路由要分類，預設是抓全部給meal
   const [type, setType] = useState('all')
   //麵包屑
-  const { breadCrumbBool, setBreadCrumbBool,setMealForRecipe } = props
+  const { breadCrumbBool, setBreadCrumbBool, setMealForRecipe } = props
   //點餐點卡會拿到的sid，對應資料顯示在圖片，標題裡
   const [selectMeal, setSelectMeal] = useState(1)
   //計數器，用來及時更新右側購物車資料
   const [updateNum, setUpdateNum] = useState(0)
   //開啟載入指示
   const [dataLoading, setDataLoading] = useState(false)
-//設定點選菜單卡，送一個dataloading給主標題和圖片
-const  [dataLoadingforTittle, setDataLoadingforTittle] = useState(false)
+  //設定點選菜單卡，送一個dataloading給主標題和圖片
+  const [dataLoadingforTittle, setDataLoadingforTittle] = useState(false)
   async function getUsersFromServer() {
     // 開啟載入指示
     setDataLoading(true)
@@ -60,7 +60,7 @@ const  [dataLoadingforTittle, setDataLoadingforTittle] = useState(false)
   useEffect(() => {
     setTimeout(() => {
       setDataLoading(false)
-    }, 2000)
+    }, 1200)
   }, [meal])
 
   // 掛載時改動麵包屑位置

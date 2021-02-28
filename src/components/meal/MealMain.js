@@ -28,6 +28,7 @@ function MealMain(props) {
     recipe_id: '1',
     sid: 1,
     vegetarian_food: 1,
+    star: 5,
   })
 
   const handleGetData = () => {

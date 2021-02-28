@@ -44,7 +44,7 @@ function MealCard() {
                   <i className="fas fa-star"></i>
                   <i className="fas fa-star"></i>
                   <i className="fas fa-star"></i>
-                  <i className="far fa-star"></i>
+                  <i className="fas fa-star"></i>
                 </div>
                 <div className="txt-cap">
                   <i className="far fa-clock cha-star-small cha-green"></i>

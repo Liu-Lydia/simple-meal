@@ -402,6 +402,9 @@ margin-left: 46px;
   margin: 30px;
   bottom: 8px;
 }
+.cha-rec-main-txt{
+  transition: .5s;
+}
 
 .cha-rec-txt-up {
   height: 220px;
@@ -409,11 +412,13 @@ margin-left: 46px;
   margin-left: 90px;
   margin-top: 50px;
   padding-left: 0;
+  
 }
 .cha-rec-txt-down {
   margin-left: 90px;
   margin-top: 10px;
   padding: 0;
+  
 }
 
 .cha-rec-main-pic2 {
@@ -431,6 +436,7 @@ margin-left: 46px;
 }
 .cha-rec-main-pic {
   overflow: hidden;
+  transition:.5s
 }
 .cha-rec-star-big {
   letter-spacing: 12px;
@@ -506,7 +512,14 @@ margin-left: 46px;
   height: 10px;
   bottom: 13px;
   border-radius: 25px;
-  right: 60px;
+  right: 65px;
+  transition: .5s;
+}
+.cha-rec-select-bar-line2-left{
+  right: 65px;
+}
+.cha-rec-select-bar-line2-right{
+  right: -65px;
 }
 .cha-rec-cards {
   height: 270px;
@@ -652,6 +665,7 @@ margin-left: 46px;
     margin: auto;
     top: -20%;
     padding: 0;
+    transition: .5s;
   }
   .cha-rec-star-big {
     letter-spacing: 0px;

@@ -9,6 +9,8 @@ function RecipeMain(props) {
     sidAndIngredient,
     updateNum,
     setUpdateNum,
+    dataLoadingforTittle,
+    setDataLoadingforTittle,
   } = props
 
   const [getrecipeData, setGetRecipeData] = useState({
@@ -84,11 +86,17 @@ function RecipeMain(props) {
   return (
     <>
       <div className="cha-rec-main row">
-        <RecipePic getrecipeData={getrecipeData} />
+        <RecipePic
+          getrecipeData={getrecipeData}
+          dataLoadingforTittle={dataLoadingforTittle}
+          setDataLoadingforTittle={setDataLoadingforTittle}
+        />
         <RecipeTittle
           getrecipeData={getrecipeData}
           updateNum={updateNum}
           setUpdateNum={setUpdateNum}
+          dataLoadingforTittle={dataLoadingforTittle}
+          setDataLoadingforTittle={setDataLoadingforTittle}
         />
       </div>
     </>

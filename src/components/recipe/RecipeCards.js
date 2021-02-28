@@ -5,7 +5,12 @@ import CustomRightArrow from '../meal/CustomRightArrow'
 import CustomLeftArrow from '../meal/CustomLeftArrow'
 import { Link } from 'react-router-dom'
 function RecipeCards(props) {
-  const { allmeal, setAllmeal, setSidAndIngredient } = props
+  const {
+    allmeal,
+    setAllmeal,
+    setSidAndIngredient,
+    setDataLoadingforTittle,
+  } = props
 
   const responsive = {
     superLargeDesktop: {
@@ -44,7 +49,10 @@ function RecipeCards(props) {
           return (
             <Link
               onClick={() => {
-                setSidAndIngredient([value.sid, value.ingredient_id])
+                setDataLoadingforTittle(true)
+                setTimeout(() => {
+                  setSidAndIngredient([value.sid, value.ingredient_id])
+                }, 400)
               }}
               className="cha-rec-card"
               key={value.sid}
@@ -64,7 +72,7 @@ function RecipeCards(props) {
                     <i className="fas fa-star"></i>
                     <i className="fas fa-star"></i>
                     <i className="fas fa-star"></i>
-                    <i className="far fa-star"></i>
+                    <i className="fas fa-star"></i>
                   </div>
                   <div className="txt-cap">
                     <i className="far fa-clock cha-star-small cha-green"></i>

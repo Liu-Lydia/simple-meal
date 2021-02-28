@@ -13,6 +13,8 @@ function Recipe(props) {
   //計數器，用來及時更新右側購物車資料
   const [updateNum, setUpdateNum] = useState(0)
   //紀錄預設給的資訊，還有meal送過來的另一個useState也是
+  //設定點選菜單卡，送一個dataloading給主標題和圖片
+  const [dataLoadingforTittle, setDataLoadingforTittle] = useState(false)
   //兩個都是要來改食譜資料了useState
   const [sidAndIngredient, setSidAndIngredient] = useState([
     1,
@@ -57,12 +59,15 @@ function Recipe(props) {
             sidAndIngredient={sidAndIngredient}
             updateNum={updateNum}
             setUpdateNum={setUpdateNum}
+            dataLoadingforTittle={dataLoadingforTittle}
+            setDataLoadingforTittle={setDataLoadingforTittle}
           />
           <RecipeSelectTittle />
           <RecipeCards
             allmeal={allmeal}
             setAllmeal={setAllmeal}
             setSidAndIngredient={setSidAndIngredient}
+            setDataLoadingforTittle={setDataLoadingforTittle}
           />
           <MealCart updateNum={updateNum} />
           
