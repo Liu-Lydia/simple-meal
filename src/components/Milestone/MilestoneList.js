@@ -68,12 +68,12 @@ function MilestoneList(props) {
           }
         } else if (window.innerWidth >= 1200) {
           //特大要四個
-          for (let i = obj.length % 4; i != 0 && i < 4; i++) {
+          for (let i = obj.length % 8; i != 0 && i < 8; i++) {
             obj.push({ milestone_sid: '-1' })
           }
         } else {
           //兩個
-          for (let i = obj.length % 2; i != 0 && i < 2; i++) {
+          for (let i = obj.length % 4; i != 0 && i < 4; i++) {
             obj.push({ milestone_sid: '-1' })
           }
         }
@@ -237,7 +237,7 @@ function MilestoneList(props) {
             {milstonelist.map((v, i) =>
               v.milestone_sid == '-1' ? (
                 <div
-                  className="col-4 col-sm-6 col-lg-3 d-flex justify-content-center"
+                  className="fff-row-height col-4 col-sm-6 col-lg-3 d-flex justify-content-center"
                   key={i}
                 />
               ) : (

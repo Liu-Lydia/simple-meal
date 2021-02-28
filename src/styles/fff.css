@@ -128,8 +128,8 @@
   height: 90px;
 
   background-repeat: no-repeat;
-  background-size: 80px 80px;
-  background-position: 5px 5px;
+  background-size: 60px 60px;
+  background-position: 15px 15px;
   margin: 5px 0;
 }
 
@@ -291,8 +291,8 @@
     height: 150px;
 
     background-repeat: no-repeat;
-    background-size: 140px 140px;
-    background-position: 5px 5px;
+    background-size: 120px 120px;
+    background-position: 15px 15px;
     margin: 0;
   }
 
@@ -380,7 +380,9 @@
     flex-direction: row-reverse;
     justify-content: end;
   }
-
+  .fff-row-height{
+    height: 194px;
+  }
 
 }
 
@@ -432,8 +434,8 @@
     height: 150px;
 
     background-repeat: no-repeat;
-    background-size: 140px 140px;
-    background-position: 5px 5px;
+    background-size: 120px 120px;
+    background-position: 15px 15px;
   }
 
   .fff-milestone-background-svg {
@@ -500,6 +502,7 @@
     stroke-width: 5;
     fill: none;
   }
+  
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -542,8 +545,8 @@
     height: 200px;
 
     background-repeat: no-repeat;
-    background-size: 160px 160px;
-    background-position: 20px 20px;
+    background-size: 140px 140px;
+    background-position: 30px 30px;
   }
 
   .fff-milestone-background-svg {
@@ -562,6 +565,9 @@
     stroke-width: 10;
     fill: none;
     transform-origin: center;
+  }
+  .fff-row-height{
+    height: 254px;
   }
 }
 
