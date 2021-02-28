@@ -12,7 +12,6 @@ function MsMainPic() {
       >
         <img src="http://localhost:3015/img/fff/Kumo.svg" alt="" />
 
-        <h5 className="animate__animated animate__bounce">我是佔空間的東西</h5>
       </div>
       <div
         className="d-flex justify-content-center align-items-center fff-ms-web"

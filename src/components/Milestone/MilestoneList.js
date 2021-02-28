@@ -50,7 +50,7 @@ function MilestoneList(props) {
         setTotalCount(obj.length)
       })
 
-    const url = `http://localhost:4000/milestone/getMilestoneList?filter=${props.filter}&page=${listPage}&perpage=${perPage}`
+    const url = `http://localhost:4000/milestone/getMilestoneList?showEndedMs=${props.showEndedMs}&filter=${props.filter}&page=${listPage}&perpage=${perPage}`
     //sid 要從session來
     await fetch(url, {
       method: 'get',

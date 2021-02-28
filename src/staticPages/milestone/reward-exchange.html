@@ -140,22 +140,21 @@
     <!-- 成就清單分類 -->
     <div class="container">
         <div class="row justify-content-center fff-select-area">
-            <div class="col-12 d-flex justify-content-center text-center fff-txt-ms-select">
-                <a class="col-xl-2 col-lg-3 fff-txt-rw-unselect">合作廠商優惠</a>
-                <a class="col-xl-2 col-lg-3 fff-txt-rw-select-active"
-                    href="./reward-exchange.html">&nbsp;購物金回饋&nbsp;</a>
-                <a class="col-xl-2 col-lg-3 fff-txt-rw-unselect" href="./reward-exchange-record.html">兌換紀錄</a>
+            <div class="col-12 d-flex justify-content-center text-center fff-txt-selected">
+                <a class="col-xl-2 col-lg-3 fff-txt-unselected">合作廠商優惠</a>
+                <a class="col-xl-2 col-lg-3 fff-txt-selected" href="./reward-exchange.html">&nbsp;購物金回饋&nbsp;</a>
+                <a class="col-xl-2 col-lg-3 fff-txt-unselected" href="./reward-exchange-record.html">兌換紀錄</a>
             </div>
 
             <!-- 那條Bar -->
         </div>
-        <div class="row justify-content-center fff-txt-ms-select fff-select-area">
-            <div class="col-12 d-flex justify-content-center text-center align-items-center fff-rw-select-line">
+        <div class="row justify-content-center fff-txt-selected fff-select-area">
+            <div class="col-12 d-flex justify-content-center text-center align-items-center fff-select-line">
                 <div class="col-xl-2 col-lg-3 d-flex justify-content-center">
                     <div class="col-9 "></div>
                 </div>
                 <div class="col-xl-2 col-lg-3 d-flex justify-content-center">
-                    <div class="col-9 fff-rw-select-active"></div>
+                    <div class="col-9 fff-option-selected"></div>
                 </div>
                 <div class="col-xl-2 col-lg-3 d-flex justify-content-center">
                     <div class="col-9 "></div>
@@ -366,7 +365,7 @@
             $('.exchange').on('click', function () {
                 $('#exchange-dialog').modal('show');
             });
-            
+
             // 確定兌換
             $('.exchange-confirm').on('click', function () {
                 $('#exchange-confirm-dialog').modal('show');
