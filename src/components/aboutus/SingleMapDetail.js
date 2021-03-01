@@ -37,6 +37,7 @@ export class SingleMapDetail extends Component {
       selectedPlace: props,
       activeMarker: marker,
       showingInfoWindow: true,
+      imgsrc: 'http://localhost:3015/img/aboutus/' + props.num+'.jpg',
     })
   }
 
@@ -98,6 +99,9 @@ export class SingleMapDetail extends Component {
     // const { todos } = this.props
     // console.log('todos:', todos)
 
+    
+
+    
     return (
       <>
         <Map
@@ -125,7 +129,7 @@ export class SingleMapDetail extends Component {
             name={'物件位置'}
             position={{ lat: this.props.lat, lng: this.props.lng }}
           /> */}
-          {/* ??map不能寫兩個標籤? */}
+          {/* 地圖mark */}
           {this.props.todos
             .filter(function (item, index, array) {
               return item.completed === true
@@ -136,7 +140,11 @@ export class SingleMapDetail extends Component {
                   key={item.id}
                   onClick={this.onMarkerClick}
                   title={'The marker`s title will appear as a tooltip.'}
-                  name={item.address}
+                  // name={item.address}
+                  address={item.address}
+                  infoTitle={item.infoTitle}
+                  tel={item.tel}
+                  num={item.id}
                   // name="Dolores park"
                   position={{ lat: item.lat, lng: item.lng }}
                 />
@@ -177,11 +185,34 @@ export class SingleMapDetail extends Component {
           >
             <div>
               {/* ??name???? */}
-              <h3>
+              <h6>
                 {/* 第一次沒有 */}
-                {this.state.selectedPlace && this.state.selectedPlace.name}
-              </h3>
-              <h1>666</h1>
+                {this.state.selectedPlace && this.state.selectedPlace.infoTitle}
+              </h6>
+              <div className="xxx-190x135">
+                <img
+                  className="xxx-img100100"
+                  // src={
+                  //   'http://localhost:3015/img/aboutus/' +
+                  //     this.state.selectedPlace &&
+                  //   this.state.selectedPlace.num + '.jpg'
+                  // }
+                  src={
+                    
+                      this.state.imgsrc
+                  }
+
+                  alt=""
+                />
+              </div>
+              <p className="txt-sub1">
+                地址 : &nbsp;
+                {this.state.selectedPlace && this.state.selectedPlace.address}
+              </p>
+              <p className="txt-sub1">
+                電話 :&nbsp;
+                {this.state.selectedPlace && this.state.selectedPlace.tel}
+              </p>
             </div>
           </InfoWindow>
         </Map>
