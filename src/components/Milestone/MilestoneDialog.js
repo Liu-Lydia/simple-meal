@@ -1,4 +1,4 @@
-import React, { props, useState, useEffect } from 'react'
+import React from 'react'
 import { ProgressBar } from 'react-bootstrap'
 
 //detailStyle={detailStyle} setDetailStyle={setDetailStyle} detailContext={detailContext}
@@ -31,7 +31,7 @@ function MilestoneDialog(props) {
               src={
                 'http://localhost:3015/img/milestonelist/' +
                 (props.detailContext.AddProgress >=
-                props.detailContext.progress_goal
+                  props.detailContext.progress_goal
                   ? props.detailContext.finished_goal_pic
                   : props.detailContext.unfinished_goal_pic)
               }

@@ -52,7 +52,7 @@ function MilestoneListOption(props) {
       {/* web virsion */}
       <div
         className="row justify-content-center"
-        // 手機版是15px未改
+      // 手機版是15px未改
       >
         {/* 成就分類文字*/}
         <div className="col-10 col-sm-12 col-md-11 col-xl-10 d-flex justify-content-center fff-txt-selected">

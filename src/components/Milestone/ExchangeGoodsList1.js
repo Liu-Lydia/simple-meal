@@ -6,7 +6,7 @@ import ExchangeDialog from './ExchangeDialog'
 
 function ExchangeGoodsList1(props) {
   // getPoint={getPoint} totalPoint={totalPoint}
-  const {getPoint,totalPoint} = props
+  const { getPoint, totalPoint } = props
 
   //兌換項目清單
   const [goodList, setGoodList] = useState([])
@@ -99,7 +99,7 @@ function ExchangeGoodsList1(props) {
         detailContext={detailContext}
         setCount={setCount}
         count={count}
-        getPoint={getPoint} 
+        getPoint={getPoint}
         totalPoint={totalPoint}
       />
     </>

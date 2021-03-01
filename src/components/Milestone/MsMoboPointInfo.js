@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
 // 須從父親那邊接收“props”要引入{ props }，因為{ props }非extend default所以要{}包起來。
-import { Nav } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
 
 function MsMoboPointInfo(props) {
   const [userInfo, setUserInfo] = useState([])
-  const {totalPoint} = props
+  const { totalPoint } = props
 
-  
+
   const getUserInfo = async () => {
     const url = 'http://localhost:4000/milestone/getUserInfo'
     //sid 要從session來
@@ -25,7 +23,7 @@ function MsMoboPointInfo(props) {
     getUserInfo()
   }, [])
 
-  useEffect(() => {}, [userInfo])
+  useEffect(() => { }, [userInfo])
   return (
     <>
       <div
