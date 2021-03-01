@@ -121,7 +121,7 @@ function Header(props) {
                     to="/aboutus"
                     onClick={() => setExpanded(false)}
                   >
-                    關於我們
+                    夥伴介紹
                   </Nav.Link>
                   <NavDropdown title="菜單介紹" id="basic-nav-dropdown">
                     <NavDropdown.Item
