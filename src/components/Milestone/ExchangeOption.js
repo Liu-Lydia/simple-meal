@@ -1,42 +1,43 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import '../../styles/public.css'
 import '../../styles/fff.css'
 
 function ExchangeOption(props) {
   const [inUseLineBarStyle, setInuseLineBarStyle] = useState([
     'col-4 fff-no-mr-and-pad',
-    'col-4  fff-no-mr-and-pad fff-rw-select-active',
+    'col-4  fff-no-mr-and-pad fff-option-selected',
     'col-4 fff-no-mr-and-pad',
   ])
   const [inUseTabStyle, setInUseTabStyle] = useState([
-    'fff-txt-rw-unselect col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
-    'fff-txt-rw-select-active col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
-    'fff-txt-rw-unselect col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
+    'fff-txt-unselected col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
+    'fff-txt-selected col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
+    'fff-txt-unselected col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
   ])
 
   //二維陣列 lineBar [tab1[class,class,class],tab2[class,class,class],tab3[class,class,class]]
   const lineBarClassArray = [
-    ['', ' col-4 fff-rw-select-active', ' col'],
-    [' col-4', ' col-4 fff-rw-select-active', ' col-4'],
-    [' col', ' col-4 fff-rw-select-active', ''],
+    ['', ' col-4 fff-option-selected', ' col'],
+    [' col-4', ' col-4 fff-option-selected', ' col-4'],
+    [' col', ' col-4 fff-option-selected', ''],
   ]
 
   //tab classname的二維陣列
   const tabClassArray = [
     [
-      'fff-txt-rw-select-active col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
-      'fff-txt-rw-unselect col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
-      'fff-txt-rw-unselect col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
+      'fff-txt-selected col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
+      'fff-txt-unselected col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
+      'fff-txt-unselected col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
     ],
     [
-      'fff-txt-rw-unselect col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
-      'fff-txt-rw-select-active col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
-      'fff-txt-rw-unselect col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
+      'fff-txt-unselected col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
+      'fff-txt-selected col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
+      'fff-txt-unselected col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
     ],
     [
-      'fff-txt-rw-unselect col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
-      'fff-txt-rw-unselect col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
-      'fff-txt-rw-select-active col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
+      'fff-txt-unselected col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
+      'fff-txt-unselected col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
+      'fff-txt-selected col-xl-3 col-md-4 col-sm-4 d-flex justify-content-center',
     ],
   ]
 
@@ -50,7 +51,7 @@ function ExchangeOption(props) {
     <>
       <div className="row justify-content-center text-center">
         {/* 分類文字*/}
-        <div className="col-10 col-sm-11 col-lg-10 col-xl-10 d-flex justify-content-center text-center fff-txt-ms-select">
+        <div className="col-10 col-sm-11 col-lg-10 col-xl-10 d-flex justify-content-center text-center fff-txt-selected">
           <a
             className={inUseTabStyle[0]}
             onClick={() => {
@@ -81,7 +82,7 @@ function ExchangeOption(props) {
         </div>
 
         {/* 那條Bar */}
-        <div className="col-10 col-sm-11 col-lg-10 col-xl-10 d-flex justify-content-center fff-rw-select-line">
+        <div className="col-10 col-sm-11 col-lg-10 col-xl-10 d-flex justify-content-center fff-select-line">
           <div className="fff-no-mr-and-pad col-xl-9 col-lg-12 d-flex justify-content-center text-center align-items-center ">
             <div
               className={inUseLineBarStyle[0]}
@@ -98,7 +99,7 @@ function ExchangeOption(props) {
           </div>
         </div>
         <p className="fff-exchange-record-warning">
-          僅顯示一週內兌換資料，詳細兌換資料請拜訪<a href="#">會員中心</a>查詢
+          僅顯示一週內兌換資料，詳細兌換資料請拜訪<Link to="./MemberCenter/Index">會員中心</Link>查詢
         </p>
       </div>
     </>

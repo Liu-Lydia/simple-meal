@@ -39,7 +39,7 @@ function MilestoneInfoBar(props) {
     getUserInfo()
   }, [])
 
-  useEffect(() => {}, [userInfo])
+  useEffect(() => { }, [userInfo])
 
   return (
     <>

@@ -19,6 +19,7 @@ import Sharerecipe from './pages/Sharerecipe'
 import XTest from './pages/XTest'
 import TestSvgAnimate from './pages/TestSvgAnimate'
 import MyRecipePage from './pages/MyRecipePage'
+import LoveRecipe from './pages/LoveRecipe'
 
 // 組合用元件
 import Header from './components/Header'
@@ -37,7 +38,7 @@ function App() {
 
   // 非購物車頁面改變購物車模式
   const [cartModeByRedirectFrom, setCartModeByRedirectFrom] = useState('')
-
+//菜單傳給食譜的值，食譜會顯示對應的菜單食譜
   const [meunForRecipe, setMealForRecipe] = useState([])
 
   return (
@@ -84,7 +85,13 @@ function App() {
                   meunForRecipe={meunForRecipe}
                 />
               </Route>
-
+              <Route path="/loverecipe">
+                <LoveRecipe
+                  breadCrumbBool={breadCrumbBool}
+                  setBreadCrumbBool={setBreadCrumbBool}
+                  meunForRecipe={meunForRecipe}
+                />
+              </Route>
               <Route path="/MemberCenter">
                 <MemberCenter
                   loginBool={loginBool}

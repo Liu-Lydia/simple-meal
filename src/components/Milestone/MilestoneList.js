@@ -1,8 +1,9 @@
 // 成就顯示
+import moment from 'moment'
 import React, { useState, useEffect } from 'react'
 import MilestoneDialog from './MilestoneDialog'
 
-function MilestoneListAll() {
+function MilestoneList(props) {
   //資料庫回來的東西 milstonelist []陣列包{}每筆資料
   const [milstonelist, setMilestoneList] = useState([])
 
@@ -50,7 +51,7 @@ function MilestoneListAll() {
         setTotalCount(obj.length)
       })
 
-    const url = `http://localhost:4000/milestone/getMilestoneList?page=${listPage}&perpage=${perPage}`
+    const url = `http://localhost:4000/milestone/getMilestoneList?showEndedMs=${props.showEndedMs}&filter=${props.filter}&page=${listPage}&perpage=${perPage}`
     //sid 要從session來
     await fetch(url, {
       method: 'get',
@@ -67,12 +68,12 @@ function MilestoneListAll() {
           }
         } else if (window.innerWidth >= 1200) {
           //特大要四個
-          for (let i = obj.length % 4; i != 0 && i < 4; i++) {
+          for (let i = obj.length % 8; i != 0 && i < 8; i++) {
             obj.push({ milestone_sid: '-1' })
           }
         } else {
           //兩個
-          for (let i = obj.length % 2; i != 0 && i < 2; i++) {
+          for (let i = obj.length % 4; i != 0 && i < 4; i++) {
             obj.push({ milestone_sid: '-1' })
           }
         }
@@ -146,7 +147,7 @@ function MilestoneListAll() {
   useEffect(() => {
     webMoboExchange()
     getMilestoneList()
-  }, [listPage, perPage])
+  }, [listPage, perPage, props.showEndedMs])
 
   useEffect(() => {
     webMoboExchange()
@@ -236,54 +237,87 @@ function MilestoneListAll() {
             {milstonelist.map((v, i) =>
               v.milestone_sid == '-1' ? (
                 <div
-                  className="col-4 col-sm-6 col-lg-3 d-flex justify-content-center"
+                  className="fff-row-height col-4 col-sm-6 col-lg-3 d-flex justify-content-center"
                   key={i}
                 />
               ) : (
-                <div
-                  className="col-4 col-sm-6 col-lg-3 d-flex justify-content-center"
-                  key={i}
-                  onClick={() => {
-                    setDetailStyle({ visibility: 'visible' })
-                    setDetailContext(v)
-                  }}
-                >
-                  <div className="fff-stone-item-box justify-content-center">
-                    <svg
-                      className="fff-svg-painting"
-                      style={{
-                        backgroundImage:
-                          'url(http://localhost:3015/img/milestonelist/' +
-                          (v.AddProgress >= v.progress_goal
-                            ? v.finished_goal_pic
-                            : v.unfinished_goal_pic) +
-                          ')',
-                      }}
-                    >
-                      {/* 檢查進度是否超過設定，超過顯示完成圖示，否則顯示未完成圖示 */}
-                      <circle
-                        className="fff-milestone-background-svg d-flex justify-content-center"
-                        style={{ display: 'block' }}
-                      />
-                      <circle
-                        className="fff-milestone-progress-svg d-flex justify-content-center"
-                        transform="rotate(-90)"
-                        style={inUseStyle[i]}
+                  <div
+                    className="col-4 col-sm-6 col-lg-3 d-flex justify-content-center"
+                    key={i}
+                    onClick={() => {
+                      setDetailStyle({ visibility: 'visible' })
+                      setDetailContext(v)
+                    }}
+                  >
+                    <div className="fff-stone-item-box justify-content-center">
+                      <svg
+                        className="fff-svg-painting"
+                        style={{
+                          backgroundImage:
+                            'url(http://localhost:3015/img/milestonelist/' +
+                            (v.AddProgress >= v.progress_goal
+                              ? v.finished_goal_pic
+                              : v.unfinished_goal_pic) +
+                            ')',
+                        }}
                       >
-                        <animate
-                          className="fff-milestone-progress-ani"
-                          attributeName="stroke-dasharray"
-                          dur="1s"
-                          repeatCount="1"
-                          value={inUseAnimateValue[i]}
-                          begin="3s"
+                        {/* 檢查進度是否超過設定，超過顯示完成圖示，否則顯示未完成圖示 */}
+                        <circle
+                          className="fff-milestone-background-svg d-flex justify-content-center"
+                          style={{ display: 'block' }}
                         />
-                      </circle>
-                    </svg>
-                    <span className=" fff-ms-web d-flex justify-content-center"></span>
+                        <circle
+                          className="fff-milestone-progress-svg d-flex justify-content-center"
+                          transform="rotate(-90)"
+                          style={inUseStyle[i]}
+                        >
+                          <animate
+                            className="fff-milestone-progress-ani"
+                            attributeName="stroke-dasharray"
+                            dur="1s"
+                            repeatCount="1"
+                            value={inUseAnimateValue[i]}
+                            begin="3s"
+                          />
+                        </circle>
+                      </svg>
+                      <span
+                        style={{ color: '#627e2a' }}
+                        className=" fff-ms-web d-flex justify-content-center"
+                      >
+                        {v.event_startime > moment().format('YYYY/MM/DD') &&
+                          `將於${v.event_startime}開始`}
+                      </span>
+                      <span
+                        style={{ color: '#627e2a' }}
+                        className=" fff-ms-web d-flex justify-content-center"
+                      >
+                        {v.event_startime < moment().format('YYYY/MM/DD') &&
+                          v.event_endtime === null &&
+                          `常態活動`}
+                      </span>
+                      <span
+                        style={{ color: '#a2a3a5' }}
+                        className=" fff-ms-web d-flex justify-content-center"
+                      >
+                        {v.event_startime < moment().format('YYYY/MM/DD') &&
+                          v.event_endtime < moment().format('YYYY/MM/DD') &&
+                          `活動結束`}
+                      </span>
+                      <span
+                        style={{ color: '#b9433b' }}
+                        className=" fff-ms-web d-flex justify-content-center"
+                      >
+                        {v.event_endtime > moment().format('YYYY/MM/DD') &&
+                          v.event_startime <= moment().format('YYYY/MM/DD') &&
+                          `將於${moment(v.event_endtime, 'YYYY/MM/DD').diff(
+                            moment(),
+                            'days'
+                          )}天後截止`}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              )
+                )
             )}
           </div>
         </div>
@@ -319,4 +353,4 @@ function MilestoneListAll() {
   )
 }
 
-export default MilestoneListAll
+export default MilestoneList

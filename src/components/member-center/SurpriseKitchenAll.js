@@ -33,6 +33,8 @@ function SurpriseKitchenAll() {
   //視窗狀態　↓↓↓
   const [dialogStyle, setDialogStyle] = useState({ visibility: 'hidden' })
 
+  const [selectDate, setSelectDate] = useState('')
+
   const [comment, setComment] = useState({
     nickname: '',
     used_date: '',
@@ -221,7 +223,16 @@ function SurpriseKitchenAll() {
                         使用日期
                       </span>
 
-                      <span className="txt-btn lll-grey">123</span>
+                      <span className="txt-btn lll-grey">
+                        {' '}
+                        <Moment format="YYYY-MM-DD">{selectDate}</Moment>
+                      </span>
+                      <input
+                        type="text"
+                        name="used_date"
+                        value={selectDate}
+                        hidden
+                      />
                     </div>
                     <label
                       for="FormControlTextarea"
@@ -315,6 +326,7 @@ function SurpriseKitchenAll() {
                         className="btn-yello txt-cap lll-cursor"
                         onClick={() => {
                           setDialogStyle({ visibility: 'visible' })
+                          setSelectDate(v.reservation_date)
                         }}
                       >
                         給予評論

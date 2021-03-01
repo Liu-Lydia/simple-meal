@@ -10,6 +10,7 @@ import {
 } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import HeaderIcon from './HeaderIcon'
+import MilestoneGoalListener from './Milestone/MilestoneGoalLinstener'
 
 function Header(props) {
   // { 登入布林值, 設定登入布林值}
@@ -110,7 +111,7 @@ function Header(props) {
                   <Nav.Link
                     className="text-nowrap"
                     as={NavLink}
-                    to="/none1"
+                    to="/Test"
                     onClick={() => setExpanded(false)}
                   >
                     最新活動
@@ -121,7 +122,7 @@ function Header(props) {
                     to="/aboutus"
                     onClick={() => setExpanded(false)}
                   >
-                    關於我們
+                    夥伴介紹
                   </Nav.Link>
                   <NavDropdown title="菜單介紹" id="basic-nav-dropdown">
                     <NavDropdown.Item
@@ -169,7 +170,7 @@ function Header(props) {
                   ></HeaderIcon>
                   <HeaderIcon
                     text={'問題回答'}
-                    url={'/none8'}
+                    url={''}
                     fa={'far fa-question-circle'}
                   ></HeaderIcon>
 
@@ -215,6 +216,7 @@ function Header(props) {
           </div>
         </div>
       </div>
+      <MilestoneGoalListener loginBool={loginBool} />
     </>
   )
 }

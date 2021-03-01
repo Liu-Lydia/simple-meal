@@ -1,7 +1,12 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import Lemon from './Lemon'
+import SurpriseRuleMap from './SurpriseRuleMap'
+import SurpriseRuleHowToGo from './SurpriseRuleHowToGo'
 
-function SurpriseRule() {
+function SurpriseRule(props) {
+  //傳送切換地理位置和如何到達, 依靠父傳　↓↓↓
+  const { optionTab, setOptionTab } = props
+
   //接收評論資料庫資料　↓↓↓
   const [commentObj, setCommentObg] = useState([])
 
@@ -76,6 +81,40 @@ function SurpriseRule() {
   }
   //這寫法頗愚蠢, 捲至區塊 ↑↑↑
 
+  const [inUseLineBarStyle, setInuseLineBarStyle] = useState([
+    'lll-barwidth fff-no-mr-and-pad',
+    'lll-barwidth fff-no-mr-and-pad lll-rw-select-active',
+  ])
+  const [inUseTabStyle, setInUseTabStyle] = useState([
+    'txt-btn lll-grey d-flex justify-content-center',
+    'txt-btn lll-green d-flex justify-content-center',
+  ])
+
+  //二維陣列 lineBar [tab1[class,class,class],tab2[class,class,class],tab3[class,class,class]]
+  const lineBarClassArray = [
+    ['', 'lll-textposition lll-barwidth lll-rw-select-active', ''],
+    ['', 'lll-barwidth lll-rw-select-active', ''],
+  ]
+
+  //tab classname的二維陣列
+  const tabClassArray = [
+    [
+      'lll-txt-rw-select-active  d-flex justify-content-center',
+      'd-flex justify-content-center',
+    ],
+    [
+      'd-flex justify-content-center',
+      'lll-txt-rw-select-active d-flex justify-content-center',
+    ],
+  ]
+
+  //當 父層送來的optionTab改變時(optionTab 的修改也是在這個js中 為了去調整父層的顯示)
+  useEffect(() => {
+    //設定要套用的classname
+    setInuseLineBarStyle(lineBarClassArray[props.optionTab])
+    setInUseTabStyle(tabClassArray[props.optionTab])
+  }, [props.optionTab])
+
   return (
     <>
       {/* 驚喜廚房規則說明 ↓↓↓ */}
@@ -127,6 +166,7 @@ function SurpriseRule() {
         <h3 className="lll-title-style lll-mt110 lll-pb45" id="rule">
           預約規則說明
         </h3>
+        <div class="lll-rw-title-line"></div>
         <div className="lll-title-line">
           <p className="m-0 txt-sub1 lll-grey">
             僅提供線上預約
@@ -151,38 +191,49 @@ function SurpriseRule() {
 
       {/* 地理位置 ↓↓↓ */}
       <div class="col p-0 ">
-        <h3 class="lll-title-style lll-mt110 lll-pb45" id="map">
+        <h3 class="lll-title-style lll-mt110 lll-pb1" id="map">
           地理位置
         </h3>
-        <div class="lll-title-line lll-mobile-block">
-          <div class="col-8 p-0 lll-max100">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14459.209555474516!2d121.54840684864891!3d25.040779468751495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abd379a5ec97%3A0xedc006d25a9e35df!2z6LOH562W5pyDIOaVuOS9jeaVmeiCsueglOeptuaJgCDmlbjkvY3kurrmiY3ln7nogrLkuK3lv4M!5e0!3m2!1szh-TW!2stw!4v1614129225624!5m2!1szh-TW!2stw"
-              width="100%"
-              height="400px"
-              frameborder="0"
-              style={{ border: '0' }}
-              allowfullscreen=""
-              aria-hidden="false"
-              tabindex="0"
-            ></iframe>
-            {/* <GoogleMap /> */}
-          </div>
-          <div class="col-4 p-0 lll-max100-center">
-            <p class="m-0 text-center txt-sub1 lll-red lll-12px">
-              Tel. 02-6631 6666 <br />
-              台北市大安區復興南路一段390號2樓 <br />
-              Open. 10:00 ~ 21:00 <br />
-            </p>
 
-            <div className="text-center txt-sub1 lll-red">
-              <i className="far fa-envelope lll-pr30"></i>
-              <i className="fab fa-instagram lll-pr30"></i>
-              <i className="fab fa-facebook-square lll-pr30"></i>
-              <i className="fab fa-line"></i>
-            </div>
+        {/* 分類文字*/}
+        <div className="d-flex justify-content-end text-center lll-cursor">
+          <a
+            className={inUseTabStyle[0]}
+            onClick={() => {
+              props.setOptionTab(0)
+            }}
+          >
+            {/* 吃屬性值 inuseTabStyle */}
+            {/* 利用設定父層屬性去修改父層要顯示的components */}
+            <p className="lll-pr30">地理位置</p>
+          </a>
+          <a
+            className={inUseTabStyle[1]}
+            onClick={() => {
+              props.setOptionTab(1)
+            }}
+          >
+            <p className="">如何到達</p>
+            &nbsp;
+          </a>
+        </div>
+
+        {/* 那條Bar */}
+        <div className="lll-rw-select-line">
+          <div className="d-flex justify-content-end text-center align-items-center">
+            <div
+              className={inUseLineBarStyle[0]}
+              style={{ transition: '1.5s' }}
+            ></div>
+            <div
+              className={inUseLineBarStyle[1]}
+              style={{ transition: '1.5s' }}
+            ></div>
           </div>
         </div>
+
+        {optionTab === 0 && <SurpriseRuleMap />}
+        {optionTab === 1 && <SurpriseRuleHowToGo />}
       </div>
       {/* 地理位置 ↑↑↑ */}
 
@@ -191,6 +242,7 @@ function SurpriseRule() {
         <h3 className="lll-title-style lll-mt110 lll-pb45" id="policy">
           取消政策
         </h3>
+        <div class="lll-rw-title-line"></div>
         <div className="lll-title-line">
           <p className="m-0 txt-sub1 lll-grey">
             所選日期 6 天（含）之前取消，收取手續費 0%
@@ -210,25 +262,28 @@ function SurpriseRule() {
         <h3 className="lll-title-style lll-mt110 lll-pb45" id="comment">
           顧客評論
         </h3>
+        <div class="lll-rw-title-line"></div>
         <div className="lll-title-line">
           <div className="lll-section" id="scroll">
             {commentObj.map((v, i) => (
               <div className="col-6 p-0 lll-change-max100 lll-mb110">
                 <div className="d-flex">
-                  <span className="txt-sub1 lll-black lll-lineheigh">
-                    {v.nickname}
-                  </span>
+                  <span className="txt-sub1 lll-black ">{v.nickname}</span>
                   &nbsp;&nbsp;&nbsp;&nbsp;
+                  {/* <i className="fas fa-star lll-green lll-lineheigh"></i>
                   <i className="fas fa-star lll-green lll-lineheigh"></i>
                   <i className="fas fa-star lll-green lll-lineheigh"></i>
                   <i className="fas fa-star lll-green lll-lineheigh"></i>
-                  <i className="fas fa-star lll-green lll-lineheigh"></i>
-                  <i className="fas fa-star lll-green lll-lineheigh"></i>
+                  <i className="fas fa-star lll-green lll-lineheigh"></i> */}
                   &nbsp;&nbsp;&nbsp;&nbsp;
                   <div>
-                    <span className="txt-sub2 lll-grey">使用日期</span>
+                    <span className="txt-sub2 lll-grey lll-lineheigh">
+                      使用日期
+                    </span>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span className="txt-sub2 lll-grey">{v.used_date}</span>
+                    <span className="txt-sub2 lll-grey lll-lineheigh">
+                      {v.used_date}
+                    </span>
                     <br />
                   </div>
                 </div>

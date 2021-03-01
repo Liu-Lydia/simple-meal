@@ -1,4 +1,4 @@
-import React, { useState, useReducer, createContext } from 'react'
+import React, { useState, useReducer, createContext, useCallback } from 'react'
 import moment from 'moment'
 import calendar from '../reducers/calendar'
 
@@ -16,6 +16,9 @@ function SurpriseKitchen(props) {
   // {有沒有登入, 非購物車頁面改變購物車模式}
   const { loginBool, setCartModeByRedirectFrom } = props
 
+  //切換分頁
+  const [optionTab, setOptionTab] = useState(1)
+
   const mmt = new moment()
   const timeReducer = useReducer(calendar, mmt.format('YYYY-MM-DD'))
   // let result = GetWeeksInMonth();
@@ -31,7 +34,7 @@ function SurpriseKitchen(props) {
               loginBool={loginBool}
               setCartModeByRedirectFrom={setCartModeByRedirectFrom}
             />
-            <SurpriseRule />
+            <SurpriseRule setOptionTab={setOptionTab} optionTab={optionTab} />
           </div>
         </div>
       </div>

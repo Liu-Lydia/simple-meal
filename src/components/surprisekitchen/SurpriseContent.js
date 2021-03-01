@@ -236,7 +236,26 @@ function SurpriseContent(props) {
 
     if (!loginBool) {
       console.log('滾去登入再說')
-      setShouldRedirectTo('memberCenter')
+      swalWithBootstrapButtons
+        .fire({
+          imageUrl: 'http://localhost:3015/img/lemon/123.svg',
+          imageHeight: 200,
+          title: '<h4>請先登入</h4>',
+          padding: '45px',
+          showConfirmButton: true,
+          confirmButtonText: '取消',
+          showDenyButton: true,
+          denyButtonText: '前往登入',
+          // showCloseButton: true,
+          backdrop: `rgba(0,0,0,.5)`,
+        })
+        .then((result) => {
+          if (result.isDenied) {
+            setShouldRedirectTo('memberCenter')
+            return
+          }
+        })
+
       return
     } else {
       await fetch('http://localhost:4000/surprisekitchenOrder/addreservation', {
@@ -275,6 +294,7 @@ function SurpriseContent(props) {
                 return
               }
             })
+          handleClear()
         })
     }
   }
@@ -313,16 +333,27 @@ function SurpriseContent(props) {
       {/* 展開預約Button ↓↓↓ */}
       <div className="col p-0 lll-textalign-right">
         <button
-          className="lll-btn-hidden txt-sub1 justify-content-end"
+          className={
+            isButtonCollapseOpen
+              ? 'lll-btn-open txt-sub1 justify-content-end'
+              : 'lll-btn-hidden txt-sub1 justify-content-end'
+          }
           aria-controls={buttonCollapseId.button}
           aria-expanded={isButtonCollapseOpen}
           onClick={onClick}
           type="button"
         >
-          展開預約
+          {isButtonCollapseOpen ? '隱藏' : '展開預約'}
         </button>
       </div>
-      <div className="col lll-hidden-line"></div>
+      <div
+        className={
+          isButtonCollapseOpen
+            ? 'col lll-hidden-grayline'
+            : 'col lll-hidden-line'
+        }
+      ></div>
+
       {/* 展開預約Button ↑↑↑ */}
       <Collapse isOpened={isButtonCollapseOpen}>
         <div id={buttonCollapseId.button} />
@@ -347,7 +378,11 @@ function SurpriseContent(props) {
           <div class="mr-auto">
             <p className="m-0 txt-sub1 lll-black">請選擇預約日期</p>
 
-            <Calendar setDateObj={setDateObj} activeDindex={activeDindex} setActiveDindex={setActiveDindex}/>
+            <Calendar
+              setDateObj={setDateObj}
+              activeDindex={activeDindex}
+              setActiveDindex={setActiveDindex}
+            />
             {/* 標示名額顏色 ↓↓↓ */}
             <div className="lll-option-position">
               <ul className="m-0 list-unstyled txt-sub1 lll-black">
@@ -420,7 +455,9 @@ function SurpriseContent(props) {
               <div className="ml-auto">
                 <span className="txt-sub1 lll-grey">500/每人</span>
                 <a
-                  className={`mx-3 ${num_adult === 0 ? 'lll-grey' : 'lll-green'}`}
+                  className={`mx-3 ${
+                    num_adult === 0 ? 'lll-grey' : 'lll-green'
+                  }`}
                   onClick={() => {
                     handleNum_adult(false)
                   }}
@@ -429,7 +466,9 @@ function SurpriseContent(props) {
                 </a>
                 <span className="txt-sub1 lll-black">{num_adult}</span>
                 <a
-                  className={`ml-3 ${num_adult === 7 ? 'lll-grey' : 'lll-green'}`}
+                  className={`ml-3 ${
+                    num_adult === 7 ? 'lll-grey' : 'lll-green'
+                  }`}
                   onClick={() => {
                     handleNum_adult(true)
                   }}
@@ -446,7 +485,9 @@ function SurpriseContent(props) {
               <div className="ml-auto">
                 <span className="txt-sub1 lll-grey">100/每人</span>
                 <a
-                  className={`mx-3 ${num_child === 0 ? 'lll-grey' : 'lll-green'}`}
+                  className={`mx-3 ${
+                    num_child === 0 ? 'lll-grey' : 'lll-green'
+                  }`}
                   onClick={() => {
                     handleNum_child(false)
                   }}
@@ -455,7 +496,9 @@ function SurpriseContent(props) {
                 </a>
                 <span className="txt-sub1 lll-black">{num_child}</span>
                 <a
-                  className={`ml-3 ${num_child === 7 ? 'lll-grey' : 'lll-green'}`}
+                  className={`ml-3 ${
+                    num_child === 7 ? 'lll-grey' : 'lll-green'
+                  }`}
                   onClick={() => {
                     handleNum_child(true)
                   }}
@@ -470,7 +513,9 @@ function SurpriseContent(props) {
 
               <div className="ml-auto">
                 <a
-                  className={`mx-3 ${num_meal === 0 ? 'lll-grey' : 'lll-green'}`}
+                  className={`mx-3 ${
+                    num_meal === 0 ? 'lll-grey' : 'lll-green'
+                  }`}
                   onClick={() => {
                     handleNum_meal(false)
                   }}
@@ -479,7 +524,9 @@ function SurpriseContent(props) {
                 </a>
                 <span className="txt-sub1 lll-black">{num_meal}</span>
                 <a
-                  className={`ml-3 ${num_meal === 9 ? 'lll-grey' : 'lll-green'}`}
+                  className={`ml-3 ${
+                    num_meal === 9 ? 'lll-grey' : 'lll-green'
+                  }`}
                   onClick={() => {
                     handleNum_meal(true)
                   }}

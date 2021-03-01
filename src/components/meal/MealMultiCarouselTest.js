@@ -87,7 +87,7 @@ function MealMultiCarousel(props) {
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
+                            <i class="fas fa-star"></i>
                           </div>
                           <div class="txt-cap  cha-card-hidden">
                             <i class="far fa-clock cha-star-small cha-green"></i>

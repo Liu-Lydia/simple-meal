@@ -9,7 +9,12 @@ const errMsg = {
 }
 const swalWithBootstrapButtons = Swal.mixin({
   customClass: {
-    cancelButton: 'select-btn-green txt-btn',
+    popup: 'poe-alert',
+    title: 'poe-green my-0',
+    content: 'txt-btn',
+    confirmButton: 'btn-green txt-btn mx-2 my-2',
+    cancelButton: 'btn-red txt-btn mx-2 my-2',
+    denyButton: 'btn-red txt-btn mx-2 my-2',
   },
   buttonsStyling: false,
 })
@@ -237,20 +242,20 @@ export default withFormik({
               icon: 'success',
               text: '登入成功',
               showConfirmButton: false,
-              padding: '25px',
+              padding: '45px',
               showCancelButton: true,
               cancelButtonText: '確定',
-              showCloseButton: true,
+              // showCloseButton: true,
             })
           } else {
             swalWithBootstrapButtons.fire({
               icon: 'error',
               text: '帳號密碼錯誤',
               showConfirmButton: false,
-              padding: '25px',
+              padding: '45px',
               showCancelButton: true,
               cancelButtonText: '確定',
-              showCloseButton: true,
+              // showCloseButton: true,
             })
           }
         })

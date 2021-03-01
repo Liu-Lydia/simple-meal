@@ -5,19 +5,14 @@ import '../styles/fff.css'
 // 個人資料
 import MilestoneInfoBar from '../components/Milestone/MilestoneInfoBar'
 // 成就清單
-import MilestoneListAll from '../components/Milestone/MilestoneListAll'
+import MilestoneList from '../components/Milestone/MilestoneList'
 // 成就選項
 import MilestoneListOption from '../components/Milestone/MilestoneListOption'
 //手機版點數顯示
 import MsMoboPointInfo from '../components/Milestone/MsMoboPointInfo'
 //手機版回前頁
 import MsMoboBackToLastPageBtn from '../components/Milestone/MsMoboBackToLastPageBtn'
-// 限時活動
-import MilestoneListLimit from '../components/Milestone/MilestoneListLimit'
-// 已達成成就
-import MilestoneListFinish from '../components/Milestone/MilestoneListFinish'
-// 未達成成就
-import MilestoneListUnfinish from '../components/Milestone/MilestoneListUnfinish'
+
 // 主圖
 import MsMainPic from '../components/Milestone/MsMainPic'
 
@@ -30,7 +25,10 @@ function Milestone(props) {
 
   //解構賦值 取得登入資訊
   const { loginBool } = props
-  
+
+  // 過濾已結束成就的切換true的時候不過濾已結束活動
+  const [showEndedMs, setShowEndedMs] = useState(false)
+
   //使用者點數
   const [totalPoint, setTotalPoint] = useState(0)
 
@@ -113,6 +111,9 @@ function Milestone(props) {
     //當DOM元素移除時要將監聽一併移除(讓監聽器離開MileStone就就消失)
   }, [])
 
+  // 當app.js沒有Milestone.js出現的時候把showEndMs的值改為false避免crash
+  //useEffect(() => {return()=>{setShowEndedMs(false)}})
+
   return (
     <>
       {/* 沒登入時, 跳轉登入 */}
@@ -143,11 +144,21 @@ function Milestone(props) {
         <MilestoneListOption
           setMilestoneFilter={setMilestoneFilter}
           milestoneFilter={milestoneFilter}
+          showEndedMs={showEndedMs}
+          setShowEndedMs={setShowEndedMs}
         />
-        {milestoneFilter === 0 && <MilestoneListLimit />}
-        {milestoneFilter === 1 && <MilestoneListAll />}
-        {milestoneFilter === 2 && <MilestoneListFinish />}
-        {milestoneFilter === 3 && <MilestoneListUnfinish />}
+        {milestoneFilter === 0 && (
+          <MilestoneList showEndedMs={showEndedMs} filter="limit" />
+        )}
+        {milestoneFilter === 1 && (
+          <MilestoneList showEndedMs={showEndedMs} filter="all" />
+        )}
+        {milestoneFilter === 2 && (
+          <MilestoneList showEndedMs={showEndedMs} filter="finished" />
+        )}
+        {milestoneFilter === 3 && (
+          <MilestoneList showEndedMs={showEndedMs} filter="unfinished" />
+        )}
       </div>
     </>
   )

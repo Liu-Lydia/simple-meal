@@ -128,8 +128,8 @@
   height: 90px;
 
   background-repeat: no-repeat;
-  background-size: 80px 80px;
-  background-position: 5px 5px;
+  background-size: 60px 60px;
+  background-position: 15px 15px;
   margin: 5px 0;
 }
 
@@ -209,7 +209,20 @@
   font-size: 21px;
 }
 
-
+/* 選單橫線 */
+.fff-select-line {
+  background-color: #627e2a7e;
+  border-radius: 2.5px;
+  height: 5px;
+  margin-bottom: 12px;
+  margin-top: 12px;
+}
+/* 手機靠中 */
+.ms-check-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
@@ -278,8 +291,8 @@
     height: 150px;
 
     background-repeat: no-repeat;
-    background-size: 140px 140px;
-    background-position: 5px 5px;
+    background-size: 120px 120px;
+    background-position: 15px 15px;
     margin: 0;
   }
 
@@ -335,10 +348,42 @@
     border: 5px #627e2a solid;
     padding: 75px;
   }
+  /* 文字敘述區 */
+  #fff-ms-detail-subs {
+    display: flex;
+    flex-direction: column ;
+    justify-content: space-between;
+    align-self: center;
+    margin: 0px;
+    padding: 0px;
+  }
+  /* 成就標題大小 */
+  .fff-txt-ms-detail-title {
+    font-size: 24px;
+  }
+  
   .fff-txt-ms-detail {
     display: flex;
     flex-direction: row;
   }
+  /* 選單橫線 */
+  .fff-select-line {
+    background-color: #627e2a7e;
+    border-radius: 2.5px;
+    height: 5px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+  }
+  /* 網頁靠左 */
+  .ms-check-bar {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+  }
+  .fff-row-height{
+    height: 194px;
+  }
+
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -389,8 +434,8 @@
     height: 150px;
 
     background-repeat: no-repeat;
-    background-size: 140px 140px;
-    background-position: 5px 5px;
+    background-size: 120px 120px;
+    background-position: 15px 15px;
   }
 
   .fff-milestone-background-svg {
@@ -457,6 +502,7 @@
     stroke-width: 5;
     fill: none;
   }
+  
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -499,8 +545,8 @@
     height: 200px;
 
     background-repeat: no-repeat;
-    background-size: 160px 160px;
-    background-position: 20px 20px;
+    background-size: 140px 140px;
+    background-position: 30px 30px;
   }
 
   .fff-milestone-background-svg {
@@ -520,23 +566,13 @@
     fill: none;
     transform-origin: center;
   }
+  .fff-row-height{
+    height: 254px;
+  }
 }
 
-.fff-txt-ms-select {
-  font-family: GenSenRounded TW;
-  text-decoration: none !important;
-  font-size: 16px;
-  color: #a2a3a5;
-  margin-bottom: 24px;
-}
-.fff-txt-rw-select {
-  font-family: GenSenRounded TW;
-  text-decoration: none !important;
-  font-size: 16px;
-  color: #627e2a;
-}
-
-.fff-txt-rw-unselect {
+/* 選單的字 */
+.fff-txt-unselected {
   font-family: GenSenRounded TW;
   text-decoration: none !important;
   font-size: 16px;
@@ -544,55 +580,20 @@
   opacity: 50%;
 }
 
-.fff-txt-ms-select-active {
+.fff-txt-selected {
   font-family: GenSenRounded TW;
   text-decoration: none !important;
   color: #434341;
 }
-.fff-txt-rw-select-active {
-  font-family: GenSenRounded TW;
-  text-decoration: none !important;
-  color: #627e2a;
-}
 
-.fff-ms-select-line {
-  background-color: #a2a3a5;
-  border-radius: 2.5px;
-  height: 5px;
-  margin-bottom: 24px;
-}
-.fff-rw-select-line {
-  background-color: #627e2a7e;
-  border-radius: 2.5px;
-  height: 5px;
-  margin-bottom: 24px;
-}
-
-.fff-ms-select-active {
-  height: 10px;
-  background-color: #707070;
-  border-radius: 5px;
-}
-.fff-rw-select-active {
+/* 選單選到的橫桿 */
+.fff-option-selected {
   height: 10px;
   background-color: #627e2a;
   border-radius: 5px;
   opacity: 100%;
   margin: 0px;
   padding: 0px;
-}
-
-.fff-ms-select-active {
-  height: 10px;
-  background-color: #707070;
-  border-radius: 5px;
-  margin: 20%;
-}
-
-.fff-txt-ms-unselect {
-  font-family: GenSenRounded TW;
-  text-decoration: none !important;
-  color: #a2a3a5;
 }
 
 .fff-stone-item-icon {
