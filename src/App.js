@@ -28,6 +28,7 @@ import ScrollToTop from './components/ScrollToTop'
 import MultiLevelBreadCrumb from './components/MultiLevelBreadCrumb'
 import Footer from './components/Footer'
 import ToTopButton from './components/ToTopButton'
+import MilestoneGoalLinstener from './components/Milestone/MilestoneGoalLinstener'
 
 function App() {
   // 麵包屑判斷 (true在左上 false由各頁面自訂, 需要改動者再引入)
@@ -38,7 +39,7 @@ function App() {
 
   // 非購物車頁面改變購物車模式
   const [cartModeByRedirectFrom, setCartModeByRedirectFrom] = useState('')
-//菜單傳給食譜的值，食譜會顯示對應的菜單食譜
+  //菜單傳給食譜的值，食譜會顯示對應的菜單食譜
   const [meunForRecipe, setMealForRecipe] = useState([])
 
   return (
@@ -52,53 +53,54 @@ function App() {
           )}
           <ScrollToTop>
             <Switch>
-              <Route path="/cart/:mode?">
-                <Cart
-                  loginBool={loginBool}
-                  cartModeByRedirectFrom={cartModeByRedirectFrom}
-                  setCartModeByRedirectFrom={setCartModeByRedirectFrom}
-                />
-              </Route>
-              <Route path="/TestDatabase">
-                <TestDatabase />
-              </Route>
-              <Route path="/Test">
-                <Test />
-              </Route>
-              <Route path="/Milestone">
-                <Milestone loginBool={loginBool}/>
-              </Route>
-              <Route path="/RewardExchange">
-                <RewardExchange loginBool={loginBool}/>
-              </Route>
-              <Route path="/meal">
-                <Meal
-                  breadCrumbBool={breadCrumbBool}
-                  setBreadCrumbBool={setBreadCrumbBool}
-                  setMealForRecipe={setMealForRecipe}
-                />
-              </Route>
-              <Route path="/recipe">
-                <Recipe
-                  breadCrumbBool={breadCrumbBool}
-                  setBreadCrumbBool={setBreadCrumbBool}
-                  meunForRecipe={meunForRecipe}
-                />
-              </Route>
-              <Route path="/loverecipe">
-                <LoveRecipe
-                  breadCrumbBool={breadCrumbBool}
-                  setBreadCrumbBool={setBreadCrumbBool}
-                  meunForRecipe={meunForRecipe}
-                />
-              </Route>
-              <Route path="/MemberCenter">
-                <MemberCenter
-                  loginBool={loginBool}
-                  setLoginBool={setLoginBool}
-                />
-              </Route>
-              {/* <Route path="/MemberCenter/Index" component={MemberCenterIndex} />
+              <MilestoneGoalLinstener loginBool={loginBool}>
+                <Route path="/cart/:mode?">
+                  <Cart
+                    loginBool={loginBool}
+                    cartModeByRedirectFrom={cartModeByRedirectFrom}
+                    setCartModeByRedirectFrom={setCartModeByRedirectFrom}
+                  />
+                </Route>
+                <Route path="/TestDatabase">
+                  <TestDatabase />
+                </Route>
+                <Route path="/Test">
+                  <Test />
+                </Route>
+                <Route path="/Milestone">
+                  <Milestone loginBool={loginBool} />
+                </Route>
+                <Route path="/RewardExchange">
+                  <RewardExchange loginBool={loginBool} />
+                </Route>
+                <Route path="/meal">
+                  <Meal
+                    breadCrumbBool={breadCrumbBool}
+                    setBreadCrumbBool={setBreadCrumbBool}
+                    setMealForRecipe={setMealForRecipe}
+                  />
+                </Route>
+                <Route path="/recipe">
+                  <Recipe
+                    breadCrumbBool={breadCrumbBool}
+                    setBreadCrumbBool={setBreadCrumbBool}
+                    meunForRecipe={meunForRecipe}
+                  />
+                </Route>
+                <Route path="/loverecipe">
+                  <LoveRecipe
+                    breadCrumbBool={breadCrumbBool}
+                    setBreadCrumbBool={setBreadCrumbBool}
+                    meunForRecipe={meunForRecipe}
+                  />
+                </Route>
+                <Route path="/MemberCenter">
+                  <MemberCenter
+                    loginBool={loginBool}
+                    setLoginBool={setLoginBool}
+                  />
+                </Route>
+                {/* <Route path="/MemberCenter/Index" component={MemberCenterIndex} />
               <Route
                 path="/MemberCenter/RegiStered"
                 component={MemberCenterRegiStered}
@@ -108,36 +110,37 @@ function App() {
                 component={MemberCenterResetPassword}
               />
               <Route path="/MemberCenter" component={MemberCenterLogin} /> */}
-              <Route path="/surprisekitchen">
-                <SurpriseKitchen
-                  loginBool={loginBool}
-                  setCartModeByRedirectFrom={setCartModeByRedirectFrom}
-                />
-              </Route>
-              {/* 關於我 */}
-              <Route path="/aboutus">
-                <AboutUs />
-              </Route>
-              {/* 食譜內容頁 注意：要加上網址參數 */}
-              <Route exact path="/myrecipepage/:id?">
-                <MyRecipePage />
-              </Route>
-              {/* 共享食譜 */}
-              <Route path="/sharerecipe">
-                <Sharerecipe />
-              </Route>
-              {/* 測試 */}
-              <Route path="/xtest">
-                <XTest />
-              </Route>
-              {/* 測試 */}
-              <Route path="/TestSvgAnimate">
-                <TestSvgAnimate />
-              </Route>
-              {/* 首頁 */}
-              <Route exact path="/">
-                <Home />
-              </Route>
+                <Route path="/surprisekitchen">
+                  <SurpriseKitchen
+                    loginBool={loginBool}
+                    setCartModeByRedirectFrom={setCartModeByRedirectFrom}
+                  />
+                </Route>
+                {/* 關於我 */}
+                <Route path="/aboutus">
+                  <AboutUs />
+                </Route>
+                {/* 食譜內容頁 注意：要加上網址參數 */}
+                <Route exact path="/myrecipepage/:id?">
+                  <MyRecipePage />
+                </Route>
+                {/* 共享食譜 */}
+                <Route path="/sharerecipe">
+                  <Sharerecipe />
+                </Route>
+                {/* 測試 */}
+                <Route path="/xtest">
+                  <XTest />
+                </Route>
+                {/* 測試 */}
+                <Route path="/TestSvgAnimate">
+                  <TestSvgAnimate />
+                </Route>
+                {/* 首頁 */}
+                <Route exact path="/">
+                  <Home />
+                </Route>
+              </MilestoneGoalLinstener>
             </Switch>
           </ScrollToTop>
         </MainContent>
