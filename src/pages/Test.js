@@ -1,8 +1,10 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 
 function Test() {
   return (
     <>
+      <Redirect to="/MemberCenter" />
       <div className="container">
         <div className="row justify-content-center">
           <div
