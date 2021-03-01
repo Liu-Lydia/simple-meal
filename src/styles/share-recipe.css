@@ -49,6 +49,11 @@
 .xxx-br25{
   border-radius: 25px;
 }
+.xxx-br25:hover{
+  box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.2);
+  transform: translateX(2px);
+  transform: translateY(2px);
+}
 .xxx-296x197{
   width: 296px;
   height: 197px;
