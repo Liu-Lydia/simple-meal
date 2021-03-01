@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import '../../styles/public.css'
 import '../../styles/fff.css'
 
@@ -98,7 +99,7 @@ function ExchangeOption(props) {
           </div>
         </div>
         <p className="fff-exchange-record-warning">
-          僅顯示一週內兌換資料，詳細兌換資料請拜訪<a href="#">會員中心</a>查詢
+          僅顯示一週內兌換資料，詳細兌換資料請拜訪<Link to="./MemberCenter/Index">會員中心</Link>查詢
         </p>
       </div>
     </>
