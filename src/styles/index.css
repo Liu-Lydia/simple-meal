@@ -572,3 +572,33 @@ height: 61px;
 {
   height: 50px;
 }
+
+
+/* 共享食譜食材搜尋 */
+.xxx-img100{
+  width: 100%;
+}
+
+.xxx-193x189{
+  width: 193px;
+  height: 189px;
+}
+.xxx-536x370{
+  width: 536px;
+  height: 370px;
+}
+.task-board {
+  display: inline-flex;
+  align-items: flex-start;
+  padding: 1%;
+}
+/* 夥伴介紹 */
+.xxx-190x135{
+  width: 190px;
+  height: 135px;
+}
+.xxx-img100100{
+  width: 100%;
+  height: 100%;
+}
+

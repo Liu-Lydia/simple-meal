@@ -17,13 +17,21 @@ export const pathnameList = [
   '/RewardExchange',
   // 會員中心
   '/MemberCenter',
+  //會員中/個人資訊
+  '/MemberCenter/info',
+  '/MemberCenter/addr',
+  '/MemberCenter/PasswordChange',
+  '/MemberCenter/CreditCard',
+  '/MemberCenter/SurpriseKitchen',
+  '/MemberCenter/SimpleMealCoupon',
+  '/MemberCenter/FoodDelivery',
   // 商品
   '/meal',
   //食譜
   '/recipe',
   // 共享食譜
   '/sharerecipe',
-  // 關於我們
+  // 夥伴介紹
   '/aboutus',
   // 會員中心 / 我的食譜
   '/MemberCenter/MyRecipe',
@@ -44,14 +52,21 @@ export const pathnameTextList = [
   '/兌換獎勵',
   // 會員中心
   '/會員中心',
+  '/會員中心/我的帳戶/個人資訊',
+  '/會員中心/我的帳戶/地址',
+  '/會員中心/我的帳戶/密碼變更',
+  '/會員中心/我的帳戶/信用卡',
+  '/會員中心/驚喜廚房',
+  '/會員中心/我的餐卷',
+  '/會員中心/我的餐點',
   // 商品
   '/菜單介紹',
   //食譜
   '/食譜',
   // 共享食譜
   '/共享食譜',
-  // 關於我們
-  '/關於我們',
+  // 夥伴介紹
+  '/夥伴介紹',
   // 會員中心 / 我的食譜
   '/會員中心 / 我的食譜',
   // 會員中心 / 新增食譜

@@ -16,8 +16,10 @@ function GoogleMapDemo() {
       address: '台北市北投區中央北路三段40巷',
       lat: 25.13988774719059,
       lng: 121.48458969806865,
-      infoTitle: '測試1',
+      infoTitle: '青椒農場',
       infoContent: 'this is a sample string',
+      pic: 'http://localhost:3015/img/index/index-p1-img.png',
+      tel: '(02)28838888',
     },
     {
       id: 2,
@@ -26,8 +28,9 @@ function GoogleMapDemo() {
       address: '台南市柳營區果毅里南湖25號',
       lat: 23.240227242579074,
       lng: 120.37868608640444,
-      infoTitle: '測試2',
+      infoTitle: '一堆菜農場',
       infoContent: 'this is a sample string',
+      tel: '(06)28878844',
     },
     {
       id: 3,
@@ -36,8 +39,9 @@ function GoogleMapDemo() {
       address: '屏東縣瑪家鄉114-6號',
       lat: 22.66255809598465,
       lng: 120.63152645571405,
-      infoTitle: '測試3',
+      infoTitle: '蔥蔥農場',
       infoContent: 'this is a sample string',
+      tel: '(08)28864478',
     },
     {
       id: 4,
@@ -46,8 +50,9 @@ function GoogleMapDemo() {
       address: '台中市太平區廓仔坑路119號',
       lat: 24.151732232849326,
       lng: 120.75964181229905,
-      infoTitle: '測試4',
+      infoTitle: '蘿蔔農場',
       infoContent: 'this is a sample string',
+      tel: '(04)28884466',
     },
     {
       id: 5,
@@ -56,8 +61,9 @@ function GoogleMapDemo() {
       address: '彰化縣彰化市水月台路218號',
       lat: 24.056362209222623,
       lng: 120.58705255572812,
-      infoTitle: '測試5',
+      infoTitle: '菇菇農場',
       infoContent: 'this is a sample string',
+      tel: '(04)28864225',
     },
     {
       id: 6,
@@ -66,8 +72,9 @@ function GoogleMapDemo() {
       address: '新北市瑞芳區深澳路',
       lat: 25.13131514828753,
       lng: 121.81920779806867,
-      infoTitle: '測試6',
+      infoTitle: '深澳漁港',
       infoContent: 'this is a sample string',
+      tel: '(02)28836548',
     },
   ])
 
@@ -112,12 +119,11 @@ function GoogleMapDemo() {
     <>
       <Container>
         <Row>
-          <Col sm={8}>
+          <Col md={{ span: 6, offset: 1 }} sm={8}>
             {/* <GeocodeSearch setLat={setLat} setLng={setLng} /> */}
             <SingleMapDetail
               lat={lat}
               lng={lng}
-              
               // infoTitle="測試"
               // infoContent="this is a sample string"
               todos={todos}
@@ -132,7 +138,9 @@ function GoogleMapDemo() {
       /> */}
           </Col>
 
-          <Col sm={4}>
+          <Col md={{ span: 4, offset: 1 }} sm={4}>
+            <h4 className="col-green xxx-mt200">食材夥伴介紹</h4>
+
             <ul>
               {/* 從陣列值中map出來，記得加上key值 */}
               {/* 判斷依照不同的completed值作不同的呈現樣子 */}
@@ -146,9 +154,11 @@ function GoogleMapDemo() {
                         handleCompleted(item.id)
                       }}
                     />
+                    &nbsp;&nbsp;
                     {/* 用三元表達式改寫 */}
                     {item.text}
                     {/* {item.completed ? <del>{item.text}</del> : item.text} */}
+                    <br />
                   </li>
                 )
               })}

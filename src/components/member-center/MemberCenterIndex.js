@@ -101,7 +101,7 @@ function MemberCenterIndex() {
                   <ul className="h6 item1 col-5 ">
                     <li className="item">
                       <i className="fas fa-heart mr-2 "></i>
-                      <Link to="/meal" className="text-dark">
+                      <Link to="/loverecipe" className="text-dark">
                         我的專屬菜單
                       </Link>
                     </li>

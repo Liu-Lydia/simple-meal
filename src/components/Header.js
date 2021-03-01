@@ -111,7 +111,7 @@ function Header(props) {
                   <Nav.Link
                     className="text-nowrap"
                     as={NavLink}
-                    to="/none1"
+                    to="/Test"
                     onClick={() => setExpanded(false)}
                   >
                     最新活動
@@ -163,13 +163,14 @@ function Header(props) {
                   <HeaderIcon
                     text={'會員中心'}
                     // 如果登入, 到會員首頁; 如果未登入, 到登入畫面
-                    url={`${loginBool ? '/MemberCenter/Index' : '/MemberCenter'
-                      }`}
+                    url={`${
+                      loginBool ? '/MemberCenter/Index' : '/MemberCenter'
+                    }`}
                     fa={'fas fa-user'}
                   ></HeaderIcon>
                   <HeaderIcon
                     text={'問題回答'}
-                    url={'/none8'}
+                    url={''}
                     fa={'far fa-question-circle'}
                   ></HeaderIcon>
 
@@ -215,7 +216,7 @@ function Header(props) {
           </div>
         </div>
       </div>
-      <MilestoneGoalListener loginBool={loginBool}/>
+      <MilestoneGoalListener loginBool={loginBool} />
     </>
   )
 }
