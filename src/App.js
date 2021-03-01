@@ -66,10 +66,10 @@ function App() {
                 <Test />
               </Route>
               <Route path="/Milestone">
-                <Milestone loginBool={loginBool}/>
+                <Milestone loginBool={loginBool} />
               </Route>
               <Route path="/RewardExchange">
-                <RewardExchange loginBool={loginBool}/>
+                <RewardExchange loginBool={loginBool} />
               </Route>
               <Route path="/meal">
                 <Meal
@@ -124,7 +124,7 @@ function App() {
               </Route>
               {/* 共享食譜 */}
               <Route path="/sharerecipe">
-                <Sharerecipe />
+                <Sharerecipe loginBool={loginBool} />
               </Route>
               {/* 測試 */}
               <Route path="/xtest">
