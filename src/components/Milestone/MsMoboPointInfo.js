@@ -5,7 +5,6 @@ function MsMoboPointInfo(props) {
   const [userInfo, setUserInfo] = useState([])
   const { totalPoint } = props
 
-
   const getUserInfo = async () => {
     const url = 'http://localhost:4000/milestone/getUserInfo'
     //sid 要從session來
@@ -23,12 +22,14 @@ function MsMoboPointInfo(props) {
     getUserInfo()
   }, [])
 
-  useEffect(() => { }, [userInfo])
+  useEffect(() => {}, [userInfo])
   return (
     <>
       <div
+        style={{
+          marginBottom: '20px',
+        }}
         className="row fff-ms-mobo d-flex justify-content-center align-items-center"
-        style={{ marginBottom: '30px' }}
       >
         <div className="col d-flex justify-content-center align-items-center">
           <img

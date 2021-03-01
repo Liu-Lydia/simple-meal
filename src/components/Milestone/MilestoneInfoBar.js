@@ -39,7 +39,7 @@ function MilestoneInfoBar(props) {
     getUserInfo()
   }, [])
 
-  useEffect(() => { }, [userInfo])
+  useEffect(() => {}, [userInfo])
 
   return (
     <>
@@ -149,7 +149,16 @@ function MilestoneInfoBar(props) {
             <span className="fff-mobo-txt-info">點</span>
           </div>
         </div>
-        <div style={{ height: '150px' }}></div>
+        <div
+          style={{
+            height: '150px',
+            backgroundImage:
+              'url(http://localhost:3015/img/fff/msMainPicMobo.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundOrigin: 'padding-box',
+          }}
+        ></div>
         <div className="d-flex justify-content-center align-items-center">
           <div
             id="moboMsPage2"
