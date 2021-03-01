@@ -75,6 +75,7 @@ function MilestoneGoalListener(props) {
                     backdrop: `rgba(0,0,0,.5)`,
                   })
                   console.log('顯示成就')
+                  setMilestoneLinstener(false)//顯示成就之後 關閉監聽 可以重新刷新已完成的成就清單
                 }
               }
             }
