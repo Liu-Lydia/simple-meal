@@ -241,83 +241,83 @@ function MilestoneList(props) {
                   key={i}
                 />
               ) : (
-                <div
-                  className="col-4 col-sm-6 col-lg-3 d-flex justify-content-center"
-                  key={i}
-                  onClick={() => {
-                    setDetailStyle({ visibility: 'visible' })
-                    setDetailContext(v)
-                  }}
-                >
-                  <div className="fff-stone-item-box justify-content-center">
-                    <svg
-                      className="fff-svg-painting"
-                      style={{
-                        backgroundImage:
-                          'url(http://localhost:3015/img/milestonelist/' +
-                          (v.AddProgress >= v.progress_goal
-                            ? v.finished_goal_pic
-                            : v.unfinished_goal_pic) +
-                          ')',
-                      }}
-                    >
-                      {/* 檢查進度是否超過設定，超過顯示完成圖示，否則顯示未完成圖示 */}
-                      <circle
-                        className="fff-milestone-background-svg d-flex justify-content-center"
-                        style={{ display: 'block' }}
-                      />
-                      <circle
-                        className="fff-milestone-progress-svg d-flex justify-content-center"
-                        transform="rotate(-90)"
-                        style={inUseStyle[i]}
+                  <div
+                    className="col-4 col-sm-6 col-lg-3 d-flex justify-content-center"
+                    key={i}
+                    onClick={() => {
+                      setDetailStyle({ visibility: 'visible' })
+                      setDetailContext(v)
+                    }}
+                  >
+                    <div className="fff-stone-item-box justify-content-center">
+                      <svg
+                        className="fff-svg-painting"
+                        style={{
+                          backgroundImage:
+                            'url(http://localhost:3015/img/milestonelist/' +
+                            (v.AddProgress >= v.progress_goal
+                              ? v.finished_goal_pic
+                              : v.unfinished_goal_pic) +
+                            ')',
+                        }}
                       >
-                        <animate
-                          className="fff-milestone-progress-ani"
-                          attributeName="stroke-dasharray"
-                          dur="1s"
-                          repeatCount="1"
-                          value={inUseAnimateValue[i]}
-                          begin="3s"
+                        {/* 檢查進度是否超過設定，超過顯示完成圖示，否則顯示未完成圖示 */}
+                        <circle
+                          className="fff-milestone-background-svg d-flex justify-content-center"
+                          style={{ display: 'block' }}
                         />
-                      </circle>
-                    </svg>
-                    <span
-                      style={{ color: '#627e2a' }}
-                      className=" fff-ms-web d-flex justify-content-center"
-                    >
-                      {v.event_startime > moment().format('YYYY/MM/DD') &&
-                        `將於${v.event_startime}開始`}
-                    </span>
-                    <span
-                      style={{ color: '#627e2a' }}
-                      className=" fff-ms-web d-flex justify-content-center"
-                    >
-                      {v.event_startime < moment().format('YYYY/MM/DD') &&
-                        v.event_endtime === null &&
-                        `常態活動`}
-                    </span>
-                    <span
-                      style={{ color: '#a2a3a5' }}
-                      className=" fff-ms-web d-flex justify-content-center"
-                    >
-                      {v.event_startime < moment().format('YYYY/MM/DD') &&
-                        v.event_endtime < moment().format('YYYY/MM/DD') &&
-                        `活動結束`}
-                    </span>
-                    <span
-                      style={{ color: '#b9433b' }}
-                      className=" fff-ms-web d-flex justify-content-center"
-                    >
-                      {v.event_endtime > moment().format('YYYY/MM/DD') &&
-                        v.event_startime <= moment().format('YYYY/MM/DD') &&
-                        `將於${moment(v.event_endtime, 'YYYY/MM/DD').diff(
-                          moment(),
-                          'days'
-                        )}天後截止`}
-                    </span>
+                        <circle
+                          className="fff-milestone-progress-svg d-flex justify-content-center"
+                          transform="rotate(-90)"
+                          style={inUseStyle[i]}
+                        >
+                          <animate
+                            className="fff-milestone-progress-ani"
+                            attributeName="stroke-dasharray"
+                            dur="1s"
+                            repeatCount="1"
+                            value={inUseAnimateValue[i]}
+                            begin="3s"
+                          />
+                        </circle>
+                      </svg>
+                      <span
+                        style={{ color: '#627e2a' }}
+                        className=" fff-ms-web d-flex justify-content-center"
+                      >
+                        {v.event_startime > moment().format('YYYY/MM/DD') &&
+                          `將於${v.event_startime}開始`}
+                      </span>
+                      <span
+                        style={{ color: '#627e2a' }}
+                        className=" fff-ms-web d-flex justify-content-center"
+                      >
+                        {v.event_startime < moment().format('YYYY/MM/DD') &&
+                          v.event_endtime === null &&
+                          `常態活動`}
+                      </span>
+                      <span
+                        style={{ color: '#a2a3a5' }}
+                        className=" fff-ms-web d-flex justify-content-center"
+                      >
+                        {v.event_startime < moment().format('YYYY/MM/DD') &&
+                          v.event_endtime < moment().format('YYYY/MM/DD') &&
+                          `活動結束`}
+                      </span>
+                      <span
+                        style={{ color: '#b9433b' }}
+                        className=" fff-ms-web d-flex justify-content-center"
+                      >
+                        {v.event_endtime > moment().format('YYYY/MM/DD') &&
+                          v.event_startime <= moment().format('YYYY/MM/DD') &&
+                          `將於${moment(v.event_endtime, 'YYYY/MM/DD').diff(
+                            moment(),
+                            'days'
+                          )}天後截止`}
+                      </span>
+                    </div>
                   </div>
-                </div>
-              )
+                )
             )}
           </div>
         </div>

@@ -23,7 +23,7 @@ export const pathnameList = [
   '/recipe',
   // 共享食譜
   '/sharerecipe',
-  // 關於我們
+  // 夥伴介紹
   '/aboutus',
   // 會員中心 / 我的食譜
   '/MemberCenter/MyRecipe',
@@ -50,8 +50,8 @@ export const pathnameTextList = [
   '/食譜',
   // 共享食譜
   '/共享食譜',
-  // 關於我們
-  '/關於我們',
+  // 夥伴介紹
+  '/夥伴介紹',
   // 會員中心 / 我的食譜
   '/會員中心 / 我的食譜',
   // 會員中心 / 新增食譜

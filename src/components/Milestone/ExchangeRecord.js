@@ -4,7 +4,7 @@ import '../../styles/fff.css'
 import QRCodeDialog from './QRCodeDialog'
 
 function ExchangeRecord(props) {
-  const {loginBool} = props
+  const { loginBool } = props
   const [exchangeRecord, setExchangeRecord] = useState([])
   const [qrcodeStyle, setqrcodeStyle] = useState({ visibility: 'hidden' })
   const [couponKey, setCouponKey] = useState('')
@@ -23,9 +23,8 @@ function ExchangeRecord(props) {
   }
 
   useEffect(() => {
-    if( loginBool)
-    {getExchangeRecord()}
-    
+    if (loginBool) { getExchangeRecord() }
+
   }, [])
 
   return (

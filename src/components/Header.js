@@ -10,6 +10,7 @@ import {
 } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import HeaderIcon from './HeaderIcon'
+import MilestoneGoalListener from './Milestone/MilestoneGoalLinstener'
 
 function Header(props) {
   // { 登入布林值, 設定登入布林值}
@@ -162,9 +163,8 @@ function Header(props) {
                   <HeaderIcon
                     text={'會員中心'}
                     // 如果登入, 到會員首頁; 如果未登入, 到登入畫面
-                    url={`${
-                      loginBool ? '/MemberCenter/Index' : '/MemberCenter'
-                    }`}
+                    url={`${loginBool ? '/MemberCenter/Index' : '/MemberCenter'
+                      }`}
                     fa={'fas fa-user'}
                   ></HeaderIcon>
                   <HeaderIcon
@@ -215,6 +215,7 @@ function Header(props) {
           </div>
         </div>
       </div>
+      <MilestoneGoalListener loginBool={loginBool}/>
     </>
   )
 }
