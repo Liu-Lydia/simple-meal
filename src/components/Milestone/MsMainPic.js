@@ -1,20 +1,40 @@
 import React, { props, useEffect, useState } from 'react'
 
 function MsMainPic() {
+  //scroll定位　↓↓↓
+  function ScrollToOrder() {
+    window.scrollTo({
+      top: 1100,
+      left: 0,
+      behavior: 'smooth',
+    })
+  }
+  //scroll定位　↑↑↑
   return (
     <>
       <div
-        className="d-flex justify-content-center align-items-center fff-ms-web"
-        
+        className="d-flex flex-column justify-content-center align-items-center fff-ms-web"
+        style={{
+          backgroundImage: 'url(http://localhost:3015/img/fff/Kumo.svg)',
+          backgroundRepeat: 'no-repeat',
+        }}
       >
-        <img src="http://localhost:3015/img/fff/msMainPic.png" alt="" style={{ maxWidth: '1000px'}} />
-
+        <img
+          src="http://localhost:3015/img/fff/msMainPic.png"
+          alt=""
+          style={{ maxWidth: '1200px' }}
+        />
+        <a
+          style={{ marginBottom: '80px' }}
+          className="btn-yello txt-cap lll-cursor"
+          onClick={() => {
+            ScrollToOrder()
+          }}
+        >
+          scroll
+        </a>
       </div>
-      <div>
-        <button className="p1-scroll-btn mx-auto d-flex align-items-center">
-          &nbsp; scroll
-        </button>
-      </div>
+      <div></div>
     </>
   )
 }

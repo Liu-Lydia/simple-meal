@@ -161,6 +161,8 @@
 
 .fff-reward-pic {
   width: 100px;
+  height: 100px;
+  border-radius: 25px;
 }
 /* 僅限一週內查詢，手機12px非手機版都16px */
 .fff-exchange-record-warning {
@@ -351,7 +353,7 @@
   /* 文字敘述區 */
   #fff-ms-detail-subs {
     display: flex;
-    flex-direction: column ;
+    flex-direction: column;
     justify-content: space-between;
     align-self: center;
     margin: 0px;
@@ -361,7 +363,7 @@
   .fff-txt-ms-detail-title {
     font-size: 24px;
   }
-  
+
   .fff-txt-ms-detail {
     display: flex;
     flex-direction: row;
@@ -380,10 +382,9 @@
     flex-direction: row-reverse;
     justify-content: end;
   }
-  .fff-row-height{
+  .fff-row-height {
     height: 194px;
   }
-
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -486,7 +487,7 @@
     margin-right: 30px;
   }
   .fff-reward-pic {
-    width: 160px;
+    width: 80%;
   }
 
   .fff-stone-item-box {
@@ -502,7 +503,6 @@
     stroke-width: 5;
     fill: none;
   }
-  
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
@@ -532,7 +532,7 @@
     margin-right: 30px;
   }
   .fff-reward-pic {
-    width: 200px;
+    width: 80%;
   }
 
   .fff-stone-item-box {
@@ -566,7 +566,7 @@
     fill: none;
     transform-origin: center;
   }
-  .fff-row-height{
+  .fff-row-height {
     height: 254px;
   }
 }
@@ -717,5 +717,47 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.testsvg {
+  stroke-dashoffset: 100;
+  stroke-dasharray: 100;
+  animation: 3s linear 1s infinite running slidein;
+}
+
+#Group_Line {
+  stroke-dashoffset: 100;
+  stroke-dasharray: 100;
+  animation: drawing-svg 3s linear infinite;
+}
+
+@keyframes drawing-svg {
+  10% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 100;
+  }
+
+  20% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 0;
+  }
+  30% {
+    stroke-dashoffset: 100;
+    stroke-dasharray: 100;
+  }
+
+  40% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 100;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 0;
+  }
+  60% {
+    stroke-dashoffset: 100;
+    stroke-dasharray: 100;
   }
 }
