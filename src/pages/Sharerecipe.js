@@ -7,6 +7,7 @@ import { Container, Pagination, Col } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Link, NavLink } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 function Sharerecipe(props) {
   // 資料的鉤子 . 未經過過濾的原始資料
@@ -19,6 +20,9 @@ function Sharerecipe(props) {
   const [isLoading, setIsLoading] = useState(true)
   // 搜尋用的文字輸入狀態
   const [searchInput, setSearchInput] = useState(null)
+
+  //解構賦值 取得登入資訊
+  const { loginBool } = props
 
   // 從伺服器抓資料
   const getDataFromServer = async () => {
@@ -137,6 +141,8 @@ function Sharerecipe(props) {
 
   return (
     <>
+      {/* 沒登入時, 跳轉登入 */}
+      {!loginBool && <Redirect to="/MemberCenter" />}
       <div className="container">
         <div className="row col offset-1 col-10 mt-1 mb-1 xxx-m0p0">
           <h4 className="col-green ">共享食譜</h4>

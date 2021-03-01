@@ -126,7 +126,7 @@ function App() {
                 </Route>
                 {/* 共享食譜 */}
                 <Route path="/sharerecipe">
-                  <Sharerecipe />
+                  <Sharerecipe loginBool={loginBool} />
                 </Route>
                 {/* 測試 */}
                 <Route path="/xtest">
