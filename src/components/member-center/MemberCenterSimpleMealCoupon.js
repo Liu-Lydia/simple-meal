@@ -178,8 +178,10 @@ function MemberCenterSimpleMealCoupon() {
           <div className="col-8 ml-5 ">
             <div className="mt-5 h4 ee d-block d-xl-none">餐卷購買明細</div>
 
-            <div>
-              <div className=" mt-3  h3 ee d-none d-xl-block">餐卷購買明細</div>
+            <div className="">
+              <div className=" mt-3 mb-4 h4 ee d-none d-xl-block">
+                餐卷購買明細
+              </div>
               {Coupon1.map((v) => (
                 <li className="d-bolck d-lg-none box1 mr-4 mx-auto mx-sm-0 mx-lg-0 mb-2">
                   <img
@@ -191,33 +193,31 @@ function MemberCenterSimpleMealCoupon() {
               ))}
 
               {Coupon1.map((v) => (
-                <li className="d-block d-lg-none  col-8 col-sm-12 mx-md-0 mx-auto">
+                <li className="d-block d-lg-none text-nowrap col-8 col-sm-10 mx-md-0 mx-auto">
                   會員姓名:
                   <span>{v.name}</span>
                 </li>
               ))}
               {Coupon1.map((v) => (
-                <li className="d-block d-xl-none col-8 col-sm-12 mx-md-0 mx-auto">
-                  餐卷剩餘數量:
+                <li className="mt-3 d-block d-lg-none text-nowrap col-8 col-sm-11 mx-md-0 mx-auto">
+                  目前餐卷剩餘數量:
                   <span style={{ color: 'red' }}>{v.simplemeal_coupon}</span>
                 </li>
               ))}
-              <div className="btn border dropdown-toggle txt-cap1 mr-2 mb-4  col-12 d-block d-lg-none ">
+              <div className="btn border dropdown-toggle txt-cap1 mr-2 mb-5 col-12 d-block d-lg-none ">
                 回上頁
               </div>
             </div>
 
-            <div className="d-sm-flex d-flex-none ">
-              {Coupon1.map((v) => (
-                <div className="d-none d-xl-none">
-                  目前餐卷剩餘數量:
-                  <span style={{ color: 'red' }}>{v.simplemeal_coupon}</span>
-                </div>
-              ))}
-            </div>
+            {Coupon1.map((v) => (
+              <li className="d-none d-lg-block mt-4 mb-4 ">
+                目前餐卷剩餘數量:
+                <span style={{ color: 'red' }}>{v.simplemeal_coupon}</span>
+              </li>
+            ))}
 
             {saech}
-            <div className="d-none d-lg-block col-8">{Coupons}</div>
+            <div className="d-none d-lg-block col-8 mt-4">{Coupons}</div>
           </div>
 
           <div className="d-block d-lg-none  mx-auto col-12">

@@ -25,35 +25,65 @@ function FoodDeliverys1() {
 
   const Seach = (
     <>
-      <div className="d-flex ">
-        <div className=" mt-md-2  mt-2 txt-sub2 col-12 col-sm-12 d-flex ">
-          <div className=" mt-2 mr-2 txt-cap d-none d-sm-none d-md-block d-lg-block d-xl-block">
-            輸入查詢區間
-          </div>
-
-          <input
-            type="date"
-            id="FoodDeliverySeach"
-            name="FoodDeliverySeach"
-            value={FoodDeliverySeach}
-            onChange={(e) => setFoodDeliverySeach(e.target.value)}
-          ></input>
-          <small className="txt-cap mx-2 d-none d-md-block">～</small>
-          <input
-            type="date"
-            id="FoodDeliverySeach1"
-            name="FoodDeliverySeach1"
-            value={FoodDeliverySeach1}
-            onChange={(e) => setFoodDeliverySeach1(e.target.value)}
-          ></input>
-          <button
-            className="btn-green3 ml-2"
-            onClick={() => getDataFromServer()}
-          >
-            送出
-          </button>
+      <div className="mt-2 txt-sub2 d-md-flex ">
+        <div className=" mt-2 mr-2 txt-cap text-nowrap d-none d-md-none d-lg-block ">
+          輸入查詢區間
         </div>
-      </div>{' '}
+
+        <input
+          className="mr-2 d-none d-md-none d-lg-block"
+          type="date"
+          id="FoodDeliverySeach"
+          name="FoodDeliverySeach"
+          value={FoodDeliverySeach}
+          onChange={(e) => setFoodDeliverySeach(e.target.value)}
+        ></input>
+        <small className="txt-cap mt-2 d-none d-md-none d-lg-block ">～</small>
+        <input
+          className="mr-2 d-none d-md-none d-lg-block"
+          type="date"
+          id="FoodDeliverySeach1"
+          name="FoodDeliverySeach1"
+          value={FoodDeliverySeach1}
+          onChange={(e) => setFoodDeliverySeach1(e.target.value)}
+        ></input>
+        <button
+          className="btn-green3 ml-2 txt-cap ml-2 d-none d-md-none d-lg-block "
+          onClick={() => getDataFromServer()}
+        >
+          送出
+        </button>
+      </div>
+
+      <div className="mt-2 txt-sub2 mx-auto">
+        <div className="col-4 mx-auto txt-sub2 mt-3 d-block d-lg-none mb-3">
+          輸入查詢區間
+        </div>
+
+        <input
+          className="col-12 d-block  d-lg-none mb-3 "
+          type="date"
+          id="FoodDeliverySeach"
+          name="FoodDeliverySeach"
+          value={FoodDeliverySeach}
+          onChange={(e) => setFoodDeliverySeach(e.target.value)}
+        ></input>
+
+        <input
+          className="col-12 d-block  d-lg-none "
+          type="date"
+          id="FoodDeliverySeach1"
+          name="FoodDeliverySeach1"
+          value={FoodDeliverySeach1}
+          onChange={(e) => setFoodDeliverySeach1(e.target.value)}
+        ></input>
+        <button
+          className="btn-green3 mt-2  d-block d-md-none col-6  mx-auto"
+          onClick={() => getDataFromServer()}
+        >
+          送出
+        </button>
+      </div>
     </>
   )
   return (

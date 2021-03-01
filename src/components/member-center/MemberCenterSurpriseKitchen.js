@@ -39,7 +39,7 @@ function MemberCenterSurpriseKitchen() {
         <div className="mt-4 d-block d-sm-block d-md-none d-lg-none d-xl-none  d-inline">
           admin
         </div>
-        <div className="btn border dropdown-toggle txt-cap1 mr-2 mb-4  col-12 d-block d-sm-block d-md-none d-lg-none d-xl-none ">
+        <div className="btn border dropdown-toggle txt-cap1 mr-2 mb-5 col-12 d-block d-lg-none ">
           回上頁
         </div>
       </div>{' '}
