@@ -119,9 +119,6 @@ function MilestoneInfoBar(props) {
         <div className="col-1"></div>
       </div>
 
-      {/* 留空白 */}
-      <div className="row fff-ms-web" style={{ height: '64px' }} />
-
       {/*手機版個人資料 mobo virsion */}
       <div className="fff-ms-mobo d-flex flex-column">
         {/* 使用者照片、使用者名稱(尚未連接資料庫)*/}

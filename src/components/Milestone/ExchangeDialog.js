@@ -32,8 +32,6 @@ function ExchangeDialog(props) {
 
   const [DBreturn, setDBReturn] = useState({ success: false, msg: 'init' })
 
-  const [returnMsgDialog, setReturnMsgDialog] = useState({ display: 'none' })
-
   // sweet alert集點按鈕
   const swalWithBootstrapButtons = Swal.mixin({
     customClass: {

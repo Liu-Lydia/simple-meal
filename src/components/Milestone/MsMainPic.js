@@ -5,18 +5,12 @@ function MsMainPic() {
     <>
       <div
         className="d-flex justify-content-center align-items-center fff-ms-web"
-        style={{
-          height: '600px',
-          background: 'url("http://localhost:3015/img/fff/Neon.svg")',
-        }}
+        
       >
-        <img src="http://localhost:3015/img/fff/Kumo.svg" alt="" />
+        <img src="http://localhost:3015/img/fff/msMainPic.png" alt="" style={{ maxWidth: '1000px'}} />
 
       </div>
-      <div
-        className="d-flex justify-content-center align-items-center fff-ms-web"
-        style={{ height: '50px' }}
-      >
+      <div>
         <button className="p1-scroll-btn mx-auto d-flex align-items-center">
           &nbsp; scroll
         </button>
