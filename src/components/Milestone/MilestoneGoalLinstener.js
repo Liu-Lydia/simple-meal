@@ -6,9 +6,16 @@ import React, { useState } from 'react'
 //數量不同要檢查是什麼更新 並呈現
 
 
-export default function MilestoneGoalListener(props) {
+function MilestoneGoalListener(props) {
     //決定是否要開始監聽
     const [milestoneListener, setMilestoneLinstener] = useState(false)
 
-    
+
+    return(
+        <>
+        </>
+    )
+
+
 }
+export default MilestoneGoalListener

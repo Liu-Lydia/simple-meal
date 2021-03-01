@@ -10,6 +10,7 @@ import {
 } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 import HeaderIcon from './HeaderIcon'
+import MilestoneGoalListener from './Milestone/MilestoneGoalLinstener'
 
 function Header(props) {
   // { 登入布林值, 設定登入布林值}
@@ -214,7 +215,7 @@ function Header(props) {
           </div>
         </div>
       </div>
-      
+      <MilestoneGoalListener loginBool={loginBool}/>
     </>
   )
 }
