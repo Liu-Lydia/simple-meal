@@ -31,9 +31,9 @@ function ExchangeRecord(props) {
     <>
       <div className="row fff-no-mr-and-pad d-none d-md-flex">
         {/* <!--保留空格 --> */}
-        <div className="col-2 fff-no-mr-and-pad"></div>
+        <div className="col col-sm-2 fff-no-mr-and-pad"></div>
 
-        <div className="col-8 fff-no-mr-and-pad" style={{ height: ' 210px' }}>
+        <div className="col-12 col-sm-8 fff-no-mr-and-pad" style={{ height: ' 210px' }}>
           <div className="row d-flex align-items-center justify-content-around fff-no-mr-and-pad">
             <table id="fff-record-table">
               <tr>
@@ -69,23 +69,23 @@ function ExchangeRecord(props) {
         </div>
 
         {/* <!--保留空格 --> */}
-        <div className="col-2 fff-no-mr-and-pad"></div>
+        <div className="col col-sm-2 fff-no-mr-and-pad"></div>
       </div>
 
       <div className="row fff-no-mr-and-pad d-flex d-md-none">
         {/* <!--保留空格 --> */}
-        <div className="col-2 fff-no-mr-and-pad"></div>
+        <div className="col-1 fff-no-mr-and-pad"></div>
 
-        <div className="col-8 fff-no-mr-and-pad" style={{ height: ' 210px' }}>
+        <div className="col-10 fff-no-mr-and-pad" style={{ height: ' 210px' }}>
           <div className="row d-flex align-items-center justify-content-around fff-no-mr-and-pad">
-            <table id="fff-record-table">
+            <table id="fff-record-table"  align="center">
               {exchangeRecord.map((value, index) => (
-                <div key={index}>
+                <>
                   <tr>
-                    <td rowSpan="4">{index + 1}</td>
-                    <th>兌換項目</th>
-                    <td>{value.good_name}</td>
-                    <td rowSpan="4" className="d-flex align-items-center">
+                    <td rowSpan="4" align="center">{index + 1}</td>
+                    <th align="center">兌換項目</th>
+                    <td align="center">{value.good_name}</td>
+                    <td rowSpan="4" className="d-flex align-items-center" align="center">
                       <div
                         className="record"
                         onClick={() => {
@@ -98,13 +98,13 @@ function ExchangeRecord(props) {
                     </td>
                   </tr>
                   <tr>
-                    <th>兌換日期</th>
+                    <th align="center">兌換日期</th>
 
-                    <td>{value.event_time}</td>
+                    <td align="center">{value.event_time}</td>
                   </tr>
                   <tr>
-                    <th>到期日期</th>
-                    <td>{value.end_date}</td>
+                    <th align="center">到期日期</th>
+                    <td align="center" >{value.end_date}</td>
                   </tr>
                   <tr>
                     {/* <th>使用狀況</th>
@@ -113,17 +113,17 @@ function ExchangeRecord(props) {
                     ) : (
                       <td className="fff-reward-used">已使用</td>
                     )} */}
-                    <th>兌換張數</th>
-                    <td>{value.spend_point / value.need_point}</td>
+                    <th align="center">兌換張數</th>
+                    <td align="center">{value.spend_point / value.need_point}</td>
                   </tr>
-                </div>
+                </>
               ))}
             </table>
           </div>
         </div>
 
         {/* <!--保留空格 --> */}
-        <div className="col-2 fff-no-mr-and-pad"></div>
+        <div className="col-1 fff-no-mr-and-pad"></div>
       </div>
       <QRCodeDialog
         qrcodeStyle={qrcodeStyle}
