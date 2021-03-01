@@ -161,7 +161,6 @@
 
 .fff-reward-pic {
   width: 100px;
-  height: 100px;
   border-radius: 25px;
 }
 /* 僅限一週內查詢，手機12px非手機版都16px */
@@ -226,6 +225,17 @@
   justify-content: center;
 }
 
+.fff-exchange-content-box {
+  margin: auto auto;
+  background-color: white;
+  width: 300px;
+  border-radius: 25px;
+  text-align: left;
+  line-height: 30px;
+  border: 5px #627e2a solid;
+  padding: 36px 35px 35px 35px;
+}
+
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
   .fff-ms-web {
@@ -281,6 +291,7 @@
     justify-content: space-around;
     align-items: center;
     margin: 0;
+    margin-bottom: 20px;
   }
 
   .fff-stone-item-box {
@@ -385,6 +396,17 @@
   .fff-row-height {
     height: 194px;
   }
+
+  .fff-exchange-content-box {
+    margin: auto auto;
+    background-color: white;
+    width: 420px;
+    border-radius: 25px;
+    text-align: left;
+    line-height: 30px;
+    border: 5px #627e2a solid;
+    padding: 36px 70px 70px 70px;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -487,7 +509,7 @@
     margin-right: 30px;
   }
   .fff-reward-pic {
-    width: 80%;
+    width: 150px;
   }
 
   .fff-stone-item-box {
@@ -532,7 +554,7 @@
     margin-right: 30px;
   }
   .fff-reward-pic {
-    width: 80%;
+    width: 150px;
   }
 
   .fff-stone-item-box {
@@ -690,16 +712,7 @@
   margin-bottom: 0;
 }
 
-.fff-exchange-content-box {
-  margin: auto auto;
-  background-color: white;
-  width: 420px;
-  border-radius: 25px;
-  text-align: left;
-  line-height: 30px;
-  border: 5px #627e2a solid;
-  padding: 36px 70px 70px 70px;
-}
+
 
 .fff-exchange-content {
   padding: 0;
