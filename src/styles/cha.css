@@ -521,6 +521,33 @@ margin-left: 46px;
 .cha-rec-select-bar-line2-right{
   right: -65px;
 }
+.cha-rec-select-bar-line2-love {
+  background-color: #707070;
+  height: 10px;
+  bottom: 13px;
+  border-radius: 25px;
+  right: 345px;
+  transition: .5s;
+}
+.cha-rec-select-bar-line2-1{
+  right: 345px;
+}
+.cha-rec-select-bar-line2-2{
+  right: 208px;
+}
+.cha-rec-select-bar-line2-3{
+  right: 70px;
+}
+.cha-rec-select-bar-line2-4{
+  right: -68px;
+}
+.cha-rec-select-bar-line2-5{
+  right: -205px;
+}
+.cha-rec-select-bar-line2-6{
+  right: -343px;
+}
+
 .cha-rec-cards {
   height: 270px;
 }

@@ -31,8 +31,8 @@ function Recipe(props) {
       creadentials: 'include',
     })
       .then((r) => r.json())
-      .then((obj) => {
-        setAllmeal(obj)
+      .then((array) => {
+        setAllmeal(array)
       })
   }
   useEffect(() => {

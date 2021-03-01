@@ -25,11 +25,11 @@ function LoveRecipe(props) {
   // const sid2 = props.meunForRecipe.ingredient_id || '1,2'
   //   const url = `http://localhost:4000/meal/getmealtodelivery?sid=${sid}&ingredient_id=${sid2}`
   function handleGetAllMeal() {
-    const url = `http://localhost:4000/meal/loveall`
+    const url = `http://localhost:4000/meal/${mealType}`
 
     fetch(url, {
       method: 'get',
-      creadentials: 'include',
+      credentials: 'include',
     })
       .then((r) => r.json())
       .then((obj) => {
@@ -41,6 +41,10 @@ function LoveRecipe(props) {
     handleGetAllMeal()
     meunForRecipe.length !== 0 && setSidAndIngredient(meunForRecipe)
   }, [])
+  useEffect(() => {
+    handleGetAllMeal()
+    meunForRecipe.length !== 0 && setSidAndIngredient(meunForRecipe)
+  }, [mealType])
 
   useEffect(() => {
     setBreadCrumbBool(false)
@@ -65,7 +69,7 @@ function LoveRecipe(props) {
             dataLoadingforTittle={dataLoadingforTittle}
             setDataLoadingforTittle={setDataLoadingforTittle}
           />
-          <RecipeSelectTittle />
+          <RecipeSelectTittle setMealType={setMealType} />
           <RecipeCards
             allmeal={allmeal}
             setAllmeal={setAllmeal}

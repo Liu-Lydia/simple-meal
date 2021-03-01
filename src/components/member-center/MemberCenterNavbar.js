@@ -90,7 +90,7 @@ function MemberCenterNavbar() {
                 </div>
                 <li className="mb-3 mt-3">
                   <i className="fas fa-heart mr-1"></i>
-                  <Link to="/meal" className="text-dark">
+                  <Link to="/loverecipe" className="text-dark">
                     我的專屬菜單
                   </Link>
                 </li>
