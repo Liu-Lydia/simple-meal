@@ -1,6 +1,8 @@
 // 引用資料路徑 . 只寫目錄沒寫檔名專案會自動抓index檔名
 // import { data } from '../data/'
 import '../styles/share-recipe.css'
+// import Card from '../components/sharerecipe/Card'
+import ReactDOM from 'react-dom'
 import { Container, Pagination, Col } from 'react-bootstrap'
 import { useState, useEffect } from 'react'
 import { BrowserRouter as Link, NavLink } from 'react-router-dom'
@@ -137,7 +139,7 @@ function Sharerecipe(props) {
     <>
       <div className="container">
         <div className="row col offset-1 col-10 mt-1 mb-1 xxx-m0p0">
-          <h4 className="col-green ">分享食譜</h4>
+          <h4 className="col-green ">共享食譜</h4>
           <div className="ml-auto ">
             {/* 文字輸入框是表單元素 . 表單元素要讓react控管要兩個條件1.value必須對應到狀態值2.onChange要對應到設定狀態.且有固定寫法如下*/}
             食譜搜尋：
@@ -155,6 +157,9 @@ function Sharerecipe(props) {
       </div>
       {/* 載入中顯示spinner . 載入完顯示display */}
       {isLoading ? spinner : display}
+
+      {/* test */}
+      {/* <Card /> */}
     </>
   )
 }
