@@ -602,3 +602,9 @@ height: 61px;
   height: 100%;
 }
 
+/* 共享食譜 */
+/* 滑鼠變成touch圖案 */
+.xxx-mouse{
+  cursor:pointer;
+}
+

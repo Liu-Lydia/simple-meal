@@ -105,7 +105,7 @@ function Sharerecipe(props) {
                     props.history.push('/myrecipepage/' + v.id)
                   }}
                   src={v.pic}
-                  className="card-img-top xxx-img xxx-br25 xxx-m85"
+                  className="card-img-top xxx-img xxx-br25 xxx-m85 xxx-mouse"
                   alt="..."
                 />
               </div>
