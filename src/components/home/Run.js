@@ -19,6 +19,7 @@ export default class Run extends React.Component {
           { x: 300, y: 0 },
           { x: 450, y: 150 },
           { x: 600, y: 0 },
+          { x: 750, y: 150 },
         ],
       },
       repeat: -1,

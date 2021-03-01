@@ -21,7 +21,7 @@ export const pathnameList = [
   '/meal',
   //食譜
   '/recipe',
-  // 分享食譜
+  // 共享食譜
   '/sharerecipe',
   // 關於我們
   '/aboutus',
@@ -48,8 +48,8 @@ export const pathnameTextList = [
   '/菜單介紹',
   //食譜
   '/食譜',
-  // 分享食譜
-  '/分享食譜',
+  // 共享食譜
+  '/共享食譜',
   // 關於我們
   '/關於我們',
   // 會員中心 / 我的食譜

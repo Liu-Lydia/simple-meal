@@ -69,7 +69,7 @@ function RecipeStep(props) {
             </div>
             <div className="col-6 cha-step-mid my-auto cha-text cha-green">
               {/* <p>{test[0]}</p> */}
-              <p>{a[b]}</p>
+              <p className="txt-sub1">{a[b]}</p>
             </div>
           </div>
           <div className="col cha-step-bottom d-flex justify-content-between ">

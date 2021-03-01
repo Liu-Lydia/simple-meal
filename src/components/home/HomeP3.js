@@ -159,18 +159,16 @@ function HomeP3() {
                   <div className="p3-simg-div ml-auto mr-auto">
                     <img
                       onClick={() => {
-                        setP3src(
-                          'http://localhost:3015/img/index/index-p3-simg4.png'
-                        )
+                        setP3src('http://localhost:3015/img/index/china03.png')
                       }}
                       className="img-size"
-                      src="http://localhost:3015/img/index/index-p3-simg4.png"
+                      src="http://localhost:3015/img/index/china03.png"
                       alt=""
                     />
                   </div>
                   <br />
                   <p className="xxx-txt-cap col-green text-center ml-auto mr-auto p3-name mb-1 txt-body">
-                    羅勒培根奶焗飯
+                    鮮鱸魚醬油炒麵
                   </p>
                   <div className="col-green text-center mb-2">
                     <i className="fas fa-star"></i>
@@ -181,8 +179,8 @@ function HomeP3() {
                   </div>
                   <div className="col-green p3-timesize txt-body">
                     <i className="far fa-clock col-green"></i>&nbsp;
-                    30分鐘&nbsp;
-                    <i className="fas fa-tag col-green"></i>&nbsp;義式料理
+                    35分鐘&nbsp;
+                    <i className="fas fa-tag col-green"></i>&nbsp;中式料理
                   </div>
                 </div>
                 <div className="col">
