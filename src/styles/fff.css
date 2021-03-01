@@ -119,8 +119,10 @@
   align-items: center;
   margin-top: 125px !important;
 }
+
+/* 獎勵項目圖片 */
 .fff-mobo-reward-pic {
-  max-width: 160px;
+  height: 140px;
 }
 
 .fff-svg-painting {
@@ -172,6 +174,7 @@
   letter-spacing: 0.29px;
   text-decoration: none;
   color: #b9433b;
+  margin-bottom: 10px;
 }
 
 .fff-handmadepopup-content {
@@ -335,6 +338,7 @@
     letter-spacing: 0.29px;
     text-decoration: none;
     color: #b9433b;
+    margin-bottom: 30px;
   }
 
   .fff-handmadepopup-content {
@@ -630,6 +634,8 @@
 #fff-record-table {
   width: 100%;
   text-align: center;
+  margin-left:auto; 
+  margin-right:auto;
 }
 
 #fff-record-table div {

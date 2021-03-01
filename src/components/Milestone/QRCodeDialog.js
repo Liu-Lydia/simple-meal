@@ -53,14 +53,14 @@ function QRCodeDialog(props) {
             </div>
             <div className="txt-btn text-center">可使用</div> */}
             {coupon.map((value, index) => (
-              <div key={index}>
-                <div >
+              <div key={index} style={{marginBottom:'20px'}}>
+                <div className="row justify-content-center" >
                   <QRCode value={value.discount_code} />
                 </div>
                 {value.used_date == null ? (
-                  <div className="fff-reward-unuse">可使用</div>
+                  <div className="row justify-content-center fff-reward-unuse">可使用</div>
                 ) : (
-                    <div className="fff-reward-used">已使用</div>
+                    <div className="row justify-content-center fff-reward-used">已使用</div>
                   )}
               </div>
             ))}

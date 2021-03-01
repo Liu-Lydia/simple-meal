@@ -6,7 +6,7 @@ import ExchangeDialog from './ExchangeDialog'
 
 function ExchangeGoodsList2(props) {
   // getPoint={getPoint} totalPoint={totalPoint}
-  const { getPoint, totalPoint } = props
+  const {getPoint,totalPoint} = props
 
   //兌換項目清單
   const [goodList, setGoodList] = useState([])
@@ -60,7 +60,7 @@ function ExchangeGoodsList2(props) {
           <div className="row fff-no-mr-and-pad d-flex align-items-center justify-content-space-between ">
             {goodList.map((value, index) => (
               <div
-                className="col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center"
+                className="fff-no-mr-and-pad col-6 col-xl-3 col-lg-3 col-md-4 col-sm-6 d-flex justify-content-center"
                 key={index}
                 onClick={() => {
                   //開啟視窗
@@ -69,7 +69,7 @@ function ExchangeGoodsList2(props) {
                   setDetailContext(value)
                 }}
               >
-                <div className="exchange">
+                <div className="row justify-content-center  flex-column">
                   <img
                     className="fff-reward-pic"
                     src={
@@ -99,7 +99,7 @@ function ExchangeGoodsList2(props) {
         detailContext={detailContext}
         setCount={setCount}
         count={count}
-        getPoint={getPoint}
+        getPoint={getPoint} 
         totalPoint={totalPoint}
       />
     </>

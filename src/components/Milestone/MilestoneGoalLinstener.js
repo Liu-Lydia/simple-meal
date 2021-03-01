@@ -46,6 +46,8 @@ function MilestoneGoalListener(props) {
         .then((obj) => {
           if (obj.id == userID) {
             //確認還是同一人
+            console.log("新成就數量",obj.result.length,obj)
+            console.log("舊成就數量",milestoneGoalList.length,milestoneGoalList,userID)
             if (milestoneGoalList.length != obj.result.length) {
               //如果成就數量不同
               //一對一比較
@@ -108,7 +110,6 @@ function MilestoneGoalListener(props) {
     if (loginBool && !milestoneListener) {
       getGoalMilestone()
 
-      console.log('登入 取得目前成就')
     }
   }, [loginBool, milestoneListener])
 
@@ -117,6 +118,11 @@ function MilestoneGoalListener(props) {
     console.log('成就更新')
     isNewMilestoneGoal()
   })
+
+  useEffect(() => {
+    console.log('成就更新-props')
+    isNewMilestoneGoal()
+  }, [props])
 
   return <>{props.children}</>
 }
