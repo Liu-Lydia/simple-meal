@@ -216,7 +216,7 @@ function Header(props) {
           </div>
         </div>
       </div>
-      <MilestoneGoalListener loginBool={loginBool} />
+      {/* <MilestoneGoalListener loginBool={loginBool} /> */}
     </>
   )
 }
