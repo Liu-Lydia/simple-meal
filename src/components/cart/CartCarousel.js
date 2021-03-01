@@ -152,9 +152,27 @@ function CartCarousel(props) {
                   <div className="poe-carousel-card-body">
                     <h5 className="card-title text-center">{v.product_name}</h5>
                     <p className="text-center">{v.introduction}</p>
+                    <div class="w-100 text-center poe-green">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <div className="w-100 txt-cap d-flex justify-content-between px-5">
+                      <div className="text-left">
+                        <i className="far fa-clock pr-2 poe-green"></i>
+                        <span className="">{v.cooktime}</span>
+                      </div>
+                      <div className="text-right">
+                        <i className="fas fa-tag pr-2 poe-green"></i>
+                        <span className="">{v.category_name}</span>
+                      </div>
+                    </div>
+
                     <dir className="w-100 d-flex justify-content-end">
                       <button
-                        className="select-btn-green mx-auto"
+                        className="select-btn-green mx-auto mt-3"
                         onClick={() => {
                           handleGetMealToDelivery(v.sid)
                         }}
