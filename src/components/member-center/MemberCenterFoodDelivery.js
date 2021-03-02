@@ -36,8 +36,8 @@ function MemberCenterFoodDelivery() {
   }, [])
   const text = (
     <>
-      <div className="h3 ee d-none d-xl-block mb-3 ml-3 mt-3">配送餐點</div>
-      <div className="mt-5 h3 ee col-12 text-center  d-block d-xl-none">
+      <div className="h4 ee d-none d-xl-block mb-3 ml-3 mt-3">配送餐點</div>
+      <div className="mt-5 h4 ee col-12 text-center  d-block d-xl-none">
         配送餐點
       </div>
       <div className="d-flex offset-3 mb-2 ">

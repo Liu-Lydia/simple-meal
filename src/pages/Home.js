@@ -89,13 +89,27 @@ function Home(props) {
                 alt=""
               />
             </div>
+            <div className="p1-img-div d-none d-xl-block">
+              <img
+                className="img-size"
+                src="http://localhost:3015/img/index/american02.png"
+                alt=""
+              />
+            </div>
+            <div className="p1-img-div d-none d-xl-block">
+              <img
+                className="img-size"
+                src="http://localhost:3015/img/index/china01.png"
+                alt=""
+              />
+            </div>
             <div className="xxx-miss">
               <NavLink
                 to="/Milestone"
                 className="btn-meun-big-gray d-flex txt-btn p1-right-but ml-auto"
               >
-                <div className="btn-meun-big-gray2">
-                  <i className="fas fa-medal"></i>
+                <div className="btn-meun-big-gray2 lll-pt5">
+                  <i className="fas fa-medal lll-icon-size"></i>
                 </div>
                 立即獲取優惠
               </NavLink>
@@ -108,7 +122,7 @@ function Home(props) {
                 &nbsp;Prev
               </button>
               <div className="p1-change-line"></div>
-              <div className="p1-change"></div>
+              {/* <div className="p1-change"></div> */}
               <button className="col-gray p1-but-change2">
                 Next &nbsp;{' '}
                 <i className="fas fa-chevron-circle-right col-black"></i>

@@ -60,52 +60,52 @@ function MealMeun(props) {
         </Link>
         <ul className="txt-sub2 cha-meun-li text-center">
           <li className="">
-            <Link
-              className="cha-meun-txt1 cha-gray"
+            <button
+              className="cha-button cha-meun-txt1 cha-gray"
               onClick={() => setType('all')}
             >
               所有餐點
-            </Link>
+            </button>
           </li>
           <li className="">
-            <Link
-              className="cha-meun-txt1 cha-gray"
+            <button
+              className="cha-button cha-meun-txt1 cha-gray"
               onClick={() => setType('typeE')}
             >
               素食專區
-            </Link>
+            </button>
           </li>
           <li className=" ">
-            <Link
-              className="cha-meun-txt1 cha-gray"
+            <button
+              className="cha-button cha-meun-txt1 cha-gray"
               onClick={() => setType('typeB')}
             >
               中式料理
-            </Link>
+            </button>
           </li>
           <li className="">
-            <Link
-              className="cha-meun-txt1 cha-gray"
+            <button
+              className="cha-button cha-meun-txt1 cha-gray"
               onClick={() => setType('typeA')}
             >
               美式料理
-            </Link>
+            </button>
           </li>
           <li className=" ">
-            <Link
-              className="cha-meun-txt1 cha-gray"
+            <button
+              className="cha-button cha-meun-txt1 cha-gray"
               onClick={() => setType('typeC')}
             >
               法式料理
-            </Link>
+            </button>
           </li>
           <li className=" ">
-            <Link
-              className="cha-meun-txt1 cha-gray"
+            <button
+              className="cha-button cha-meun-txt1 cha-gray"
               onClick={() => setType('typeD')}
             >
               義式料理
-            </Link>
+            </button>
           </li>
         </ul>
         <div className="cha-meun-input">

@@ -1608,3 +1608,12 @@ width: 80px;
   width: 100%;
   height: 4px;
 }
+
+/* 加立欣的icon大小 */
+.lll-icon-size{
+font-size: 24px;
+}
+
+.lll-pt5{
+  padding-top: 5px;
+}
