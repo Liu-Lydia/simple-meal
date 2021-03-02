@@ -26,10 +26,10 @@ function RecipeTittle(props) {
   const [tittle, setTittle] = useState('testa')
   //設定標籤頁class
   const [tittleStyleOne, setTittleStyleOne] = useState(
-    'col-3 cha-rec-sel1-active'
+    'cha-button col-3 cha-rec-sel1-active'
   )
-  const [tittleStyleTwo, setTittleStyleTwo] = useState('col-3 cha-rec-sel1')
-  const [tittleStyleThree, setTittleStyleThree] = useState('col-3 cha-rec-sel1')
+  const [tittleStyleTwo, setTittleStyleTwo] = useState('cha-button col-3 cha-rec-sel1')
+  const [tittleStyleThree, setTittleStyleThree] = useState('cha-button col-3 cha-rec-sel1')
 
   //選擇營養成分,使用器具,食材清單
   const history = useHistory()
@@ -138,18 +138,18 @@ function RecipeTittle(props) {
         </div>
         <div className="cha-rec-txt-down px-0 col-12 col-lg-7">
           <div className="d-flex justify-content-between txt-btn">
-            <Link
+            <button
               className={tittleStyleOne}
               onClick={() => {
                 setTittle('testa')
-                setTittleStyleOne('col-3 cha-rec-sel1-active')
-                setTittleStyleTwo('col-3 cha-rec-sel1')
-                setTittleStyleThree('col-3 cha-rec-sel1')
+                setTittleStyleOne('cha-button col-3 cha-rec-sel1-active')
+                setTittleStyleTwo('cha-button col-3 cha-rec-sel1')
+                setTittleStyleThree('cha-button col-3 cha-rec-sel1')
               }}
             >
               營養成分
-            </Link>
-            <Link
+            </button>
+            <button
               className={tittleStyleTwo}
               onClick={() => {
                 setTittle('testb')
@@ -159,8 +159,8 @@ function RecipeTittle(props) {
               }}
             >
               使用器具
-            </Link>
-            <Link
+            </button>
+            <button
               className={tittleStyleThree}
               onClick={() => {
                 setTittle('testc')
@@ -170,7 +170,7 @@ function RecipeTittle(props) {
               }}
             >
               食材清單
-            </Link>
+            </button>
           </div>
           <div className="lll-bookmark-line"></div>
           <div className="cha-rec-sel-box  txt-body cha-gray" id="scroll">
@@ -185,8 +185,8 @@ function RecipeTittle(props) {
             >
               加入訂單
             </Link>
-            <Link
-              className="btn-white txt-btn cha-rec-btn-bye"
+            <button
+              className="cha-button btn-white txt-btn cha-rec-btn-bye"
               onClick={() => {
                 setRecipeStepDisplay({
                   visibility: 'visible',
@@ -196,7 +196,7 @@ function RecipeTittle(props) {
               }}
             >
               查看食譜步驟
-            </Link>
+            </button>
           </div>
         </div>
       </div>

@@ -169,7 +169,7 @@ function MealTittle(props) {
                 </span>
               </div>
               <div className=" cha-main-icon-sub3">
-                <Link
+                <button className="cha-button"
                   onClick={() => {
                     addlove(props.data.sid)
                   }}
@@ -183,22 +183,22 @@ function MealTittle(props) {
                   ></i>
 
                   <span className="cha-gray txt-sub1">加入收藏</span>
-                </Link>
+                </button>
               </div>
             </div>
             <div>
-              <Link
-                className="cha-btn-cart btn-green txt-btn cha-mr5"
+              <botton
+                className="cha-button cha-btn-cart btn-green txt-btn cha-mr5"
                 onClick={() => handleGetMealToDelivery(props.data.sid)}
               >
                 加入訂單
-              </Link>
+              </botton>
               <Link
                 to="/recipe"
                 onClick={() =>
                   setMealForRecipe([props.data.sid, props.data.ingredient_id])
                 }
-                className="cha-btn-recipe txt-btn cha-rec-btn-bye btn-white"
+                className=" cha-btn-recipe txt-btn cha-rec-btn-bye btn-white"
               >
                 查看食譜
               </Link>

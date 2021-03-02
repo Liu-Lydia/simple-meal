@@ -45,7 +45,7 @@ function RecipeStep(props) {
           <div className="col cha-step-top d-flex justify-content-between">
             <h6 className=" cha-gray">step {pageButton}</h6>
             <div>
-              <Link
+              <button className="cha-button"
                 onClick={() => {
                   setRecipeStepDisplay({
                     visibility: 'hidden',
@@ -55,7 +55,7 @@ function RecipeStep(props) {
                 }}
               >
                 <i class="fas fa-times"></i>
-              </Link>
+              </button>
             </div>
           </div>
           <div className="col cha-step-mid d-flex ">
@@ -73,22 +73,22 @@ function RecipeStep(props) {
             </div>
           </div>
           <div className="col cha-step-bottom d-flex justify-content-between ">
-            <Link
-              className=" cha-step-left-bottom my-auto txt-body"
+            <button
+              className="cha-button cha-step-left-bottom my-auto txt-body"
               onClick={() => {
                 setPageButton(pageButton > 1 ? pageButton - 1 : 1)
               }}
             >
               Prev step
-            </Link>
-            <Link
-              className=" cha-step-right-bottom my-auto txt-body"
+            </button>
+            <button
+              className="cha-button cha-step-right-bottom my-auto txt-body"
               onClick={() => {
                 setPageButton(pageButton < 7 ? pageButton + 1 : 7)
               }}
             >
               Next step
-            </Link>
+            </button>
           </div>
         </div>
       </div>
