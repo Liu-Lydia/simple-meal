@@ -52,8 +52,8 @@ function HomeP3() {
               <div className="col-12 d-flex justify-content-center poe-mb30 txt-btn poe-cart-progress">
                 <div className="col-12">
                   <div className="w-100 d-flex justify-content-center text-center mb-1">
-                    <div className="col-5 col-md-2">選擇方案</div>
-                    <div className="col-5 col-md-2">付款方式</div>
+                    <div className="col-5 col-md-2">熱門餐點</div>
+                    <div className="col-5 col-md-2">最新餐點</div>
                   </div>
                   <div className="w-100 d-flex justify-content-center align-items-center poe-cart-progress-line">
                     <div className="col-5 col-md-2 poe-cart-progress-active"></div>
