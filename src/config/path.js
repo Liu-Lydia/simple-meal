@@ -17,7 +17,7 @@ export const pathnameList = [
   '/RewardExchange',
   // 會員中心
   '/MemberCenter',
-  //會員中/個人資訊
+  // 會員中/個人資訊
   '/MemberCenter/info',
   '/MemberCenter/addr',
   '/MemberCenter/PasswordChange',
@@ -27,8 +27,10 @@ export const pathnameList = [
   '/MemberCenter/FoodDelivery',
   // 商品
   '/meal',
-  //食譜
+  // 食譜
   '/recipe',
+  //我的專屬菜單
+  '/loverecipe',
   // 共享食譜
   '/sharerecipe',
   // 夥伴介紹
@@ -63,6 +65,8 @@ export const pathnameTextList = [
   '/菜單介紹',
   //食譜
   '/食譜',
+  //我的專屬菜單
+  '/我的專屬菜單',
   // 共享食譜
   '/共享食譜',
   // 夥伴介紹

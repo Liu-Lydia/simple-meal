@@ -75,8 +75,9 @@ function MilestoneInfoBar(props) {
           </div>
           {/* 集點方式按鈕 */}
           <div className="">
+            {/* Lydia到此一遊, 改了按鈕字大小 */}
             <div
-              className="fff-btn-white fff-txt-btn howToGetPoints"
+              className="fff-btn-white txt-btn howToGetPoints"
               onClick={() => {
                 swalWithBootstrapButtons.fire({
                   // icon: 'success',
@@ -103,7 +104,8 @@ function MilestoneInfoBar(props) {
           </div>
           {/* 在成就清單以及兌換獎勵區切換的按鈕 */}
           <Nav.Link
-            className="fff-btn-white fff-txt-btn justify-content-center"
+            // Lydia到此一遊, 改了按鈕字大小
+            className="fff-btn-white txt-btn justify-content-center"
             as={NavLink}
             to={href}
             style={{
