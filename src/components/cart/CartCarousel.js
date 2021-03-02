@@ -105,16 +105,16 @@ function CartCarousel(props) {
   // 自動移動迴圈
   // 當timeOutBool有任何改變, 先把它設為false, 由於非同步可繼續判斷if
   // 當timeOutBool為true, 3秒後移動卡片並setTimeOutBool(true), 藉此來重新觸發useEffect迴圈
-  // useEffect(() => {
-  //   // console.log(timeOutBool, order)
-  //   setTimeOutBool(false)
-  //   if (timeOutBool) {
-  //     setTimeout(() => {
-  //       handleAutoDirection()
-  //       setTimeOutBool(true)
-  //     }, 5000)
-  //   }
-  // }, [timeOutBool])
+  useEffect(() => {
+    // console.log(timeOutBool, order)
+    setTimeOutBool(false)
+    if (timeOutBool) {
+      setTimeout(() => {
+        handleAutoDirection()
+        setTimeOutBool(true)
+      }, 5000)
+    }
+  }, [timeOutBool])
 
   return (
     <>
@@ -170,16 +170,6 @@ function CartCarousel(props) {
                         <span className="">{v.category_name}</span>
                       </span>
                     </div>
-                    {/* <div className="txt-cap d-flex justify-content-between px-5 text-nowrap">
-                      <div className="col-6 text-left">
-                        <i className="far fa-clock pr-2 poe-green"></i>
-                        <span className="">{v.cooktime}</span>
-                      </div>
-                      <div className="col-6 text-right">
-                        <i className="fas fa-tag pr-2 poe-green"></i>
-                        <span className="">{v.category_name}</span>
-                      </div>
-                    </div> */}
 
                     <dir className="w-100 d-flex justify-content-end">
                       <button
