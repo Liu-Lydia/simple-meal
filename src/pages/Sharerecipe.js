@@ -112,7 +112,7 @@ function Sharerecipe(props) {
               <div className="card-body">
                 <h5 className="card-title">{v.name}</h5>
                 <p className="card-text">{v.introduction}</p>
-                <div className="text-right">
+                <div className="text-right txt-btn">
                   <i className="far fa-clock col-green"></i>&nbsp; {v.cooktime}
                   分鐘
                 </div>
@@ -146,7 +146,7 @@ function Sharerecipe(props) {
       <div className="container">
         <div className="row col offset-1 col-10 mt-1 mb-1 xxx-m0p0">
           <h4 className="col-green ">共享食譜</h4>
-          <div className="ml-auto ">
+          <div className="ml-auto txt-btn">
             {/* 文字輸入框是表單元素 . 表單元素要讓react控管要兩個條件1.value必須對應到狀態值2.onChange要對應到設定狀態.且有固定寫法如下*/}
             食譜搜尋：
             <input
@@ -157,7 +157,9 @@ function Sharerecipe(props) {
                 setSearchInput(e.target.value)
               }}
             />
-            <button className="xxx-sr-foodsearch xxx-mb-10">食材搜尋</button>
+            <button className="xxx-sr-foodsearch xxx-mb-10 lll-grey">{/*Lydia到此一遊*/}
+              食材搜尋
+            </button>
           </div>
         </div>
       </div>
