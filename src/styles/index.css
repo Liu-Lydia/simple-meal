@@ -640,4 +640,36 @@ height: 61px;
 .xxx-mouse{
   cursor:pointer;
 }
-
+/* 簡介限制3行多的... */
+.ellipsis {
+overflow:hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+white-space: normal;
+}
+/* 限制卡片高度和時間位置關係 */
+.xxx-srbox{
+  position: relative; 
+  height: 430px;
+}
+/* 卡片右下角時間貼底 */
+.xxx-boxbt{
+  position: absolute; 
+    bottom: 0; 
+    right:0;
+    margin-bottom: 15px;
+    margin-right: 20px;
+}
+/* 食譜名一行限制 */
+.ellipsis1 {
+overflow:hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 1;
+-webkit-box-orient: vertical;
+white-space: normal;
+}
