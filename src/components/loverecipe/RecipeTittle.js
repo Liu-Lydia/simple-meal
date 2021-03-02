@@ -75,6 +75,7 @@ function RecipeTittle(props) {
           padding: '25px',
           showCancelButton: true,
           cancelButtonText: '確定',
+          backdrop: `rgba(0,0,0,.5)`,
         })
       })
     // .then(() => alert('以加入購物車'))

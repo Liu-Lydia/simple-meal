@@ -92,7 +92,7 @@ function MealTittle(props) {
           padding: '25px',
           showCancelButton: true,
           cancelButtonText: '確定',
-          backdrop: `rgba(255, 255, 255, 0.5)`,
+          backdrop: `rgba(0,0,0,.5)`,
         })
       })
 
@@ -115,7 +115,7 @@ function MealTittle(props) {
           padding: '25px',
           showCancelButton: true,
           cancelButtonText: '確定',
-          backdrop: `rgba(255, 255, 255, 0.5)`,
+          backdrop: `rgba(0,0,0,.5)`,
         })
       })
   }
