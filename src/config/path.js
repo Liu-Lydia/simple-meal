@@ -16,7 +16,7 @@ export const pathnameList = [
   '/Milestone',
   '/RewardExchange',
   // 會員中心
-  '/MemberCenter',
+  '/MemberCenter/Index',
   //會員中/個人資訊
   '/MemberCenter/info',
   '/MemberCenter/addr',
