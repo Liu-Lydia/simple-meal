@@ -36,20 +36,6 @@ function Home(props) {
                   alt=""
                 />
               </div>
-              <div className="p1-img-div d-block d-sm-none col-12">
-                <img
-                  className="img-size"
-                  src="http://localhost:3015/img/index/american02.png"
-                  alt=""
-                />
-              </div>
-              <div className="p1-img-div d-block d-sm-none col-12">
-                <img
-                  className="img-size"
-                  src="http://localhost:3015/img/index/china01.png"
-                  alt=""
-                />
-              </div>
               <NavLink to="/meal" className="btn-green txt-sub1 xxx-xscenter">
                 開始訂製
               </NavLink>
@@ -122,7 +108,7 @@ function Home(props) {
                 to="/Milestone"
                 className="btn-meun-big-gray d-flex txt-btn p1-right-but ml-auto"
               >
-                <div className="btn-meun-big-gray2">
+                <div className="btn-meun-big-gray2 lll-pt5">
                   <i className="fas fa-medal lll-icon-size"></i>
                 </div>
                 立即獲取優惠

@@ -202,6 +202,7 @@
     width: 318px;
     height: 281px;
     margin-top: 20px;
+    position: relative;
   }
   .p1-line {
     position: absolute;
@@ -215,41 +216,8 @@
     max-width: 620px;
     max-height: 614.44px;
     padding: 0px;
-    position: absolute;
-    top: 50px;
-    opacity: 0;
-    filter: alpha(opacity=0);
-    animation: round 15s linear infinite;
   }
-
-  @keyframes round {
-    6% {
-        opacity: 1;
-        filter: alpha(opacity=100);
-        /* 0 - 1秒 淡入*/
-    }
-    30% {
-        opacity: 1;
-        filter: alpha(opacity=100);
-        /* 1- 5秒靜止*/
-    }
-    36% {
-        opacity: 0;
-        filter: alpha(opacity=0);
-        /* 5-6秒淡出*/
-    }
-}
-.p1-img-div:nth-child(5) {
-          animation-delay: 0s;
-}
-
-.p1-img-div:nth-child(4) {
-          animation-delay: 5s;
-}
-
-.p1-img-div:nth-child(3) {
-          animation-delay: 10s;
-}
+ 
   .xxx-xscenter {
     margin-left: 85px;
     margin-top: 25px;

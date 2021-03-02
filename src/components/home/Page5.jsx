@@ -93,7 +93,7 @@ export default function Page5({ isMobile }) {
                     &nbsp;Prev
                   </button>
                   <div className="p1-change-line"></div>
-                  <div className="p1-change"></div>
+                  {/* <div className="p1-change"></div> */}
                   <button className="col-gray p5-but-change2">
                     Next &nbsp;
                     <i className="fas fa-chevron-circle-right col-black"></i>
