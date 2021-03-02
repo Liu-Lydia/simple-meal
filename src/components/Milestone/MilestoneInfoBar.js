@@ -95,7 +95,7 @@ function MilestoneInfoBar(props) {
                   // showDenyButton: true,
                   denyButtonText: '前往購物車',
                   // showCloseButton: true,
-                  backdrop: `rgba(255,255,255,.5)`,
+                  backdrop: `rgba(0,0,0,.5)`,
                 })
               }}
             >

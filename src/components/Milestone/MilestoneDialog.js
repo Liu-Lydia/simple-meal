@@ -8,7 +8,7 @@ function MilestoneDialog(props) {
       <div
         id="fff-ms-detail-content"
         className="fff-ms-detail-content"
-        onClick={() => {
+        onMouseLeave={() => {
           props.setDetailStyle({ visibility: 'hidden' })
         }}
       >

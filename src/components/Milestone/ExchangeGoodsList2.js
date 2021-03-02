@@ -3,10 +3,11 @@ import '../../styles/public.css'
 import '../../styles/fff.css'
 //對話框
 import ExchangeDialog from './ExchangeDialog'
+import 'animate.css'
 
 function ExchangeGoodsList2(props) {
   // getPoint={getPoint} totalPoint={totalPoint}
-  const {getPoint,totalPoint} = props
+  const { getPoint, totalPoint } = props
 
   //兌換項目清單
   const [goodList, setGoodList] = useState([])
@@ -69,7 +70,7 @@ function ExchangeGoodsList2(props) {
                   setDetailContext(value)
                 }}
               >
-                <div className="row justify-content-center  flex-column">
+                <div className="row justify-content-center flex-column animate__animated animate__bounce">
                   <img
                     className="fff-reward-pic"
                     src={
@@ -99,7 +100,7 @@ function ExchangeGoodsList2(props) {
         detailContext={detailContext}
         setCount={setCount}
         count={count}
-        getPoint={getPoint} 
+        getPoint={getPoint}
         totalPoint={totalPoint}
       />
     </>
