@@ -172,6 +172,7 @@ function RecipeTittle(props) {
               食材清單
             </Link>
           </div>
+          <div className="lll-bookmark-line"></div>
           <div className="cha-rec-sel-box  txt-body cha-gray" id="scroll">
             {selected()}
           </div>

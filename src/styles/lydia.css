@@ -1043,7 +1043,7 @@ width: 80px;
 .lll-sticky {
   position: fixed;
   top: 0;
-  right: 237px;
+  right: 235px;
 }
 
 /*Lemon圖*/
@@ -1600,4 +1600,11 @@ width: 80px;
 
 .lll-comment-msg-width{
   width: 536px;
+}
+
+/* 加晉誠的margin-top */
+.lll-bookmark-line{
+  background-color: #a2a3a5;
+  width: 100%;
+  height: 4px;
 }
