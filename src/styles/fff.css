@@ -451,9 +451,23 @@
     display: inline-block;
   }
 
+  .fff-btn-white:hover {
+    background-color: white;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 50px;
+    color: #a2a3a5;
+    border: 1px #a2a3a5 solid;
+    display: inline-block;
+    transition: 0.4s; /*Lydia到此一遊*/
+  }
+
   .fff-stone-item-box {
     margin-bottom: 20px;
     max-width: 150px;
+    cursor: pointer; /*Lydia到此一遊*/
   }
 
   .fff-svg-painting {
@@ -559,6 +573,7 @@
   }
   .fff-reward-pic {
     width: 150px;
+    cursor: pointer; /*Lydia到此一遊*/
   }
 
   .fff-stone-item-box {
@@ -610,6 +625,7 @@
   font-family: GenSenRounded TW;
   text-decoration: none !important;
   color: #434341;
+  cursor: pointer;
 }
 
 /* 選單選到的橫桿 */
@@ -629,6 +645,7 @@
 .fff-stone-item-forword {
   color: #627e2a;
   font-size: 35px;
+  cursor: pointer; /*Lydia到此一遊*/
 }
 
 #fff-record-table {
