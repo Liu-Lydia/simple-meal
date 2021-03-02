@@ -170,9 +170,9 @@ function MyRecipe(props) {
       <div className="container">
         <div className="row ml-2">
           <MemberCenterNavbar />
-          <div className="col-md-12 col-lg-12 col-sm-12 col-xl-8  col-12">
-            <div className="col-md-8 col-lg-8 col-xl-8 col-sm-8 col-10 mx-auto ">
-              <h4 className="col-green">我的食譜</h4>
+          <div className="col-12 col-lg-8  mx-auto ">
+            <div className="col-12 col-sm-10  col-md-10 col-lg-12 col-xl-7 mx-md-auto mx-lg-0 ">
+              <div className="h4 ee mt-3 ">我的食譜</div>
               {dataLoading ? loading : display}
             </div>
           </div>

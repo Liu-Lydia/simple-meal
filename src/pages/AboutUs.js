@@ -154,7 +154,7 @@ function GoogleMapDemo() {
                         handleCompleted(item.id)
                       }}
                     />
-                    &nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;
                     {/* 用三元表達式改寫 */}
                     {item.text}
                     {/* {item.completed ? <del>{item.text}</del> : item.text} */}

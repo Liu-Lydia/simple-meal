@@ -108,7 +108,7 @@ function MemberCenterAddr() {
           <MemberCenterNavbar />
           <div className="col-12 col-lg-8  mx-auto ">
             <div className="col-12 col-sm-10  col-md-10 col-lg-12 col-xl-7 mx-md-auto mx-lg-0">
-              <div className="mb-5 mt-3  h3 text-center text-xl-left ee">
+              <div className="mb-5 mt-3  h4 text-center text-xl-left ee">
                 信用卡
               </div>
               <div
