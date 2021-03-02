@@ -31,7 +31,7 @@ function SurpriseRule(props) {
   //滾動到一定位置定住menu　↓↓↓
   useEffect(() => {
     const menu = document.getElementById('menuScroll')
-    const sticky = 2962
+    const sticky = 2948
 
     const scrollCallBack = window.addEventListener('scroll', () => {
       if (window.pageYOffset > sticky) {
@@ -81,6 +81,7 @@ function SurpriseRule(props) {
   }
   //這寫法頗愚蠢, 捲至區塊 ↑↑↑
 
+  //地理位置跟如何到達切換　↓↓↓
   const [inUseLineBarStyle, setInuseLineBarStyle] = useState([
     'lll-barwidth fff-no-mr-and-pad',
     'lll-barwidth fff-no-mr-and-pad lll-rw-select-active',
@@ -114,6 +115,7 @@ function SurpriseRule(props) {
     setInuseLineBarStyle(lineBarClassArray[props.optionTab])
     setInUseTabStyle(tabClassArray[props.optionTab])
   }, [props.optionTab])
+  //地理位置跟如何到達切換 ↑↑↑
 
   return (
     <>
@@ -205,7 +207,7 @@ function SurpriseRule(props) {
           >
             {/* 吃屬性值 inuseTabStyle */}
             {/* 利用設定父層屬性去修改父層要顯示的components */}
-            <p className="lll-pr30">地理位置</p>
+            <p className="lll-pr30">如何到達</p>
           </a>
           <a
             className={inUseTabStyle[1]}
@@ -213,7 +215,7 @@ function SurpriseRule(props) {
               props.setOptionTab(1)
             }}
           >
-            <p className="">如何到達</p>
+            <p className="">地理位置</p>
             &nbsp;
           </a>
         </div>
@@ -232,8 +234,8 @@ function SurpriseRule(props) {
           </div>
         </div>
 
-        {optionTab === 0 && <SurpriseRuleMap />}
-        {optionTab === 1 && <SurpriseRuleHowToGo />}
+        {optionTab === 0 && <SurpriseRuleHowToGo />}
+        {optionTab === 1 && <SurpriseRuleMap />}
       </div>
       {/* 地理位置 ↑↑↑ */}
 

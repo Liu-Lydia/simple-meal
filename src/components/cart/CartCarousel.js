@@ -159,15 +159,16 @@ function CartCarousel(props) {
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
                     </div>
-                    <div className="w-100 txt-cap d-flex justify-content-between px-5">
-                      <div className="text-left">
+                    <div className="text-center">
+                      <span className="mx-3">
                         <i className="far fa-clock pr-2 poe-green"></i>
                         <span className="">{v.cooktime}</span>
-                      </div>
-                      <div className="text-right">
+                      </span>
+                      <br className="d-block d-sm-none" />
+                      <span className="mx-3">
                         <i className="fas fa-tag pr-2 poe-green"></i>
                         <span className="">{v.category_name}</span>
-                      </div>
+                      </span>
                     </div>
 
                     <dir className="w-100 d-flex justify-content-end">
