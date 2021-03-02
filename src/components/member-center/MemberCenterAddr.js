@@ -98,7 +98,7 @@ function MemberCenterAddr(props) {
           <MemberCenterNavbar />
           <div className="col-12 col-lg-8  mx-auto ">
             <div className="col-12 col-sm-10  col-md-10 col-lg-12 col-xl-7 mx-md-auto mx-lg-0">
-              <div className="mb-5 mt-3 d-none d-xl-block h3 ee">地址</div>
+              <div className="mb-5 mt-3 d-none d-xl-block h4 ee">地址</div>
 
               <div
                 className="btn border  txt-cap1 mr-2 mb-5  col-12

@@ -69,33 +69,23 @@ function MemberCenterIndex() {
                 <div className="d-flex col-10 d-flex justify-content-md-between mx-auto">
                   <ul className="h6 item1  col-4">
                     <li>
-                      <i className="far fa-address-card mr-1 mb-3"></i>
+                      <i className="far fa-address-card mr-1 "></i>
                       我的帳戶
                     </li>
                     <li className="item2 ml-4 ">
-                      <Link to="/MemberCenter/Info" className="text-dark">
-                        個人資料
-                      </Link>
+                      <Link to="/MemberCenter/Info">個人資料</Link>
                     </li>
                     <li className="item2 ml-4">
-                      <Link to="/MemberCenter/PasswordEx" className="text-dark">
-                        密碼變更
-                      </Link>
+                      <Link to="/MemberCenter/PasswordEx">密碼變更</Link>
                     </li>
                     <li className="item2 ml-4">
-                      <Link to="/MemberCenter/CreditCard" className="text-dark">
-                        信用卡
-                      </Link>
+                      <Link to="/MemberCenter/CreditCard">信用卡</Link>
                     </li>
                     <li className="item2 ml-4">
-                      <Link to="/MemberCenter/Addr" className="text-dark">
-                        地址
-                      </Link>
+                      <Link to="/MemberCenter/Addr">地址</Link>
                     </li>
                     <li className="item2 ml-4">
-                      <Link to="" className="text-dark">
-                        分級資訊
-                      </Link>
+                      <Link to="">分級資訊</Link>
                     </li>
                   </ul>
                   <ul className="h6 item1 col-5 ">
