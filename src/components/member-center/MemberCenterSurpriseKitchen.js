@@ -6,6 +6,8 @@ import SurpriseKitchenAll from './SurpriseKitchenAll'
 import { Link } from 'react-router-dom'
 
 function MemberCenterSurpriseKitchen() {
+  const [Coupon1, setCoupon1] = useState([])
+
   const [tittle, setTittle] = useState('testa')
   //設定標籤頁class
   const [tittleStyleOne, setTittleStyleOne] = useState(
@@ -13,6 +15,21 @@ function MemberCenterSurpriseKitchen() {
   )
   const [tittleStyleTwo, setTittleStyleTwo] = useState('col-3 cha-rec-sel1')
   const [tittleStyleThree, setTittleStyleThree] = useState('col-3 cha-rec-sel1')
+
+  const getDataFromServer1 = async () => {
+    //模擬和伺服器要資料
+    const response = await fetch('http://localhost:4000/membercenter/info', {
+      method: 'get',
+      credentials: 'include',
+    })
+    const data = await response.json()
+    //最後設定要到狀態中
+    setCoupon1(data)
+  }
+
+  useEffect(() => {
+    getDataFromServer1()
+  }, [])
 
   const selected = () => {
     switch (tittle) {
@@ -31,18 +48,27 @@ function MemberCenterSurpriseKitchen() {
       <div className="mt-5 h3 ee col-12 text-center  d-block d-xl-none">
         驚喜廚房
       </div>
-      <div className="d-flex offset-3 mb-2 ">
-        <img
-          src="../../../public/img/member-center/fish4.jpeg"
-          className="rounded-circle box1 mt-3 d-block d-sm-block d-md-none d-lg-none d-xl-none mb-2 mr-2"
-        />
-        <div className="mt-4 d-block d-sm-block d-md-none d-lg-none d-xl-none  d-inline">
-          admin
-        </div>
-        <div className="btn border dropdown-toggle txt-cap1 mr-2 mb-5 col-12 d-block d-lg-none ">
-          回上頁
-        </div>
-      </div>{' '}
+      <div className="d-flex">
+        {Coupon1.map((v) => (
+          <li className="d-bolck d-lg-none box1 mr-4 mx-auto mx-sm-0 mx-lg-0 mb-2">
+            <img
+              className="cha-cart-user-img "
+              src={`http://localhost:3015/img/member-center/${v.avater}`}
+              alt=""
+            />
+          </li>
+        ))}
+
+        {Coupon1.map((v) => (
+          <li className="d-block d-lg-none text-nowrap col-8 col-sm-10 mx-md-0 mx-auto">
+            會員姓名:
+            <span>{v.name}</span>
+          </li>
+        ))}
+      </div>
+      <div className="btn border dropdown-toggle txt-cap1 mr-2 mb-5 col-12 d-block d-lg-none ">
+        回上頁
+      </div>
     </>
   )
 
