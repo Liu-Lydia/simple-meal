@@ -30,7 +30,7 @@ function MemberCenterRegiStered(props) {
   }
 
   // 按了提交按鈕用的
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     //開啟開始觸發檢查的旗標
     setStartToChecked(true)
     const newErrors = []
@@ -38,7 +38,6 @@ function MemberCenterRegiStered(props) {
     if (inputs.name.trim().length > 10) {
       newErrors.push('name')
     }
-
     if (inputs.password.trim().length < 6) {
       newErrors.push('password')
     }
@@ -58,45 +57,44 @@ function MemberCenterRegiStered(props) {
 
     setErrors(newErrors)
 
-    if (newErrors.length !== 0) {
-      swalWithBootstrapButtons.fire({
-        icon: 'error',
-        text: '有欄位未填寫 請再檢查',
-        showConfirmButton: false,
-        padding: '25px',
-        showCancelButton: true,
-        cancelButtonText: '確定',
-        showCloseButton: true,
-      })
-    }
-
     if (newErrors.length == 0) {
-      swalWithBootstrapButtons.fire({
-        icon: 'success',
-        text: '註冊成功',
-        showConfirmButton: false,
-        padding: '25px',
-        showCancelButton: true,
-        cancelButtonText: '確定',
-        showCloseButton: true,
-      })
       const fd = new FormData(document.querySelector('#test'))
 
-      fetch('http://localhost:4000/membercenter/registered', {
+      const res = await fetch('http://localhost:4000/membercenter/registered', {
         method: 'post',
         body: fd,
         credentials: 'include',
       })
 
-      // to index
-      history.push('/')
+      const obj = await res.json()
+
+      if (obj.success) {
+        swalWithBootstrapButtons.fire({
+          icon: 'success',
+          text: '註冊成功,請至登入頁面登入',
+          showConfirmButton: false,
+          padding: '45px',
+          showCancelButton: true,
+          cancelButtonText: '確定',
+          // showCloseButton: true,
+        })
+        history.push('/')
+      } else {
+        swalWithBootstrapButtons.fire({
+          icon: 'error',
+          text: '信箱地址重複,請重新註冊',
+          showConfirmButton: false,
+          padding: '45px',
+          showCancelButton: true,
+          cancelButtonText: '確定',
+          // showCloseButton: true,
+        })
+      }
     }
   }
-
   // 切換合法不合法的css與提示字詞
   const fieldValidCSS = (fieldName) => {
     if (!startToChecked) return ''
-
     return errors.includes(fieldName) ? 'is-invalid' : 'is-valid'
   }
 
@@ -116,9 +114,7 @@ function MemberCenterRegiStered(props) {
 
             <form id="test" className="col-8 mx-auto mb-2 mr-2 txt-body">
               <div className="form-group ">
-                <label htmlFor="inputEmail" className="">
-                  Email
-                </label>
+                <label htmlFor="inputEmail">Email</label>
                 <input
                   type="email"
                   required
@@ -127,8 +123,8 @@ function MemberCenterRegiStered(props) {
                   name="email"
                   onChange={onChangeForField('email')}
                 />
-                <div class="valid-feedback">email正確</div>
-                <div class="invalid-feedback">email格式錯了</div>
+                <div class="valid-feedback">email格式正確</div>
+                <div class="invalid-feedback">email格式錯誤</div>
               </div>
 
               <div className="form-group">
