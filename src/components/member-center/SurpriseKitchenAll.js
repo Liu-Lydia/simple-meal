@@ -309,7 +309,7 @@ function SurpriseKitchenAll() {
             {SurpriseKitchen.map((v, i) => {
               console.log(v)
               return (
-                <tr key={i}>
+                <tr key={i} className="text-center  ">
                   <td>{v.sid}</td>
                   <td>{v.order_sid}</td>
                   <td className=" d-none d-sm-none d-xl-block ">

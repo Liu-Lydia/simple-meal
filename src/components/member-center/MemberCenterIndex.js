@@ -88,7 +88,7 @@ function MemberCenterIndex() {
                       <Link to="">分級資訊</Link>
                     </li>
                   </ul>
-                  <ul className="h6 item1 col-5 ">
+                  <ul className="h6 col-5 ">
                     <li className="item">
                       <i className="fas fa-heart mr-2 "></i>
                       <Link to="/loverecipe" className="text-dark">
@@ -108,7 +108,7 @@ function MemberCenterIndex() {
                       </Link>
                     </li>
                     <li className="item ">
-                      <i className="fas fa-ticket-alt mr-1"></i>
+                      <i className="fas fa-ticket-alt mr-2"></i>
                       <Link to="" className="text-dark">
                         我的優惠卷
                       </Link>
@@ -219,7 +219,7 @@ function MemberCenterIndex() {
                     </Link>
                   </li>
                   <li className="txt-sub2 ml-4 text3">
-                    <Link to="/MemberCenter/" className="text-dark">
+                    <Link to="/MemberCenter/Addr" className="text-dark">
                       分級資訊
                     </Link>
                   </li>
@@ -245,7 +245,10 @@ function MemberCenterIndex() {
                   </li>
                   <li className="bt item1">
                     <i className="fas fa-ticket-alt mr-1"></i>
-                    <Link to="/MemberCenter/" className="text-dark">
+                    <Link
+                      to="/MemberCenter/SurpriseKitchen"
+                      className="text-dark"
+                    >
                       我 的 優 惠 卷
                     </Link>
                   </li>

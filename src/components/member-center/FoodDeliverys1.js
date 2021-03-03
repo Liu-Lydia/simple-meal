@@ -109,15 +109,13 @@ function FoodDeliverys1() {
               <th className="d-none d-md-none d-sm-none d-lg-block d-xl-block  ">
                 配送明細
               </th>
-              <th>使用餐卷</th>
-              <th className=" d-none d-md-none d-sm-none d-lg-block d-xl-block   ">
-                配送日期
-              </th>
+
+              <th>配送日期</th>
             </tr>
           </thead>
           <tbody>
             {FoodDelivery.map((v, i) => (
-              <tr key={i}>
+              <tr key={i} className="text-center  ">
                 <td>{v.member_sid}</td>
                 <td>{v.sid}</td>
                 <td className=" d-none d-sm-none d-xl-block ">
