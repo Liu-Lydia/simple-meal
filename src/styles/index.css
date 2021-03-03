@@ -129,9 +129,9 @@
     top: 50px;
     opacity: 0;
     filter: alpha(opacity=0);
-    animation: round 15s linear infinite;
+    animation: hero 15s linear infinite;
   }
-  @keyframes round {
+  @keyframes hero {
     6% {
         opacity: 1;
         filter: alpha(opacity=100);
