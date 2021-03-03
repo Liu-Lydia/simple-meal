@@ -78,7 +78,7 @@ function MilestoneGoalListener(props) {
                 swalWithBootstrapButtons
                   .fire({
                     //icon: 'success',
-                    imageUrl: `http://localhost:3015/img/lemon/123.svg`,
+                    imageUrl: `http://localhost:3015/img/lemon/Goal.svg`,
                     imageHeight: 200,
                     title: `<h6>新成就達成</h6>`,
                     title: `<span class="fff-txt-info">達成新成就：<br />${newAchieveStone.map(

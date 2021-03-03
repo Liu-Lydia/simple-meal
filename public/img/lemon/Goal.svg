@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg class="progress" width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+<style>
+.demo {
+  .u-absoluteCenter();
+  .u-flexCenter();
+}
+
+.progress {
+  transform: rotate(-90deg);
+}
+
+.progress__value {
+  stroke-dasharray: 339.292;
+  stroke-dashoffset: 339.292;
+  animation: progress 3s normal;
+  animation-fill-mode:forwards;
+}
+
+@keyframes progress {
+  from {
+    stroke-dashoffset: 339.292;
+  }
+  to {
+    stroke-dashoffset: 0;
+    stroke:#627e2a
+  }
+}
+
+
+</style>
+    <circle class="bar" cx="60" cy="60" r="54" fill="none" stroke="#a2a3a5" stroke-width="12" />
+    <circle class="progress__value" cx="60" cy="60" r="54" fill="none" stroke="#f3e575" stroke-width="12" />
+  </svg>
