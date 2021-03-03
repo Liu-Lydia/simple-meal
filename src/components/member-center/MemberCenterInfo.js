@@ -205,7 +205,7 @@ function MemberCenterInfo(props) {
                   </div>
                 ))}
                 {Memberinfo.map((v) => (
-                  <div className="mx-auto col-2">
+                  <div className="d-flex justify-content-center">
                     <button
                       className="btn-green txt-btn  mb-5"
                       onClick={handleSubmit}

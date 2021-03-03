@@ -109,7 +109,9 @@ function MemberCenterRegiStered(props) {
               </Link>
             </div>
             <div className="txt-body">
-              <div className="h4 text-center mb-4 lll-green">註冊</div>
+              <div className="h4 d-flex justify-content-center mb-4 lll-green">
+                註冊
+              </div>
             </div>
 
             <form id="test" className="col-8 mx-auto mb-2 mr-2 txt-body">
@@ -209,7 +211,125 @@ function MemberCenterRegiStered(props) {
                 </label>
               </div>
               <div className="form-group txt-cap"></div>
-              <div className="col-6 mx-auto">
+              <div className="d-flex justify-content-center">
+                <button
+                  type="button"
+                  className="btn-green txt-btn  mb-5"
+                  onClick={handleSubmit}
+                >
+                  註冊
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col mx-auto d-block d-xl-none">
+            <div className="txt-body">
+              <div className="h4 text-center mb-4 lll-green">註冊</div>
+            </div>
+
+            <form
+              id="test"
+              className="col-12 col-sm-10 mx-auto mb-2 mr-2 txt-body"
+            >
+              <div className="form-group col-12 col-sm-10 mx-auto">
+                <label htmlFor="inputEmail">Email</label>
+                <input
+                  type="email"
+                  required
+                  className={`form-control ${fieldValidCSS('email')}`}
+                  id="inputEmail"
+                  name="email"
+                  onChange={onChangeForField('email')}
+                />
+                <div class="valid-feedback">email格式正確</div>
+                <div class="invalid-feedback">email格式錯誤</div>
+              </div>
+
+              <div className="form-group col-12 col-sm-10 mx-auto">
+                <label htmlFor="inputPassword">密碼</label>
+                <input
+                  type="password"
+                  name="password"
+                  onChange={onChangeForField('password')}
+                  className={`form-control ${fieldValidCSS('password')}`}
+                  id="inputPassword"
+                />
+
+                <div class="valid-feedback">密碼輸入正確</div>
+                <div class="invalid-feedback">密碼格式錯了</div>
+                <div className="txt-cap ">
+                  密碼長度需為 6 個以上的英數字元，大小寫有區別。
+                </div>
+              </div>
+              <div className="form-group  col-12 col-sm-10 mx-auto">
+                <label htmlFor="inputPassword1">確認密碼</label>
+                <input
+                  type="password"
+                  name="password1"
+                  onChange={onChangeForField('password1')}
+                  className={`form-control ${fieldValidCSS('password1')}`}
+                  id="inputPassword1"
+                  required
+                  minLength="6"
+                />
+                <div class="valid-feedback">密碼輸入正確</div>
+                <div class="invalid-feedback">密碼與確認密碼不符合</div>
+              </div>
+              <div className="form-group  col-12 col-sm-10 mx-auto">
+                <label htmlFor="inputName">姓名</label>
+                <input
+                  type="text"
+                  className={`form-control ${fieldValidCSS('name')}`}
+                  id="inputName"
+                  name="name"
+                  onChange={onChangeForField('name')}
+                />
+                <div class="valid-feedback">姓名輸入正確</div>
+                <div class="invalid-feedback">姓名最多可輸入10個中英文字</div>
+              </div>
+              <div className="form-group  col-12 col-sm-10 mx-auto">
+                <label htmlFor="inputMoblie">電話</label>
+                <input
+                  type="text"
+                  className={`form-control ${fieldValidCSS('mobile')}`}
+                  id="inputMoblie"
+                  name="moblie"
+                  onChange={onChangeForField('moblie')}
+                />
+                <div class="valid-feedback">電話格式正確</div>
+                <div class="invalid-feedback">電話格式錯誤</div>
+              </div>
+              <div className="form-group  col-12 col-sm-10 mx-auto">
+                <label htmlFor="inputAddr">配送地址</label>
+                <input
+                  type="text"
+                  className={`form-control ${fieldValidCSS('addr')}`}
+                  id="inputAddr"
+                  name="addr"
+                  onChange={onChangeForField('addr')}
+                />
+
+                <div class="valid-feedback">地址格式正確</div>
+                <div class="invalid-feedback">地址格式錯誤</div>
+                <div className="txt-cap">
+                  本地址將作為您日後購物預設寄送地址
+                </div>
+              </div>
+
+              <div className="form-group txt-cap d-flex flex-column col-12 col-sm-10 mx-auto ">
+                <label>
+                  <input type="checkbox" name="rule" />
+                  訂閱電郵與簡訊
+                </label>
+                <label>
+                  <input type="checkbox" name="rule1" />
+                  我同意網站服務條款及隱私政策
+                </label>
+              </div>
+              <div className="form-group txt-cap"></div>
+              <div className="col-sm-3 col-7 mx-auto">
                 <button
                   type="button"
                   className="btn-green txt-btn  mb-5"

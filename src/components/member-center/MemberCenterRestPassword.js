@@ -18,7 +18,7 @@ const MemberCenterResetPassword = ({ values, isSubmitting }) => (
             </Link>
           </div>
 
-          <div className="h3  text-center mb-4">忘記密碼</div>
+          <div className="h4 ee  text-center mb-4">忘記密碼</div>
           <Form>
             <div className="col-8 mx-auto ">
               <div className="mb-1 txt-sub2">忘記密碼嗎？</div>
