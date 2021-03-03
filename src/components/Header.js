@@ -53,7 +53,7 @@ function Header(props) {
         setLoginBool(false)
       })
     // 清除近期瀏覽
-    localStorage.setItem('recent', JSON.stringify([]))
+    // localStorage.setItem('recent', JSON.stringify([]))
   }
 
   // 給判斷有沒有登入
