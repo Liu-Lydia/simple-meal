@@ -252,7 +252,7 @@ function MilestoneList(props) {
                 >
                   <div className="fff-stone-item-box justify-content-center">
                     <svg
-                      className="fff-svg-painting animate__animated animate__bounce"
+                      className="fff-svg-painting animate__animated"
                       style={{
                         backgroundImage:
                           'url(http://localhost:3015/img/milestonelist/' +

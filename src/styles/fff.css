@@ -133,7 +133,15 @@
   background-size: 60px 60px;
   background-position: 15px 15px;
   margin: 5px 0;
+  animation:bounce;
+  animation-duration: 2s;
 }
+
+.fff-svg-painting:hover {
+  animation: tada;
+  animation-duration: 2s;
+}
+
 
 .fff-milestone-background-svg {
   cx: 45;
