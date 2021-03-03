@@ -118,7 +118,7 @@ function FoodDeliverys1() {
                 <td>{v.sid}</td>
                 <td className=" d-none d-sm-none d-xl-block ">
                   {' '}
-                  <Moment format="YYYY/MM/DD">{v.check_date}</Moment>
+                  <Moment format="YYYY/MM/DD">{v.delivery_date}</Moment>
                 </td>
                 <td>{v.meal_name}</td>
                 <td className="d-none d-sm-none  d-md-none d-lg-block ">
