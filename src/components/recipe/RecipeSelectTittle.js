@@ -9,26 +9,26 @@ function RecipeSelectTittle() {
     <>
       <div className=" row justify-content-center cha-rec-select-bar cha-gray">
         <div className="col-12 col-lg-2 justify-content-between row">
-          <Link
+          <button
             onClick={() => {
               setChangeLine(
-                'col-4 col-lg-1 cha-rec-select-bar-line2 cha-rec-select-bar-line2-left'
+                'cha-button col-4 col-lg-1 cha-rec-select-bar-line2 cha-rec-select-bar-line2-left'
               )
             }}
-            className="txt-sub1 cha-rec-select-bar-txt cha-gray "
+            className="cha-button txt-sub1 cha-rec-select-bar-txt cha-gray "
           >
             相似餐點
-          </Link>
-          <Link
+          </button>
+          <button
             onClick={() => {
               setChangeLine(
-                'col-4 col-lg-1 cha-rec-select-bar-line2 cha-rec-select-bar-line2-right'
+                'cha-button col-4 col-lg-1 cha-rec-select-bar-line2 cha-rec-select-bar-line2-right'
               )
             }}
-            className="txt-sub1 cha-rec-select-bar-txt cha-gray"
+            className="cha-button txt-sub1 cha-rec-select-bar-txt cha-gray"
           >
             瀏覽紀錄
-          </Link>
+          </button>
         </div>
         <div className="col-12 cha-rec-select-bar-line"></div>
         <div className={changeLine}></div>

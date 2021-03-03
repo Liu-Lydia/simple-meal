@@ -2,6 +2,7 @@
 import moment from 'moment'
 import React, { useState, useEffect } from 'react'
 import MilestoneDialog from './MilestoneDialog'
+import 'animate.css'
 
 function MilestoneList(props) {
   //資料庫回來的東西 milstonelist []陣列包{}每筆資料
@@ -232,7 +233,7 @@ function MilestoneList(props) {
         </div>
         {/* <!-- 成就display --> */}
         <div className="col-10 col-sm-8 fff-no-mr-and-pad ">
-          <div className="row fff-no-mr-and-pad d-flex align-items-center justify-content-around">
+          <div className="fff-list-height row fff-no-mr-and-pad d-flex align-items-center justify-content-around">
             {/* 單個成就 */}
             {milstonelist.map((v, i) =>
               v.milestone_sid == '-1' ? (
@@ -251,7 +252,7 @@ function MilestoneList(props) {
                 >
                   <div className="fff-stone-item-box justify-content-center">
                     <svg
-                      className="fff-svg-painting"
+                      className="fff-svg-painting animate__animated animate__bounce"
                       style={{
                         backgroundImage:
                           'url(http://localhost:3015/img/milestonelist/' +

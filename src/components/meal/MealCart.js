@@ -93,9 +93,9 @@ function MealCart(props) {
               )}
             </span>
 
-            <Link to="" className="cha-yellow cha-icon">
+            <button className="cha-button cha-yellow d-flex  cha-icon">
               <i className="fas fa-pen"></i>
-            </Link>
+            </button>
           </div>
           {addRightCart.memberInfoObj.id ? (
             <>

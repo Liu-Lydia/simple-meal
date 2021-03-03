@@ -273,10 +273,10 @@ class Carousel3d extends React.PureComponent {
 
 const imgWrapper = [
   'http://localhost:3015/img/index/index-p6-1.png',
-  'http://localhost:3015/img/index/index-p6-2.png',
-  'http://localhost:3015/img/index/index-p6-3.png',
-  'http://localhost:3015/img/index/index-p6-4.png',
-  'http://localhost:3015/img/index/index-p6-5.png',
+  'http://localhost:3015/img/index/surprise01.JPG',
+  'http://localhost:3015/img/index/surprise03.JPG',
+  'http://localhost:3015/img/index/surprise04.JPG',
+  'http://localhost:3015/img/index/surprise05.JPG',
 ]
 
 export default function Carousel() {

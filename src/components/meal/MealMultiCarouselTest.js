@@ -61,8 +61,8 @@ function MealMultiCarousel(props) {
           {mealDisplay.length > 0 &&
             mealDisplay.map((value, index) => {
               return (
-                <Link
-                  className="cha-dl"
+                <button
+                  className="cha-dl cha-button"
                   onClick={() => {
                     setDataLoadingforTittle(true)
                     setTimeout(() => {
@@ -101,7 +101,7 @@ function MealMultiCarousel(props) {
                       </div>
                     </div>
                   </div>
-                </Link>
+                </button>
               )
             })}
         </Carousel>

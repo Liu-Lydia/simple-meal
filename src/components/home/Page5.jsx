@@ -12,12 +12,12 @@ export default function Page5({ isMobile }) {
       <div className="container">
         <div className="row">
           <div className="col-xl-8 offset-xl-4 p5-bg col-12">
-            <QueueAnim
+            {/* <QueueAnim
               className="text-wrapper-bottom"
               key="text"
               leaveReverse
               type="right"
-            >
+            > */}
               <div key="aa" className="offset-xl-5 offset-0 p5-bg-t">
                 <h3 className="txt-h3 col-green d-none d-xl-block">食譜介紹</h3>
                 <h6 className="txt-h3 col-green d-block d-sm-none">食譜介紹</h6>
@@ -45,7 +45,7 @@ export default function Page5({ isMobile }) {
                   馬上出發
                 </NavLink>
               </div>
-            </QueueAnim>
+            {/* </QueueAnim> */}
 
             <NavLink
               to="/meal"
@@ -54,12 +54,7 @@ export default function Page5({ isMobile }) {
               馬上出發
             </NavLink>
 
-            <QueueAnim
-              className="text-wrapper-bottom"
-              key="text"
-              leaveReverse
-              type="right"
-            >
+           
               <div key="bb" className="p5-img-divxs d-block d-sm-none mx-auto">
                 <img
                   className="img-size100"
@@ -67,7 +62,7 @@ export default function Page5({ isMobile }) {
                   alt=""
                 />
               </div>
-            </QueueAnim>
+           
             {/* image要用div包起來才有rwd效果 */}
 
             <div>
@@ -93,7 +88,7 @@ export default function Page5({ isMobile }) {
                     &nbsp;Prev
                   </button>
                   <div className="p1-change-line"></div>
-                  <div className="p1-change"></div>
+                  {/* <div className="p1-change"></div> */}
                   <button className="col-gray p5-but-change2">
                     Next &nbsp;
                     <i className="fas fa-chevron-circle-right col-black"></i>

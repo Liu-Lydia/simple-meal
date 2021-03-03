@@ -82,7 +82,7 @@ function Sharerecipe(props) {
           <div className="mt-5 mx-auto xxx-200x200">
             <img
               src="http://localhost:3015/img/lemon/empty.gif"
-              className="card-img-top xxx-img xxx-br25 xxx-m85"
+              className="card-img-top xxx-img xxx-m85"
               alt="..."
             />
           </div>
@@ -98,7 +98,7 @@ function Sharerecipe(props) {
         <div className="row offset-1 col-xl-10 col-12 xxx-m0">
           {/* 引入資料 */}
           {recipeDisplay.map((v, i) => (
-            <div key={i} className="card col-xl-3 col-12">
+            <div key={i} className="card col-xl-3 col-12 xxx-srbox">
               <div className="xxx-296x197 mb-3 mx-auto">
                 <img
                   onClick={() => {
@@ -110,9 +110,9 @@ function Sharerecipe(props) {
                 />
               </div>
               <div className="card-body">
-                <h5 className="card-title">{v.name}</h5>
-                <p className="card-text">{v.introduction}</p>
-                <div className="text-right txt-btn">
+                <h5 className="card-title ellipsis1">{v.name}</h5>
+                <p className="card-text ellipsis">{v.introduction}</p>
+                <div className="text-right txt-btn xxx-boxbt">
                   <i className="far fa-clock col-green"></i>&nbsp; {v.cooktime}
                   分鐘
                 </div>

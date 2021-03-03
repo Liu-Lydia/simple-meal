@@ -28,7 +28,7 @@ import ScrollToTop from './components/ScrollToTop'
 import MultiLevelBreadCrumb from './components/MultiLevelBreadCrumb'
 import Footer from './components/Footer'
 import ToTopButton from './components/ToTopButton'
-import MilestoneGoalLinstener from './components/Milestone/MilestoneGoalLinstener'
+import MilestoneGoalListener from './components/Milestone/MilestoneGoalListener'
 
 function App() {
   // 麵包屑判斷 (true在左上 false由各頁面自訂, 需要改動者再引入)
@@ -53,7 +53,7 @@ function App() {
           )}
           <ScrollToTop>
             <Switch>
-              <MilestoneGoalLinstener loginBool={loginBool}>
+              <MilestoneGoalListener loginBool={loginBool}>
                 <Route path="/cart/:mode?">
                   <Cart
                     loginBool={loginBool}
@@ -140,7 +140,7 @@ function App() {
                 <Route exact path="/">
                   <Home />
                 </Route>
-              </MilestoneGoalLinstener>
+              </MilestoneGoalListener>
             </Switch>
           </ScrollToTop>
         </MainContent>

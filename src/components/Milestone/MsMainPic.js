@@ -13,13 +13,15 @@ function MsMainPic() {
   return (
     <>
       <div
-        className="d-flex flex-column justify-content-center align-items-center fff-ms-web"
+        className=" row d-flex flex-column justify-content-center align-items-center fff-ms-web"
         style={{
           backgroundImage: 'url(http://localhost:3015/img/fff/Kumo.svg)',
           backgroundRepeat: 'no-repeat',
+          backgroundSize:'cover'
         }}
       >
         <img
+        className='col'
           src="http://localhost:3015/img/fff/msMainPic.png"
           alt=""
           style={{ maxWidth: '1200px' }}
