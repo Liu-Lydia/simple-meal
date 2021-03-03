@@ -291,7 +291,6 @@ function SurpriseKitchenAll() {
         <table className="txt-body  text-nowrap table col-10 mx-auto mx-xl-0">
           <thead>
             <tr className="text-center  ">
-              <th>項次</th>
               <th className=" d-none d-md-block d-sm-none d-lg-block d-xl-block ">
                 訂單編號
               </th>
@@ -310,7 +309,6 @@ function SurpriseKitchenAll() {
               console.log(v)
               return (
                 <tr key={i} className="text-center  ">
-                  <td>{v.sid}</td>
                   <td>{v.order_sid}</td>
                   <td className=" d-none d-sm-none d-xl-block ">
                     <Moment format="YYYY/MM/DD">{v.reservation_date}</Moment>

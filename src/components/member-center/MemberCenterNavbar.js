@@ -109,6 +109,15 @@ function MemberCenterNavbar() {
                     我的餐卷
                   </Link>
                 </li>
+                <li className="mb-3">
+                  <i className="far fa-calendar-plus mr-1"></i>{' '}
+                  <Link
+                    to="/MemberCenter/SurpriseKitchen"
+                    className="text-dark"
+                  >
+                    驚喜廚房
+                  </Link>
+                </li>
                 <li className="">
                   <i className="fas fa-carrot mr-1"></i>
                   <Link to="/MemberCenter/MyRecipe" className="text-dark">
@@ -122,15 +131,6 @@ function MemberCenterNavbar() {
                   </Link>
                 </li>
 
-                <li className="mb-3">
-                  <i className="far fa-calendar-plus mr-1"></i>{' '}
-                  <Link
-                    to="/MemberCenter/SurpriseKitchen"
-                    className="text-dark"
-                  >
-                    驚喜廚房
-                  </Link>
-                </li>
                 <li className="mb-3">
                   <i className="fas fa-medal mr-2"></i>
                   <Link to="/RewardExchange" className="text-dark">

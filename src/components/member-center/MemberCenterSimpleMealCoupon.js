@@ -50,7 +50,6 @@ function MemberCenterSimpleMealCoupon() {
       <table className="table txt-sub1  text-nowrap text-center">
         <thead>
           <tr className="">
-            <th>項次</th>
             <th>訂單編號</th>
             <th>購買日期</th>
             <th>餐卷方案明細</th>
@@ -64,7 +63,6 @@ function MemberCenterSimpleMealCoupon() {
         <tbody className="text-cap">
           {Coupon.map((v, i) => (
             <tr key={i}>
-              <td>{v.member_sid}</td>
               <td>{v.order_sid}</td>
               <td>
                 <Moment format="YYYY/MM/DD">{v.check_date}</Moment>

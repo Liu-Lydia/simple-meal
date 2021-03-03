@@ -8,7 +8,7 @@ function FoodDeliverys2() {
   const getDataFromServer = async () => {
     //模擬和伺服器要資料
     const response = await fetch(
-      `http://localhost:4000/membercenter/history_mealdelivery?start=${FoodDeliverySeach}&end=${FoodDeliverySeach1}`,
+      `http://localhost:4000/membercenter/history_mealdelivery?start=${FoodDeliverySeach}&end=${FoodDeliverySeach1}&status=1`,
       {
         method: 'get',
         credentials: 'include',
@@ -98,7 +98,6 @@ function FoodDeliverys2() {
         <table className="txt-body  text-nowrap table col-10 mx-auto mx-xl-0">
           <thead className=" ">
             <tr className="text-center  ">
-              <th>項次</th>
               <th className=" d-none d-md-block d-sm-none d-lg-block d-xl-block ">
                 訂單編號
               </th>
@@ -110,7 +109,6 @@ function FoodDeliverys2() {
           <tbody>
             {FoodDelivery.map((v, i) => (
               <tr key={i} className="text-center ">
-                <td>{v.member_sid}</td>
                 <td>{v.sid}</td>
                 <td className=" d-none d-sm-none d-xl-block ">
                   {' '}
