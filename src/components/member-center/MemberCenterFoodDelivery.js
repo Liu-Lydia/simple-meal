@@ -15,9 +15,9 @@ function MemberCenterFoodDelivery() {
   const selected = () => {
     switch (tittle) {
       case 'testa':
-        return <FoodDeliverys2 />
-      case 'testb':
         return <FoodDeliverys1 />
+      case 'testb':
+        return <FoodDeliverys2 />
     }
   }
   const getDataFromServer1 = async () => {
@@ -83,7 +83,7 @@ function MemberCenterFoodDelivery() {
                       setTittleStyleTwo('col-3 cha-rec-sel1')
                     }}
                   >
-                    未配送
+                    已配送
                   </Link>
                   <Link
                     className={tittleStyleTwo}
@@ -93,7 +93,7 @@ function MemberCenterFoodDelivery() {
                       setTittleStyleTwo('col-3 cha-rec-sel1-active')
                     }}
                   >
-                    已配送
+                    未配送
                   </Link>
                 </div>
                 <div className="">{selected()}</div>
