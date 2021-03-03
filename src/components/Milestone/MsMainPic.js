@@ -22,7 +22,7 @@ function MsMainPic() {
       >
         <img
         className='col'
-          src="http://localhost:3015/img/fff/msMainPic.png"
+          src="http://localhost:3015/img/fff/newMsMainPic.gif"
           alt=""
           style={{ maxWidth: '1200px' }}
         />
