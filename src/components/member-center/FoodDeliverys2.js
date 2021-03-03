@@ -115,7 +115,9 @@ function FoodDeliverys2() {
                   <Moment format="YYYY/MM/DD">{v.delivery_date}</Moment>
                 </td>
                 <td>{v.meal_name}</td>
-                <td>{v.quantity}</td>
+                <td>
+                  {v.quantity.split(',').reduce((acc, cur) => +acc + +cur, 0)}
+                </td>
               </tr>
             ))}
           </tbody>
