@@ -86,10 +86,10 @@ function MemberCenterInfo(props) {
         icon: 'success',
         text: '修改成功！！',
         showConfirmButton: false,
-        padding: '25px',
+        padding: '45px',
         showCancelButton: true,
         cancelButtonText: '確定',
-        showCloseButton: true,
+        // showCloseButton: true,
       })
     } else {
       // alert('has errors not submit')
@@ -97,10 +97,10 @@ function MemberCenterInfo(props) {
         icon: 'error',
         text: '有欄位未填寫正確,請確認！',
         showConfirmButton: false,
-        padding: '25px',
+        padding: '45px',
         showCancelButton: true,
         cancelButtonText: '確定',
-        showCloseButton: true,
+        // showCloseButton: true,
       })
     }
   }

@@ -98,7 +98,7 @@ function MyRecipeEdit(props) {
       padding: '25px',
       showCancelButton: true,
       cancelButtonText: '確定',
-      showCloseButton: true,
+      // showCloseButton: true,
     })
   }
   // 一開始就會開始載入資料

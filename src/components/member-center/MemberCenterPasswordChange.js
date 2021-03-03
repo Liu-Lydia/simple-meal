@@ -74,10 +74,10 @@ function MemberCenterAddr(props) {
         icon: 'success',
         text: '修改成功',
         showConfirmButton: false,
-        padding: '25px',
+        padding: '45px',
         showCancelButton: true,
         cancelButtonText: '確定',
-        showCloseButton: true,
+        // showCloseButton: true,
       })
     }
   }

@@ -77,7 +77,7 @@ function MyRecipe(props) {
         padding: '25px',
         showCancelButton: true,
         cancelButtonText: '確定',
-        showCloseButton: true,
+        // showCloseButton: true,
       })
     }
   }

@@ -42,10 +42,10 @@ function AddRecipe(props) {
       icon: 'success',
       text: '新增成功',
       showConfirmButton: false,
-      padding: '25px',
+      padding: '45px',
       showCancelButton: true,
       cancelButtonText: '確定',
-      showCloseButton: true,
+      // showCloseButton: true,
     })
   }
 
