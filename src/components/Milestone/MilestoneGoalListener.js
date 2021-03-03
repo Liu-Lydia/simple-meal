@@ -37,10 +37,10 @@ function MilestoneGoalListener(props) {
 
   //檢查有無新成就
   const isNewMilestoneGoal = async () => {
-    console.log('檢查有無新成就')
+    //console.log('檢查有無新成就')
     const url = `http://localhost:4000/milestone/getGoalMilestone`
     if (loginBool && milestoneListener) {
-      console.log('有登入有監聽 開始檢查')
+      //console.log('有登入有監聽 開始檢查')
       await fetch(url, {
         method: 'get',
         credentials: 'include',
@@ -51,8 +51,8 @@ function MilestoneGoalListener(props) {
           if (obj.id == userID) {
             //確認還是同一人
             const newAchieveStone = []
-            console.log('新成就數量', obj.result.length, obj)
-            console.log(
+            //console.log('新成就數量', obj.result.length, obj)
+            //console.log(
               '舊成就數量',
               milestoneGoalList.length,
               milestoneGoalList,
@@ -79,16 +79,16 @@ function MilestoneGoalListener(props) {
               }
               // 當檢查完開始顯示新成就
               if (newAchieveStone.length !== 0) {
-                console.log(newAchieveStone)
+                //console.log(newAchieveStone)
                 swalWithBootstrapButtons
                   .fire({
                     //icon: 'success',
                     imageUrl: `http://localhost:3015/img/lemon/123.svg`,
                     imageHeight: 200,
                     title: `<h6>新成就達成</h6>`,
-                    text: `達成新成就：<br />${newAchieveStone.map(
-                      (v, i) => v + '<br />'
-                    )}獲取成就點數可以兌換獎勵！`,
+                    title: `<span class="fff-txt-info">達成新成就：<br />${newAchieveStone.map(
+                      (v, i) => v.stone_name + '<br />'
+                    )}獲取成就點數可以兌換獎勵！</span>`,
                     padding: '75px',
                     showConfirmButton: true,
                     confirmButtonText: '去兌換獎勵',
@@ -103,7 +103,7 @@ function MilestoneGoalListener(props) {
                       setForward(true)
                     }
                   })
-                console.log('顯示成就')
+                //console.log('顯示成就')
                 setMilestoneLinstener(false) //顯示成就之後 關閉監聽 可以重新刷新已完成的成就清單
               }
             }
@@ -140,7 +140,7 @@ function MilestoneGoalListener(props) {
 
   //檢查成就
   useEffect(() => {
-    console.log('成就更新')
+    //console.log('成就更新')
     isNewMilestoneGoal()
     return () => {
       setForward(false)
@@ -148,7 +148,7 @@ function MilestoneGoalListener(props) {
   })
 
   useEffect(() => {
-    console.log('成就更新-props')
+    //console.log('成就更新-props')
     isNewMilestoneGoal()
   }, [props])
 
