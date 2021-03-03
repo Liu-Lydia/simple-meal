@@ -56,12 +56,10 @@ function MemberCenterInfo(props) {
     if (inputs.name.trim().length > 6 && inputs.name.trim().length < 10) {
       newErrors.push('name')
     }
-    if (inputs.mobile.trim().length > 6) {
-      newErrors.push('mobile')
-    }
-    if (inputs.addr.trim().length < 6) {
-      newErrors.push('addr')
-    }
+
+    // if (inputs.addr.trim().length < 6) {
+    //   newErrors.push('addr')
+    // }
 
     console.log(newErrors)
 

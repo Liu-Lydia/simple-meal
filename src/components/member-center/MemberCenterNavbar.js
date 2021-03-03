@@ -95,18 +95,18 @@ function MemberCenterNavbar() {
                   </Link>
                 </li>
                 <li className="mb-3">
-                  <i className="fas fa-utensils mr-2"></i>
-                  <Link to="/MemberCenter/FoodDelivery" className="text-dark">
-                    我的餐點
-                  </Link>
-                </li>
-                <li className="mb-3">
                   <i className="fas fa-clipboard mr-2"></i>
                   <Link
                     to="/MemberCenter/SimpleMealCoupon"
                     className="text-dark"
                   >
                     我的餐卷
+                  </Link>
+                </li>
+                <li className="mb-3">
+                  <i className="fas fa-utensils mr-2"></i>
+                  <Link to="/MemberCenter/FoodDelivery" className="text-dark">
+                    我的餐點
                   </Link>
                 </li>
                 <li className="mb-3">

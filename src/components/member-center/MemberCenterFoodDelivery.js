@@ -78,23 +78,22 @@ function MemberCenterFoodDelivery() {
                   <Link
                     className={tittleStyleOne}
                     onClick={() => {
-                      setTittle('testa')
+                      setTittle('testb')
                       setTittleStyleOne('col-3 cha-rec-sel1-active')
                       setTittleStyleTwo('col-3 cha-rec-sel1')
                     }}
                   >
-                    已配送
+                    未配送
                   </Link>
-
                   <Link
                     className={tittleStyleTwo}
                     onClick={() => {
-                      setTittle('testb')
+                      setTittle('testa')
                       setTittleStyleOne('col-3 cha-rec-sel1')
                       setTittleStyleTwo('col-3 cha-rec-sel1-active')
                     }}
                   >
-                    未配送
+                    已配送
                   </Link>
                 </div>
                 <div className="">{selected()}</div>
