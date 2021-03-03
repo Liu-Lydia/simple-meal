@@ -56,7 +56,9 @@ function MemberCenterInfo(props) {
     if (inputs.name.trim().length > 6 && inputs.name.trim().length < 10) {
       newErrors.push('name')
     }
-
+    if (inputs.nickname.trim().length > 6 && inputs.name.trim().length < 10) {
+      newErrors.push('nickname')
+    }
     // if (inputs.addr.trim().length < 6) {
     //   newErrors.push('addr')
     // }
@@ -153,8 +155,8 @@ function MemberCenterInfo(props) {
                       defaultValue={v.name}
                       onChange={onChangeForField('name')}
                     />
-                    <div class="valid-feedback">姓名輸入正確</div>
-                    <div class="invalid-feedback">姓名請輸入3個字</div>
+
+                    <div class="invalid-feedback">姓名格式錯誤</div>
                   </div>
                 ))}
 
@@ -169,6 +171,7 @@ function MemberCenterInfo(props) {
                       defaultValue={v.nickname}
                       onChange={onChangeForField('nickname')}
                     />
+                    <div class="invalid-feedback">姓名格式錯誤</div>
                   </div>
                 ))}
                 {Memberinfo.map((v) => (
@@ -176,7 +179,7 @@ function MemberCenterInfo(props) {
                     <label htmlFor="inputbirthday">生日</label>
                     <input
                       type="date"
-                      className={`form-control ${fieldValidCSS('birthday')}`}
+                      className="form-control"
                       id="inputbirthday"
                       name="birthday"
                       onChange={onChangeForField('birthday')}
