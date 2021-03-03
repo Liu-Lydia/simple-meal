@@ -59,6 +59,9 @@ function MemberCenterInfo(props) {
     if (inputs.mobile.trim().length > 6) {
       newErrors.push('mobile')
     }
+    if (inputs.addr.trim().length < 6) {
+      newErrors.push('addr')
+    }
 
     console.log(newErrors)
 
@@ -188,7 +191,7 @@ function MemberCenterInfo(props) {
                     <label htmlFor="inputmobile">電話</label>
                     <input
                       type="text"
-                      className={`form-control ${fieldValidCSS('mobile')}`}
+                      className="form-control"
                       id="inputmobile"
                       name="mobile"
                       onChange={onChangeForField('mobile')}
