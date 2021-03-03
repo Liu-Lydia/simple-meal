@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Swal from 'sweetalert2'
+import { Redirect } from 'react-router-dom'
 
 //成就系統 檢查有沒有完成的成就
 //當登入之後先檢查目前完成的成就並記錄下來
@@ -17,6 +18,9 @@ function MilestoneGoalListener(props) {
 
   //達成成就陣列
   const [milestoneGoalList, setMilestoneGoalList] = useState([])
+
+  //跳轉確認
+  const [forward, setForward] = useState(false)
 
   // sweet alert集點按鈕
   const swalWithBootstrapButtons = Swal.mixin({
@@ -46,8 +50,14 @@ function MilestoneGoalListener(props) {
         .then((obj) => {
           if (obj.id == userID) {
             //確認還是同一人
-            console.log("新成就數量",obj.result.length,obj)
-            console.log("舊成就數量",milestoneGoalList.length,milestoneGoalList,userID)
+            const newAchieveStone = []
+            console.log('新成就數量', obj.result.length, obj)
+            console.log(
+              '舊成就數量',
+              milestoneGoalList.length,
+              milestoneGoalList,
+              userID
+            )
             if (milestoneGoalList.length != obj.result.length) {
               //如果成就數量不同
               //一對一比較
@@ -63,22 +73,38 @@ function MilestoneGoalListener(props) {
                   }
                 }
                 if (!exist) {
-                  //如果該成就不存在於原有陣列中 顯示出來
-                  swalWithBootstrapButtons.fire({
+                  newAchieveStone.push(obj.result[i])
+                  //如果該成就不存在於原有陣列中 把成就放到陣列裡
+                }
+              }
+              // 當檢查完開始顯示新成就
+              if (newAchieveStone.length !== 0) {
+                console.log(newAchieveStone)
+                swalWithBootstrapButtons
+                  .fire({
                     //icon: 'success',
-                    imageUrl: `http://localhost:3015/img/milestonelist/${obj.result[i].finished_goal_pic}`,
+                    imageUrl: `http://localhost:3015/img/lemon/123.svg`,
                     imageHeight: 200,
-                    title: `<h6>新成就達成</h6><h6>${obj.result[i].stone_name}</h6>`,
+                    title: `<h6>新成就達成</h6>`,
+                    text: `達成新成就：<br />${newAchieveStone.map(
+                      (v, i) => v + '<br />'
+                    )}獲取成就點數可以兌換獎勵！`,
                     padding: '75px',
                     showConfirmButton: true,
-                    confirmButtonText: '知道了',
-                    // showDenyButton: true,
+                    confirmButtonText: '去兌換獎勵',
+                    denyButtonText: '等等去看',
+                    showDenyButton: true,
                     // showCloseButton: true,
                     backdrop: `rgba(0,0,0,.5)`,
                   })
-                  console.log('顯示成就')
-                  setMilestoneLinstener(false)//顯示成就之後 關閉監聽 可以重新刷新已完成的成就清單
-                }
+                  .then((result) => {
+                    // 只有確認以後才連接資料庫
+                    if (result.isConfirmed) {
+                      setForward(true)
+                    }
+                  })
+                console.log('顯示成就')
+                setMilestoneLinstener(false) //顯示成就之後 關閉監聽 可以重新刷新已完成的成就清單
               }
             }
           } else {
@@ -109,7 +135,6 @@ function MilestoneGoalListener(props) {
   useEffect(() => {
     if (loginBool && !milestoneListener) {
       getGoalMilestone()
-
     }
   }, [loginBool, milestoneListener])
 
@@ -117,6 +142,9 @@ function MilestoneGoalListener(props) {
   useEffect(() => {
     console.log('成就更新')
     isNewMilestoneGoal()
+    return () => {
+      setForward(false)
+    }
   })
 
   useEffect(() => {
@@ -124,6 +152,11 @@ function MilestoneGoalListener(props) {
     isNewMilestoneGoal()
   }, [props])
 
-  return <>{props.children}</>
+  return (
+    <>
+      {props.children}
+      {forward && <Redirect to="/MileStone" />}
+    </>
+  )
 }
 export default MilestoneGoalListener
