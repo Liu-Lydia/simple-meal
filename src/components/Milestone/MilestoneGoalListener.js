@@ -52,12 +52,7 @@ function MilestoneGoalListener(props) {
             //確認還是同一人
             const newAchieveStone = []
             //console.log('新成就數量', obj.result.length, obj)
-            //console.log(
-              '舊成就數量',
-              milestoneGoalList.length,
-              milestoneGoalList,
-              userID
-            )
+            //console.log('舊成就數量',milestoneGoalList.length,milestoneGoalList, userID)
             if (milestoneGoalList.length != obj.result.length) {
               //如果成就數量不同
               //一對一比較
