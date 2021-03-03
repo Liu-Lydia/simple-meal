@@ -83,7 +83,7 @@ function MemberCenterNavbar() {
                     </Link>
                   </li>
                   <li>
-                    <Link to="" className="text-dark">
+                    <Link to="/MemberCenter/addr" className="text-dark">
                       分級資訊
                     </Link>
                   </li>
@@ -139,7 +139,10 @@ function MemberCenterNavbar() {
                 </li>
                 <li className="mb-3">
                   <i className="fas fa-ticket-alt "></i>{' '}
-                  <Link to="" className="text-dark">
+                  <Link
+                    to="/MemberCenter/SurpriseKitchen"
+                    className="text-dark"
+                  >
                     我的優惠卷
                   </Link>
                 </li>

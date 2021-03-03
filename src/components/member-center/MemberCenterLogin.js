@@ -73,27 +73,7 @@ const MemberCenterLogin = (props, { values, isSubmitting }) => {
                   </div>
                 </div>
 
-                <div className="col-8 mx-auto">
-                  <div className="mb-2">驗證碼</div>
-                </div>
-
-                <div className="col-10 col-md-8 mx-auto d-flex justify-content-between">
-                  <input
-                    type="text"
-                    className="form-control mr-2 col-6 col-sm-8  br "
-                    id="exampleInputEmail1"
-                    placeholder="驗證碼"
-                  />
-
-                  <input
-                    type="text"
-                    className="form-control mb-3  col-4 col-sm-4 br text-center"
-                    id="exampleInputEmail1"
-                    placeholder="驗證碼"
-                  />
-                </div>
-
-                <div className="col-3 mx-auto ">
+                <div className="mx-auto  d-flex justify-content-center">
                   <button
                     type="submit"
                     disabled={isSubmitting}
@@ -102,7 +82,7 @@ const MemberCenterLogin = (props, { values, isSubmitting }) => {
                     送出
                   </button>
                 </div>
-                <div className="txt-cap col-4 d-flex justify-content-center mb-4 mx-auto">
+                <div className="txt-cap d-flex justify-content-center mb-4 mx-auto">
                   還沒註冊會員嗎？{' '}
                   <Link to="/MemberCenter/RegiStered">註冊</Link>
                 </div>
@@ -154,24 +134,6 @@ const MemberCenterLogin = (props, { values, isSubmitting }) => {
                   </div>
                 </div>
 
-                <div className="col-12 col-sm-10 mx-auto">
-                  <div className="mb-2">驗證碼</div>
-                </div>
-
-                <div className="col-12 col-sm-10 mx-auto d-flex ">
-                  <input
-                    type=""
-                    className="form-control mr-2 col-7 col-sm-8  br "
-                    id="exampleInputEmail1"
-                    placeholder="驗證碼"
-                  />
-                  <input
-                    type=""
-                    className="form-control mb-3  col-5 col-sm-4 br text-center"
-                    id="exampleInputEmail1"
-                    placeholder="驗證碼"
-                  />
-                </div>
                 <div className="col-12 col-sm-10 mx-auto d-flex justify-content-center">
                   <button
                     type="submit"

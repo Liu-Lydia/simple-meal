@@ -307,7 +307,7 @@ function SurpriseKitchen2() {
           </thead>
           <tbody>
             {SurpriseKitchen.map((v, i) => (
-              <tr key={i}>
+              <tr key={i} className="text-center  ">
                 <td>{v.sid}</td>
                 <td>{v.order_sid}</td>
                 <td className=" d-none d-sm-none d-xl-block ">

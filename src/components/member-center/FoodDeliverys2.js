@@ -103,15 +103,13 @@ function FoodDeliverys2() {
                 訂單編號
               </th>
               <th>訂單日期</th>
-              <th className="d-none d-md-none d-sm-none d-lg-block d-xl-block  ">
-                配送明細
-              </th>
+              <th>配送明細</th>
               <th>使用餐卷</th>
             </tr>
           </thead>
           <tbody>
             {FoodDelivery.map((v, i) => (
-              <tr key={i}>
+              <tr key={i} className="text-center ">
                 <td>{v.member_sid}</td>
                 <td>{v.sid}</td>
                 <td className=" d-none d-sm-none d-xl-block ">
@@ -119,6 +117,7 @@ function FoodDeliverys2() {
                   <Moment format="YYYY/MM/DD">{v.check_date}</Moment>
                 </td>
                 <td>{v.meal_name}</td>
+                <td>{v.quantity}</td>
               </tr>
             ))}
           </tbody>
