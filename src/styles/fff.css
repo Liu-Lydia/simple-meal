@@ -303,6 +303,7 @@
     align-items: center;
     margin: 0;
     margin-bottom: 20px;
+    animation:backInUp 1.5s;
   }
 
   .fff-stone-item-box {
