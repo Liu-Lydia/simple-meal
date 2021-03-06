@@ -1,10 +1,6 @@
-# 極簡主義 餐點食材配送網站
-### MFEE 期末專題
-### 前端專案 (react.js) [simple-meal](https://github.com/Liu-Lydia/simple-meal).
-### 後端專案 (node.js) [SimpleMeal-node](https://github.com/poe1599/SimpleMeal-node).
-### [專案企畫書](https://github.com/Liu-Lydia/simple-meal/blob/master/%E5%B1%95%E7%A4%BA/%E7%B6%B2%E7%AB%99%E5%BB%BA%E7%BD%AE%E5%B0%88%E9%A1%8C%E4%BC%81%E7%95%AB%E6%9B%B8.pdf).
-### [專案簡報](https://github.com/Liu-Lydia/simple-meal/blob/master/%E5%B1%95%E7%A4%BA/%E6%A5%B5%E7%B0%A1%E7%85%AE%E6%98%93%E7%B0%A1%E5%A0%B1%E6%B1%BA%E5%AE%9A%E7%89%88.pdf).
+# MFEE 期末結訓專題
 
+## 極簡主義 餐點食材配送網站
 ## 品牌介紹
 ![Lemon.](/public/img/lydia/SimpleMeal_LOGO.png "吉祥物Lemon")
 
@@ -72,3 +68,10 @@ Logo 由「蔬果」、「肉類」、「調味料」
 * 建立 MySQL 資料庫
 * 購物車頁面排版設計
 * 專案企劃書撰寫
+
+## 相關連結
+### 前端專案 (react.js) [simple-meal](https://github.com/Liu-Lydia/simple-meal).
+### 後端專案 (node.js) [SimpleMeal-node](https://github.com/poe1599/SimpleMeal-node).
+### [專案企畫書](https://github.com/Liu-Lydia/simple-meal/blob/master/%E5%B1%95%E7%A4%BA/%E7%B6%B2%E7%AB%99%E5%BB%BA%E7%BD%AE%E5%B0%88%E9%A1%8C%E4%BC%81%E7%95%AB%E6%9B%B8.pdf).
+### [專案簡報](https://github.com/Liu-Lydia/simple-meal/blob/master/%E5%B1%95%E7%A4%BA/%E6%A5%B5%E7%B0%A1%E7%85%AE%E6%98%93%E7%B0%A1%E5%A0%B1%E6%B1%BA%E5%AE%9A%E7%89%88.pdf).
+
