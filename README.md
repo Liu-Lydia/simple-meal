@@ -4,7 +4,7 @@
 ### 後端專案 (node.js) [SimpleMeal-node](https://github.com/poe1599/SimpleMeal-node).
 
 ## 品牌介紹
-![Lemon.](/img/lemon/LemonUFO.PNG "吉祥物Lemon")
+![Lemon.](/public/img/lemon/LemonUFO.PNG "吉祥物Lemon")
 Logo 由「蔬果」、「肉類」、「調味料」
 這三種烹飪食材的元素組合而成。
 咧孟(Lemon)
