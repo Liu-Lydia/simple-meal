@@ -1,5 +1,6 @@
 {
   "name": "simple-meal",
+  "homepage": "https://Liu-Lydia.github.io/simple-meal",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
